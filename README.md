@@ -3,8 +3,7 @@
 This project tries to automatically generate docs for all Apple frameworks in
 the current SDKs.
 
-Browse the results at
-[https://0bmxa.github.io/AppleHeaderDocs/](https://0bmxa.github.io/AppleHeaderDocs/).
+Browse the results on [GitHub pages](https://0bmxa.github.io/AppleHeaderDocs/).
 
 
 ## Why
@@ -22,17 +21,17 @@ This project tries to make this "hidden" documentation more visible.
 
 ## How
 
-The first approach uses [`appledoc`](https://github.com/tomaz/appledoc), but
-fails to generate docs for a lot of frameworks.
+The first approach uses [`appledoc`](https://github.com/tomaz/appledoc),
+but fails to generate docs for a lot of frameworks.
 
 
 ## Legal stuff
 
 All rights of this documentation still belongs to Apple. You might need to
-accept Xcode’s Terms of Use to be allowed to browse these.
+accept Xcode’s Terms of Use (or such) to be allowed to browse these.
 
-I do not own any rights on this documentation. If this proejct violates any
-legal agreement or such, (please don't sue me! and) please let me know! 
+I do not own any rights on this documentation. If this project violates any
+legal agreement or such, (please don't sue me! and) please let me know!
 
 
 ## Known issues

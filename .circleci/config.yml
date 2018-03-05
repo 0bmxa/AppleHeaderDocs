@@ -19,12 +19,14 @@ jobs:
                     cd ~ && \
                     git clone git://github.com/0bmxa/appledoc.git --branch 'feature/ISO-8859-support' && \
                     cd appledoc && \
-                    ./install-appledoc.sh && \
-                    cd ~/project
+                    ./install-appledoc.sh
 
             - run:
                 name: 'Generate docs for macOS'
-                command: ./generate-docs.sh
+                command: |
+                    cd ~/project && \
+                    pwd && \
+                    ./generate-appledoc.sh
 
 
             - run:
