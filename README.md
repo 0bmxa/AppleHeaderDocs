@@ -26,7 +26,16 @@ The first approach uses [`appledoc`](https://github.com/tomaz/appledoc), but
 fails to generate docs for a lot of frameworks.
 
 
-### Known issues
+## Legal stuff
+
+All rights of this documentation still belongs to Apple. You might need to
+accept Xcode’s Terms of Use to be allowed to browse these.
+
+I do not own any rights on this documentation. If this proejct violates any
+legal agreement or such, (please don't sue me! and) please let me know! 
+
+
+## Known issues
 * A lot of Frameworks are empty, appledoc fails to generate docs here
 * Only generates docs for MacOS SDK frameworks for now
 * …
