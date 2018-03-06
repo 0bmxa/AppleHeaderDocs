@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CIContext Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreImage Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/context">+ context</option>
+		
+		<option value="//api/name/contextForOfflineGPUAtIndex:">+ contextForOfflineGPUAtIndex:</option>
+		
+		<option value="//api/name/contextForOfflineGPUAtIndex:colorSpace:options:sharedContext:">+ contextForOfflineGPUAtIndex:colorSpace:options:sharedContext:</option>
+		
+		<option value="//api/name/contextWithCGContext:options:">+ contextWithCGContext:options:</option>
+		
+		<option value="//api/name/contextWithCGLContext:pixelFormat:colorSpace:options:">+ contextWithCGLContext:pixelFormat:colorSpace:options:</option>
+		
+		<option value="//api/name/contextWithCGLContext:pixelFormat:options:">+ contextWithCGLContext:pixelFormat:options:</option>
+		
+		<option value="//api/name/contextWithEAGLContext:">+ contextWithEAGLContext:</option>
+		
+		<option value="//api/name/contextWithEAGLContext:options:">+ contextWithEAGLContext:options:</option>
+		
+		<option value="//api/name/contextWithMTLDevice:">+ contextWithMTLDevice:</option>
+		
+		<option value="//api/name/contextWithMTLDevice:options:">+ contextWithMTLDevice:options:</option>
+		
+		<option value="//api/name/contextWithOptions:">+ contextWithOptions:</option>
+		
+		<option value="//api/name/offlineGPUCount">+ offlineGPUCount</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/HEIFRepresentationOfImage:format:colorSpace:options:">- HEIFRepresentationOfImage:format:colorSpace:options:</option>
+		
+		<option value="//api/name/JPEGRepresentationOfImage:colorSpace:options:">- JPEGRepresentationOfImage:colorSpace:options:</option>
+		
+		<option value="//api/name/PNGRepresentationOfImage:format:colorSpace:options:">- PNGRepresentationOfImage:format:colorSpace:options:</option>
+		
+		<option value="//api/name/TIFFRepresentationOfImage:format:colorSpace:options:">- TIFFRepresentationOfImage:format:colorSpace:options:</option>
+		
+		<option value="//api/name/clearCaches">- clearCaches</option>
+		
+		<option value="//api/name/createCGImage:fromRect:">- createCGImage:fromRect:</option>
+		
+		<option value="//api/name/createCGImage:fromRect:format:colorSpace:">- createCGImage:fromRect:format:colorSpace:</option>
+		
+		<option value="//api/name/createCGImage:fromRect:format:colorSpace:deferred:">- createCGImage:fromRect:format:colorSpace:deferred:</option>
+		
+		<option value="//api/name/createCGLayerWithSize:info:">- createCGLayerWithSize:info:</option>
+		
+		<option value="//api/name/drawImage:atPoint:fromRect:">- drawImage:atPoint:fromRect:</option>
+		
+		<option value="//api/name/drawImage:inRect:fromRect:">- drawImage:inRect:fromRect:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithOptions:">- initWithOptions:</option>
+		
+		<option value="//api/name/inputImageMaximumSize">- inputImageMaximumSize</option>
+		
+		<option value="//api/name/outputImageMaximumSize">- outputImageMaximumSize</option>
+		
+		<option value="//api/name/prepareRender:fromRect:toDestination:atPoint:error:">- prepareRender:fromRect:toDestination:atPoint:error:</option>
+		
+		<option value="//api/name/reclaimResources">- reclaimResources</option>
+		
+		<option value="//api/name/render:toBitmap:rowBytes:bounds:format:colorSpace:">- render:toBitmap:rowBytes:bounds:format:colorSpace:</option>
+		
+		<option value="//api/name/render:toCVPixelBuffer:">- render:toCVPixelBuffer:</option>
+		
+		<option value="//api/name/render:toCVPixelBuffer:bounds:colorSpace:">- render:toCVPixelBuffer:bounds:colorSpace:</option>
+		
+		<option value="//api/name/render:toIOSurface:bounds:colorSpace:">- render:toIOSurface:bounds:colorSpace:</option>
+		
+		<option value="//api/name/render:toMTLTexture:commandBuffer:bounds:colorSpace:">- render:toMTLTexture:commandBuffer:bounds:colorSpace:</option>
+		
+		<option value="//api/name/startTaskToClear:error:">- startTaskToClear:error:</option>
+		
+		<option value="//api/name/startTaskToRender:fromRect:toDestination:atPoint:error:">- startTaskToRender:fromRect:toDestination:atPoint:error:</option>
+		
+		<option value="//api/name/startTaskToRender:toDestination:error:">- startTaskToRender:toDestination:error:</option>
+		
+		<option value="//api/name/writeHEIFRepresentationOfImage:toURL:format:colorSpace:options:error:">- writeHEIFRepresentationOfImage:toURL:format:colorSpace:options:error:</option>
+		
+		<option value="//api/name/writeJPEGRepresentationOfImage:toURL:colorSpace:options:error:">- writeJPEGRepresentationOfImage:toURL:colorSpace:options:error:</option>
+		
+		<option value="//api/name/writePNGRepresentationOfImage:toURL:format:colorSpace:options:error:">- writePNGRepresentationOfImage:toURL:format:colorSpace:options:error:</option>
+		
+		<option value="//api/name/writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:">- writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CIContext Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CIContext.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/contextWithCGLContext:pixelFormat:colorSpace:options:" title="contextWithCGLContext:pixelFormat:colorSpace:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contextWithCGLContext:pixelFormat:colorSpace:options:">+&nbsp;contextWithCGLContext:pixelFormat:colorSpace:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIContext *)contextWithCGLContext:(CGLContextObj)<em>cglctx</em> pixelFormat:(nullable CGLPixelFormatObj)<em>pixelFormat</em> colorSpace:(nullable CGColorSpaceRef)<em>colorSpace</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contextWithCGLContext:pixelFormat:options:" title="contextWithCGLContext:pixelFormat:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contextWithCGLContext:pixelFormat:options:">+&nbsp;contextWithCGLContext:pixelFormat:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIContext *)contextWithCGLContext:(CGLContextObj)<em>cglctx</em> pixelFormat:(nullable CGLPixelFormatObj)<em>pixelFormat</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contextWithCGContext:options:" title="contextWithCGContext:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contextWithCGContext:options:">+&nbsp;contextWithCGContext:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIContext *)contextWithCGContext:(CGContextRef)<em>cgctx</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contextWithOptions:" title="contextWithOptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contextWithOptions:">+&nbsp;contextWithOptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIContext *)contextWithOptions:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/context" title="context"></a>
+	<h3 class="method-title"><code><a href="#//api/name/context">+&nbsp;context</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIContext *)context</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithOptions:" title="initWithOptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithOptions:">&ndash;&nbsp;initWithOptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithOptions:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contextWithEAGLContext:" title="contextWithEAGLContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contextWithEAGLContext:">+&nbsp;contextWithEAGLContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIContext *)contextWithEAGLContext:(EAGLContext *)<em>eaglContext</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contextWithEAGLContext:options:" title="contextWithEAGLContext:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contextWithEAGLContext:options:">+&nbsp;contextWithEAGLContext:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIContext *)contextWithEAGLContext:(EAGLContext *)<em>eaglContext</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contextWithMTLDevice:" title="contextWithMTLDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contextWithMTLDevice:">+&nbsp;contextWithMTLDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIContext *)contextWithMTLDevice:(id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contextWithMTLDevice:options:" title="contextWithMTLDevice:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contextWithMTLDevice:options:">+&nbsp;contextWithMTLDevice:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIContext *)contextWithMTLDevice:(id&lt;MTLDevice&gt;)<em>device</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) CGColorSpaceRef workingColorSpace NS_AVAILABLE ( 10 _11 , 9 _0</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/drawImage:atPoint:fromRect:" title="drawImage:atPoint:fromRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/drawImage:atPoint:fromRect:">&ndash;&nbsp;drawImage:atPoint:fromRect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)drawImage:(CIImage *)<em>image</em> atPoint:(CGPoint)<em>atPoint</em> fromRect:(CGRect)<em>fromRect</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/drawImage:inRect:fromRect:" title="drawImage:inRect:fromRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/drawImage:inRect:fromRect:">&ndash;&nbsp;drawImage:inRect:fromRect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)drawImage:(CIImage *)<em>image</em> inRect:(CGRect)<em>inRect</em> fromRect:(CGRect)<em>fromRect</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createCGImage:fromRect:" title="createCGImage:fromRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createCGImage:fromRect:">&ndash;&nbsp;createCGImage:fromRect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable CGImageRef)createCGImage:(CIImage *)<em>image</em> fromRect:(CGRect)<em>fromRect</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createCGImage:fromRect:format:colorSpace:" title="createCGImage:fromRect:format:colorSpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createCGImage:fromRect:format:colorSpace:">&ndash;&nbsp;createCGImage:fromRect:format:colorSpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable CGImageRef)createCGImage:(CIImage *)<em>image</em> fromRect:(CGRect)<em>fromRect</em> format:(CIFormat)<em>format</em> colorSpace:(nullable CGColorSpaceRef)<em>colorSpace</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createCGImage:fromRect:format:colorSpace:deferred:" title="createCGImage:fromRect:format:colorSpace:deferred:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createCGImage:fromRect:format:colorSpace:deferred:">&ndash;&nbsp;createCGImage:fromRect:format:colorSpace:deferred:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable CGImageRef)createCGImage:(CIImage *)<em>image</em> fromRect:(CGRect)<em>fromRect</em> format:(CIFormat)<em>format</em> colorSpace:(nullable CGColorSpaceRef)<em>colorSpace</em> deferred:(BOOL)<em>deferred</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createCGLayerWithSize:info:" title="createCGLayerWithSize:info:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createCGLayerWithSize:info:">&ndash;&nbsp;createCGLayerWithSize:info:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable CGLayerRef)createCGLayerWithSize:(CGSize)<em>size</em> info:(nullable CFDictionaryRef)<em>info</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/render:toBitmap:rowBytes:bounds:format:colorSpace:" title="render:toBitmap:rowBytes:bounds:format:colorSpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/render:toBitmap:rowBytes:bounds:format:colorSpace:">&ndash;&nbsp;render:toBitmap:rowBytes:bounds:format:colorSpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)render:(CIImage *)<em>image</em> toBitmap:(void *)<em>data</em> rowBytes:(ptrdiff_t)<em>rowBytes</em> bounds:(CGRect)<em>bounds</em> format:(CIFormat)<em>format</em> colorSpace:(nullable CGColorSpaceRef)<em>colorSpace</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/render:toIOSurface:bounds:colorSpace:" title="render:toIOSurface:bounds:colorSpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/render:toIOSurface:bounds:colorSpace:">&ndash;&nbsp;render:toIOSurface:bounds:colorSpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)render:(CIImage *)<em>image</em> toIOSurface:(IOSurfaceRef)<em>surface</em> bounds:(CGRect)<em>bounds</em> colorSpace:(nullable CGColorSpaceRef)<em>colorSpace</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/render:toCVPixelBuffer:" title="render:toCVPixelBuffer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/render:toCVPixelBuffer:">&ndash;&nbsp;render:toCVPixelBuffer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)render:(CIImage *)<em>image</em> toCVPixelBuffer:(CVPixelBufferRef)<em>buffer</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/render:toCVPixelBuffer:bounds:colorSpace:" title="render:toCVPixelBuffer:bounds:colorSpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/render:toCVPixelBuffer:bounds:colorSpace:">&ndash;&nbsp;render:toCVPixelBuffer:bounds:colorSpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)render:(CIImage *)<em>image</em> toCVPixelBuffer:(CVPixelBufferRef)<em>buffer</em> bounds:(CGRect)<em>bounds</em> colorSpace:(nullable CGColorSpaceRef)<em>colorSpace</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/render:toMTLTexture:commandBuffer:bounds:colorSpace:" title="render:toMTLTexture:commandBuffer:bounds:colorSpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/render:toMTLTexture:commandBuffer:bounds:colorSpace:">&ndash;&nbsp;render:toMTLTexture:commandBuffer:bounds:colorSpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)render:(CIImage *)<em>image</em> toMTLTexture:(id&lt;MTLTexture&gt;)<em>texture</em> commandBuffer:(nullable id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> bounds:(CGRect)<em>bounds</em> colorSpace:(CGColorSpaceRef)<em>colorSpace</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reclaimResources" title="reclaimResources"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reclaimResources">&ndash;&nbsp;reclaimResources</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)reclaimResources</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clearCaches" title="clearCaches"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearCaches">&ndash;&nbsp;clearCaches</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clearCaches</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputImageMaximumSize" title="inputImageMaximumSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputImageMaximumSize">&ndash;&nbsp;inputImageMaximumSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGSize)inputImageMaximumSize</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputImageMaximumSize" title="outputImageMaximumSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputImageMaximumSize">&ndash;&nbsp;outputImageMaximumSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGSize)outputImageMaximumSize</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="OfflineGPUSupport Methods" name="task_OfflineGPUSupport Methods"></a>
+						<h2 class="task-title">OfflineGPUSupport Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/offlineGPUCount" title="offlineGPUCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/offlineGPUCount">+&nbsp;offlineGPUCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (unsigned int)offlineGPUCount</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contextForOfflineGPUAtIndex:" title="contextForOfflineGPUAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contextForOfflineGPUAtIndex:">+&nbsp;contextForOfflineGPUAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable CIContext *)contextForOfflineGPUAtIndex:(unsigned int)<em>index</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contextForOfflineGPUAtIndex:colorSpace:options:sharedContext:" title="contextForOfflineGPUAtIndex:colorSpace:options:sharedContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contextForOfflineGPUAtIndex:colorSpace:options:sharedContext:">+&nbsp;contextForOfflineGPUAtIndex:colorSpace:options:sharedContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable CIContext *)contextForOfflineGPUAtIndex:(unsigned int)<em>index</em> colorSpace:(nullable CGColorSpaceRef)<em>colorSpace</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em> sharedContext:(nullable CGLContextObj)<em>sharedContext</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="ImageRepresentation Methods" name="task_ImageRepresentation Methods"></a>
+						<h2 class="task-title">ImageRepresentation Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/TIFFRepresentationOfImage:format:colorSpace:options:" title="TIFFRepresentationOfImage:format:colorSpace:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/TIFFRepresentationOfImage:format:colorSpace:options:">&ndash;&nbsp;TIFFRepresentationOfImage:format:colorSpace:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)TIFFRepresentationOfImage:(CIImage *)<em>image</em> format:(CIFormat)<em>format</em> colorSpace:(CGColorSpaceRef)<em>colorSpace</em> options:(NSDictionary *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/JPEGRepresentationOfImage:colorSpace:options:" title="JPEGRepresentationOfImage:colorSpace:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/JPEGRepresentationOfImage:colorSpace:options:">&ndash;&nbsp;JPEGRepresentationOfImage:colorSpace:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)JPEGRepresentationOfImage:(CIImage *)<em>image</em> colorSpace:(CGColorSpaceRef)<em>colorSpace</em> options:(NSDictionary *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/HEIFRepresentationOfImage:format:colorSpace:options:" title="HEIFRepresentationOfImage:format:colorSpace:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/HEIFRepresentationOfImage:format:colorSpace:options:">&ndash;&nbsp;HEIFRepresentationOfImage:format:colorSpace:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)HEIFRepresentationOfImage:(CIImage *)<em>image</em> format:(CIFormat)<em>format</em> colorSpace:(CGColorSpaceRef)<em>colorSpace</em> options:(NSDictionary *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/PNGRepresentationOfImage:format:colorSpace:options:" title="PNGRepresentationOfImage:format:colorSpace:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/PNGRepresentationOfImage:format:colorSpace:options:">&ndash;&nbsp;PNGRepresentationOfImage:format:colorSpace:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)PNGRepresentationOfImage:(CIImage *)<em>image</em> format:(CIFormat)<em>format</em> colorSpace:(CGColorSpaceRef)<em>colorSpace</em> options:(NSDictionary *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:" title="writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:">&ndash;&nbsp;writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writeTIFFRepresentationOfImage:(CIImage *)<em>image</em> toURL:(NSURL *)<em>url</em> format:(CIFormat)<em>format</em> colorSpace:(CGColorSpaceRef)<em>colorSpace</em> options:(NSDictionary *)<em>options</em> error:(NSError **)<em>errorPtr</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writePNGRepresentationOfImage:toURL:format:colorSpace:options:error:" title="writePNGRepresentationOfImage:toURL:format:colorSpace:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writePNGRepresentationOfImage:toURL:format:colorSpace:options:error:">&ndash;&nbsp;writePNGRepresentationOfImage:toURL:format:colorSpace:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writePNGRepresentationOfImage:(CIImage *)<em>image</em> toURL:(NSURL *)<em>url</em> format:(CIFormat)<em>format</em> colorSpace:(CGColorSpaceRef)<em>colorSpace</em> options:(NSDictionary *)<em>options</em> error:(NSError **)<em>errorPtr</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeJPEGRepresentationOfImage:toURL:colorSpace:options:error:" title="writeJPEGRepresentationOfImage:toURL:colorSpace:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeJPEGRepresentationOfImage:toURL:colorSpace:options:error:">&ndash;&nbsp;writeJPEGRepresentationOfImage:toURL:colorSpace:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writeJPEGRepresentationOfImage:(CIImage *)<em>image</em> toURL:(NSURL *)<em>url</em> colorSpace:(CGColorSpaceRef)<em>colorSpace</em> options:(NSDictionary *)<em>options</em> error:(NSError **)<em>errorPtr</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeHEIFRepresentationOfImage:toURL:format:colorSpace:options:error:" title="writeHEIFRepresentationOfImage:toURL:format:colorSpace:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeHEIFRepresentationOfImage:toURL:format:colorSpace:options:error:">&ndash;&nbsp;writeHEIFRepresentationOfImage:toURL:format:colorSpace:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writeHEIFRepresentationOfImage:(CIImage *)<em>image</em> toURL:(NSURL *)<em>url</em> format:(CIFormat)<em>format</em> colorSpace:(CGColorSpaceRef)<em>colorSpace</em> options:(NSDictionary *)<em>options</em> error:(NSError **)<em>errorPtr</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="CIRenderDestination Methods" name="task_CIRenderDestination Methods"></a>
+						<h2 class="task-title">CIRenderDestination Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/startTaskToRender:fromRect:toDestination:atPoint:error:" title="startTaskToRender:fromRect:toDestination:atPoint:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startTaskToRender:fromRect:toDestination:atPoint:error:">&ndash;&nbsp;startTaskToRender:fromRect:toDestination:atPoint:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable CIRenderTask *)startTaskToRender:(CIImage *)<em>image</em> fromRect:(CGRect)<em>fromRect</em> toDestination:(CIRenderDestination *)<em>destination</em> atPoint:(CGPoint)<em>atPoint</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startTaskToRender:toDestination:error:" title="startTaskToRender:toDestination:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startTaskToRender:toDestination:error:">&ndash;&nbsp;startTaskToRender:toDestination:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable CIRenderTask *)startTaskToRender:(CIImage *)<em>image</em> toDestination:(CIRenderDestination *)<em>destination</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareRender:fromRect:toDestination:atPoint:error:" title="prepareRender:fromRect:toDestination:atPoint:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareRender:fromRect:toDestination:atPoint:error:">&ndash;&nbsp;prepareRender:fromRect:toDestination:atPoint:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)prepareRender:(CIImage *)<em>image</em> fromRect:(CGRect)<em>fromRect</em> toDestination:(CIRenderDestination *)<em>destination</em> atPoint:(CGPoint)<em>atPoint</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startTaskToClear:error:" title="startTaskToClear:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startTaskToClear:error:">&ndash;&nbsp;startTaskToClear:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable CIRenderTask *)startTaskToClear:(CIRenderDestination *)<em>destination</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

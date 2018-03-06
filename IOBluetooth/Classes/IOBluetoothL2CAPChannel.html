@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IOBluetoothL2CAPChannel Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IOBluetooth Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/PSM">PSM</option>
+		
+		<option value="//api/name/device">device</option>
+		
+		<option value="//api/name/incomingMTU">incomingMTU</option>
+		
+		<option value="//api/name/localChannelID">localChannelID</option>
+		
+		<option value="//api/name/objectID">objectID</option>
+		
+		<option value="//api/name/outgoingMTU">outgoingMTU</option>
+		
+		<option value="//api/name/remoteChannelID">remoteChannelID</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/registerForChannelOpenNotifications:selector:">+ registerForChannelOpenNotifications:selector:</option>
+		
+		<option value="//api/name/registerForChannelOpenNotifications:selector:withPSM:direction:">+ registerForChannelOpenNotifications:selector:withPSM:direction:</option>
+		
+		<option value="//api/name/withObjectID:">+ withObjectID:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/closeChannel">- closeChannel</option>
+		
+		<option value="//api/name/delegate">- delegate</option>
+		
+		<option value="//api/name/getDevice">- getDevice</option>
+		
+		<option value="//api/name/getIncomingMTU">- getIncomingMTU</option>
+		
+		<option value="//api/name/getLocalChannelID">- getLocalChannelID</option>
+		
+		<option value="//api/name/getObjectID">- getObjectID</option>
+		
+		<option value="//api/name/getOutgoingMTU">- getOutgoingMTU</option>
+		
+		<option value="//api/name/getPSM">- getPSM</option>
+		
+		<option value="//api/name/getRemoteChannelID">- getRemoteChannelID</option>
+		
+		<option value="//api/name/isIncoming">- isIncoming</option>
+		
+		<option value="//api/name/registerForChannelCloseNotification:selector:">- registerForChannelCloseNotification:selector:</option>
+		
+		<option value="//api/name/requestRemoteMTU:">- requestRemoteMTU:</option>
+		
+		<option value="//api/name/setDelegate:">- setDelegate:</option>
+		
+		<option value="//api/name/setDelegate:withConfiguration:">- setDelegate:withConfiguration:</option>
+		
+		<option value="//api/name/writeAsync:length:refcon:">- writeAsync:length:refcon:</option>
+		
+		<option value="//api/name/writeSync:length:">- writeSync:length:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IOBluetoothL2CAPChannel Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/IOBluetoothObject.html">IOBluetoothObject</a> : NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSPortDelegate</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>IOBluetoothL2CAPChannel.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class IOBluetoothL2CAPChannel
+</code></pre><p>A client won&rsquo;t create IOBluetoothL2CAPChannel objects directly.  Instead, the IOBluetoothDevice&rsquo;s
+                L2CAP channel open API is responsible for opening a new L2CAP channel and returning an
+                IOBluetoothL2CAPChannel instance representing that newly opened channel.  Additionally, the IOBluetooth
+                notification system will send notifications when new L2CAP channels are open (if requested).</p>
+
+<pre><code>            After a new L2CAP channel is opened, the L2CAP configuration process will not be completed until an
+            incoming data listener is registered with the IOBluetoothL2CAPChannel object.  The reason for this is
+            to due to the limited buffering done of incoming L2CAP data.  This way, we avoid the situation where 
+            incoming data is received before the client is ready for it.  Once a client is done with an
+            IOBluetoothL2CAPChannel that it opened, it should call closeChannel.  Additionally, if the client
+            does not intend to use the connection to the remote device any further, it should call -closeConnection
+            on the IOBluetoothDevice object.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/registerForChannelOpenNotifications:selector:" title="registerForChannelOpenNotifications:selector:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForChannelOpenNotifications:selector:">+&nbsp;registerForChannelOpenNotifications:selector:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows a client to register for L2CAP channel open notifications for any L2CAP channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (IOBluetoothUserNotification *)registerForChannelOpenNotifications:(id)<em>object</em> selector:(SEL)<em>selector</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>Target object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>selector</code></th>
+						<td><p>Selector to be called on the target object when a new L2CAP channel is opened.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> representing the outstanding L2CAP channel notification.
+                To unregister the notification, call -unregister on the resulting <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a>
+                object.  If an error is encountered creating the notification, nil is returned.  The returned
+                <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> will be valid for as long as the notification is registered.  It is
+                not necessary to retain the result.  Once -unregister is called on it, it will no longer be valid.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method registerForChannelOpenNotifications:selector:
+</code></pre><p>The given selector will be called on the target object whenever any L2CAP channel is opened.
+                The selector should accept two arguments.  The first is the user notification object.  The second
+                is the IOBluetoothL2CAPChannel that was opened.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerForChannelOpenNotifications:selector:withPSM:direction:" title="registerForChannelOpenNotifications:selector:withPSM:direction:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForChannelOpenNotifications:selector:withPSM:direction:">+&nbsp;registerForChannelOpenNotifications:selector:withPSM:direction:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows a client to register for L2CAP channel open notifications for certain types of
+                L2CAP channels.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (IOBluetoothUserNotification *)registerForChannelOpenNotifications:(id)<em>object</em> selector:(SEL)<em>selector</em> withPSM:(BluetoothL2CAPPSM)<em>psm</em> direction:(IOBluetoothUserNotificationChannelDirection)<em>inDirection</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>Target object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>selector</code></th>
+						<td><p>Selector to be called on the target object when a new L2CAP channel is opened.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>psm</code></th>
+						<td><p><a href="#//api/name/PSM">PSM</a> to match a new L2CAP channel.  If the <a href="#//api/name/PSM">PSM</a> doesn&rsquo;t matter, 0 may be passed in.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inDirection</code></th>
+						<td><p>The desired direction of the L2CAP channel - kIOBluetoothUserNotificationChannelDirectionAny
+                if the direction doesn&rsquo;t matter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> representing the outstanding L2CAP channel notification.
+                To unregister the notification, call -unregister on the resulting <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a>
+                object.  If an error is encountered creating the notification, nil is returned.  The returned
+                <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> will be valid for as long as the notification is registered.  It is
+                not necessary to retain the result.  Once -unregister is called on it, it will no longer be valid.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method registerForChannelOpenNotifications:selector:withPSM:direction:
+</code></pre><p>The given selector will be called on the target object whenever an L2CAP channel with the given
+                attributes is opened.  The selector should accept two arguments.  The first is the user
+                notification object.  The second is the IOBluetoothL2CAPChannel that was opened.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withObjectID:" title="withObjectID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withObjectID:">+&nbsp;withObjectID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the IObluetoothL2CAPChannel with the given IOBluetoothObjectID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withObjectID:(IOBluetoothObjectID)<em>objectID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>objectID</code></th>
+						<td><p>IOBluetoothObjectID of the desired IOBluetoothL2CAPChannel.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the IOBluetoothL2CAPChannel that matches the given IOBluetoothObjectID if one exists.
+                If no matching L2CAP channel exists, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method withObjectID:
+</code></pre><p>The IOBluetoothObjectID can be used as a global reference for a given IOBluetoothL2CAPChannel.  It allows
+                two separate applications to refer to the same IOBluetoothL2CAPChannel object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/closeChannel" title="closeChannel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/closeChannel">&ndash;&nbsp;closeChannel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initiates the close process on an open L2CAP channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)closeChannel</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess on success.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     closeChannel
+</code></pre><p>This method may only be called by the client that opened the channel in the first place.  In the future
+                asynchronous and synchronous versions will be provided that let the client know when the close process
+                has been finished.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outgoingMTU" title="outgoingMTU"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outgoingMTU">&nbsp;&nbsp;outgoingMTU</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the current outgoing MTU for the L2CAP channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BluetoothL2CAPMTU outgoingMTU</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the current outgoing MTU for the L2CAP channel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getOutgoingMTU
+</code></pre><p>The outgoing MTU represents the maximum L2CAP packet size for packets being sent to the remote <a href="#//api/name/device">device</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getOutgoingMTU" title="getOutgoingMTU"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getOutgoingMTU">&ndash;&nbsp;getOutgoingMTU</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BluetoothL2CAPMTU)getOutgoingMTU</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/incomingMTU" title="incomingMTU"></a>
+	<h3 class="method-title"><code><a href="#//api/name/incomingMTU">&nbsp;&nbsp;incomingMTU</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the current incoming MTU for the L2CAP channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BluetoothL2CAPMTU incomingMTU</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the current incoming MTU for the L2CAP channel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getIncomingMTU
+</code></pre><p>The incoming MTU represents the maximum L2CAP packet size for packets being sent by the remote <a href="#//api/name/device">device</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getIncomingMTU" title="getIncomingMTU"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getIncomingMTU">&ndash;&nbsp;getIncomingMTU</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BluetoothL2CAPMTU)getIncomingMTU</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestRemoteMTU:" title="requestRemoteMTU:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestRemoteMTU:">&ndash;&nbsp;requestRemoteMTU:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initiates the process to reconfigure the L2CAP channel with a new outgoing MTU.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)requestRemoteMTU:(BluetoothL2CAPMTU)<em>remoteMTU</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>remoteMTU</code></th>
+						<td><p>The desired outgoing MTU.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the channel re-configure process was successfully initiated.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     requestRemoteMTU:
+</code></pre><p>Currently, this API does not give an indication that the re-config process has completed.  In
+                the future additional API will be available to provide that information both synchronously and
+                asynchronously.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeAsync:length:refcon:" title="writeAsync:length:refcon:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeAsync:length:refcon:">&ndash;&nbsp;writeAsync:length:refcon:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Writes the given data over the target L2CAP channel asynchronously to the remote <a href="#//api/name/device">device</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)writeAsync:(void *)<em>data</em> length:(UInt16)<em>length</em> refcon:(void *)<em>refcon</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>Pointer to the buffer containing the data to send.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>length</code></th>
+						<td><p>The length of the given data buffer.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>refcon</code></th>
+						<td><p>User supplied value that gets passed to the write callback.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the data was buffered successfully.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     writeAsync:length:refcon:
+</code></pre><p>The length of the data may not exceed the L2CAP channel&rsquo;s ougoing MTU.  When the data has
+                been successfully passed to the hardware to be transmitted, the <a href="#//api/name/delegate">delegate</a> method
+                -l2capChannelWriteComplete:refcon:status: will be called with the refcon passed
+                into this method.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.5 (Bluetooth v1.2) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeSync:length:" title="writeSync:length:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeSync:length:">&ndash;&nbsp;writeSync:length:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Writes the given data synchronously over the target L2CAP channel to the remote <a href="#//api/name/device">device</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)writeSync:(void *)<em>data</em> length:(UInt16)<em>length</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>Pointer to the buffer containing the data to send.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>length</code></th>
+						<td><p>The length of the given data buffer.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the data was written successfully.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     writeSync:length:
+</code></pre><p>The length of the data may not exceed the L2CAP channel&rsquo;s ougoing MTU.  This method will
+                block until the data has been successfully sent to the hardware for transmission (or an error
+                occurs).</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.5 (Bluetooth v1.2) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDelegate:" title="setDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDelegate:">&ndash;&nbsp;setDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows an object to register itself as client of the L2CAP channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)setDelegate:(id)<em>channelDelegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channelDelegate</code></th>
+						<td><p>the object that will play the role of channel <a href="#//api/name/delegate">delegate</a> [NOTE the l2cap channel will retain the delegate].</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the <a href="#//api/name/delegate">delegate</a> is successfully registered.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setDelegate:
+</code></pre><p>A channel <a href="#//api/name/delegate">delegate</a> is the object the L2CAP channel uses as target for data and events. The
+                developer will implement only the the methods he/she is interested in. A list of the
+                possible methods is at the end of this file in the definition of the informal protocol
+                <a href="../Protocols/IOBluetoothL2CAPChannelDelegate.html">IOBluetoothL2CAPChannelDelegate</a>.
+                A newly opened L2CAP channel will not complete its configuration process until the client
+                that opened it registers a connectionHandler.  This prevents that case where incoming
+                data is received before the client is ready.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.5 (Bluetooth v1.2) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDelegate:withConfiguration:" title="setDelegate:withConfiguration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDelegate:withConfiguration:">&ndash;&nbsp;setDelegate:withConfiguration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows an object to register itself as client of the L2CAP channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)setDelegate:(id)<em>channelDelegate</em> withConfiguration:(NSDictionary *)<em>channelConfiguration</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channelDelegate</code></th>
+						<td><p>the object that will play the role of channel <a href="#//api/name/delegate">delegate</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channelConfiguration</code></th>
+						<td><p>the dictionary that describes the initial configuration for
+                the channel.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the <a href="#//api/name/delegate">delegate</a> is successfully registered.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setDelegate:withConfiguration:
+</code></pre><p>A channel <a href="#//api/name/delegate">delegate</a> is the object the L2CAP channel uses as target for data and events. The
+                developer will implement only the the methods he/she is interested in. A list of the
+                possible methods is at the end of this file in the definition of the informal protocol
+                <a href="../Protocols/IOBluetoothL2CAPChannelDelegate.html">IOBluetoothL2CAPChannelDelegate</a>.
+                A newly opened L2CAP channel will not complete its configuration process until the client
+                that opened it registers a connectionHandler.  This prevents that case where incoming
+                data is received before the client is ready.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.5 (Bluetooth v2.0) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&ndash;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the currently assigned delegate</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)delegate</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the current delegate, or nil if one is not set.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     delegate</p><p>An incoming channel is one that was initiated by a remote <a href="#//api/name/device">device</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/device" title="device"></a>
+	<h3 class="method-title"><code><a href="#//api/name/device">&nbsp;&nbsp;device</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> to which the target L2CAP channel is open.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, retain) IOBluetoothDevice *device</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> to which the target L2CAP channel is open.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getDevice
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getDevice" title="getDevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDevice">&ndash;&nbsp;getDevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothDevice *)getDevice</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectID" title="objectID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectID">&nbsp;&nbsp;objectID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the IOBluetoothObjectID of the given IOBluetoothL2CAPChannel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, assign) IOBluetoothObjectID objectID</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the IOBluetoothObjectID of the given IOBluetoothL2CAPChannel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getObjectID
+</code></pre><p>The IOBluetoothObjectID can be used as a global reference for a given IOBluetoothL2CAPChannel.  It allows
+                two separate applications to refer to the same IOBluetoothL2CAPChannel.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getObjectID" title="getObjectID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getObjectID">&ndash;&nbsp;getObjectID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothObjectID)getObjectID</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/PSM" title="PSM"></a>
+	<h3 class="method-title"><code><a href="#//api/name/PSM">&nbsp;&nbsp;PSM</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the PSM for the target L2CAP channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, assign) BluetoothL2CAPPSM PSM</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the PSM for the target L2CAP channel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getPSM
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getPSM" title="getPSM"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getPSM">&ndash;&nbsp;getPSM</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BluetoothL2CAPPSM)getPSM</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localChannelID" title="localChannelID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localChannelID">&nbsp;&nbsp;localChannelID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the local L2CAP channel ID for the target L2CAP channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, assign) BluetoothL2CAPChannelID localChannelID</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the local L2CAP channel ID for the target L2CAP channel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getLocalChannelID
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getLocalChannelID" title="getLocalChannelID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getLocalChannelID">&ndash;&nbsp;getLocalChannelID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BluetoothL2CAPChannelID)getLocalChannelID</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/remoteChannelID" title="remoteChannelID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/remoteChannelID">&nbsp;&nbsp;remoteChannelID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the remote L2CAP channel ID for the target L2CAP channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, assign) BluetoothL2CAPChannelID remoteChannelID</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the remote L2CAP channel ID for the target L2CAP channel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getRemoteChannelID
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getRemoteChannelID" title="getRemoteChannelID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getRemoteChannelID">&ndash;&nbsp;getRemoteChannelID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BluetoothL2CAPChannelID)getRemoteChannelID</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isIncoming" title="isIncoming"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isIncoming">&ndash;&nbsp;isIncoming</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns TRUE if the channel is an incoming channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isIncoming</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns TRUE if the channel is an incoming channel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     isIncoming
+</code></pre><p>An incoming channel is one that was initiated by a remote <a href="#//api/name/device">device</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerForChannelCloseNotification:selector:" title="registerForChannelCloseNotification:selector:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForChannelCloseNotification:selector:">&ndash;&nbsp;registerForChannelCloseNotification:selector:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows a client to register for a channel close notification.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothUserNotification *)registerForChannelCloseNotification:(id)<em>observer</em> selector:(SEL)<em>inSelector</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>observer</code></th>
+						<td><p>Target observer object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inSelector</code></th>
+						<td><p>Selector to be sent to the observer when the L2CAP channel is closed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> representing the outstanding L2CAP channel close notification.
+                To unregister the notification, call -unregister of the returned <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a>
+                object.  If an error is encountered creating the notification, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     registerForChannelCloseNotification:selector:
+</code></pre><p>The given selector will be called on the target observer when the L2CAP channel is closed.
+                The selector should contain two arguments.  The first is the user notification object. The second
+                is the IOBluetoothL2CAPChannel that was closed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothL2CAPChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSRNNSingleGateDescriptor Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/inputWeights">inputWeights</option>
+		
+		<option value="//api/name/recurrentWeights">recurrentWeights</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/createRNNSingleGateDescriptorWithInputFeatureChannels:outputFeatureChannels:">+ createRNNSingleGateDescriptorWithInputFeatureChannels:outputFeatureChannels:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSRNNSingleGateDescriptor Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSRNNDescriptor.html">MPSRNNDescriptor</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSRNNLayer.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSRNNSingleGateDescriptor
+@dependency This depends on Metal.framework</p><p>The MPSRNNSingleGateDescriptor specifies a simple recurrent block/layer descriptor.
+The RNN layer initialized with a MPSRNNSingleGateDescriptor transforms the input data (image or matrix),
+and previous output with a set of filters, each producing one feature map in the new output data.
+The user may provide the RNN unit a single input or a sequence of inputs.</p>
+
+<p>Description of operation:</p>
+
+<p>Let x_j be the input data (at time index t of sequence,
+j index containing quadruplet: batch index, x,y and feature index (x=y=0 for matrices)).
+Let h0_j be the recurrent input (previous output) data from previous time step (at time index t-1 of sequence).
+Let h1_i be the output data produced at this time step.</p>
+
+<p>Let W_ij, U_ij be the weights for input and recurrent input data respectively
+Let b_i be a bias term</p>
+
+<p>Let gi(x) be a neuron activation function</p>
+
+<p>Then the new output image h1_i data is computed as follows:</p>
+
+<p>h1_i = gi( W_ij * x_j + U_ij * h0_j  + b_i )</p>
+
+<p>The &lsquo;*&rsquo; stands for convolution (see @ref <a href="../Classes/MPSRNNImageInferenceLayer.html">MPSRNNImageInferenceLayer</a>) or matrix-vector/matrix multiplication</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/inputWeights" title="inputWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputWeights">&nbsp;&nbsp;inputWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;W_ij&rsquo;, bias &lsquo;b_i&rsquo; and neuron &lsquo;gi&rsquo; from the simple RNN layer formula.
+If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; inputWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   inputWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recurrentWeights" title="recurrentWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recurrentWeights">&nbsp;&nbsp;recurrentWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;U_ij&rsquo; from the simple RNN layer formula.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; recurrentWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   recurrentWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createRNNSingleGateDescriptorWithInputFeatureChannels:outputFeatureChannels:" title="createRNNSingleGateDescriptorWithInputFeatureChannels:outputFeatureChannels:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createRNNSingleGateDescriptorWithInputFeatureChannels:outputFeatureChannels:">+&nbsp;createRNNSingleGateDescriptorWithInputFeatureChannels:outputFeatureChannels:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a MPSRNNSingleGateDescriptor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)createRNNSingleGateDescriptorWithInputFeatureChannels:(NSUInteger)<em>inputFeatureChannels</em> outputFeatureChannels:(NSUInteger)<em>outputFeatureChannels</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inputFeatureChannels</code></th>
+						<td><p>The number of feature channels in the input image/matrix. Must be >= 1.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outputFeatureChannels</code></th>
+						<td><p>The number of feature channels in the output image/matrix. Must be >= 1.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSRNNSingleGateDescriptor object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

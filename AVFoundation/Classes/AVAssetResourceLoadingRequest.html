@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAssetResourceLoadingRequest Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_9">_9</option>
+		
+		<option value="//api/name/finished">finished</option>
+		
+		<option value="//api/name/request">request</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/finishLoading">- finishLoading</option>
+		
+		<option value="//api/name/finishLoadingWithError:">- finishLoadingWithError:</option>
+		
+		<option value="//api/name/finishLoadingWithResponse:data:redirect:">- finishLoadingWithResponse:data:redirect:</option>
+		
+		<option value="//api/name/persistentContentKeyFromKeyVendorResponse:options:error:">- persistentContentKeyFromKeyVendorResponse:options:error:</option>
+		
+		<option value="//api/name/streamingContentKeyRequestDataForApp:contentIdentifier:options:error:">- streamingContentKeyRequestDataForApp:contentIdentifier:options:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAssetResourceLoadingRequest Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAssetResourceLoader.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      AVAssetResourceLoadingRequest
+</code></pre><p>When an <a href="../Classes/AVURLAsset.html">AVURLAsset</a> needs help loading a resource, it asks its <a href="../Classes/AVAssetResourceLoader.html">AVAssetResourceLoader</a> object to assist. The resource loader encapsulates the <a href="#//api/name/request">request</a> information by creating an instance of this object, which it then hands to its delegate for processing. The delegate uses the information in this object to perform the <a href="#//api/name/request">request</a> and report on the success or failure of the operation.</p>
+
+<p>@constant       AVAssetResourceLoadingRequestStreamingContentKeyRequestRequiresPersistentKey</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/request" title="request"></a>
+	<h3 class="method-title"><code><a href="#//api/name/request">&nbsp;&nbsp;request</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An NSURLRequest for the requested resource.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSURLRequest *request</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property       request</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/finished" title="finished"></a>
+	<h3 class="method-title"><code><a href="#//api/name/finished">&nbsp;&nbsp;finished</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates whether loading of the resource has been finished.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isFinished) BOOL finished</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property       finished</p><p>The value of this property becomes YES only in response to an invocation of either <a href="#//api/name/finishLoading">finishLoading</a> or <a href="#//api/name/finishLoadingWithError:">finishLoadingWithError:</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_9" title="_9"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_9">&nbsp;&nbsp;_9</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates whether the <a href="#//api/name/request">request</a> has been cancelled.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isCancelled) BOOL cancelled NS_AVAILABLE ( 10 _9</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property       cancelled</p><p>The value of this property becomes YES when the resource loader cancels the loading of a <a href="#//api/name/request">request</a>, just prior to sending the message -resourceLoader:didCancelLoadingRequest: to its delegate.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/finishLoading" title="finishLoading"></a>
+	<h3 class="method-title"><code><a href="#//api/name/finishLoading">&ndash;&nbsp;finishLoading</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Causes the receiver to treat the processing of the <a href="#//api/name/request">request</a> as complete.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)finishLoading</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         finishLoading</p><p>If a dataRequest is present and the resource does not contain the full extent of the data that has been requested according to the values of the requestedOffset and requestedLength properties of the dataRequest, or if requestsAllDataToEndOfResource has a value of YES, you may invoke -finishLoading after you have provided as much of the requested data as the resource contains.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/finishLoadingWithError:" title="finishLoadingWithError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/finishLoadingWithError:">&ndash;&nbsp;finishLoadingWithError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Causes the receiver to treat the <a href="#//api/name/request">request</a> as having failed.
+@param          error
+                An instance of NSError indicating the reason for failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)finishLoadingWithError:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         finishLoadingWithError:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetResourceLoadingRequestContentKeyRequestSupport Methods" name="task_AVAssetResourceLoadingRequestContentKeyRequestSupport Methods"></a>
+						<h2 class="task-title">AVAssetResourceLoadingRequestContentKeyRequestSupport Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/streamingContentKeyRequestDataForApp:contentIdentifier:options:error:" title="streamingContentKeyRequestDataForApp:contentIdentifier:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/streamingContentKeyRequestDataForApp:contentIdentifier:options:error:">&ndash;&nbsp;streamingContentKeyRequestDataForApp:contentIdentifier:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Obtains a streaming content key <a href="#//api/name/request">request</a> for a specific combination of application and content.
+@param          appIdentifier
+                An opaque identifier for the application. The value of this identifier depends on the particular system used to provide the decryption key.
+@param          contentIdentifier
+                An opaque identifier for the content. The value of this identifier depends on the particular system used to provide the decryption key.
+@param          options
+                Additional information necessary to obtain the key, or nil if none.
+@param          error
+                If obtaining the streaming content key <a href="#//api/name/request">request</a> fails, will be set to an instance of NSError describing the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)streamingContentKeyRequestDataForApp:(NSData *)<em>appIdentifier</em> contentIdentifier:(NSData *)<em>contentIdentifier</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The key <a href="#//api/name/request">request</a> data that must be transmitted to the key vendor to obtain the content key.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         streamingContentKeyRequestDataForApp:contentIdentifier:options:error:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/persistentContentKeyFromKeyVendorResponse:options:error:" title="persistentContentKeyFromKeyVendorResponse:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/persistentContentKeyFromKeyVendorResponse:options:error:">&ndash;&nbsp;persistentContentKeyFromKeyVendorResponse:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Obtains a persistable content key from a context.
+@param          keyVendorResponse
+                The response returned from the key vendor as a result of a <a href="#//api/name/request">request</a> generated from <a href="#//api/name/streamingContentKeyRequestDataForApp:contentIdentifier:options:error:">streamingContentKeyRequestDataForApp:contentIdentifier:options:error:</a>.
+@param          options
+                Additional information necessary to obtain the persistable content key, or nil if none.
+@param          error
+                If obtaining the persistable content key fails, will be set to an instance of NSError describing the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)persistentContentKeyFromKeyVendorResponse:(NSData *)<em>keyVendorResponse</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The persistable content key data that may be stored offline to answer future loading requests of the same content key.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         persistentContentKeyFromKeyVendorResponse:options:error:</p><p>The data returned from this method may be used to immediately satisfy an <a href="../Classes/AVAssetResourceLoadingDataRequest.html">AVAssetResourceLoadingDataRequest</a>, as well as any subsequent requests for the same key url. The value of <a href="../Classes/AVAssetResourceLoadingContentInformationRequest.html">AVAssetResourceLoadingContentInformationRequest</a>.contentType must be set to AVStreamingKeyDeliveryPersistentContentKeyType when responding with data created with this method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetResourceLoadingRequestDeprecated Methods" name="task_AVAssetResourceLoadingRequestDeprecated Methods"></a>
+						<h2 class="task-title">AVAssetResourceLoadingRequestDeprecated Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/finishLoadingWithResponse:data:redirect:" title="finishLoadingWithResponse:data:redirect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/finishLoadingWithResponse:data:redirect:">&ndash;&nbsp;finishLoadingWithResponse:data:redirect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Causes the receiver to finish loading a resource that a delegate has previously assumed responsibility for loading by returning YES as the result of -resourceLoader:shouldWaitForLoadingOfRequestedResource:.
+@param          response
+                The NSURLResponse for the NSURLRequest of the receiver. Should be nil if no response is required.
+@param          data
+                An instance of NSData containing the data of the resource. Should be nil if no such data is available.
+@param          redirect
+                An instance of NSURLRequest indicating a redirect of the loading <a href="#//api/name/request">request</a>. Should be nil if no redirect is needed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)finishLoadingWithResponse:(nullable NSURLResponse *)<em>response</em> data:(nullable NSData *)<em>data</em> redirect:(nullable NSURLRequest *)<em>redirect</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         finishLoadingWithResponse:data:redirect:</p><p>This method is deprecated. Use the following methods instead.
+                    [AVAssetResourceLoadingRequest setResponse:] to set the response property,
+                    [AVAssetResourceLoadingRequest setRedirect:] to set the redirect property,
+                    <a href="../Classes/AVAssetResourceLoadingDataRequest.html#//api/name/respondWithData:">[AVAssetResourceLoadingDataRequest respondWithData:]</a> to provide data, and
+                    <a href="#//api/name/finishLoading">[AVAssetResourceLoadingRequest finishLoading]</a> to indicate that loading is <a href="#//api/name/finished">finished</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

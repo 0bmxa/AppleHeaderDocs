@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>VNSequenceRequestHandler Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Vision Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/performRequests:onCGImage:error:">- performRequests:onCGImage:error:</option>
+		
+		<option value="//api/name/performRequests:onCGImage:orientation:error:">- performRequests:onCGImage:orientation:error:</option>
+		
+		<option value="//api/name/performRequests:onCIImage:error:">- performRequests:onCIImage:error:</option>
+		
+		<option value="//api/name/performRequests:onCIImage:orientation:error:">- performRequests:onCIImage:orientation:error:</option>
+		
+		<option value="//api/name/performRequests:onCVPixelBuffer:error:">- performRequests:onCVPixelBuffer:error:</option>
+		
+		<option value="//api/name/performRequests:onCVPixelBuffer:orientation:error:">- performRequests:onCVPixelBuffer:orientation:error:</option>
+		
+		<option value="//api/name/performRequests:onImageData:error:">- performRequests:onImageData:error:</option>
+		
+		<option value="//api/name/performRequests:onImageData:orientation:error:">- performRequests:onImageData:orientation:error:</option>
+		
+		<option value="//api/name/performRequests:onImageURL:error:">- performRequests:onImageURL:error:</option>
+		
+		<option value="//api/name/performRequests:onImageURL:orientation:error:">- performRequests:onImageURL:orientation:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">VNSequenceRequestHandler Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VNRequestHandler.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The VNSequenceRequestHandler is created without any specific image source.  The -performRequests:on<ImageSource>:error: methods will retain the image source for no longer than the lifetime of the call.
+             The VNSequenceRequestHandler can choose to also cache state information related to the previously-processed image sources.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRequests:onCVPixelBuffer:error:" title="performRequests:onCVPixelBuffer:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRequests:onCVPixelBuffer:error:">&ndash;&nbsp;performRequests:onCVPixelBuffer:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform requests on an image in a CVPixelBuffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performRequests:(NSArray&lt;VNRequest*&gt; *)<em>requests</em> onCVPixelBuffer:(CVPixelBufferRef)<em>pixelBuffer</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>The VNRequests to be performed on the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pixelBuffer</code></th>
+						<td><p>The CVPixelBuffer containing the image to be processed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRequests:onCVPixelBuffer:orientation:error:" title="performRequests:onCVPixelBuffer:orientation:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRequests:onCVPixelBuffer:orientation:error:">&ndash;&nbsp;performRequests:onCVPixelBuffer:orientation:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform requests on an image in a CVPixelBuffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performRequests:(NSArray&lt;VNRequest*&gt; *)<em>requests</em> onCVPixelBuffer:(CVPixelBufferRef)<em>pixelBuffer</em> orientation:(CGImagePropertyOrientation)<em>orientation</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>The VNRequests to be performed on the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pixelBuffer</code></th>
+						<td><p>The CVPixelBuffer containing the image to be processed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orientation</code></th>
+						<td><p>The orientation of the image as it is captured in the pixel buffer.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRequests:onCGImage:error:" title="performRequests:onCGImage:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRequests:onCGImage:error:">&ndash;&nbsp;performRequests:onCGImage:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform requests on an image in a CGImageRef.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performRequests:(NSArray&lt;VNRequest*&gt; *)<em>requests</em> onCGImage:(CGImageRef)<em>image</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>The VNRequests to be performed on the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The CGImageRef containing the image to be processed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRequests:onCGImage:orientation:error:" title="performRequests:onCGImage:orientation:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRequests:onCGImage:orientation:error:">&ndash;&nbsp;performRequests:onCGImage:orientation:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform requests on an image in a CGImageRef.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performRequests:(NSArray&lt;VNRequest*&gt; *)<em>requests</em> onCGImage:(CGImageRef)<em>image</em> orientation:(CGImagePropertyOrientation)<em>orientation</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>The VNRequests to be performed on the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The CGImageRef containing the image to be processed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orientation</code></th>
+						<td><p>The orientation of the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRequests:onCIImage:error:" title="performRequests:onCIImage:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRequests:onCIImage:error:">&ndash;&nbsp;performRequests:onCIImage:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform requests on an image in a CIImage.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performRequests:(NSArray&lt;VNRequest*&gt; *)<em>requests</em> onCIImage:(CIImage *)<em>image</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>The VNRequests to be performed on the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The CIImage containing the image to be processed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRequests:onCIImage:orientation:error:" title="performRequests:onCIImage:orientation:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRequests:onCIImage:orientation:error:">&ndash;&nbsp;performRequests:onCIImage:orientation:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform requests on an image in a CIImage.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performRequests:(NSArray&lt;VNRequest*&gt; *)<em>requests</em> onCIImage:(CIImage *)<em>image</em> orientation:(CGImagePropertyOrientation)<em>orientation</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>The VNRequests to be performed on the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The CIImage containing the image to be processed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orientation</code></th>
+						<td><p>The orientation of the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRequests:onImageURL:error:" title="performRequests:onImageURL:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRequests:onImageURL:error:">&ndash;&nbsp;performRequests:onImageURL:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform requests on an image referenced by an URL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performRequests:(NSArray&lt;VNRequest*&gt; *)<em>requests</em> onImageURL:(NSURL *)<em>imageURL</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>The VNRequests to be performed on the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageURL</code></th>
+						<td><p>The URL of the image to be processed.  If this is not a file-based URL, the method will fail.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRequests:onImageURL:orientation:error:" title="performRequests:onImageURL:orientation:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRequests:onImageURL:orientation:error:">&ndash;&nbsp;performRequests:onImageURL:orientation:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform requests on an image referenced by an URL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performRequests:(NSArray&lt;VNRequest*&gt; *)<em>requests</em> onImageURL:(NSURL *)<em>imageURL</em> orientation:(CGImagePropertyOrientation)<em>orientation</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>The VNRequests to be performed on the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageURL</code></th>
+						<td><p>The URL of the image to be processed.  If this is not a file-based URL, the method will fail.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orientation</code></th>
+						<td><p>The orientation of the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRequests:onImageData:error:" title="performRequests:onImageData:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRequests:onImageData:error:">&ndash;&nbsp;performRequests:onImageData:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform requests on an image with its source format in memory.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performRequests:(NSArray&lt;VNRequest*&gt; *)<em>requests</em> onImageData:(NSData *)<em>imageData</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>The VNRequests to be performed on the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageData</code></th>
+						<td><p>The data representing the source format of the image to be processed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRequests:onImageData:orientation:error:" title="performRequests:onImageData:orientation:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRequests:onImageData:orientation:error:">&ndash;&nbsp;performRequests:onImageData:orientation:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform requests on an image with its source format in memory.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performRequests:(NSArray&lt;VNRequest*&gt; *)<em>requests</em> onImageData:(NSData *)<em>imageData</em> orientation:(CGImagePropertyOrientation)<em>orientation</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>The VNRequests to be performed on the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageData</code></th>
+						<td><p>The data representing the source format of the image to be processed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orientation</code></th>
+						<td><p>The orientation of the image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSURLConnectionDownloadDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/connection:didWriteData:totalBytesWritten:expectedTotalBytes:">- connection:didWriteData:totalBytesWritten:expectedTotalBytes:</option>
+		
+		<option value="//api/name/connectionDidFinishDownloading:destinationURL:">- connectionDidFinishDownloading:destinationURL:</option>
+		
+		<option value="//api/name/connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:">- connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSURLConnectionDownloadDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/NSURLConnectionDelegate.html">NSURLConnectionDelegate</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSURLConnection.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@protocol       NSURLConnectionDownloadDelegate
+
+@abstract
+                Delegate methods used to perform resource
+                downloads directly to a disk file.  All the
+                methods are optional with the exception of
+                connectionDidFinishDownloading:destinationURL:
+                which must be implemented in order to inform the
+                delegate of the location of the finished download.
+                This delegate and download implementation is
+                currently only available on iOS 5.0 or later.
+
+@discussion
+                connection:didWriteData:totalBytesWritten:expectedTotalBytes:
+                provides progress information about the state of
+                the download, the number of bytes written since
+                the last delegate callback, the total number of
+                bytes written to disk and the total number of
+                bytes that are expected (or 0 if this is unknown.)
+
+                connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:
+                is called when the connection is able to resume an
+                in progress download.  This may happen due to a
+                connection or network failure.
+
+                connectionDidFinishDownloading:destinationURL: is
+                a terminal event which indicates the completion of
+                a download and provides the location of the file.
+                The file will be located in the applications cache
+                directory and is guaranteed to exist for the
+                duration of the delegate callback.  The
+                implication is that the delegate should copy or
+                move the download to a more persistent location if
+                desired.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/connection:didWriteData:totalBytesWritten:expectedTotalBytes:" title="connection:didWriteData:totalBytesWritten:expectedTotalBytes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connection:didWriteData:totalBytesWritten:expectedTotalBytes:">&ndash;&nbsp;connection:didWriteData:totalBytesWritten:expectedTotalBytes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)connection:(NSURLConnection *)<em>connection</em> didWriteData:(long long)<em>bytesWritten</em> totalBytesWritten:(long long)<em>totalBytesWritten</em> expectedTotalBytes:(long long)<em>expectedTotalBytes</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:" title="connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:">&ndash;&nbsp;connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)connectionDidResumeDownloading:(NSURLConnection *)<em>connection</em> totalBytesWritten:(long long)<em>totalBytesWritten</em> expectedTotalBytes:(long long)<em>expectedTotalBytes</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectionDidFinishDownloading:destinationURL:" title="connectionDidFinishDownloading:destinationURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectionDidFinishDownloading:destinationURL:">&ndash;&nbsp;connectionDidFinishDownloading:destinationURL:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)connectionDidFinishDownloading:(NSURLConnection *)<em>connection</em> destinationURL:(NSURL *)<em>destinationURL</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SFCertificateTrustPanel Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SecurityInterface Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/sharedCertificateTrustPanel">+ sharedCertificateTrustPanel</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:trust:message:">- beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:trust:message:</option>
+		
+		<option value="//api/name/informativeText">- informativeText</option>
+		
+		<option value="//api/name/runModalForTrust:message:">- runModalForTrust:message:</option>
+		
+		<option value="//api/name/setInformativeText:">- setInformativeText:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SFCertificateTrustPanel Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/SFCertificatePanel.html">SFCertificatePanel</a> : NSPanel</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SFCertificateTrustPanel.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class SFCertificateTrustPanel 
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sharedCertificateTrustPanel" title="sharedCertificateTrustPanel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedCertificateTrustPanel">+&nbsp;sharedCertificateTrustPanel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a shared instance of SFCertificateTrustPanel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (SFCertificateTrustPanel *)sharedCertificateTrustPanel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method sharedCertificateTrustPanel
+</code></pre><p>If your application can display multiple SFCertificateTrustPanels at once,
+    you should allocate (alloc) and initialize (init) separate object instances instead of using this class method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFCertificateTrustPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/runModalForTrust:message:" title="runModalForTrust:message:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/runModalForTrust:message:">&ndash;&nbsp;runModalForTrust:message:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Displays a modal panel that shows the results of a certificate trust evaluation.
+        Returns NSOKButton if the default button is pressed, or NSCancelButton if the alternate button is pressed.
+        Note that the user can edit trust decisions in this panel; call SecTrustGetResult after the panel is dismissed
+        to obtain the current trust result for the SecTrustRef.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)runModalForTrust:(SecTrustRef)<em>trust</em> message:(NSString *)<em>message</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>trust</code></th>
+						<td><p>A trust reference, previously created with SecTrustCreateWithCertificates (see &lt;Security/SecTrust.h>).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>Client-defined message string to display in the panel.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method runModalForTrust:message:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFCertificateTrustPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:trust:message:" title="beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:trust:message:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:trust:message:">&ndash;&nbsp;beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:trust:message:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Displays a modal sheet that shows the results of a certificate trust evaluation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beginSheetForWindow:(NSWindow *)<em>docWindow</em> modalDelegate:(id)<em>delegate</em> didEndSelector:(SEL)<em>didEndSelector</em> contextInfo:(void *)<em>contextInfo</em> trust:(SecTrustRef)<em>trust</em> message:(NSString *)<em>message</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>docWindow</code></th>
+						<td><p>The parent window to which the sheet is attached.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>didEndSelector</code></th>
+						<td><p>This method is called when the sheet is dismissed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>contextInfo</code></th>
+						<td><p>Client-defined contextual data which will be passed to the didEndSelector method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>trust</code></th>
+						<td><p>A trust reference, previously created with SecTrustCreateWithCertificates (see &lt;Security/SecTrust.h>).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>Client-defined message string to display in the panel.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>modalDelegate</code></th>
+						<td><p>The object whose didEndSelector method will be called when the sheet is dismissed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method beginSheetForWindow:trust:message:modalDelegate:didEndSelector:contextInfo:
+</code></pre><p>The didEndSelector method should have the following signature:
+        - (void)certificateTrustSheetDidEnd:(NSWindow <em>)sheet returnCode:(NSInteger)returnCode contextInfo:(void </em>)contextInfo
+        returnCode will contain either NSOKButton or NSCancelButton.
+        Note that the user can edit trust decisions in this panel; call SecTrustGetResult after the panel is dismissed
+        to obtain the current trust result for the SecTrustRef.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFCertificateTrustPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setInformativeText:" title="setInformativeText:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setInformativeText:">&ndash;&nbsp;setInformativeText:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the optional informative text displayed in the SFCertificateTrustPanel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setInformativeText:(NSString *)<em>informativeText</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>informativeText</code></th>
+						<td><p>The informative text to display in the panel.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method setInformativeText:
+</code></pre><p>By default, informative text describing the current certificate trust status is displayed.
+        Call this method only if your application needs to customize the displayed informative text.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFCertificateTrustPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/informativeText" title="informativeText"></a>
+	<h3 class="method-title"><code><a href="#//api/name/informativeText">&ndash;&nbsp;informativeText</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the informative text currently displayed in the SFCertificateTrustPanel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)informativeText</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method informativeText
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFCertificateTrustPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

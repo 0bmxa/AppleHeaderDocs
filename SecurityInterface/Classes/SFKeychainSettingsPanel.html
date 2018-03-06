@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SFKeychainSettingsPanel Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SecurityInterface Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/sharedKeychainSettingsPanel">+ sharedKeychainSettingsPanel</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:settings:keychain:">- beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:settings:keychain:</option>
+		
+		<option value="//api/name/runModalForSettings:keychain:">- runModalForSettings:keychain:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SFKeychainSettingsPanel Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSPanel</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SFKeychainSettingsPanel.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class SFKeychainSettingsPanel 
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sharedKeychainSettingsPanel" title="sharedKeychainSettingsPanel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedKeychainSettingsPanel">+&nbsp;sharedKeychainSettingsPanel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a global instance of SFKeychainSettingsPanel object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (SFKeychainSettingsPanel *)sharedKeychainSettingsPanel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method sharedKeychainSettingsPanel
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFKeychainSettingsPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/runModalForSettings:keychain:" title="runModalForSettings:keychain:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/runModalForSettings:keychain:">&ndash;&nbsp;runModalForSettings:keychain:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Changes the keychain settings using the settings panel. The panel contains settings such as &ldquo;lock on sleep&rdquo;, &ldquo;automatic lock&rdquo;, etc. If the user attempts to change the settings of a locked keychain, the unlock panel will be presented. It returns NSOKButton or NSCancelButton.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)runModalForSettings:(SecKeychainSettings *)<em>settings</em> keychain:(SecKeychainRef)<em>keychain</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>settings</code></th>
+						<td><p>A pointer to a keychain settings structure. Since this structure is versioned, you must preallocate it and fill in the version of the structure.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keychain</code></th>
+						<td><p>The keychain that will have its settings changed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method runModalForSettings:keychain:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFKeychainSettingsPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:settings:keychain:" title="beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:settings:keychain:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:settings:keychain:">&ndash;&nbsp;beginSheetForWindow:modalDelegate:didEndSelector:contextInfo:settings:keychain:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Presents a sheet version of SFKeychainSettingsPanel. The didEndSelector returnCode will contain either NSOKButton or NSCancelButton.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beginSheetForWindow:(NSWindow *)<em>docWindow</em> modalDelegate:(id)<em>delegate</em> didEndSelector:(SEL)<em>didEndSelector</em> contextInfo:(void *)<em>contextInfo</em> settings:(SecKeychainSettings *)<em>settings</em> keychain:(SecKeychainRef)<em>keychain</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>docWindow</code></th>
+						<td><p>The panel in which the settings sheet slides down; acting as a document modal window. If docWindow is nil, the behavior defaults to a standalone modal window.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Delegate object in which didEndSelector is a method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>didEndSelector</code></th>
+						<td><p>The didEndSelector method is optional. If implemented by the delegate, this method is invoked after the modal session has ended, but before dismissing the same panel. The didEndSelector may dismiss the keychain panel itself; otherwise it will be dismissed on return from the method. The didEndSelector should have the following signature:
+    - (void)settingsPanelDidEnd:(NSWindow <em>)sheet returnCode:(NSInteger)returnCode contextInfo:(void </em>)contextInfo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>contextInfo</code></th>
+						<td><p>A client-defined context.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>settings</code></th>
+						<td><p>A pointer to a keychain settings structure. Since this structure is versioned, you must preallocate it and fill in the version of the structure.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keychain</code></th>
+						<td><p>The keychain that will have its settings changed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method beginSheetForWindow:settings:keychain:modalDelegate:didEndSelector:contextInfo:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFKeychainSettingsPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

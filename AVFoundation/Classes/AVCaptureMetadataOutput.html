@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureMetadataOutput Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/availableMetadataObjectTypes">availableMetadataObjectTypes</option>
+		
+		<option value="//api/name/metadataObjectTypes">metadataObjectTypes</option>
+		
+		<option value="//api/name/metadataObjectsCallbackQueue">metadataObjectsCallbackQueue</option>
+		
+		<option value="//api/name/metadataObjectsDelegate">metadataObjectsDelegate</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/new">+ new</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/setMetadataObjectsDelegate:queue:">- setMetadataObjectsDelegate:queue:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureMetadataOutput Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureMetadataOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureMetadataOutput
+@abstract
+    AVCaptureMetadataOutput is a concrete subclass of <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> that can be used to process metadata objects from an attached connection.</p>
+
+<p>@discussion
+    Instances of AVCaptureMetadataOutput emit arrays of <a href="../Classes/AVMetadataObject.html">AVMetadataObject</a> instances (see <a href="../Classes/AVMetadataObject.html">AVMetadataObject</a>.h), such as detected faces. Applications can access the metadata objects with the captureOutput:didOutputMetadataObjects:fromConnection: delegate method.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/new" title="new"></a>
+	<h3 class="method-title"><code><a href="#//api/name/new">+&nbsp;new</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)new</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMetadataObjectsDelegate:queue:" title="setMetadataObjectsDelegate:queue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMetadataObjectsDelegate:queue:">&ndash;&nbsp;setMetadataObjectsDelegate:queue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method setMetadataObjectsDelegate:queue:
+@abstract
+    Sets the receiver&rsquo;s delegate that will accept metadata objects and dispatch queue on which the delegate will be called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setMetadataObjectsDelegate:(nullable id&lt;AVCaptureMetadataOutputObjectsDelegate&gt;)<em>objectsDelegate</em> queue:(nullable dispatch_queue_t)<em>objectsCallbackQueue</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setMetadataObjectsDelegate:queue:
+@abstract
+    Sets the receiver&rsquo;s delegate that will accept metadata objects and dispatch queue on which the delegate will be called.</p>
+
+<p>@param objectsDelegate
+    An object conforming to the <a href="../Protocols/AVCaptureMetadataOutputObjectsDelegate.html">AVCaptureMetadataOutputObjectsDelegate</a> protocol that will receive metadata objects after they are captured.
+@param objectsCallbackQueue
+    A dispatch queue on which all delegate methods will be called.</p>
+
+<p>@discussion
+    When <a href="#//api/name/new">new</a> metadata objects are captured in the receiver&rsquo;s connection, they will be vended to the delegate using the captureOutput:didOutputMetadataObjects:fromConnection: delegate method. All delegate methods will be called on the specified dispatch queue.</p>
+
+<pre><code>Clients that need to minimize the chances of metadata being dropped should specify a queue on which a sufficiently small amount of processing is performed along with receiving metadata objects.
+
+A serial dispatch queue must be used to guarantee that metadata objects will be delivered in order. The objectsCallbackQueue parameter may not be NULL, except when setting the objectsDelegate to nil.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureMetadataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataObjectsDelegate" title="metadataObjectsDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataObjectsDelegate">&nbsp;&nbsp;metadataObjectsDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property metadataObjectsDelegate
+@abstract
+    The receiver&rsquo;s delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) id&lt;AVCaptureMetadataOutputObjectsDelegate&gt; metadataObjectsDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property metadataObjectsDelegate
+@abstract
+    The receiver&rsquo;s delegate.</p>
+
+<p>@discussion
+    The value of this property is an object conforming to the <a href="../Protocols/AVCaptureMetadataOutputObjectsDelegate.html">AVCaptureMetadataOutputObjectsDelegate</a> protocol that will receive metadata objects after they are captured. The delegate is set using the <a href="#//api/name/setMetadataObjectsDelegate:queue:">setMetadataObjectsDelegate:queue:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureMetadataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataObjectsCallbackQueue" title="metadataObjectsCallbackQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataObjectsCallbackQueue">&nbsp;&nbsp;metadataObjectsCallbackQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property metadataObjectsCallbackQueue
+@abstract
+    The dispatch queue on which all metadata object delegate methods will be called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) dispatch_queue_t metadataObjectsCallbackQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property metadataObjectsCallbackQueue
+@abstract
+    The dispatch queue on which all metadata object delegate methods will be called.</p>
+
+<p>@discussion
+    The value of this property is a dispatch_queue_t. The queue is set using the <a href="#//api/name/setMetadataObjectsDelegate:queue:">setMetadataObjectsDelegate:queue:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureMetadataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/availableMetadataObjectTypes" title="availableMetadataObjectTypes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availableMetadataObjectTypes">&nbsp;&nbsp;availableMetadataObjectTypes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property availableMetadataObjectTypes
+@abstract
+    Indicates the receiver&rsquo;s supported metadata object types.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVMetadataObjectType&gt; *availableMetadataObjectTypes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property availableMetadataObjectTypes
+@abstract
+    Indicates the receiver&rsquo;s supported metadata object types.</p>
+
+<p>@discussion
+    The value of this property is an NSArray of NSStrings corresponding to AVMetadataObjectType strings defined in <a href="../Classes/AVMetadataObject.html">AVMetadataObject</a>.h &ndash; one for each metadata object type supported by the receiver. Available metadata object types are dependent on the capabilities of the <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a> to which this receiver&rsquo;s <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> is connected. Clients may specify the types of objects they would like to process by calling <a href="#//api/name/metadataObjectTypes">setMetadataObjectTypes:</a>. This property is key-value observable.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureMetadataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataObjectTypes" title="metadataObjectTypes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataObjectTypes">&nbsp;&nbsp;metadataObjectTypes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property metadataObjectTypes
+@abstract
+    Specifies the types of metadata objects that the receiver should present to the client.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, null_resettable) NSArray&lt;AVMetadataObjectType&gt; *metadataObjectTypes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property metadataObjectTypes
+@abstract
+    Specifies the types of metadata objects that the receiver should present to the client.</p>
+
+<p>@discussion
+    AVCaptureMetadataOutput may detect and emit multiple metadata object types. For apps linked before iOS 7.0, the receiver defaults to capturing face metadata objects if supported (see <a href="#//api/name/availableMetadataObjectTypes">availableMetadataObjectTypes</a>). For apps linked on or after iOS 7.0, the receiver captures no metadata objects by default. <a href="#//api/name/metadataObjectTypes">setMetadataObjectTypes:</a> throws an NSInvalidArgumentException if any elements in the array are not present in the <a href="#//api/name/availableMetadataObjectTypes">availableMetadataObjectTypes</a> array.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureMetadataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property rectOfInterest
+@abstract
+    Specifies a rectangle of interest for limiting the search area for visual metadata.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGRect rectOfInterest NS_AVAILABLE_IOS ( 7 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property rectOfInterest
+@abstract
+    Specifies a rectangle of interest for limiting the search area for visual metadata.</p>
+
+<p>@discussion
+    The value of this property is a CGRect that determines the receiver&rsquo;s rectangle of interest for each frame of video. The rectangle&rsquo;s origin is top left and is relative to the coordinate space of the device providing the metadata. Specifying a rectOfInterest may improve detection performance for certain types of metadata. The default value of this property is the value CGRectMake(0, 0, 1, 1). Metadata objects whose bounds do not intersect with the rectOfInterest will not be returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureMetadataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

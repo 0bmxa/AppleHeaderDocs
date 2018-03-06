@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVPlayerItemVideoOutput Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/delegateQueue">delegateQueue</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/copyPixelBufferForItemTime:itemTimeForDisplay:">- copyPixelBufferForItemTime:itemTimeForDisplay:</option>
+		
+		<option value="//api/name/hasNewPixelBufferForItemTime:">- hasNewPixelBufferForItemTime:</option>
+		
+		<option value="//api/name/initWithOutputSettings:">- initWithOutputSettings:</option>
+		
+		<option value="//api/name/initWithPixelBufferAttributes:">- initWithPixelBufferAttributes:</option>
+		
+		<option value="//api/name/requestNotificationOfMediaDataChangeWithAdvanceInterval:">- requestNotificationOfMediaDataChangeWithAdvanceInterval:</option>
+		
+		<option value="//api/name/setDelegate:queue:">- setDelegate:queue:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVPlayerItemVideoOutput Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVPlayerItemOutput.html">AVPlayerItemOutput</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVPlayerItemOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          AVPlayerItemVideoOutput
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithPixelBufferAttributes:" title="initWithPixelBufferAttributes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPixelBufferAttributes:">&ndash;&nbsp;initWithPixelBufferAttributes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an instance of AVPlayerItemVideoOutput, initialized with the specified pixel buffer attributes, for video image output.
+    @param          pixelBufferAttributes
+                    The client requirements for output CVPixelBuffers, expressed using the constants in &lt;CoreVideo/CVPixelBuffer.h>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithPixelBufferAttributes:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>pixelBufferAttributes</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of AVPlayerItemVideoOutput.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithPixelBufferAttributes:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerItemOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithOutputSettings:" title="initWithOutputSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithOutputSettings:">&ndash;&nbsp;initWithOutputSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an instance of AVPlayerItemVideoOutput, initialized with the specified output settings, for video image output.
+    @param          outputSettings
+                    The client requirements for output CVPixelBuffers, expressed using the constants in AVVideoSettings.h.</p>
+
+<pre><code>                For uncompressed video output, start with kCVPixelBuffer* keys in &lt;CoreVideo/CVPixelBuffer.h&gt;.
+
+                In addition to the keys in CVPixelBuffer.h, uncompressed video settings dictionaries may also contain the following keys:
+
+                AVVideoAllowWideColorKey
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithOutputSettings:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>outputSettings</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of AVPlayerItemVideoOutput.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithOutputSettings:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerItemOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasNewPixelBufferForItemTime:" title="hasNewPixelBufferForItemTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasNewPixelBufferForItemTime:">&ndash;&nbsp;hasNewPixelBufferForItemTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query if any new video output is available for an item time.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasNewPixelBufferForItemTime:(CMTime)<em>itemTime</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A BOOL indicating if there is newer output.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         hasNewPixelBufferForItemTime:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerItemOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyPixelBufferForItemTime:itemTimeForDisplay:" title="copyPixelBufferForItemTime:itemTimeForDisplay:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyPixelBufferForItemTime:itemTimeForDisplay:">&ndash;&nbsp;copyPixelBufferForItemTime:itemTimeForDisplay:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retrieves an image that is appropriate for display at the specified item time, and marks the image as acquired.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable CVPixelBufferRef)copyPixelBufferForItemTime:(CMTime)<em>itemTime</em> itemTimeForDisplay:(nullable CMTime *)<em>outItemTimeForDisplay</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         copyPixelBufferForItemTime:itemTimeForDisplay:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerItemOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDelegate:queue:" title="setDelegate:queue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDelegate:queue:">&ndash;&nbsp;setDelegate:queue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the receiver&rsquo;s <a href="#//api/name/delegate">delegate</a> and a dispatch queue on which the <a href="#//api/name/delegate">delegate</a> will be called.
+    @param          <a href="#//api/name/delegate">delegate</a>
+                    An object conforming to <a href="../Protocols/AVPlayerItemOutputPullDelegate.html">AVPlayerItemOutputPullDelegate</a> protocol.
+    @param          <a href="#//api/name/delegateQueue">delegateQueue</a>
+                    A dispatch queue on which all <a href="#//api/name/delegate">delegate</a> methods will be called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setDelegate:(nullable id&lt;AVPlayerItemOutputPullDelegate&gt;)<em>delegate</em> queue:(nullable dispatch_queue_t)<em>delegateQueue</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         setDelegate:queue:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerItemOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestNotificationOfMediaDataChangeWithAdvanceInterval:" title="requestNotificationOfMediaDataChangeWithAdvanceInterval:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestNotificationOfMediaDataChangeWithAdvanceInterval:">&ndash;&nbsp;requestNotificationOfMediaDataChangeWithAdvanceInterval:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Informs the receiver that the AVPlayerItemVideoOutput client is entering a quiescent state.
+    @param          interval
+                    A wall clock time interval.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)requestNotificationOfMediaDataChangeWithAdvanceInterval:(NSTimeInterval)<em>interval</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         requestNotificationOfMediaDataChangeWithAdvanceInterval:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerItemOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The receiver&rsquo;s delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, assign, nullable) id&lt;AVPlayerItemOutputPullDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       delegate
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerItemOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegateQueue" title="delegateQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegateQueue">&nbsp;&nbsp;delegateQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The dispatch queue where the <a href="#//api/name/delegate">delegate</a> is messaged.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) dispatch_queue_t delegateQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       delegateQueue
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerItemOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

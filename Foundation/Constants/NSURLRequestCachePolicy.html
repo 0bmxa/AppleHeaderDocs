@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSURLRequestCachePolicy Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSURLRequestCachePolicy Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>NSURLRequest.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">NSURLRequestCachePolicy</h3>
+                    
+					
+					<div class="section section-overview">
+                        <pre><code>@enum NSURLRequestCachePolicy
+</code></pre><p>The NSURLRequestCachePolicy enum defines constants that
+    can be used to specify the type of interactions that take place with
+    the caching system when the URL loading system processes a request.
+    Specifically, these constants cover interactions that have to do
+    with whether already-existing cache data is returned to satisfy a
+    URL load request.</p>
+
+<pre><code>@constant NSURLRequestUseProtocolCachePolicy Specifies that the
+caching logic defined in the protocol implementation, if any, is
+used for a particular URL load request. This is the default policy
+for URL load requests.
+
+@constant NSURLRequestReloadIgnoringLocalCacheData Specifies that the
+data for the URL load should be loaded from the origin source. No
+existing local cache data, regardless of its freshness or validity,
+should be used to satisfy a URL load request.
+
+@constant NSURLRequestReloadIgnoringLocalAndRemoteCacheData Specifies that
+not only should the local cache data be ignored, but that proxies and
+other intermediates should be instructed to disregard their caches
+so far as the protocol allows.  Unimplemented.
+
+@constant NSURLRequestReloadIgnoringCacheData Older name for
+NSURLRequestReloadIgnoringLocalCacheData.
+
+@constant NSURLRequestReturnCacheDataElseLoad Specifies that the
+existing cache data should be used to satisfy a URL load request,
+regardless of its age or expiration date. However, if there is no
+existing data in the cache corresponding to a URL load request,
+the URL is loaded from the origin source.
+
+@constant NSURLRequestReturnCacheDataDontLoad Specifies that the
+existing cache data should be used to satisfy a URL load request,
+regardless of its age or expiration date. However, if there is no
+existing data in the cache corresponding to a URL load request, no
+attempt is made to load the URL from the origin source, and the
+load is considered to have failed. This constant specifies a
+behavior that is similar to an "offline" mode.
+
+@constant NSURLRequestReloadRevalidatingCacheData Specifies that
+the existing cache data may be used provided the origin source
+confirms its validity, otherwise the URL is loaded from the
+origin source.  Unimplemented.
+</code></pre>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSUInteger, NSURLRequestCachePolicy ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSURLRequestUseProtocolCachePolicy</a> = 0,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSURLRequestReloadIgnoringLocalCacheData</a> = 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSURLRequestReloadIgnoringLocalAndRemoteCacheData</a> = 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSURLRequestReloadIgnoringCacheData</a> = NSURLRequestReloadIgnoringLocalCacheData,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSURLRequestReturnCacheDataElseLoad</a> = 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSURLRequestReturnCacheDataDontLoad</a> = 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSURLRequestReloadRevalidatingCacheData</a> = 5,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="NSURLRequestUseProtocolCachePolicy"></a><code>NSURLRequestUseProtocolCachePolicy</code></dt>
+<dd>
+
+
+<pre><code>@enum NSURLRequestCachePolicy
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSURLRequest.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSURLRequestReloadIgnoringLocalCacheData"></a><code>NSURLRequestReloadIgnoringLocalCacheData</code></dt>
+<dd>
+
+
+<pre><code>@enum NSURLRequestCachePolicy
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSURLRequest.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSURLRequestReloadIgnoringLocalAndRemoteCacheData"></a><code>NSURLRequestReloadIgnoringLocalAndRemoteCacheData</code></dt>
+<dd>
+
+
+<pre><code>@enum NSURLRequestCachePolicy
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSURLRequest.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSURLRequestReloadIgnoringCacheData"></a><code>NSURLRequestReloadIgnoringCacheData</code></dt>
+<dd>
+
+
+<pre><code>@enum NSURLRequestCachePolicy
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSURLRequest.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSURLRequestReturnCacheDataElseLoad"></a><code>NSURLRequestReturnCacheDataElseLoad</code></dt>
+<dd>
+
+
+<pre><code>@enum NSURLRequestCachePolicy
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSURLRequest.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSURLRequestReturnCacheDataDontLoad"></a><code>NSURLRequestReturnCacheDataDontLoad</code></dt>
+<dd>
+
+
+<pre><code>@enum NSURLRequestCachePolicy
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSURLRequest.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSURLRequestReloadRevalidatingCacheData"></a><code>NSURLRequestReloadRevalidatingCacheData</code></dt>
+<dd>
+
+
+<pre><code>@enum NSURLRequestCachePolicy
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSURLRequest.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">NSURLRequest.h</code></p>
+                    </div>
+                    
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

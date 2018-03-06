@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>GKRule Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 GameplayKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/salience">salience</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/ruleWithBlockPredicate:action:">+ ruleWithBlockPredicate:action:</option>
+		
+		<option value="//api/name/ruleWithPredicate:assertingFact:grade:">+ ruleWithPredicate:assertingFact:grade:</option>
+		
+		<option value="//api/name/ruleWithPredicate:retractingFact:grade:">+ ruleWithPredicate:retractingFact:grade:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/evaluatePredicateWithSystem:">- evaluatePredicateWithSystem:</option>
+		
+		<option value="//api/name/performActionWithSystem:">- performActionWithSystem:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">GKRule Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>GKRuleSystem.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The concrete class that the <a href="../Classes/GKRuleSystem.html">GKRuleSystem</a> uses to evaluate the current state and facts with predicated rules.
+These are sharable between systems, so don&rsquo;t retain any state in the rules themselves. Use the system-provided
+state storage.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/salience" title="salience"></a>
+	<h3 class="method-title"><code><a href="#//api/name/salience">&nbsp;&nbsp;salience</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Salience defines the order in the rule agenda that the system will evaluate. A rule with higher salience will
+be evaluated before another rule in the agenda that has a lower salience.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger salience</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Salience defines the order in the rule agenda that the system will evaluate. A rule with higher salience will
+be evaluated before another rule in the agenda that has a lower salience.</p>
+
+<p>Defaults to 0.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/GKRuleSystem.html">GKRuleSystem</a>.agenda</p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRuleSystem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluatePredicateWithSystem:" title="evaluatePredicateWithSystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluatePredicateWithSystem:">&ndash;&nbsp;evaluatePredicateWithSystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called by the rule system when it is this rule&rsquo;s turn to be evaluated. If the predicate returns YES then
+the action for the rule will be performed. Once the action is performed the rule will move to the system&rsquo;s
+executed list until the agenda is reset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)evaluatePredicateWithSystem:(GKRuleSystem *)<em>system</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES is the predicate passes and the action needs to be performed, NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Called by the rule system when it is this rule&rsquo;s turn to be evaluated. If the predicate returns YES then
+the action for the rule will be performed. Once the action is performed the rule will move to the system&rsquo;s
+executed list until the agenda is reset.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/GKRuleSystem.html">GKRuleSystem</a>.agenda</p></code></li>
+					
+					<li><code><p><a href="../Classes/GKRuleSystem.html">GKRuleSystem</a>.executed</p></code></li>
+					
+					<li><code><p><a href="../Classes/GKRuleSystem.html">GKRuleSystem</a>.reset</p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRuleSystem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performActionWithSystem:" title="performActionWithSystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performActionWithSystem:">&ndash;&nbsp;performActionWithSystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Performs the action consequence for the rule. This will only be called if the predicate evaluates to YES.
+Any facts asserted or retracted by the action on the system will cause the system to evaluate the agenda
+rule set again once the action completes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)performActionWithSystem:(GKRuleSystem *)<em>system</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Performs the action consequence for the rule. This will only be called if the predicate evaluates to YES.
+Any facts asserted or retracted by the action on the system will cause the system to evaluate the agenda
+rule set again once the action completes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRuleSystem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ruleWithPredicate:assertingFact:grade:" title="ruleWithPredicate:assertingFact:grade:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ruleWithPredicate:assertingFact:grade:">+&nbsp;ruleWithPredicate:assertingFact:grade:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a data-driven rule that uses NSPredicate and a single assert as the action.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)ruleWithPredicate:(NSPredicate *)<em>predicate</em> assertingFact:(id&lt;NSObject&gt;)<em>fact</em> grade:(float)<em>grade</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a data-driven rule that uses NSPredicate and a single assert as the action.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRuleSystem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ruleWithPredicate:retractingFact:grade:" title="ruleWithPredicate:retractingFact:grade:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ruleWithPredicate:retractingFact:grade:">+&nbsp;ruleWithPredicate:retractingFact:grade:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Short hand for data-driven rule that uses NSPredicate and a single retract as the action.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)ruleWithPredicate:(NSPredicate *)<em>predicate</em> retractingFact:(id&lt;NSObject&gt;)<em>fact</em> grade:(float)<em>grade</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Short hand for data-driven rule that uses NSPredicate and a single retract as the action.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRuleSystem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ruleWithBlockPredicate:action:" title="ruleWithBlockPredicate:action:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ruleWithBlockPredicate:action:">+&nbsp;ruleWithBlockPredicate:action:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Short hand for making a rule that uses blocks for the predicate and action. This rule is not able to be archived
+using NSKeyedArchiver so use a subclass or NSPredicate based rule if serialization of the rule is needed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)ruleWithBlockPredicate:(BOOL ( ^ ) ( GKRuleSystem *))<em>predicate</em> action:(void ( ^ ) ( GKRuleSystem *))<em>action</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Short hand for making a rule that uses blocks for the predicate and action. This rule is not able to be archived
+using NSKeyedArchiver so use a subclass or NSPredicate based rule if serialization of the rule is needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRuleSystem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

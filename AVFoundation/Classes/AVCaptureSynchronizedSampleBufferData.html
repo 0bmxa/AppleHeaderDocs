@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureSynchronizedSampleBufferData Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/droppedReason">droppedReason</option>
+		
+		<option value="//api/name/sampleBuffer">sampleBuffer</option>
+		
+		<option value="//api/name/sampleBufferWasDropped">sampleBufferWasDropped</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureSynchronizedSampleBufferData Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVCaptureSynchronizedData.html">AVCaptureSynchronizedData</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureDataOutputSynchronizer.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureSynchronizedSampleBufferData
+@abstract
+    An concrete subclass of <a href="../Classes/AVCaptureSynchronizedData.html">AVCaptureSynchronizedData</a> representing the data delivered by an <a href="../Classes/AVCaptureVideoDataOutput.html">AVCaptureVideoDataOutput</a> or <a href="../Classes/AVCaptureAudioDataOutput.html">AVCaptureAudioDataOutput</a>.</p>
+
+<p>@discussion
+    Synchronized sample buffer data is valid for the duration of AVCaptureDataOutputSynchronizer&rsquo;s -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback. To extend the sample buffer data beyond the callback, you must CFRetain it, and later call CFRelease when you&rsquo;re done with it.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sampleBuffer" title="sampleBuffer"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleBuffer">&nbsp;&nbsp;sampleBuffer</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property sampleBuffer
+@abstract
+    A sample buffer containing video or audio data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) CMSampleBufferRef sampleBuffer</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sampleBuffer
+@abstract
+    A sample buffer containing video or audio data.</p>
+
+<p>@discussion
+    If <a href="#//api/name/sampleBufferWasDropped">sampleBufferWasDropped</a> is YES, the returned sampleBuffer was dropped before it could be delivered to you, and thus this sample buffer is a shell containing metadata and format information, but no actual pixel data. This property is never NULL. If a data output has no data to return, it is simply not present in the dictionary of synchronized data returned by AVCaptureDataOutputSynchronizer&rsquo;s -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDataOutputSynchronizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sampleBufferWasDropped" title="sampleBufferWasDropped"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleBufferWasDropped">&nbsp;&nbsp;sampleBufferWasDropped</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property sampleBufferWasDropped
+@abstract
+    YES if the sample buffer was dropped.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL sampleBufferWasDropped</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sampleBufferWasDropped
+@abstract
+    YES if the sample buffer was dropped.</p>
+
+<p>@discussion
+    <a href="../Classes/AVCaptureVideoDataOutput.html">AVCaptureVideoDataOutput</a> has a delegate callback for dropped sample buffers. <a href="../Classes/AVCaptureAudioDataOutput.html">AVCaptureAudioDataOutput</a> does not. Therefore, sampleBufferWasDropped may be YES for video, but never for audio.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDataOutputSynchronizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/droppedReason" title="droppedReason"></a>
+	<h3 class="method-title"><code><a href="#//api/name/droppedReason">&nbsp;&nbsp;droppedReason</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property droppedReason
+@abstract
+    If <a href="#//api/name/sampleBufferWasDropped">sampleBufferWasDropped</a> is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) AVCaptureOutputDataDroppedReason droppedReason</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property droppedReason
+@abstract
+    If <a href="#//api/name/sampleBufferWasDropped">sampleBufferWasDropped</a> is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.</p>
+
+<p>@discussion
+    AVCaptureOutputDataDroppedReasons are defined in AVCaptureOutputBase.h.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDataOutputSynchronizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

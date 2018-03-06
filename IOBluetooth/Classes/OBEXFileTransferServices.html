@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>OBEXFileTransferServices Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IOBluetooth Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/withOBEXSession:">+ withOBEXSession:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/abort">- abort</option>
+		
+		<option value="//api/name/changeCurrentFolderBackward">- changeCurrentFolderBackward</option>
+		
+		<option value="//api/name/changeCurrentFolderForwardToPath:">- changeCurrentFolderForwardToPath:</option>
+		
+		<option value="//api/name/changeCurrentFolderToRoot">- changeCurrentFolderToRoot</option>
+		
+		<option value="//api/name/connectToFTPService">- connectToFTPService</option>
+		
+		<option value="//api/name/connectToObjectPushService">- connectToObjectPushService</option>
+		
+		<option value="//api/name/copyRemoteFile:toLocalPath:">- copyRemoteFile:toLocalPath:</option>
+		
+		<option value="//api/name/createFolder:">- createFolder:</option>
+		
+		<option value="//api/name/currentPath">- currentPath</option>
+		
+		<option value="//api/name/disconnect">- disconnect</option>
+		
+		<option value="//api/name/getDefaultVCard:">- getDefaultVCard:</option>
+		
+		<option value="//api/name/initWithOBEXSession:">- initWithOBEXSession:</option>
+		
+		<option value="//api/name/isBusy">- isBusy</option>
+		
+		<option value="//api/name/isConnected">- isConnected</option>
+		
+		<option value="//api/name/removeItem:">- removeItem:</option>
+		
+		<option value="//api/name/retrieveFolderListing">- retrieveFolderListing</option>
+		
+		<option value="//api/name/sendData:type:name:">- sendData:type:name:</option>
+		
+		<option value="//api/name/sendFile:">- sendFile:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">OBEXFileTransferServices Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>OBEXFileTransferServices.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          OBEXFileTransferServices
+</code></pre><p>All operations are asynchronous and will callback over a respective <a href="#//api/name/delegate">delegate</a>
+                    method if the initial return value is successful.  The initial return value
+                    usually concerns the state of this object where as the <a href="#//api/name/delegate">delegate</a> return value
+                    reflects the response of the remote device.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (assign) id delegate</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withOBEXSession:" title="withOBEXSession:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withOBEXSession:">+&nbsp;withOBEXSession:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new OBEXFileTransferServices object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withOBEXSession:(IOBluetoothOBEXSession *)<em>inOBEXSession</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inOBEXSession</code></th>
+						<td><p>A valid <a href="../Classes/IOBluetoothOBEXSession.html">IOBluetoothOBEXSession</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A newly created OBEXFileTransferServices object on success, nil on failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         withOBEXSession:
+</code></pre><p>This object must be constructed with a valid <a href="../Classes/IOBluetoothOBEXSession.html">IOBluetoothOBEXSession</a>. The given
+                    <a href="../Classes/IOBluetoothOBEXSession.html">IOBluetoothOBEXSession</a> does not need to be connected to the remote server.<br/>
+                    This module can be manually connected through the connect() method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithOBEXSession:" title="initWithOBEXSession:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithOBEXSession:">&ndash;&nbsp;initWithOBEXSession:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new OBEXFileTransferServices object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithOBEXSession:(IOBluetoothOBEXSession *)<em>inOBEXSession</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inOBEXSession</code></th>
+						<td><p>A valid <a href="../Classes/IOBluetoothOBEXSession.html">IOBluetoothOBEXSession</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A newly created OBEXFileTransferServices object on success, nil on failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithOBEXSession:
+</code></pre><p>This object must be constructed with a valid <a href="../Classes/IOBluetoothOBEXSession.html">IOBluetoothOBEXSession</a>. The given
+                    <a href="../Classes/IOBluetoothOBEXSession.html">IOBluetoothOBEXSession</a> does not need to be connected to the remote server.<br/>
+                    OBEXFileTransferServices can be manually connected through the provided connection
+                    methods.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentPath" title="currentPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentPath">&ndash;&nbsp;currentPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the remote current directory path during an FTP session</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)currentPath</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The current path being browsed over FTP</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     currentPath
+</code></pre><p>This path is changed with each path-specific command called on OBEXFileTransferServices.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isBusy" title="isBusy"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isBusy">&ndash;&nbsp;isBusy</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the action state of the module</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isBusy</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Success or failure code.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     isBusy
+</code></pre><p>OBEXFileTransferServices will be considered &ldquo;busy&rdquo; when an operation in taking place or
+                has not completed.  Calling abort: on this module will not automatically reset its busy
+                state.  The user will have to wait for the operation to complete or for the current
+                operation to timeout.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isConnected" title="isConnected"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isConnected">&ndash;&nbsp;isConnected</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the connected state of this module.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isConnected</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Success or failure code.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     isConnected
+</code></pre><p>Asks the <a href="../Classes/OBEXSession.html">OBEXSession</a> that was passed to it on creation if it has an open OBEX connection</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectToFTPService" title="connectToFTPService"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectToFTPService">&ndash;&nbsp;connectToFTPService</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Connect to a remote device for FTP operations</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)connectToFTPService</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess, kOBEXSessionBusyError, or kOBEXSessionAlreadyConnectedError, kOBEXNoResourcesError
+                initially.  Further results returned through the fileTransferServicesConnectionComplete:
+                <a href="#//api/name/delegate">delegate</a> method if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     connectToFTPService
+</code></pre><p>If the <a href="../Classes/OBEXSession.html">OBEXSession</a> given to OBEXFileTransferServices on creation is not connected it
+                can be manually connected through this method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectToObjectPushService" title="connectToObjectPushService"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectToObjectPushService">&ndash;&nbsp;connectToObjectPushService</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Connect to a remote device for ObjectPush operations.
+                Most of the FTP functionality of this object will be disabled.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)connectToObjectPushService</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess, kOBEXSessionBusyError, or kOBEXSessionAlreadyConnectedError, kOBEXNoResourcesError
+                initially.  Further results returned through the fileTransferServicesConnectionComplete:
+                <a href="#//api/name/delegate">delegate</a> method if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     connectToObjectPushService
+</code></pre><p>If the <a href="../Classes/OBEXSession.html">OBEXSession</a> given to OBEXFileTransferServices on creation is not connected it
+                can be manually connected through this method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disconnect" title="disconnect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disconnect">&ndash;&nbsp;disconnect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Disconnect from the remote device</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)disconnect</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess, kOBEXSessionNotConnectedError, or kOBEXSessionBusyError initially. Further results
+                returned through the fileTransferServicesDisconnectionComplete: <a href="#//api/name/delegate">delegate</a> method if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     disconnect
+</code></pre><p>The user can manually disconnect the <a href="../Classes/OBEXSession.html">OBEXSession</a> from the remote device if they want
+                to.  OBEXFileTransferServices will disconnect the <a href="../Classes/OBEXSession.html">OBEXSession</a> at release only if it was responsible
+                for opening the connection via a connect method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/changeCurrentFolderToRoot" title="changeCurrentFolderToRoot"></a>
+	<h3 class="method-title"><code><a href="#//api/name/changeCurrentFolderToRoot">&ndash;&nbsp;changeCurrentFolderToRoot</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asynchronously change to the remote root directory</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)changeCurrentFolderToRoot</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess or kOBEXSessionBusyError initially.  Further results
+                returned through the fileTransferServicesPathChangeComplete: <a href="#//api/name/delegate">delegate</a> method if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     changeCurrentFolderRoot
+</code></pre><p>Equivalent to &lsquo;cd ~/&rsquo;</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/changeCurrentFolderBackward" title="changeCurrentFolderBackward"></a>
+	<h3 class="method-title"><code><a href="#//api/name/changeCurrentFolderBackward">&ndash;&nbsp;changeCurrentFolderBackward</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Change to the directory above the current level if not at the root</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)changeCurrentFolderBackward</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess or kOBEXSessionBusyError initially. Further results
+                returned through the fileTransferServicesPathChangeComplete: <a href="#//api/name/delegate">delegate</a> method if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     changeCurrentFolderBackward
+</code></pre><p>Equivalent to &lsquo;cd ..&rsquo; only if remote path is not already at root.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/changeCurrentFolderForwardToPath:" title="changeCurrentFolderForwardToPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/changeCurrentFolderForwardToPath:">&ndash;&nbsp;changeCurrentFolderForwardToPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Change the remote path</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)changeCurrentFolderForwardToPath:(NSString *)<em>inDirName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inDirName</code></th>
+						<td><p>The name of the remote folder to be set as current</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess, kOBEXSessionBusyError, or kOBEXBadArgumentError initially. Further results
+                returned through the fileTransferServicesPathChangeComplete: <a href="#//api/name/delegate">delegate</a> method if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     changeCurrentFolderForwardToPath:
+</code></pre><p>Equivalent to &lsquo;cd dirName&rsquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createFolder:" title="createFolder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createFolder:">&ndash;&nbsp;createFolder:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a folder on the remote target</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)createFolder:(NSString *)<em>inDirName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inDirName</code></th>
+						<td><p>The name of the folder to be created</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess, kOBEXSessionBusyError, or kOBEXBadArgumentError initially.
+                Further results returned through the fileTransferServicesCreateFolderComplete <a href="#//api/name/delegate">delegate</a> method
+                if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     createFolder:
+</code></pre><p>Equivalent to &lsquo;mkdir dirName&rsquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeItem:" title="removeItem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeItem:">&ndash;&nbsp;removeItem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove a remote item.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)removeItem:(NSString *)<em>inItemName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inItemName</code></th>
+						<td><p>The name of the remote item to be removed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess, kOBEXSessionBusyError, or kOBEXBadArgumentError initially.<br/>
+                Further results returned through the fileTransferServicesRemoveItemComplete: <a href="#//api/name/delegate">delegate</a> method
+                if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeItem:
+</code></pre><p>Not supported for use on Apple computer targets</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/retrieveFolderListing" title="retrieveFolderListing"></a>
+	<h3 class="method-title"><code><a href="#//api/name/retrieveFolderListing">&ndash;&nbsp;retrieveFolderListing</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get a remote directory listing</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)retrieveFolderListing</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess or kOBEXSessionBusyError initially.  Further results returned through
+                the fileTransferServicesRetrieveFolderListingComplete: <a href="#//api/name/delegate">delegate</a> method if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     retrieveFolderListing
+</code></pre><p>Equivalent to &lsquo;ls&rsquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendFile:" title="sendFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendFile:">&ndash;&nbsp;sendFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Put a local file to the remote target</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)sendFile:(NSString *)<em>inLocalPathAndName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inLocalPathAndName</code></th>
+						<td><p>The name and path of the file to be sent an instance of OBEXFilePut.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess, kOBEXSessionBusyError, or kOBEXBadArgumentError initially. Further
+                results returned through the fileTransferServicesSendComplete: and
+                fileTransferServicesSendProgress: <a href="#//api/name/delegate">delegate</a> methods if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sendFile:
+</code></pre><p>Equivalent to &lsquo;mv inLocalFilePath remoteCurrentPath&rsquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyRemoteFile:toLocalPath:" title="copyRemoteFile:toLocalPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyRemoteFile:toLocalPath:">&ndash;&nbsp;copyRemoteFile:toLocalPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Copy a remote file to a local path</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)copyRemoteFile:(NSString *)<em>inRemoteFileName</em> toLocalPath:(NSString *)<em>inLocalPathAndName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inRemoteFileName</code></th>
+						<td><p>The name of the remote file to get</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inLocalPathAndName</code></th>
+						<td><p>The path and name of where the received file will go</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess, kOBEXSessionBusyError, or kOBEXBadArgumentError. initially.  Further
+                results returned through the fileTransferServicesGetComplete: and
+                fileTransferServicesGetProgress: <a href="#//api/name/delegate">delegate</a> methods if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     copyRemoteFile:toLocalPath:
+</code></pre><p>Equivalent to &lsquo;cp remotePath/remoteFileName localPathAndName&rsquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendData:type:name:" title="sendData:type:name:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendData:type:name:">&ndash;&nbsp;sendData:type:name:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Send data to a remote target</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)sendData:(NSData *)<em>inData</em> type:(NSString *)<em>inType</em> name:(NSString *)<em>inName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inData</code></th>
+						<td><p>The data to be sent</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inType</code></th>
+						<td><p>The type of the data to be sent that will be used in the OBEX type header,
+                usually a mime-type.  For example, use &ldquo;text/x-vCard&rdquo; when sending vCards. This
+                argument is optional.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inName</code></th>
+						<td><p>The name of the file that the data can be referenced as.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess, kOBEXSessionBusyError, or kOBEXBadArgumentError initially. Further
+                results returned through the fileTransferServicesSendComplete: and
+                fileTransferServicesSendProgress: <a href="#//api/name/delegate">delegate</a> methods if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sendData:type:name:
+</code></pre><p>Use this method when you have data to send but no file to read from.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getDefaultVCard:" title="getDefaultVCard:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDefaultVCard:">&ndash;&nbsp;getDefaultVCard:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the remote default VCard, if it is supported</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)getDefaultVCard:(NSString *)<em>inLocalPathAndName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inLocalPathAndName</code></th>
+						<td><p>The path and name of where the received file will go</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess, kOBEXSessionBusyError, or kOBEXBadArgumentError initially.  Further
+                results returned through the fileTransferServicesGetComplete: and
+                fileTransferServicesGetProgress: <a href="#//api/name/delegate">delegate</a> methods if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getDefaultVCard:
+</code></pre><p>Some devices such as cellphones and computers support default VCards</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/abort" title="abort"></a>
+	<h3 class="method-title"><code><a href="#//api/name/abort">&ndash;&nbsp;abort</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Abort the current operation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)abort</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kOBEXSuccess, or kOBEXGeneralError if no command is in progress. ABORT
+                commands can only be sent on our turn, meaning we may have to timeout if the
+                target side never responds to the command in progress.  In that case this object
+                will call back with a status of kOBEXTimeoutError and an error. Further results
+                returned through the fileTransferServicesAbortComplete: <a href="#//api/name/delegate">delegate</a> method if initially successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     abort
+</code></pre><p>Attempts send an abort request to the remote device.  Returns the OBEXFileTransferServices
+                object to an idle state though the state of the remote device is not guaranteed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">OBEXFileTransferServices.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

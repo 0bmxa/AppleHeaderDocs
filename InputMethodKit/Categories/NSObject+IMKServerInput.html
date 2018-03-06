@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSObject(IMKServerInput) Category Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 InputMethodKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/candidates:">- candidates:</option>
+		
+		<option value="//api/name/commitComposition:">- commitComposition:</option>
+		
+		<option value="//api/name/composedString:">- composedString:</option>
+		
+		<option value="//api/name/didCommandBySelector:client:">- didCommandBySelector:client:</option>
+		
+		<option value="//api/name/handleEvent:client:">- handleEvent:client:</option>
+		
+		<option value="//api/name/inputText:client:">- inputText:client:</option>
+		
+		<option value="//api/name/inputText:key:modifiers:client:">- inputText:key:modifiers:client:</option>
+		
+		<option value="//api/name/originalString:">- originalString:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSObject(IMKServerInput) Category Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>IMKInputController.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@protocol    IMKServerInput
+</code></pre><p>This is not a formal protocol by choice.  The reason for that is that there are three ways to receive events here. An input method should choose one of those ways and  implement the appropriate methods.</p>
+
+<pre><code>             Here are the three approaches:
+
+             1.  Support keybinding.  
+                    In this approach the system takes each keydown and trys to map the keydown to an action method that the input method has implemented.  If an action is found the system calls didCommandBySelector:client:.  If no action method is found inputText:client: is called.  An input method choosing this approach should implement
+                    -(BOOL)inputText:(NSString*)string client:(id)sender;
+                    -(BOOL)didCommandBySelector:(SEL)aSelector client:(id)sender;
+
+            2. Receive all key events without the keybinding, but do "unpack" the relevant text data.
+                    Key events are broken down into the Unicodes, the key code that generated them, and modifier flags.  This data is then sent to the input method's inputText:key:modifiers:client: method.  For this approach implement:
+                    -(BOOL)inputText:(NSString*)string key:(NSInteger)keyCode modifiers:(NSUInteger)flags client:(id)sender;
+
+            3. Receive events directly from the Text Services Manager as NSEvent objects.  For this approach implement:
+                    -(BOOL)handleEvent:(NSEvent*)event client:(id)sender;
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/inputText:key:modifiers:client:" title="inputText:key:modifiers:client:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputText:key:modifiers:client:">&ndash;&nbsp;inputText:key:modifiers:client:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Receive the Unicodes, the key code that generated them and modifier flags.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)inputText:(NSString *)<em>string</em> key:(NSInteger)<em>keyCode</em> modifiers:(NSUInteger)<em>flags</em> client:(id)<em>sender</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>Input methods implementing this method should return YES if the input was excepted, and NO if not excepted.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputText:client:" title="inputText:client:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputText:client:">&ndash;&nbsp;inputText:client:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Each keydown that does not map to an action method is delivered to the input method as an NSString.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)inputText:(NSString *)<em>string</em> client:(id)<em>sender</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>If the input string is not excepted the input method should return NO.  When text is accepted return YES.  Input methods should implement this method when they are using keybinding (i.e. have implemented <a href="#//api/name/didCommandBySelector:client:">didCommandBySelector:client:</a>).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/handleEvent:client:" title="handleEvent:client:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/handleEvent:client:">&ndash;&nbsp;handleEvent:client:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Receive all keydown and mouse events as an NSEvent (i.e. the event is simply forwarded onto the input method).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)handleEvent:(NSEvent *)<em>event</em> client:(id)<em>sender</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>Return YES if the event was handled. NO if not handled.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didCommandBySelector:client:" title="didCommandBySelector:client:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didCommandBySelector:client:">&ndash;&nbsp;didCommandBySelector:client:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when system binds a keyDown event to an action method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)didCommandBySelector:(SEL)<em>aSelector</em> client:(id)<em>sender</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>This method is designed to return YES if the command is handled and NO if the command is not handled. It is called to process a command that was generated by user action such as typing certain keys or mousing down. It is necessary for this method to return YES or NO so the  event can be passed through to the client if it is not handled.  The selector can be an action specified in the input method&rsquo;s dictionary of keys and actions (i.e. an action specific to the input method) or one of the NSResponder action methods such as insertNewline: or deleteBackward:.  By definition such action methods do not return a value.  For that reason if you implement this method you should test if it is appropriate to call the action method before calling it since calling the action method is agreeing to handle the command</p>
+
+<pre><code>        For example.  Suppose you have implemented a version of insertNewline: that terminates the conversion session and sends the fully converted text to the client.  However, if you conversion buffer is empty you want the application to receive the return key that triggered the call to insertNewline:.  In that case when didCommandBySelector:client: is called you should test your buffer before calling your implementation of insertNewline:.  If the buffer is empty you would return NO indicating that the return key should be passed on to the application.  If the buffer is not empty you would call insertNewline: and then return YES as the result of didCommandBySelector:client:.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/composedString:" title="composedString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/composedString:">&ndash;&nbsp;composedString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the current composed string.  This may be an NSString or NSAttributedString.</p>
+
+<pre><code>            A composed string refers to the buffer that an input method typically maintains to mirror the text contained in the active inline area.  It is called the composed string to reflect the fact that the input method composed the string by converting the characters input by the user.  In addition, using the term composed string makes it easier to differentiate between an input method's buffer and the text in the active inline area that the user sees. The returned object should be an autoreleased object.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)composedString:(id)<em>sender</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/originalString:" title="originalString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/originalString:">&ndash;&nbsp;originalString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the a string consisting of the original pre-composition unicodes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSAttributedString *)originalString:(id)<em>sender</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>If an input method stores the original input text it should return that text here.  The return value is an attributed string so that input method&rsquo;s can potentially restore changes they may have made to the font, etc.  The returned object should be an autoreleased object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commitComposition:" title="commitComposition:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commitComposition:">&ndash;&nbsp;commitComposition:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called to inform the controller that the composition should be committed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commitComposition:(id)<em>sender</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>If an input method implements this method it will be called when the client wishes to end the composition session immediately. A typical response would be to call the client&rsquo;s insertText method and then clean up any per-session buffers and variables.  After receiving this message an input method should consider the given composition session finished.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/candidates:" title="candidates:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/candidates:">&ndash;&nbsp;candidates:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called to get an array of candidates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)candidates:(id)<em>sender</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>An input method would look up its currently composed string and return a list of candidate strings that that string might map to. The returned NSArray should be an autoreleased object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

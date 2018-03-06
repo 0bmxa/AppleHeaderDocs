@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCapturePhotoCaptureDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/captureOutput:didCapturePhotoForResolvedSettings:">- captureOutput:didCapturePhotoForResolvedSettings:</option>
+		
+		<option value="//api/name/captureOutput:didFinishCaptureForResolvedSettings:error:">- captureOutput:didFinishCaptureForResolvedSettings:error:</option>
+		
+		<option value="//api/name/captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:">- captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:</option>
+		
+		<option value="//api/name/captureOutput:didFinishProcessingPhoto:error:">- captureOutput:didFinishProcessingPhoto:error:</option>
+		
+		<option value="//api/name/captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:">- captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:</option>
+		
+		<option value="//api/name/captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:">- captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:</option>
+		
+		<option value="//api/name/captureOutput:didFinishRecordingLivePhotoMovieForEventualFileAtURL:resolvedSettings:">- captureOutput:didFinishRecordingLivePhotoMovieForEventualFileAtURL:resolvedSettings:</option>
+		
+		<option value="//api/name/captureOutput:willBeginCaptureForResolvedSettings:">- captureOutput:willBeginCaptureForResolvedSettings:</option>
+		
+		<option value="//api/name/captureOutput:willCapturePhotoForResolvedSettings:">- captureOutput:willCapturePhotoForResolvedSettings:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCapturePhotoCaptureDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCapturePhotoOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol AVCapturePhotoCaptureDelegate
+@abstract
+    A set of delegate callbacks to be implemented by a client who calls AVCapturePhotoOutput&rsquo;s -capturePhotoWithSettings:delegate.</p>
+
+<p>@discussion
+    <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a> invokes the AVCapturePhotoCaptureDelegate callbacks on a common dispatch queue — not necessarily the main queue. While the <a href="#//api/name/captureOutput:willBeginCaptureForResolvedSettings:">captureOutput:willBeginCaptureForResolvedSettings:</a> callback always comes first and the -captureOutput:didFinishCaptureForResolvedSettings: callback always comes last, none of the other callbacks can be assumed to come in any particular order. The <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a> instance passed to the client with each callback has the same uniqueID as the <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a> instance passed in -capturePhotoWithSettings:delegate:. All callbacks are marked optional, but depending on the features you&rsquo;ve specified in your <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a>, some callbacks become mandatory and are validated in -capturePhotoWithSettings:delegate:. If your delegate does not implement the mandatory callbacks, an NSInvalidArgumentException is thrown.</p>
+
+<pre><code>- If you initialize your photo settings with a format dictionary, or use one of the default constructors (that is, if you're not requesting a RAW-only capture), your delegate must respond to either - captureOutput:didFinishProcessingPhoto:error: or the deprecated captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:. If your delegate responds to both of these callbacks, only the undeprecated variant will be called.
+- If you initialize your photo settings with a rawPhotoPixelFormatType, your delegate must respond to either captureOutput:didFinishProcessingPhoto:error: or the deprecated captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:. If your delegate responds to both of these callbacks, only the undeprecated variant will be called.
+- If you set livePhotoMovieFileURL to non-nil, your delegate must respond to captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:.
+
+In the event of an error, all expected callbacks are fired with an appropriate error.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/captureOutput:willBeginCaptureForResolvedSettings:" title="captureOutput:willBeginCaptureForResolvedSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureOutput:willBeginCaptureForResolvedSettings:">&ndash;&nbsp;captureOutput:willBeginCaptureForResolvedSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureOutput:willBeginCaptureForResolvedSettings:
+@abstract
+    A callback fired as soon as the capture settings have been resolved.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureOutput:(AVCapturePhotoOutput *)<em>output</em> willBeginCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings *)<em>resolvedSettings</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureOutput:willBeginCaptureForResolvedSettings:
+@abstract
+    A callback fired as soon as the capture settings have been resolved.</p>
+
+<p>@param output
+    The calling instance of <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>.
+@param resolvedSettings
+    An instance of <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a> indicating which capture features have been selected.</p>
+
+<p>@discussion
+    This callback is always delivered first for a particular capture request. It is delivered as soon as possible after you call -capturePhotoWithSettings:delegate:, so you can know what to expect in the remainder of your callbacks.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureOutput:willCapturePhotoForResolvedSettings:" title="captureOutput:willCapturePhotoForResolvedSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureOutput:willCapturePhotoForResolvedSettings:">&ndash;&nbsp;captureOutput:willCapturePhotoForResolvedSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureOutput:willCapturePhotoForResolvedSettings:
+@abstract
+    A callback fired just as the photo is being taken.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureOutput:(AVCapturePhotoOutput *)<em>output</em> willCapturePhotoForResolvedSettings:(AVCaptureResolvedPhotoSettings *)<em>resolvedSettings</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureOutput:willCapturePhotoForResolvedSettings:
+@abstract
+    A callback fired just as the photo is being taken.</p>
+
+<p>@param output
+    The calling instance of <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>.
+@param resolvedSettings
+    An instance of <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a> indicating which capture features have been selected.</p>
+
+<p>@discussion
+    The timing of this callback is analogous to AVCaptureStillImageOutput&rsquo;s capturingStillImage property changing from NO to YES. The callback is delivered right after the shutter sound is heard (note that shutter sounds are suppressed when Live Photos are being captured).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureOutput:didCapturePhotoForResolvedSettings:" title="captureOutput:didCapturePhotoForResolvedSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureOutput:didCapturePhotoForResolvedSettings:">&ndash;&nbsp;captureOutput:didCapturePhotoForResolvedSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureOutput:didCapturePhotoForResolvedSettings:
+@abstract
+    A callback fired just after the photo is taken.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureOutput:(AVCapturePhotoOutput *)<em>output</em> didCapturePhotoForResolvedSettings:(AVCaptureResolvedPhotoSettings *)<em>resolvedSettings</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureOutput:didCapturePhotoForResolvedSettings:
+@abstract
+    A callback fired just after the photo is taken.</p>
+
+<p>@param output
+    The calling instance of <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>.
+@param resolvedSettings
+    An instance of <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a> indicating which capture features have been selected.</p>
+
+<p>@discussion
+    The timing of this callback is analogous to AVCaptureStillImageOutput&rsquo;s capturingStillImage property changing from YES to NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureOutput:didFinishProcessingPhoto:error:" title="captureOutput:didFinishProcessingPhoto:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureOutput:didFinishProcessingPhoto:error:">&ndash;&nbsp;captureOutput:didFinishProcessingPhoto:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureOutput:didFinishProcessingPhoto:error:
+@abstract
+    A callback fired when photos are ready to be delivered to you (RAW or processed).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureOutput:(AVCapturePhotoOutput *)<em>output</em> didFinishProcessingPhoto:(AVCapturePhoto *)<em>photo</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureOutput:didFinishProcessingPhoto:error:
+@abstract
+    A callback fired when photos are ready to be delivered to you (RAW or processed).</p>
+
+<p>@param output
+    The calling instance of <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>.
+@param photo
+    An instance of <a href="../Classes/AVCapturePhoto.html">AVCapturePhoto</a>.
+@param error
+    An error indicating what went wrong. If the photo was processed successfully, nil is returned.</p>
+
+<p>@discussion
+    This callback fires resolvedSettings.expectedPhotoCount number of times for a given capture request. Note that the photo parameter is always non nil, even if an error is returned. The delivered AVCapturePhoto&rsquo;s rawPhoto property can be queried to know if it&rsquo;s a RAW image or processed image.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:" title="captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:">&ndash;&nbsp;captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:
+@abstract
+    A callback fired when the primary processed photo or photos are done.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureOutput:(AVCapturePhotoOutput *)<em>output</em> didFinishProcessingPhotoSampleBuffer:(nullable CMSampleBufferRef)<em>photoSampleBuffer</em> previewPhotoSampleBuffer:(nullable CMSampleBufferRef)<em>previewPhotoSampleBuffer</em> resolvedSettings:(AVCaptureResolvedPhotoSettings *)<em>resolvedSettings</em> bracketSettings:(nullable AVCaptureBracketedStillImageSettings *)<em>bracketSettings</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:
+@abstract
+    A callback fired when the primary processed photo or photos are done.</p>
+
+<p>@param output
+    The calling instance of <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>.
+@param photoSampleBuffer
+    A CMSampleBuffer containing an uncompressed pixel buffer or compressed data, along with timing information and metadata. May be nil if there was an error.
+@param previewPhotoSampleBuffer
+    An optional CMSampleBuffer containing an uncompressed, down-scaled preview pixel buffer. Note that the preview sample buffer contains no metadata. Refer to the photoSampleBuffer for metadata (e.g., the orientation). May be nil.
+@param resolvedSettings
+    An instance of <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a> indicating which capture features have been selected.
+@param bracketSettings
+    If this image is being delivered as part of a bracketed capture, the bracketSettings corresponding to this image. Otherwise nil.
+@param error
+    An error indicating what went wrong if photoSampleBuffer is nil.</p>
+
+<p>@discussion
+    If you&rsquo;ve requested a single processed image (uncompressed or compressed) capture, the photo is delivered here. If you&rsquo;ve requested a bracketed capture, this callback is fired bracketedSettings.count times (once for each photo in the bracket).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:" title="captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:">&ndash;&nbsp;captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:
+@abstract
+    A callback fired when the RAW photo or photos are done.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureOutput:(AVCapturePhotoOutput *)<em>output</em> didFinishProcessingRawPhotoSampleBuffer:(nullable CMSampleBufferRef)<em>rawSampleBuffer</em> previewPhotoSampleBuffer:(nullable CMSampleBufferRef)<em>previewPhotoSampleBuffer</em> resolvedSettings:(AVCaptureResolvedPhotoSettings *)<em>resolvedSettings</em> bracketSettings:(nullable AVCaptureBracketedStillImageSettings *)<em>bracketSettings</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:
+@abstract
+    A callback fired when the RAW photo or photos are done.</p>
+
+<p>@param output
+    The calling instance of <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>.
+@param rawSampleBuffer
+    A CMSampleBuffer containing Bayer RAW pixel data, along with timing information and metadata. May be nil if there was an error.
+@param previewPhotoSampleBuffer
+    An optional CMSampleBuffer containing an uncompressed, down-scaled preview pixel buffer. Note that the preview sample buffer contains no metadata. Refer to the rawSampleBuffer for metadata (e.g., the orientation). May be nil.
+@param resolvedSettings
+    An instance of <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a> indicating which capture features have been selected.
+@param bracketSettings
+    If this image is being delivered as part of a bracketed capture, the bracketSettings corresponding to this image. Otherwise nil.
+@param error
+    An error indicating what went wrong if rawSampleBuffer is nil.</p>
+
+<p>@discussion
+    Single RAW image and bracketed RAW photos are delivered here. If you&rsquo;ve requested a RAW bracketed capture, this callback is fired bracketedSettings.count times (once for each photo in the bracket).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureOutput:didFinishRecordingLivePhotoMovieForEventualFileAtURL:resolvedSettings:" title="captureOutput:didFinishRecordingLivePhotoMovieForEventualFileAtURL:resolvedSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureOutput:didFinishRecordingLivePhotoMovieForEventualFileAtURL:resolvedSettings:">&ndash;&nbsp;captureOutput:didFinishRecordingLivePhotoMovieForEventualFileAtURL:resolvedSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureOutput:didFinishRecordingLivePhotoMovieForEventualFileAtURL:resolvedSettings:
+@abstract
+    A callback fired when the Live Photo movie has captured all its media data, though all media has not yet been written to file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureOutput:(AVCapturePhotoOutput *)<em>output</em> didFinishRecordingLivePhotoMovieForEventualFileAtURL:(NSURL *)<em>outputFileURL</em> resolvedSettings:(AVCaptureResolvedPhotoSettings *)<em>resolvedSettings</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureOutput:didFinishRecordingLivePhotoMovieForEventualFileAtURL:resolvedSettings:
+@abstract
+    A callback fired when the Live Photo movie has captured all its media data, though all media has not yet been written to file.</p>
+
+<p>@param output
+    The calling instance of <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>.
+@param outputFileURL
+    The URL to which the movie file will be written. This URL is equal to your <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a>.livePhotoMovieURL.
+@param resolvedSettings
+    An instance of <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a> indicating which capture features have been selected.</p>
+
+<p>@discussion
+    When this callback fires, no new media is being written to the file. If you are displaying a &ldquo;Live&rdquo; badge, this is an appropriate time to dismiss it. The movie file itself is not done being written until the <a href="#//api/name/captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:">captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:</a> callback fires.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:" title="captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:">&ndash;&nbsp;captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:
+@abstract
+    A callback fired when the Live Photo movie is finished being written to disk.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureOutput:(AVCapturePhotoOutput *)<em>output</em> didFinishProcessingLivePhotoToMovieFileAtURL:(NSURL *)<em>outputFileURL</em> duration:(CMTime)<em>duration</em> photoDisplayTime:(CMTime)<em>photoDisplayTime</em> resolvedSettings:(AVCaptureResolvedPhotoSettings *)<em>resolvedSettings</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:
+@abstract
+    A callback fired when the Live Photo movie is finished being written to disk.</p>
+
+<p>@param output
+    The calling instance of <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>.
+@param outputFileURL
+    The URL where the movie file resides. This URL is equal to your <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a>.livePhotoMovieURL.
+@param duration
+    A CMTime indicating the duration of the movie file.
+@param photoDisplayTime
+    A CMTime indicating the time in the movie at which the still photo should be displayed.
+@param resolvedSettings
+    An instance of <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a> indicating which capture features have been selected.
+@param error
+    An error indicating what went wrong if the outputFileURL is damaged.</p>
+
+<p>@discussion
+    When this callback fires, the movie on disk is fully finished and ready for consumption.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureOutput:didFinishCaptureForResolvedSettings:error:" title="captureOutput:didFinishCaptureForResolvedSettings:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureOutput:didFinishCaptureForResolvedSettings:error:">&ndash;&nbsp;captureOutput:didFinishCaptureForResolvedSettings:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureOutput:didFinishCaptureForResolvedSettings:error:
+@abstract
+    A callback fired when the photo capture is completed and no more callbacks will be fired.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureOutput:(AVCapturePhotoOutput *)<em>output</em> didFinishCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings *)<em>resolvedSettings</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureOutput:didFinishCaptureForResolvedSettings:error:
+@abstract
+    A callback fired when the photo capture is completed and no more callbacks will be fired.</p>
+
+<p>@param output
+    The calling instance of <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>.
+@param resolvedSettings
+    An instance of <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a> indicating which capture features were selected.
+@param error
+    An error indicating whether the capture was unsuccessful. Nil if there were no problems.</p>
+
+<p>@discussion
+    This callback always fires last and when it does, you may clean up any state relating to this photo capture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

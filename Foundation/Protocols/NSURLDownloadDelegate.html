@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSURLDownloadDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/download:canAuthenticateAgainstProtectionSpace:">- download:canAuthenticateAgainstProtectionSpace:</option>
+		
+		<option value="//api/name/download:decideDestinationWithSuggestedFilename:">- download:decideDestinationWithSuggestedFilename:</option>
+		
+		<option value="//api/name/download:didCancelAuthenticationChallenge:">- download:didCancelAuthenticationChallenge:</option>
+		
+		<option value="//api/name/download:didCreateDestination:">- download:didCreateDestination:</option>
+		
+		<option value="//api/name/download:didFailWithError:">- download:didFailWithError:</option>
+		
+		<option value="//api/name/download:didReceiveAuthenticationChallenge:">- download:didReceiveAuthenticationChallenge:</option>
+		
+		<option value="//api/name/download:didReceiveDataOfLength:">- download:didReceiveDataOfLength:</option>
+		
+		<option value="//api/name/download:didReceiveResponse:">- download:didReceiveResponse:</option>
+		
+		<option value="//api/name/download:shouldDecodeSourceDataOfMIMEType:">- download:shouldDecodeSourceDataOfMIMEType:</option>
+		
+		<option value="//api/name/download:willResumeWithResponse:fromByte:">- download:willResumeWithResponse:fromByte:</option>
+		
+		<option value="//api/name/download:willSendRequest:redirectResponse:">- download:willSendRequest:redirectResponse:</option>
+		
+		<option value="//api/name/downloadDidBegin:">- downloadDidBegin:</option>
+		
+		<option value="//api/name/downloadDidFinish:">- downloadDidFinish:</option>
+		
+		<option value="//api/name/downloadShouldUseCredentialStorage:">- downloadShouldUseCredentialStorage:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSURLDownloadDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSURLDownload.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@protocol NSURLDownloadDelegate
+</code></pre><p>The NSURLDownloadDelegate delegate is used to report the progress of the download.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/downloadDidBegin:" title="downloadDidBegin:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadDidBegin:">&ndash;&nbsp;downloadDidBegin:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called immediately after the download has started.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadDidBegin:(NSURLDownload *)<em>download</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that just started downloading.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method downloadDidBegin:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/download:willSendRequest:redirectResponse:" title="download:willSendRequest:redirectResponse:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/download:willSendRequest:redirectResponse:">&ndash;&nbsp;download:willSendRequest:redirectResponse:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called if the download must load another request because the previous
+    request was redirected.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSURLRequest *)download:(NSURLDownload *)<em>download</em> willSendRequest:(NSURLRequest *)<em>request</em> redirectResponse:(nullable NSURLResponse *)<em>redirectResponse</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that will send the request.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>The request that will be used to continue loading.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The request to be used; either the request parameter or a replacement. If nil is returned,
+    the download is cancelled.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method download:willSendRequest:redirectResponse:
+</code></pre><p>This method gives the delegate an opportunity to inspect the request
+    that will be used to continue loading the request, and modify it if necessary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/download:canAuthenticateAgainstProtectionSpace:" title="download:canAuthenticateAgainstProtectionSpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/download:canAuthenticateAgainstProtectionSpace:">&ndash;&nbsp;download:canAuthenticateAgainstProtectionSpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method gives the delegate an opportunity to inspect an <a href="../Classes/NSURLProtectionSpace.html">NSURLProtectionSpace</a> before an authentication attempt is made.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)download:(NSURLDownload *)<em>connection</em> canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)<em>protectionSpace</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>connection</code></th>
+						<td><p>an <a href="../Classes/NSURLConnection.html">NSURLConnection</a> that has an <a href="../Classes/NSURLProtectionSpace.html">NSURLProtectionSpace</a> ready for inspection</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protectionSpace</code></th>
+						<td><p>an <a href="../Classes/NSURLProtectionSpace.html">NSURLProtectionSpace</a> that will be used to generate an authentication challenge</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a boolean value that indicates the willingness of the delegate to handle the authentication</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method download:canAuthenticateAgainstProtectionSpace:
+</code></pre><p>If implemented, will be called before connection:didReceiveAuthenticationChallenge
+    to give the delegate a chance to inspect the protection space that will be authenticated against.  Delegates should determine
+    if they are prepared to respond to the authentication method of the protection space and if so, return YES, or NO to
+    allow default processing to handle the authentication.  If this delegate is not implemented, then default
+    processing will occur (typically, consulting
+    the user&rsquo;s keychain and/or failing the connection attempt.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/download:didReceiveAuthenticationChallenge:" title="download:didReceiveAuthenticationChallenge:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/download:didReceiveAuthenticationChallenge:">&ndash;&nbsp;download:didReceiveAuthenticationChallenge:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start authentication for a given challenge</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)download:(NSURLDownload *)<em>download</em> didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)<em>challenge</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that needs authentication.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>challenge</code></th>
+						<td><p>The <a href="../Classes/NSURLAuthenticationChallenge.html">NSURLAuthenticationChallenge</a> for which to start authentication.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method download:didReceiveAuthenticationChallenge:
+</code></pre><p>Call useCredential:forAuthenticationChallenge:,
+    continueWithoutCredentialForAuthenticationChallenge: or cancel on
+    the connection sender when done.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/download:didCancelAuthenticationChallenge:" title="download:didCancelAuthenticationChallenge:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/download:didCancelAuthenticationChallenge:">&ndash;&nbsp;download:didCancelAuthenticationChallenge:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cancel authentication for a given request</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)download:(NSURLDownload *)<em>download</em> didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)<em>challenge</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that&rsquo;s cancelling</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>challenge</code></th>
+						<td><p>The <a href="../Classes/NSURLAuthenticationChallenge.html">NSURLAuthenticationChallenge</a> to cancel authentication for</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method download:didCancelAuthenticationChallenge:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadShouldUseCredentialStorage:" title="downloadShouldUseCredentialStorage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadShouldUseCredentialStorage:">&ndash;&nbsp;downloadShouldUseCredentialStorage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method allows the delegate to inform the url loader that it
+                should not consult the credential storage for the download.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)downloadShouldUseCredentialStorage:(NSURLDownload *)<em>download</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>the <a href="../Classes/NSURLDownload.html">NSURLDownload</a> object asking if it should consult the credential storage.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>NO if the download should not consult the credential storage, Yes if it should.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method downloadShouldUseCredentialStorage   
+</code></pre><p>This method will be called before any attempt to authenticate is
+        attempted on a download.  By returning NO the delegate is telling the
+        download to not consult the credential storage and taking responsiblity
+        for providing any credentials for authentication challenges.  Not implementing
+        this method is the same as returing YES.  The delegate is free to consult the
+        credential storage itself when it receives a didReceiveAuthenticationChallenge
+        message.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/download:didReceiveResponse:" title="download:didReceiveResponse:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/download:didReceiveResponse:">&ndash;&nbsp;download:didReceiveResponse:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called when the download has received a response from the server.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)download:(NSURLDownload *)<em>download</em> didReceiveResponse:(NSURLResponse *)<em>response</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that now has a <a href="../Classes/NSURLResponse.html">NSURLResponse</a> available for inspection.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>response</code></th>
+						<td><p>The <a href="../Classes/NSURLResponse.html">NSURLResponse</a> object for the given download.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method download:didReceiveResponse:
+</code></pre><p>In some rare cases, multiple responses may be received for a single download.
+    This occurs with multipart/x-mixed-replace, or &ldquo;server push&rdquo;. In this case, the client
+    should assume that each new response resets progress so far for the resource back to 0,
+    and should check the new response for the expected content length.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/download:willResumeWithResponse:fromByte:" title="download:willResumeWithResponse:fromByte:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/download:willResumeWithResponse:fromByte:">&ndash;&nbsp;download:willResumeWithResponse:fromByte:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called when the download has received a response from the server after attempting to
+    resume a download.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)download:(NSURLDownload *)<em>download</em> willResumeWithResponse:(NSURLResponse *)<em>response</em> fromByte:(long long)<em>startingByte</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that now has a <a href="../Classes/NSURLResponse.html">NSURLResponse</a> available for inspection.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>response</code></th>
+						<td><p>The <a href="../Classes/NSURLResponse.html">NSURLResponse</a> object for the given download.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startingByte</code></th>
+						<td><p>The number of bytes from where the download will resume. 0 indicates that the download will
+    restart from the beginning.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method download:willResumeWithResponse:fromByte:
+</code></pre><p>download:willResumeWithResponse:fromByte: is called instead of <a href="#//api/name/download:didReceiveResponse:">download:didReceiveResponse:</a>
+    when a download is initialized with initWithResumeData:delegate:path:.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/download:didReceiveDataOfLength:" title="download:didReceiveDataOfLength:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/download:didReceiveDataOfLength:">&ndash;&nbsp;download:didReceiveDataOfLength:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called when the download has loaded data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)download:(NSURLDownload *)<em>download</em> didReceiveDataOfLength:(NSUInteger)<em>length</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that has received data.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>length</code></th>
+						<td><p>The length of the received data.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method download:didReceiveDataOfLength:
+</code></pre><p>This method will be called one or more times.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/download:shouldDecodeSourceDataOfMIMEType:" title="download:shouldDecodeSourceDataOfMIMEType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/download:shouldDecodeSourceDataOfMIMEType:">&ndash;&nbsp;download:shouldDecodeSourceDataOfMIMEType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called if the download detects that the downloading file is encoded.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)download:(NSURLDownload *)<em>download</em> shouldDecodeSourceDataOfMIMEType:(NSString *)<em>encodingType</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that has detected that the downloading file is encoded.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>encodingType</code></th>
+						<td><p>A MIME type expressing the encoding type.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Return YES to decode the file, NO to not decode the file.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method download:shouldDecodeSourceDataOfMIMEType:
+</code></pre><p>An encoded file is encoded in MacBinary, BinHex or gzip format. This method may be
+    called more than once if the file is encoded multiple times. This method is not called if the
+    download is not encoded.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/download:decideDestinationWithSuggestedFilename:" title="download:decideDestinationWithSuggestedFilename:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/download:decideDestinationWithSuggestedFilename:">&ndash;&nbsp;download:decideDestinationWithSuggestedFilename:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called when enough information has been loaded to decide a destination
+    for the downloaded file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)download:(NSURLDownload *)<em>download</em> decideDestinationWithSuggestedFilename:(NSString *)<em>filename</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that requests the download path.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filename</code></th>
+						<td><p>The suggested filename for deciding the path of the downloaded file. The filename is either
+    derived from the last path component of the URL and the MIME type or if the download was encoded,
+    it is the filename specified in the encoding.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method download:decideDestinationWithSuggestedFilename:
+</code></pre><p>Once the delegate has decided a path, it should call setDestination:allowOverwrite:.
+    The delegate may respond immediately or later. This method is not called if
+    setDestination:allowOverwrite: has already been called.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/download:didCreateDestination:" title="download:didCreateDestination:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/download:didCreateDestination:">&ndash;&nbsp;download:didCreateDestination:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called after the download creates the downloaded file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)download:(NSURLDownload *)<em>download</em> didCreateDestination:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that created the downloaded file.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>The path of the downloaded file.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method download:didCreateDestination:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadDidFinish:" title="downloadDidFinish:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadDidFinish:">&ndash;&nbsp;downloadDidFinish:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called when the download has finished downloading.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadDidFinish:(NSURLDownload *)<em>download</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that has finished downloading.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method downloadDidFinish:
+</code></pre><p>This method is called after all the data has been received and written to disk.
+    This method or <a href="#//api/name/download:didFailWithError:">download:didFailWithError:</a> will only be called once.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/download:didFailWithError:" title="download:didFailWithError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/download:didFailWithError:">&ndash;&nbsp;download:didFailWithError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called when the download has failed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)download:(NSURLDownload *)<em>download</em> didFailWithError:(NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>download</code></th>
+						<td><p>The download that ended in error.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error caused the download to fail.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method download:didFailWithError:
+</code></pre><p>This method is called when the download encounters a network or file I/O related error.
+    This method or <a href="#//api/name/downloadDidFinish:">downloadDidFinish:</a> will only be called once.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLDownload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

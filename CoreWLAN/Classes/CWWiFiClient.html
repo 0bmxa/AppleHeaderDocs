@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CWWiFiClient Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreWLAN Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/interfaceNames">+ interfaceNames</option>
+		
+		<option value="//api/name/sharedWiFiClient">+ sharedWiFiClient</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/interface">- interface</option>
+		
+		<option value="//api/name/interfaceWithName:">- interfaceWithName:</option>
+		
+		<option value="//api/name/interfaces">- interfaces</option>
+		
+		<option value="//api/name/startMonitoringEventWithType:error:">- startMonitoringEventWithType:error:</option>
+		
+		<option value="//api/name/stopMonitoringAllEventsAndReturnError:">- stopMonitoringAllEventsAndReturnError:</option>
+		
+		<option value="//api/name/stopMonitoringEventWithType:error:">- stopMonitoringEventWithType:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CWWiFiClient Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CWWiFiClient.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class</p>
+
+<p>@abstract
+The interface to the Wi-Fi subsystem on OS X.</p>
+
+<p>@discussion
+Provides access to all Wi-Fi interfaces and allows Wi-Fi clients to setup event notifications.</p>
+
+<p>CWWiFiClient objects are heavy objects, therefore, clients of the CoreWLAN framework should use a single,
+long-running instance rather than creating several short-lived instances.
+For convenience, <a href="#//api/name/sharedWiFiClient">[CWWiFiClient sharedWiFiClient]</a> can be used to return a singleton instance.</p>
+
+<p>The CWWiFiClient object should be used to instantiate <a href="../Classes/CWInterface.html">CWInterface</a> objects rather than using a <a href="../Classes/CWInterface.html">CWInterface</a>
+initializer directly.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id delegate NS_AVAILABLE_MAC ( 10 _10 )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p>
+
+<p>@abstract
+Sets the delegate to the specified object, which may implement CWWiFiEventDelegate protocol for Wi-Fi event handling.</p>
+
+<p>@discussion
+Clients may register for specific Wi-Fi events using <a href="#//api/name/startMonitoringEventWithType:error:">[CWWiFiClient startMonitoringEventWithType:error:]</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sharedWiFiClient" title="sharedWiFiClient"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedWiFiClient">+&nbsp;sharedWiFiClient</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (CWWiFiClient *)sharedWiFiClient</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@abstract
+Returns the shared CWWiFiClient instance. There is a single shared instance per process.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable CWWiFiClient *)init</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@abstract
+Initializes a CWWiFiClient object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/interface" title="interface"></a>
+	<h3 class="method-title"><code><a href="#//api/name/interface">&ndash;&nbsp;interface</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable CWInterface *)interface</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@abstract
+Returns the <a href="../Classes/CWInterface.html">CWInterface</a> object for the default Wi-Fi interface.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/interfaceNames" title="interfaceNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/interfaceNames">+&nbsp;interfaceNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSArray&lt;NSString*&gt; *)interfaceNames</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@result
+An NSArray of NSString objects corresponding to Wi-Fi <a href="#//api/name/interface">interface</a> names.</p>
+
+<p>@abstract
+Returns the list of available Wi-Fi <a href="#//api/name/interface">interface</a> names (e.g. &ldquo;en0&rdquo;).</p>
+
+<p>@discussion
+If no Wi-Fi <a href="#//api/name/interfaces">interfaces</a> are available, this method will return an empty array.
+Returns nil if an error occurs.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/interfaceWithName:" title="interfaceWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/interfaceWithName:">&ndash;&nbsp;interfaceWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable CWInterface *)interfaceWithName:(nullable NSString *)<em>interfaceName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param interfaceName
+The name of an available Wi-Fi interface.</p>
+
+<p>@abstract
+Get the CWInterface object bound to the Wi-Fi interface with a specific interface name.</p>
+
+<p>@discussion
+Use <a href="#//api/name/interfaceNames">[CWWiFiClient interfaceNames]</a> to get a list of available Wi-Fi <a href="#//api/name/interface">interface</a> names.
+Returns a <a href="../Classes/CWInterface.html">CWInterface</a> object for the default Wi-Fi <a href="#//api/name/interface">interface</a> if no <a href="#//api/name/interface">interface</a> name is specified.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/interfaces" title="interfaces"></a>
+	<h3 class="method-title"><code><a href="#//api/name/interfaces">&ndash;&nbsp;interfaces</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray&lt;CWInterface*&gt; *)interfaces</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@result
+An NSArray of <a href="../Classes/CWInterface.html">CWInterface</a> objects.</p>
+
+<p>@abstract
+Returns all available Wi-Fi interfaces.</p>
+
+<p>@discussion
+If no Wi-Fi interfaces are available, this method will return an empty array.
+Returns nil if an error occurs.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startMonitoringEventWithType:error:" title="startMonitoringEventWithType:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startMonitoringEventWithType:error:">&ndash;&nbsp;startMonitoringEventWithType:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startMonitoringEventWithType:(CWEventType)<em>type</em> error:(out NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param type
+A <a href="../Constants/CWEventType.html">CWEventType</a> value.</p>
+
+<p>@param error
+An NSError object passed by reference, which upon return will contain the error if an error occurs.
+This parameter is optional.</p>
+
+<p>@result
+A BOOL value indicating whether or not an error occurred. YES indicates no error occurred.</p>
+
+<p>@abstract
+Register for specific Wi-Fi event notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopMonitoringEventWithType:error:" title="stopMonitoringEventWithType:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopMonitoringEventWithType:error:">&ndash;&nbsp;stopMonitoringEventWithType:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)stopMonitoringEventWithType:(CWEventType)<em>type</em> error:(out NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param type
+A <a href="../Constants/CWEventType.html">CWEventType</a> value.</p>
+
+<p>@param error
+An NSError object passed by reference, which upon return will contain the error if an error occurs.
+This parameter is optional.</p>
+
+<p>@result
+A BOOL value indicating whether or not an error occurred. YES indicates no error occurred.</p>
+
+<p>@abstract
+Unregister for specific Wi-Fi event notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopMonitoringAllEventsAndReturnError:" title="stopMonitoringAllEventsAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopMonitoringAllEventsAndReturnError:">&ndash;&nbsp;stopMonitoringAllEventsAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)stopMonitoringAllEventsAndReturnError:(out NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param error
+An NSError object passed by reference, which upon return will contain the error if an error occurs.
+This parameter is optional.</p>
+
+<p>@result
+A BOOL value indicating whether or not an error occurred. YES indicates no error occurred.</p>
+
+<p>@abstract
+Unregister for all Wi-Fi event notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

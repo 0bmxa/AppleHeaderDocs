@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSMatrixNeuron Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/alpha">alpha</option>
+		
+		<option value="//api/name/sourceInputFeatureChannels">sourceInputFeatureChannels</option>
+		
+		<option value="//api/name/sourceNumberOfFeatureVectors">sourceNumberOfFeatureVectors</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/copyWithZone:device:">- copyWithZone:device:</option>
+		
+		<option value="//api/name/encodeToCommandBuffer:inputMatrix:biasVector:resultMatrix:MPS_SWIFT_NAME:">- encodeToCommandBuffer:inputMatrix:biasVector:resultMatrix:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:">- initWithDevice:</option>
+		
+		<option value="//api/name/neuronParameterA">- neuronParameterA</option>
+		
+		<option value="//api/name/neuronParameterB">- neuronParameterB</option>
+		
+		<option value="//api/name/neuronParameterC">- neuronParameterC</option>
+		
+		<option value="//api/name/neuronType">- neuronType</option>
+		
+		<option value="//api/name/setNeuronToPReLUWithParametersA:">- setNeuronToPReLUWithParametersA:</option>
+		
+		<option value="//api/name/setNeuronType:parameterA:parameterB:parameterC:">- setNeuronType:parameterA:parameterB:parameterC:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSMatrixNeuron Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSMatrixUnaryKernel.html">MPSMatrixUnaryKernel</a> : <a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSMatrixFullyConnected.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSMatrixNeuron</p>
+
+<p>@dependency This depends on Metal.framework.</p><p>A MPSMatrixNeuron object computes:</p>
+
+<p>y = neuron(<a href="#//api/name/alpha">alpha</a> * x + bias)</p>
+
+<p>y is the output matrix, x is the input matrix corresponding
+to a collection of input vectors and bias is a vector which is broadcast
+and accumulated to each row of the intermediate result.
+<a href="#//api/name/alpha">alpha</a> is a scale factor applied to the input.</p>
+
+<p>neuron() defines the pointwise function that is applied to the intermediate result.</p>
+
+<p>Note: This function computes the same result as <a href="../Classes/MPSMatrixFullyConnected.html">MPSMatrixFullyConnected</a> that has
+unit weight matrix.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sourceNumberOfFeatureVectors" title="sourceNumberOfFeatureVectors"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceNumberOfFeatureVectors">&nbsp;&nbsp;sourceNumberOfFeatureVectors</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property   sourceNumberOfFeatureVectors</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) NSUInteger sourceNumberOfFeatureVectors</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   sourceNumberOfFeatureVectors</p><p>The number of input vectors which make up the input array.  This
+is equivalent to the number of rows to consider from the primary
+source matrix.
+This property is modifiable and defaults to NSUIntegerMax.  At encode
+time the larger of this property or the available number of inputs is
+used.  The value of NSUIntegerMax thus indicates that all available input
+rows (beginning at sourceMatrixOrigin.x) should be considered.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sourceInputFeatureChannels" title="sourceInputFeatureChannels"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceInputFeatureChannels">&nbsp;&nbsp;sourceInputFeatureChannels</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property   sourceInputFeatureChannels</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) NSUInteger sourceInputFeatureChannels</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   sourceInputFeatureChannels</p><p>The input size to to use in the operation.  This is equivalent to the
+number of columns in the primary (input array) source matrix to consider
+and the number of channels to produce for the output matrix.
+This property is modifiable and defaults to NSUIntegerMax.  At encode
+time the larger of this property or the available input size is used.
+The value of NSUIntegerMax thus indicates that all available columns in
+the input array (beginning at sourceMatrixOrigin.y) should be considered.
+Defines also the number of output feature channels.
+Note: The value used in the operation will be
+MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/alpha" title="alpha"></a>
+	<h3 class="method-title"><code><a href="#//api/name/alpha">&nbsp;&nbsp;alpha</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property   alpha</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) double alpha</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   alpha</p><p>The scale factor to apply to the input.  Specified in double
+precision.  Will be converted to the appropriate precision in the
+implementation subject to rounding and/or clamping as necessary.
+Defaults to 1.0 at initialization time.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setNeuronType:parameterA:parameterB:parameterC:" title="setNeuronType:parameterA:parameterB:parameterC:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setNeuronType:parameterA:parameterB:parameterC:">&ndash;&nbsp;setNeuronType:parameterA:parameterB:parameterC:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specifies a neuron activation function to be used.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setNeuronType:(MPSCNNNeuronType)<em>neuronType</em> parameterA:(float)<em>parameterA</em> parameterB:(float)<em>parameterB</em> parameterC:(float)<em>parameterC</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>neuronType</code></th>
+						<td><p>Type of neuron activation function. For full list see <a href="../Constants/MPSCNNNeuronType.html">MPSCNNNeuronType</a>.h</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameterA</code></th>
+						<td><p>parameterA of neuron activation that is shared across all output values.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameterB</code></th>
+						<td><p>parameterB of neuron activation that is shared across all output values.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameterC</code></th>
+						<td><p>parameterC of neuron activation that is shared across all output values.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method can be used to add a neuron activation funtion of given type with
+associated scalar parameters A, B, and C that are shared across all output values.
+Note that this method can only be used to specify neurons which are specified by three (or fewer)
+parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
+this method for neuron activation functions like MPSCNNNeuronTypePReLU,
+which require per-channel parameter values. For those kind of neuron activation functions,
+use appropriate setter functions.  An MPSMatrixNeuron kernel is initialized
+with a default neuron function of MPSCNNNeuronTypeNone.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronType" title="neuronType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronType">&ndash;&nbsp;neuronType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSCNNNeuronType)neuronType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronParameterA" title="neuronParameterA"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronParameterA">&ndash;&nbsp;neuronParameterA</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Getter funtion for <a href="#//api/name/neuronType">neuronType</a> set using setNeuronType:parameterA:parameterB:parameterC method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (float)neuronParameterA</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronParameterB" title="neuronParameterB"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronParameterB">&ndash;&nbsp;neuronParameterB</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Getter funtion for <a href="#//api/name/neuronType">neuronType</a> set using setNeuronType:parameterA:parameterB:parameterC method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (float)neuronParameterB</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronParameterC" title="neuronParameterC"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronParameterC">&ndash;&nbsp;neuronParameterC</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Getter funtion for <a href="#//api/name/neuronType">neuronType</a> set using setNeuronType:parameterA:parameterB:parameterC method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (float)neuronParameterC</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setNeuronToPReLUWithParametersA:" title="setNeuronToPReLUWithParametersA:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setNeuronToPReLUWithParametersA:">&ndash;&nbsp;setNeuronToPReLUWithParametersA:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add per output value neuron parameters A for PReLu neuron activation functions.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setNeuronToPReLUWithParametersA:(NSData *__nonnull)<em>A</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>A</code></th>
+						<td><p>An array containing float values for neuron parameter A.
+Number of entries must be equal to MIN(inputMatrix.columns - sourceMatrixOrigin.y, <a href="#//api/name/sourceInputFeatureChannels">sourceInputFeatureChannels</a>)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method sets the neuron to PReLU, zeros parameters A and B and sets the per output value
+neuron parameters A to an array containing a unique value of A for each output value.</p>
+
+<p>If the neuron function is f(v,a,b), it will apply</p>
+
+<p>resultMatrix(i, j) = f( input(i, j), A[j], B[j] )
+where j in [0, sourceInputFeatureChannels]</p>
+
+<p>See <a href="https://arxiv.org/pdf/1502.01852.pdf">https://arxiv.org/pdf/1502.01852.pdf</a> for details.</p>
+
+<p>All other neuron types, where parameter A
+and parameter B are shared across output values must be set using
+-setNeuronType:parameterA:parameterB:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:" title="initWithDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:">&ndash;&nbsp;initWithDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Standard init with default properties per filter type</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The <a href="../Classes/MPSKernel.html#//api/name/device">device</a> that the filter will be used on. May not be NULL.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a pointer to the newly initialized object. This will fail, returning
+nil if the <a href="../Classes/MPSKernel.html#//api/name/device">device</a> is not supported. Devices must be
+MTLFeatureSet_iOS_GPUFamily2_v1 or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:inputMatrix:biasVector:resultMatrix:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:inputMatrix:biasVector:resultMatrix:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:inputMatrix:biasVector:resultMatrix:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:inputMatrix:biasVector:resultMatrix:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode a MPSMatrixNeuron object to a command buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> inputMatrix:(MPSMatrix const *__nonnull)<em>inputMatrix</em> biasVector:(MPSVector const *__nullable)<em>biasVector</em> resultMatrix:(MPSMatrix *__nonnull)<em>resultMatrix</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded kernel.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inputMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> object which specifies the input array.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>biasVector</code></th>
+						<td><p>A valid <a href="../Classes/MPSVector.html">MPSVector</a> object which specifies the bias values, or
+a null object to indicate that no bias is to be applied.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resultMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> object which specifies the output array.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Encodes the operation to the specified command buffer.  resultMatrix
+must be large enough to hold a
+MIN(<a href="#//api/name/sourceNumberOfFeatureVectors">sourceNumberOfFeatureVectors</a>, inputMatrix.rows - sourceMatrixOrigin.x)
+x
+MIN(inputMatrix.columns - sourceMatrixOrigin.y, <a href="#//api/name/sourceInputFeatureChannels">sourceInputFeatureChannels</a>) array.</p>
+
+<p>The bias vector must contain at least
+MIN(inputMatrix.columns - sourceMatrixOrigin.y, <a href="#//api/name/sourceInputFeatureChannels">sourceInputFeatureChannels</a>) elements.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized MPSMatrixNeuron</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the MPSMatrixNeuron object.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new MPSMatrixNeuron object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>See @ref MPSKernel#initWithCoder.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyWithZone:device:" title="copyWithZone:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyWithZone:device:">&ndash;&nbsp;copyWithZone:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Make a copy of this kernel for a new device - @see <a href="../Classes/MPSKernel.html">MPSKernel</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)copyWithZone:(nullable NSZone *)<em>zone</em> device:(nullable id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>zone</code></th>
+						<td><p>The NSZone in which to allocate the object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device for the new <a href="../Classes/MPSKernel.html">MPSKernel</a>. If nil, then use
+self.device.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A pointer to a copy of this <a href="../Classes/MPSKernel.html">MPSKernel</a>. This will fail, returning
+nil if the device is not supported. Devices must be
+MTLFeatureSet_iOS_GPUFamily2_v1 or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixFullyConnected.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

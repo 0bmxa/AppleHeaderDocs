@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSObject(WebScripting) Category Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 WebKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/isKeyExcludedFromWebScript:">+ isKeyExcludedFromWebScript:</option>
+		
+		<option value="//api/name/isSelectorExcludedFromWebScript:">+ isSelectorExcludedFromWebScript:</option>
+		
+		<option value="//api/name/webScriptNameForKey:">+ webScriptNameForKey:</option>
+		
+		<option value="//api/name/webScriptNameForSelector:">+ webScriptNameForSelector:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/finalizeForWebScript">- finalizeForWebScript</option>
+		
+		<option value="//api/name/invokeDefaultMethodWithArguments:">- invokeDefaultMethodWithArguments:</option>
+		
+		<option value="//api/name/invokeUndefinedMethodFromWebScript:withArguments:">- invokeUndefinedMethodFromWebScript:withArguments:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSObject(WebScripting) Category Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>WebScriptObject.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/webScriptNameForSelector:" title="webScriptNameForSelector:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webScriptNameForSelector:">+&nbsp;webScriptNameForSelector:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webScriptNameForSelector:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)webScriptNameForSelector:(SEL)<em>selector</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>selector</code></th>
+						<td><p>The selector that will be exposed to the script environment.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the name to be used to represent the specified selector in the
+    scripting environment.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webScriptNameForSelector:
+</code></pre><p>Use the returned string as the exported name for the selector
+    in the script environment. It is the responsibility of the class to ensure
+    uniqueness of the returned name. If nil is returned or this
+    method is not implemented the default name for the selector will
+    be used. The default name concatenates the components of the
+    Objective-C selector name and replaces &lsquo;:&rsquo; with &lsquo;<em>&rsquo;.  &lsquo;</em>&rsquo; characters
+    are escaped with an additional &lsquo;$&rsquo;, i.e. &lsquo;<em>&rsquo; becomes &ldquo;$</em>&rdquo;. &lsquo;$&rsquo; are
+    also escaped, i.e.
+        Objective-C name        Default script name
+        moveTo::                move<em><em>
+        moveTo</em>                 moveTo$</em>
+        moveTo$<em>                moveTo$$$</em></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebScriptObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isSelectorExcludedFromWebScript:" title="isSelectorExcludedFromWebScript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isSelectorExcludedFromWebScript:">+&nbsp;isSelectorExcludedFromWebScript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method isSelectorExcludedFromWebScript:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)isSelectorExcludedFromWebScript:(SEL)<em>selector</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>selector</code></th>
+						<td><p>The selector the will be exposed to the script environment.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns YES to hide the selector, NO to export the selector.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method isSelectorExcludedFromWebScript:
+</code></pre><p>Return NO to export the selector to the script environment.
+    Return YES to prevent the selector from being exported to the script environment.
+    If this method is not implemented on the class no selectors will be exported.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebScriptObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webScriptNameForKey:" title="webScriptNameForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webScriptNameForKey:">+&nbsp;webScriptNameForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webScriptNameForKey:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)webScriptNameForKey:(const char *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name of the instance variable that will be exposed to the
+    script environment. Only instance variables that meet the export criteria will
+    be exposed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the name to be used to represent the specified property in the
+    scripting environment.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webScriptNameForKey:
+</code></pre><p>Provide an alternate name for a property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebScriptObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isKeyExcludedFromWebScript:" title="isKeyExcludedFromWebScript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isKeyExcludedFromWebScript:">+&nbsp;isKeyExcludedFromWebScript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method isKeyExcludedFromWebScript:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)isKeyExcludedFromWebScript:(const char *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name of the instance variable that will be exposed to the
+    script environment.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns YES to hide the property, NO to export the property.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method isKeyExcludedFromWebScript:
+</code></pre><p>Return NO to export the property to the script environment.
+    Return YES to prevent the property from being exported to the script environment.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebScriptObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/invokeUndefinedMethodFromWebScript:withArguments:" title="invokeUndefinedMethodFromWebScript:withArguments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/invokeUndefinedMethodFromWebScript:withArguments:">&ndash;&nbsp;invokeUndefinedMethodFromWebScript:withArguments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method invokeUndefinedMethodFromWebScript:withArguments:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)invokeUndefinedMethodFromWebScript:(NSString *)<em>name</em> withArguments:(NSArray *)<em>arguments</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name of the method to invoke.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>arguments</code></th>
+						<td><p>The arguments to pass the method.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The return value of the invocation. The value will be converted as appropriate
+    for the script environment.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method invokeUndefinedMethodFromWebScript:withArguments:
+</code></pre><p>If a script attempts to invoke a method that is not exported,
+    invokeUndefinedMethodFromWebScript:withArguments: will be called.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebScriptObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/invokeDefaultMethodWithArguments:" title="invokeDefaultMethodWithArguments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/invokeDefaultMethodWithArguments:">&ndash;&nbsp;invokeDefaultMethodWithArguments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method invokeDefaultMethodWithArguments:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)invokeDefaultMethodWithArguments:(NSArray *)<em>arguments</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>arguments</code></th>
+						<td><p>The arguments to pass the method.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The return value of the call. The value will be converted as appropriate
+    for the script environment.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method invokeDefaultMethodWithArguments:
+</code></pre><p>If a script attempts to call an exposed object as a function,
+    this method will be called.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebScriptObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/finalizeForWebScript" title="finalizeForWebScript"></a>
+	<h3 class="method-title"><code><a href="#//api/name/finalizeForWebScript">&ndash;&nbsp;finalizeForWebScript</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method finalizeForWebScript
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)finalizeForWebScript</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method finalizeForWebScript
+</code></pre><p>finalizeForScript is called on objects exposed to the script
+    environment just before the script environment garbage collects the object.
+    Subsequently, any references to WebScriptObjects made by the exposed object will
+    be invalid and have undefined consequences.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebScriptObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

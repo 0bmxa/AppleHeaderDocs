@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>VNImageRequestHandler Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Vision Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithCGImage:options:">- initWithCGImage:options:</option>
+		
+		<option value="//api/name/initWithCGImage:orientation:options:">- initWithCGImage:orientation:options:</option>
+		
+		<option value="//api/name/initWithCIImage:options:">- initWithCIImage:options:</option>
+		
+		<option value="//api/name/initWithCIImage:orientation:options:">- initWithCIImage:orientation:options:</option>
+		
+		<option value="//api/name/initWithCVPixelBuffer:options:">- initWithCVPixelBuffer:options:</option>
+		
+		<option value="//api/name/initWithCVPixelBuffer:orientation:options:">- initWithCVPixelBuffer:orientation:options:</option>
+		
+		<option value="//api/name/initWithData:options:">- initWithData:options:</option>
+		
+		<option value="//api/name/initWithData:orientation:options:">- initWithData:orientation:options:</option>
+		
+		<option value="//api/name/initWithURL:options:">- initWithURL:options:</option>
+		
+		<option value="//api/name/initWithURL:orientation:options:">- initWithURL:orientation:options:</option>
+		
+		<option value="//api/name/performRequests:error:">- performRequests:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">VNImageRequestHandler Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VNRequestHandler.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The VNImageRequestHandler is created with an image that is used to be used for the requests a client might want to schedule. The VNImageRequestHandler retains, but never modifies, the image source for its entire lifetime. The client also must not modify the content of the image source once the VNImageRequestHandler is created otherwise the results are undefined.
+             The VNImageRequestHandler can choose to also cache intermediate representation of the image or other request-specific information for the purposes of runtime performance.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCVPixelBuffer:options:" title="initWithCVPixelBuffer:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCVPixelBuffer:options:">&ndash;&nbsp;initWithCVPixelBuffer:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>initWithCVPixelBuffer:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCVPixelBuffer:(CVPixelBufferRef)<em>pixelBuffer</em> options:(NSDictionary&lt;VNImageOption,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pixelBuffer</code></th>
+						<td><p>A CVPixelBuffer containing the image to be used for performing the requests. The content of the buffer cannot be modified for the lifetime of the VNImageRequestHandler.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCVPixelBuffer:orientation:options:" title="initWithCVPixelBuffer:orientation:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCVPixelBuffer:orientation:options:">&ndash;&nbsp;initWithCVPixelBuffer:orientation:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>initWithCVPixelBuffer:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCVPixelBuffer:(CVPixelBufferRef)<em>pixelBuffer</em> orientation:(CGImagePropertyOrientation)<em>orientation</em> options:(NSDictionary&lt;VNImageOption,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pixelBuffer</code></th>
+						<td><p>A CVPixelBuffer containing the image to be used for performing the requests. The content of the buffer cannot be modified for the lifetime of the VNImageRequestHandler.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orientation</code></th>
+						<td><p>The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCGImage:options:" title="initWithCGImage:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCGImage:options:">&ndash;&nbsp;initWithCGImage:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>initWithCGImage:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CGImageRef.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCGImage:(CGImageRef)<em>image</em> options:(NSDictionary&lt;VNImageOption,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>A CGImageRef containing the image to be used for performing the requests. The content of the image cannot be modified.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCGImage:orientation:options:" title="initWithCGImage:orientation:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCGImage:orientation:options:">&ndash;&nbsp;initWithCGImage:orientation:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>initWithCGImage:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CGImageRef.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCGImage:(CGImageRef)<em>image</em> orientation:(CGImagePropertyOrientation)<em>orientation</em> options:(NSDictionary&lt;VNImageOption,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>A CGImageRef containing the image to be used for performing the requests. The content of the image cannot be modified.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orientation</code></th>
+						<td><p>The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCIImage:options:" title="initWithCIImage:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCIImage:options:">&ndash;&nbsp;initWithCIImage:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>initWithCIImage:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CIImage.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCIImage:(CIImage *)<em>image</em> options:(NSDictionary&lt;VNImageOption,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>A CIImage containing the image to be used for performing the requests. The content of the image cannot be modified.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics</p>
+
+<p>@note:  Request results may not be accurate in simulator due to CI&rsquo;s inability to render certain pixel formats in the simulator. The orientation of the original image should be applied for instance by using imageByApplyingOrientation or use the initWithCIImage:options:orientation API.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCIImage:orientation:options:" title="initWithCIImage:orientation:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCIImage:orientation:options:">&ndash;&nbsp;initWithCIImage:orientation:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>initWithCIImage:options:orientation creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CIImage.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCIImage:(CIImage *)<em>image</em> orientation:(CGImagePropertyOrientation)<em>orientation</em> options:(NSDictionary&lt;VNImageOption,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>A CIImage containing the image to be used for performing the requests. The content of the image cannot be modified.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orientation</code></th>
+						<td><p>The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics</p>
+
+<p>@note:  Request results may not be accurate in simulator due to CI&rsquo;s inability to render certain pixel formats in the simulator</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithURL:options:" title="initWithURL:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithURL:options:">&ndash;&nbsp;initWithURL:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>initWithURL:options creates a VNImageRequestHandler to be used for performing requests against an image specified by it&rsquo;s URL</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithURL:(NSURL *)<em>imageURL</em> options:(NSDictionary&lt;VNImageOption,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageURL</code></th>
+						<td><p>A URL pointing at an image to be used for performing the requests. The image has to be in a format that is supported by ImageIO. The content of the image cannot be modified.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics</p>
+
+<p>@note:  Request results may not be accurate in simulator due to CI&rsquo;s inability to render certain pixel formats in the simulator</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithURL:orientation:options:" title="initWithURL:orientation:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithURL:orientation:options:">&ndash;&nbsp;initWithURL:orientation:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>initWithURL:options creates a VNImageRequestHandler to be used for performing requests against an image specified by it&rsquo;s URL</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithURL:(NSURL *)<em>imageURL</em> orientation:(CGImagePropertyOrientation)<em>orientation</em> options:(NSDictionary&lt;VNImageOption,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageURL</code></th>
+						<td><p>A URL pointing at an image to be used for performing the requests. The image has to be in a format that is supported by ImageIO. The content of the image cannot be modified.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orientation</code></th>
+						<td><p>The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics</p>
+
+<p>@note:  Request results may not be accurate in simulator due to CI&rsquo;s inability to render certain pixel formats in the simulator</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithData:options:" title="initWithData:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithData:options:">&ndash;&nbsp;initWithData:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>initWithData:options creates a VNImageRequestHandler to be used for performing requests against an image contained in an NSData object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithData:(NSData *)<em>imageData</em> options:(NSDictionary&lt;VNImageOption,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageData</code></th>
+						<td><p>An NSData object containing the content of the image to be used for performing the requests. See CIImage imageWithData for supported format. The content of the image cannot be modified.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics</p>
+
+<p>@note:  Request results may not be accurate in simulator due to CI&rsquo;s inability to render certain pixel formats in the simulator</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithData:orientation:options:" title="initWithData:orientation:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithData:orientation:options:">&ndash;&nbsp;initWithData:orientation:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>initWithData:options creates a VNImageRequestHandler to be used for performing requests against an image contained in an NSData object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithData:(NSData *)<em>imageData</em> orientation:(CGImagePropertyOrientation)<em>orientation</em> options:(NSDictionary&lt;VNImageOption,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageData</code></th>
+						<td><p>An NSData object containing the content of the image to be used for performing the requests. See CIImage imageWithData for supported format. The content of the image cannot be modified.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orientation</code></th>
+						<td><p>The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics</p>
+
+<p>@note:  Request results may not be accurate in simulator due to CI&rsquo;s inability to render certain pixel formats in the simulator</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performRequests:error:" title="performRequests:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performRequests:error:">&ndash;&nbsp;performRequests:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>performRequests schedules one or more VNRequests to be performed. The function returns once all requests have been finished.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performRequests:(NSArray&lt;VNRequest*&gt; *)<em>requests</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>An NSArray of VNRequests that are to be performed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Returns an error that happened during scheduling of the requests. Check individual requests results and errors for their respective success and failures. This parameter is optional.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns true if all requests were scheduled and performed. Check individual requests results and errors for their respective success and failures.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The results of the VNRequests as well any possible errors of the individual requests are reported in the VNRequests results and error properties.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VNRequestHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

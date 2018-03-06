@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CIPDF417CodeDescriptor Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreImage Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/columnCount">columnCount</option>
+		
+		<option value="//api/name/errorCorrectedPayload">errorCorrectedPayload</option>
+		
+		<option value="//api/name/isCompact">isCompact</option>
+		
+		<option value="//api/name/rowCount">rowCount</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/descriptorWithPayload:isCompact:rowCount:columnCount:">+ descriptorWithPayload:isCompact:rowCount:columnCount:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithPayload:isCompact:rowCount:columnCount:">- initWithPayload:isCompact:rowCount:columnCount:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CIPDF417CodeDescriptor Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/CIBarcodeDescriptor.html">CIBarcodeDescriptor</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CIBarcodeDescriptor.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class CIPDF417CodeDescriptor
+@abstract
+    CIPDF417CodeDescriptor is a concrete subclass of <a href="../Classes/CIBarcodeDescriptor.html">CIBarcodeDescriptor</a> that defines an abstract representation of a PDF417 code symbol.</p>
+
+<p>@discussion
+    Refer to the ISO/IEC 15438:2006(E) for the PDF417 symbol specification.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/errorCorrectedPayload" title="errorCorrectedPayload"></a>
+	<h3 class="method-title"><code><a href="#//api/name/errorCorrectedPayload">&nbsp;&nbsp;errorCorrectedPayload</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property errorCorrectedPayload
+@abstract
+The error-corrected codewords which comprise the PDF417 symbol. The first codeword indicates the number of data codewords in the errorCorrectedPayload.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSData *errorCorrectedPayload</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property errorCorrectedPayload
+@abstract
+The error-corrected codewords which comprise the PDF417 symbol. The first codeword indicates the number of data codewords in the errorCorrectedPayload.</p>
+
+<p>@discussion
+PDF417 codes are comprised of a start character on the left and a stop character on the right. Each row begins and ends with special characters indicating the current row as well as information about the dimensions of the PDF417 symbol. The errorCorrectedPayload represents the sequence of PDF417 codewords that make up the body of the message. The first codeword indicates the number of codewords in the message. This count includes the &ldquo;count&rdquo; codeword and any padding codewords, but does not include the error correction codewords. Each codeword is a 16-bit value in the range of 0&hellip;928. The sequence is to be interpreted as described in the PDF417 bar code symbology specification &ndash; ISO/IEC 15438:2006(E).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isCompact" title="isCompact"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isCompact">&nbsp;&nbsp;isCompact</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property isCompact
+@abstract
+    A BOOL indicating whether the symbol is compact.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL isCompact</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property isCompact
+@abstract
+    A BOOL indicating whether the symbol is compact.</p>
+
+<p>@discussion
+    Compact PDF417 symbols have abbreviated right-side guard bars.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rowCount" title="rowCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rowCount">&nbsp;&nbsp;rowCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property rowCount
+@abstract
+    Indicates the number of rows in the rectangular matrix.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger rowCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property rowCount
+@abstract
+    Indicates the number of rows in the rectangular matrix.</p>
+
+<p>@discussion
+    rowCount values range from 3 to 90.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/columnCount" title="columnCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/columnCount">&nbsp;&nbsp;columnCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property columnCount
+@abstract
+    Indicates the number of columns in the rectangular matrix, excluding the columns used to indicate the symbol structure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger columnCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property columnCount
+@abstract
+    Indicates the number of columns in the rectangular matrix, excluding the columns used to indicate the symbol structure.</p>
+
+<p>@discussion
+    columnCount values range from 1 to 30.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithPayload:isCompact:rowCount:columnCount:" title="initWithPayload:isCompact:rowCount:columnCount:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPayload:isCompact:rowCount:columnCount:">&ndash;&nbsp;initWithPayload:isCompact:rowCount:columnCount:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithPayload:(NSData *)<em>errorCorrectedPayload</em> isCompact:(BOOL)<em>isCompact</em> rowCount:(NSInteger)<em>rowCount</em> columnCount:(NSInteger)<em>columnCount</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/descriptorWithPayload:isCompact:rowCount:columnCount:" title="descriptorWithPayload:isCompact:rowCount:columnCount:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/descriptorWithPayload:isCompact:rowCount:columnCount:">+&nbsp;descriptorWithPayload:isCompact:rowCount:columnCount:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)descriptorWithPayload:(NSData *)<em>errorCorrectedPayload</em> isCompact:(BOOL)<em>isCompact</em> rowCount:(NSInteger)<em>rowCount</em> columnCount:(NSInteger)<em>columnCount</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

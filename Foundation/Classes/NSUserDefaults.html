@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSUserDefaults Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/standardUserDefaults">standardUserDefaults</option>
+		
+		<option value="//api/name/volatileDomainNames">volatileDomainNames</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/resetStandardUserDefaults">+ resetStandardUserDefaults</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/URLForKey:">- URLForKey:</option>
+		
+		<option value="//api/name/addSuiteNamed:">- addSuiteNamed:</option>
+		
+		<option value="//api/name/arrayForKey:">- arrayForKey:</option>
+		
+		<option value="//api/name/boolForKey:">- boolForKey:</option>
+		
+		<option value="//api/name/dataForKey:">- dataForKey:</option>
+		
+		<option value="//api/name/dictionaryForKey:">- dictionaryForKey:</option>
+		
+		<option value="//api/name/dictionaryRepresentation">- dictionaryRepresentation</option>
+		
+		<option value="//api/name/doubleForKey:">- doubleForKey:</option>
+		
+		<option value="//api/name/floatForKey:">- floatForKey:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithSuiteName:">- initWithSuiteName:</option>
+		
+		<option value="//api/name/initWithUser:">- initWithUser:</option>
+		
+		<option value="//api/name/integerForKey:">- integerForKey:</option>
+		
+		<option value="//api/name/objectForKey:">- objectForKey:</option>
+		
+		<option value="//api/name/objectIsForcedForKey:">- objectIsForcedForKey:</option>
+		
+		<option value="//api/name/objectIsForcedForKey:inDomain:">- objectIsForcedForKey:inDomain:</option>
+		
+		<option value="//api/name/persistentDomainForName:">- persistentDomainForName:</option>
+		
+		<option value="//api/name/persistentDomainNames">- persistentDomainNames</option>
+		
+		<option value="//api/name/registerDefaults:">- registerDefaults:</option>
+		
+		<option value="//api/name/removeObjectForKey:">- removeObjectForKey:</option>
+		
+		<option value="//api/name/removePersistentDomainForName:">- removePersistentDomainForName:</option>
+		
+		<option value="//api/name/removeSuiteNamed:">- removeSuiteNamed:</option>
+		
+		<option value="//api/name/removeVolatileDomainForName:">- removeVolatileDomainForName:</option>
+		
+		<option value="//api/name/setBool:forKey:">- setBool:forKey:</option>
+		
+		<option value="//api/name/setDouble:forKey:">- setDouble:forKey:</option>
+		
+		<option value="//api/name/setFloat:forKey:">- setFloat:forKey:</option>
+		
+		<option value="//api/name/setInteger:forKey:">- setInteger:forKey:</option>
+		
+		<option value="//api/name/setObject:forKey:">- setObject:forKey:</option>
+		
+		<option value="//api/name/setPersistentDomain:forName:">- setPersistentDomain:forName:</option>
+		
+		<option value="//api/name/setURL:forKey:">- setURL:forKey:</option>
+		
+		<option value="//api/name/setVolatileDomain:forName:">- setVolatileDomain:forName:</option>
+		
+		<option value="//api/name/stringArrayForKey:">- stringArrayForKey:</option>
+		
+		<option value="//api/name/stringForKey:">- stringForKey:</option>
+		
+		<option value="//api/name/synchronize">- synchronize</option>
+		
+		<option value="//api/name/volatileDomainForName:">- volatileDomainForName:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSUserDefaults Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSUserDefaults.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>NSUserDefaults is a hierarchical persistent interprocess (optionally distributed) key-value store, optimized for storing user settings.</p>
+
+<p>Hierarchical: NSUserDefaults has a list of places to look for data called the &ldquo;search list&rdquo;. A search list is referred to by an arbitrary string called the &ldquo;suite identifier&rdquo; or &ldquo;domain identifier&rdquo;. When queried, NSUserDefaults checks each entry of its search list until it finds one that contains the key in question, or has searched the whole list. The list is (note: &ldquo;current host + current user&rdquo; preferences are unimplemented on iOS, watchOS, and tvOS, and &ldquo;any user&rdquo; preferences are not generally useful for applications on those operating systems):
+- Managed (&ldquo;forced&rdquo;) preferences, set by a configuration profile or via mcx from a network administrator
+- Commandline arguments
+- Preferences for the current domain, in the cloud
+- Preferences for the current domain, the current user, in the current host
+- Preferences for the current domain, the current user, in any host
+- Preferences added via <a href="#//api/name/addSuiteNamed:">addSuiteNamed:</a>
+- Preferences global to all apps for the current user, in the current host
+- Preferences global to all apps for the current user, in any host
+- Preferences for the current domain, for all users, in the current host
+- Preferences global to all apps for all users, in the current host
+- Preferences registered with <a href="#//api/name/registerDefaults:">registerDefaults:</a></p>
+
+<p>Persistent: Preferences stored in NSUserDefaults persist across reboots and relaunches of apps unless otherwise specified.</p>
+
+<p>Interprocess: Preferences may be accessible to and modified from multiple processes simultaneously (for example between an application and an extension).</p>
+
+<p>Optionally distributed (Currently only supported in Shared iPad for Students mode):  Data stored in user defaults can be made &ldquo;ubiqitous&rdquo;, i.e. synchronized between devices via the cloud.  Ubiquitous user defaults are automatically propagated to all devices logged into the same iCloud account. When reading defaults (via -*ForKey: methods on NSUserDefaults), ubiquitous defaults are searched before local defaults. All operations on ubiquitous defaults are asynchronous, so registered defaults may be returned in place of ubiquitous defaults if downloading from iCloud hasn&rsquo;t finished. Ubiquitous defaults are specified in the Defaults Configuration File for an application.</p>
+
+<p>Key-Value Store: NSUserDefaults stores Property List objects (<a href="../Classes/NSString.html">NSString</a>, <a href="../Classes/NSData.html">NSData</a>, <a href="../Classes/NSNumber.html">NSNumber</a>, <a href="../Classes/NSDate.html">NSDate</a>, <a href="../Classes/NSArray.html">NSArray</a>, and <a href="../Classes/NSDictionary.html">NSDictionary</a>) identified by <a href="../Classes/NSString.html">NSString</a> keys, similar to an <a href="../Classes/NSMutableDictionary.html">NSMutableDictionary</a>.</p>
+
+<p>Optimized for storing user settings: NSUserDefaults is intended for relatively small amounts of data, queried very frequently, and modified occasionally. Using it in other ways may be slow or use more memory than solutions more suited to those uses.</p>
+
+<p>The &lsquo;App&rsquo; CFPreferences functions in CoreFoundation act on the same search lists that NSUserDefaults does.</p>
+
+<p>NSUserDefaults can be observed using Key-Value Observing for any key stored in it. Using NSKeyValueObservingOptionPrior to observe changes from other processes or devices will behave as though NSKeyValueObservingOptionPrior was not specified.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/standardUserDefaults" title="standardUserDefaults"></a>
+	<h3 class="method-title"><code><a href="#//api/name/standardUserDefaults">&nbsp;&nbsp;standardUserDefaults</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>+standardUserDefaults returns a global instance of NSUserDefaults configured to search the current application&rsquo;s search list.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (class, readonly, strong) NSUserDefaults *standardUserDefaults</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>+standardUserDefaults returns a global instance of NSUserDefaults configured to search the current application&rsquo;s search list.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetStandardUserDefaults" title="resetStandardUserDefaults"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetStandardUserDefaults">+&nbsp;resetStandardUserDefaults</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>+resetStandardUserDefaults releases the <a href="#//api/name/standardUserDefaults">standardUserDefaults</a> and sets it to nil. A new <a href="#//api/name/standardUserDefaults">standardUserDefaults</a> will be created the next time it&rsquo;s accessed. The only visible effect this has is that all KVO observers of the previous <a href="#//api/name/standardUserDefaults">standardUserDefaults</a> will no longer be observing it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)resetStandardUserDefaults</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>+resetStandardUserDefaults releases the <a href="#//api/name/standardUserDefaults">standardUserDefaults</a> and sets it to nil. A new <a href="#//api/name/standardUserDefaults">standardUserDefaults</a> will be created the next time it&rsquo;s accessed. The only visible effect this has is that all KVO observers of the previous <a href="#//api/name/standardUserDefaults">standardUserDefaults</a> will no longer be observing it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-init is equivalent to -initWithSuiteName:nil</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-init is equivalent to -initWithSuiteName:nil</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSuiteName:" title="initWithSuiteName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSuiteName:">&ndash;&nbsp;initWithSuiteName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-initWithSuiteName: initializes an instance of NSUserDefaults that searches the shared preferences search list for the domain &lsquo;suitename&rsquo;. For example, using the identifier of an application group will cause the receiver to search the preferences for that group. Passing the current application&rsquo;s bundle identifier, NSGlobalDomain, or the corresponding CFPreferences constants is an error. Passing nil will search the default search list.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithSuiteName:(nullable NSString *)<em>suitename</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-initWithSuiteName: initializes an instance of NSUserDefaults that searches the shared preferences search list for the domain &lsquo;suitename&rsquo;. For example, using the identifier of an application group will cause the receiver to search the preferences for that group. Passing the current application&rsquo;s bundle identifier, NSGlobalDomain, or the corresponding CFPreferences constants is an error. Passing nil will search the default search list.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithUser:" title="initWithUser:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithUser:">&ndash;&nbsp;initWithUser:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-initWithUser: is equivalent to <a href="#//api/name/init">init</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)initWithUser:(NSString *)<em>username</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-initWithUser: is equivalent to <a href="#//api/name/init">init</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectForKey:" title="objectForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectForKey:">&ndash;&nbsp;objectForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-objectForKey: will search the receiver&rsquo;s search list for a default with the key &lsquo;defaultName&rsquo; and return it. If another process has changed defaults in the search list, NSUserDefaults will automatically update to the latest values. If the key in question has been marked as ubiquitous via a Defaults Configuration File, the latest value may not be immediately available, and the registered value will be returned instead.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)objectForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-objectForKey: will search the receiver&rsquo;s search list for a default with the key &lsquo;defaultName&rsquo; and return it. If another process has changed defaults in the search list, NSUserDefaults will automatically update to the latest values. If the key in question has been marked as ubiquitous via a Defaults Configuration File, the latest value may not be immediately available, and the registered value will be returned instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setObject:forKey:" title="setObject:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setObject:forKey:">&ndash;&nbsp;setObject:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-setObject:forKey: immediately stores a value (or removes the value if nil is passed as the value) for the provided key in the search list entry for the receiver&rsquo;s suite name in the current user and any host, then asynchronously stores the value persistently, where it is made available to other processes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setObject:(nullable id)<em>value</em> forKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-setObject:forKey: immediately stores a value (or removes the value if nil is passed as the value) for the provided key in the search list entry for the receiver&rsquo;s suite name in the current user and any host, then asynchronously stores the value persistently, where it is made available to other processes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeObjectForKey:" title="removeObjectForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeObjectForKey:">&ndash;&nbsp;removeObjectForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-removeObjectForKey: is equivalent to -[&hellip; setObject:nil forKey:defaultName]</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeObjectForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-removeObjectForKey: is equivalent to -[&hellip; setObject:nil forKey:defaultName]</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stringForKey:" title="stringForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringForKey:">&ndash;&nbsp;stringForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-stringForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it will convert <a href="../Classes/NSNumber.html">NSNumber</a> values to their <a href="../Classes/NSString.html">NSString</a> representation. If a non-string non-number value is found, nil will be returned.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)stringForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-stringForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it will convert <a href="../Classes/NSNumber.html">NSNumber</a> values to their <a href="../Classes/NSString.html">NSString</a> representation. If a non-string non-number value is found, nil will be returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/arrayForKey:" title="arrayForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/arrayForKey:">&ndash;&nbsp;arrayForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-arrayForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it will return nil if the value is not an <a href="../Classes/NSArray.html">NSArray</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray *)arrayForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-arrayForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it will return nil if the value is not an <a href="../Classes/NSArray.html">NSArray</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dictionaryForKey:" title="dictionaryForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dictionaryForKey:">&ndash;&nbsp;dictionaryForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-dictionaryForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it will return nil if the value is not an <a href="../Classes/NSDictionary.html">NSDictionary</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDictionary&lt;NSString*,id&gt; *)dictionaryForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-dictionaryForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it will return nil if the value is not an <a href="../Classes/NSDictionary.html">NSDictionary</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dataForKey:" title="dataForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dataForKey:">&ndash;&nbsp;dataForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-dataForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it will return nil if the value is not an <a href="../Classes/NSData.html">NSData</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)dataForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-dataForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it will return nil if the value is not an <a href="../Classes/NSData.html">NSData</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stringArrayForKey:" title="stringArrayForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringArrayForKey:">&ndash;&nbsp;stringArrayForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><a href="#//api/name/stringForKey:">stringForKey:</a> is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it will return nil if the value is not an NSArray<a href="../Classes/NSString.html">NSString</a> *>. Note that unlike <a href="#//api/name/stringForKey:">stringForKey:</a>, NSNumbers are not converted to NSStrings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray&lt;NSString*&gt; *)stringArrayForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p><a href="#//api/name/stringForKey:">stringForKey:</a> is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it will return nil if the value is not an NSArray<a href="../Classes/NSString.html">NSString</a> *>. Note that unlike <a href="#//api/name/stringForKey:">stringForKey:</a>, NSNumbers are not converted to NSStrings.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/integerForKey:" title="integerForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/integerForKey:">&ndash;&nbsp;integerForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-integerForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it converts the returned value to an NSInteger. If the value is an <a href="../Classes/NSNumber.html">NSNumber</a>, the result of -integerValue will be returned. If the value is an <a href="../Classes/NSString.html">NSString</a>, it will be converted to NSInteger if possible. If the value is a boolean, it will be converted to either 1 for YES or 0 for NO. If the value is absent or can&rsquo;t be converted to an integer, 0 will be returned.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)integerForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-integerForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it converts the returned value to an NSInteger. If the value is an <a href="../Classes/NSNumber.html">NSNumber</a>, the result of -integerValue will be returned. If the value is an <a href="../Classes/NSString.html">NSString</a>, it will be converted to NSInteger if possible. If the value is a boolean, it will be converted to either 1 for YES or 0 for NO. If the value is absent or can&rsquo;t be converted to an integer, 0 will be returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/floatForKey:" title="floatForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/floatForKey:">&ndash;&nbsp;floatForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-floatForKey: is similar to <a href="#//api/name/integerForKey:">integerForKey:</a>, except that it returns a float, and boolean values will not be converted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (float)floatForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-floatForKey: is similar to <a href="#//api/name/integerForKey:">integerForKey:</a>, except that it returns a float, and boolean values will not be converted.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/doubleForKey:" title="doubleForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/doubleForKey:">&ndash;&nbsp;doubleForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-doubleForKey: is similar to <a href="#//api/name/integerForKey:">integerForKey:</a>, except that it returns a double, and boolean values will not be converted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (double)doubleForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-doubleForKey: is similar to <a href="#//api/name/integerForKey:">integerForKey:</a>, except that it returns a double, and boolean values will not be converted.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/boolForKey:" title="boolForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/boolForKey:">&ndash;&nbsp;boolForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-boolForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it converts the returned value to a BOOL. If the value is an <a href="../Classes/NSNumber.html">NSNumber</a>, NO will be returned if the value is 0, YES otherwise. If the value is an <a href="../Classes/NSString.html">NSString</a>, values of &ldquo;YES&rdquo; or &ldquo;1&rdquo; will return YES, and values of &ldquo;NO&rdquo;, &ldquo;0&rdquo;, or any other string will return NO. If the value is absent or can&rsquo;t be converted to a BOOL, NO will be returned.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)boolForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-boolForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a>, except that it converts the returned value to a BOOL. If the value is an <a href="../Classes/NSNumber.html">NSNumber</a>, NO will be returned if the value is 0, YES otherwise. If the value is an <a href="../Classes/NSString.html">NSString</a>, values of &ldquo;YES&rdquo; or &ldquo;1&rdquo; will return YES, and values of &ldquo;NO&rdquo;, &ldquo;0&rdquo;, or any other string will return NO. If the value is absent or can&rsquo;t be converted to a BOOL, NO will be returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/URLForKey:" title="URLForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/URLForKey:">&ndash;&nbsp;URLForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-URLForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a> except that it converts the returned value to an <a href="../Classes/NSURL.html">NSURL</a>. If the value is an <a href="../Classes/NSString.html">NSString</a> path, then it will construct a file URL to that path. If the value is an archived URL from <a href="#//api/name/setURL:forKey:">setURL:forKey:</a> it will be unarchived. If the value is absent or can&rsquo;t be converted to an <a href="../Classes/NSURL.html">NSURL</a>, nil will be returned.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSURL *)URLForKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-URLForKey: is equivalent to <a href="#//api/name/objectForKey:">objectForKey:</a> except that it converts the returned value to an <a href="../Classes/NSURL.html">NSURL</a>. If the value is an <a href="../Classes/NSString.html">NSString</a> path, then it will construct a file URL to that path. If the value is an archived URL from <a href="#//api/name/setURL:forKey:">setURL:forKey:</a> it will be unarchived. If the value is absent or can&rsquo;t be converted to an <a href="../Classes/NSURL.html">NSURL</a>, nil will be returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setInteger:forKey:" title="setInteger:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setInteger:forKey:">&ndash;&nbsp;setInteger:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-setInteger:forKey: is equivalent to <a href="#//api/name/setObject:forKey:">setObject:forKey:</a> except that the value is converted from an NSInteger to an <a href="../Classes/NSNumber.html">NSNumber</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setInteger:(NSInteger)<em>value</em> forKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-setInteger:forKey: is equivalent to <a href="#//api/name/setObject:forKey:">setObject:forKey:</a> except that the value is converted from an NSInteger to an <a href="../Classes/NSNumber.html">NSNumber</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setFloat:forKey:" title="setFloat:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setFloat:forKey:">&ndash;&nbsp;setFloat:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-setFloat:forKey: is equivalent to <a href="#//api/name/setObject:forKey:">setObject:forKey:</a> except that the value is converted from a float to an <a href="../Classes/NSNumber.html">NSNumber</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setFloat:(float)<em>value</em> forKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-setFloat:forKey: is equivalent to <a href="#//api/name/setObject:forKey:">setObject:forKey:</a> except that the value is converted from a float to an <a href="../Classes/NSNumber.html">NSNumber</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDouble:forKey:" title="setDouble:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDouble:forKey:">&ndash;&nbsp;setDouble:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-setDouble:forKey: is equivalent to <a href="#//api/name/setObject:forKey:">setObject:forKey:</a> except that the value is converted from a double to an <a href="../Classes/NSNumber.html">NSNumber</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setDouble:(double)<em>value</em> forKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-setDouble:forKey: is equivalent to <a href="#//api/name/setObject:forKey:">setObject:forKey:</a> except that the value is converted from a double to an <a href="../Classes/NSNumber.html">NSNumber</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setBool:forKey:" title="setBool:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setBool:forKey:">&ndash;&nbsp;setBool:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-setBool:forKey: is equivalent to <a href="#//api/name/setObject:forKey:">setObject:forKey:</a> except that the value is converted from a BOOL to an <a href="../Classes/NSNumber.html">NSNumber</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setBool:(BOOL)<em>value</em> forKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-setBool:forKey: is equivalent to <a href="#//api/name/setObject:forKey:">setObject:forKey:</a> except that the value is converted from a BOOL to an <a href="../Classes/NSNumber.html">NSNumber</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setURL:forKey:" title="setURL:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setURL:forKey:">&ndash;&nbsp;setURL:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-setURL:forKey is equivalent to <a href="#//api/name/setObject:forKey:">setObject:forKey:</a> except that the value is archived to an <a href="../Classes/NSData.html">NSData</a>. Use <a href="#//api/name/URLForKey:">URLForKey:</a> to retrieve values set this way.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setURL:(nullable NSURL *)<em>url</em> forKey:(NSString *)<em>defaultName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-setURL:forKey is equivalent to <a href="#//api/name/setObject:forKey:">setObject:forKey:</a> except that the value is archived to an <a href="../Classes/NSData.html">NSData</a>. Use <a href="#//api/name/URLForKey:">URLForKey:</a> to retrieve values set this way.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerDefaults:" title="registerDefaults:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerDefaults:">&ndash;&nbsp;registerDefaults:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-registerDefaults: adds the registrationDictionary to the last item in every search list. This means that after NSUserDefaults has looked for a value in every other valid location, it will look in registered defaults, making them useful as a &ldquo;fallback&rdquo; value. Registered defaults are never stored between runs of an application, and are visible only to the application that registers them.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerDefaults:(NSDictionary&lt;NSString*,id&gt; *)<em>registrationDictionary</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-registerDefaults: adds the registrationDictionary to the last item in every search list. This means that after NSUserDefaults has looked for a value in every other valid location, it will look in registered defaults, making them useful as a &ldquo;fallback&rdquo; value. Registered defaults are never stored between runs of an application, and are visible only to the application that registers them.</p>
+
+<p>Default values from Defaults Configuration Files will automatically be registered.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addSuiteNamed:" title="addSuiteNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addSuiteNamed:">&ndash;&nbsp;addSuiteNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-addSuiteNamed: adds the full search list for &lsquo;suiteName&rsquo; as a sub-search-list of the receiver&rsquo;s. The additional search lists are searched after the current domain, but before global defaults. Passing NSGlobalDomain or the current application&rsquo;s bundle identifier is unsupported.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addSuiteNamed:(NSString *)<em>suiteName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-addSuiteNamed: adds the full search list for &lsquo;suiteName&rsquo; as a sub-search-list of the receiver&rsquo;s. The additional search lists are searched after the current domain, but before global defaults. Passing NSGlobalDomain or the current application&rsquo;s bundle identifier is unsupported.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeSuiteNamed:" title="removeSuiteNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeSuiteNamed:">&ndash;&nbsp;removeSuiteNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-removeSuiteNamed: removes a sub-searchlist added via <a href="#//api/name/addSuiteNamed:">addSuiteNamed:</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeSuiteNamed:(NSString *)<em>suiteName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-removeSuiteNamed: removes a sub-searchlist added via <a href="#//api/name/addSuiteNamed:">addSuiteNamed:</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dictionaryRepresentation" title="dictionaryRepresentation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dictionaryRepresentation">&ndash;&nbsp;dictionaryRepresentation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-dictionaryRepresentation returns a composite snapshot of the values in the receiver&rsquo;s search list, such that [[receiver dictionaryRepresentation] objectForKey:x] will return the same thing as [receiver objectForKey:x].</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary&lt;NSString*,id&gt; *)dictionaryRepresentation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-dictionaryRepresentation returns a composite snapshot of the values in the receiver&rsquo;s search list, such that [[receiver dictionaryRepresentation] objectForKey:x] will return the same thing as [receiver objectForKey:x].</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/volatileDomainNames" title="volatileDomainNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/volatileDomainNames">&nbsp;&nbsp;volatileDomainNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSArray&lt;NSString*&gt; *volatileDomainNames</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/volatileDomainForName:" title="volatileDomainForName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/volatileDomainForName:">&ndash;&nbsp;volatileDomainForName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary&lt;NSString*,id&gt; *)volatileDomainForName:(NSString *)<em>domainName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setVolatileDomain:forName:" title="setVolatileDomain:forName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setVolatileDomain:forName:">&ndash;&nbsp;setVolatileDomain:forName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setVolatileDomain:(NSDictionary&lt;NSString*,id&gt; *)<em>domain</em> forName:(NSString *)<em>domainName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeVolatileDomainForName:" title="removeVolatileDomainForName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeVolatileDomainForName:">&ndash;&nbsp;removeVolatileDomainForName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeVolatileDomainForName:(NSString *)<em>domainName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/persistentDomainNames" title="persistentDomainNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/persistentDomainNames">&ndash;&nbsp;persistentDomainNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-persistentDomainNames returns an incomplete list of domains that have preferences stored in them.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)persistentDomainNames</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-persistentDomainNames returns an incomplete list of domains that have preferences stored in them.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/persistentDomainForName:" title="persistentDomainForName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/persistentDomainForName:">&ndash;&nbsp;persistentDomainForName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-persistentDomainForName: returns a dictionary representation of the search list entry specified by &lsquo;domainName&rsquo;, the current user, and any host.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDictionary&lt;NSString*,id&gt; *)persistentDomainForName:(NSString *)<em>domainName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-persistentDomainForName: returns a dictionary representation of the search list entry specified by &lsquo;domainName&rsquo;, the current user, and any host.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setPersistentDomain:forName:" title="setPersistentDomain:forName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setPersistentDomain:forName:">&ndash;&nbsp;setPersistentDomain:forName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-setPersistentDomain:forName: replaces all values in the search list entry specified by &lsquo;domainName&rsquo;, the current user, and any host, with the values in &lsquo;domain&rsquo;. The change will be persisted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setPersistentDomain:(NSDictionary&lt;NSString*,id&gt; *)<em>domain</em> forName:(NSString *)<em>domainName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-setPersistentDomain:forName: replaces all values in the search list entry specified by &lsquo;domainName&rsquo;, the current user, and any host, with the values in &lsquo;domain&rsquo;. The change will be persisted.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removePersistentDomainForName:" title="removePersistentDomainForName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removePersistentDomainForName:">&ndash;&nbsp;removePersistentDomainForName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-removePersistentDomainForName: removes all values from the search list entry specified by &lsquo;domainName&rsquo;, the current user, and any host. The change is persistent.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removePersistentDomainForName:(NSString *)<em>domainName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-removePersistentDomainForName: removes all values from the search list entry specified by &lsquo;domainName&rsquo;, the current user, and any host. The change is persistent.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/synchronize" title="synchronize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/synchronize">&ndash;&nbsp;synchronize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>-synchronize is deprecated and will be marked with the NS_DEPRECATED macro in a future release.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)synchronize</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>-synchronize is deprecated and will be marked with the NS_DEPRECATED macro in a future release.</p>
+
+<p>-synchronize blocks the calling thread until all in-progress set operations have completed. This is no longer necessary. Replacements for previous uses of -synchronize depend on what the intent of calling synchronize was. If you synchronized&hellip;
+- &hellip;before reading in order to fetch updated values: remove the synchronize call
+- &hellip;after writing in order to notify another program to read: the other program can use KVO to observe the default without needing to notify
+- &hellip;before exiting in a non-app (command line tool, agent, or daemon) process: call CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication)
+- &hellip;for any other reason: remove the synchronize call</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSUserDefaults.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectIsForcedForKey:" title="objectIsForcedForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectIsForcedForKey:">&ndash;&nbsp;objectIsForcedForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)objectIsForcedForKey:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectIsForcedForKey:inDomain:" title="objectIsForcedForKey:inDomain:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectIsForcedForKey:inDomain:">&ndash;&nbsp;objectIsForcedForKey:inDomain:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)objectIsForcedForKey:(NSString *)<em>key</em> inDomain:(NSString *)<em>domain</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

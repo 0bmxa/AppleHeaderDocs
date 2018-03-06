@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAsset Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_2">_2</option>
+		
+		<option value="//api/name/_7">_7</option>
+		
+		<option value="//api/name/_8">_8</option>
+		
+		<option value="//api/name/_9">_9</option>
+		
+		<option value="//api/name/availableMetadataFormats">availableMetadataFormats</option>
+		
+		<option value="//api/name/commonMetadata">commonMetadata</option>
+		
+		<option value="//api/name/duration">duration</option>
+		
+		<option value="//api/name/lyrics">lyrics</option>
+		
+		<option value="//api/name/preferredRate">preferredRate</option>
+		
+		<option value="//api/name/preferredTransform">preferredTransform</option>
+		
+		<option value="//api/name/preferredVolume">preferredVolume</option>
+		
+		<option value="//api/name/providesPreciseDurationAndTiming">providesPreciseDurationAndTiming</option>
+		
+		<option value="//api/name/tracks">tracks</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/assetWithURL:">+ assetWithURL:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/cancelLoading">- cancelLoading</option>
+		
+		<option value="//api/name/chapterMetadataGroupsBestMatchingPreferredLanguages:">- chapterMetadataGroupsBestMatchingPreferredLanguages:</option>
+		
+		<option value="//api/name/chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:">- chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:</option>
+		
+		<option value="//api/name/mediaSelectionGroupForMediaCharacteristic:">- mediaSelectionGroupForMediaCharacteristic:</option>
+		
+		<option value="//api/name/metadataForFormat:">- metadataForFormat:</option>
+		
+		<option value="//api/name/trackWithTrackID:">- trackWithTrackID:</option>
+		
+		<option value="//api/name/tracksWithMediaCharacteristic:">- tracksWithMediaCharacteristic:</option>
+		
+		<option value="//api/name/tracksWithMediaType:">- tracksWithMediaType:</option>
+		
+		<option value="//api/name/unusedTrackID">- unusedTrackID</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAsset Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/AVAsynchronousKeyValueLoading.html">AVAsynchronousKeyValueLoading</a><br />NSCopying</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAsset.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>  @class        AVAsset</p>
+
+<p>  @abstract
+    An AVAsset is an abstract class that defines AVFoundation&rsquo;s model for timed audiovisual media.</p>
+
+<pre><code>Each asset contains a collection of tracks that are intended to be presented or processed together, each of a uniform media type, including but not limited to audio, video, text, closed captions, and subtitles.
+</code></pre>
+
+<p>  @discussion
+    AVAssets are often instantiated via its concrete subclass <a href="../Classes/AVURLAsset.html">AVURLAsset</a> with NSURLs that refer to audiovisual media resources, such as streams (including HTTP live streams), QuickTime movie files, MP3 files, and files of other types.</p>
+
+<pre><code>They can also be instantiated using other concrete subclasses that extend the basic model for audiovisual media in useful ways, as AVComposition does for temporal editing.
+
+Properties of assets as a whole are defined by AVAsset. Additionally, references to instances of AVAssetTracks representing tracks of the collection can be obtained, so that each of these can be examined independently.
+
+Because of the nature of timed audiovisual media, upon successful initialization of an AVAsset some or all of the values for its keys may not be immediately available. The value of any key can be requested at any time, and AVAsset will always return its value synchronously, although it may have to block the calling thread in order to do so.
+
+In order to avoid blocking, clients can register their interest in particular keys and to become notified when their values become available. For further details, see AVAsynchronousKeyValueLoading.h.
+
+On iOS, it is particularly important to avoid blocking.  To preserve responsiveness, a synchronous request that blocks for too long (eg, a property request on an asset on a slow HTTP server) may lead to media services being reset.
+
+To play an instance of AVAsset, initialize an instance of AVPlayerItem with it, use the AVPlayerItem to set up its presentation state (such as whether only a limited timeRange of the asset should be played, etc.), and provide the AVPlayerItem to an AVPlayer according to whether the items is to be played by itself or together with a collection of other items. Full details available in AVPlayerItem.h and AVPlayer.h.
+
+AVAssets can also be inserted into AVMutableCompositions in order to assemble audiovisual constructs from one or more source assets.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/assetWithURL:" title="assetWithURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetWithURL:">+&nbsp;assetWithURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an instance of AVAsset for inspection of a media resource.
+  @param        URL
+                An instance of NSURL that references a media resource.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)assetWithURL:(NSURL *)<em>URL</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of AVAsset.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       assetWithURL:</p><p>Returns a newly allocated instance of a subclass of AVAsset initialized with the specified URL.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/duration" title="duration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/duration">&nbsp;&nbsp;duration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMTime duration</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/preferredRate" title="preferredRate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/preferredRate">&nbsp;&nbsp;preferredRate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float preferredRate</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/preferredVolume" title="preferredVolume"></a>
+	<h3 class="method-title"><code><a href="#//api/name/preferredVolume">&nbsp;&nbsp;preferredVolume</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float preferredVolume</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/preferredTransform" title="preferredTransform"></a>
+	<h3 class="method-title"><code><a href="#//api/name/preferredTransform">&nbsp;&nbsp;preferredTransform</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGAffineTransform preferredTransform</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_7" title="_7"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_7">&nbsp;&nbsp;_7</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates whether or not the asset has protected content.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGSize naturalSize NS_DEPRECATED ( 10 _7</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @property     hasProtectedContent</p><p>Assets containing protected content may not be playable without successful authorization, even if the value of the &ldquo;playable&rdquo; property is YES.  See the properties in the AVAssetUsability category for details on how such an asset may be used.  On OS X, clients can use the interfaces in AVPlayerItemProtectedContentAdditions.h to request authorization to play the asset.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Guides to a display mode that is optimal for playing this particular asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVDisplayCriteria *API_AVAILABLE ( tvos ( 11.2 API_UNAVAILABLE ( ios , macos , watchos )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   preferredDisplayCriteria</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetTrackInspection Methods" name="task_AVAssetTrackInspection Methods"></a>
+						<h2 class="task-title">AVAssetTrackInspection Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/tracks" title="tracks"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tracks">&nbsp;&nbsp;tracks</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides the array of AVAssetTracks contained by the asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVAssetTrack*&gt; *tracks</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @property     tracks</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackWithTrackID:" title="trackWithTrackID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackWithTrackID:">&ndash;&nbsp;trackWithTrackID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides an instance of <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a> that represents the track of the specified trackID.
+  @param        trackID
+                The trackID of the requested <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable AVAssetTrack *)trackWithTrackID:(CMPersistentTrackID)<em>trackID</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a>; may be nil if no track of the specified trackID is available.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       trackWithTrackID:</p><p>Becomes callable without blocking when the key @&ldquo;tracks&rdquo; has been loaded</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tracksWithMediaType:" title="tracksWithMediaType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tracksWithMediaType:">&ndash;&nbsp;tracksWithMediaType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides an array of AVAssetTracks of the asset that present media of the specified media type.
+  @param        mediaType
+                The media type according to which AVAsset filters its AVAssetTracks. (Media types are defined in AVMediaFormat.h.)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVAssetTrack*&gt; *)tracksWithMediaType:(AVMediaType)<em>mediaType</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray of AVAssetTracks; may be empty if no <a href="#//api/name/tracks">tracks</a> of the specified media type are available.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       tracksWithMediaType:</p><p>Becomes callable without blocking when the key @&ldquo;tracks&rdquo; has been loaded</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tracksWithMediaCharacteristic:" title="tracksWithMediaCharacteristic:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tracksWithMediaCharacteristic:">&ndash;&nbsp;tracksWithMediaCharacteristic:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides an array of AVAssetTracks of the asset that present media with the specified characteristic.
+  @param        mediaCharacteristic
+                The media characteristic according to which AVAsset filters its AVAssetTracks. (Media characteristics are defined in AVMediaFormat.h.)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVAssetTrack*&gt; *)tracksWithMediaCharacteristic:(AVMediaCharacteristic)<em>mediaCharacteristic</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray of AVAssetTracks; may be empty if no <a href="#//api/name/tracks">tracks</a> with the specified characteristic are available.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       tracksWithMediaCharacteristic:</p><p>Becomes callable without blocking when the key @&ldquo;tracks&rdquo; has been loaded</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_9" title="_9"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_9">&nbsp;&nbsp;_9</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property trackGroups
+@abstract
+    All track groups in the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVAssetTrackGroup*&gt; *NS_AVAILABLE ( 10 _9</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property trackGroups
+@abstract
+    All track groups in the receiver.</p>
+
+<p>@discussion
+    The value of this property is an NSArray of AVAssetTrackGroups, each representing a different grouping of <a href="#//api/name/tracks">tracks</a> in the receiver.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetMetadataReading Methods" name="task_AVAssetMetadataReading Methods"></a>
+						<h2 class="task-title">AVAssetMetadataReading Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/_8" title="_8"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_8">&nbsp;&nbsp;_8</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) AVMetadataItem *NS_AVAILABLE ( 10 _8</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lyrics" title="lyrics"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lyrics">&nbsp;&nbsp;lyrics</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *lyrics</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commonMetadata" title="commonMetadata"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commonMetadata">&nbsp;&nbsp;commonMetadata</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVMetadataItem*&gt; *commonMetadata</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides an instance of <a href="../Classes/AVMediaSelection.html">AVMediaSelection</a> with default selections for each of the receiver&rsquo;s media selection groups.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVMetadataItem*&gt; *NS_AVAILABLE ( 10 _10 , 8 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @property     preferredMediaSelection</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/availableMetadataFormats" title="availableMetadataFormats"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availableMetadataFormats">&nbsp;&nbsp;availableMetadataFormats</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVMetadataFormat&gt; *availableMetadataFormats</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataForFormat:" title="metadataForFormat:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataForFormat:">&ndash;&nbsp;metadataForFormat:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides an NSArray of AVMetadataItems, one for each metadata item in the container of the specified format; can subsequently be filtered according to language via <a href="../Classes/AVMetadataItem.html#//api/name/metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:">[AVMetadataItem metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:]</a>, according to locale via <a href="../Classes/AVMetadataItem.html#//api/name/metadataItemsFromArray:withLocale:">[AVMetadataItem metadataItemsFromArray:withLocale:]</a>, or according to key via <a href="../Classes/AVMetadataItem.html#//api/name/metadataItemsFromArray:withKey:keySpace:">[AVMetadataItem metadataItemsFromArray:withKey:keySpace:]</a>.
+  @param        format
+                The metadata format for which items are requested.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVMetadataItem*&gt; *)metadataForFormat:(AVMetadataFormat)<em>format</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray containing AVMetadataItems; may be empty if there is no metadata of the specified format.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       metadataForFormat:</p><p>Becomes callable without blocking when the key @&ldquo;availableMetadataFormats&rdquo; has been loaded</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetChapterInspection Methods" name="task_AVAssetChapterInspection Methods"></a>
+						<h2 class="task-title">AVAssetChapterInspection Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:" title="chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:">&ndash;&nbsp;chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides an array of chapters.
+  @param        locale
+                Locale of the metadata items carrying chapter titles to be returned (supports the IETF BCP 47 specification).
+  @param        commonKeys
+                Array of common keys of <a href="../Classes/AVMetadataItem.html">AVMetadataItem</a> to be included; can be nil.
+                AVMetadataCommonKeyArtwork is the only supported key for now.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVTimedMetadataGroup*&gt; *)chapterMetadataGroupsWithTitleLocale:(NSLocale *)<em>locale</em> containingItemsWithCommonKeys:(nullable NSArray&lt;AVMetadataKey&gt; *)<em>commonKeys</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray of <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       chapterMetadataGroupsWithTitleLocale:containingMetadataItemsWithCommonKeys:</p><p>This method returns an array of AVTimedMetadataGroup objects. Each object in the array always contains an AVMetadataItem representing the chapter title; the timeRange property of the AVTimedMetadataGroup object is equal to the time range of the chapter title item.</p>
+
+<pre><code>An AVMetadataItem with the specified common key will be added to an existing AVTimedMetadataGroup object if the time range (timestamp and duration) of the metadata item and the metadata group overlaps. The locale of items not carrying chapter titles need not match the specified locale parameter.
+
+Further filtering of the metadata items in AVTimedMetadataGroups according to language can be accomplished using [AVMetadataItem metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:]; filtering of the metadata items according to locale can be accomplished using [AVMetadataItem metadataItemsFromArray:withLocale:].
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/chapterMetadataGroupsBestMatchingPreferredLanguages:" title="chapterMetadataGroupsBestMatchingPreferredLanguages:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/chapterMetadataGroupsBestMatchingPreferredLanguages:">&ndash;&nbsp;chapterMetadataGroupsBestMatchingPreferredLanguages:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tests, in order of preference, for a match between language identifiers in the specified array of preferred languages and the available chapter locales, and returns the array of chapters corresponding to the first match that&rsquo;s found.
+@param          preferredLanguages
+An array of language identifiers in order of preference, each of which is an IETF BCP 47 (RFC 4646) language identifier. Use [NSLocale preferredLanguages] to obtain the user&rsquo;s list of preferred languages.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVTimedMetadataGroup*&gt; *)chapterMetadataGroupsBestMatchingPreferredLanguages:(NSArray&lt;NSString*&gt; *)<em>preferredLanguages</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray of <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     chapterMetadataGroupsBestMatchingPreferredLanguages:</p><p>Safe to call without blocking when the AVAsset key availableChapterLocales has status AVKeyValueStatusLoaded.</p>
+
+<p>Returns an array of AVTimedMetadataGroup objects. Each object in the array always contains an AVMetadataItem representing the chapter title; the timeRange property of the AVTimedMetadataGroup object is equal to the time range of the chapter title item.</p>
+
+<p>All of the available chapter metadata is included in the metadata groups, including items with the common key AVMetadataCommonKeyArtwork, if such items are present. Items not carrying chapter titles will be added to an existing AVTimedMetadataGroup object if the time range (timestamp and duration) of the metadata item and that of the metadata group overlaps. The locale of such items need not match the locale of the chapter titles.</p>
+
+<p>Further filtering of the metadata items in AVTimedMetadataGroups according to language can be accomplished using <a href="../Classes/AVMetadataItem.html#//api/name/metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:">[AVMetadataItem metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:]</a>; filtering of the metadata items according to locale can be accomplished using <a href="../Classes/AVMetadataItem.html#//api/name/metadataItemsFromArray:withLocale:">[AVMetadataItem metadataItemsFromArray:withLocale:]</a>.
+.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetVideoCompositionUtility Methods" name="task_AVAssetVideoCompositionUtility Methods"></a>
+						<h2 class="task-title">AVAssetVideoCompositionUtility Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/unusedTrackID" title="unusedTrackID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unusedTrackID">&ndash;&nbsp;unusedTrackID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CMPersistentTrackID)unusedTrackID</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetMediaSelection Methods" name="task_AVAssetMediaSelection Methods"></a>
+						<h2 class="task-title">AVAssetMediaSelection Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/mediaSelectionGroupForMediaCharacteristic:" title="mediaSelectionGroupForMediaCharacteristic:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaSelectionGroupForMediaCharacteristic:">&ndash;&nbsp;mediaSelectionGroupForMediaCharacteristic:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides an instance of <a href="../Classes/AVMediaSelectionGroup.html">AVMediaSelectionGroup</a> that contains one or more options with the specified media characteristic.
+  @param        mediaCharacteristic
+    A media characteristic for which you wish to obtain the available media selection options. AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, and AVMediaCharacteristicVisual are currently supported.</p>
+
+<pre><code>Pass AVMediaCharacteristicAudible to obtain the group of available options for audio media in various languages and for various purposes, such as descriptive audio.
+Pass AVMediaCharacteristicLegible to obtain the group of available options for subtitles in various languages and for various purposes.
+Pass AVMediaCharacteristicVisual to obtain the group of available options for video media.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable AVMediaSelectionGroup *)mediaSelectionGroupForMediaCharacteristic:(AVMediaCharacteristic)<em>mediaCharacteristic</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of <a href="../Classes/AVMediaSelectionGroup.html">AVMediaSelectionGroup</a>. May be nil.
+  @discussion
+    Becomes callable without blocking when the key @&ldquo;availableMediaCharacteristicsWithMediaSelectionOptions&rdquo; has been loaded.</p>
+
+<pre><code>If the asset has no AVMediaSelectionGroup containing options with the specified media characteristic, the return value will be nil.
+
+Filtering of the options in the returned AVMediaSelectionGroup according to playability, locale, and additional media characteristics can be accomplished using the category AVMediaSelectionOptionFiltering defined on AVMediaSelectionGroup.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       mediaSelectionGroupForMediaCharacteristic:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetFragments Methods" name="task_AVAssetFragments Methods"></a>
+						<h2 class="task-title">AVAssetFragments Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/_2" title="_2"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_2">&nbsp;&nbsp;_2</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates the total <a href="#//api/name/duration">duration</a> of fragments that either exist now or may be appended in the future in order to extend the <a href="#//api/name/duration">duration</a> of the asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMTime overallDurationHint NS_AVAILABLE ( 10 _12_2 , 10 _2</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @property     overallDurationHint</p><p>For QuickTime movie files and MPEG-4 files, the value of this property is obtained from the &lsquo;mehd&rsquo; box of the &lsquo;mvex&rsquo; box, if present. If no total fragment <a href="#//api/name/duration">duration</a> hint is available, the value of this property is kCMTimeInvalid.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetAsynchronousLoading Methods" name="task_AVAssetAsynchronousLoading Methods"></a>
+						<h2 class="task-title">AVAssetAsynchronousLoading Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/providesPreciseDurationAndTiming" title="providesPreciseDurationAndTiming"></a>
+	<h3 class="method-title"><code><a href="#//api/name/providesPreciseDurationAndTiming">&nbsp;&nbsp;providesPreciseDurationAndTiming</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL providesPreciseDurationAndTiming</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelLoading" title="cancelLoading"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelLoading">&ndash;&nbsp;cancelLoading</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cancels the loading of all values for all observers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cancelLoading</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       cancelLoading</p><p>Deallocation or finalization of an instance of AVAsset will implicitly cancel loading if any loading requests are still outstanding.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

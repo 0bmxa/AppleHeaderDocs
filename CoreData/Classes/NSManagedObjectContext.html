@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSManagedObjectContext Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreData Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/deletedObjects">deletedObjects</option>
+		
+		<option value="//api/name/hasChanges">hasChanges</option>
+		
+		<option value="//api/name/insertedObjects">insertedObjects</option>
+		
+		<option value="//api/name/mergePolicy">mergePolicy</option>
+		
+		<option value="//api/name/persistentStoreCoordinator">persistentStoreCoordinator</option>
+		
+		<option value="//api/name/propagatesDeletesAtEndOfEvent">propagatesDeletesAtEndOfEvent</option>
+		
+		<option value="//api/name/registeredObjects">registeredObjects</option>
+		
+		<option value="//api/name/retainsRegisteredObjects">retainsRegisteredObjects</option>
+		
+		<option value="//api/name/stalenessInterval">stalenessInterval</option>
+		
+		<option value="//api/name/undoManager">undoManager</option>
+		
+		<option value="//api/name/updatedObjects">updatedObjects</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/mergeChangesFromRemoteContextSave:intoContexts:">+ mergeChangesFromRemoteContextSave:intoContexts:</option>
+		
+		<option value="//api/name/new">+ new</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/assignObject:toPersistentStore:">- assignObject:toPersistentStore:</option>
+		
+		<option value="//api/name/countForFetchRequest:error:">- countForFetchRequest:error:</option>
+		
+		<option value="//api/name/deleteObject:">- deleteObject:</option>
+		
+		<option value="//api/name/detectConflictsForObject:">- detectConflictsForObject:</option>
+		
+		<option value="//api/name/executeFetchRequest:error:">- executeFetchRequest:error:</option>
+		
+		<option value="//api/name/executeRequest:error:">- executeRequest:error:</option>
+		
+		<option value="//api/name/existingObjectWithID:error:">- existingObjectWithID:error:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithConcurrencyType:">- initWithConcurrencyType:</option>
+		
+		<option value="//api/name/insertObject:">- insertObject:</option>
+		
+		<option value="//api/name/lock">- lock</option>
+		
+		<option value="//api/name/mergeChangesFromContextDidSaveNotification:">- mergeChangesFromContextDidSaveNotification:</option>
+		
+		<option value="//api/name/objectRegisteredForID:">- objectRegisteredForID:</option>
+		
+		<option value="//api/name/objectWithID:">- objectWithID:</option>
+		
+		<option value="//api/name/observeValueForKeyPath:ofObject:change:context:">- observeValueForKeyPath:ofObject:change:context:</option>
+		
+		<option value="//api/name/obtainPermanentIDsForObjects:error:">- obtainPermanentIDsForObjects:error:</option>
+		
+		<option value="//api/name/performBlock:">- performBlock:</option>
+		
+		<option value="//api/name/performBlockAndWait:">- performBlockAndWait:</option>
+		
+		<option value="//api/name/processPendingChanges">- processPendingChanges</option>
+		
+		<option value="//api/name/redo">- redo</option>
+		
+		<option value="//api/name/refreshAllObjects">- refreshAllObjects</option>
+		
+		<option value="//api/name/refreshObject:mergeChanges:">- refreshObject:mergeChanges:</option>
+		
+		<option value="//api/name/reset">- reset</option>
+		
+		<option value="//api/name/rollback">- rollback</option>
+		
+		<option value="//api/name/save:">- save:</option>
+		
+		<option value="//api/name/setQueryGenerationFromToken:error:">- setQueryGenerationFromToken:error:</option>
+		
+		<option value="//api/name/shouldHandleInaccessibleFault:forObjectID:triggeredByProperty:">- shouldHandleInaccessibleFault:forObjectID:triggeredByProperty:</option>
+		
+		<option value="//api/name/tryLock">- tryLock</option>
+		
+		<option value="//api/name/undo">- undo</option>
+		
+		<option value="//api/name/unlock">- unlock</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSManagedObjectContext Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCoding<br />NSLocking</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSManagedObjectContext.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/new" title="new"></a>
+	<h3 class="method-title"><code><a href="#//api/name/new">+&nbsp;new</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)new</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithConcurrencyType:" title="initWithConcurrencyType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithConcurrencyType:">&ndash;&nbsp;initWithConcurrencyType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithConcurrencyType:(NSManagedObjectContextConcurrencyType)<em>ct</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performBlock:" title="performBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performBlock:">&ndash;&nbsp;performBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)performBlock:(void ( ^ ) ( void ))<em>block</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performBlockAndWait:" title="performBlockAndWait:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performBlockAndWait:">&ndash;&nbsp;performBlockAndWait:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)performBlockAndWait:(void ( NS_NOESCAPE ^ ) ( void ))<em>block</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/persistentStoreCoordinator" title="persistentStoreCoordinator"></a>
+	<h3 class="method-title"><code><a href="#//api/name/persistentStoreCoordinator">&nbsp;&nbsp;persistentStoreCoordinator</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, strong) NSManagedObjectContext *API_AVAILABLE ( macosx ( 10.7 , ios ( 5.0 )</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/undoManager" title="undoManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/undoManager">&nbsp;&nbsp;undoManager</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSUndoManager *undoManager</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasChanges" title="hasChanges"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasChanges">&nbsp;&nbsp;hasChanges</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL hasChanges</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectRegisteredForID:" title="objectRegisteredForID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectRegisteredForID:">&ndash;&nbsp;objectRegisteredForID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable __kindof NSManagedObject *)objectRegisteredForID:(NSManagedObjectID *)<em>objectID</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectWithID:" title="objectWithID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectWithID:">&ndash;&nbsp;objectWithID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (__kindof NSManagedObject *)objectWithID:(NSManagedObjectID *)<em>objectID</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/existingObjectWithID:error:" title="existingObjectWithID:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/existingObjectWithID:error:">&ndash;&nbsp;existingObjectWithID:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable __kindof NSManagedObject *)existingObjectWithID:(NSManagedObjectID *)<em>objectID</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/executeFetchRequest:error:" title="executeFetchRequest:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/executeFetchRequest:error:">&ndash;&nbsp;executeFetchRequest:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray *)executeFetchRequest:(NSFetchRequest *)<em>request</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/countForFetchRequest:error:" title="countForFetchRequest:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/countForFetchRequest:error:">&ndash;&nbsp;countForFetchRequest:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)countForFetchRequest:(NSFetchRequest *)<em>request</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/executeRequest:error:" title="executeRequest:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/executeRequest:error:">&ndash;&nbsp;executeRequest:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable __kindof NSPersistentStoreResult *)executeRequest:(NSPersistentStoreRequest *)<em>request</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insertObject:" title="insertObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insertObject:">&ndash;&nbsp;insertObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)insertObject:(NSManagedObject *)<em>object</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteObject:" title="deleteObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteObject:">&ndash;&nbsp;deleteObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)deleteObject:(NSManagedObject *)<em>object</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/refreshObject:mergeChanges:" title="refreshObject:mergeChanges:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refreshObject:mergeChanges:">&ndash;&nbsp;refreshObject:mergeChanges:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)refreshObject:(NSManagedObject *)<em>object</em> mergeChanges:(BOOL)<em>flag</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/detectConflictsForObject:" title="detectConflictsForObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/detectConflictsForObject:">&ndash;&nbsp;detectConflictsForObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)detectConflictsForObject:(NSManagedObject *)<em>object</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/observeValueForKeyPath:ofObject:change:context:" title="observeValueForKeyPath:ofObject:change:context:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/observeValueForKeyPath:ofObject:change:context:">&ndash;&nbsp;observeValueForKeyPath:ofObject:change:context:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)observeValueForKeyPath:(nullable NSString *)<em>keyPath</em> ofObject:(nullable id)<em>object</em> change:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>change</em> context:(nullable void *)<em>context</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processPendingChanges" title="processPendingChanges"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processPendingChanges">&ndash;&nbsp;processPendingChanges</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)processPendingChanges</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assignObject:toPersistentStore:" title="assignObject:toPersistentStore:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assignObject:toPersistentStore:">&ndash;&nbsp;assignObject:toPersistentStore:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)assignObject:(id)<em>object</em> toPersistentStore:(NSPersistentStore *)<em>store</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insertedObjects" title="insertedObjects"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insertedObjects">&nbsp;&nbsp;insertedObjects</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSSet&lt;__kindofNSManagedObject*&gt; *insertedObjects</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updatedObjects" title="updatedObjects"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updatedObjects">&nbsp;&nbsp;updatedObjects</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSSet&lt;__kindofNSManagedObject*&gt; *updatedObjects</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deletedObjects" title="deletedObjects"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deletedObjects">&nbsp;&nbsp;deletedObjects</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSSet&lt;__kindofNSManagedObject*&gt; *deletedObjects</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registeredObjects" title="registeredObjects"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registeredObjects">&nbsp;&nbsp;registeredObjects</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSSet&lt;__kindofNSManagedObject*&gt; *registeredObjects</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/undo" title="undo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/undo">&ndash;&nbsp;undo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)undo</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/redo" title="redo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/redo">&ndash;&nbsp;redo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)redo</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reset" title="reset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reset">&ndash;&nbsp;reset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)reset</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rollback" title="rollback"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rollback">&ndash;&nbsp;rollback</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)rollback</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/save:" title="save:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/save:">&ndash;&nbsp;save:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)save:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/refreshAllObjects" title="refreshAllObjects"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refreshAllObjects">&ndash;&nbsp;refreshAllObjects</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)refreshAllObjects</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lock" title="lock"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lock">&ndash;&nbsp;lock</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)lock</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unlock" title="unlock"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unlock">&ndash;&nbsp;unlock</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)unlock</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tryLock" title="tryLock"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tryLock">&ndash;&nbsp;tryLock</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)tryLock</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/propagatesDeletesAtEndOfEvent" title="propagatesDeletesAtEndOfEvent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/propagatesDeletesAtEndOfEvent">&nbsp;&nbsp;propagatesDeletesAtEndOfEvent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL propagatesDeletesAtEndOfEvent</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/retainsRegisteredObjects" title="retainsRegisteredObjects"></a>
+	<h3 class="method-title"><code><a href="#//api/name/retainsRegisteredObjects">&nbsp;&nbsp;retainsRegisteredObjects</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL retainsRegisteredObjects</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldHandleInaccessibleFault:forObjectID:triggeredByProperty:" title="shouldHandleInaccessibleFault:forObjectID:triggeredByProperty:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldHandleInaccessibleFault:forObjectID:triggeredByProperty:">&ndash;&nbsp;shouldHandleInaccessibleFault:forObjectID:triggeredByProperty:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldHandleInaccessibleFault:(NSManagedObject *)<em>fault</em> forObjectID:(NSManagedObjectID *)<em>oid</em> triggeredByProperty:(nullable NSPropertyDescription *)<em>property</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stalenessInterval" title="stalenessInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stalenessInterval">&nbsp;&nbsp;stalenessInterval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property NSTimeInterval stalenessInterval</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mergePolicy" title="mergePolicy"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mergePolicy">&nbsp;&nbsp;mergePolicy</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (strong) id mergePolicy</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/obtainPermanentIDsForObjects:error:" title="obtainPermanentIDsForObjects:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/obtainPermanentIDsForObjects:error:">&ndash;&nbsp;obtainPermanentIDsForObjects:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)obtainPermanentIDsForObjects:(NSArray&lt;NSManagedObject*&gt; *)<em>objects</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mergeChangesFromContextDidSaveNotification:" title="mergeChangesFromContextDidSaveNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mergeChangesFromContextDidSaveNotification:">&ndash;&nbsp;mergeChangesFromContextDidSaveNotification:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)mergeChangesFromContextDidSaveNotification:(NSNotification *)<em>notification</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mergeChangesFromRemoteContextSave:intoContexts:" title="mergeChangesFromRemoteContextSave:intoContexts:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mergeChangesFromRemoteContextSave:intoContexts:">+&nbsp;mergeChangesFromRemoteContextSave:intoContexts:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (void)mergeChangesFromRemoteContextSave:(NSDictionary *)<em>changeNotificationData</em> intoContexts:(NSArray&lt;NSManagedObjectContext*&gt; *)<em>contexts</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setQueryGenerationFromToken:error:" title="setQueryGenerationFromToken:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setQueryGenerationFromToken:error:">&ndash;&nbsp;setQueryGenerationFromToken:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setQueryGenerationFromToken:(nullable NSQueryGenerationToken *)<em>generation</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

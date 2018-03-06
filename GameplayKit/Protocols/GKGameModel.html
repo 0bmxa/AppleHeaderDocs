@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>GKGameModel Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 GameplayKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/activePlayer">activePlayer</option>
+		
+		<option value="//api/name/players">players</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/applyGameModelUpdate:">- applyGameModelUpdate:</option>
+		
+		<option value="//api/name/gameModelUpdatesForPlayer:">- gameModelUpdatesForPlayer:</option>
+		
+		<option value="//api/name/isLossForPlayer:">- isLossForPlayer:</option>
+		
+		<option value="//api/name/isWinForPlayer:">- isWinForPlayer:</option>
+		
+		<option value="//api/name/scoreForPlayer:">- scoreForPlayer:</option>
+		
+		<option value="//api/name/setGameModel:">- setGameModel:</option>
+		
+		<option value="//api/name/unapplyGameModelUpdate:">- unapplyGameModelUpdate:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">GKGameModel Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSCopying<br />NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>GKGameModel.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A protocol for abstracting a game model for use with the <a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> class. The minmax
+strategist uses the game model class, along with <a href="../Protocols/GKGameModelPlayer.html">GKGameModelPlayer</a> and <a href="../Protocols/GKGameModelUpdate.html">GKGameModelUpdate</a> to
+find optimal moves in an adversarial, turn-based game.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/players" title="players"></a>
+	<h3 class="method-title"><code><a href="#//api/name/players">&nbsp;&nbsp;players</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Array of instances of GKGameModelPlayers representing players within this game model. When the
+<a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> class is used to find an optimal move for a specific player, it uses this
+array to rate the moves of that player’s opponent(s).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;id&lt;GKGameModelPlayer&gt; &gt; *players</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Array of instances of GKGameModelPlayers representing players within this game model. When the
+<a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> class is used to find an optimal move for a specific player, it uses this
+array to rate the moves of that player’s opponent(s).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGameModel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/activePlayer" title="activePlayer"></a>
+	<h3 class="method-title"><code><a href="#//api/name/activePlayer">&nbsp;&nbsp;activePlayer</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The player whose turn it is to perform an update to the game model. <a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> assumes
+that the next call to the <a href="#//api/name/applyGameModelUpdate:">applyGameModelUpdate:</a> method will perform a move on behalf of this player.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) id&lt;GKGameModelPlayer&gt; activePlayer</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The player whose turn it is to perform an update to the game model. <a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> assumes
+that the next call to the <a href="#//api/name/applyGameModelUpdate:">applyGameModelUpdate:</a> method will perform a move on behalf of this player.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGameModel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setGameModel:" title="setGameModel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setGameModel:">&ndash;&nbsp;setGameModel:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the data of another game model. All data should be copied over, and should not maintain
+any pointers to the copied game state. This is used by the <a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> to process
+permutations of the game without needing to apply potentially destructive updates to the
+primary game model.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setGameModel:(id&lt;GKGameModel&gt;)<em>gameModel</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sets the data of another game model. All data should be copied over, and should not maintain
+any pointers to the copied game state. This is used by the <a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> to process
+permutations of the game without needing to apply potentially destructive updates to the
+primary game model.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGameModel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/gameModelUpdatesForPlayer:" title="gameModelUpdatesForPlayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/gameModelUpdatesForPlayer:">&ndash;&nbsp;gameModelUpdatesForPlayer:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of all the GKGameModelUpdates (i.e. actions/moves) that the active
+player can undertake, with one instance of <a href="../Protocols/GKGameModelUpdate.html">GKGameModelUpdate</a> for each possible move.
+Returns nil if the specified player is invalid, is not a part of the game model, or
+if there are no valid moves available.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray&lt;id&lt;GKGameModelUpdate&gt; &gt; *)gameModelUpdatesForPlayer:(id&lt;GKGameModelPlayer&gt;)<em>player</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns an array of all the GKGameModelUpdates (i.e. actions/moves) that the active
+player can undertake, with one instance of <a href="../Protocols/GKGameModelUpdate.html">GKGameModelUpdate</a> for each possible move.
+Returns nil if the specified player is invalid, is not a part of the game model, or
+if there are no valid moves available.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGameModel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/applyGameModelUpdate:" title="applyGameModelUpdate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/applyGameModelUpdate:">&ndash;&nbsp;applyGameModelUpdate:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Applies a <a href="../Protocols/GKGameModelUpdate.html">GKGameModelUpdate</a> to the game model, potentially resulting in a new <a href="#//api/name/activePlayer">activePlayer</a>.
+<a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> will call this method on a copy of the primary game model to speculate
+about possible future moves and their effects. It is assumed that calling this method performs
+a move on behalf of the player identified by the <a href="#//api/name/activePlayer">activePlayer</a> property.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)applyGameModelUpdate:(id&lt;GKGameModelUpdate&gt;)<em>gameModelUpdate</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Applies a <a href="../Protocols/GKGameModelUpdate.html">GKGameModelUpdate</a> to the game model, potentially resulting in a new <a href="#//api/name/activePlayer">activePlayer</a>.
+<a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> will call this method on a copy of the primary game model to speculate
+about possible future moves and their effects. It is assumed that calling this method performs
+a move on behalf of the player identified by the <a href="#//api/name/activePlayer">activePlayer</a> property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGameModel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scoreForPlayer:" title="scoreForPlayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scoreForPlayer:">&ndash;&nbsp;scoreForPlayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the score for the specified player. A higher value indicates a better position for
+the player than a lower value. Required by <a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> to determine which
+<a href="../Protocols/GKGameModelUpdate.html">GKGameModelUpdate</a> is the most advantageous for a given player. If the player is invalid, or
+not a part of the game model, returns NSIntegerMin.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)scoreForPlayer:(id&lt;GKGameModelPlayer&gt;)<em>player</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the score for the specified player. A higher value indicates a better position for
+the player than a lower value. Required by <a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> to determine which
+<a href="../Protocols/GKGameModelUpdate.html">GKGameModelUpdate</a> is the most advantageous for a given player. If the player is invalid, or
+not a part of the game model, returns NSIntegerMin.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGameModel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isWinForPlayer:" title="isWinForPlayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isWinForPlayer:">&ndash;&nbsp;isWinForPlayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns YES if the specified player has reached a win state, NO if otherwise. Note that NO does not
+necessarily mean that the player has lost. Optionally used by <a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> to improve move selection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isWinForPlayer:(id&lt;GKGameModelPlayer&gt;)<em>player</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns YES if the specified player has reached a win state, NO if otherwise. Note that NO does not
+necessarily mean that the player has lost. Optionally used by <a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> to improve move selection.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGameModel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isLossForPlayer:" title="isLossForPlayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isLossForPlayer:">&ndash;&nbsp;isLossForPlayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns YES if the specified player has reached a loss state, NO if otherwise. Note that NO does not
+necessarily mean that the player has won. Optionally used by <a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> to improve move selection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isLossForPlayer:(id&lt;GKGameModelPlayer&gt;)<em>player</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns YES if the specified player has reached a loss state, NO if otherwise. Note that NO does not
+necessarily mean that the player has won. Optionally used by <a href="../Classes/GKMinmaxStrategist.html">GKMinmaxStrategist</a> to improve move selection.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGameModel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unapplyGameModelUpdate:" title="unapplyGameModelUpdate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unapplyGameModelUpdate:">&ndash;&nbsp;unapplyGameModelUpdate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)unapplyGameModelUpdate:(id&lt;GKGameModelUpdate&gt;)<em>gameModelUpdate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IOBluetoothPairingController Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IOBluetoothUI Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/pairingController">+ pairingController</option>
+		
+		<option value="//api/name/withPairingControllerRef:">+ withPairingControllerRef:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addAllowedUUID:">- addAllowedUUID:</option>
+		
+		<option value="//api/name/addAllowedUUIDArray:">- addAllowedUUIDArray:</option>
+		
+		<option value="//api/name/clearAllowedUUIDs">- clearAllowedUUIDs</option>
+		
+		<option value="//api/name/getDescriptionText">- getDescriptionText</option>
+		
+		<option value="//api/name/getOptions">- getOptions</option>
+		
+		<option value="//api/name/getPairingControllerRef">- getPairingControllerRef</option>
+		
+		<option value="//api/name/getPrompt">- getPrompt</option>
+		
+		<option value="//api/name/getResults">- getResults</option>
+		
+		<option value="//api/name/getSearchAttributes">- getSearchAttributes</option>
+		
+		<option value="//api/name/getTitle">- getTitle</option>
+		
+		<option value="//api/name/runModal">- runModal</option>
+		
+		<option value="//api/name/setDescriptionText:">- setDescriptionText:</option>
+		
+		<option value="//api/name/setOptions:">- setOptions:</option>
+		
+		<option value="//api/name/setPrompt:">- setPrompt:</option>
+		
+		<option value="//api/name/setSearchAttributes:">- setSearchAttributes:</option>
+		
+		<option value="//api/name/setTitle:">- setTitle:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IOBluetoothPairingController Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSWindowController</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>IOBluetoothPairingController.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          IOBluetoothPairingController
+</code></pre><p>Implementation of a window controller to handle pairing with a bluetooth device.  This
+                    class will handle connecting to the Bluetooth Daemon for the purposes of searches, and displaying the results.
+                    When necessary this class will display a sheet asking the user for a PIN code.  This window will not return
+                    anything to the caller if it is canceled or if pairing occurs.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/pairingController" title="pairingController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pairingController">+&nbsp;pairingController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (IOBluetoothPairingController *)pairingController</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An IOBluetoothPairingController instance.  Call runPanelWithAttributes</p>
+
+<pre><code>                    Success - a new instance of the Pairing Controller
+                    Failure - nil
+</code></pre>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method pairingController
+</code></pre><p>Method call to instantiate a new IOBluetoothPairingController object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withPairingControllerRef:" title="withPairingControllerRef:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withPairingControllerRef:">+&nbsp;withPairingControllerRef:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method call to convert an IOBluetoothPairingControllerRef into an IOBluetoothPairingController *.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (IOBluetoothPairingController *)withPairingControllerRef:(IOBluetoothPairingControllerRef)<em>pairingControllerRef</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pairingControllerRef</code></th>
+						<td><p>IOBluetoothPairingControllerRef for which an IOBluetoothPairingController * is desired.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the IOBluetoothPairingController * for the given IOBluetoothPairingControllerRef.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method withPairingControllerRef:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getPairingControllerRef" title="getPairingControllerRef"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getPairingControllerRef">&ndash;&nbsp;getPairingControllerRef</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an IOBluetoothPairingControllerRef representation of the target IOBluetoothPairingController object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothPairingControllerRef)getPairingControllerRef</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an IOBluetoothPairingControllerRef representation of the target IOBluetoothPairingController object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getPairingControllerRef
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/runModal" title="runModal"></a>
+	<h3 class="method-title"><code><a href="#//api/name/runModal">&ndash;&nbsp;runModal</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Runs the pairing panel in a modal session to allow the user to select a Bluetooth device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int)runModal</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOBluetoothUISuccess if a successful, validated device selection was made by the user and
+                that device successfully paired.
+                Returns kIOBluetoothUIUserCanceledErr if the user cancelled the panel.  These return values are the
+                same as NSRunStoppedResponse and NSRunAbortedResponse respectively.  They are the standard values
+                used in a modal session.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     runModal
+</code></pre><p>The controller will use the panel attributes to filter what devices the user sees.  The allowed UUIDs
+                will be used to validate the selection the user makes.  Only when a selection has been validated (or
+                the panel cancelled) and the device paired, will this method return.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getResults" title="getResults"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getResults">&ndash;&nbsp;getResults</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an NSArray of the devices that were paired.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)getResults</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an NSArray of IOBluetoothDevice objects of devices that were paired.  If the user cancelled
+                the panel, nil will be returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getResults
+</code></pre><p>There will only be results if the panel has been run, the user has successfully made a selection, that
+                selection has been validated and the selected device paired.  If kIOBluetoothUISuccess was returned for
+                the session, there should be valid results.  Currently only a single device is allowed to be selected,
+                so the results array will only contain one object.  However in the future multiple selection may be supported.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setOptions:" title="setOptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setOptions:">&ndash;&nbsp;setOptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the option bits that control the panel&rsquo;s behavior.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setOptions:(IOBluetoothServiceBrowserControllerOptions)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>Options to control the panel&rsquo;s behavior.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setOptions:
+</code></pre><p>The pairing controller options control the behavior of the panel.  Currently
+                kIOBluetoothServiceBrowserControllerOptionsAutoStartInquiry is the only supported option.
+                In the future more options will be added to control things like whether the connection to
+                the device is closed when the controller is finished or if multiple selection is allowed.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getOptions" title="getOptions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getOptions">&ndash;&nbsp;getOptions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the option bits that control the panel&rsquo;s behavior.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothServiceBrowserControllerOptions)getOptions</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the option bits set by <a href="#//api/name/setOptions:">setOptions:</a></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getOptions
+</code></pre><p>NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSearchAttributes:" title="setSearchAttributes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSearchAttributes:">&ndash;&nbsp;setSearchAttributes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the search attributes that control the panel&rsquo;s search/inquiry behavior.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSearchAttributes:(const IOBluetoothDeviceSearchAttributes *)<em>searchAttributes</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>searchAttributes</code></th>
+						<td><p>Attributes to control the panel&rsquo;s inquiry behavior.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setSearchAttributes:
+</code></pre><p>The device search attributes control the inquiry behavior of the panel.  They allow only devices
+                that match the specified attributes (i.e. class of device) to be displayed to the user.  Note that
+                this only covers attributes returned in an inquiry result and not actual SDP services on the device.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getSearchAttributes" title="getSearchAttributes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getSearchAttributes">&ndash;&nbsp;getSearchAttributes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the search attributes that control the panel&rsquo;s search/inquiry behavior.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (const IOBluetoothDeviceSearchAttributes *)getSearchAttributes</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the search attributes set by <a href="#//api/name/setSearchAttributes:">setSearchAttributes:</a></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getSearchAttributes
+</code></pre><p>NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addAllowedUUID:" title="addAllowedUUID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addAllowedUUID:">&ndash;&nbsp;addAllowedUUID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a UUID to the list of UUIDs that are used to validate the user&rsquo;s selection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addAllowedUUID:(IOBluetoothSDPUUID *)<em>allowedUUID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>allowedUUID</code></th>
+						<td><p>UUID that a device may contain to be selected</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     addAllowedUUID:
+</code></pre><p>The user&rsquo;s device selection gets validated against the UUIDs passed to -addAllowedUUID:
+                <a href="#//api/name/addAllowedUUIDArray:">addAllowedUUIDArray:</a>.  Each call to those methods essentially adds a filter that the
+                selected device gets validated with.  If any of the filters match, the device is considered
+                valid.  If they all fail, the device is not valid and the user is presented with an
+                error code that the device does not support the required services.  The UUID passed to
+                -addAllowedUUID: is the only UUID that must be present in the device&rsquo;s SDP service records.
+                Alternatively, all of the UUIDs in the UUID array passed to -addAllowedUUIDArray must be
+                present.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addAllowedUUIDArray:" title="addAllowedUUIDArray:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addAllowedUUIDArray:">&ndash;&nbsp;addAllowedUUIDArray:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an array of UUIDs to the list of UUIDs that are used to validate the user&rsquo;s selection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addAllowedUUIDArray:(NSArray *)<em>allowedUUIDArray</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>allowedUUIDArray</code></th>
+						<td><p>An NSArray of UUIDs that all must be present in a device for it to be selectable.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     addAllowedUUIDArray:
+</code></pre><p>The user&rsquo;s device selection gets validated against the UUIDs passed to <a href="#//api/name/addAllowedUUID:">addAllowedUUID:</a>
+                addAllowedUUIDArray:.  Each call to those methods essentially adds a filter that the
+                selected device gets validated with.  If any of the filters match, the device is considered
+                valid.  If they all fail, the device is not valid and the user is presented with an
+                error code that the device does not support the required services.  The UUID passed to
+                <a href="#//api/name/addAllowedUUID:">addAllowedUUID:</a> is the only UUID that must be present in the device&rsquo;s SDP service records.
+                Alternatively, all of the UUIDs in the UUID array passed to -addAllowedUUIDArray must be
+                present.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clearAllowedUUIDs" title="clearAllowedUUIDs"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearAllowedUUIDs">&ndash;&nbsp;clearAllowedUUIDs</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Resets the controller back to the default state where it will accept any device the user selects.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)clearAllowedUUIDs</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     clearAllowedUUIDs
+</code></pre><p>NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setTitle:" title="setTitle:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setTitle:">&ndash;&nbsp;setTitle:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the title of the panel when not run as a sheet.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setTitle:(NSString *)<em>windowTitle</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowTitle</code></th>
+						<td><p>Title of the device selector panel.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setTitle:
+</code></pre><p>The panel title should be localized for best user experience.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getTitle" title="getTitle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getTitle">&ndash;&nbsp;getTitle</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the title of the device selector panel (i.e. what was set in <a href="#//api/name/setTitle:">setTitle:</a>).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)getTitle</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the title of the device selector panel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getTitle
+</code></pre><p>NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDescriptionText:" title="setDescriptionText:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDescriptionText:">&ndash;&nbsp;setDescriptionText:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the description text that appears in the device selector panel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setDescriptionText:(NSString *)<em>descriptionText</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>descriptionText</code></th>
+						<td><p>String that appears in the description section of the device selector panel.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setDescriptionText:
+</code></pre><p>The description text should be localized for best user experience.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getDescriptionText" title="getDescriptionText"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDescriptionText">&ndash;&nbsp;getDescriptionText</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the description text that appears in the device selector panel (i.e. what was set in <a href="#//api/name/setDescriptionText:">setDescriptionText:</a>).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)getDescriptionText</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the description text of the device selector panel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getDescriptionText
+</code></pre><p>NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setPrompt:" title="setPrompt:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setPrompt:">&ndash;&nbsp;setPrompt:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the title of the default/select button in the device selector panel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setPrompt:(NSString *)<em>prompt</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>prompt</code></th>
+						<td><p>String that appears in the default/select button in the device selector panel.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setPrompt:
+</code></pre><p>The prompt text should be localized for best user experience.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getPrompt" title="getPrompt"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getPrompt">&ndash;&nbsp;getPrompt</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the title of the default/select button in the device selector panel (i.e. what was set in <a href="#//api/name/setPrompt:">setPrompt:</a>).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)getPrompt</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the default button title of the device selector panel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getPrompt
+</code></pre><p>NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothPairingController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

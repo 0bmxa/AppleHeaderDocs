@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVSampleBufferDisplayLayer Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/__WATCHOS_PROHIBITED">__WATCHOS_PROHIBITED</option>
+		
+		<option value="//api/name/controlTimebase">controlTimebase</option>
+		
+		<option value="//api/name/readyForMoreMediaData">readyForMoreMediaData</option>
+		
+		<option value="//api/name/videoGravity">videoGravity</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/enqueueSampleBuffer:">- enqueueSampleBuffer:</option>
+		
+		<option value="//api/name/flush">- flush</option>
+		
+		<option value="//api/name/flushAndRemoveImage">- flushAndRemoveImage</option>
+		
+		<option value="//api/name/requestMediaDataWhenReadyOnQueue:usingBlock:">- requestMediaDataWhenReadyOnQueue:usingBlock:</option>
+		
+		<option value="//api/name/stopRequestingMediaData">- stopRequestingMediaData</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVSampleBufferDisplayLayer Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>CALayer</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVSampleBufferDisplayLayer.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          AVSampleBufferDisplayLayer
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/controlTimebase" title="controlTimebase"></a>
+	<h3 class="method-title"><code><a href="#//api/name/controlTimebase">&nbsp;&nbsp;controlTimebase</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The layer&rsquo;s control timebase, which governs how time stamps are interpreted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (retain, nullable) CMTimebaseRef controlTimebase</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       controlTimebase
+</code></pre><p>By default, this property is NULL, in which case time stamps will be interpreted
+                    according to the host time clock (mach_absolute_time with the appropriate timescale
+                    conversion; this is the same as Core Animation&rsquo;s CACurrentMediaTime).  With no
+                    control timebase, once frames are enqueued, it is not possible to adjust exactly
+                    when they are displayed.</p>
+
+<pre><code>                If a non-NULL control timebase is set, it will be used to interpret time stamps.
+                You can control the timing of frame display by setting the rate and time of the
+                control timebase.  
+                If you are synchronizing video to audio, you can use a timebase whose master clock
+                is a CMAudioDeviceClock for the appropriate audio device to prevent drift.
+
+                Note that prior to OSX 10.10 and iOS 8.0, the control timebase could not be changed after enqueueSampleBuffer: was called.  As of OSX 10.10 and iOS 8.0, the control timebase may be changed at any time.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleBufferDisplayLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoGravity" title="videoGravity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoGravity">&nbsp;&nbsp;videoGravity</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A string defining how the video is displayed within an AVSampleBufferDisplayLayer bounds rect.
+    @discusssion    Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
+                    and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
+                    See &lt;AVFoundation/AVAnimation.h> for a description of these options.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (copy) AVLayerVideoGravity videoGravity</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       videoGravity
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleBufferDisplayLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVSampleBufferDisplayLayerQueueManagement Methods" name="task_AVSampleBufferDisplayLayerQueueManagement Methods"></a>
+						<h2 class="task-title">AVSampleBufferDisplayLayerQueueManagement Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/__WATCHOS_PROHIBITED" title="__WATCHOS_PROHIBITED"></a>
+	<h3 class="method-title"><code><a href="#//api/name/__WATCHOS_PROHIBITED">&nbsp;&nbsp;__WATCHOS_PROHIBITED</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The ability of the display layer to be used for enqueuing sample buffers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVQueuedSampleBufferRenderingStatus status API_AVAILABLE ( macos ( 10.10 ) , ios ( 8.0 ) , tvos ( 10.2 ) ) __WATCHOS_PROHIBITED</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       status
+</code></pre><p>The value of this property is an <a href="../Constants/AVQueuedSampleBufferRenderingStatus.html">AVQueuedSampleBufferRenderingStatus</a> that indicates whether the receiver can be used for enqueuing and rendering sample buffers. When the value of this property is AVQueuedSampleBufferRenderingStatusFailed, clients can check the value of the error property to determine the failure. To resume rendering sample buffers using the display layer after a failure, clients must first reset the status to AVQueuedSampleBufferRenderingStatusUnknown. This can be achieved by invoking <a href="#//api/name/flush">flush</a> on the display layer.</p>
+
+<pre><code>                This property is key value observable.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleBufferDisplayLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enqueueSampleBuffer:" title="enqueueSampleBuffer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enqueueSampleBuffer:">&ndash;&nbsp;enqueueSampleBuffer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends a sample buffer for display.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)enqueueSampleBuffer:(CMSampleBufferRef)<em>sampleBuffer</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         enqueueSampleBuffer:
+</code></pre><p>If sampleBuffer has the kCMSampleAttachmentKey_DoNotDisplay attachment set to
+                    kCFBooleanTrue, the frame will be decoded but not displayed.
+                    Otherwise, if sampleBuffer has the kCMSampleAttachmentKey_DisplayImmediately
+                    attachment set to kCFBooleanTrue, the decoded image will be displayed as soon
+                    as possible, replacing all previously enqueued images regardless of their timestamps.
+                    Otherwise, the decoded image will be displayed at sampleBuffer&rsquo;s output presentation
+                    timestamp, as interpreted by the control timebase (or the mach_absolute_time timeline
+                    if there is no control timebase).</p>
+
+<pre><code>                To schedule the removal of previous images at a specific timestamp, enqueue 
+                a marker sample buffer containing no samples, with the
+                kCMSampleBufferAttachmentKey_EmptyMedia attachment set to kCFBooleanTrue.
+
+                IMPORTANT NOTE: attachments with the kCMSampleAttachmentKey_ prefix must be set via
+                CMSampleBufferGetSampleAttachmentsArray and CFDictionarySetValue. 
+                Attachments with the kCMSampleBufferAttachmentKey_ prefix must be set via
+                CMSetAttachment.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleBufferDisplayLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flush" title="flush"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flush">&ndash;&nbsp;flush</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Instructs the layer to discard pending enqueued sample buffers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)flush</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         flush
+</code></pre><p>It is not possible to determine which sample buffers have been decoded,
+                    so the next frame passed to <a href="#//api/name/enqueueSampleBuffer:">enqueueSampleBuffer:</a> should be an IDR frame
+                    (also known as a key frame or sync sample).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleBufferDisplayLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flushAndRemoveImage" title="flushAndRemoveImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flushAndRemoveImage">&ndash;&nbsp;flushAndRemoveImage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Instructs the layer to discard pending enqueued sample buffers and remove any
+                    currently displayed image.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)flushAndRemoveImage</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         flushAndRemoveImage
+</code></pre><p>It is not possible to determine which sample buffers have been decoded,
+                    so the next frame passed to <a href="#//api/name/enqueueSampleBuffer:">enqueueSampleBuffer:</a> should be an IDR frame
+                    (also known as a key frame or sync sample).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleBufferDisplayLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readyForMoreMediaData" title="readyForMoreMediaData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readyForMoreMediaData">&nbsp;&nbsp;readyForMoreMediaData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates the readiness of the layer to accept more sample buffers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isReadyForMoreMediaData) BOOL readyForMoreMediaData</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       readyForMoreMediaData
+</code></pre><p>AVSampleBufferDisplayLayer keeps track of the occupancy levels of its internal queues
+                    for the benefit of clients that enqueue sample buffers from non-real-time sources &ndash;
+                    i.e., clients that can supply sample buffers faster than they are consumed, and so
+                    need to decide when to hold back.</p>
+
+<pre><code>                Clients enqueueing sample buffers from non-real-time sources may hold off from
+                generating or obtaining more sample buffers to enqueue when the value of
+                readyForMoreMediaData is NO.  
+
+                It is safe to call enqueueSampleBuffer: when readyForMoreMediaData is NO, but 
+                it is a bad idea to enqueue sample buffers without bound.
+
+                To help with control of the non-real-time supply of sample buffers, such clients can use
+                -requestMediaDataWhenReadyOnQueue:usingBlock
+                in order to specify a block that the layer should invoke whenever it's ready for 
+                sample buffers to be appended.
+
+                The value of readyForMoreMediaData will often change from NO to YES asynchronously, 
+                as previously supplied sample buffers are decoded and displayed.
+
+                This property is not key value observable.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleBufferDisplayLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestMediaDataWhenReadyOnQueue:usingBlock:" title="requestMediaDataWhenReadyOnQueue:usingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestMediaDataWhenReadyOnQueue:usingBlock:">&ndash;&nbsp;requestMediaDataWhenReadyOnQueue:usingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Instructs the target to invoke a client-supplied block repeatedly,
+                    at its convenience, in order to gather sample buffers for display.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)requestMediaDataWhenReadyOnQueue:(dispatch_queue_t)<em>queue</em> usingBlock:(void ( ^ ) ( void ))<em>block</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         requestMediaDataWhenReadyOnQueue:usingBlock:
+</code></pre><p>The block should enqueue sample buffers to the layer either until the layer&rsquo;s
+                    <a href="#//api/name/readyForMoreMediaData">readyForMoreMediaData</a> property becomes NO or until there is no more data
+                    to supply. When the layer has decoded enough of the media data it has received
+                    that it becomes ready for more media data again, it will invoke the block again
+                    in order to obtain more.
+                    If this function is called multiple times, only the last call is effective.
+                    Call <a href="#//api/name/stopRequestingMediaData">stopRequestingMediaData</a> to cancel this request.
+                    Each call to requestMediaDataWhenReadyOnQueue:usingBlock: should be paired
+                    with a corresponding call to stopRequestingMediaData:. Releasing the
+                    AVSampleBufferDisplayLayer without a call to <a href="#//api/name/stopRequestingMediaData">stopRequestingMediaData</a> will result
+                    in undefined behavior.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleBufferDisplayLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopRequestingMediaData" title="stopRequestingMediaData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopRequestingMediaData">&ndash;&nbsp;stopRequestingMediaData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cancels any current <a href="#//api/name/requestMediaDataWhenReadyOnQueue:usingBlock:">requestMediaDataWhenReadyOnQueue:usingBlock:</a> call.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopRequestingMediaData</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         stopRequestingMediaData
+</code></pre><p>This method may be called from outside the block or from within the block.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleBufferDisplayLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>GKComponentSystem Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 GameplayKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/componentClass">componentClass</option>
+		
+		<option value="//api/name/components">components</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addComponent:">- addComponent:</option>
+		
+		<option value="//api/name/addComponentWithEntity:">- addComponentWithEntity:</option>
+		
+		<option value="//api/name/classForGenericArgumentAtIndex:">- classForGenericArgumentAtIndex:</option>
+		
+		<option value="//api/name/initWithComponentClass:">- initWithComponentClass:</option>
+		
+		<option value="//api/name/objectAtIndexedSubscript:">- objectAtIndexedSubscript:</option>
+		
+		<option value="//api/name/removeComponent:">- removeComponent:</option>
+		
+		<option value="//api/name/removeComponentWithEntity:">- removeComponentWithEntity:</option>
+		
+		<option value="//api/name/updateWithDeltaTime:">- updateWithDeltaTime:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">GKComponentSystem Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>*<br />:<br />ComponentType<br />GKComponent</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>GKComponent.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A component system is a homogeneous collection of <a href="#//api/name/components">components</a> that are intended to be called at the same time.
+The system is homogeneous, meaning it only allows members of the same class into the system.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/componentClass" title="componentClass"></a>
+	<h3 class="method-title"><code><a href="#//api/name/componentClass">&nbsp;&nbsp;componentClass</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The collection&rsquo;s component class. Any selector the component supports can be called on the system and it will be forwarded
+to each of the <a href="#//api/name/components">components</a> in the collection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Class componentClass</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The collection&rsquo;s component class. Any selector the component supports can be called on the system and it will be forwarded
+to each of the <a href="#//api/name/components">components</a> in the collection.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/components" title="components"></a>
+	<h3 class="method-title"><code><a href="#//api/name/components">&nbsp;&nbsp;components</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The array of components currently in the system.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, retain) NSArray&lt;ComponentType&gt; *components</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The array of components currently in the system.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectAtIndexedSubscript:" title="objectAtIndexedSubscript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectAtIndexedSubscript:">&ndash;&nbsp;objectAtIndexedSubscript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Supports getting <a href="#//api/name/components">components</a> via a [] subscript.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ComponentType)objectAtIndexedSubscript:(NSUInteger)<em>idx</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Supports getting <a href="#//api/name/components">components</a> via a [] subscript.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithComponentClass:" title="initWithComponentClass:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithComponentClass:">&ndash;&nbsp;initWithComponentClass:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a system for the given component class. The receiver can now only accept <a href="#//api/name/components">components</a> of the given class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithComponentClass:(Class)<em>cls</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a system for the given component class. The receiver can now only accept <a href="#//api/name/components">components</a> of the given class.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addComponent:" title="addComponent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addComponent:">&ndash;&nbsp;addComponent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a component to the system. The component must be of the same class as the system&rsquo;s <a href="#//api/name/componentClass">componentClass</a>.
+The component is added to the tail of the collection and will be processed after <a href="#//api/name/components">components</a> that were added before it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addComponent:(ComponentType)<em>component</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds a component to the system. The component must be of the same class as the system&rsquo;s <a href="#//api/name/componentClass">componentClass</a>.
+The component is added to the tail of the collection and will be processed after <a href="#//api/name/components">components</a> that were added before it.</p>
+
+<p>@throws NSInvalidArgumentException if the component added is not a kind of the system&rsquo;s <a href="#//api/name/componentClass">componentClass</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addComponentWithEntity:" title="addComponentWithEntity:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addComponentWithEntity:">&ndash;&nbsp;addComponentWithEntity:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds the supported component from the entity&rsquo;s component collection.
+This is conceptually the same as the pseudo-code:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addComponentWithEntity:(GKEntity *)<em>entity</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds the supported component from the entity&rsquo;s component collection.
+This is conceptually the same as the pseudo-code:</p>
+
+<p>for (GKComponent *component in entity.components)
+if (component.class == system.componentClass)
+[system addComponent:component]</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/GKEntity.html">GKEntity</a>.<a href="#//api/name/components">@property components</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeComponentWithEntity:" title="removeComponentWithEntity:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeComponentWithEntity:">&ndash;&nbsp;removeComponentWithEntity:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the supported component from the entity&rsquo;s component collection
+This is conceptually the same as the pseudo-code:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeComponentWithEntity:(GKEntity *)<em>entity</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes the supported component from the entity&rsquo;s component collection
+This is conceptually the same as the pseudo-code:</p>
+
+<p>for (GKComponent *component in entity.components)
+if (component.class == system.componentClass)
+[system removeComponent:component]</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeComponent:" title="removeComponent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeComponent:">&ndash;&nbsp;removeComponent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a component from the system</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeComponent:(ComponentType)<em>component</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes a component from the system</p>
+
+<p>Does nothing if the component is not in this system</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateWithDeltaTime:" title="updateWithDeltaTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateWithDeltaTime:">&ndash;&nbsp;updateWithDeltaTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Updates each component with the given delta time since the last update. Each component thus performs its time
+based logic with a single message.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateWithDeltaTime:(NSTimeInterval)<em>seconds</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Updates each component with the given delta time since the last update. Each component thus performs its time
+based logic with a single message.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/classForGenericArgumentAtIndex:" title="classForGenericArgumentAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/classForGenericArgumentAtIndex:">&ndash;&nbsp;classForGenericArgumentAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the class of the specified generic index</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull Class)classForGenericArgumentAtIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the class of the specified generic index</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

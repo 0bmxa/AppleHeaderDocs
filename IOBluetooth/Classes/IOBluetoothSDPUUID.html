@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IOBluetoothSDPUUID Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IOBluetooth Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/uuid16:">+ uuid16:</option>
+		
+		<option value="//api/name/uuid32:">+ uuid32:</option>
+		
+		<option value="//api/name/uuidWithBytes:length:">+ uuidWithBytes:length:</option>
+		
+		<option value="//api/name/uuidWithData:">+ uuidWithData:</option>
+		
+		<option value="//api/name/withSDPUUIDRef:">+ withSDPUUIDRef:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/classForArchiver">- classForArchiver</option>
+		
+		<option value="//api/name/classForCoder">- classForCoder</option>
+		
+		<option value="//api/name/classForPortCoder">- classForPortCoder</option>
+		
+		<option value="//api/name/getSDPUUIDRef">- getSDPUUIDRef</option>
+		
+		<option value="//api/name/getUUIDWithLength:">- getUUIDWithLength:</option>
+		
+		<option value="//api/name/initWithUUID16:">- initWithUUID16:</option>
+		
+		<option value="//api/name/initWithUUID32:">- initWithUUID32:</option>
+		
+		<option value="//api/name/isEqualToUUID:">- isEqualToUUID:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IOBluetoothSDPUUID Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSData</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>IOBluetoothSDPUUID.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class IOBluetoothSDPUUID
+</code></pre><p>The IOBluetoothSDPUUID class can represent a UUID of any valid size (16, 32 or 128 bits).
+            It provides the ability to compare two UUIDs no matter what their size as well as the ability
+            to promote the size of a UUID to a larger one.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/uuidWithBytes:length:" title="uuidWithBytes:length:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uuidWithBytes:length:">+&nbsp;uuidWithBytes:length:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new IOBluetoothSDPUUID object with the given bytes of the given length.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)uuidWithBytes:(const void *)<em>bytes</em> length:(unsigned)<em>length</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bytes</code></th>
+						<td><p>An array of bytes representing the UUID.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>length</code></th>
+						<td><p>The length of the array of bytes.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the new IOBluetoothSDPUUID object or nil on failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method uuidWithBytes:length:
+</code></pre><p>If the length is invalid for a UUID, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPUUID.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/uuidWithData:" title="uuidWithData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uuidWithData:">+&nbsp;uuidWithData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new IOBluetoothSDPUUID object from the given NSData.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)uuidWithData:(NSData *)<em>data</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>The NSData containing the UUID bytes.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the new IOBluetoothSDPUUID object or nil on failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method uuidWithData:
+</code></pre><p>If the length of the NSData is invalid for a UUID, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPUUID.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/uuid16:" title="uuid16:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uuid16:">+&nbsp;uuid16:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new 16-bit IOBluetoothSDPUUID with the given UUID16</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)uuid16:(BluetoothSDPUUID16)<em>uuid16</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid16</code></th>
+						<td><p>A scalar representing a 16-bit UUID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the new IOBluetoothSDPUUID object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method uuid16:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPUUID.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/uuid32:" title="uuid32:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uuid32:">+&nbsp;uuid32:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new 32-bit IOBluetoothSDPUUID with the given UUID32</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)uuid32:(BluetoothSDPUUID32)<em>uuid32</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid32</code></th>
+						<td><p>A scalar representing a 32-bit UUID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the new IOBluetoothSDPUUID object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method uuid32:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPUUID.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withSDPUUIDRef:" title="withSDPUUIDRef:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withSDPUUIDRef:">+&nbsp;withSDPUUIDRef:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method call to convert an IOBluetoothSDPUUIDRef into an IOBluetoothSDPUUID *.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withSDPUUIDRef:(IOBluetoothSDPUUIDRef)<em>sdpUUIDRef</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sdpUUIDRef</code></th>
+						<td><p>IOBluetoothSDPUUIDRef for which an IOBluetoothSDPUUID * is desired.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the IOBluetoothSDPUUID * for the given IOBluetoothSDPUUIDRef.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method withSDPUUIDRef:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPUUID.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithUUID16:" title="initWithUUID16:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithUUID16:">&ndash;&nbsp;initWithUUID16:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a new 16-bit IOBluetoothSDPUUID with the given UUID16</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithUUID16:(BluetoothSDPUUID16)<em>uuid16</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid16</code></th>
+						<td><p>A scalar representing a 16-bit UUID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns self.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithUUID16:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPUUID.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithUUID32:" title="initWithUUID32:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithUUID32:">&ndash;&nbsp;initWithUUID32:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new 32-bit IOBluetoothSDPUUID with the given UUID32</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithUUID32:(BluetoothSDPUUID32)<em>uuid32</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid32</code></th>
+						<td><p>A scalar representing a 32-bit UUID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns self.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithUUID32:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPUUID.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getSDPUUIDRef" title="getSDPUUIDRef"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getSDPUUIDRef">&ndash;&nbsp;getSDPUUIDRef</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an IOBluetoothSDPUUIDRef representation of the target IOBluetoothSDPUUID object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothSDPUUIDRef)getSDPUUIDRef</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an IOBluetoothSDPUUIDRef representation of the target IOBluetoothSDPUUID object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getSDPUUIDRef
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPUUID.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getUUIDWithLength:" title="getUUIDWithLength:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getUUIDWithLength:">&ndash;&nbsp;getUUIDWithLength:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an IOBluetoothSDPUUID object matching the target UUID, but with the given number of bytes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)getUUIDWithLength:(unsigned)<em>newLength</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newLength</code></th>
+						<td><p>The desired length for the UUID.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an IOBluetoothSDPUUID object with the same data as the target but with the given length if it
+            is possible to do so.  Otherwise, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getUUIDWithLength:
+</code></pre><p>If the target object is the same length as newLength, it returns self.  If newLength is greater
+                it creates a new IOBluetoothSDPUUID object with the correct value for the given length.  If
+                newLength is smaller, it will attempt to create a new IOBluetoothSDPUUID that is smaller if
+                the data matches the Bluetooth UUID base.  This downconversion is currently unimplemented.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPUUID.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isEqualToUUID:" title="isEqualToUUID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isEqualToUUID:">&ndash;&nbsp;isEqualToUUID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Compares the target IOBluetoothSDPUUID object with the given otherUUID object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToUUID:(IOBluetoothSDPUUID *)<em>otherUUID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>otherUUID</code></th>
+						<td><p>The UUID object to be compared with the target.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns true if the UUID values of each object are equal.  This includes the case where the sizes are different
+            but the data itself is the same when the Bluetooth UUID base is applied.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method isEqualToUUID:
+</code></pre><p>This method will compare the two UUID values independent of their length.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPUUID.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/classForCoder" title="classForCoder"></a>
+	<h3 class="method-title"><code><a href="#//api/name/classForCoder">&ndash;&nbsp;classForCoder</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (Class)classForCoder</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/classForArchiver" title="classForArchiver"></a>
+	<h3 class="method-title"><code><a href="#//api/name/classForArchiver">&ndash;&nbsp;classForArchiver</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (Class)classForArchiver</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/classForPortCoder" title="classForPortCoder"></a>
+	<h3 class="method-title"><code><a href="#//api/name/classForPortCoder">&ndash;&nbsp;classForPortCoder</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (Class)classForPortCoder</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

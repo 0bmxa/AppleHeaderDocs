@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CIFilterGenerator Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreImage Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/classAttributes">classAttributes</option>
+		
+		<option value="//api/name/exportedKeys">exportedKeys</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/filterGenerator">+ filterGenerator</option>
+		
+		<option value="//api/name/filterGeneratorWithContentsOfURL:">+ filterGeneratorWithContentsOfURL:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/connectObject:withKey:toObject:withKey:">- connectObject:withKey:toObject:withKey:</option>
+		
+		<option value="//api/name/disconnectObject:withKey:toObject:withKey:">- disconnectObject:withKey:toObject:withKey:</option>
+		
+		<option value="//api/name/exportKey:fromObject:withName:">- exportKey:fromObject:withName:</option>
+		
+		<option value="//api/name/filter">- filter</option>
+		
+		<option value="//api/name/initWithContentsOfURL:">- initWithContentsOfURL:</option>
+		
+		<option value="//api/name/registerFilterName:">- registerFilterName:</option>
+		
+		<option value="//api/name/removeExportedKey:">- removeExportedKey:</option>
+		
+		<option value="//api/name/setAttributes:forExportedKey:">- setAttributes:forExportedKey:</option>
+		
+		<option value="//api/name/writeToURL:atomically:">- writeToURL:atomically:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CIFilterGenerator Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/CIFilterConstructor.html">CIFilterConstructor</a><br />NSCopying<br />NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CIFilterGenerator.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The goal is to CIFilters to be connected and form a single <a href="../Classes/CIFilter.html">CIFilter</a> for ease of reusability.</p>
+
+<p>The CIFilterGenerator allows developers to create complex effects built out of one or more <a href="../Classes/CIFilter.html">CIFilter</a> and reuse them without changing code. The resulting CIFilterGenerator can be written into a file for which we introduce a new file type (extension). A CIFilterGenerator can be created from the API or more conveniently through an editor view that we provide.
+CIFilterGenerator files can be put into the Image Units folders on the system and they will be loaded when the user invokes one of the loadPlugIns methods. They will be registered by their filename or if present by an attribute in its description.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/filterGenerator" title="filterGenerator"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterGenerator">+&nbsp;filterGenerator</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This creates an empty CIFilterGenerator in which you connect filters and images.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (CIFilterGenerator *)filterGenerator</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This creates an empty CIFilterGenerator in which you connect filters and images.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filterGeneratorWithContentsOfURL:" title="filterGeneratorWithContentsOfURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterGeneratorWithContentsOfURL:">+&nbsp;filterGeneratorWithContentsOfURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a CIFilterGenerator with the contents of the file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable CIFilterGenerator *)filterGeneratorWithContentsOfURL:(NSURL *)<em>aURL</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>CIFilterGenerator object. If the file could not be read it returns nil.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a CIFilterGenerator with the contents of the file.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithContentsOfURL:" title="initWithContentsOfURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithContentsOfURL:">&ndash;&nbsp;initWithContentsOfURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a CIFilterGenerator with the contents of the file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)initWithContentsOfURL:(NSURL *)<em>aURL</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>CIFilterGenerator object. If the file could not be read it returns nil.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a CIFilterGenerator with the contents of the file.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectObject:withKey:toObject:withKey:" title="connectObject:withKey:toObject:withKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectObject:withKey:toObject:withKey:">&ndash;&nbsp;connectObject:withKey:toObject:withKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Connect two objects into the <a href="#//api/name/filter">filter</a> chain.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)connectObject:(id)<em>sourceObject</em> withKey:(nullable NSString *)<em>sourceKey</em> toObject:(id)<em>targetObject</em> withKey:(NSString *)<em>targetKey</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceObject</code></th>
+						<td><p>A <a href="../Classes/CIFilter.html">CIFilter</a>, <a href="../Classes/CIImage.html">CIImage</a>, NSString, or NSURL describing the path to the image</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceKey</code></th>
+						<td><p>For KVC access to the source object. Can be nil which means that the source object will be used directly.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetObject</code></th>
+						<td><p>The object that you link the source object to.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetKey</code></th>
+						<td><p>The key that you assign the source object to.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Connect two objects into the <a href="#//api/name/filter">filter</a> chain.</p>
+
+<p>This method connects two object in the <a href="#//api/name/filter">filter</a> chain. For instance you can connect the outputImage key of a CISepiaTone <a href="#//api/name/filter">filter</a> object to the inputImage key of another <a href="../Classes/CIFilter.html">CIFilter</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disconnectObject:withKey:toObject:withKey:" title="disconnectObject:withKey:toObject:withKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disconnectObject:withKey:toObject:withKey:">&ndash;&nbsp;disconnectObject:withKey:toObject:withKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the connection between two objects in the <a href="#//api/name/filter">filter</a> chain.</p>
+
+<p>Use this method to disconnect two objects that you connected using the <a href="#//api/name/connectObject:withKey:toObject:withKey:">connectObject:withKey:toObject:withKey:</a> method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)disconnectObject:(id)<em>sourceObject</em> withKey:(NSString *)<em>sourceKey</em> toObject:(id)<em>targetObject</em> withKey:(NSString *)<em>targetKey</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceObject</code></th>
+						<td><p>A <a href="../Classes/CIFilter.html">CIFilter</a> or <a href="../Classes/CIImage.html">CIImage</a> or an NSString or an NSURL describing the path to the image</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceKey</code></th>
+						<td><p>For KVC access to the source object. Can be nil which means that the source object will be used directly.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetObject</code></th>
+						<td><p>The object that you linked the source object to.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetKey</code></th>
+						<td><p>The key that you assigned the source object to.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes the connection between two objects in the <a href="#//api/name/filter">filter</a> chain.</p>
+
+<p>Use this method to disconnect two objects that you connected using the <a href="#//api/name/connectObject:withKey:toObject:withKey:">connectObject:withKey:toObject:withKey:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/exportKey:fromObject:withName:" title="exportKey:fromObject:withName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exportKey:fromObject:withName:">&ndash;&nbsp;exportKey:fromObject:withName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This methods allows you to export an input or output key of an object in the <a href="#//api/name/filter">filter</a> chain to be available through the inputKeys or outputKeys API when converted into a <a href="../Classes/CIFilter.html">CIFilter</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)exportKey:(NSString *)<em>key</em> fromObject:(id)<em>targetObject</em> withName:(nullable NSString *)<em>exportedKeyName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key path that is to be exported from the target object (eg. inputImage)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetObject</code></th>
+						<td><p>The object of which the key is to be exported (eg the <a href="#//api/name/filter">filter</a>).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>exportedKeyName</code></th>
+						<td><p>The name under which you want the new key to be available. This parameter can be nil in which case the original key name will be used. This name has to be unique. If a key being exported is an inputKey of the <a href="#//api/name/filter">filter</a> it will be exported as an input key and the other way around for output keys.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This methods allows you to export an input or output key of an object in the <a href="#//api/name/filter">filter</a> chain to be available through the inputKeys or outputKeys API when converted into a <a href="../Classes/CIFilter.html">CIFilter</a></p>
+
+<p>When you create a <a href="../Classes/CIFilter.html">CIFilter</a> from the CIFilterGenerator, you might want the client of the <a href="#//api/name/filter">filter</a> being able to set some of the paramters of the <a href="#//api/name/filter">filter</a> chain. To do so these parameters have to be exported as keys much like the inputKeys and outputKeys of all CIFilters.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeExportedKey:" title="removeExportedKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeExportedKey:">&ndash;&nbsp;removeExportedKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a key that was exported before using <a href="#//api/name/exportKey:fromObject:withName:">exportKey:fromObject:withName:</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeExportedKey:(NSString *)<em>exportedKeyName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>exportedKeyName</code></th>
+						<td><p>Name of the key that was exported.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes a key that was exported before using <a href="#//api/name/exportKey:fromObject:withName:">exportKey:fromObject:withName:</a></p>
+
+<p>Use this method when you want to remove a prior exported key. It will not show up under inputKeys or outputKeys anymore.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/exportedKeys" title="exportedKeys"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exportedKeys">&nbsp;&nbsp;exportedKeys</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An array of the exported keys.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSDictionary *exportedKeys</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An array of dictionaries that describe the exported key and target object. See CIExportedKey, CIExportedKeyTargetObject and CIExportedKeyName for keys used in the dictionary.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>An array of the exported keys.</p>
+
+<p>Use this method to get an NSArray of all the keys that you have exported using <a href="#//api/name/exportKey:fromObject:withName:">exportKey:fromObject:withName:</a> or that were exported before written to a file from which you read the <a href="#//api/name/filter">filter</a> chain.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAttributes:forExportedKey:" title="setAttributes:forExportedKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAttributes:forExportedKey:">&ndash;&nbsp;setAttributes:forExportedKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set a new dictionary of attributes for an exported key.</p>
+
+<p>By default, the exported key inherits the attributes from its original key and target object. Use this method to for instance change the default value or lower the maximum allowed value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setAttributes:(NSDictionary *)<em>attributes</em> forExportedKey:(NSString *)<em>key</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set a new dictionary of attributes for an exported key.</p>
+
+<p>By default, the exported key inherits the attributes from its original key and target object. Use this method to for instance change the default value or lower the maximum allowed value.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/classAttributes" title="classAttributes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/classAttributes">&nbsp;&nbsp;classAttributes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retrieve or Set the class attributes that will be used to register the <a href="#//api/name/filter">filter</a> using the registerFilterName method.
+Make sure you set the class attributes before using the registerFilterName method.
+See <a href="../Classes/CIFilter.html">CIFilter</a> for a description of the classAttributes that are needed to register a <a href="#//api/name/filter">filter</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) NSDictionary *classAttributes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Retrieve or Set the class attributes that will be used to register the <a href="#//api/name/filter">filter</a> using the registerFilterName method.
+Make sure you set the class attributes before using the registerFilterName method.
+See <a href="../Classes/CIFilter.html">CIFilter</a> for a description of the classAttributes that are needed to register a <a href="#//api/name/filter">filter</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filter" title="filter"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filter">&ndash;&nbsp;filter</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a <a href="../Classes/CIFilter.html">CIFilter</a> object based on this filter chain.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CIFilter *)filter</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a <a href="../Classes/CIFilter.html">CIFilter</a> object based on this filter chain.</p>
+
+<p>This method creates a <a href="../Classes/CIFilter.html">CIFilter</a> from the filter chain where the topology of the chain is immutable, meaning that changes to the filter chain will not be reflected in the filter. The filter will have the input and output keys that were exported as described above.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerFilterName:" title="registerFilterName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerFilterName:">&ndash;&nbsp;registerFilterName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Register the resulting <a href="#//api/name/filter">filter</a> of the chain in the <a href="../Classes/CIFilter.html">CIFilter</a> repository.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerFilterName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name under which the <a href="#//api/name/filter">filter</a> will be registered. This name has to be unique.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Register the resulting <a href="#//api/name/filter">filter</a> of the chain in the <a href="../Classes/CIFilter.html">CIFilter</a> repository.</p>
+
+<p>This method allows you to register the <a href="#//api/name/filter">filter</a> chain as a named <a href="#//api/name/filter">filter</a> in the <a href="#//api/name/filter">filter</a> repository. You can then create a <a href="../Classes/CIFilter.html">CIFilter</a> object from it using the filterWithName: method. Make sure you set the class attributes first - see <a href="../Classes/CIFilter.html">CIFilter</a> for a description of the <a href="#//api/name/classAttributes">classAttributes</a> that are needed to register a <a href="#//api/name/filter">filter</a>.
+When registering Core Image automatically adds the kCIFilterGeneratorCategory to the filters categories. The kCIFilterGeneratorCategory is purely for identification purpose and will not be exposed in the <a href="#//api/name/filter">filter</a> browser as a seperate category.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeToURL:atomically:" title="writeToURL:atomically:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeToURL:atomically:">&ndash;&nbsp;writeToURL:atomically:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write the CIFilterGenerator into a file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writeToURL:(NSURL *)<em>aURL</em> atomically:(BOOL)<em>flag</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns true when the chain with written our succesfully</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Write the CIFilterGenerator into a file</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilterGenerator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

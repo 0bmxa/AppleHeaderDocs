@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSCNNConvolutionDataSource Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/biasTerms">- biasTerms</option>
+		
+		<option value="//api/name/dataType">- dataType</option>
+		
+		<option value="//api/name/descriptor">- descriptor</option>
+		
+		<option value="//api/name/label">- label</option>
+		
+		<option value="//api/name/load">- load</option>
+		
+		<option value="//api/name/lookupTableForUInt8Kernel">- lookupTableForUInt8Kernel</option>
+		
+		<option value="//api/name/purge">- purge</option>
+		
+		<option value="//api/name/rangesForUInt8Kernel">- rangesForUInt8Kernel</option>
+		
+		<option value="//api/name/weights">- weights</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSCNNConvolutionDataSource Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSCNNConvolution.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol   MPSCNNConvolutionDataSource</p><p>The MPSCNNConvolutionDataSource protocol declares the methods that an
+instance of <a href="../Classes/MPSCNNConvolution.html">MPSCNNConvolution</a> uses to obtain the <a href="#//api/name/weights">weights</a> and bias terms
+for the CNN convolution filter.</p>
+
+<p>Why? CNN <a href="#//api/name/weights">weights</a> can be large. If multiple copies of all the <a href="#//api/name/weights">weights</a>
+for all the convolutions are available unpacked in memory at the same
+time, some devices can run out of memory. The MPSCNNConvolutionDataSource
+is used to encapsulate a reference to the <a href="#//api/name/weights">weights</a> such as a file path,
+so that unpacking can be deferred until needed, then purged soon thereafter
+so that not all of the data must be in memory at the same time.
+MPS does not provide a class that conforms to this protocol. It is up to
+the developer to craft his own to encapsulate his data.</p>
+
+<p>Batch normalization and the neuron activation function are handled using the
+<a href="#//api/name/descriptor">descriptor</a> method.</p>
+
+<p>Thread safety: The MPSCNNConvolutionDataSource object can be called by
+threads that are not the main thread. If you will be creating multiple
+<a href="../Classes/MPSNNGraph.html">MPSNNGraph</a> objects concurrently in multiple threads and these share
+MPSCNNConvolutionDataSources, then the data source objects may be called
+reentrantly.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/dataType" title="dataType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dataType">&ndash;&nbsp;dataType</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Alerts MPS what sort of <a href="#//api/name/weights">weights</a> are provided by the object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSDataType)dataType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For <a href="../Classes/MPSCNNConvolution.html">MPSCNNConvolution</a>, MPSDataTypeUInt8, MPSDataTypeFloat16
+and MPSDataTypeFloat32 are supported for normal convolutions
+using <a href="../Classes/MPSCNNConvolution.html">MPSCNNConvolution</a>. <a href="../Classes/MPSCNNBinaryConvolution.html">MPSCNNBinaryConvolution</a> assumes <a href="#//api/name/weights">weights</a> to be
+of type MPSDataTypeUInt32 always.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/descriptor" title="descriptor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/descriptor">&ndash;&nbsp;descriptor</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return a <a href="../Classes/MPSCNNConvolutionDescriptor.html">MPSCNNConvolutionDescriptor</a> as needed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSCNNConvolutionDescriptor *__nonnull)descriptor</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A <a href="../Classes/MPSCNNConvolutionDescriptor.html">MPSCNNConvolutionDescriptor</a> that describes the kernel housed by this object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>MPS will not modify this object other than perhaps to retain it.
+User should set the appropriate neuron in the creation of convolution descriptor
+and for batch normalization use:
+@code
+-setBatchNormalizationParametersForInferenceWithMean:variance:gamma:beta:epsilon:
+@endcode</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/weights" title="weights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/weights">&ndash;&nbsp;weights</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a pointer to the weights for the convolution.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void *__nonnull)weights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The type of each entry in array is given by <a href="#//api/name/dataType">dataType</a>. The number
+of entries is equal to:
+<code>
+inputFeatureChannels * outputFeatureChannels * kernelHeight * kernelWidth
+</code>
+The layout of filter weight is as a 4D tensor (array)
+weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ inputChannels / groups ]</p>
+
+<p>Frequently, this function is a single line of code to return
+a pointer to memory allocated in <a href="#//api/name/load">load</a>.</p>
+
+<p>Batch normalization parameters are set using <a href="#//api/name/descriptor">descriptor</a>.</p>
+
+<p>Note: For binary-convolutions the layout of the weights are:
+weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ floor((inputChannels/groups)+31) / 32 ]
+with each 32 sub input feature channel index specified in machine byte order, so that for example
+the 13th feature channel bit can be extracted using bitmask = (1U &lt;&lt; 13).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/biasTerms" title="biasTerms"></a>
+	<h3 class="method-title"><code><a href="#//api/name/biasTerms">&ndash;&nbsp;biasTerms</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a pointer to the bias terms for the convolution.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (float *__nullable)biasTerms</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Each entry in the array is a single precision IEEE-754 float
+and represents one bias. The number of entries is equal
+to outputFeatureChannels.</p>
+
+<p>Frequently, this function is a single line of code to return
+a pointer to memory allocated in <a href="#//api/name/load">load</a>. It may also just
+return nil.</p>
+
+<p>Note: bias terms are always float, even when the <a href="#//api/name/weights">weights</a> are not.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/load" title="load"></a>
+	<h3 class="method-title"><code><a href="#//api/name/load">&ndash;&nbsp;load</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Alerts the data source that the data will be needed soon</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)load</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns YES on success.  If NO is returned, expect MPS
+object construction to fail.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Each load alert will be balanced by a <a href="#//api/name/purge">purge</a> later, when MPS
+no longer needs the data from this object.
+Load will always be called atleast once after initial construction
+or each <a href="#//api/name/purge">purge</a> of the object before anything else is called.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/purge" title="purge"></a>
+	<h3 class="method-title"><code><a href="#//api/name/purge">&ndash;&nbsp;purge</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Alerts the data source that the data is no longer needed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)purge</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Each <a href="#//api/name/load">load</a> alert will be balanced by a purge later, when MPS
+no longer needs the data from this object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/label" title="label"></a>
+	<h3 class="method-title"><code><a href="#//api/name/label">&ndash;&nbsp;label</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A label that is transferred to the convolution at init time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *__nullable)label</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Overridden by a <a href="../Classes/MPSCNNConvolutionNode.html">MPSCNNConvolutionNode</a>.label if it is non-nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rangesForUInt8Kernel" title="rangesForUInt8Kernel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rangesForUInt8Kernel">&ndash;&nbsp;rangesForUInt8Kernel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A list of per-output channel limits that describe the 8-bit range</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (vector_float2 *__nonnull)rangesForUInt8Kernel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This returns a pointer to an array of vector_float2[outputChannelCount]
+values. The first value in the vector is the minimum value in the range.
+The second value in the vector is the maximum value in the range.</p>
+
+<p>The 8-bit weight value is interpreted as:
+<code>
+float unorm8_weight = uint8_weight / 255.0f;    // unorm8_weight has range [0,1.0]
+float max = range[outputChannel].y;
+float min = range[outputChannel].x;
+float weight = unorm8_weight * (max - min) + min
+</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lookupTableForUInt8Kernel" title="lookupTableForUInt8Kernel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lookupTableForUInt8Kernel">&ndash;&nbsp;lookupTableForUInt8Kernel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A pointer to a 256 entry lookup table containing the values to use for the weight range [0,255]</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (float *__nonnull)lookupTableForUInt8Kernel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

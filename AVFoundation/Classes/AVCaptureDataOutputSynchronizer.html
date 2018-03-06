@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureDataOutputSynchronizer Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/dataOutputs">dataOutputs</option>
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/delegateCallbackQueue">delegateCallbackQueue</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithDataOutputs:">- initWithDataOutputs:</option>
+		
+		<option value="//api/name/setDelegate:queue:">- setDelegate:queue:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureDataOutputSynchronizer Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureDataOutputSynchronizer.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureDataOutputSynchronizer
+@abstract
+    AVCaptureDataOutputSynchronizer synchronizes the delivery of data from multiple capture data outputs (AVCaptureVideoDataOutput, AVCaptureDepthDataOutput, AVCaptureMetadataOutput, AVCaptureAudioDataOutput) to a single delegate callback.</p>
+
+<p>@discussion
+    AVCaptureDataOutputSynchronizer is initialized with an array of data outputs (AVCaptureVideoDataOutput, AVCaptureDepthDataOutput, AVCaptureMetadataOutput, or AVCaptureAudioDataOutput) from which you&rsquo;d like to receive a single, synchronized delegate callback. The first output in the array acts as the master data output and determines when the synchronized callback is delivered. When data is received for the master data output, it is held until all other data outputs have received data with an equal or later presentation time stamp, or it has been determined that there is no data for a particular output at the master data output&rsquo;s pts. Once all other outputs are ready, a single delegate callback is sent with all the data aligned with the master data output&rsquo;s data. Separate delegate callbacks are sent for any other data received with presentation time stamps earlier than the next master data output time.</p>
+
+<pre><code>For instance, if you specify a video data output as your first (master) output and a metadata output for detected faces as your second output, your data callback will not be called until there is face data ready for a video frame, or it is assured that there is no face metadata for that particular video frame.
+
+Note that the AVCaptureDataOutputSynchronizer overrides each data output's -setSampleBufferDelegate:queue:, -setDepthDataDelegate:queue:, or -setMetadataObjectsDelegate:queue: method call. [AVCaptureVideoDataOutput alwaysDiscardsLateVideoFrames] and [AVCaptureDepthData alwaysDiscardsLateDepthData] properties are honored.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithDataOutputs:" title="initWithDataOutputs:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDataOutputs:">&ndash;&nbsp;initWithDataOutputs:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithDataOutputs:
+@abstract
+    Instantiates an AVCaptureDataOutputSynchronizer from one or more capture data outputs.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDataOutputs:(NSArray&lt;AVCaptureOutput*&gt; *)<em>dataOutputs</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithDataOutputs:
+@abstract
+    Instantiates an AVCaptureDataOutputSynchronizer from one or more capture data outputs.</p>
+
+<p>@param <a href="#//api/name/dataOutputs">dataOutputs</a>
+    An array of capture data outputs where the first is the master.
+@result
+    A newly initialized AVCaptureDataOutputSynchronizer instance.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDataOutputSynchronizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dataOutputs" title="dataOutputs"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dataOutputs">&nbsp;&nbsp;dataOutputs</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property dataOutputs
+@abstract
+    The data outputs provided in the initializer method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, retain) NSArray&lt;AVCaptureOutput*&gt; *dataOutputs</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property dataOutputs
+@abstract
+    The data outputs provided in the initializer method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDataOutputSynchronizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDelegate:queue:" title="setDelegate:queue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDelegate:queue:">&ndash;&nbsp;setDelegate:queue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method setDelegate:queue:
+@abstract
+    Sets the receiver&rsquo;s <a href="#//api/name/delegate">delegate</a> that will accept synchronized data and the dispatch queue on which the <a href="#//api/name/delegate">delegate</a> will be called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setDelegate:(nullable id&lt;AVCaptureDataOutputSynchronizerDelegate&gt;)<em>delegate</em> queue:(nullable dispatch_queue_t)<em>delegateCallbackQueue</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setDelegate:queue:
+@abstract
+    Sets the receiver&rsquo;s <a href="#//api/name/delegate">delegate</a> that will accept synchronized data and the dispatch queue on which the <a href="#//api/name/delegate">delegate</a> will be called.</p>
+
+<p>@param <a href="#//api/name/delegate">delegate</a>
+    An object conforming to the <a href="../Protocols/AVCaptureDataOutputSynchronizerDelegate.html">AVCaptureDataOutputSynchronizerDelegate</a> protocol that will receive synchronized data from the provided data outputs.
+@param <a href="#//api/name/delegateCallbackQueue">delegateCallbackQueue</a>
+    A dispatch queue on which all <a href="../Protocols/AVCaptureDataOutputSynchronizerDelegate.html">AVCaptureDataOutputSynchronizerDelegate</a> methods will be called.</p>
+
+<p>@discussion
+    AVCaptureDataOutputSynchronizer gathers data from its <a href="#//api/name/dataOutputs">dataOutputs</a>, and when it determines that all data has been received for a given timestamp, it calls the specified <a href="#//api/name/delegate">delegate</a> on the specified <a href="#//api/name/delegateCallbackQueue">delegateCallbackQueue</a>. AVCaptureDataOutputSynchronizer overrides all the data outputs' delegates and callbacks. Data outputs under the control of AVCaptureDataOutputSynchronizer do not fire <a href="#//api/name/delegate">delegate</a> callbacks. Delegate callbacks are restored to individual data outputs when you call this method with nil as your <a href="#//api/name/delegate">delegate</a> and NULL as your <a href="#//api/name/delegateCallbackQueue">delegateCallbackQueue</a>.</p>
+
+<pre><code>A serial dispatch queue must be used to guarantee that synchronized data will be delivered in order. The delegateCallbackQueue parameter may not be NULL, except when setting the delegate to nil.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDataOutputSynchronizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property delegate
+@abstract
+    The receiver&rsquo;s delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) id&lt;AVCaptureDataOutputSynchronizerDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property delegate
+@abstract
+    The receiver&rsquo;s delegate.</p>
+
+<p>@discussion
+    The value of this property is an object conforming to the <a href="../Protocols/AVCaptureDataOutputSynchronizerDelegate.html">AVCaptureDataOutputSynchronizerDelegate</a> protocol that will receive synchronized data output. The delegate is set using the <a href="#//api/name/setDelegate:queue:">setDelegate:queue:</a> method. This property is key-value observable.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDataOutputSynchronizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegateCallbackQueue" title="delegateCallbackQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegateCallbackQueue">&nbsp;&nbsp;delegateCallbackQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property delegateCallbackQueue
+@abstract
+    The dispatch queue on which all <a href="../Protocols/AVCaptureDataOutputSynchronizerDelegate.html">AVCaptureDataOutputSynchronizerDelegate</a> methods will be called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) dispatch_queue_t delegateCallbackQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property delegateCallbackQueue
+@abstract
+    The dispatch queue on which all <a href="../Protocols/AVCaptureDataOutputSynchronizerDelegate.html">AVCaptureDataOutputSynchronizerDelegate</a> methods will be called.</p>
+
+<p>@discussion
+    The value of this property is a dispatch_queue_t. The queue is set using the <a href="#//api/name/setDelegate:queue:">setDelegate:queue:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDataOutputSynchronizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

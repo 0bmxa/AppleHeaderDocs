@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ODSession Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 OpenDirectory Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_9">_9</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/defaultSession">+ defaultSession</option>
+		
+		<option value="//api/name/sessionWithOptions:error:">+ sessionWithOptions:error:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addConfiguration:authorization:error:">- addConfiguration:authorization:error:</option>
+		
+		<option value="//api/name/configurationAuthorizationAllowingUserInteraction:error:">- configurationAuthorizationAllowingUserInteraction:error:</option>
+		
+		<option value="//api/name/configurationForNodename:">- configurationForNodename:</option>
+		
+		<option value="//api/name/deleteConfiguration:authorization:error:">- deleteConfiguration:authorization:error:</option>
+		
+		<option value="//api/name/deleteConfigurationWithNodename:authorization:error:">- deleteConfigurationWithNodename:authorization:error:</option>
+		
+		<option value="//api/name/initWithOptions:error:">- initWithOptions:error:</option>
+		
+		<option value="//api/name/nodeNamesAndReturnError:">- nodeNamesAndReturnError:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ODSession Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ODSession.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class       ODSession
+</code></pre><p>Class for working with OpenDirectory sessions.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/defaultSession" title="defaultSession"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultSession">+&nbsp;defaultSession</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a shared instance of a local ODSession</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (ODSession *)defaultSession</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     defaultSession
+</code></pre><p>Returns a shared instance of a local ODSession.  This can be used for most situations unless
+                more control is needed over the session.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sessionWithOptions:error:" title="sessionWithOptions:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sessionWithOptions:error:">+&nbsp;sessionWithOptions:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an autoreleased instance of ODSession directed over Proxy to another host</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)sessionWithOptions:(NSDictionary *)<em>inOptions</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sessionWithOptions:error:
+</code></pre><p>Creates an autoreleased instance of ODSession directed over Proxy to another host.  nil
+                can be passed for no options. outError is optional parameter, nil can be passed if error
+                details are not needed.  Options include:</p>
+
+<pre><code>            If proxy is required then a dictionary with keys should be:
+                        Key                             Value
+                ODSessionProxyAddress        NSString(hostname or IP)
+                ODSessionProxyPort           NSNumber(IP port, should not be set as it will default)
+                ODSessionProxyUsername       NSString(username)
+                ODSessionProxyPassword       NSString(password)
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithOptions:error:" title="initWithOptions:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithOptions:error:">&ndash;&nbsp;initWithOptions:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an instance of ODSession directed over Proxy to another host</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithOptions:(NSDictionary *)<em>inOptions</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithOptions:error:
+</code></pre><p>Creates an instance of ODSession directed over Proxy to another host.  nil can be
+                passed for no options. outError is optional parameter, nil can be passed if error
+                details are not needed. Options include:</p>
+
+<pre><code>            If proxy is required then a dictionary with keys should be:
+                        Key                             Value
+                ODSessionProxyAddress        NSString(hostname or IP)
+                ODSessionProxyPort           NSNumber(IP port, should not be set as it will default)
+                ODSessionProxyUsername       NSString(username)
+                ODSessionProxyPassword       NSString(password)
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nodeNamesAndReturnError:" title="nodeNamesAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nodeNamesAndReturnError:">&ndash;&nbsp;nodeNamesAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the node names that are registered on this ODSession</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)nodeNamesAndReturnError:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     nodeNamesAndReturnError:
+</code></pre><p>Returns the node names that are registered on this ODSession.  outError can be nil if
+                error details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_9" title="_9"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_9">&nbsp;&nbsp;_9</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method configurationTemplateNames</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSArray *NS_AVAILABLE_MAC ( 10 _9</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method configurationTemplateNames</p>
+
+<p>@abstract
+Returns a list of names as NSStrings for all available configuration templates.</p>
+
+<p>@discussion
+Returns a list of names as NSStrings for all available configuration templates.  Configuration templates
+have pre-configured modules and/or mappings.  Useful for re-using existing configurations
+that may change with operating system without changing the actual configuration.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/configurationAuthorizationAllowingUserInteraction:error:" title="configurationAuthorizationAllowingUserInteraction:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/configurationAuthorizationAllowingUserInteraction:error:">&ndash;&nbsp;configurationAuthorizationAllowingUserInteraction:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method configurationAuthorizationAllowingUserInteraction:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (SFAuthorization *)configurationAuthorizationAllowingUserInteraction:(BOOL)<em>allowInteraction</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method configurationAuthorizationAllowingUserInteraction:</p>
+
+<p>@abstract
+Returns an authorization appropriate for managing configurations.</p>
+
+<p>@discussion
+Returns an authorization appropriate for managing configurations.  If a proxy session is in use this method will return
+nil and no error.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/configurationForNodename:" title="configurationForNodename:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/configurationForNodename:">&ndash;&nbsp;configurationForNodename:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method configurationForNodename:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ODConfiguration *)configurationForNodename:(NSString *)<em>nodename</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method configurationForNodename:</p>
+
+<p>@abstract
+Reads the configuration for a given nodename.</p>
+
+<p>@discussion
+Reads the configuration for a given nodename.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addConfiguration:authorization:error:" title="addConfiguration:authorization:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addConfiguration:authorization:error:">&ndash;&nbsp;addConfiguration:authorization:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method addConfiguration:authorization:error:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)addConfiguration:(ODConfiguration *)<em>configuration</em> authorization:(SFAuthorization *)<em>authorization</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addConfiguration:authorization:error:</p>
+
+<p>@abstract
+Adds a new configuration to the existing ODSession.</p>
+
+<p>@discussion
+Adds a new configuration to the existing ODSession.  An SFAuthorization can be provided if necessary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteConfiguration:authorization:error:" title="deleteConfiguration:authorization:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteConfiguration:authorization:error:">&ndash;&nbsp;deleteConfiguration:authorization:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method deleteConfiguration:authorization:error:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)deleteConfiguration:(ODConfiguration *)<em>configuration</em> authorization:(SFAuthorization *)<em>authorization</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method deleteConfiguration:authorization:error:</p>
+
+<p>@abstract
+Deletes an existing configuration from the ODSession.</p>
+
+<p>@discussion
+Deletes an existing configuration from the ODSession.  An authorization can be provided if necessary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteConfigurationWithNodename:authorization:error:" title="deleteConfigurationWithNodename:authorization:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteConfigurationWithNodename:authorization:error:">&ndash;&nbsp;deleteConfigurationWithNodename:authorization:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method deleteConfigurationWithNodename:authorization:error:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)deleteConfigurationWithNodename:(NSString *)<em>nodename</em> authorization:(SFAuthorization *)<em>authorization</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method deleteConfigurationWithNodename:authorization:error:</p>
+
+<p>@abstract
+Deletes an existing configuration from the ODSession.</p>
+
+<p>@discussion
+Deletes an existing configuration from the ODSession.  An authorization can be provided if necessary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

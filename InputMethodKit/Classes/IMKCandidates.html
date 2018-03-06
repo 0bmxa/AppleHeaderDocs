@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IMKCandidates Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 InputMethodKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/attachChild:toCandidate:type:">- attachChild:toCandidate:type:</option>
+		
+		<option value="//api/name/attributes">- attributes</option>
+		
+		<option value="//api/name/candidateFrame">- candidateFrame</option>
+		
+		<option value="//api/name/candidateIdentifierAtLineNumber:">- candidateIdentifierAtLineNumber:</option>
+		
+		<option value="//api/name/candidateStringIdentifier:">- candidateStringIdentifier:</option>
+		
+		<option value="//api/name/clearSelection">- clearSelection</option>
+		
+		<option value="//api/name/detachChild:">- detachChild:</option>
+		
+		<option value="//api/name/dismissesAutomatically">- dismissesAutomatically</option>
+		
+		<option value="//api/name/hide">- hide</option>
+		
+		<option value="//api/name/hideChild">- hideChild</option>
+		
+		<option value="//api/name/initWithServer:panelType:">- initWithServer:panelType:</option>
+		
+		<option value="//api/name/initWithServer:panelType:styleType:">- initWithServer:panelType:styleType:</option>
+		
+		<option value="//api/name/isVisible">- isVisible</option>
+		
+		<option value="//api/name/lineNumberForCandidateWithIdentifier:">- lineNumberForCandidateWithIdentifier:</option>
+		
+		<option value="//api/name/panelType">- panelType</option>
+		
+		<option value="//api/name/selectCandidate:">- selectCandidate:</option>
+		
+		<option value="//api/name/selectCandidateWithIdentifier:">- selectCandidateWithIdentifier:</option>
+		
+		<option value="//api/name/selectedCandidate">- selectedCandidate</option>
+		
+		<option value="//api/name/selectedCandidateString">- selectedCandidateString</option>
+		
+		<option value="//api/name/selectionKeys">- selectionKeys</option>
+		
+		<option value="//api/name/selectionKeysKeylayout">- selectionKeysKeylayout</option>
+		
+		<option value="//api/name/setAttributes:">- setAttributes:</option>
+		
+		<option value="//api/name/setCandidateData:">- setCandidateData:</option>
+		
+		<option value="//api/name/setCandidateFrameTopLeft:">- setCandidateFrameTopLeft:</option>
+		
+		<option value="//api/name/setDismissesAutomatically:">- setDismissesAutomatically:</option>
+		
+		<option value="//api/name/setPanelType:">- setPanelType:</option>
+		
+		<option value="//api/name/setSelectionKeys:">- setSelectionKeys:</option>
+		
+		<option value="//api/name/setSelectionKeysKeylayout:">- setSelectionKeysKeylayout:</option>
+		
+		<option value="//api/name/show:">- show:</option>
+		
+		<option value="//api/name/showAnnotation:">- showAnnotation:</option>
+		
+		<option value="//api/name/showCandidates">- showCandidates</option>
+		
+		<option value="//api/name/showChild">- showChild</option>
+		
+		<option value="//api/name/showSublist:subListDelegate:">- showSublist:subListDelegate:</option>
+		
+		<option value="//api/name/updateCandidates">- updateCandidates</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IMKCandidates Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSResponder</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>IMKCandidates.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@const      IMKCandidatesSendServerKeyEventFirst</p><p>Value is a NSNumber with a boolean value of NO (key events are sent to the candidate window first) or YES (key events are sent to the <a href="../Classes/IMKInputController.html">IMKInputController</a> first). Note that this is only applicable when a candidate window is displayed.  The default behavior is to send the key event to the candidate window first, and if it is not processed there, to send it on to the input controller.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithServer:panelType:" title="initWithServer:panelType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithServer:panelType:">&ndash;&nbsp;initWithServer:panelType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Default initializer for the class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithServer:(IMKServer *)<em>server</em> panelType:(IMKCandidatePanelType)<em>panelType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>When an input method allocates an IMKCandidate object it should initialize that object by calling this method passing the <a href="../Classes/IMKServer.html">IMKServer</a> that will manage the candidates and the initial panel type.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithServer:panelType:styleType:" title="initWithServer:panelType:styleType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithServer:panelType:styleType:">&ndash;&nbsp;initWithServer:panelType:styleType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithServer:(IMKServer *)<em>server</em> panelType:(IMKCandidatePanelType)<em>panelType</em> styleType:(IMKStyleType)<em>style</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/panelType" title="panelType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/panelType">&ndash;&nbsp;panelType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the panel type.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IMKCandidatePanelType)panelType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setPanelType:" title="setPanelType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setPanelType:">&ndash;&nbsp;setPanelType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Change the panel type.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setPanelType:(IMKCandidatePanelType)<em>panelType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/show:" title="show:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/show:">&ndash;&nbsp;show:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If a candidate window type has been provided, show the candidate window. The caller provides a location hint that is used to position the window.</p>
+
+<p>Input methods call this method when it is appropriate, during text conversion, to display a list of candidates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)show:(IMKCandidatesLocationHint)<em>locationHint</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hide" title="hide"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hide">&ndash;&nbsp;hide</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the candidate window is visible, hide it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)hide</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isVisible" title="isVisible"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isVisible">&ndash;&nbsp;isVisible</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Utility method returns YES if a candidate display is visible.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isVisible</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateCandidates" title="updateCandidates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateCandidates">&ndash;&nbsp;updateCandidates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to update the candidates displayed in the candidate window.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateCandidates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Calling this method will result in a call being made to the IMKInputController&rsquo;s candidates method. Note that the candidate list will be updated, but the window&rsquo;s visible state will not change; that is to say, if the window is hidden it will remain hidden, and vice versa.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showAnnotation:" title="showAnnotation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showAnnotation:">&ndash;&nbsp;showAnnotation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Displays an annotation window whose contents are the annotationString.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showAnnotation:(NSAttributedString *)<em>annotationString</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>An annotation is additional text that explains or somehow adds to the candidate string in a candidate window. Annotations are displayed in a small borderless window that is aligned with the current candidate panel. An input method calls showAnnotation: when the method <a href="../Classes/IMKInputController.html#//api/name/candidateSelectionChanged:">[IMKInputController candidateSelectionChanged:]</a> is called, and the candidateString has annotations.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showSublist:subListDelegate:" title="showSublist:subListDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showSublist:subListDelegate:">&ndash;&nbsp;showSublist:subListDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)showSublist:(NSArray *)<em>candidates</em> subListDelegate:(id)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectedCandidateString" title="selectedCandidateString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectedCandidateString">&ndash;&nbsp;selectedCandidateString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the current selection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSAttributedString *)selectedCandidateString</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Call this to get the string that the user has selected. Will return nil if no selection or window is not visible.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCandidateFrameTopLeft:" title="setCandidateFrameTopLeft:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCandidateFrameTopLeft:">&ndash;&nbsp;setCandidateFrameTopLeft:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Positions the top-left corner of the candidate window’s frame rectangle at a given point in screen coordinates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCandidateFrameTopLeft:(NSPoint)<em>point</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/candidateFrame" title="candidateFrame"></a>
+	<h3 class="method-title"><code><a href="#//api/name/candidateFrame">&ndash;&nbsp;candidateFrame</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSRect)candidateFrame</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSelectionKeys:" title="setSelectionKeys:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSelectionKeys:">&ndash;&nbsp;setSelectionKeys:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the selection keys for the candidates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSelectionKeys:(NSArray *)<em>keyCodes</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Selection keys are an array of NSNumbers where each NSNumber is a virtual key code that the controller will map to characters that are displayed either across the top of the candidates, if the candidates are laid out horizontally, or along the left edge of the candidates, if they are aligned vertically.</p>
+
+<p>The number of selection keys determines how many candidates are displayed per page.  For example, if you
+passed an array of 4 key codes, then 4 candidates are displayed per page.  If you passed 11 key codes, then 11 candidates would be displayed.</p>
+
+<p>By default the key codes are mapped using the keyboard layout whose source id is com.apple.keylayout.US.  The default layout can be replaced by calling
+setSelectionKeysKeylayout (see below).</p>
+
+<p>The default selection keys are the digits 1 through 9, or in terms of key codes: 18-21,23,22, 26, 28, 25.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectionKeys" title="selectionKeys"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectionKeys">&ndash;&nbsp;selectionKeys</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an NSArray of NSNumbers where each NSNumber is a virtual key code.</p>
+
+<p>The NSArray is an autoreleased object. Do not release unless it is first retained.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)selectionKeys</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSelectionKeysKeylayout:" title="setSelectionKeysKeylayout:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSelectionKeysKeylayout:">&ndash;&nbsp;setSelectionKeysKeylayout:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the key layout that is used to map virtual key codes to characters.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSelectionKeysKeylayout:(TISInputSourceRef)<em>layout</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectionKeysKeylayout" title="selectionKeysKeylayout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectionKeysKeylayout">&ndash;&nbsp;selectionKeysKeylayout</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the key layout that is used to map virtual key codes for the selection keys.  By default this is the key layout whose source id is com.apple.keylayout.US.</p>
+
+<p>This is an autoreleased object.  Retain it if you need to keep it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (TISInputSourceRef)selectionKeysKeylayout</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAttributes:" title="setAttributes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAttributes:">&ndash;&nbsp;setAttributes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the &ldquo;style&rdquo; <a href="#//api/name/attributes">attributes</a> for the candidates window.  The keys for the <a href="#//api/name/attributes">attributes</a> dictionary and the values are:</p>
+
+<p>NSFontAttributeName (value = NSFont)  Setting the font attribute sets the font that is used to draw Candidates.  It does not effect the selection keys which are always drawn in the same font.  Note that to set the font size you should use this key/value pair.</p>
+
+<p>IMKCandidatesOpacityAttributeName (value = NSNumber with a float value between 0 and 1).  Sets the opacity level to transparent (0.0) to completely opaque (1.0). The default opacity is 1.0.  This constant is declared above.</p>
+
+<p>NSForegroundColorAttributeName (value = NSColor) Sets the text color used for the candidate text.  By default it is black.</p>
+
+<p>NSBackgroundColorDocumentAttribute (value = NSColor).  Set the background color that is drawn behind the candidate text.</p>
+
+<p>IMKCandidatesSendServerKeyEventFirst (value = NSNumber).  NO (default) gives the candidate window first chance at key events.  YES causes events to first be routed to the current <a href="../Classes/IMKInputController.html">IMKInputController</a>.  In that case, if the event is not handled, it will then be sent to the candidate window.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setAttributes:(NSDictionary *)<em>attributes</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributes" title="attributes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributes">&ndash;&nbsp;attributes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the attributes dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)attributes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDismissesAutomatically:" title="setDismissesAutomatically:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDismissesAutomatically:">&ndash;&nbsp;setDismissesAutomatically:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Setting the <a href="#//api/name/dismissesAutomatically">dismissesAutomatically</a> flag determines what happens to displayed candidates when the return key or enter key is typed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setDismissesAutomatically:(BOOL)<em>flag</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>By default, if a return or enter key is typed, the candidates are dismissed and a candidateSelected: message is sent to the input controller.  However  if setDismissesAutomatically is passed a NO flag  the candidate display will not be dismissed when a return or enter key is typed.  The input controller will still be sent the candidatesSelected: message, but, as stated, the candidates display will not be dismissed.</p>
+
+<p>Setting this flag to NO lets an input method process text input while keeping a dynamically changing candidates display in view throughout the text input process.</p>
+
+<p>When you set this to NO the candidate display will still be hidden when when a session deactivates.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dismissesAutomatically" title="dismissesAutomatically"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dismissesAutomatically">&ndash;&nbsp;dismissesAutomatically</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the dismissesAutomatically flag.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)dismissesAutomatically</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectedCandidate" title="selectedCandidate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectedCandidate">&ndash;&nbsp;selectedCandidate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the currently selected candidate identifer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)selectedCandidate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Attempts to determine the identifier for the selected candidate.  If there is no selection the return value will be NSNotFound.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showChild" title="showChild"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showChild">&ndash;&nbsp;showChild</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the current selection has a child IMKCandidates object that will be shown.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showChild</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>If there is a failure in showing the child this method will throw an exception.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hideChild" title="hideChild"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hideChild">&ndash;&nbsp;hideChild</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the current selection has a child IMKCandidates that is being shown <a href="#//api/name/hide">hide</a> it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)hideChild</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Typically a client will not need to call this as IMKCandidates automatically hides and shows children.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attachChild:toCandidate:type:" title="attachChild:toCandidate:type:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attachChild:toCandidate:type:">&ndash;&nbsp;attachChild:toCandidate:type:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Attach an IMKCandidates object to the specified selection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)attachChild:(IMKCandidates *)<em>child</em> toCandidate:(NSInteger)<em>candidateIdentifier</em> type:(IMKStyleType)<em>theType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>The IMKCandidate can be a sublist or an annotation.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/detachChild:" title="detachChild:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/detachChild:">&ndash;&nbsp;detachChild:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Detach the IMKCandidates object attached to candidate</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)detachChild:(NSInteger)<em>candidateIdentifier</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCandidateData:" title="setCandidateData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCandidateData:">&ndash;&nbsp;setCandidateData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the candidates data directly rather than supplying data via [IMKInputContoller candidates:].</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCandidateData:(NSArray *)<em>candidatesArray</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>The elements of the array can be strings or attributed strings.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectCandidateWithIdentifier:" title="selectCandidateWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectCandidateWithIdentifier:">&ndash;&nbsp;selectCandidateWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Select the candidate whose identifier matches the identifier parameter.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)selectCandidateWithIdentifier:(NSInteger)<em>candidateIdentifier</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>An</code></th>
+						<td><p>identifier for a candidate.  You can obtain an identifier by mapping a candidate to an identifier via the <a href="#//api/name/candidateStringIdentifier:">[IMKCandidates candidateStringIdentifier:]</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the candidateIdentifier is valid an the selection was made.  NO if canidateIdentifier is invalid or it was not possible make the selection.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectCandidate:" title="selectCandidate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectCandidate:">&ndash;&nbsp;selectCandidate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)selectCandidate:(NSInteger)<em>candidateIdentifier</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showCandidates" title="showCandidates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showCandidates">&ndash;&nbsp;showCandidates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Show the candidate window.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showCandidates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>This simply shows the candidates.  No effort is made to position the candidate.  The caller should move the candidate window to an appropriate location prior to showing.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/candidateStringIdentifier:" title="candidateStringIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/candidateStringIdentifier:">&ndash;&nbsp;candidateStringIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Map a candidateString to an identifier.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)candidateStringIdentifier:(id)<em>candidateString</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Beginning with MacOS 10.7, candidate strings are mapped internally to an unique identifier of type NSInteger.  Using identifiers to identify a particular candidate is the first stage of enabling data types other than NSString and NSAttributedString for containing the contents of a candidate.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/candidateIdentifierAtLineNumber:" title="candidateIdentifierAtLineNumber:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/candidateIdentifierAtLineNumber:">&ndash;&nbsp;candidateIdentifierAtLineNumber:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the candidate identifier for a given line in the candidate window display.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)candidateIdentifierAtLineNumber:(NSInteger)<em>lineNumber</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lineNumber</code></th>
+						<td><p>a number representing a cells position in the candidate window.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Maps the lineNumber to a candidate identifier.  Line number 0 corresponds to the candidate in the cell currently in the first (top for vertical) line of the candidate window.  This is convienient for input methods that support selecting a candidate by a number key. Line Number values depend on the column arrangement of your candidate.  If you are displaying a single column candidate window, lines that have been scrolled out of view will have negative values.  For a single row grid line, numbers will correspond to the cell&rsquo;s position in the row (i.e. the first cell will be 0, the second 1, etc).  Finally, for a grid, the line numbers correspond to the grid row.  If the line number is invalid, NSNotFound is returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lineNumberForCandidateWithIdentifier:" title="lineNumberForCandidateWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lineNumberForCandidateWithIdentifier:">&ndash;&nbsp;lineNumberForCandidateWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the line number for a given CandidateID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)lineNumberForCandidateWithIdentifier:(NSInteger)<em>candidateIdentifier</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>candidateIdentifier</code></th>
+						<td><ul>
+<li>A valid identifier for a candidate.</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The line number.  NSNotFound if the candidateID is invalid.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>If the cell that contains the candidate is at the top line of the candidate window, the return value will be 0.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clearSelection" title="clearSelection"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearSelection">&ndash;&nbsp;clearSelection</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Clears the current selection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)clearSelection</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKCandidates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

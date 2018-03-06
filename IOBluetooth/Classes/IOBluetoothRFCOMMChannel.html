@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IOBluetoothRFCOMMChannel Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IOBluetooth Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/registerForChannelOpenNotifications:selector:">+ registerForChannelOpenNotifications:selector:</option>
+		
+		<option value="//api/name/registerForChannelOpenNotifications:selector:withChannelID:direction:">+ registerForChannelOpenNotifications:selector:withChannelID:direction:</option>
+		
+		<option value="//api/name/withObjectID:">+ withObjectID:</option>
+		
+		<option value="//api/name/withRFCOMMChannelRef:">+ withRFCOMMChannelRef:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/closeChannel">- closeChannel</option>
+		
+		<option value="//api/name/delegate">- delegate</option>
+		
+		<option value="//api/name/getChannelID">- getChannelID</option>
+		
+		<option value="//api/name/getDevice">- getDevice</option>
+		
+		<option value="//api/name/getMTU">- getMTU</option>
+		
+		<option value="//api/name/getObjectID">- getObjectID</option>
+		
+		<option value="//api/name/getRFCOMMChannelRef">- getRFCOMMChannelRef</option>
+		
+		<option value="//api/name/isIncoming">- isIncoming</option>
+		
+		<option value="//api/name/isOpen">- isOpen</option>
+		
+		<option value="//api/name/isTransmissionPaused">- isTransmissionPaused</option>
+		
+		<option value="//api/name/registerForChannelCloseNotification:selector:">- registerForChannelCloseNotification:selector:</option>
+		
+		<option value="//api/name/sendRemoteLineStatus:">- sendRemoteLineStatus:</option>
+		
+		<option value="//api/name/setDelegate:">- setDelegate:</option>
+		
+		<option value="//api/name/setSerialParameters:dataBits:parity:stopBits:">- setSerialParameters:dataBits:parity:stopBits:</option>
+		
+		<option value="//api/name/write:length:sleep:">- write:length:sleep:</option>
+		
+		<option value="//api/name/writeAsync:length:refcon:">- writeAsync:length:refcon:</option>
+		
+		<option value="//api/name/writeSimple:length:sleep:bytesSent:">- writeSimple:length:sleep:bytesSent:</option>
+		
+		<option value="//api/name/writeSync:length:">- writeSync:length:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IOBluetoothRFCOMMChannel Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/IOBluetoothObject.html">IOBluetoothObject</a> : NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSPortDelegate</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>IOBluetoothRFCOMMChannel.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class IOBluetoothRFCOMMChannel
+</code></pre><p>An RFCOMM channel object can be obtained by opening an rfcomm channel in a device, or
+    by requesting a notification when a channel is created (this is commonly used to provide services).</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/registerForChannelOpenNotifications:selector:" title="registerForChannelOpenNotifications:selector:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForChannelOpenNotifications:selector:">+&nbsp;registerForChannelOpenNotifications:selector:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows a client to register for RFCOMM channel open notifications for any RFCOMM channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (IOBluetoothUserNotification *)registerForChannelOpenNotifications:(id)<em>object</em> selector:(SEL)<em>selector</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>Target object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>selector</code></th>
+						<td><p>Selector to be called on the target object when a new RFCOMM channel is opened.
+                the format for the selector is:
+                -(void) selectorName:(<a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> <em>)inNotification channel:(IOBluetoothRFCOMMChannel </em>)newChannel</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rfcommChannelRef</code></th>
+						<td><p>IOBluetoothRFCOMMChannelRef for which an IOBluetoothRFCOMMChannel * is desired.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> representing the outstanding RFCOMM channel notification.
+                To unregister the notification, call -unregister on the resulting <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a>
+                object.  If an error is encountered creating the notification, nil is returned.  The returned
+                <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> will be valid for as long as the notification is registered.  It is
+                not necessary to retain the result.  Once -unregister is called on it, it will no longer be valid.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method registerForChannelOpenNotifications:selector:
+</code></pre><p>The given selector will be called on the target object whenever any RFCOMM channel is opened.
+                The selector should accept two arguments.  The first is the user notification object.  The second
+                is the IOBluetoothRFCOMMChannel that was opened.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerForChannelOpenNotifications:selector:withChannelID:direction:" title="registerForChannelOpenNotifications:selector:withChannelID:direction:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForChannelOpenNotifications:selector:withChannelID:direction:">+&nbsp;registerForChannelOpenNotifications:selector:withChannelID:direction:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows a client to register for RFCOMM channel open notifications for certain types of
+                RFCOMM channels.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (IOBluetoothUserNotification *)registerForChannelOpenNotifications:(id)<em>object</em> selector:(SEL)<em>selector</em> withChannelID:(BluetoothRFCOMMChannelID)<em>channelID</em> direction:(IOBluetoothUserNotificationChannelDirection)<em>inDirection</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>Target object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>selector</code></th>
+						<td><p>Selector to be called on the target object when a new RFCOMM channel is opened.
+                the format for the selector is:
+                -(void) selectorName:(<a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> <em>)inNotification channel:(IOBluetoothRFCOMMChannel </em>)newChannel</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inDirection</code></th>
+						<td><p>The desired direction of the RFCOMM channel - kIOBluetoothUserNotificationChannelDirectionAny
+                if the direction doesn&rsquo;t matter.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>channeLID</code></th>
+						<td><p>RFCOMM channel ID to match a new RFCOMM channel.  If the channel ID doesn&rsquo;t matter, 0 may be passed in.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> representing the outstanding RFCOMM channel notification.
+                To unregister the notification, call -unregister on the resulting <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a>
+                object.  If an error is encountered creating the notification, nil is returned.  The returned
+                <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> will be valid for as long as the notification is registered.  It is
+                not necessary to retain the result.  Once -unregister is called on it, it will no longer be valid.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method registerForChannelOpenNotifications:selector:
+</code></pre><p>The given selector will be called on the target object whenever an RFCOMM channel with the given
+                attributes is opened.  The selector should accept two arguments.  The first is the user
+                notification object.  The second is the IOBluetoothRFCOMMChannel that was opened.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withRFCOMMChannelRef:" title="withRFCOMMChannelRef:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withRFCOMMChannelRef:">+&nbsp;withRFCOMMChannelRef:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method call to convert an IOBluetoothRFCOMMChannelRef into an IOBluetoothRFCOMMChannel *.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withRFCOMMChannelRef:(IOBluetoothRFCOMMChannelRef)<em>rfcommChannelRef</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rfcommChannelRef</code></th>
+						<td><p>IOBluetoothRFCOMMChannelRef for which an IOBluetoothRFCOMMChannel * is desired.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the IOBluetoothRFCOMMChannel * for the given IOBluetoothRFCOMMChannelRef.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method withRFCOMMChannelRef:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withObjectID:" title="withObjectID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withObjectID:">+&nbsp;withObjectID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the IObluetoothRFCOMMChannel with the given IOBluetoothObjectID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withObjectID:(IOBluetoothObjectID)<em>objectID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>objectID</code></th>
+						<td><p>IOBluetoothObjectID of the desired IObluetoothRFCOMMChannel.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the IObluetoothRFCOMMChannel that matches the given IOBluetoothObjectID if one exists.
+                If no matching RFCOMM channel exists, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method withObjectID:
+</code></pre><p>The IOBluetoothObjectID can be used as a global reference for a given IObluetoothRFCOMMChannel.  It allows
+                two separate applications to refer to the same IObluetoothRFCOMMChannel object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getRFCOMMChannelRef" title="getRFCOMMChannelRef"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getRFCOMMChannelRef">&ndash;&nbsp;getRFCOMMChannelRef</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an IOBluetoothRFCOMMChannelRef representation of the target IOBluetoothRFCOMMChannel object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothRFCOMMChannelRef)getRFCOMMChannelRef</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an IOBluetoothRFCOMMChannelRef representation of the target IOBluetoothRFCOMMChannel object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getRFCOMMChannelRef
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/closeChannel" title="closeChannel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/closeChannel">&ndash;&nbsp;closeChannel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Close the channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)closeChannel</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An error code value. 0 if successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method closeChannel
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isOpen" title="isOpen"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isOpen">&ndash;&nbsp;isOpen</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the state of the channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isOpen</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>TRUE if the channel state is open,  FALSE otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method isOpen
+</code></pre><p>note that &ldquo;not open&rdquo; means closed, opening and closing.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getMTU" title="getMTU"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getMTU">&ndash;&nbsp;getMTU</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the channel maximum transfer unit.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BluetoothRFCOMMMTU)getMTU</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Channel MTU size .</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getMTU
+</code></pre><p>Returns the length of the largest chunk of data that this channel can carry. If the
+    caller wishes to use the <a href="#//api/name/write:length:sleep:">write:length:sleep:</a> api the length of the data can not be bigger than
+    the channel MTU (maximum transfer unit).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isTransmissionPaused" title="isTransmissionPaused"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isTransmissionPaused">&ndash;&nbsp;isTransmissionPaused</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns TRUE if flow control is off.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isTransmissionPaused</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>TRUE if the action of sending data will block the current thread, FALSE otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method isTransmissionPaused
+</code></pre><p>Returns true if the remote device flow control is stopping out transmission. This is
+            useful because we do not buffer data, we stop the transmitting actor. With this method
+            the transmitter can check if sending data is going to be successful or is going to block.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/write:length:sleep:" title="write:length:sleep:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/write:length:sleep:">&ndash;&nbsp;write:length:sleep:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends a block of data in the channel syncronously.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)write:(void *)<em>data</em> length:(UInt16)<em>length</em> sleep:(BOOL)<em>sleep</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>is a pointer to the data buffer to be sent.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>length</code></th>
+						<td><p>the length of the buffer to be sent (in bytes).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sleep</code></th>
+						<td><p>is a boolean if set to TRUE the call will wait until it is possible to send data.
+    If set to FALSE and it is not possible to send data the method will return immediately with an
+    error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An error code value. 0 if successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method  write:length:sleep:
+</code></pre><p><strong><em>WARNING</em></strong> This method is being deprecated in favor of -writeSync:&hellip; and -writeAsync:&hellip;
+                Sends data through the channel. The number of bytes to be sent must not exceed the channel MTU.
+                If the return value is an error condition none of the data was sent.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeAsync:length:refcon:" title="writeAsync:length:refcon:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeAsync:length:refcon:">&ndash;&nbsp;writeAsync:length:refcon:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends a block of data in the channel asynchronously.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)writeAsync:(void *)<em>data</em> length:(UInt16)<em>length</em> refcon:(void *)<em>refcon</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>A pointer to the data buffer to be sent.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>length</code></th>
+						<td><p>The length of the buffer to be sent (in bytes).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>refcon</code></th>
+						<td><p>User supplied value that gets passed to the write callback.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the data was buffered successfully.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method  writeAsync:length:refcon:
+</code></pre><p>The number of bytes to be sent must not exceed the channel MTU.
+                If the return value is an error condition none of the data was sent.  Once the data
+                has been successfully passed to the hardware to be transmitted, the <a href="#//api/name/delegate">delegate</a> method
+                -rfcommChannelWriteComplete:refcon:status: will be called with the refcon that was passed
+                to this method.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.5 (Bluetooth v1.2) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeSync:length:" title="writeSync:length:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeSync:length:">&ndash;&nbsp;writeSync:length:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends a block of data in the channel synchronously.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)writeSync:(void *)<em>data</em> length:(UInt16)<em>length</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>A pointer to the data buffer to be sent.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>length</code></th>
+						<td><p>The length of the buffer to be sent (in bytes).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the data was written successfully.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method  writeSync:length:
+</code></pre><p>Sends data through the channel. The number of bytes to be sent must not exceed the channel MTU.
+                If the return value is an error condition none of the data was sent.  This method will
+                block until the data has been successfully sent to the hardware for transmission (or until
+                an error occurs).</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.5 (Bluetooth v1.2) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeSimple:length:sleep:bytesSent:" title="writeSimple:length:sleep:bytesSent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeSimple:length:sleep:bytesSent:">&ndash;&nbsp;writeSimple:length:sleep:bytesSent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends a block of data in the channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)writeSimple:(void *)<em>data</em> length:(UInt16)<em>length</em> sleep:(BOOL)<em>sleep</em> bytesSent:(UInt32 *)<em>numBytesSent</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>a pointer to the data buffer to be sent.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>length</code></th>
+						<td><p>the length of the buffer to be sent (in bytes).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sleep</code></th>
+						<td><p>a boolean if set to TRUE the call will wait until it is possible to send all the data.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>a</code></th>
+						<td><p>UInt32 pointer in which the caller received the nuber of bytes sent.
+    If set to FALSE and it is not possible to send part of the data the method will return immediately.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An error code value. 0 if successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method  writeSimple:length:sleep:
+</code></pre><p><strong><em>WARNING</em></strong> This method is being deprecated in favor of -writeSync:&hellip; and -writeAsync:&hellip;
+                Sends data through the channel. The number of bytes to be sent is arbitrary. The caller
+                does not have to worry about the MTU.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSerialParameters:dataBits:parity:stopBits:" title="setSerialParameters:dataBits:parity:stopBits:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSerialParameters:dataBits:parity:stopBits:">&ndash;&nbsp;setSerialParameters:dataBits:parity:stopBits:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Changes the parameters of the serial connection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)setSerialParameters:(UInt32)<em>speed</em> dataBits:(UInt8)<em>nBits</em> parity:(BluetoothRFCOMMParityType)<em>parity</em> stopBits:(UInt8)<em>bitStop</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>speed</code></th>
+						<td><p>the baudrate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>nBits</code></th>
+						<td><p>number of data bits.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parity</code></th>
+						<td><p>the type of parity can be NoParity, OddParity, EvenParity or MaxParity.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bitStop</code></th>
+						<td><p>number of stop bits.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An error code value. 0 if successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method  setSerialParameters:dataBits:parity:stopBits:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendRemoteLineStatus:" title="sendRemoteLineStatus:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendRemoteLineStatus:">&ndash;&nbsp;sendRemoteLineStatus:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends an error to the remote side.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)sendRemoteLineStatus:(BluetoothRFCOMMLineStatus)<em>lineStatus</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lineStatus</code></th>
+						<td><p>the error type. The error code can be NoError, OverrunError, ParityError or FramingError.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An error code value. 0 if successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method  sendRemoteLineStatus:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDelegate:" title="setDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDelegate:">&ndash;&nbsp;setDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows an object to register itself as a client of the RFCOMM channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)setDelegate:(id)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The object that will play the role of channel <a href="#//api/name/delegate">delegate</a> [NOTE the rfcomm channel will reatin the delegate].</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the <a href="#//api/name/delegate">delegate</a> is successfully registered.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setDelegate:
+</code></pre><p>A channel <a href="#//api/name/delegate">delegate</a> is the object the RFCOMM channel uses as target for data and events. The
+                developer will implement only the the methods he/she is interested in. A list of the
+                possible methods is at the end of this file in the definition of the informal protocol
+                <a href="../Protocols/IOBluetoothRFCOMMChannelDelegate.html">IOBluetoothRFCOMMChannelDelegate</a>.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.5 (Bluetooth v1.2) or later.
+            NOTE: Before Mac OS X 10.6, the delegate was retained.  On 10.6 and later, it is not.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&ndash;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the object delegate</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)delegate</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the current delegate, or nil</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method delegate</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getChannelID" title="getChannelID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getChannelID">&ndash;&nbsp;getChannelID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the object rfcomm channel ID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BluetoothRFCOMMChannelID)getChannelID</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the RFCOMM channel number .</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method channelNumber
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isIncoming" title="isIncoming"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isIncoming">&ndash;&nbsp;isIncoming</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the direction of the channel.  An incoming channel is one that was opened by the remote
+                device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isIncoming</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns TRUE if the channel was opened by the remote device, FALSE if the channel was opened by this object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method isIncoming
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getDevice" title="getDevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDevice">&ndash;&nbsp;getDevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the Bluetooth Device that carries the rfcomm data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothDevice *)getDevice</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> object .</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getDevice
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getObjectID" title="getObjectID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getObjectID">&ndash;&nbsp;getObjectID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the IOBluetoothObjectID of the given IOBluetoothRFCOMMChannel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothObjectID)getObjectID</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the IOBluetoothObjectID of the given IOBluetoothRFCOMMChannel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getObjectID
+</code></pre><p>The IOBluetoothObjectID can be used as a global reference for a given IOBluetoothRFCOMMChannel.  It allows
+                two separate applications to refer to the same IOBluetoothRFCOMMChannel.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerForChannelCloseNotification:selector:" title="registerForChannelCloseNotification:selector:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForChannelCloseNotification:selector:">&ndash;&nbsp;registerForChannelCloseNotification:selector:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows a client to register for a channel close notification.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothUserNotification *)registerForChannelCloseNotification:(id)<em>observer</em> selector:(SEL)<em>inSelector</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>observer</code></th>
+						<td><p>Target observer object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inSelector</code></th>
+						<td><p>Selector to be sent to the observer when the RFCOMM channel is closed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a> representing the outstanding RFCOMM channel close notification.
+                To unregister the notification, call -unregister of the returned <a href="../Classes/IOBluetoothUserNotification.html">IOBluetoothUserNotification</a>
+                object.  If an error is encountered creating the notification, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     registerForChannelCloseNotification:selector:
+</code></pre><p>The given selector will be called on the target observer when the RFCOMM channel is closed.
+                The selector should contain two arguments.  The first is the user notification object. The second
+                is the IOBluetoothRFCOMMChannel that was closed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothRFCOMMChannel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

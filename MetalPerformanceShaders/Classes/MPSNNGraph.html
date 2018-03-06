@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSNNGraph Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/destinationImageAllocator">destinationImageAllocator</option>
+		
+		<option value="//api/name/intermediateImageHandles">intermediateImageHandles</option>
+		
+		<option value="//api/name/outputStateIsTemporary">outputStateIsTemporary</option>
+		
+		<option value="//api/name/resultHandle">resultHandle</option>
+		
+		<option value="//api/name/resultStateHandles">resultStateHandles</option>
+		
+		<option value="//api/name/sourceImageHandles">sourceImageHandles</option>
+		
+		<option value="//api/name/sourceStateHandles">sourceStateHandles</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encodeToCommandBuffer:sourceImages:">- encodeToCommandBuffer:sourceImages:</option>
+		
+		<option value="//api/name/encodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:">- encodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:</option>
+		
+		<option value="//api/name/executeAsyncWithSourceImages:completionHandler:">- executeAsyncWithSourceImages:completionHandler:</option>
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:">- initWithDevice:</option>
+		
+		<option value="//api/name/initWithDevice:resultImage:">- initWithDevice:resultImage:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSNNGraph Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying<br />NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSNNGraph.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSNNGraph</p><p>Once you have prepared a graph of MPSNNImageNodes and MPSNNFilterNodes
+(and if needed MPSNNStateNodes), you may initialize a MPSNNGraph using
+the <a href="../Classes/MPSNNImageNode.html">MPSNNImageNode</a> that you wish to appear as the result. The MPSNNGraph
+object will introspect the graph representation and determine which nodes
+are needed for inputs, and which nodes are produced as output state (if any).
+Nodes which are not needed to calculate the result image node are ignored.
+Some nodes may be internally concatenated with other nodes for better
+performance.</p>
+
+<p>Note: the <a href="../Classes/MPSNNImageNode.html">MPSNNImageNode</a> that you choose as the result node may be interior
+to a graph. This feature is provided as a means to examine intermediate
+computations in the full graph for debugging purposes.</p>
+
+<p>During MPSNNGraph construction, the graph attached to the result node will
+be parsed and reduced to an optimized representation. This representation may
+be saved using the NSSecureCoding protocol for later recall.</p>
+
+<p>When decoding a MPSNNGraph using a NSCoder, it will be created against
+the system default MTLDevice. If you would like to set the MTLDevice,
+your NSCoder should conform to the <a href="../Protocols/MPSDeviceProvider.html">MPSDeviceProvider</a> protocol.</p>
+
+<p>You may find it helpful to set MPSKernelOptionsVerbose on the graph when
+debugging.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithDevice:resultImage:" title="initWithDevice:resultImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:resultImage:">&ndash;&nbsp;initWithDevice:resultImage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a MPSNNGraph object on a device starting with resultImage working backward</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> resultImage:(MPSNNImageNode *__nonnull)<em>resultImage</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to run the graph</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resultImage</code></th>
+						<td><p>The <a href="../Classes/MPSNNImageNode.html">MPSNNImageNode</a> corresponding to the last image in the graph.
+This is the image that will be returned.  Note: the imageAllocator
+for this node is ignored and the MPSNNGraph.<a href="#//api/name/destinationImageAllocator">destinationImageAllocator</a>
+is used for this node instead.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new MPSNNGraph.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The MPSNNGraph constructor will start with the indicated result image, and look
+to see what <a href="../Classes/MPSNNFilterNode.html">MPSNNFilterNode</a> produced it, then look to its dependencies and so
+forth to reveal the subsection of the graph necessary to compute the image.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new <a href="../Classes/MPSKernel.html">MPSKernel</a> object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>While the standard NSSecureCoding/NSCoding method
+-initWithCoder: should work, since the file can&rsquo;t
+know which device your data is allocated on, we
+have to guess and may guess incorrectly.  To avoid
+that problem, use initWithCoder:device instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:" title="initWithDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:">&ndash;&nbsp;initWithDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use <a href="#//api/name/initWithDevice:resultImage:">initWithDevice:resultImage:</a> instead</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(__nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sourceImageHandles" title="sourceImageHandles"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceImageHandles">&nbsp;&nbsp;sourceImageHandles</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get a list of identifiers for source images needed to calculate the result image</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonnull, copy, nonatomic) NSArray&lt;id&lt;MPSHandle&gt; &gt; *sourceImageHandles</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sourceStateHandles" title="sourceStateHandles"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceStateHandles">&nbsp;&nbsp;sourceStateHandles</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get a list of identifiers for source state objects needed to calculate the result image</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable, copy, nonatomic) NSArray&lt;id&lt;MPSHandle&gt; &gt; *sourceStateHandles</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Not guaranteed to be in the same order as <a href="#//api/name/resultStateHandles">resultStateHandles</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/intermediateImageHandles" title="intermediateImageHandles"></a>
+	<h3 class="method-title"><code><a href="#//api/name/intermediateImageHandles">&nbsp;&nbsp;intermediateImageHandles</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get a list of identifiers for intermediate images objects produced by the graph</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable, copy, nonatomic) NSArray&lt;id&lt;MPSHandle&gt; &gt; *intermediateImageHandles</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resultStateHandles" title="resultStateHandles"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resultStateHandles">&nbsp;&nbsp;resultStateHandles</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get a list of identifiers for result state objects produced by the graph</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable, copy, nonatomic) NSArray&lt;id&lt;MPSHandle&gt; &gt; *resultStateHandles</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Not guaranteed to be in the same order as <a href="#//api/name/sourceStateHandles">sourceStateHandles</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resultHandle" title="resultHandle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resultHandle">&nbsp;&nbsp;resultHandle</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get a handle for the graph result image</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable, nonatomic) id&lt;MPSHandle&gt; resultHandle</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputStateIsTemporary" title="outputStateIsTemporary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputStateIsTemporary">&nbsp;&nbsp;outputStateIsTemporary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Should <a href="../Classes/MPSState.html">MPSState</a> objects produced by -encodeToCommandBuffer&hellip; be temporary objects.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) BOOL outputStateIsTemporary</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>See <a href="../Classes/MPSState.html">MPSState</a> description. Default: YES</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/destinationImageAllocator" title="destinationImageAllocator"></a>
+	<h3 class="method-title"><code><a href="#//api/name/destinationImageAllocator">&nbsp;&nbsp;destinationImageAllocator</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method to allocate the result image from -encodeToCommandBuffer&hellip;</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic, retain, nonnull) id&lt;MPSImageAllocator&gt; destinationImageAllocator</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This property overrides the allocator for the final result image in
+the graph. Default: <a href="../Classes/MPSImage.html">MPSImage</a>.defaultAllocator</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:" title="encodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:">&ndash;&nbsp;encodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode the graph to a MTLCommandBuffer</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSImage *__nonnull)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceImages:(NSArray&lt;MPSImage*&gt; *__nonnull)<em>sourceImages</em> sourceStates:(NSArray&lt;MPSState*&gt; *__nullable)<em>sourceStates</em> intermediateImages:(NSMutableArray&lt;MPSImage*&gt; *__nullable)<em>intermediateImages</em> destinationStates:(NSMutableArray&lt;MPSState*&gt; *__nullable)<em>destinationStates</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>The command buffer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceImages</code></th>
+						<td><p>A list of MPSImages to use as the source images for the graph.
+These should be in the same order as the list returned from MPSNNGraph.<a href="#//api/name/sourceImageHandles">sourceImageHandles</a>.
+The images may be image arrays. Typically, this is only one or two images
+such as a .JPG decoded into a MPSImage*.  If the sourceImages are MPSTemporaryImages,
+the graph will decrement the readCount by 1, even if the graph actually
+reads an image multiple times.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceStates</code></th>
+						<td><p>A list of <a href="../Classes/MPSState.html">MPSState</a> objects to use as state for a graph.
+These should be in the same order as the list returned from MPSNNGraph.<a href="#//api/name/sourceStateHandles">sourceStateHandles</a>.
+May be nil, if there is no source state. If the sourceStates are temporary,
+the graph will decrement the readCount by 1, even if the graph actually
+reads the state multiple times.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>intermediateImages</code></th>
+						<td><p>An optional NSMutableArray to receive any <a href="../Classes/MPSImage.html">MPSImage</a> objects exported as part of its operation.
+These are only the images that were tagged with <a href="../Classes/MPSNNImageNode.html">MPSNNImageNode</a>.exportFromGraph = YES. The
+identity of the states is given by <a href="#//api/name/resultStateHandles">resultStateHandles</a>.  If temporary, each intermediateImage
+will have a readCount of 1.  If the result was tagged exportFromGraph = YES, it will be here
+too, with a readCount of 2.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationStates</code></th>
+						<td><p>An optional NSMutableArray to receive any <a href="../Classes/MPSState.html">MPSState</a> objects created as part of its operation.
+The identity of the states is given by <a href="#//api/name/resultStateHandles">resultStateHandles</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A <a href="../Classes/MPSImage.html">MPSImage</a> or <a href="../Classes/MPSTemporaryImage.html">MPSTemporaryImage</a> allocated per the <a href="#//api/name/destinationImageAllocator">destinationImageAllocator</a> containing the output of the graph.
+It will be automatically released when commandBuffer completes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:sourceImages:" title="encodeToCommandBuffer:sourceImages:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:sourceImages:">&ndash;&nbsp;encodeToCommandBuffer:sourceImages:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode the graph to a MTLCommandBuffer</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSImage *__nonnull)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceImages:(NSArray&lt;MPSImage*&gt; *__nonnull)<em>sourceImages</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>The command buffer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceImages</code></th>
+						<td><p>A list of MPSImages to use as the source images for the graph.
+These should be in the same order as the list returned from MPSNNGraph.<a href="#//api/name/sourceImageHandles">sourceImageHandles</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A <a href="../Classes/MPSImage.html">MPSImage</a> or <a href="../Classes/MPSTemporaryImage.html">MPSTemporaryImage</a> allocated per the <a href="#//api/name/destinationImageAllocator">destinationImageAllocator</a> containing the output of the graph.
+It will be automatically released when commandBuffer completes.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>IMPORTANT:  Please use [MTLCommandBuffer addCompletedHandler:] to determine when this work is
+done. Use CPU time that would have been spent waiting for the GPU to encode the next command
+buffer and commit it too.  That way, the work for the next command buffer is ready to go the
+moment the GPU is done. This will keep the GPU busy and running at top speed.</p>
+
+<p>Those who ignore this advice and use [MTLCommandBuffer waitUntilCompleted] instead will likely
+cause their code to slow down by a factor of two or more. The CPU clock spins down while it
+waits for the GPU. When the GPU completes, the CPU runs slowly for a while until it spins up.
+The GPU has to wait for the CPU to  encode more work (at low clock), giving it plenty of time to
+spin its own clock down. In typical CNN graph usage, neither may ever reach maximum clock
+frequency, causing slow down far beyond what otherwise would be expected from simple failure
+to schedule CPU and GPU work concurrently. Regrattably, it is probable that every performance
+benchmark you see on the net will be based on [MTLCommandBuffer waitUntilCompleted].</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/executeAsyncWithSourceImages:completionHandler:" title="executeAsyncWithSourceImages:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/executeAsyncWithSourceImages:completionHandler:">&ndash;&nbsp;executeAsyncWithSourceImages:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience method to execute a graph without having to manage many Metal details</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSImage *__nonnull)executeAsyncWithSourceImages:(NSArray&lt;MPSImage*&gt; *__nonnull)<em>sourceImages</em> completionHandler:(MPSNNGraphCompletionHandler __nonnull)<em>handler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceImages</code></th>
+						<td><p>A list of MPSImages to use as the source images for the graph.
+These should be in the same order as the list returned from
+MPSNNGraph.<a href="#//api/name/sourceImageHandles">sourceImageHandles</a>. They should be allocated against
+the same MTLDevice. There must be at least one source image.
+Note: this array is intended to handle the case where multiple
+input images are required to generate a single graph result.
+That is, the graph itself has multiple inputs.  If you need to
+execute the graph multiple times, then call this API multiple
+times, or better yet use [encodeToCommandBuffer:sourceImages:]
+multiple times. (See discussion)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handler</code></th>
+						<td><p>A block to receive any errors generated. This block may run
+on any thread and may be called before this method returns.
+The image, if any, passed to this callback is the same image
+as that returned from the left hand side.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A <a href="../Classes/MPSImage.html">MPSImage</a> to receive the result. The data in the image will not be valid until
+the completionHandler is called.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This function will synchronously encode the graph on a private command buffer,
+commit it to a MPS internal command queue and return. The GPU will start working.
+When the GPU is done, the completion handler will be called.  You should use
+the intervening time to encode other work for execution on the GPU, so that
+the GPU stays busy and doesn&rsquo;t clock down.</p>
+
+<p>The work will be performed on the MTLDevice that hosts the source images.</p>
+
+<p>This is a convenience API.  There are a few situations it does not handle optimally.
+These may be better handled using [encodeToCommandBuffer:sourceImages:].
+Specifically:
+@code
+o     If the graph needs to be run multiple times for different images,
+it would be better to encode the graph multiple times on the same
+command buffer using [encodeToCommandBuffer:sourceImages:]  This
+will allow the multiple graphs to share memory for intermediate
+storage, dramatically reducing memory usage.</p>
+
+<p>o     If preprocessing or post-processing of the <a href="../Classes/MPSImage.html">MPSImage</a> is required,
+such as resizing or normalization outside of a convolution, it would
+be better to encode those things on the same command buffer.
+Memory may be saved here too for intermediate storage. (<a href="../Classes/MPSTemporaryImage.html">MPSTemporaryImage</a>
+lifetime does not span multiple command buffers.)
+@endcode</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraph.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

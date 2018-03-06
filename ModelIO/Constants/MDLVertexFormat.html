@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MDLVertexFormat Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 ModelIO Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MDLVertexFormat Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>MDLVertexDescriptor.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">MDLVertexFormat</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>@enum MDLVertexFormat</p><p>Designed to be very similar to MTLVertexDescriptor to ease the
+             translation from one to the other. Values are chosen such that
+             packed types would all be less than 0x1000 and the bottom 5 bits
+             can be used to determine the number of channels/components in the
+             format.</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSUInteger, MDLVertexFormat ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatInvalid</a> = 0,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatPackedBit</a> = 0 x1000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUCharBits</a> = 0 x10000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatCharBits</a> = 0 x20000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUCharNormalizedBits</a> = 0 x30000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatCharNormalizedBits</a> = 0 x40000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUShortBits</a> = 0 x50000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatShortBits</a> = 0 x60000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUShortNormalizedBits</a> = 0 x70000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatShortNormalizedBits</a> = 0 x80000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUIntBits</a> = 0 x90000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatIntBits</a> = 0 xA0000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatHalfBits</a> = 0 xB0000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatFloatBits</a> = 0 xC0000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUChar</a> = MDLVertexFormatUCharBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUChar2</a> = MDLVertexFormatUCharBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUChar3</a> = MDLVertexFormatUCharBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUChar4</a> = MDLVertexFormatUCharBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatChar</a> = MDLVertexFormatCharBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatChar2</a> = MDLVertexFormatCharBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatChar3</a> = MDLVertexFormatCharBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatChar4</a> = MDLVertexFormatCharBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUCharNormalized</a> = MDLVertexFormatUCharNormalizedBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUChar2Normalized</a> = MDLVertexFormatUCharNormalizedBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUChar3Normalized</a> = MDLVertexFormatUCharNormalizedBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUChar4Normalized</a> = MDLVertexFormatUCharNormalizedBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatCharNormalized</a> = MDLVertexFormatCharNormalizedBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatChar2Normalized</a> = MDLVertexFormatCharNormalizedBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatChar3Normalized</a> = MDLVertexFormatCharNormalizedBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatChar4Normalized</a> = MDLVertexFormatCharNormalizedBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUShort</a> = MDLVertexFormatUShortBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUShort2</a> = MDLVertexFormatUShortBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUShort3</a> = MDLVertexFormatUShortBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUShort4</a> = MDLVertexFormatUShortBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatShort</a> = MDLVertexFormatShortBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatShort2</a> = MDLVertexFormatShortBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatShort3</a> = MDLVertexFormatShortBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatShort4</a> = MDLVertexFormatShortBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUShortNormalized</a> = MDLVertexFormatUShortNormalizedBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUShort2Normalized</a> = MDLVertexFormatUShortNormalizedBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUShort3Normalized</a> = MDLVertexFormatUShortNormalizedBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUShort4Normalized</a> = MDLVertexFormatUShortNormalizedBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatShortNormalized</a> = MDLVertexFormatShortNormalizedBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatShort2Normalized</a> = MDLVertexFormatShortNormalizedBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatShort3Normalized</a> = MDLVertexFormatShortNormalizedBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatShort4Normalized</a> = MDLVertexFormatShortNormalizedBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUInt</a> = MDLVertexFormatUIntBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUInt2</a> = MDLVertexFormatUIntBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUInt3</a> = MDLVertexFormatUIntBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUInt4</a> = MDLVertexFormatUIntBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatInt</a> = MDLVertexFormatIntBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatInt2</a> = MDLVertexFormatIntBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatInt3</a> = MDLVertexFormatIntBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatInt4</a> = MDLVertexFormatIntBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatHalf</a> = MDLVertexFormatHalfBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatHalf2</a> = MDLVertexFormatHalfBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatHalf3</a> = MDLVertexFormatHalfBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatHalf4</a> = MDLVertexFormatHalfBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatFloat</a> = MDLVertexFormatFloatBits | 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatFloat2</a> = MDLVertexFormatFloatBits | 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatFloat3</a> = MDLVertexFormatFloatBits | 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatFloat4</a> = MDLVertexFormatFloatBits | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatInt1010102Normalized</a> = MDLVertexFormatIntBits | MDLVertexFormatPackedBit | 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MDLVertexFormatUInt1010102Normalized</a> = MDLVertexFormatUIntBits | MDLVertexFormatPackedBit | 4,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="MDLVertexFormatInvalid"></a><code>MDLVertexFormatInvalid</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatPackedBit"></a><code>MDLVertexFormatPackedBit</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUCharBits"></a><code>MDLVertexFormatUCharBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatCharBits"></a><code>MDLVertexFormatCharBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUCharNormalizedBits"></a><code>MDLVertexFormatUCharNormalizedBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatCharNormalizedBits"></a><code>MDLVertexFormatCharNormalizedBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUShortBits"></a><code>MDLVertexFormatUShortBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatShortBits"></a><code>MDLVertexFormatShortBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUShortNormalizedBits"></a><code>MDLVertexFormatUShortNormalizedBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatShortNormalizedBits"></a><code>MDLVertexFormatShortNormalizedBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUIntBits"></a><code>MDLVertexFormatUIntBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatIntBits"></a><code>MDLVertexFormatIntBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatHalfBits"></a><code>MDLVertexFormatHalfBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatFloatBits"></a><code>MDLVertexFormatFloatBits</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUChar"></a><code>MDLVertexFormatUChar</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUChar2"></a><code>MDLVertexFormatUChar2</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUChar3"></a><code>MDLVertexFormatUChar3</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUChar4"></a><code>MDLVertexFormatUChar4</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatChar"></a><code>MDLVertexFormatChar</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatChar2"></a><code>MDLVertexFormatChar2</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatChar3"></a><code>MDLVertexFormatChar3</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatChar4"></a><code>MDLVertexFormatChar4</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUCharNormalized"></a><code>MDLVertexFormatUCharNormalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUChar2Normalized"></a><code>MDLVertexFormatUChar2Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUChar3Normalized"></a><code>MDLVertexFormatUChar3Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUChar4Normalized"></a><code>MDLVertexFormatUChar4Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatCharNormalized"></a><code>MDLVertexFormatCharNormalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatChar2Normalized"></a><code>MDLVertexFormatChar2Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatChar3Normalized"></a><code>MDLVertexFormatChar3Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatChar4Normalized"></a><code>MDLVertexFormatChar4Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUShort"></a><code>MDLVertexFormatUShort</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUShort2"></a><code>MDLVertexFormatUShort2</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUShort3"></a><code>MDLVertexFormatUShort3</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUShort4"></a><code>MDLVertexFormatUShort4</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatShort"></a><code>MDLVertexFormatShort</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatShort2"></a><code>MDLVertexFormatShort2</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatShort3"></a><code>MDLVertexFormatShort3</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatShort4"></a><code>MDLVertexFormatShort4</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUShortNormalized"></a><code>MDLVertexFormatUShortNormalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUShort2Normalized"></a><code>MDLVertexFormatUShort2Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUShort3Normalized"></a><code>MDLVertexFormatUShort3Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUShort4Normalized"></a><code>MDLVertexFormatUShort4Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatShortNormalized"></a><code>MDLVertexFormatShortNormalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatShort2Normalized"></a><code>MDLVertexFormatShort2Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatShort3Normalized"></a><code>MDLVertexFormatShort3Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatShort4Normalized"></a><code>MDLVertexFormatShort4Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUInt"></a><code>MDLVertexFormatUInt</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUInt2"></a><code>MDLVertexFormatUInt2</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUInt3"></a><code>MDLVertexFormatUInt3</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUInt4"></a><code>MDLVertexFormatUInt4</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatInt"></a><code>MDLVertexFormatInt</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatInt2"></a><code>MDLVertexFormatInt2</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatInt3"></a><code>MDLVertexFormatInt3</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatInt4"></a><code>MDLVertexFormatInt4</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatHalf"></a><code>MDLVertexFormatHalf</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatHalf2"></a><code>MDLVertexFormatHalf2</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatHalf3"></a><code>MDLVertexFormatHalf3</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatHalf4"></a><code>MDLVertexFormatHalf4</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatFloat"></a><code>MDLVertexFormatFloat</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatFloat2"></a><code>MDLVertexFormatFloat2</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatFloat3"></a><code>MDLVertexFormatFloat3</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatFloat4"></a><code>MDLVertexFormatFloat4</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatInt1010102Normalized"></a><code>MDLVertexFormatInt1010102Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MDLVertexFormatUInt1010102Normalized"></a><code>MDLVertexFormatUInt1010102Normalized</code></dt>
+<dd>
+
+
+<p>Describes the format of a an attribute in a vertex buffer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MDLVertexDescriptor.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">MDLVertexDescriptor.h</code></p>
+                    </div>
+                    
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

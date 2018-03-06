@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAudioFile Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/fileFormat">fileFormat</option>
+		
+		<option value="//api/name/framePosition">framePosition</option>
+		
+		<option value="//api/name/length">length</option>
+		
+		<option value="//api/name/processingFormat">processingFormat</option>
+		
+		<option value="//api/name/url">url</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initForReading:commonFormat:interleaved:error:">- initForReading:commonFormat:interleaved:error:</option>
+		
+		<option value="//api/name/initForReading:error:">- initForReading:error:</option>
+		
+		<option value="//api/name/initForWriting:settings:commonFormat:interleaved:error:">- initForWriting:settings:commonFormat:interleaved:error:</option>
+		
+		<option value="//api/name/initForWriting:settings:error:">- initForWriting:settings:error:</option>
+		
+		<option value="//api/name/readIntoBuffer:error:">- readIntoBuffer:error:</option>
+		
+		<option value="//api/name/readIntoBuffer:frameCount:error:">- readIntoBuffer:frameCount:error:</option>
+		
+		<option value="//api/name/writeFromBuffer:error:">- writeFromBuffer:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAudioFile Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAudioFile.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class AVAudioFile
+@abstract
+    AVAudioFile represents an audio file opened for reading or writing.
+@discussion
+    Regardless of the file's actual format, reading and writing the file is done via 
+    `AVAudioPCMBuffer` objects, containing samples in an `AVAudioCommonFormat`,
+    referred to as the file's "processing format." Conversions are performed to and from
+    the file's actual format.
+
+    Reads and writes are always sequential, but random access is possible by setting the
+    framePosition property.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initForReading:error:" title="initForReading:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initForReading:error:">&ndash;&nbsp;initForReading:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Open a file for reading.
+    @param fileURL
+        the file to open
+    @param outError
+        on exit, if an error occurs, a description of the error</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initForReading:(NSURL *)<em>fileURL</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initForReading:error:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initForReading:commonFormat:interleaved:error:" title="initForReading:commonFormat:interleaved:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initForReading:commonFormat:interleaved:error:">&ndash;&nbsp;initForReading:commonFormat:interleaved:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Open a file for reading, using a specified processing format.
+    @param fileURL
+        the file to open
+    @param format
+        the processing format to use when reading from the file
+    @param interleaved
+        whether to use an interleaved processing format
+    @param outError
+        on exit, if an error occurs, a description of the error</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initForReading:(NSURL *)<em>fileURL</em> commonFormat:(AVAudioCommonFormat)<em>format</em> interleaved:(BOOL)<em>interleaved</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initForReading:commonFormat:interleaved:error:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initForWriting:settings:error:" title="initForWriting:settings:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initForWriting:settings:error:">&ndash;&nbsp;initForWriting:settings:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Open a file for writing.
+    @param fileURL
+        the path at which to create the file
+    @param settings
+        the format of the file to create (See <a href="../Classes/AVAudioRecorder.html"><code>AVAudioRecorder</code></a>.)
+    @param outError
+        on exit, if an error occurs, a description of the error</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initForWriting:(NSURL *)<em>fileURL</em> settings:(NSDictionary&lt;NSString*,id&gt; *)<em>settings</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initForWriting:settings:error:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initForWriting:settings:commonFormat:interleaved:error:" title="initForWriting:settings:commonFormat:interleaved:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initForWriting:settings:commonFormat:interleaved:error:">&ndash;&nbsp;initForWriting:settings:commonFormat:interleaved:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Open a file for writing.
+    @param fileURL
+        the path at which to create the file
+    @param settings
+        the format of the file to create (See <a href="../Classes/AVAudioRecorder.html"><code>AVAudioRecorder</code></a>.)
+    @param format
+        the processing format to use when writing to the file
+    @param interleaved
+        whether to use an interleaved processing format
+    @param outError
+        on exit, if an error occurs, a description of the error</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initForWriting:(NSURL *)<em>fileURL</em> settings:(NSDictionary&lt;NSString*,id&gt; *)<em>settings</em> commonFormat:(AVAudioCommonFormat)<em>format</em> interleaved:(BOOL)<em>interleaved</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initForWriting:settings:commonFormat:interleaved:error:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readIntoBuffer:error:" title="readIntoBuffer:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readIntoBuffer:error:">&ndash;&nbsp;readIntoBuffer:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Read an entire buffer.
+    @param buffer
+        The buffer into which to read from the file. Its format must match the file&rsquo;s
+        processing format.
+    @param outError
+        on exit, if an error occurs, a description of the error
+    @return
+        YES for success.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)readIntoBuffer:(AVAudioPCMBuffer *)<em>buffer</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method readIntoBuffer:error:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readIntoBuffer:frameCount:error:" title="readIntoBuffer:frameCount:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readIntoBuffer:frameCount:error:">&ndash;&nbsp;readIntoBuffer:frameCount:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Read a portion of a buffer.
+    @param frames
+        The number of frames to read.
+    @param buffer
+        The buffer into which to read from the file. Its format must match the file&rsquo;s
+        processing format.
+    @param outError
+        on exit, if an error occurs, a description of the error
+    @return
+        YES for success.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)readIntoBuffer:(AVAudioPCMBuffer *)<em>buffer</em> frameCount:(AVAudioFrameCount)<em>frames</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method readIntoBuffer:frameCount:error:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeFromBuffer:error:" title="writeFromBuffer:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeFromBuffer:error:">&ndash;&nbsp;writeFromBuffer:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Write a buffer.
+    @param buffer
+        The buffer from which to write to the file. Its format must match the file&rsquo;s
+        processing format.
+    @param outError
+        on exit, if an error occurs, a description of the error
+    @return
+        YES for success.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writeFromBuffer:(const AVAudioPCMBuffer *)<em>buffer</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method writeFromBuffer:error:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/url" title="url"></a>
+	<h3 class="method-title"><code><a href="#//api/name/url">&nbsp;&nbsp;url</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The URL the file is reading or writing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSURL *url</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property url
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileFormat" title="fileFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileFormat">&nbsp;&nbsp;fileFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The on-disk format of the file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVAudioFormat *fileFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property fileFormat</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processingFormat" title="processingFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processingFormat">&nbsp;&nbsp;processingFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The processing format of the file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVAudioFormat *processingFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property processingFormat</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/length" title="length"></a>
+	<h3 class="method-title"><code><a href="#//api/name/length">&nbsp;&nbsp;length</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of sample frames in the file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVAudioFramePosition length</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property length</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/framePosition" title="framePosition"></a>
+	<h3 class="method-title"><code><a href="#//api/name/framePosition">&nbsp;&nbsp;framePosition</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The position in the file at which the next read or write will occur.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) AVAudioFramePosition framePosition</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property framePosition</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

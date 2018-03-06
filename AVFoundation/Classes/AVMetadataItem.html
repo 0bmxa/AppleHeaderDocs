@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVMetadataItem Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_7">_7</option>
+		
+		<option value="//api/name/commonKey">commonKey</option>
+		
+		<option value="//api/name/dataValue">dataValue</option>
+		
+		<option value="//api/name/dateValue">dateValue</option>
+		
+		<option value="//api/name/extraAttributes">extraAttributes</option>
+		
+		<option value="//api/name/key">key</option>
+		
+		<option value="//api/name/keySpace">keySpace</option>
+		
+		<option value="//api/name/locale">locale</option>
+		
+		<option value="//api/name/numberValue">numberValue</option>
+		
+		<option value="//api/name/stringValue">stringValue</option>
+		
+		<option value="//api/name/time">time</option>
+		
+		<option value="//api/name/value">value</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/identifierForKey:keySpace:">+ identifierForKey:keySpace:</option>
+		
+		<option value="//api/name/keyForIdentifier:">+ keyForIdentifier:</option>
+		
+		<option value="//api/name/keySpaceForIdentifier:">+ keySpaceForIdentifier:</option>
+		
+		<option value="//api/name/metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler:">+ metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler:</option>
+		
+		<option value="//api/name/metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:">+ metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:</option>
+		
+		<option value="//api/name/metadataItemsFromArray:filteredByIdentifier:">+ metadataItemsFromArray:filteredByIdentifier:</option>
+		
+		<option value="//api/name/metadataItemsFromArray:filteredByMetadataItemFilter:">+ metadataItemsFromArray:filteredByMetadataItemFilter:</option>
+		
+		<option value="//api/name/metadataItemsFromArray:withKey:keySpace:">+ metadataItemsFromArray:withKey:keySpace:</option>
+		
+		<option value="//api/name/metadataItemsFromArray:withLocale:">+ metadataItemsFromArray:withLocale:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/loadValuesAsynchronouslyForKeys:completionHandler:">- loadValuesAsynchronouslyForKeys:completionHandler:</option>
+		
+		<option value="//api/name/statusOfValueForKey:error:">- statusOfValueForKey:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVMetadataItem Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/AVAsynchronousKeyValueLoading.html">AVAsynchronousKeyValueLoading</a><br />NSCopying<br />NSMutableCopying</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVMetadataItem.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          AVMetadataItem
+</code></pre><p>AVMetadataItems have keys that accord with the specification of the container format from
+                    which they&rsquo;re drawn. Full details of the metadata formats, metadata keys, and metadata keyspaces
+                    supported by AVFoundation are available among the defines in AVMetadataFormat.h.</p>
+
+<pre><code>                Note that arrays of AVMetadataItems vended by AVAsset and other classes are "lazy", similar
+                to array-based keys that support keyvalue observing, meaning that you can obtain
+                objects from those arrays without incurring overhead for items you don't ultimately inspect.
+
+                You can filter arrays of AVMetadataItems by locale or by key and keySpace via the category
+                AVMetadataItemArrayFiltering defined below.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy, nullable) AVMetadataIdentifier identifier NS_AVAILABLE ( 10 _10 , 8 _0</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locale" title="locale"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locale">&nbsp;&nbsp;locale</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy, nullable) NSLocale *locale</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/time" title="time"></a>
+	<h3 class="method-title"><code><a href="#//api/name/time">&nbsp;&nbsp;time</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMTime time</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_7" title="_7"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_7">&nbsp;&nbsp;_7</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMTime duration NS_AVAILABLE ( 10 _7</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/value" title="value"></a>
+	<h3 class="method-title"><code><a href="#//api/name/value">&nbsp;&nbsp;value</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy, nullable) id&lt;NSObject,NSCopying&gt; value</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/extraAttributes" title="extraAttributes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/extraAttributes">&nbsp;&nbsp;extraAttributes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy, nullable) NSDictionary&lt;AVMetadataExtraAttributeKey,id&gt; *extraAttributes</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAsynchronousKeyValueLoading Methods" name="task_AVAsynchronousKeyValueLoading Methods"></a>
+						<h2 class="task-title">AVAsynchronousKeyValueLoading Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/statusOfValueForKey:error:" title="statusOfValueForKey:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/statusOfValueForKey:error:">&ndash;&nbsp;statusOfValueForKey:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reports whether the value for a key is immediately available without blocking.
+  @param        key
+    An instance of NSString containing the specified key.
+  @param        outError
+    If the status of the value for the key is AVKeyValueStatusFailed, *outError is set to a non-nil NSError that describes the failure that occurred.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (AVKeyValueStatus)statusOfValueForKey:(NSString *)<em>key</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The value&rsquo;s current loading status.
+  @discussion
+    Clients can use -statusOfValueForKey: to determine the availability of the value of any key of interest. However, this method alone does not prompt the receiver to load the value of a key that&rsquo;s not yet available. To request values for keys that may not already be loaded, without blocking, use <a href="../Protocols/AVAsynchronousKeyValueLoading.html#//api/name/loadValuesAsynchronouslyForKeys:completionHandler:">loadValuesAsynchronouslyForKeys:completionHandler:</a>, await invocation of the completion handler, and test the availability of each key via -statusOfValueForKey: before invoking its getter.</p>
+
+<pre><code>Even if access to values of some keys may be readily available, as can occur with receivers initialized with URLs for resources on local volumes, extensive I/O or parsing may be needed for these same receivers to provide values for other keys. A duration for a local MP3 file, for example, may be expensive to obtain, even if the values for other AVAsset properties may be trivial to obtain.
+
+Blocking that may occur when calling the getter for any key should therefore be avoided in the general case by loading values for all keys of interest via loadValuesAsynchronouslyForKeys:completionHandler: and testing the availability of the requested values before fetching them by calling getters.
+
+The sole exception to this general rule is in usage on Mac OS X on the desktop, where it may be acceptable to block in cases in which the client is preparing objects for use on background threads or in operation queues. On iOS, values should always be loaded asynchronously prior to calling getters for the values, in any usage scenario.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       statusOfValueForKey:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsynchronousKeyValueLoading.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadValuesAsynchronouslyForKeys:completionHandler:" title="loadValuesAsynchronouslyForKeys:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadValuesAsynchronouslyForKeys:completionHandler:">&ndash;&nbsp;loadValuesAsynchronouslyForKeys:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Directs the target to load the values of any of the specified keys that are not already loaded.
+  @param        keys
+    An instance of NSArray, containing NSStrings for the specified keys.
+  @param        completionHandler
+    The block to be invoked when loading succeeds, fails, or is cancelled.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)loadValuesAsynchronouslyForKeys:(NSArray&lt;NSString*&gt; *)<em>keys</em> completionHandler:(nullable void ( ^ ) ( void ))<em>handler</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       loadValuesAsynchronouslyForKeys:completionHandler:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAsynchronousKeyValueLoading.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVMetadataItemKeyAndKeyspace Methods" name="task_AVMetadataItemKeyAndKeyspace Methods"></a>
+						<h2 class="task-title">AVMetadataItemKeyAndKeyspace Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/identifierForKey:keySpace:" title="identifierForKey:keySpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/identifierForKey:keySpace:">+&nbsp;identifierForKey:keySpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides the metadata identifier that&rsquo;s equivalent to a <a href="#//api/name/key">key</a> and <a href="#//api/name/keySpace">keySpace</a>.
+    @param          <a href="#//api/name/key">key</a>
+                    The metadata <a href="#//api/name/key">key</a>.
+    @param          <a href="#//api/name/keySpace">keySpace</a>
+                    The metadata <a href="#//api/name/keySpace">keySpace</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable AVMetadataIdentifier)identifierForKey:(id)<em>key</em> keySpace:(AVMetadataKeySpace)<em>keySpace</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A metadata identifier equivalent to the given <a href="#//api/name/key">key</a> and <a href="#//api/name/keySpace">keySpace</a>, or nil if no identifier can be constructed from the given <a href="#//api/name/key">key</a> and <a href="#//api/name/keySpace">keySpace</a>.
+    @discussion
+        Metadata keys that are not instances of NSString, NSNumber, or NSData cannot be converted to metadata identifiers; they also cannot be written to media resources via <a href="../Classes/AVAssetExportSession.html">AVAssetExportSession</a> or <a href="../Classes/AVAssetWriter.html">AVAssetWriter</a>.  Metadata item keySpaces must be a string of one to four printable ASCII characters.</p>
+
+<pre><code>    For custom identifiers, the keySpace AVMetadataKeySpaceQuickTimeMetadata is recommended.  This keySpace defines its key values to be expressed as reverse-DNS strings, which allows third parties to define their own keys in a well established way that avoids collisions.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         identifierForKey:keySpace:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMetadataItem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/keySpaceForIdentifier:" title="keySpaceForIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/keySpaceForIdentifier:">+&nbsp;keySpaceForIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable AVMetadataKeySpace)keySpaceForIdentifier:(AVMetadataIdentifier)<em>identifier</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/keyForIdentifier:" title="keyForIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/keyForIdentifier:">+&nbsp;keyForIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable id)keyForIdentifier:(AVMetadataIdentifier)<em>identifier</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/key" title="key"></a>
+	<h3 class="method-title"><code><a href="#//api/name/key">&nbsp;&nbsp;key</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy, nullable) id&lt;NSObject,NSCopying&gt; key</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commonKey" title="commonKey"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commonKey">&nbsp;&nbsp;commonKey</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy, nullable) AVMetadataKey commonKey</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/keySpace" title="keySpace"></a>
+	<h3 class="method-title"><code><a href="#//api/name/keySpace">&nbsp;&nbsp;keySpace</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy, nullable) AVMetadataKeySpace keySpace</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVMetadataItemArrayFilteringDeprecable Methods" name="task_AVMetadataItemArrayFilteringDeprecable Methods"></a>
+						<h2 class="task-title">AVMetadataItemArrayFilteringDeprecable Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/metadataItemsFromArray:withLocale:" title="metadataItemsFromArray:withLocale:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataItemsFromArray:withLocale:">+&nbsp;metadataItemsFromArray:withLocale:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method         metadataItemsFromArray:withLocale:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;AVMetadataItem*&gt; *)metadataItemsFromArray:(NSArray&lt;AVMetadataItem*&gt; *)<em>metadataItems</em> withLocale:(NSLocale *)<em>locale</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         metadataItemsFromArray:withLocale:</p><p>Instead, use <a href="#//api/name/metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:">metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMetadataItem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataItemsFromArray:withKey:keySpace:" title="metadataItemsFromArray:withKey:keySpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataItemsFromArray:withKey:keySpace:">+&nbsp;metadataItemsFromArray:withKey:keySpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method         metadataItemsFromArray:withKey:keySpace:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;AVMetadataItem*&gt; *)metadataItemsFromArray:(NSArray&lt;AVMetadataItem*&gt; *)<em>metadataItems</em> withKey:(nullable id)<em>key</em> keySpace:(nullable AVMetadataKeySpace)<em>keySpace</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         metadataItemsFromArray:withKey:keySpace:</p><p>Instead, use <a href="#//api/name/metadataItemsFromArray:filteredByIdentifier:">metadataItemsFromArray:filteredByIdentifier:</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMetadataItem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVMetadataItemLazyValueLoading Methods" name="task_AVMetadataItemLazyValueLoading Methods"></a>
+						<h2 class="task-title">AVMetadataItemLazyValueLoading Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler:" title="metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler:">+&nbsp;metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an instance of <a href="../Classes/AVMutableMetadataItem.html">AVMutableMetadataItem</a> with a <a href="#//api/name/value">value</a> that you do not wish to load unless required, e.g. a large image <a href="#//api/name/value">value</a> that needn&rsquo;t be loaded into memory until another module wants to display it.
+    @param          metadataItem
+                    An instance of AVMetadataItem with the identifier, extendedLanguageTag, and other property values that you want the newly created instance of AVMetadataItem to share. The <a href="#//api/name/value">value</a> of metadataItem is ignored.
+    @param          handler
+                    A block that loads the <a href="#//api/name/value">value</a> of the metadata item.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (AVMetadataItem *)metadataItemWithPropertiesOfMetadataItem:(AVMetadataItem *)<em>metadataItem</em> valueLoadingHandler:(void ( ^ ) ( AVMetadataItemValueRequest *valueRequest ))<em>handler</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of AVMetadataItem.
+    @discussion
+        This method is intended for the creation of metadata items for optional display purposes, when there is no immediate need to load specific metadata values. For example, see the interface for navigation markers as consumed by AVPlayerViewController. It&rsquo;s not intended for the creation of metadata items with values that are required immediately, such as metadata items that are provided for impending serialization operations (e.g. via <a href="../Classes/AVAssetExportSession.html#//api/name/metadata">[AVAssetExportSession setMetadata:]</a> and other similar methods defined on AVAssetWriter and AVAssetWriterInput).
+        When -loadValuesAsynchronouslyForKeys:completionHandler: is invoked on an AVMetadataItem created via +metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler: and @&ldquo;value&rdquo; is among the keys for which loading is requested, the block you provide as the value loading handler will be executed on an arbitrary dispatch queue, off the main thread. The handler can perform I/O and other necessary operations to obtain the value. If loading of the value succeeds, provide the value by invoking <a href="../Classes/AVMetadataItemValueRequest.html#//api/name/respondWithValue:">[AVMetadataItemValueRequest respondWithValue:]</a>. If loading of the value fails, provide an instance of NSError that describes the failure by invoking <a href="../Classes/AVMetadataItemValueRequest.html#//api/name/respondWithError:">[AVMetadataItemValueRequest respondWithError:]</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMetadataItem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVMetadataItemTypeCoercion Methods" name="task_AVMetadataItemTypeCoercion Methods"></a>
+						<h2 class="task-title">AVMetadataItemTypeCoercion Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/stringValue" title="stringValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringValue">&nbsp;&nbsp;stringValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *stringValue</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/numberValue" title="numberValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/numberValue">&nbsp;&nbsp;numberValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSNumber *numberValue</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateValue" title="dateValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateValue">&nbsp;&nbsp;dateValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSDate *dateValue</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dataValue" title="dataValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dataValue">&nbsp;&nbsp;dataValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSData *dataValue</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVMetadataItemArrayFiltering Methods" name="task_AVMetadataItemArrayFiltering Methods"></a>
+						<h2 class="task-title">AVMetadataItemArrayFiltering Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:" title="metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:">+&nbsp;metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Filters an array of AVMetadataItems according to whether their locales match any language identifier in the specified array of preferred languages. The returned array is sorted according to the order of preference of the language each matches.
+@param          metadataItems
+                An array of AVMetadataItems to be filtered and sorted.
+@param          preferredLanguages
+                An array of language identifiers in order of preference, each of which is an IETF BCP 47 (RFC 4646) language identifier. Use [NSLocale preferredLanguages] to obtain the user&rsquo;s list of preferred languages.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;AVMetadataItem*&gt; *)metadataItemsFromArray:(NSArray&lt;AVMetadataItem*&gt; *)<em>metadataItems</em> filteredAndSortedAccordingToPreferredLanguages:(NSArray&lt;NSString*&gt; *)<em>preferredLanguages</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of NSArray containing metadata items of the specified NSArray that match a preferred language, sorted according to the order of preference of the language each matches.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMetadataItem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataItemsFromArray:filteredByIdentifier:" title="metadataItemsFromArray:filteredByIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataItemsFromArray:filteredByIdentifier:">+&nbsp;metadataItemsFromArray:filteredByIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Filters an array of AVMetadataItems according to identifier.
+    @param          metadataItems
+    An array of AVMetadataItems to be filtered by identifier.
+    @param          identifier
+    The identifier that must be matched for a metadata item to be copied to the output array. Items are considered a match not only when their identifiers are equal to the specified identifier, and also when their identifiers conform to the specified identifier.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;AVMetadataItem*&gt; *)metadataItemsFromArray:(NSArray&lt;AVMetadataItem*&gt; *)<em>metadataItems</em> filteredByIdentifier:(AVMetadataIdentifier)<em>identifier</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of NSArray containing the metadata items of the target NSArray that match the specified identifier.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         metadataItemsFromArray:filteredByIdentifier:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMetadataItem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataItemsFromArray:filteredByMetadataItemFilter:" title="metadataItemsFromArray:filteredByMetadataItemFilter:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataItemsFromArray:filteredByMetadataItemFilter:">+&nbsp;metadataItemsFromArray:filteredByMetadataItemFilter:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Filters an array of AVMetadataItems using the supplied <a href="../Classes/AVMetadataItemFilter.html">AVMetadataItemFilter</a>.
+    @param          metadataItems
+                    An array of AVMetadataItems to be filtered.
+    @param          metadataItemFilter
+                    The <a href="../Classes/AVMetadataItemFilter.html">AVMetadataItemFilter</a> object for filtering the metadataItems.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;AVMetadataItem*&gt; *)metadataItemsFromArray:(NSArray&lt;AVMetadataItem*&gt; *)<em>metadataItems</em> filteredByMetadataItemFilter:(AVMetadataItemFilter *)<em>metadataItemFilter</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of NSArray containing the metadata items of the target NSArray that have not been removed by metadataItemFilter.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         metadataItemsFromArray:filteredByMetadataItemFilter:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMetadataItem.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

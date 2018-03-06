@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSCNNKernel Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/clipRect">clipRect</option>
+		
+		<option value="//api/name/destinationFeatureChannelOffset">destinationFeatureChannelOffset</option>
+		
+		<option value="//api/name/edgeMode">edgeMode</option>
+		
+		<option value="//api/name/kernelHeight">kernelHeight</option>
+		
+		<option value="//api/name/kernelWidth">kernelWidth</option>
+		
+		<option value="//api/name/offset">offset</option>
+		
+		<option value="//api/name/strideInPixelsX">strideInPixelsX</option>
+		
+		<option value="//api/name/strideInPixelsY">strideInPixelsY</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encodeToCommandBuffer:sourceImage:MPS_AVAILABLE_STARTING:">- encodeToCommandBuffer:sourceImage:MPS_AVAILABLE_STARTING:</option>
+		
+		<option value="//api/name/encodeToCommandBuffer:sourceImage:destinationImage:MPS_SWIFT_NAME:">- encodeToCommandBuffer:sourceImage:destinationImage:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:">- initWithDevice:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSCNNKernel Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSCNNKernel.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSCNNKernel
+@dependency This depends on Metal.framework</p><p>A MPSCNNKernel consumes one <a href="../Classes/MPSImage.html">MPSImage</a> and produces one <a href="../Classes/MPSImage.html">MPSImage</a>.</p>
+
+<p>The region overwritten in the destination <a href="../Classes/MPSImage.html">MPSImage</a> is described
+by the <a href="#//api/name/clipRect">clipRect</a>.  The top left corner of the region consumed (ignoring
+adjustments for filter size &ndash; e.g. convolution filter size) is given
+by the <a href="#//api/name/offset">offset</a>. The size of the region consumed is a function of the
+<a href="#//api/name/clipRect">clipRect</a> size and any subsampling caused by pixel strides at work,
+e.g. <a href="../Classes/MPSCNNPooling.html">MPSCNNPooling</a>.strideInPixelsX/Y.  Where the <a href="#//api/name/offset">offset</a> + <a href="#//api/name/clipRect">clipRect</a>
+would cause a {x,y} pixel address not in the image to be read, the
+<a href="#//api/name/edgeMode">edgeMode</a> is used to determine what value to read there.</p>
+
+<p>The Z/depth component of the <a href="#//api/name/offset">offset</a>, <a href="#//api/name/clipRect">clipRect</a>.origin and <a href="#//api/name/clipRect">clipRect</a>.size
+indexes which images to use. If the <a href="../Classes/MPSImage.html">MPSImage</a> contains only a single image
+then these should be <a href="#//api/name/offset">offset</a>.z = 0, <a href="#//api/name/clipRect">clipRect</a>.origin.z = 0
+and <a href="#//api/name/clipRect">clipRect</a>.size.depth = 1. If the <a href="../Classes/MPSImage.html">MPSImage</a> contains multiple images,
+<a href="#//api/name/clipRect">clipRect</a>.size.depth refers to number of images to process. Both source
+and destination MPSImages must have at least this many images. <a href="#//api/name/offset">offset</a>.z
+refers to starting source image index. Thus <a href="#//api/name/offset">offset</a>.z + <a href="#//api/name/clipRect">clipRect</a>.size.depth must
+be &lt;= source.numberOfImages. Similarly, <a href="#//api/name/clipRect">clipRect</a>.origin.z refers to starting
+image index in destination. So <a href="#//api/name/clipRect">clipRect</a>.origin.z + <a href="#//api/name/clipRect">clipRect</a>.size.depth must be
+&lt;= destination.numberOfImage.</p>
+
+<p><a href="#//api/name/destinationFeatureChannelOffset">destinationFeatureChannelOffset</a> property can be used to control where the <a href="../Classes/MPSKernel.html">MPSKernel</a> will
+start writing in feature channel dimension. For example, if the destination image has
+64 channels, and <a href="../Classes/MPSKernel.html">MPSKernel</a> outputs 32 channels, by default channels 0-31 of destination
+will be populated by <a href="../Classes/MPSKernel.html">MPSKernel</a>. But if we want this <a href="../Classes/MPSKernel.html">MPSKernel</a> to populate channel 32-63
+of the destination, we can set <a href="#//api/name/destinationFeatureChannelOffset">destinationFeatureChannelOffset</a> = 32.
+A good example of this is concat (concatenation) operation in Tensor Flow. Suppose
+we have a src = w x h x Ni which goes through CNNConvolution_0 which produces
+output O0 = w x h x N0 and CNNConvolution_1 which produces output O1 = w x h x N1 followed
+by concatenation which produces O = w x h x (N0 + N1). We can achieve this by creating
+an <a href="../Classes/MPSImage.html">MPSImage</a> with dimensions O = w x h x (N0 + N1) and using this as destination of
+both convolutions as follows
+CNNConvolution0: <a href="#//api/name/destinationFeatureChannelOffset">destinationFeatureChannelOffset</a> = 0, this will output N0 channels starting at
+channel 0 of destination thus populating [0,N0-1] channels.
+CNNConvolution1: <a href="#//api/name/destinationFeatureChannelOffset">destinationFeatureChannelOffset</a> = N0, this will output N1 channels starting at
+channel N0 of destination thus populating [N0,N0+N1-1] channels.</p>
+
+<p>A MPSCNNKernel can be saved to disk / network using NSCoders such as NSKeyedArchiver.
+When decoding, the system default MTLDevice will be chosen unless the NSCoder adopts
+the <a href="../Protocols/MPSDeviceProvider.html">MPSDeviceProvider</a> protocol.  To accomplish this you will likely need to subclass your
+unarchiver to add this method.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithDevice:" title="initWithDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:">&ndash;&nbsp;initWithDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/offset" title="offset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/offset">&nbsp;&nbsp;offset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The position of the destination clip rectangle origin relative to the source buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) MPSOffset offset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   offset</p><p>The offset is defined to be the position of <a href="#//api/name/clipRect">clipRect</a>.origin in source coordinates.
+Default: {0,0,0}, indicating that the top left corners of the <a href="#//api/name/clipRect">clipRect</a> and source image align.
+offset.z is the index of starting source image in batch processing mode.</p>
+
+<p>See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clipRect" title="clipRect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clipRect">&nbsp;&nbsp;clipRect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An optional clip rectangle to use when writing data. Only the pixels in the rectangle will be overwritten.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) MTLRegion clipRect</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   clipRect</p><p>A MTLRegion that indicates which part of the destination to overwrite. If the clipRect does not lie
+completely within the destination image, the intersection between clip rectangle and destination bounds is
+used.   Default: MPSRectNoClip (<a href="../Classes/MPSKernel.html">MPSKernel</a>::MPSRectNoClip) indicating the entire image.
+clipRect.origin.z is the index of starting destination image in batch processing mode. clipRect.size.depth
+is the number of images to process in batch processing mode.</p>
+
+<p>See Also: @ref MetalPerformanceShaders.h subsubsection_clipRect</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/destinationFeatureChannelOffset" title="destinationFeatureChannelOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/destinationFeatureChannelOffset">&nbsp;&nbsp;destinationFeatureChannelOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of channels in the destination <a href="../Classes/MPSImage.html">MPSImage</a> to skip before writing output.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) NSUInteger destinationFeatureChannelOffset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   destinationFeatureChannelOffset</p><p>This is the starting <a href="#//api/name/offset">offset</a> into the destination image in the feature channel dimension
+at which destination data is written.
+This allows an application to pass a subset of all the channels in <a href="../Classes/MPSImage.html">MPSImage</a> as output of <a href="../Classes/MPSKernel.html">MPSKernel</a>.
+E.g. Suppose <a href="../Classes/MPSImage.html">MPSImage</a> has 24 channels and a <a href="../Classes/MPSKernel.html">MPSKernel</a> outputs 8 channels. If
+we want channels 8 to 15 of this <a href="../Classes/MPSImage.html">MPSImage</a> to be used as output, we can set destinationFeatureChannelOffset = 8.
+Note that this <a href="#//api/name/offset">offset</a> applies independently to each image when the <a href="../Classes/MPSImage.html">MPSImage</a>
+is a container for multiple images and the MPSCNNKernel is processing multiple images (<a href="#//api/name/clipRect">clipRect</a>.size.depth > 1).
+The default value is 0 and any value specifed shall be a multiple of 4. If <a href="../Classes/MPSKernel.html">MPSKernel</a> outputs N channels,
+destination image MUST have at least destinationFeatureChannelOffset + N channels. Using a destination
+image with insufficient number of feature channels result in an error.
+E.g. if the <a href="../Classes/MPSCNNConvolution.html">MPSCNNConvolution</a> outputs 32 channels, and destination has 64 channels, then it is an error to set
+destinationFeatureChannelOffset > 32.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/edgeMode" title="edgeMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/edgeMode">&nbsp;&nbsp;edgeMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Constants/MPSImageEdgeMode.html">MPSImageEdgeMode</a> to use when texture reads stray off the edge of an image</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) MPSImageEdgeMode edgeMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   edgeMode</p><p>Most <a href="../Classes/MPSKernel.html">MPSKernel</a> objects can read off the edge of the source image. This can happen
+because of a negative <a href="#//api/name/offset">offset</a> property, because the <a href="#//api/name/offset">offset</a> + <a href="#//api/name/clipRect">clipRect</a>.size is larger
+than the source image or because the filter looks at neighboring pixels, such as a
+Convolution filter.   Default:  MPSImageEdgeModeZero.</p>
+
+<p>See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
+Note: For @ref <a href="../Classes/MPSCNNPoolingAverage.html">MPSCNNPoolingAverage</a> specifying edge mode @ref MPSImageEdgeModeClamp
+is interpreted as a &ldquo;shrink-to-edge&rdquo; operation, which shrinks the effective
+filtering window to remain within the source image borders.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/kernelWidth" title="kernelWidth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/kernelWidth">&nbsp;&nbsp;kernelWidth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The width of the MPSCNNKernel filter window</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger kernelWidth</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   kernelWidth</p><p>This is the horizontal diameter of the region read by the filter for each
+result pixel. If the MPSCNNKernel does not have a filter window, then
+1 will be returned.</p>
+
+<p>Warning: This property was lowered to this class in ios/tvos 11
+The property may not be available on iOS/tvOS 10 for
+all subclasses of MPSCNNKernel</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/kernelHeight" title="kernelHeight"></a>
+	<h3 class="method-title"><code><a href="#//api/name/kernelHeight">&nbsp;&nbsp;kernelHeight</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The height of the MPSCNNKernel filter window</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger kernelHeight</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   kernelHeight</p><p>This is the vertical diameter of the region read by the filter for each
+result pixel. If the MPSCNNKernel does not have a filter window, then
+1 will be returned.</p>
+
+<p>Warning: This property was lowered to this class in ios/tvos 11
+The property may not be available on iOS/tvOS 10 for
+all subclasses of MPSCNNKernel</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/strideInPixelsX" title="strideInPixelsX"></a>
+	<h3 class="method-title"><code><a href="#//api/name/strideInPixelsX">&nbsp;&nbsp;strideInPixelsX</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The downsampling (or upsampling if a backwards filter) factor in the horizontal dimension</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger strideInPixelsX</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   strideInPixelsX</p><p>If the filter does not do up or downsampling, 1 is returned.</p>
+
+<p>Warning: This property was lowered to this class in ios/tvos 11
+The property may not be available on iOS/tvOS 10 for
+all subclasses of MPSCNNKernel</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/strideInPixelsY" title="strideInPixelsY"></a>
+	<h3 class="method-title"><code><a href="#//api/name/strideInPixelsY">&nbsp;&nbsp;strideInPixelsY</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The downsampling (or upsampling if a backwards filter) factor in the vertical dimension</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger strideInPixelsY</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   strideInPixelsY</p><p>If the filter does not do up or downsampling, 1 is returned.</p>
+
+<p>Warning: This property was lowered to this class in ios/tvos 11
+The property may not be available on iOS/tvOS 10 for
+all subclasses of MPSCNNKernel</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>YES if the filter operates backwards.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) BOOL isBackwards MPS_AVAILABLE_STARTING ( macos ( 10.13 , ios ( 11.0 , tvos ( 11.0 )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   isBackwards</p><p>This influences how strideInPixelsX/Y should be interpreted.
+Most filters either have stride 1 or are reducing, meaning that
+the result image is smaller than the original by roughly a factor
+of the stride.  A few &ldquo;backward&rdquo; filters (e.g unpooling) are intended
+to &ldquo;undo&rdquo; the effects of an earlier forward filter, and so
+enlarge the image. The stride is in the destination coordinate frame
+rather than the source coordinate frame.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new <a href="../Classes/MPSKernel.html">MPSKernel</a> object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>While the standard NSSecureCoding/NSCoding method
+-initWithCoder: should work, since the file can&rsquo;t
+know which device your data is allocated on, we
+have to guess and may guess incorrectly.  To avoid
+that problem, use initWithCoder:device instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:sourceImage:destinationImage:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:sourceImage:destinationImage:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:sourceImage:destinationImage:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:sourceImage:destinationImage:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode a MPSCNNKernel into a command Buffer.  The operation shall proceed out-of-place.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceImage:(MPSImage *__nonnull)<em>sourceImage</em> destinationImage:(MPSImage *__nonnull)<em>destinationImage</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceImage</code></th>
+						<td><p>A valid <a href="../Classes/MPSImage.html">MPSImage</a> object containing the source image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationImage</code></th>
+						<td><p>A valid <a href="../Classes/MPSImage.html">MPSImage</a> to be overwritten by result image. destinationImage may not alias sourceImage.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This is the older style of encode which reads the <a href="#//api/name/offset">offset</a>, doesn&rsquo;t change it,
+and ignores the padding method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:sourceImage:MPS_AVAILABLE_STARTING:" title="encodeToCommandBuffer:sourceImage:MPS_AVAILABLE_STARTING:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:sourceImage:MPS_AVAILABLE_STARTING:">&ndash;&nbsp;encodeToCommandBuffer:sourceImage:MPS_AVAILABLE_STARTING:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode a MPSCNNKernel into a command Buffer. Create a texture to hold the result and return it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSImage *__nonnull)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceImage:(MPSImage *__nonnull)<em>sourceImage</em> MPS_AVAILABLE_STARTING</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>The command buffer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceImage</code></th>
+						<td><p>A <a href="../Classes/MPSImage.html">MPSImage</a> to use as the source images for the filter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A <a href="../Classes/MPSImage.html">MPSImage</a> or <a href="../Classes/MPSTemporaryImage.html">MPSTemporaryImage</a> allocated per the destinationImageAllocator containing the output of the graph.
+The <a href="#//api/name/offset">offset</a> property will be adjusted to reflect the <a href="#//api/name/offset">offset</a> used during the encode.
+The returned image will be automatically released when the command buffer completes. If you want to
+keep it around for longer, retain the image. (ARC will do this for you if you use it later.)</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>In the first iteration on this method, encodeToCommandBuffer:sourceImage:destinationImage:
+some work was left for the developer to do in the form of correctly setting the <a href="#//api/name/offset">offset</a> property
+and sizing the result buffer. With the introduction of the padding policy (see padding property)
+the filter can do this work itself. If you would like to have some input into what sort of <a href="../Classes/MPSImage.html">MPSImage</a>
+(e.g. temporary vs. regular) or what size it is or where it is allocated, you may set the
+destinationImageAllocator to allocate the image yourself.</p>
+
+<p>This method uses the <a href="../Protocols/MPSNNPadding.html">MPSNNPadding</a> padding property to figure out how to size
+the result image and to set the <a href="#//api/name/offset">offset</a> property. See discussion in MPSNeuralNetworkTypes.h.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

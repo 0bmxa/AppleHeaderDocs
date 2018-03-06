@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVB17221AECPInterface Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AudioVideoBridging Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/AECPInterfaceWithInterface:">+ AECPInterfaceWithInterface:</option>
+		
+		<option value="//api/name/AECPInterfaceWithInterfaceNamed:">+ AECPInterfaceWithInterfaceNamed:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/removeCommandHandlerForEntityID:">- removeCommandHandlerForEntityID:</option>
+		
+		<option value="//api/name/removeHandlerForEntityID:">- removeHandlerForEntityID:</option>
+		
+		<option value="//api/name/removeHandlerForGUID:">- removeHandlerForGUID:</option>
+		
+		<option value="//api/name/removeResponseHandlerForControllerEntityID:">- removeResponseHandlerForControllerEntityID:</option>
+		
+		<option value="//api/name/sendCommand:toMACAddress:completionHandler:">- sendCommand:toMACAddress:completionHandler:</option>
+		
+		<option value="//api/name/sendResponse:toMACAddress:error:">- sendResponse:toMACAddress:error:</option>
+		
+		<option value="//api/name/setCommandHandler:forEntityID:">- setCommandHandler:forEntityID:</option>
+		
+		<option value="//api/name/setHandler:forEntityID:">- setHandler:forEntityID:</option>
+		
+		<option value="//api/name/setHandler:forGUID:">- setHandler:forGUID:</option>
+		
+		<option value="//api/name/setResponseHandler:forControllerEntityID:">- setResponseHandler:forControllerEntityID:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVB17221AECPInterface Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVB1722ControlInterface.html">AVB1722ControlInterface</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVB17221AECPInterface.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      AVB17221AECPInterface
+</code></pre><p>AVB17221AECPInterface is a concrete subclass of <a href="../Classes/AVB1722ControlInterface.html">AVB1722ControlInterface</a> providing the access to the IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol (AECP) interface.
+                It provides callbacks per entity EntityID via a handler object implementing the <a href="../Protocols/AVB17221AECPClient.html">AVB17221AECPClient</a> protocol. AVB17221AECPInterface objects
+                are typically not created directly but are created indirectly and accessed via the aecp property of the <a href="../Classes/AVBInterface.html">AVBInterface</a> object.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/AECPInterfaceWithInterface:" title="AECPInterfaceWithInterface:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/AECPInterfaceWithInterface:">+&nbsp;AECPInterfaceWithInterface:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an autoreleased instance of AVB17221AECPInterface for the specified <a href="../Classes/AVBInterface.html">AVBInterface</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable AVB17221AECPInterface *)AECPInterfaceWithInterface:(AVBInterface *)<em>anInterface</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>anInterface</code></th>
+						<td><p>The interface on which to create the instance.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased instance of the control service class.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     AECPInterfaceWithInterface:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/AECPInterfaceWithInterfaceNamed:" title="AECPInterfaceWithInterfaceNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/AECPInterfaceWithInterfaceNamed:">+&nbsp;AECPInterfaceWithInterfaceNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an autoreleased instance of AVB17221AECPInterfaceWithInterfaceNamed for the specified network interface with the specified BSD name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable AVB17221AECPInterface *)AECPInterfaceWithInterfaceNamed:(NSString *)<em>anInterfaceName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>anInterfaceName</code></th>
+						<td><p>The BSD name of the interface.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased instance of the control service class.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     AECPInterfaceWithInterfaceNamed:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setHandler:forGUID:" title="setHandler:forGUID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setHandler:forGUID:">&ndash;&nbsp;setHandler:forGUID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add an object implementing the <a href="../Protocols/AVB17221AECPClient.html">AVB17221AECPClient</a> protocol as a handler for messages to or from a specified GUID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setHandler:(id&lt;AVB17221AECPClient&gt;)<em>handler</em> forGUID:(uint64_t)<em>targetGUID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handler</code></th>
+						<td><p>The object which will handle all of the commands and responses.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetGUID</code></th>
+						<td><p>The GUID of the entity the messages are to or from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the handler was added, NO if there is already a handler or if the routing ID couldn&rsquo;t be added.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setHandler:forGUID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setHandler:forEntityID:" title="setHandler:forEntityID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setHandler:forEntityID:">&ndash;&nbsp;setHandler:forEntityID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add an object implementing the <a href="../Protocols/AVB17221AECPClient.html">AVB17221AECPClient</a> protocol as a handler for messages to or from a specified Entity ID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setHandler:(id&lt;AVB17221AECPClient&gt;)<em>handler</em> forEntityID:(uint64_t)<em>targetEntityID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handler</code></th>
+						<td><p>The object which will handle all of the commands and responses.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetEntityID</code></th>
+						<td><p>The EntityID of the entity the messages are to or from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the handler was added, NO if there is already a handler or if the routing ID couldn&rsquo;t be added.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setHandler:forEntityID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeHandlerForGUID:" title="removeHandlerForGUID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeHandlerForGUID:">&ndash;&nbsp;removeHandlerForGUID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removed a handler for messages to or from a specified GUID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeHandlerForGUID:(uint64_t)<em>targetGUID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetGUID</code></th>
+						<td><p>The GUID of the entity the messages are to or from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeHandlerForGUID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeHandlerForEntityID:" title="removeHandlerForEntityID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeHandlerForEntityID:">&ndash;&nbsp;removeHandlerForEntityID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removed a handler  for messages to or from a specified EntityID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeHandlerForEntityID:(uint64_t)<em>targetEntityID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetEntityID</code></th>
+						<td><p>The EntityID of the entity the messages are to or from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeHandlerForEntityID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCommandHandler:forEntityID:" title="setCommandHandler:forEntityID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCommandHandler:forEntityID:">&ndash;&nbsp;setCommandHandler:forEntityID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add an object implementing the <a href="../Protocols/AVB17221AECPClient.html">AVB17221AECPClient</a> protocol as a handler for command messages to a specified Entity ID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setCommandHandler:(id&lt;AVB17221AECPClient&gt;)<em>handler</em> forEntityID:(uint64_t)<em>targetEntityID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handler</code></th>
+						<td><p>The object which will handle all of the commands.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetEntityID</code></th>
+						<td><p>The Entity ID of the entity the messages are to.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the handler was added, NO if there is already a handler or if the routing ID couldn&rsquo;t be added.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setCommandHandler:forEntityID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeCommandHandlerForEntityID:" title="removeCommandHandlerForEntityID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeCommandHandlerForEntityID:">&ndash;&nbsp;removeCommandHandlerForEntityID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removed a handler for command messages to or from a specified EntityID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeCommandHandlerForEntityID:(uint64_t)<em>targetEntityID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetEntityID</code></th>
+						<td><p>The EntityID of the entity the messages are to.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeCommandHandlerForEntityID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setResponseHandler:forControllerEntityID:" title="setResponseHandler:forControllerEntityID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setResponseHandler:forControllerEntityID:">&ndash;&nbsp;setResponseHandler:forControllerEntityID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add an object implementing the <a href="../Protocols/AVB17221AECPClient.html">AVB17221AECPClient</a> protocol as a handler for response messages for a specified controller EntityID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setResponseHandler:(id&lt;AVB17221AECPClient&gt;)<em>handler</em> forControllerEntityID:(uint64_t)<em>controllerEntityID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handler</code></th>
+						<td><p>The object which will handle all of the responses for the Controller Entity ID.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controllerEntityID</code></th>
+						<td><p>The Entity ID of the controller the messages are for.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the handler was added, NO if there is already a handler or if the routing ID couldn&rsquo;t be added.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setResponseHandler:forControllerEntityID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeResponseHandlerForControllerEntityID:" title="removeResponseHandlerForControllerEntityID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeResponseHandlerForControllerEntityID:">&ndash;&nbsp;removeResponseHandlerForControllerEntityID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removed a handler for response messages to or from a specified EntityID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeResponseHandlerForControllerEntityID:(uint64_t)<em>controllerEntityID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controllerEntityID</code></th>
+						<td><p>The EntityID of the controller the messages are for.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeResponseHandlerForControllerEntityID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendCommand:toMACAddress:completionHandler:" title="sendCommand:toMACAddress:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendCommand:toMACAddress:completionHandler:">&ndash;&nbsp;sendCommand:toMACAddress:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Send an AECP command message.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)sendCommand:(AVB17221AECPMessage *)<em>message</em> toMACAddress:(AVBMACAddress *)<em>destMAC</em> completionHandler:(AVB17221AECPInterfaceCompletion)<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>An instance of a subclass of <a href="../Classes/AVB17221AECPMessage.html">AVB17221AECPMessage</a> which contains the command message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destMAC</code></th>
+						<td><p>The MAC address of the end station to send the message to.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>A block containing code to execute when the command has been sent or timed out.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A BOOL indicating success or failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sendCommand:toMACAddress:completionHandler:
+</code></pre><p>This method synchronizes access to the kernel service providing transport for the message. This method is safe to call from any thread.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendResponse:toMACAddress:error:" title="sendResponse:toMACAddress:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendResponse:toMACAddress:error:">&ndash;&nbsp;sendResponse:toMACAddress:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Send an AECP response.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)sendResponse:(AVB17221AECPMessage *)<em>message</em> toMACAddress:(AVBMACAddress *)<em>destMAC</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>An instance of a subclass of <a href="../Classes/AVB17221AECPMessage.html">AVB17221AECPMessage</a> which contains the response message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destMAC</code></th>
+						<td><p>The MAC address of the end station to send the message to. This argument needs to points to kIOEthernetAddressSize bytes of memory.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>IOReturn indicating success or failure and reason for failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sendResponse:toMACAddress:error:
+</code></pre><p>This method synchronizes access to the kernel service providing transport for the message. This method is safe to call from any thread.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221AECPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

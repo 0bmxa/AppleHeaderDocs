@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAssetWriter Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_7">_7</option>
+		
+		<option value="//api/name/_9">_9</option>
+		
+		<option value="//api/name/availableMediaTypes">availableMediaTypes</option>
+		
+		<option value="//api/name/error">error</option>
+		
+		<option value="//api/name/inputs">inputs</option>
+		
+		<option value="//api/name/metadata">metadata</option>
+		
+		<option value="//api/name/movieFragmentInterval">movieFragmentInterval</option>
+		
+		<option value="//api/name/outputFileType">outputFileType</option>
+		
+		<option value="//api/name/outputURL">outputURL</option>
+		
+		<option value="//api/name/overallDurationHint">overallDurationHint</option>
+		
+		<option value="//api/name/shouldOptimizeForNetworkUse">shouldOptimizeForNetworkUse</option>
+		
+		<option value="//api/name/status">status</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/assetWriterWithURL:fileType:error:">+ assetWriterWithURL:fileType:error:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addInput:">- addInput:</option>
+		
+		<option value="//api/name/addInputGroup:">- addInputGroup:</option>
+		
+		<option value="//api/name/canAddInput:">- canAddInput:</option>
+		
+		<option value="//api/name/canAddInputGroup:">- canAddInputGroup:</option>
+		
+		<option value="//api/name/canApplyOutputSettings:forMediaType:">- canApplyOutputSettings:forMediaType:</option>
+		
+		<option value="//api/name/cancelWriting">- cancelWriting</option>
+		
+		<option value="//api/name/endSessionAtSourceTime:">- endSessionAtSourceTime:</option>
+		
+		<option value="//api/name/finishWriting">- finishWriting</option>
+		
+		<option value="//api/name/finishWritingWithCompletionHandler:">- finishWritingWithCompletionHandler:</option>
+		
+		<option value="//api/name/initWithURL:fileType:error:">- initWithURL:fileType:error:</option>
+		
+		<option value="//api/name/startSessionAtSourceTime:">- startSessionAtSourceTime:</option>
+		
+		<option value="//api/name/startWriting">- startWriting</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAssetWriter Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAssetWriter.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVAssetWriter
+@abstract
+     AVAssetWriter provides services for writing media data to a new file,</p>
+
+<p>@discussion
+    Instances of AVAssetWriter can write media to new files in formats such as the QuickTime movie file format or the MPEG-4 file format. AVAssetWriter has support for automatic interleaving of media data for multiple concurrent tracks. Source media data can be obtained from instances of <a href="../Classes/AVAssetReader.html">AVAssetReader</a> for one or more assets or from other sources outside of AVFoundation.</p>
+
+<pre><code>Instances of AVAssetWriter can re-encode media samples as they are written. Instances of AVAssetWriter can also optionally write metadata collections to the output file.
+
+A single instance of AVAssetWriter can be used once to write to a single file. Clients that wish to write to files multiple times must use a new instance of AVAssetWriter each time.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/assetWriterWithURL:fileType:error:" title="assetWriterWithURL:fileType:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetWriterWithURL:fileType:error:">+&nbsp;assetWriterWithURL:fileType:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method assetWriterWithURL:fileType:error:
+@abstract
+    Returns an instance of AVAssetWriter configured to write to a file in a specified container format.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)assetWriterWithURL:(NSURL *)<em>outputURL</em> fileType:(AVFileType)<em>outputFileType</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method assetWriterWithURL:fileType:error:
+@abstract
+    Returns an instance of AVAssetWriter configured to write to a file in a specified container format.</p>
+
+<p>@param URL
+    The location of the file to be written. The URL must be a file URL.
+@param fileType
+    A UTI indicating the format of the file to be written.
+@param outError
+    On return, if initialization of the AVAssetWriter fails, points to an NSError describing the nature of the failure.
+@result
+    An instance of AVAssetWriter.</p>
+
+<p>@discussion
+    Writing will fail if a file already exists at the specified URL.</p>
+
+<pre><code>UTIs for container formats that can be written are declared in AVMediaFormat.h.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithURL:fileType:error:" title="initWithURL:fileType:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithURL:fileType:error:">&ndash;&nbsp;initWithURL:fileType:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithURL:fileType:error:
+@abstract
+    Creates an instance of AVAssetWriter configured to write to a file in a specified container format.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithURL:(NSURL *)<em>outputURL</em> fileType:(AVFileType)<em>outputFileType</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithURL:fileType:error:
+@abstract
+    Creates an instance of AVAssetWriter configured to write to a file in a specified container format.</p>
+
+<p>@param URL
+    The location of the file to be written. The URL must be a file URL.
+@param fileType
+    A UTI indicating the format of the file to be written.
+@param outError
+    On return, if initialization of the AVAssetWriter fails, points to an NSError describing the nature of the failure.
+@result
+    An instance of AVAssetWriter.</p>
+
+<p>@discussion
+    Writing will fail if a file already exists at the specified URL.</p>
+
+<pre><code>UTIs for container formats that can be written are declared in AVMediaFormat.h.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputURL" title="outputURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputURL">&nbsp;&nbsp;outputURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property outputURL
+@abstract
+    The location of the file for which the instance of AVAssetWriter was initialized for writing.
+@discussion
+    You may use UTTypeCopyPreferredTagWithClass(<a href="#//api/name/outputFileType">outputFileType</a>, kUTTagClassFilenameExtension) to obtain an appropriate path extension for the <a href="#//api/name/outputFileType">outputFileType</a> you have specified. For more information about UTTypeCopyPreferredTagWithClass and kUTTagClassFilenameExtension, on iOS see &lt;MobileCoreServices/UTType.h> and on Mac OS X see &lt;LaunchServices/UTType.h>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSURL *outputURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property outputURL
+@abstract
+    The location of the file for which the instance of AVAssetWriter was initialized for writing.
+@discussion
+    You may use UTTypeCopyPreferredTagWithClass(<a href="#//api/name/outputFileType">outputFileType</a>, kUTTagClassFilenameExtension) to obtain an appropriate path extension for the <a href="#//api/name/outputFileType">outputFileType</a> you have specified. For more information about UTTypeCopyPreferredTagWithClass and kUTTagClassFilenameExtension, on iOS see &lt;MobileCoreServices/UTType.h> and on Mac OS X see &lt;LaunchServices/UTType.h>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputFileType" title="outputFileType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputFileType">&nbsp;&nbsp;outputFileType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property outputFileType
+@abstract
+    The UTI of the file format of the file for which the instance of AVAssetWriter was initialized for writing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) AVFileType outputFileType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property outputFileType
+@abstract
+    The UTI of the file format of the file for which the instance of AVAssetWriter was initialized for writing.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/availableMediaTypes" title="availableMediaTypes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availableMediaTypes">&nbsp;&nbsp;availableMediaTypes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property availableMediaTypes
+@abstract
+    The media types for which <a href="#//api/name/inputs">inputs</a> can be added to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVMediaType&gt; *availableMediaTypes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property availableMediaTypes
+@abstract
+    The media types for which <a href="#//api/name/inputs">inputs</a> can be added to the receiver.</p>
+
+<p>@discussion
+    Some media types may not be accepted within the file format with which an AVAssetWriter was initialized.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/status" title="status"></a>
+	<h3 class="method-title"><code><a href="#//api/name/status">&nbsp;&nbsp;status</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property status
+@abstract
+    The status of writing samples to the receiver&rsquo;s output file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) AVAssetWriterStatus status</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property status
+@abstract
+    The status of writing samples to the receiver&rsquo;s output file.</p>
+
+<p>@discussion
+    The value of this property is an <a href="../Constants/AVAssetWriterStatus.html">AVAssetWriterStatus</a> that indicates whether writing is in progress, has completed successfully, has been canceled, or has failed. Clients of <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a> objects should check the value of this property after appending samples fails to determine why no more samples could be written. This property is thread safe.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/error" title="error"></a>
+	<h3 class="method-title"><code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property error
+@abstract
+    If the receiver&rsquo;s <a href="#//api/name/status">status</a> is AVAssetWriterStatusFailed, this describes the error that caused the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable) NSError *error</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property error
+@abstract
+    If the receiver&rsquo;s <a href="#//api/name/status">status</a> is AVAssetWriterStatusFailed, this describes the error that caused the failure.</p>
+
+<p>@discussion
+    The value of this property is an NSError that describes what caused the receiver to no longer be able to write to its output file. If the receiver&rsquo;s <a href="#//api/name/status">status</a> is not AVAssetWriterStatusFailed, the value of this property is nil. This property is thread safe.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadata" title="metadata"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadata">&nbsp;&nbsp;metadata</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property metadata
+@abstract
+    A collection of metadata to be written to the receiver&rsquo;s output file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSArray&lt;AVMetadataItem*&gt; *metadata</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property metadata
+@abstract
+    A collection of metadata to be written to the receiver&rsquo;s output file.</p>
+
+<p>@discussion
+    The value of this property is an array of <a href="../Classes/AVMetadataItem.html">AVMetadataItem</a> objects representing the collection of top-level metadata to be written in the output file.</p>
+
+<pre><code>This property cannot be set after writing has started.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldOptimizeForNetworkUse" title="shouldOptimizeForNetworkUse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldOptimizeForNetworkUse">&nbsp;&nbsp;shouldOptimizeForNetworkUse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property shouldOptimizeForNetworkUse
+@abstract
+    Specifies whether the output file should be written in way that makes it more suitable for playback over a network</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL shouldOptimizeForNetworkUse</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property shouldOptimizeForNetworkUse
+@abstract
+    Specifies whether the output file should be written in way that makes it more suitable for playback over a network</p>
+
+<p>@discussion
+    When the value of this property is YES, the output file will be written in such a way that playback can start after only a small amount of the file is downloaded.</p>
+
+<pre><code>This property cannot be set after writing has started.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property directoryForTemporaryFiles
+@abstract
+    Specifies a directory that is suitable for containing temporary files generated during the process of writing an asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSURL *NS_AVAILABLE ( 10 _10 , 8 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property directoryForTemporaryFiles
+@abstract
+    Specifies a directory that is suitable for containing temporary files generated during the process of writing an asset.</p>
+
+<p>@discussion
+    AVAssetWriter may need to write temporary files when configured in certain ways, such as when performsMultiPassEncodingIfSupported is set to YES on one or more of its <a href="#//api/name/inputs">inputs</a>.  This property can be used to control where in the filesystem those temporary files are created.  All temporary files will be deleted when asset writing is completed, is canceled, or fails.</p>
+
+<pre><code>When the value of this property is nil, the asset writer will choose a suitable location when writing temporary files.  The default value is nil.
+
+This property cannot be set after writing has started.  The asset writer will fail if a file cannot be created in this directory (for example, due to insufficient permissions).
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputs" title="inputs"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputs">&nbsp;&nbsp;inputs</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property inputs
+@abstract
+    The inputs from which the asset writer receives media data.
+@discussion
+    The value of this property is an NSArray containing concrete instances of <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a>. Inputs can be added to the receiver using the <a href="#//api/name/addInput:">addInput:</a> method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVAssetWriterInput*&gt; *inputs</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property inputs
+@abstract
+    The inputs from which the asset writer receives media data.
+@discussion
+    The value of this property is an NSArray containing concrete instances of <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a>. Inputs can be added to the receiver using the <a href="#//api/name/addInput:">addInput:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/canApplyOutputSettings:forMediaType:" title="canApplyOutputSettings:forMediaType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canApplyOutputSettings:forMediaType:">&ndash;&nbsp;canApplyOutputSettings:forMediaType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method canApplyOutputSettings:forMediaType:
+@abstract
+    Tests whether output settings for a specific media type are supported by the receiver&rsquo;s file format.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)canApplyOutputSettings:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>outputSettings</em> forMediaType:(AVMediaType)<em>mediaType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method canApplyOutputSettings:forMediaType:
+@abstract
+    Tests whether output settings for a specific media type are supported by the receiver&rsquo;s file format.</p>
+
+<p>@param outputSettings
+    The output settings that are to be tested.
+@param mediaType
+    The media type for which the output settings are to be tested. Media types are defined in AVMediaFormat.h.
+@result
+    A BOOL indicating whether the given output settings can be used for the given media type.</p>
+
+<p>@discussion
+    This method determines whether the output settings for the specified media type can be used with the receiver&rsquo;s file format. For example, video compression settings that specify H.264 compression are not compatible with file formats that cannot contain H.264-compressed video.</p>
+
+<pre><code>Attempting to add an input with output settings and a media type for which this method returns NO will cause an exception to be thrown.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/canAddInput:" title="canAddInput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canAddInput:">&ndash;&nbsp;canAddInput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method canAddInput:
+@abstract
+    Tests whether an input can be added to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)canAddInput:(AVAssetWriterInput *)<em>input</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method canAddInput:
+@abstract
+    Tests whether an input can be added to the receiver.</p>
+
+<p>@param input
+    The <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a> object to be tested.
+@result
+    A BOOL indicating whether the input can be added to the receiver.</p>
+
+<p>@discussion
+    An input that accepts media data of a type that is not compatible with the receiver, or with output settings that are not compatible with the receiver, cannot be added.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addInput:" title="addInput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addInput:">&ndash;&nbsp;addInput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method addInput:
+@abstract
+    Adds an input to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addInput:(AVAssetWriterInput *)<em>input</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addInput:
+@abstract
+    Adds an input to the receiver.</p>
+
+<p>@param input
+    The <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a> object to be added.</p>
+
+<p>@discussion
+    Inputs are created with a media type and output settings. These both must be compatible with the receiver.</p>
+
+<pre><code>Inputs cannot be added after writing has started.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startWriting" title="startWriting"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startWriting">&ndash;&nbsp;startWriting</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method startWriting
+@abstract
+    Prepares the receiver for accepting input and for writing its output to its output file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startWriting</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method startWriting
+@abstract
+    Prepares the receiver for accepting input and for writing its output to its output file.</p>
+
+<p>@result
+    A BOOL indicating whether writing successfully started.</p>
+
+<p>@discussion
+    This method must be called after all inputs have been added and other configuration properties have been set in order to tell the receiver to prepare for writing. After this method is called, clients can start writing sessions using startSessionAtSourceTime: and can write media samples using the methods provided by each of the receiver&rsquo;s inputs.</p>
+
+<pre><code>If writing cannot be started, this method returns NO. Clients can check the values of the status and error properties for more information on why writing could not be started.
+
+On iOS, if the status of an AVAssetWriter is AVAssetWriterStatusWriting when the client app goes into the background, its status will change to AVAssetWriterStatusFailed and appending to any of its inputs will fail.  You may want to use [UIApplication beginBackgroundTaskWithExpirationHandler:] to avoid being interrupted in the middle of a writing session and to finish writing the data that has already been appended.  For more information about executing code in the background, see the iOS Application Programming Guide.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startSessionAtSourceTime:" title="startSessionAtSourceTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startSessionAtSourceTime:">&ndash;&nbsp;startSessionAtSourceTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method startSessionAtSourceTime:
+@abstract
+    Initiates a sample-writing session for the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startSessionAtSourceTime:(CMTime)<em>startTime</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method startSessionAtSourceTime:
+@abstract
+    Initiates a sample-writing session for the receiver.</p>
+
+<p>@param startTime
+    The starting asset time for the sample-writing session, in the timeline of the source samples.</p>
+
+<p>@discussion
+    Sequences of sample data appended to the asset writer <a href="#//api/name/inputs">inputs</a> are considered to fall within &ldquo;sample-writing sessions&rdquo;, initiated with this method. Accordingly, this method must be called after writing has started (using <a href="#//api/name/startWriting">startWriting</a>) but before any sample data is appended to the receiver&rsquo;s <a href="#//api/name/inputs">inputs</a>.</p>
+
+<pre><code>Each writing session has a start time which, where allowed by the file format being written, defines the mapping from the timeline of source samples to the timeline of the written file. In the case of the QuickTime movie file format, the first session begins at movie time 0, so a sample appended with timestamp T will be played at movie time (T-startTime).  Samples with timestamps earlier than startTime will still be added to the output file but will be edited out (i.e. not presented during playback). If the earliest appended sample for an input has a timestamp later than than startTime, an empty edit will be inserted to preserve synchronization between tracks of the output asset.
+
+To end the session started by use of this method, use endSessionAtSourceTime: or finishWritingWithCompletionHandler:.  It is an error to invoke -startSessionAtSourceTime: twice in a row without invoking endSessionAtSourceTime: in between.
+
+NOTE: Multiple sample-writing sessions are currently not supported. It is an error to call -startSessionAtSourceTime: a second time after calling endSessionAtSourceTime:.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/endSessionAtSourceTime:" title="endSessionAtSourceTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/endSessionAtSourceTime:">&ndash;&nbsp;endSessionAtSourceTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method endSessionAtSourceTime:
+@abstract
+    Concludes a sample-writing session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)endSessionAtSourceTime:(CMTime)<em>endTime</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method endSessionAtSourceTime:
+@abstract
+    Concludes a sample-writing session.</p>
+
+<p>@param endTime
+    The ending asset time for the sample-writing session, in the timeline of the source samples.</p>
+
+<p>@discussion
+    Call this method to complete a session started with <a href="#//api/name/startSessionAtSourceTime:">startSessionAtSourceTime:</a>.</p>
+
+<pre><code>The endTime defines the moment on the timeline of source samples at which the session ends. In the case of the QuickTime movie file format, each sample-writing session's startTime...endTime pair corresponds to a period of movie time into which the session's samples are inserted. Samples with timestamps that are later than the session end time will still be added to the written file but will be edited out (i.e. not presented during playback). So if the first session has duration D1 = endTime - startTime, it will be inserted into the written file at time 0 through D1; the second session would be inserted into the written file at time D1 through D1+D2, etc. It is legal to have a session with no samples; this will cause creation of an empty edit of the prescribed duration.
+
+It is not mandatory to call -endSessionAtSourceTime:; if finishWritingWithCompletionHandler: is called without first invoking -endSessionAtSourceTime:, the session's effective end time will be the latest end timestamp of the session's appended samples (i.e. no samples will be edited out at the end).
+
+It is an error to append samples outside of a sample-writing session.  To append more samples after invoking -endSessionAtSourceTime:, you must first start a new session using startSessionAtSourceTime:.
+
+NOTE: Multiple sample-writing sessions are currently not supported. It is an error to call startSessionAtSourceTime: a second time after calling -endSessionAtSourceTime:.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelWriting" title="cancelWriting"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelWriting">&ndash;&nbsp;cancelWriting</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method cancelWriting
+@abstract
+    Cancels the creation of the output file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cancelWriting</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method cancelWriting
+@abstract
+    Cancels the creation of the output file.</p>
+
+<p>@discussion
+    If the status of the receiver is &ldquo;failed&rdquo; or &ldquo;completed,&rdquo; -cancelWriting is a no-op.  Otherwise, this method will block until writing is canceled.</p>
+
+<pre><code>If an output file was created by the receiver during the writing process, -cancelWriting will delete the file.
+
+This method should not be called concurrently with [AVAssetWriterInput appendSampleBuffer:] or [AVAssetWriterInputPixelBufferAdaptor appendPixelBuffer:withPresentationTime:].
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/finishWriting" title="finishWriting"></a>
+	<h3 class="method-title"><code><a href="#//api/name/finishWriting">&ndash;&nbsp;finishWriting</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method finishWriting
+@abstract
+    Completes the writing of the output file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)finishWriting</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method finishWriting
+@abstract
+    Completes the writing of the output file.</p>
+
+<p>@result
+    A BOOL indicating whether writing successfully finished.</p>
+
+<p>@discussion
+    This method is deprecated.  Use finishWritingWithCompletionHandler: instead.</p>
+
+<pre><code>This method will block until writing is finished. When this method returns successfully, the file being written by the receiver is complete and ready to use.
+
+Because this method is blocking and can take a long time to execute (especially with shouldOptimizeForNetworkUse set to YES), it should not be called from the main thread.  Doing so can cause the finishWriting operation to fail.
+
+If writing cannot be finished, this method returns NO. Clients can check the values of the status and error properties for more information on why writing could not be finished.
+
+This method should not be called concurrently with [AVAssetWriterInput appendSampleBuffer:] or [AVAssetWriterInputPixelBufferAdaptor appendPixelBuffer:withPresentationTime:].
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/finishWritingWithCompletionHandler:" title="finishWritingWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/finishWritingWithCompletionHandler:">&ndash;&nbsp;finishWritingWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method finishWritingWithCompletionHandler:
+@abstract
+    Marks all unfinished <a href="#//api/name/inputs">inputs</a> as finished and completes the writing of the output file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)finishWritingWithCompletionHandler:(void ( ^ ) ( void ))<em>handler</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method finishWritingWithCompletionHandler:
+@abstract
+    Marks all unfinished inputs as finished and completes the writing of the output file.</p>
+
+<p>@discussion
+    This method returns immediately and causes its work to be performed asynchronously.</p>
+
+<pre><code>When the writing of the output file is finished, or if a failure or a cancellation occurs in the meantime, the specified handler will be invoked to indicate completion of the operation. To determine whether the operation succeeded, your handler can check the value of AVAssetWriter.status. If the status is AVAssetWriterStatusFailed, AVAsset.error will contain an instance of NSError that describes the failure.
+
+To guarantee that all sample buffers are successfully written, ensure all calls to [AVAssetWriterInput appendSampleBuffer:] or [AVAssetWriterInputPixelBufferAdaptor appendPixelBuffer:withPresentationTime:] have returned before invoking this method.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetWriterFileTypeSpecificProperties Methods" name="task_AVAssetWriterFileTypeSpecificProperties Methods"></a>
+						<h2 class="task-title">AVAssetWriterFileTypeSpecificProperties Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/movieFragmentInterval" title="movieFragmentInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/movieFragmentInterval">&nbsp;&nbsp;movieFragmentInterval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property movieFragmentInterval
+@abstract
+    For file types that support movie fragments, specifies the frequency at which movie fragments should be written.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CMTime movieFragmentInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property movieFragmentInterval
+@abstract
+    For file types that support movie fragments, specifies the frequency at which movie fragments should be written.</p>
+
+<p>@discussion
+    When movie fragments are used, a partially written asset whose writing is unexpectedly interrupted can be successfully opened and played up to multiples of the specified time interval. The default value of this property is kCMTimeInvalid, which indicates that movie fragments should not be used.</p>
+
+<pre><code>This property cannot be set after writing has started.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/overallDurationHint" title="overallDurationHint"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overallDurationHint">&nbsp;&nbsp;overallDurationHint</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property overallDurationHint
+@abstract
+    For file types that support movie fragments, provides a hint of the final duration of the file to be written</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CMTime overallDurationHint</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property overallDurationHint
+@abstract
+    For file types that support movie fragments, provides a hint of the final duration of the file to be written</p>
+
+<p>@discussion
+    The value of this property must be a nonnegative, numeric CMTime.  Alternatively, if the value of this property is an invalid CMTime (e.g. kCMTimeInvalid), no overall duration hint will be written to the file.  The default value is kCMTimeInvalid.</p>
+
+<pre><code>This property is currently ignored if movie fragments are not being written.  Use the movieFragmentInterval property to enable movie fragments.
+
+This property cannot be set after writing has started.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_7" title="_7"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_7">&nbsp;&nbsp;_7</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property movieTimeScale
+@abstract
+    For file types that contain a &lsquo;moov&rsquo; atom, such as QuickTime Movie files, specifies the asset-level time scale to be used.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CMTimeScale movieTimeScale NS_AVAILABLE ( 10 _7</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property movieTimeScale
+@abstract
+    For file types that contain a &lsquo;moov&rsquo; atom, such as QuickTime Movie files, specifies the asset-level time scale to be used.</p>
+
+<p>@discussion
+    The default value is 0, which indicates that the receiver should choose a convenient value, if applicable.</p>
+
+<pre><code>This property cannot be set after writing has started.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetWriterInputGroups Methods" name="task_AVAssetWriterInputGroups Methods"></a>
+						<h2 class="task-title">AVAssetWriterInputGroups Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/canAddInputGroup:" title="canAddInputGroup:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canAddInputGroup:">&ndash;&nbsp;canAddInputGroup:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method canAddInputGroup:
+@abstract
+    Tests whether an input group can be added to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)canAddInputGroup:(AVAssetWriterInputGroup *)<em>inputGroup</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method canAddInputGroup:
+@abstract
+    Tests whether an input group can be added to the receiver.</p>
+
+<p>@param inputGroup
+    The <a href="../Classes/AVAssetWriterInputGroup.html">AVAssetWriterInputGroup</a> object to be tested.
+@result
+    A BOOL indicating whether the input group can be added to the receiver.</p>
+
+<p>@discussion
+    If <a href="#//api/name/outputFileType">outputFileType</a> specifies a container format that does not support mutually exclusive relationships among tracks, or if the specified instance of <a href="../Classes/AVAssetWriterInputGroup.html">AVAssetWriterInputGroup</a> contains <a href="#//api/name/inputs">inputs</a> with media types that cannot be related, the group cannot be added to the AVAssetWriter.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addInputGroup:" title="addInputGroup:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addInputGroup:">&ndash;&nbsp;addInputGroup:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addInputGroup:(AVAssetWriterInputGroup *)<em>inputGroup</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_9" title="_9"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_9">&nbsp;&nbsp;_9</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property inputGroups
+@abstract
+    The instances of <a href="../Classes/AVAssetWriterInputGroup.html">AVAssetWriterInputGroup</a> that have been added to the AVAssetWriter.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVAssetWriterInputGroup*&gt; *NS_AVAILABLE ( 10 _9</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property inputGroups
+@abstract
+    The instances of <a href="../Classes/AVAssetWriterInputGroup.html">AVAssetWriterInputGroup</a> that have been added to the AVAssetWriter.</p>
+
+<p>@discussion
+    The value of this property is an NSArray containing concrete instances of <a href="../Classes/AVAssetWriterInputGroup.html">AVAssetWriterInputGroup</a>.  Input groups can be added to the receiver using the <a href="#//api/name/addInputGroup:">addInputGroup:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

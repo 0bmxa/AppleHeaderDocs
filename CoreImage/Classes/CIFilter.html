@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CIFilter Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreImage Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_5">_5</option>
+		
+		<option value="//api/name/attributes">attributes</option>
+		
+		<option value="//api/name/inputKeys">inputKeys</option>
+		
+		<option value="//api/name/name">name</option>
+		
+		<option value="//api/name/outputKeys">outputKeys</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/filterArrayFromSerializedXMP:inputImageExtent:error:">+ filterArrayFromSerializedXMP:inputImageExtent:error:</option>
+		
+		<option value="//api/name/filterNamesInCategories:">+ filterNamesInCategories:</option>
+		
+		<option value="//api/name/filterNamesInCategory:">+ filterNamesInCategory:</option>
+		
+		<option value="//api/name/filterWithCVPixelBuffer:properties:options:">+ filterWithCVPixelBuffer:properties:options:</option>
+		
+		<option value="//api/name/filterWithImageData:options:">+ filterWithImageData:options:</option>
+		
+		<option value="//api/name/filterWithImageURL:options:">+ filterWithImageURL:options:</option>
+		
+		<option value="//api/name/filterWithName:">+ filterWithName:</option>
+		
+		<option value="//api/name/filterWithName:keysAndValues:">+ filterWithName:keysAndValues:</option>
+		
+		<option value="//api/name/filterWithName:withInputParameters:">+ filterWithName:withInputParameters:</option>
+		
+		<option value="//api/name/localizedDescriptionForFilterName:">+ localizedDescriptionForFilterName:</option>
+		
+		<option value="//api/name/localizedNameForCategory:">+ localizedNameForCategory:</option>
+		
+		<option value="//api/name/localizedNameForFilterName:">+ localizedNameForFilterName:</option>
+		
+		<option value="//api/name/localizedReferenceDocumentationForFilterName:">+ localizedReferenceDocumentationForFilterName:</option>
+		
+		<option value="//api/name/registerFilterName:constructor:classAttributes:">+ registerFilterName:constructor:classAttributes:</option>
+		
+		<option value="//api/name/serializedXMPFromFilters:inputImageExtent:">+ serializedXMPFromFilters:inputImageExtent:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/apply:">- apply:</option>
+		
+		<option value="//api/name/apply:arguments:options:">- apply:arguments:options:</option>
+		
+		<option value="//api/name/name">- name</option>
+		
+		<option value="//api/name/setDefaults">- setDefaults</option>
+		
+		<option value="//api/name/setName:">- setName:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CIFilter Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying<br />NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CIFilter.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>CIFilter are filter objects for Core Image that encapsulate the filter with its <a href="#//api/name/attributes">attributes</a></p>
+
+<p>The CIFilter class produces a <a href="../Classes/CIImage.html">CIImage</a> object as output. Typically, a filter takes one or more images as input. Some filters, however, generate an image based on other types of input parameters. The parameters of a CIFilter object are set and retrieved through the use of key-value pairs. You use the CIFilter object in conjunction with the <a href="../Classes/CIImage.html">CIImage</a>, <a href="../Classes/CIContext.html">CIContext</a>, <a href="../Classes/CIVector.html">CIVector</a>, <a href="../Classes/CIImageAccumulator.html">CIImageAccumulator</a>, and <a href="../Classes/CIColor.html">CIColor</a> objects to take advantage of the built-in Core Image filters when processing images. CIFilter objects are also used along with <a href="../Classes/CIKernel.html">CIKernel</a>, <a href="../Classes/CISampler.html">CISampler</a>, and <a href="../Classes/CIFilterShape.html">CIFilterShape</a> objects to create custom filters.
+Methods to register a filter and get access to the list of registered filters
+Use these methods to create filters and find filters.
+Methods to serialize arrays of filters to xmp.
+CIRAWFilter is a category of CIFilter which returns a CIFilter initialized with a RAW image. It allows the user to influence key aspects of the raw processing, such as white balance, exposure, sharpening or boost.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic, nullable) CIImage *NS_AVAILABLE ( 10 _10 , 5 _0</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *name</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="method-title"><code><a href="#//api/name/name">&ndash;&nbsp;name</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)name</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setName:" title="setName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setName:">&ndash;&nbsp;setName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setName:(NSString *)<em>aString</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_5" title="_5"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_5">&nbsp;&nbsp;_5</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (getter=isEnabled) BOOL enabled NS_AVAILABLE_MAC ( 10 _5</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputKeys" title="inputKeys"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputKeys">&nbsp;&nbsp;inputKeys</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array containing the names of all inputs in the filter.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *inputKeys</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns an array containing the names of all inputs in the filter.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputKeys" title="outputKeys"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputKeys">&nbsp;&nbsp;outputKeys</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array containing the names of all outputs in the filter.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *outputKeys</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns an array containing the names of all outputs in the filter.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDefaults" title="setDefaults"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDefaults">&ndash;&nbsp;setDefaults</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets all inputs to their default values (where default values are defined, other inputs are left as-is).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setDefaults</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sets all inputs to their default values (where default values are defined, other inputs are left as-is).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributes" title="attributes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributes">&nbsp;&nbsp;attributes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary containing key/value pairs describing the filter. (see description of keys below)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary&lt;NSString*id&gt; *attributes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns a dictionary containing key/value pairs describing the filter. (see description of keys below)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/apply:arguments:options:" title="apply:arguments:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/apply:arguments:options:">&ndash;&nbsp;apply:arguments:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Used by CIFilter subclasses to apply the array of argument values &lsquo;args&rsquo; to the kernel function &lsquo;k&rsquo;. The supplied arguments must be type-compatible with the function signature of the kernel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable CIImage *)apply:(CIKernel *)<em>k</em> arguments:(nullable NSArray *)<em>args</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>dict</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>k</code></th>
+						<td><p><a href="../Classes/CIKernel.html">CIKernel</a> of the filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>args</code></th>
+						<td><p>Array of arguments that are applied to the kernel</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dict</code></th>
+						<td><p>Array of additional options</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Used by CIFilter subclasses to apply the array of argument values &lsquo;args&rsquo; to the kernel function &lsquo;k&rsquo;. The supplied arguments must be type-compatible with the function signature of the kernel.</p>
+
+<p>The key-value pairs defined by &lsquo;dict&rsquo; (if non-nil) are used to control exactly how the kernel is evaluated. Valid keys include:
+kCIApplyOptionExtent: the size of the produced image. Value is a four element NSArray [X Y WIDTH HEIGHT].
+kCIApplyOptionDefinition: the Domain of Definition of the produced image. Value is either a <a href="../Classes/CIFilterShape.html">CIFilterShape</a> object, or a four element NSArray defining a rectangle.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/apply:" title="apply:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/apply:">&ndash;&nbsp;apply:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Similar to above except that all argument values and option key-value are specified inline. The list of key-value pairs must be terminated by the &lsquo;nil&rsquo; object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable CIImage *)apply:(CIKernel *)<em>k</em>, <em>...</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Similar to above except that all argument values and option key-value are specified inline. The list of key-value pairs must be terminated by the &lsquo;nil&rsquo; object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="CIFilterRegistry Methods" name="task_CIFilterRegistry Methods"></a>
+						<h2 class="task-title">CIFilterRegistry Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/filterWithName:" title="filterWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterWithName:">+&nbsp;filterWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new filter of type &lsquo;name&rsquo;.
+On OSX, all input values will be undefined.
+On iOS, all input values will be set to default values.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable CIFilter *)filterWithName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a new filter of type &lsquo;name&rsquo;.
+On OSX, all input values will be undefined.
+On iOS, all input values will be set to default values.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filterWithName:keysAndValues:" title="filterWithName:keysAndValues:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterWithName:keysAndValues:">+&nbsp;filterWithName:keysAndValues:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new filter of type &lsquo;name&rsquo;.
+The filter&rsquo;s input parameters are set from the list of key-value pairs which must be nil-terminated.
+On OSX, any of the filter input parameters not specified in the list will be undefined.
+On iOS, any of the filter input parameters not specified in the list will be set to default values.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable CIFilter *)filterWithName:(NSString *)<em>name</em> keysAndValues:(id)<em>key0</em>, <em>...</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a new filter of type &lsquo;name&rsquo;.
+The filter&rsquo;s input parameters are set from the list of key-value pairs which must be nil-terminated.
+On OSX, any of the filter input parameters not specified in the list will be undefined.
+On iOS, any of the filter input parameters not specified in the list will be set to default values.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filterWithName:withInputParameters:" title="filterWithName:withInputParameters:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterWithName:withInputParameters:">+&nbsp;filterWithName:withInputParameters:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new filter of type &lsquo;name&rsquo;.
+The filter&rsquo;s input parameters are set from the dictionary of key-value pairs.
+On OSX, any of the filter input parameters not specified in the dictionary will be undefined.
+On iOS, any of the filter input parameters not specified in the dictionary will be set to default values.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable CIFilter *)filterWithName:(NSString *)<em>name</em> withInputParameters:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>params</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a new filter of type &lsquo;name&rsquo;.
+The filter&rsquo;s input parameters are set from the dictionary of key-value pairs.
+On OSX, any of the filter input parameters not specified in the dictionary will be undefined.
+On iOS, any of the filter input parameters not specified in the dictionary will be set to default values.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filterNamesInCategory:" title="filterNamesInCategory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterNamesInCategory:">+&nbsp;filterNamesInCategory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array containing all published filter names in a category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;NSString*&gt; *)filterNamesInCategory:(nullable NSString *)<em>category</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns an array containing all published filter names in a category.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filterNamesInCategories:" title="filterNamesInCategories:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterNamesInCategories:">+&nbsp;filterNamesInCategories:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array containing all published filter names that belong to all listed categories.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;NSString*&gt; *)filterNamesInCategories:(nullable NSArray&lt;NSString*&gt; *)<em>categories</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns an array containing all published filter names that belong to all listed categories.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerFilterName:constructor:classAttributes:" title="registerFilterName:constructor:classAttributes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerFilterName:constructor:classAttributes:">+&nbsp;registerFilterName:constructor:classAttributes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Publishes a new filter called &lsquo;name&rsquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)registerFilterName:(NSString *)<em>name</em> constructor:(id&lt;CIFilterConstructor&gt;)<em>anObject</em> classAttributes:(NSDictionary&lt;NSString*,id&gt; *)<em>attributes</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attributes</code></th>
+						<td><p>Dictionary of the registration <a href="#//api/name/attributes">attributes</a> of the filter. See below for attribute keys.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Publishes a new filter called &lsquo;name&rsquo;.</p>
+
+<p>The constructor object &lsquo;anObject&rsquo; should implement the <a href="#//api/name/filterWithName:">filterWithName:</a> method.
+That method will be invoked with the <a href="#//api/name/name">name</a> of the filter to create.
+The class <a href="#//api/name/attributes">attributes</a> must have a kCIAttributeFilterCategories key associated with a set of categories.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localizedNameForFilterName:" title="localizedNameForFilterName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localizedNameForFilterName:">+&nbsp;localizedNameForFilterName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the localized <a href="#//api/name/name">name</a> of a filter for display in the UI.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)localizedNameForFilterName:(NSString *)<em>filterName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the localized <a href="#//api/name/name">name</a> of a filter for display in the UI.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localizedNameForCategory:" title="localizedNameForCategory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localizedNameForCategory:">+&nbsp;localizedNameForCategory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the localized <a href="#//api/name/name">name</a> of a category for display in the UI.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)localizedNameForCategory:(NSString *)<em>category</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the localized <a href="#//api/name/name">name</a> of a category for display in the UI.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localizedDescriptionForFilterName:" title="localizedDescriptionForFilterName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localizedDescriptionForFilterName:">+&nbsp;localizedDescriptionForFilterName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the localized description of a filter for display in the UI.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)localizedDescriptionForFilterName:(NSString *)<em>filterName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the localized description of a filter for display in the UI.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localizedReferenceDocumentationForFilterName:" title="localizedReferenceDocumentationForFilterName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localizedReferenceDocumentationForFilterName:">+&nbsp;localizedReferenceDocumentationForFilterName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the URL to the localized reference documentation describing the filter.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSURL *)localizedReferenceDocumentationForFilterName:(NSString *)<em>filterName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the URL to the localized reference documentation describing the filter.</p>
+
+<p>The URL can be a local file or a remote document on a webserver. It is possible, that this method returns nil (like filters that predate this feature). A client of this API has to handle this case gracefully.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="CIFilterXMPSerialization Methods" name="task_CIFilterXMPSerialization Methods"></a>
+						<h2 class="task-title">CIFilterXMPSerialization Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/serializedXMPFromFilters:inputImageExtent:" title="serializedXMPFromFilters:inputImageExtent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serializedXMPFromFilters:inputImageExtent:">+&nbsp;serializedXMPFromFilters:inputImageExtent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSData *)serializedXMPFromFilters:(NSArray&lt;CIFilter*&gt; *)<em>filters</em> inputImageExtent:(CGRect)<em>extent</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filterArrayFromSerializedXMP:inputImageExtent:error:" title="filterArrayFromSerializedXMP:inputImageExtent:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterArrayFromSerializedXMP:inputImageExtent:error:">+&nbsp;filterArrayFromSerializedXMP:inputImageExtent:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;CIFilter*&gt; *)filterArrayFromSerializedXMP:(NSData *)<em>xmpData</em> inputImageExtent:(CGRect)<em>extent</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="CIRAWFilter Methods" name="task_CIRAWFilter Methods"></a>
+						<h2 class="task-title">CIRAWFilter Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/filterWithImageURL:options:" title="filterWithImageURL:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterWithImageURL:options:">+&nbsp;filterWithImageURL:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a CIFilter that will in turn return a properly processed <a href="../Classes/CIImage.html">CIImage</a> as &ldquo;outputImage&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (CIFilter *)filterWithImageURL:(NSURL *)<em>url</em> options:(NSDictionary *)<em>options</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns a CIFilter that will in turn return a properly processed <a href="../Classes/CIImage.html">CIImage</a> as &ldquo;outputImage&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIRAWFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filterWithImageData:options:" title="filterWithImageData:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterWithImageData:options:">+&nbsp;filterWithImageData:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a CIFilter that will in turn return a properly processed <a href="../Classes/CIImage.html">CIImage</a> as &ldquo;outputImage&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (CIFilter *)filterWithImageData:(NSData *)<em>data</em> options:(NSDictionary *)<em>options</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns a CIFilter that will in turn return a properly processed <a href="../Classes/CIImage.html">CIImage</a> as &ldquo;outputImage&rdquo;.</p>
+
+<p>Note that when using this initializer, you should pass in a source type identifier hint (kCGImageSourceTypeIdentifierHint) key/value pair in order to help the decoder determine the file type, as otherwise confusion and incorrect results are possible.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIRAWFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filterWithCVPixelBuffer:properties:options:" title="filterWithCVPixelBuffer:properties:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filterWithCVPixelBuffer:properties:options:">+&nbsp;filterWithCVPixelBuffer:properties:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a CIFilter that will in turn return a properly processed <a href="../Classes/CIImage.html">CIImage</a> as &ldquo;outputImage&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (CIFilter *)filterWithCVPixelBuffer:(CVPixelBufferRef)<em>pixelBuffer</em> properties:(NSDictionary *)<em>properties</em> options:(NSDictionary *)<em>options</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns a CIFilter that will in turn return a properly processed <a href="../Classes/CIImage.html">CIImage</a> as &ldquo;outputImage&rdquo;.</p>
+
+<p>Note that when using this initializer, you should pass in a CVPixelBufferRef with one of the following Raw pixel format types
+    kCVPixelFormatType_14Bayer_GRBG, kCVPixelFormatType_14Bayer_RGGB, kCVPixelFormatType_14Bayer_BGGR, kCVPixelFormatType_14Bayer_GBRG
+as well as the root properties attachment from the CMSampleBufferRef.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIRAWFilter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

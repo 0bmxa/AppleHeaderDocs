@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>WKUIDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 WebKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/webView:commitPreviewingViewController:">- webView:commitPreviewingViewController:</option>
+		
+		<option value="//api/name/webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:">- webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:</option>
+		
+		<option value="//api/name/webView:previewingViewControllerForElement:defaultActions:">- webView:previewingViewControllerForElement:defaultActions:</option>
+		
+		<option value="//api/name/webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:">- webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:</option>
+		
+		<option value="//api/name/webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:">- webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:</option>
+		
+		<option value="//api/name/webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:">- webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:</option>
+		
+		<option value="//api/name/webView:runOpenPanelWithParameters:initiatedByFrame:completionHandler:">- webView:runOpenPanelWithParameters:initiatedByFrame:completionHandler:</option>
+		
+		<option value="//api/name/webView:shouldPreviewElement:">- webView:shouldPreviewElement:</option>
+		
+		<option value="//api/name/webViewDidClose:">- webViewDidClose:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">WKUIDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>WKUIDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A class conforming to the WKUIDelegate protocol provides methods for
+presenting native UI on behalf of a webpage.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:" title="webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:">&ndash;&nbsp;webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new web view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable WKWebView *)webView:(WKWebView *)<em>webView</em> createWebViewWithConfiguration:(WKWebViewConfiguration *)<em>configuration</em> forNavigationAction:(WKNavigationAction *)<em>navigationAction</em> windowFeatures:(WKWindowFeatures *)<em>windowFeatures</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>configuration</code></th>
+						<td><p>The configuration to use when creating the new web
+view.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>navigationAction</code></th>
+						<td><p>The navigation action causing the new web view to
+be created.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowFeatures</code></th>
+						<td><p>Window features requested by the webpage.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new web view or nil.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The web view returned must be created with the specified configuration. WebKit will load the request in the returned web view.</p>
+
+<p>If you do not implement this method, the web view will cancel the navigation.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKUIDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webViewDidClose:" title="webViewDidClose:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webViewDidClose:">&ndash;&nbsp;webViewDidClose:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies your app that the DOM window object&rsquo;s close() method completed successfully.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webViewDidClose:(WKWebView *)<em>webView</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Your app should remove the web view from the view hierarchy and update
+  the UI as needed, such as by closing the containing browser tab or window.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKUIDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:" title="webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:">&ndash;&nbsp;webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Displays a JavaScript alert panel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> runJavaScriptAlertPanelWithMessage:(NSString *)<em>message</em> initiatedByFrame:(WKFrameInfo *)<em>frame</em> completionHandler:(void ( ^ ) ( void ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>The message to display.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>Information about the frame whose JavaScript initiated this
+call.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>The completion handler to call after the alert
+panel has been dismissed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For user security, your app should call attention to the fact
+that a specific website controls the content in this panel. A simple forumla
+for identifying the controlling website is frame.request.URL.host.
+The panel should have a single OK button.</p>
+
+<p>If you do not implement this method, the web view will behave as if the user selected the OK button.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKUIDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:" title="webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:">&ndash;&nbsp;webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Displays a JavaScript confirm panel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> runJavaScriptConfirmPanelWithMessage:(NSString *)<em>message</em> initiatedByFrame:(WKFrameInfo *)<em>frame</em> completionHandler:(void ( ^ ) ( BOOL result ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>The message to display.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>Information about the frame whose JavaScript initiated this call.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>The completion handler to call after the confirm
+panel has been dismissed. Pass YES if the user chose OK, NO if the user
+chose Cancel.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For user security, your app should call attention to the fact
+that a specific website controls the content in this panel. A simple forumla
+for identifying the controlling website is frame.request.URL.host.
+The panel should have two buttons, such as OK and Cancel.</p>
+
+<p>If you do not implement this method, the web view will behave as if the user selected the Cancel button.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKUIDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:" title="webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:">&ndash;&nbsp;webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Displays a JavaScript text input panel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> runJavaScriptTextInputPanelWithPrompt:(NSString *)<em>prompt</em> defaultText:(nullable NSString *)<em>defaultText</em> initiatedByFrame:(WKFrameInfo *)<em>frame</em> completionHandler:(void ( ^ ) ( NSString *_Nullable result ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>defaultText</code></th>
+						<td><p>The initial text to display in the text entry field.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>Information about the frame whose JavaScript initiated this call.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>The completion handler to call after the text
+input panel has been dismissed. Pass the entered text if the user chose
+OK, otherwise nil.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>The message to display.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For user security, your app should call attention to the fact
+that a specific website controls the content in this panel. A simple forumla
+for identifying the controlling website is frame.request.URL.host.
+The panel should have two buttons, such as OK and Cancel, and a field in
+which to enter text.</p>
+
+<p>If you do not implement this method, the web view will behave as if the user selected the Cancel button.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKUIDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:shouldPreviewElement:" title="webView:shouldPreviewElement:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:shouldPreviewElement:">&ndash;&nbsp;webView:shouldPreviewElement:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows your app to determine whether or not the given element should show a preview.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)webView:(WKWebView *)<em>webView</em> shouldPreviewElement:(WKPreviewElementInfo *)<em>elementInfo</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>elementInfo</code></th>
+						<td><p>The elementInfo for the element the user has started touching.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>To disable previews entirely for the given element, return NO. Returning NO will prevent
+<a href="#//api/name/webView:previewingViewControllerForElement:defaultActions:">webView:previewingViewControllerForElement:defaultActions:</a> and <a href="#//api/name/webView:commitPreviewingViewController:">webView:commitPreviewingViewController:</a>
+from being invoked.</p>
+
+<p>This method will only be invoked for elements that have default preview in WebKit, which is
+limited to links. In the future, it could be invoked for additional elements.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKUIDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:previewingViewControllerForElement:defaultActions:" title="webView:previewingViewControllerForElement:defaultActions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:previewingViewControllerForElement:defaultActions:">&ndash;&nbsp;webView:previewingViewControllerForElement:defaultActions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows your app to provide a custom view controller to show when the given element is peeked.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable UIViewController *)webView:(WKWebView *)<em>webView</em> previewingViewControllerForElement:(WKPreviewElementInfo *)<em>elementInfo</em> defaultActions:(NSArray&lt;id&lt;WKPreviewActionItem&gt; &gt; *)<em>previewActions</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>elementInfo</code></th>
+						<td><p>The elementInfo for the element the user is peeking.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>defaultActions</code></th>
+						<td><p>An array of the actions that WebKit would use as previewActionItems for this element by
+default. These actions would be used if allowsLinkPreview is YES but these delegate methods have not been
+implemented, or if this delegate method returns nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returning a view controller will result in that view controller being displayed as a peek preview.
+To use the defaultActions, your app is responsible for returning whichever of those actions it wants in your
+view controller&rsquo;s implementation of -previewActionItems.</p>
+
+<p>Returning nil will result in WebKit&rsquo;s default preview behavior. <a href="#//api/name/webView:commitPreviewingViewController:">webView:commitPreviewingViewController:</a> will only be invoked
+if a non-nil view controller was returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKUIDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:commitPreviewingViewController:" title="webView:commitPreviewingViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:commitPreviewingViewController:">&ndash;&nbsp;webView:commitPreviewingViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows your app to pop to the view controller it created.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> commitPreviewingViewController:(UIViewController *)<em>previewingViewController</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>previewingViewController</code></th>
+						<td><p>The view controller that is being popped.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKUIDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:runOpenPanelWithParameters:initiatedByFrame:completionHandler:" title="webView:runOpenPanelWithParameters:initiatedByFrame:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:runOpenPanelWithParameters:initiatedByFrame:completionHandler:">&ndash;&nbsp;webView:runOpenPanelWithParameters:initiatedByFrame:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Displays a file upload panel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> runOpenPanelWithParameters:(WKOpenPanelParameters *)<em>parameters</em> initiatedByFrame:(WKFrameInfo *)<em>frame</em> completionHandler:(void ( ^ ) ( NSArray&lt;NSURL*&gt; *_Nullable URLs ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>Parameters describing the file upload control.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>Information about the frame whose file upload control initiated this call.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>The completion handler to call after open panel has been dismissed. Pass the selected URLs if the user chose OK, otherwise nil.</p>
+
+<p>If you do not implement this method, the web view will behave as if the user selected the Cancel button.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKUIDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

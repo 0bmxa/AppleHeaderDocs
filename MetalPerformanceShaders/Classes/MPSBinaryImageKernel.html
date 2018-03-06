@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSBinaryImageKernel Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/clipRect">clipRect</option>
+		
+		<option value="//api/name/primaryEdgeMode">primaryEdgeMode</option>
+		
+		<option value="//api/name/primaryOffset">primaryOffset</option>
+		
+		<option value="//api/name/secondaryEdgeMode">secondaryEdgeMode</option>
+		
+		<option value="//api/name/secondaryOffset">secondaryOffset</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:">- encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/encodeToCommandBuffer:primaryImage:secondaryImage:destinationImage:MPS_SWIFT_NAME:">- encodeToCommandBuffer:primaryImage:secondaryImage:destinationImage:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:">- encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:MPS_SWIFT_NAME:">- encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:">- initWithDevice:</option>
+		
+		<option value="//api/name/primarySourceRegionForDestinationSize:">- primarySourceRegionForDestinationSize:</option>
+		
+		<option value="//api/name/secondarySourceRegionForDestinationSize:">- secondarySourceRegionForDestinationSize:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSBinaryImageKernel Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSImageKernel.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSBinaryImageKernel
+@dependency This depends on Metal.framework</p><p>A MPSBinaryImageKernel consumes two MTLTextures and produces one MTLTexture.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/primaryOffset" title="primaryOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/primaryOffset">&nbsp;&nbsp;primaryOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The position of the destination clip rectangle origin relative to the primary source buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) MPSOffset primaryOffset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   primaryOffset</p><p>The offset is defined to be the position of <a href="#//api/name/clipRect">clipRect</a>.origin in source coordinates.
+Default: {0,0,0}, indicating that the top left corners of the <a href="#//api/name/clipRect">clipRect</a> and primary source image align.</p>
+
+<p>See Also: @ref MetalPerformanceShaders.h  subsubsection_mpsoffset</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/secondaryOffset" title="secondaryOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/secondaryOffset">&nbsp;&nbsp;secondaryOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The position of the destination clip rectangle origin relative to the secondary source buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) MPSOffset secondaryOffset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   secondaryOffset</p><p>The offset is defined to be the position of <a href="#//api/name/clipRect">clipRect</a>.origin in source coordinates.
+Default: {0,0,0}, indicating that the top left corners of the <a href="#//api/name/clipRect">clipRect</a> and secondary source image align.</p>
+
+<p>See Also: @ref MetalPerformanceShaders.h  subsubsection_mpsoffset</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/primaryEdgeMode" title="primaryEdgeMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/primaryEdgeMode">&nbsp;&nbsp;primaryEdgeMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Constants/MPSImageEdgeMode.html">MPSImageEdgeMode</a> to use when texture reads stray off the edge of the primary source image</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) MPSImageEdgeMode primaryEdgeMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   primaryEdgeMode</p><p>Most <a href="../Classes/MPSKernel.html">MPSKernel</a> objects can read off the edge of a source image. This can happen because of a
+negative offset property, because the offset + <a href="#//api/name/clipRect">clipRect</a>.size is larger than the
+source image or because the filter looks at neighboring pixels, such as a Convolution
+or morphology filter.   Default: usually MPSImageEdgeModeZero. (Some <a href="../Classes/MPSKernel.html">MPSKernel</a> types default
+to MPSImageEdgeModeClamp, because MPSImageEdgeModeZero is either not supported or
+would produce unexpected results.)</p>
+
+<p>See Also: @ref MetalPerformanceShaders.h  subsubsection_edgemode</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/secondaryEdgeMode" title="secondaryEdgeMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/secondaryEdgeMode">&nbsp;&nbsp;secondaryEdgeMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Constants/MPSImageEdgeMode.html">MPSImageEdgeMode</a> to use when texture reads stray off the edge of the secondary source image</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) MPSImageEdgeMode secondaryEdgeMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   secondaryEdgeMode</p><p>Most <a href="../Classes/MPSKernel.html">MPSKernel</a> objects can read off the edge of a source image. This can happen because of a
+negative offset property, because the offset + <a href="#//api/name/clipRect">clipRect</a>.size is larger than the
+source image or because the filter looks at neighboring pixels, such as a Convolution
+or morphology filter.   Default: usually MPSImageEdgeModeZero. (Some <a href="../Classes/MPSKernel.html">MPSKernel</a> types default
+to MPSImageEdgeModeClamp, because MPSImageEdgeModeZero is either not supported or
+would produce unexpected results.)</p>
+
+<p>See Also: @ref MetalPerformanceShaders.h  subsubsection_edgemode</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clipRect" title="clipRect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clipRect">&nbsp;&nbsp;clipRect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An optional clip rectangle to use when writing data. Only the pixels in the rectangle will be overwritten.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) MTLRegion clipRect</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   clipRect</p><p>A MTLRegion that indicates which part of the destination to overwrite. If the clipRect does not lie
+completely within the destination image, the intersection between clip rectangle and destination bounds is
+used.   Default: MPSRectNoClip (<a href="../Classes/MPSKernel.html">MPSKernel</a>::MPSRectNoClip) indicating the entire image.</p>
+
+<p>See Also: @ref MetalPerformanceShaders.h subsubsection_clipRect</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:" title="initWithDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:">&ndash;&nbsp;initWithDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Standard init with default properties per filter type</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device that the filter will be used on. May not be NULL.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a pointer to the newly initialized object. This will fail, returning
+nil if the device is not supported. Devices must be
+MTLFeatureSet_iOS_GPUFamily2_v1 or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new <a href="../Classes/MPSKernel.html">MPSKernel</a> object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>While the standard NSSecureCoding/NSCoding method
+-initWithCoder: should work, since the file can&rsquo;t
+know which device your data is allocated on, we
+have to guess and may guess incorrectly.  To avoid
+that problem, use initWithCoder:device instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Attempt to apply a <a href="../Classes/MPSKernel.html">MPSKernel</a> to a texture in place.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> primaryTexture:(nonnull id&lt;MTLTexture&gt;)<em>primaryTexture</em> inPlaceSecondaryTexture:(__nonnull id&lt;MTLTexture&gt; __strong *__nonnull)<em>inPlaceSecondaryTexture</em> fallbackCopyAllocator:(nullable MPSCopyAllocator)<em>copyAllocator</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>primaryTexture</code></th>
+						<td><p>A pointer to a valid MTLTexture containing the
+primary source image. It will not be overwritten.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inPlaceSecondaryTexture</code></th>
+						<td><p>A pointer to a valid MTLTexture containing secondary image.
+On success, the image contents and possibly texture itself
+will be replaced with the result image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>copyAllocator</code></th>
+						<td><p>An optional block to allocate a new texture to hold the
+results, in case in-place operation is not possible. The
+allocator may use a different MTLPixelFormat or size than
+the original texture. You may enqueue operations on the
+provided MTLCommandBuffer using the provided
+MTLComputeCommandEncoder to initialize the texture contents.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>On success, YES is returned. The texture may have been replaced with a new
+texture if a copyAllocator was provided.  On failure, NO is returned. The
+texture is unmodified.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method attempts to apply the <a href="../Classes/MPSKernel.html">MPSKernel</a> in place on a texture.</p>
+
+<p>In-place operation means that the same texture is used both to hold the input
+image and the results. Operating in-place can be an excellent way to reduce
+resource utilization, and save time and energy. While simple Metal kernels can
+not operate in place because textures can not be readable and writable at the
+same time, some MPSKernels can operate in place because they use
+multi-pass algorithms. Whether a <a href="../Classes/MPSKernel.html">MPSKernel</a> can operate in-place can
+depend on current hardware, operating system revision and the parameters
+and properties passed to it. You should never assume that a <a href="../Classes/MPSKernel.html">MPSKernel</a> will
+continue to work in place, even if you have observed it doing so before.</p>
+
+<p>If the operation succeeds in-place, YES is returned.  If the in-place operation
+fails and no copyAllocator is provided, then NO is returned. In neither
+case is the pointer held at *texture modified.</p>
+
+<p>Failure during in-place operation is common. You may find it simplifies your
+code to provide a copyAllocator. When an in-place filter fails, your
+copyAllocator will be invoked to create a new texture in which to write
+the results, allowing the filter to proceed reliably out-of-place. The
+original texture will be released, replaced with a pointer to the new texture
+and YES will be returned. If the allocator returns an invalid texture, it is
+released, *texture remains unmodified and NO is returned.  Please see the
+MPSCopyAllocator definition for a sample allocator implementation.</p>
+
+<p>Note: Image filters that look at neighboring pixel values may actually consume more
+memory when operating in place than out of place. Many such operations are
+tiled internally to save intermediate texture storage, but can not tile when
+operating in place. The memory savings for tiling is however very short term,
+typically the lifetime of the MTLCommandBuffer.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Attempt to apply a <a href="../Classes/MPSKernel.html">MPSKernel</a> to a texture in place.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> inPlacePrimaryTexture:(__nonnull id&lt;MTLTexture&gt; __strong *__nonnull)<em>inPlacePrimaryTexture</em> secondaryTexture:(nonnull id&lt;MTLTexture&gt;)<em>secondaryTexture</em> fallbackCopyAllocator:(nullable MPSCopyAllocator)<em>copyAllocator</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inPlacePrimaryTexture</code></th>
+						<td><p>A pointer to a valid MTLTexture containing secondary image.
+On success, the image contents and possibly texture itself
+will be replaced with the result image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>secondaryTexture</code></th>
+						<td><p>A pointer to a valid MTLTexture containing the
+primary source image. It will not be overwritten.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>copyAllocator</code></th>
+						<td><p>An optional block to allocate a new texture to hold the
+results, in case in-place operation is not possible. The
+allocator may use a different MTLPixelFormat or size than
+the original texture. You may enqueue operations on the
+provided MTLCommandBuffer using the provided
+MTLComputeCommandEncoder to initialize the texture contents.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>On success, YES is returned. The texture may have been replaced with a new
+texture if a copyAllocator was provided.  On failure, NO is returned. The
+texture is unmodified.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method attempts to apply the <a href="../Classes/MPSKernel.html">MPSKernel</a> in place on a texture.
+<code>
+In-place operation means that the same texture is used both to hold the input
+image and the results. Operating in-place can be an excellent way to reduce
+resource utilization, and save time and energy. While simple Metal kernels can
+not operate in place because textures can not be readable and writable at the
+same time, some MPSKernels can operate in place because they use
+multi-pass algorithms. Whether a MPSKernel can operate in-place can
+depend on current hardware, operating system revision and the parameters
+and properties passed to it. You should never assume that a MPSKernel will
+continue to work in place, even if you have observed it doing so before.
+</code>
+If the operation succeeds in-place, YES is returned.  If the in-place operation
+fails and no copyAllocator is provided, then NO is returned. In neither
+case is the pointer held at *texture modified.</p>
+
+<p>Failure during in-place operation is common. You may find it simplifies your
+code to provide a copyAllocator. When an in-place filter fails, your
+copyAllocator will be invoked to create a new texture in which to write
+the results, allowing the filter to proceed reliably out-of-place. The
+original texture will be released, replaced with a pointer to the new texture
+and YES will be returned. If the allocator returns an invalid texture, it is
+released, *texture remains unmodified and NO is returned.  Please see the
+MPSCopyAllocator definition for a sample allocator implementation.</p>
+
+<p>Note: Image filters that look at neighboring pixel values may actually consume more
+memory when operating in place than out of place. Many such operations are
+tiled internally to save intermediate texture storage, but can not tile when
+operating in place. The memory savings for tiling is however very short term,
+typically the lifetime of the MTLCommandBuffer.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode a <a href="../Classes/MPSKernel.html">MPSKernel</a> into a command Buffer.  The operation shall proceed out-of-place.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> primaryTexture:(nonnull id&lt;MTLTexture&gt;)<em>primaryTexture</em> secondaryTexture:(nonnull id&lt;MTLTexture&gt;)<em>secondaryTexture</em> destinationTexture:(nonnull id&lt;MTLTexture&gt;)<em>destinationTexture</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>primaryTexture</code></th>
+						<td><p>A valid MTLTexture containing the primary source image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>secondaryTexture</code></th>
+						<td><p>A valid MTLTexture containing the secondary source image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationTexture</code></th>
+						<td><p>A valid MTLTexture to be overwritten by result image. destinationTexture may not alias the source textures.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:primaryImage:secondaryImage:destinationImage:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:primaryImage:secondaryImage:destinationImage:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:primaryImage:secondaryImage:destinationImage:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:primaryImage:secondaryImage:destinationImage:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode a <a href="../Classes/MPSKernel.html">MPSKernel</a> into a command Buffer.  The operation shall proceed out-of-place.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> primaryImage:(MPSImage *__nonnull)<em>primaryImage</em> secondaryImage:(MPSImage *__nonnull)<em>secondaryImage</em> destinationImage:(MPSImage *__nonnull)<em>destinationImage</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>primaryImage</code></th>
+						<td><p>A valid <a href="../Classes/MPSImage.html">MPSImage</a> containing the primary source image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>secondaryImage</code></th>
+						<td><p>A valid <a href="../Classes/MPSImage.html">MPSImage</a> containing the secondary source image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationImage</code></th>
+						<td><p>A valid <a href="../Classes/MPSImage.html">MPSImage</a> to be overwritten by result image. destinationImage may not alias the source images.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/primarySourceRegionForDestinationSize:" title="primarySourceRegionForDestinationSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/primarySourceRegionForDestinationSize:">&ndash;&nbsp;primarySourceRegionForDestinationSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determine the region of the source texture that will be read for a encode operation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSRegion)primarySourceRegionForDestinationSize:(MTLSize)<em>destinationSize</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationSize</code></th>
+						<td><p>The size of the full virtual destination image.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The area in the virtual source image that will be read.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>primarySourceRegionForDestinationSize: is used to determine which region of the
+primaryTexture will be read by encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture
+(and in-place variants) when the filter runs. This information may be needed if the
+primary source image is broken into multiple textures.  The size of the full
+(untiled) destination image is provided. The region of the full (untiled)
+source image that will be read is returned. You can then piece together an
+appropriate texture containing that information for use in your tiled context.</p>
+
+<p>The function will consult the MPSBinaryImageKernel <a href="#//api/name/primaryOffset">primaryOffset</a> and <a href="#//api/name/clipRect">clipRect</a> parameters,
+to determine the full region read by the function. Other parameters such as
+kernelHeight and kernelWidth will be consulted as necessary. All properties
+should be set to intended values prior to calling primarySourceRegionForDestinationSize:.</p>
+
+<p>Caution: This function operates using global image coordinates, but
+-encodeToCommandBuffer:&hellip; uses coordinates local to the source and
+destination image textures. Consequently, the <a href="#//api/name/primaryOffset">primaryOffset</a> and <a href="#//api/name/clipRect">clipRect</a>
+attached to this object will need to be updated using a global to
+local coordinate transform before -encodeToCommandBuffer:&hellip; is
+called.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/secondarySourceRegionForDestinationSize:" title="secondarySourceRegionForDestinationSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/secondarySourceRegionForDestinationSize:">&ndash;&nbsp;secondarySourceRegionForDestinationSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determine the region of the source texture that will be read for a encode operation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSRegion)secondarySourceRegionForDestinationSize:(MTLSize)<em>destinationSize</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationSize</code></th>
+						<td><p>The size of the full virtual destination image.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The area in the virtual source image that will be read.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>secondarySourceRegionForDestinationSize: is used to determine which region of the
+sourceTexture will be read by encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture
+(and in-place variants) when the filter runs. This information may be needed if the
+secondary source image is broken into multiple textures.  The size of the full
+(untiled) destination image is provided. The region of the full (untiled)
+secondary source image that will be read is returned. You can then piece together an
+appropriate texture containing that information for use in your tiled context.</p>
+
+<p>The function will consult the MPSBinaryImageKernel <a href="#//api/name/secondaryOffset">secondaryOffset</a> and <a href="#//api/name/clipRect">clipRect</a>
+parameters, to determine the full region read by the function. Other parameters
+such as kernelHeight and kernelWidth will be consulted as necessary.  All properties
+should be set to intended values prior to calling secondarySourceRegionForDestinationSize:.</p>
+
+<p>Caution: This function operates using global image coordinates, but
+-encodeToCommandBuffer:&hellip; uses coordinates local to the source and
+destination image textures. Consequently, the <a href="#//api/name/secondaryOffset">secondaryOffset</a> and <a href="#//api/name/clipRect">clipRect</a>
+attached to this object will need to be updated using a global to
+local coordinate transform before -encodeToCommandBuffer:&hellip; is
+called.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

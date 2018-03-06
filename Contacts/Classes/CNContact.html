@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CNContact Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Contacts Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/birthday">birthday</option>
+		
+		<option value="//api/name/contactRelations">contactRelations</option>
+		
+		<option value="//api/name/contactType">contactType</option>
+		
+		<option value="//api/name/dates">dates</option>
+		
+		<option value="//api/name/departmentName">departmentName</option>
+		
+		<option value="//api/name/emailAddresses">emailAddresses</option>
+		
+		<option value="//api/name/familyName">familyName</option>
+		
+		<option value="//api/name/givenName">givenName</option>
+		
+		<option value="//api/name/identifier">identifier</option>
+		
+		<option value="//api/name/imageData">imageData</option>
+		
+		<option value="//api/name/instantMessageAddresses">instantMessageAddresses</option>
+		
+		<option value="//api/name/jobTitle">jobTitle</option>
+		
+		<option value="//api/name/middleName">middleName</option>
+		
+		<option value="//api/name/namePrefix">namePrefix</option>
+		
+		<option value="//api/name/nameSuffix">nameSuffix</option>
+		
+		<option value="//api/name/nickname">nickname</option>
+		
+		<option value="//api/name/nonGregorianBirthday">nonGregorianBirthday</option>
+		
+		<option value="//api/name/note">note</option>
+		
+		<option value="//api/name/organizationName">organizationName</option>
+		
+		<option value="//api/name/phoneNumbers">phoneNumbers</option>
+		
+		<option value="//api/name/phoneticFamilyName">phoneticFamilyName</option>
+		
+		<option value="//api/name/phoneticGivenName">phoneticGivenName</option>
+		
+		<option value="//api/name/phoneticMiddleName">phoneticMiddleName</option>
+		
+		<option value="//api/name/postalAddresses">postalAddresses</option>
+		
+		<option value="//api/name/previousFamilyName">previousFamilyName</option>
+		
+		<option value="//api/name/socialProfiles">socialProfiles</option>
+		
+		<option value="//api/name/thumbnailImageData">thumbnailImageData</option>
+		
+		<option value="//api/name/urlAddresses">urlAddresses</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/comparatorForNameSortOrder:">+ comparatorForNameSortOrder:</option>
+		
+		<option value="//api/name/descriptorForAllComparatorKeys">+ descriptorForAllComparatorKeys</option>
+		
+		<option value="//api/name/localizedStringForKey:">+ localizedStringForKey:</option>
+		
+		<option value="//api/name/predicateForContactsInContainerWithIdentifier:">+ predicateForContactsInContainerWithIdentifier:</option>
+		
+		<option value="//api/name/predicateForContactsInGroupWithIdentifier:">+ predicateForContactsInGroupWithIdentifier:</option>
+		
+		<option value="//api/name/predicateForContactsMatchingName:">+ predicateForContactsMatchingName:</option>
+		
+		<option value="//api/name/predicateForContactsWithIdentifiers:">+ predicateForContactsWithIdentifiers:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/areKeysAvailable:">- areKeysAvailable:</option>
+		
+		<option value="//api/name/isKeyAvailable:">- isKeyAvailable:</option>
+		
+		<option value="//api/name/isUnifiedWithContactWithIdentifier:">- isUnifiedWithContactWithIdentifier:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CNContact Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying<br />NSMutableCopying<br />NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CNContact.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>CNContact is thread safe.</p>
+
+<p>If using a CNContact instance where you are not certain of the keys that were fetched, use <a href="#//api/name/isKeyAvailable:">isKeyAvailable:</a> or <a href="#//api/name/areKeysAvailable:">areKeysAvailable:</a>. If these return NO you need to refetch the contact by the contact <a href="#//api/name/identifier">identifier</a> with the keys you want to fetch. Accessing a property that was not fetched will throw CNContactPropertyNotFetchedExceptionName.</p><p>Can only use these predicates with <a href="../Classes/CNContactStore.html">CNContactStore</a> and <a href="../Classes/CNContactFetchRequest.html">CNContactFetchRequest</a>.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/identifier" title="identifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/identifier">&nbsp;&nbsp;identifier</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The identifier is unique among contacts on the device. It can be saved and used for fetching contacts next application launch.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *identifier</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The identifier is unique among contacts on the device. It can be saved and used for fetching contacts next application launch.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contactType" title="contactType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contactType">&nbsp;&nbsp;contactType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, NS_NONATOMIC_IOSONLY) CNContactType contactType</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/namePrefix" title="namePrefix"></a>
+	<h3 class="method-title"><code><a href="#//api/name/namePrefix">&nbsp;&nbsp;namePrefix</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *namePrefix</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/givenName" title="givenName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/givenName">&nbsp;&nbsp;givenName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *givenName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/middleName" title="middleName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/middleName">&nbsp;&nbsp;middleName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *middleName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/familyName" title="familyName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/familyName">&nbsp;&nbsp;familyName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *familyName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/previousFamilyName" title="previousFamilyName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/previousFamilyName">&nbsp;&nbsp;previousFamilyName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *previousFamilyName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nameSuffix" title="nameSuffix"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nameSuffix">&nbsp;&nbsp;nameSuffix</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *nameSuffix</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nickname" title="nickname"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nickname">&nbsp;&nbsp;nickname</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *nickname</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/organizationName" title="organizationName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/organizationName">&nbsp;&nbsp;organizationName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *organizationName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/departmentName" title="departmentName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/departmentName">&nbsp;&nbsp;departmentName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *departmentName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/jobTitle" title="jobTitle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/jobTitle">&nbsp;&nbsp;jobTitle</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *jobTitle</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/phoneticGivenName" title="phoneticGivenName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/phoneticGivenName">&nbsp;&nbsp;phoneticGivenName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *phoneticGivenName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/phoneticMiddleName" title="phoneticMiddleName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/phoneticMiddleName">&nbsp;&nbsp;phoneticMiddleName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *phoneticMiddleName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/phoneticFamilyName" title="phoneticFamilyName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/phoneticFamilyName">&nbsp;&nbsp;phoneticFamilyName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *phoneticFamilyName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *NS_AVAILABLE ( 10 _12 , 10 _0</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/note" title="note"></a>
+	<h3 class="method-title"><code><a href="#//api/name/note">&nbsp;&nbsp;note</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *note</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageData" title="imageData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageData">&nbsp;&nbsp;imageData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSData *imageData</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/thumbnailImageData" title="thumbnailImageData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/thumbnailImageData">&nbsp;&nbsp;thumbnailImageData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSData *thumbnailImageData</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/phoneNumbers" title="phoneNumbers"></a>
+	<h3 class="method-title"><code><a href="#//api/name/phoneNumbers">&nbsp;&nbsp;phoneNumbers</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSArray&lt;CNLabeledValue&lt;CNPhoneNumber*&gt; *&gt; *phoneNumbers</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/emailAddresses" title="emailAddresses"></a>
+	<h3 class="method-title"><code><a href="#//api/name/emailAddresses">&nbsp;&nbsp;emailAddresses</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSArray&lt;CNLabeledValue&lt;NSString*&gt; *&gt; *emailAddresses</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/postalAddresses" title="postalAddresses"></a>
+	<h3 class="method-title"><code><a href="#//api/name/postalAddresses">&nbsp;&nbsp;postalAddresses</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSArray&lt;CNLabeledValue&lt;CNPostalAddress*&gt; *&gt; *postalAddresses</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/urlAddresses" title="urlAddresses"></a>
+	<h3 class="method-title"><code><a href="#//api/name/urlAddresses">&nbsp;&nbsp;urlAddresses</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSArray&lt;CNLabeledValue&lt;NSString*&gt; *&gt; *urlAddresses</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contactRelations" title="contactRelations"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contactRelations">&nbsp;&nbsp;contactRelations</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSArray&lt;CNLabeledValue&lt;CNContactRelation*&gt; *&gt; *contactRelations</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/socialProfiles" title="socialProfiles"></a>
+	<h3 class="method-title"><code><a href="#//api/name/socialProfiles">&nbsp;&nbsp;socialProfiles</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSArray&lt;CNLabeledValue&lt;CNSocialProfile*&gt; *&gt; *socialProfiles</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/instantMessageAddresses" title="instantMessageAddresses"></a>
+	<h3 class="method-title"><code><a href="#//api/name/instantMessageAddresses">&nbsp;&nbsp;instantMessageAddresses</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSArray&lt;CNLabeledValue&lt;CNInstantMessageAddress*&gt; *&gt; *instantMessageAddresses</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/birthday" title="birthday"></a>
+	<h3 class="method-title"><code><a href="#//api/name/birthday">&nbsp;&nbsp;birthday</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The Gregorian birthday.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSDateComponents *birthday</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The Gregorian birthday.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nonGregorianBirthday" title="nonGregorianBirthday"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nonGregorianBirthday">&nbsp;&nbsp;nonGregorianBirthday</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The alternate <a href="#//api/name/birthday">birthday</a> (Lunisolar).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSDateComponents *nonGregorianBirthday</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The alternate <a href="#//api/name/birthday">birthday</a> (Lunisolar).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dates" title="dates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dates">&nbsp;&nbsp;dates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Other Gregorian dates (anniversaries, etc).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, NS_NONATOMIC_IOSONLY) NSArray&lt;CNLabeledValue&lt;NSDateComponents*&gt; *&gt; *dates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Other Gregorian dates (anniversaries, etc).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isKeyAvailable:" title="isKeyAvailable:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isKeyAvailable:">&ndash;&nbsp;isKeyAvailable:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns YES if the value for the specified key was fetched.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isKeyAvailable:(NSString *)<em>key</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns YES if the value for the specified key was fetched.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/areKeysAvailable:" title="areKeysAvailable:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/areKeysAvailable:">&ndash;&nbsp;areKeysAvailable:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns YES if the values for the keys specified by all the descriptors were fetched.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)areKeysAvailable:(NSArray&lt;id&lt;CNKeyDescriptor&gt; &gt; *)<em>keyDescriptors</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns YES if the values for the keys specified by all the descriptors were fetched.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localizedStringForKey:" title="localizedStringForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localizedStringForKey:">+&nbsp;localizedStringForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a user displayable property name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)localizedStringForKey:(NSString *)<em>key</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns a user displayable property name.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/comparatorForNameSortOrder:" title="comparatorForNameSortOrder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/comparatorForNameSortOrder:">+&nbsp;comparatorForNameSortOrder:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The contact comparator for a given sort order.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSComparator)comparatorForNameSortOrder:(CNContactSortOrder)<em>sortOrder</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The contact comparator for a given sort order.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/descriptorForAllComparatorKeys" title="descriptorForAllComparatorKeys"></a>
+	<h3 class="method-title"><code><a href="#//api/name/descriptorForAllComparatorKeys">+&nbsp;descriptorForAllComparatorKeys</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use to fetch all contact keys required for the contact sort comparator.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id&lt;CNKeyDescriptor&gt;)descriptorForAllComparatorKeys</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Use to fetch all contact keys required for the contact sort comparator.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isUnifiedWithContactWithIdentifier:" title="isUnifiedWithContactWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isUnifiedWithContactWithIdentifier:">&ndash;&nbsp;isUnifiedWithContactWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns YES if the receiver was fetched as a unified contact and includes the contact having contactIdentifier in its unification</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isUnifiedWithContactWithIdentifier:(NSString *)<em>contactIdentifier</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns YES if the receiver was fetched as a unified contact and includes the contact having contactIdentifier in its unification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Predicates Methods" name="task_Predicates Methods"></a>
+						<h2 class="task-title">Predicates Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/predicateForContactsMatchingName:" title="predicateForContactsMatchingName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/predicateForContactsMatchingName:">+&nbsp;predicateForContactsMatchingName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>To fetch contacts matching a name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSPredicate *)predicateForContactsMatchingName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The name can contain any number of words.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact+Predicates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/predicateForContactsWithIdentifiers:" title="predicateForContactsWithIdentifiers:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/predicateForContactsWithIdentifiers:">+&nbsp;predicateForContactsWithIdentifiers:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>To fetch contacts matching contact identifiers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSPredicate *)predicateForContactsWithIdentifiers:(NSArray&lt;NSString*&gt; *)<em>identifiers</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>To fetch contacts matching contact identifiers.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContact+Predicates.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/predicateForContactsInGroupWithIdentifier:" title="predicateForContactsInGroupWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/predicateForContactsInGroupWithIdentifier:">+&nbsp;predicateForContactsInGroupWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSPredicate *)predicateForContactsInGroupWithIdentifier:(NSString *)<em>groupIdentifier</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/predicateForContactsInContainerWithIdentifier:" title="predicateForContactsInContainerWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/predicateForContactsInContainerWithIdentifier:">+&nbsp;predicateForContactsInContainerWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSPredicate *)predicateForContactsInContainerWithIdentifier:(NSString *)<em>containerIdentifier</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSState Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/isTemporary">isTemporary</option>
+		
+		<option value="//api/name/label">label</option>
+		
+		<option value="//api/name/readCount">readCount</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSState Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSState.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class          MPSState
+@dependency     This depends on Metal Framework</p><p>Some MPS CNN kernels produce additional information beyond a
+<a href="../Classes/MPSImage.html">MPSImage</a>. These may be pooling indices where the result came from,
+convolution weights, or other information not contained in the
+usual <a href="../Classes/MPSImage.html">MPSImage</a> result from a <a href="../Classes/MPSCNNKernel.html">MPSCNNKernel</a>. A MPSState object
+typically contains one or more expensive MTLResources such as
+textures or buffers to store this information.  It provides a
+base class with interfaces for managing this storage. Child
+classes may add additional functionality specific to their
+contents.</p>
+
+<p>Some MPSState objects are temporary. Temporary state objects,
+like MPSTemporaryImages and Matrices, are for very short lived storage,
+perhaps just a few lines of code within the scope of a single
+MTLCommandBuffer.  They are very efficient for storage, as several
+temporary objects can share the same memory over the course of a
+MTLCommandBuffer. This can improve both memory usage and time spent
+in the kernel wiring down memory and such. You may find that some
+large CNN tasks can not be computed without them, as non-temporary
+storage would simply take up too much memory.</p>
+
+<p>In exchange, the lifetime of the underlying storage in temporary
+MPSState objects needs to be carefully managed. ARC often waits
+until the end of scope to release objects. Temporary storage often
+needs to be released sooner than that. Consequently the lifetime of
+the data in the underlying MTLResources is managed by a <a href="#//api/name/readCount">readCount</a>
+property. Each time a <a href="../Classes/MPSCNNKernel.html">MPSCNNKernel</a> reads a temporary MPSState object
+the <a href="#//api/name/readCount">readCount</a> is automatically decremented. When it reaches zero, the
+underlying storage is recycled for use by other MPS temporary objects,
+and the data is becomes undefined.  If you need to consume the data
+multiple times, you should set the <a href="#//api/name/readCount">readCount</a> to a larger number to
+prevent the data from becomming undefined.  You may set the <a href="#//api/name/readCount">readCount</a>
+to 0 yourself to return the storage to MPS, if for any reason, you
+realize that the MPSState object will no longer be used.</p>
+
+<p>The contents of a temporary MPSState object are only valid from
+creation to the time the <a href="#//api/name/readCount">readCount</a> reaches 0. The data is only valid
+for the MTLCommandBuffer on which it was created.  Non-temporary
+MPSState objects are valid on any MTLCommandBuffer on the same
+device until they are released.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readCount" title="readCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readCount">&nbsp;&nbsp;readCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) NSUInteger readCount</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isTemporary" title="isTemporary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isTemporary">&nbsp;&nbsp;isTemporary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) BOOL isTemporary</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/label" title="label"></a>
+	<h3 class="method-title"><code><a href="#//api/name/label">&nbsp;&nbsp;label</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A string to help identify this object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy, atomic) NSString *label</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property label</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSState.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

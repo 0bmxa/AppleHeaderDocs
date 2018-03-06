@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAudioUnitSampler Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/globalTuning">globalTuning</option>
+		
+		<option value="//api/name/masterGain">masterGain</option>
+		
+		<option value="//api/name/stereoPan">stereoPan</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/loadAudioFilesAtURLs:error:">- loadAudioFilesAtURLs:error:</option>
+		
+		<option value="//api/name/loadInstrumentAtURL:error:">- loadInstrumentAtURL:error:</option>
+		
+		<option value="//api/name/loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:">- loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAudioUnitSampler Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVAudioUnitMIDIInstrument.html">AVAudioUnitMIDIInstrument</a> : <a href="../Classes/AVAudioUnit.html">AVAudioUnit</a> : <a href="../Classes/AVAudioNode.html">AVAudioNode</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAudioUnitSampler.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVAudioUnitSampler</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:" title="loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:">&ndash;&nbsp;loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>loads a specific instrument from the specified sound bank
+    @param bankURL
+        URL for a Soundbank file. The file can be either a DLS bank (.dls) or a SoundFont bank (.sf2).
+    @param program
+        program number for the instrument to load
+    @param bankMSB
+        MSB for the bank number for the instrument to load.  This is usually 0x79 for melodic
+        instruments and 0x78 for percussion instruments.
+    @param bankLSB
+        LSB for the bank number for the instrument to load.  This is often 0, and represents the &ldquo;bank variation&rdquo;.
+    @param outError
+        the status of the operation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadSoundBankInstrumentAtURL:(NSURL *)<em>bankURL</em> program:(uint8_t)<em>program</em> bankMSB:(uint8_t)<em>bankMSB</em> bankLSB:(uint8_t)<em>bankLSB</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioUnitSampler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadInstrumentAtURL:error:" title="loadInstrumentAtURL:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadInstrumentAtURL:error:">&ndash;&nbsp;loadInstrumentAtURL:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>configures the sampler by loading the specified preset file.
+    @param instrumentURL
+        URL to the preset file or audio file
+    @param outError
+        the status of the operation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadInstrumentAtURL:(NSURL *)<em>instrumentURL</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method loadInstrumentAtURL:error:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioUnitSampler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadAudioFilesAtURLs:error:" title="loadAudioFilesAtURLs:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadAudioFilesAtURLs:error:">&ndash;&nbsp;loadAudioFilesAtURLs:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>configures the sampler by loading a set of audio files.
+    @param audioFiles
+        array of URLs for audio files to be loaded
+    @param outError
+        the status of the operation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadAudioFilesAtURLs:(NSArray&lt;NSURL*&gt; *)<em>audioFiles</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method loadAudioFilesAtURLs:error:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioUnitSampler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stereoPan" title="stereoPan"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stereoPan">&nbsp;&nbsp;stereoPan</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property stereoPan
+    @abstract
+        adjusts the pan for all the notes played.
+        Range:     -1 -> +1
+        Default:   0</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) float stereoPan</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property stereoPan
+    @abstract
+        adjusts the pan for all the notes played.
+        Range:     -1 -> +1
+        Default:   0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioUnitSampler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/masterGain" title="masterGain"></a>
+	<h3 class="method-title"><code><a href="#//api/name/masterGain">&nbsp;&nbsp;masterGain</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property masterGain
+    @abstract
+        adjusts the gain of all the notes played
+        Range:     -90.0 -> +12 db
+        Default: 0 db</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) float masterGain</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property masterGain
+    @abstract
+        adjusts the gain of all the notes played
+        Range:     -90.0 -> +12 db
+        Default: 0 db</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioUnitSampler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/globalTuning" title="globalTuning"></a>
+	<h3 class="method-title"><code><a href="#//api/name/globalTuning">&nbsp;&nbsp;globalTuning</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property globalTuning
+    @abstract
+        adjusts the tuning of all the notes played.
+        Range:     -2400 -> +2400 cents
+        Default:   0</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) float globalTuning</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property globalTuning
+    @abstract
+        adjusts the tuning of all the notes played.
+        Range:     -2400 -> +2400 cents
+        Default:   0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioUnitSampler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

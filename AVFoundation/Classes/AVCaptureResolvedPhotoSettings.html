@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureResolvedPhotoSettings Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_2">_2</option>
+		
+		<option value="//api/name/flashEnabled">flashEnabled</option>
+		
+		<option value="//api/name/livePhotoMovieDimensions">livePhotoMovieDimensions</option>
+		
+		<option value="//api/name/photoDimensions">photoDimensions</option>
+		
+		<option value="//api/name/previewDimensions">previewDimensions</option>
+		
+		<option value="//api/name/rawPhotoDimensions">rawPhotoDimensions</option>
+		
+		<option value="//api/name/stillImageStabilizationEnabled">stillImageStabilizationEnabled</option>
+		
+		<option value="//api/name/uniqueID">uniqueID</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureResolvedPhotoSettings Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCapturePhotoOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureResolvedPhotoSettings
+@abstract
+    An immutable object produced by callbacks in each and every <a href="../Protocols/AVCapturePhotoCaptureDelegate.html">AVCapturePhotoCaptureDelegate</a> protocol method.</p>
+
+<p>@discussion
+    When you initiate a photo capture request using -capturePhotoWithSettings:delegate:, some of your settings are not yet certain. For instance, auto flash and auto still image stabilization allow the <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a> to decide just in time whether to employ flash or still image stabilization, depending on the current scene. Once the request is issued, <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a> begins the capture, resolves the uncertain settings, and in its first callback informs you of its choices through an AVCaptureResolvedPhotoSettings object. This same object is presented to all the callbacks fired for a particular photo capture request. Its <a href="#//api/name/uniqueID">uniqueID</a> property matches that of the <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a> instance you used to initiate the photo request.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/uniqueID" title="uniqueID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uniqueID">&nbsp;&nbsp;uniqueID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property uniqueID
+@abstract
+    uniqueID matches that of the <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a> instance you passed to -capturePhotoWithSettings:delegate:.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) int64_t uniqueID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property uniqueID
+@abstract
+    uniqueID matches that of the <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a> instance you passed to -capturePhotoWithSettings:delegate:.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/photoDimensions" title="photoDimensions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/photoDimensions">&nbsp;&nbsp;photoDimensions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property photoDimensions
+@abstract
+    The resolved dimensions of the photo buffer that will be delivered to the -captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error: callback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) CMVideoDimensions photoDimensions</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property photoDimensions
+@abstract
+    The resolved dimensions of the photo buffer that will be delivered to the -captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error: callback.</p>
+
+<p>@discussion
+    If you request a RAW capture with no processed companion image, photoDimensions resolve to { 0, 0 }.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rawPhotoDimensions" title="rawPhotoDimensions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rawPhotoDimensions">&nbsp;&nbsp;rawPhotoDimensions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property rawPhotoDimensions
+@abstract
+    The resolved dimensions of the RAW photo buffer that will be delivered to the -captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error: callback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) CMVideoDimensions rawPhotoDimensions</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property rawPhotoDimensions
+@abstract
+    The resolved dimensions of the RAW photo buffer that will be delivered to the -captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error: callback.</p>
+
+<p>@discussion
+    If you request a non-RAW capture, rawPhotoDimensions resolve to { 0, 0 }.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/previewDimensions" title="previewDimensions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/previewDimensions">&nbsp;&nbsp;previewDimensions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property previewDimensions
+@abstract
+    The resolved dimensions of the preview photo buffer that will be delivered to the -captureOutput:didFinishProcessing{Photo | RawPhoto}&hellip; <a href="../Protocols/AVCapturePhotoCaptureDelegate.html">AVCapturePhotoCaptureDelegate</a> callbacks.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) CMVideoDimensions previewDimensions</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property previewDimensions
+@abstract
+    The resolved dimensions of the preview photo buffer that will be delivered to the -captureOutput:didFinishProcessing{Photo | RawPhoto}&hellip; <a href="../Protocols/AVCapturePhotoCaptureDelegate.html">AVCapturePhotoCaptureDelegate</a> callbacks.</p>
+
+<p>@discussion
+    If you don&rsquo;t request a preview image, previewDimensions resolve to { 0, 0 }.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property embeddedThumbnailDimensions
+@abstract
+    The resolved dimensions of the embedded thumbnail that will be written to the processed or RAW photo delivered to the -captureOutput:didFinishProcessing{Photo | RawPhoto}&hellip; <a href="../Protocols/AVCapturePhotoCaptureDelegate.html">AVCapturePhotoCaptureDelegate</a> callbacks.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) CMVideoDimensions embeddedThumbnailDimensions NS_AVAILABLE_IOS ( 11 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property embeddedThumbnailDimensions
+@abstract
+    The resolved dimensions of the embedded thumbnail that will be written to the processed or RAW photo delivered to the -captureOutput:didFinishProcessing{Photo | RawPhoto}&hellip; <a href="../Protocols/AVCapturePhotoCaptureDelegate.html">AVCapturePhotoCaptureDelegate</a> callbacks.</p>
+
+<p>@discussion
+    If you don&rsquo;t request an embedded thumbnail image, embeddedThumbnailDimensions resolve to { 0, 0 }.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/livePhotoMovieDimensions" title="livePhotoMovieDimensions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/livePhotoMovieDimensions">&nbsp;&nbsp;livePhotoMovieDimensions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property livePhotoMovieDimensions
+@abstract
+    The resolved dimensions of the video track in the movie that will be delivered to the -captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error: callback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) CMVideoDimensions livePhotoMovieDimensions</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property livePhotoMovieDimensions
+@abstract
+    The resolved dimensions of the video track in the movie that will be delivered to the -captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error: callback.</p>
+
+<p>@discussion
+    If you don&rsquo;t request Live Photo capture, livePhotoMovieDimensions resolve to { 0, 0 }.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flashEnabled" title="flashEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flashEnabled">&nbsp;&nbsp;flashEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property flashEnabled
+@abstract
+    Indicates whether the flash will fire when capturing the photo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isFlashEnabled) BOOL flashEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property flashEnabled
+@abstract
+    Indicates whether the flash will fire when capturing the photo.</p>
+
+<p>@discussion
+    When you specify AVCaptureFlashModeAuto as you <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a>.flashMode, you don&rsquo;t know if flash capture will be chosen until you inspect the AVCaptureResolvedPhotoSettings flashEnabled property. If the device becomes too hot, the flash becomes temporarily unavailable. You can key-value observe AVCaptureDevice&rsquo;s flashAvailable property to know when this occurs. If the flash is unavailable due to thermal issues, and you specify a flashMode of AVCaptureFlashModeOn, flashEnabled still resolves to NO until the device has sufficiently cooled off.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stillImageStabilizationEnabled" title="stillImageStabilizationEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stillImageStabilizationEnabled">&nbsp;&nbsp;stillImageStabilizationEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property stillImageStabilizationEnabled
+@abstract
+    Indicates whether still image stabilization will be employed when capturing the photo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isStillImageStabilizationEnabled) BOOL stillImageStabilizationEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property stillImageStabilizationEnabled
+@abstract
+    Indicates whether still image stabilization will be employed when capturing the photo.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_2" title="_2"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_2">&nbsp;&nbsp;_2</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property dualCameraFusionEnabled
+@abstract
+    Indicates whether DualCamera wide-angle and telephoto image fusion will be employed when capturing the photo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isDualCameraFusionEnabled) BOOL dualCameraFusionEnabled NS_AVAILABLE_IOS ( 10 _2</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property dualCameraFusionEnabled
+@abstract
+    Indicates whether DualCamera wide-angle and telephoto image fusion will be employed when capturing the photo.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

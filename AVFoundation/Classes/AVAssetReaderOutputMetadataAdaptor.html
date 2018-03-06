@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAssetReaderOutputMetadataAdaptor Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/assetReaderTrackOutput">assetReaderTrackOutput</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:">+ assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithAssetReaderTrackOutput:">- initWithAssetReaderTrackOutput:</option>
+		
+		<option value="//api/name/nextTimedMetadataGroup">- nextTimedMetadataGroup</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAssetReaderOutputMetadataAdaptor Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAssetReaderOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVAssetReaderOutputMetadataAdaptor
+@abstract
+    Defines an interface for reading metadata, packaged as instances of <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a>, from a single <a href="../Classes/AVAssetReaderTrackOutput.html">AVAssetReaderTrackOutput</a> object.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:" title="assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:">+&nbsp;assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:
+@abstract
+    Creates a new timed metadata group adaptor for retrieving timed metadata group objects from an asset reader output.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:(AVAssetReaderTrackOutput *)<em>trackOutput</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:
+@abstract
+    Creates a new timed metadata group adaptor for retrieving timed metadata group objects from an asset reader output.</p>
+
+<p>@param  assetReaderOutput
+    An instance of AVAssetReaderTrackOutput that vends sample buffers containing metadata, e.g. an AVAssetReaderTrackOutput object initialized with a track of media type AVMediaTypeMetadata and nil outputSettings.
+@result
+    An instance of AVAssetReaderOutputMetadataAdaptor</p>
+
+<p>@discussion
+    It is an error to create a timed metadata group adaptor with an asset reader output that does not vend metadata.  It is also an error to create a timed metadata group adaptor with an asset reader output whose asset reader has already started reading, or an asset reader output that already has been used to initialize another timed metadata group adaptor.</p>
+
+<pre><code>Clients should not mix calls to [AVAssetReaderTrackOutput copyNextSampleBuffer] and [AVAssetReaderOutputMetadataAdaptor nextTimedMetadataGroup].  Once an AVAssetReaderTrackOutput instance has been used to initialize an AVAssetReaderOutputMetadataAdaptor, calling -copyNextSampleBuffer on that instance will result in an exception being thrown.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithAssetReaderTrackOutput:" title="initWithAssetReaderTrackOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAssetReaderTrackOutput:">&ndash;&nbsp;initWithAssetReaderTrackOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithAssetReaderTrackOutput:
+@abstract
+    Creates a new timed metadata group adaptor for retrieving timed metadata group objects from an asset reader output.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithAssetReaderTrackOutput:(AVAssetReaderTrackOutput *)<em>trackOutput</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithAssetReaderTrackOutput:
+@abstract
+    Creates a new timed metadata group adaptor for retrieving timed metadata group objects from an asset reader output.</p>
+
+<p>@param  assetReaderOutput
+    An instance of AVAssetReaderTrackOutput that vends sample buffers containing metadata, e.g. an AVAssetReaderTrackOutput object initialized with a track of media type AVMediaTypeMetadata and nil outputSettings.
+@result
+    An instance of AVAssetReaderOutputMetadataAdaptor</p>
+
+<p>@discussion
+    It is an error to create a timed metadata group adaptor with an asset reader output that does not vend metadata.  It is also an error to create a timed metadata group adaptor with an asset reader output whose asset reader has already started reading, or an asset reader output that already has been used to initialize another timed metadata group adaptor.</p>
+
+<pre><code>Clients should not mix calls to [AVAssetReaderTrackOutput copyNextSampleBuffer] and [AVAssetReaderOutputMetadataAdaptor nextTimedMetadataGroup].  Once an AVAssetReaderTrackOutput instance has been used to initialize an AVAssetReaderOutputMetadataAdaptor, calling -copyNextSampleBuffer on that instance will result in an exception being thrown.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetReaderTrackOutput" title="assetReaderTrackOutput"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetReaderTrackOutput">&nbsp;&nbsp;assetReaderTrackOutput</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property assetReaderTrackOutput
+@abstract
+    The asset reader track output from which the receiver pulls timed metadata groups.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVAssetReaderTrackOutput *assetReaderTrackOutput</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property assetReaderTrackOutput
+@abstract
+    The asset reader track output from which the receiver pulls timed metadata groups.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextTimedMetadataGroup" title="nextTimedMetadataGroup"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextTimedMetadataGroup">&ndash;&nbsp;nextTimedMetadataGroup</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method nextTimedMetadataGroup
+@abstract
+    Returns the next timed metadata group for the asset reader output, synchronously.</p>
+
+<p>@result
+    An instance of AVTimedMetadataGroup, representing the next logical segment of metadata coming from the source asset reader output.</p>
+
+<p>@discussion
+    This method will return nil when all timed metadata groups have been read from the asset reader output, or if there is an error that prevents the timed metadata group adaptor from reading more timed metadata groups.  When this method returns nil, clients should check the value of the associated AVAssetReader&rsquo;s status property to determine why no more samples could be read.</p>
+
+<pre><code>Unlike [AVAssetReaderTrackOutput copyNextSampleBuffer], this method returns an autoreleased object.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable AVTimedMetadataGroup *)nextTimedMetadataGroup</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method nextTimedMetadataGroup
+@abstract
+    Returns the next timed metadata group for the asset reader output, synchronously.</p>
+
+<p>@result
+    An instance of AVTimedMetadataGroup, representing the next logical segment of metadata coming from the source asset reader output.</p>
+
+<p>@discussion
+    This method will return nil when all timed metadata groups have been read from the asset reader output, or if there is an error that prevents the timed metadata group adaptor from reading more timed metadata groups.  When this method returns nil, clients should check the value of the associated AVAssetReader&rsquo;s status property to determine why no more samples could be read.</p>
+
+<pre><code>Unlike [AVAssetReaderTrackOutput copyNextSampleBuffer], this method returns an autoreleased object.
+
+Before calling this method, you must ensure that the output which underlies the receiver is attached to an AVAssetReader via a prior call to -addOutput: and that -startReading has been called on the asset reader.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureVideoDataOutputSampleBufferDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/captureOutput:didDropSampleBuffer:fromConnection:">- captureOutput:didDropSampleBuffer:fromConnection:</option>
+		
+		<option value="//api/name/captureOutput:didOutputSampleBuffer:fromConnection:">- captureOutput:didOutputSampleBuffer:fromConnection:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureVideoDataOutputSampleBufferDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureVideoDataOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol AVCaptureVideoDataOutputSampleBufferDelegate
+@abstract
+    Defines an interface for delegates of <a href="../Classes/AVCaptureVideoDataOutput.html">AVCaptureVideoDataOutput</a> to receive captured video sample buffers and be notified of late sample buffers that were dropped.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/captureOutput:didOutputSampleBuffer:fromConnection:" title="captureOutput:didOutputSampleBuffer:fromConnection:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureOutput:didOutputSampleBuffer:fromConnection:">&ndash;&nbsp;captureOutput:didOutputSampleBuffer:fromConnection:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureOutput:didOutputSampleBuffer:fromConnection:
+@abstract
+    Called whenever an <a href="../Classes/AVCaptureVideoDataOutput.html">AVCaptureVideoDataOutput</a> instance outputs a new video frame.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureOutput:(AVCaptureOutput *)<em>output</em> didOutputSampleBuffer:(CMSampleBufferRef)<em>sampleBuffer</em> fromConnection:(AVCaptureConnection *)<em>connection</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureOutput:didOutputSampleBuffer:fromConnection:
+@abstract
+    Called whenever an <a href="../Classes/AVCaptureVideoDataOutput.html">AVCaptureVideoDataOutput</a> instance outputs a new video frame.</p>
+
+<p>@param output
+    The <a href="../Classes/AVCaptureVideoDataOutput.html">AVCaptureVideoDataOutput</a> instance that output the frame.
+@param sampleBuffer
+    A CMSampleBuffer object containing the video frame data and additional information about the frame, such as its format and presentation time.
+@param connection
+    The <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> from which the video was received.</p>
+
+<p>@discussion
+    Delegates receive this message whenever the output captures and outputs a new video frame, decoding or re-encoding it as specified by its videoSettings property. Delegates can use the provided video frame in conjunction with other APIs for further processing. This method will be called on the dispatch queue specified by the output&rsquo;s sampleBufferCallbackQueue property. This method is called periodically, so it must be efficient to prevent capture performance problems, including dropped frames.</p>
+
+<pre><code>Clients that need to reference the CMSampleBuffer object outside of the scope of this method must CFRetain it and then CFRelease it when they are finished with it.
+
+Note that to maintain optimal performance, some sample buffers directly reference pools of memory that may need to be reused by the device system and other capture inputs. This is frequently the case for uncompressed device native capture where memory blocks are copied as little as possible. If multiple sample buffers reference such pools of memory for too long, inputs will no longer be able to copy new samples into memory and those samples will be dropped. If your application is causing samples to be dropped by retaining the provided CMSampleBuffer objects for too long, but it needs access to the sample data for a long period of time, consider copying the data into a new buffer and then calling CFRelease on the sample buffer if it was previously retained so that the memory it references can be reused.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureOutput:didDropSampleBuffer:fromConnection:" title="captureOutput:didDropSampleBuffer:fromConnection:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureOutput:didDropSampleBuffer:fromConnection:">&ndash;&nbsp;captureOutput:didDropSampleBuffer:fromConnection:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureOutput:didDropSampleBuffer:fromConnection:
+@abstract
+    Called once for each frame that is discarded.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureOutput:(AVCaptureOutput *)<em>output</em> didDropSampleBuffer:(CMSampleBufferRef)<em>sampleBuffer</em> fromConnection:(AVCaptureConnection *)<em>connection</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureOutput:didDropSampleBuffer:fromConnection:
+@abstract
+    Called once for each frame that is discarded.</p>
+
+<p>@param output
+    The <a href="../Classes/AVCaptureVideoDataOutput.html">AVCaptureVideoDataOutput</a> instance that dropped the frame.
+@param sampleBuffer
+    A CMSampleBuffer object containing information about the dropped frame, such as its format and presentation time. This sample buffer will contain none of the original video data.
+@param connection
+    The <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> from which the dropped video frame was received.</p>
+
+<p>@discussion
+    Delegates receive this message whenever a video frame is dropped. This method is called once for each dropped frame. The CMSampleBuffer object passed to this delegate method will contain metadata about the dropped video frame, such as its duration and presentation time stamp, but will contain no actual video data. On iOS, Included in the sample buffer attachments is the kCMSampleBufferAttachmentKey_DroppedFrameReason, which indicates why the frame was dropped. This method will be called on the dispatch queue specified by the output&rsquo;s sampleBufferCallbackQueue property. Because this method will be called on the same dispatch queue that is responsible for outputting video frames, it must be efficient to prevent further capture performance problems, such as additional dropped video frames.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

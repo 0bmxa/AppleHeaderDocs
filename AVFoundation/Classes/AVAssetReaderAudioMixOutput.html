@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAssetReaderAudioMixOutput Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_9">_9</option>
+		
+		<option value="//api/name/audioMix">audioMix</option>
+		
+		<option value="//api/name/audioSettings">audioSettings</option>
+		
+		<option value="//api/name/audioTracks">audioTracks</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/assetReaderAudioMixOutputWithAudioTracks:audioSettings:">+ assetReaderAudioMixOutputWithAudioTracks:audioSettings:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithAudioTracks:audioSettings:">- initWithAudioTracks:audioSettings:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAssetReaderAudioMixOutput Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVAssetReaderOutput.html">AVAssetReaderOutput</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAssetReaderOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVAssetReaderAudioMixOutput
+@abstract
+    AVAssetReaderAudioMixOutput is a concrete subclass of AVAssetReaderOutput that defines an interface for reading audio samples that result from mixing the audio from one or more AVAssetTracks of an AVAssetReader&rsquo;s AVAsset.</p>
+
+<p>@discussion
+    Clients can read the audio data mixed from one or more asset tracks by adding an instance of AVAssetReaderAudioMixOutput to an AVAssetReader using the <a href="../Classes/AVAssetReader.html#//api/name/addOutput:">[AVAssetReader addOutput:]</a> method.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/assetReaderAudioMixOutputWithAudioTracks:audioSettings:" title="assetReaderAudioMixOutputWithAudioTracks:audioSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetReaderAudioMixOutputWithAudioTracks:audioSettings:">+&nbsp;assetReaderAudioMixOutputWithAudioTracks:audioSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method assetReaderAudioMixOutputWithAudioTracks:audioSettings:
+@abstract
+    Returns an instance of AVAssetReaderAudioMixOutput for reading mixed audio from the specified audio tracks, with optional audio settings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)assetReaderAudioMixOutputWithAudioTracks:(NSArray&lt;AVAssetTrack*&gt; *)<em>audioTracks</em> audioSettings:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>audioSettings</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method assetReaderAudioMixOutputWithAudioTracks:audioSettings:
+@abstract
+    Returns an instance of AVAssetReaderAudioMixOutput for reading mixed audio from the specified audio tracks, with optional audio settings.</p>
+
+<p>@param tracks
+    An NSArray of <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a> objects from which the created object should read sample buffers to be mixed.
+@param <a href="#//api/name/audioSettings">audioSettings</a>
+    An NSDictionary of audio settings to be used for audio output.
+@result
+    An instance of AVAssetReaderAudioMixOutput.</p>
+
+<p>@discussion
+    Each track must be one of the tracks owned by the target AVAssetReader&rsquo;s asset and must be of media type AVMediaTypeAudio.</p>
+
+<pre><code>The audio settings dictionary must contain values for keys in AVAudioSettings.h (linear PCM only). A value of nil configures the output to return samples in a convenient uncompressed format, with sample rate and other properties determined according to the properties of the specified audio tracks. Initialization will fail if the audio settings cannot be used with the specified tracks.  AVSampleRateConverterAudioQualityKey is not supported.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithAudioTracks:audioSettings:" title="initWithAudioTracks:audioSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAudioTracks:audioSettings:">&ndash;&nbsp;initWithAudioTracks:audioSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithAudioTracks:audioSettings:
+@abstract
+    Creates an instance of AVAssetReaderAudioMixOutput for reading mixed audio from the specified audio tracks, with optional audio settings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithAudioTracks:(NSArray&lt;AVAssetTrack*&gt; *)<em>audioTracks</em> audioSettings:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>audioSettings</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithAudioTracks:audioSettings:
+@abstract
+    Creates an instance of AVAssetReaderAudioMixOutput for reading mixed audio from the specified audio tracks, with optional audio settings.</p>
+
+<p>@param tracks
+    An NSArray of <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a> objects from which the created object should read sample buffers to be mixed.
+@param <a href="#//api/name/audioSettings">audioSettings</a>
+    An NSDictionary of audio settings to be used for audio output.
+@result
+    An instance of AVAssetReaderAudioMixOutput.</p>
+
+<p>@discussion
+    Each track must be one of the tracks owned by the target AVAssetReader&rsquo;s asset and must be of media type AVMediaTypeAudio.</p>
+
+<pre><code>The audio settings dictionary must contain values for keys in AVAudioSettings.h (linear PCM only). A value of nil configures the output to return samples in a convenient uncompressed format, with sample rate and other properties determined according to the properties of the specified audio tracks. Initialization will fail if the audio settings cannot be used with the specified tracks.  AVSampleRateConverterAudioQualityKey is not supported.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/audioTracks" title="audioTracks"></a>
+	<h3 class="method-title"><code><a href="#//api/name/audioTracks">&nbsp;&nbsp;audioTracks</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property audioTracks
+@abstract
+    The tracks from which the receiver reads mixed audio.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVAssetTrack*&gt; *audioTracks</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property audioTracks
+@abstract
+    The tracks from which the receiver reads mixed audio.</p>
+
+<p>@discussion
+    The value of this property is an NSArray of AVAssetTracks owned by the target AVAssetReader&rsquo;s asset.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/audioSettings" title="audioSettings"></a>
+	<h3 class="method-title"><code><a href="#//api/name/audioSettings">&nbsp;&nbsp;audioSettings</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property audioSettings
+@abstract
+    The audio settings used by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSDictionary&lt;NSString*id&gt; *audioSettings</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property audioSettings
+@abstract
+    The audio settings used by the receiver.</p>
+
+<p>@discussion
+    The value of this property is an NSDictionary that contains values for keys from AVAudioSettings.h (linear PCM only).  A value of nil indicates that the receiver will return audio samples in a convenient uncompressed format, with sample rate and other properties determined according to the properties of the receiver&rsquo;s audio tracks.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/audioMix" title="audioMix"></a>
+	<h3 class="method-title"><code><a href="#//api/name/audioMix">&nbsp;&nbsp;audioMix</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property audioMix
+@abstract
+    The audio mix used by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) AVAudioMix *audioMix</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property audioMix
+@abstract
+    The audio mix used by the receiver.</p>
+
+<p>@discussion
+    The value of this property is an <a href="../Classes/AVAudioMix.html">AVAudioMix</a> that can be used to specify how the volume of audio samples read from each source track will change over the timeline of the source asset.</p>
+
+<pre><code>This property cannot be set after reading has started.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_9" title="_9"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_9">&nbsp;&nbsp;_9</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property audioTimePitchAlgorithm
+@abstract
+    Indicates the processing algorithm used to manage audio pitch for scaled audio edits.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) AVAudioTimePitchAlgorithm audioTimePitchAlgorithm NS_AVAILABLE ( 10 _9</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property audioTimePitchAlgorithm
+@abstract
+    Indicates the processing algorithm used to manage audio pitch for scaled audio edits.</p>
+
+<p>@discussion
+    Constants for various time pitch algorithms, e.g. AVAudioTimePitchAlgorithmSpectral, are defined in AVAudioProcessingSettings.h.  An NSInvalidArgumentException will be raised if this property is set to a value other than the constants defined in that file.</p>
+
+<pre><code>The default value is AVAudioTimePitchAlgorithmSpectral.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

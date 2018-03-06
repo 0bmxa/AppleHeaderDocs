@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MTLResourceOptions Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Metal Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MTLResourceOptions Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>MTLResource.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">MTLResourceOptions</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>@enum MTLResourceOptions</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_OPTIONS(NSUInteger, MTLResourceOptions ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLResourceCPUCacheModeDefaultCache</a> = MTLCPUCacheModeDefaultCache &lt; &lt; MTLResourceCPUCacheModeShift,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLResourceCPUCacheModeWriteCombined</a> = MTLCPUCacheModeWriteCombined &lt; &lt; MTLResourceCPUCacheModeShift,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLResourceStorageModeShared</a> = MTLStorageModeShared &lt; &lt; MTLResourceStorageModeShift,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLResourceStorageModeManaged</a> = MTLStorageModeManaged &lt; &lt; MTLResourceStorageModeShift,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLResourceStorageModePrivate</a> = MTLStorageModePrivate &lt; &lt; MTLResourceStorageModeShift,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLResourceStorageModeMemoryless</a> = MTLStorageModeMemoryless &lt; &lt; MTLResourceStorageModeShift,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLResourceHazardTrackingModeUntracked</a> = 0 x1UL &lt; &lt; MTLResourceHazardTrackingModeShift,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLResourceOptionCPUCacheModeDefault</a> = MTLResourceCPUCacheModeDefaultCache,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLResourceOptionCPUCacheModeWriteCombined</a> = MTLResourceCPUCacheModeWriteCombined,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="MTLResourceCPUCacheModeDefaultCache"></a><code>MTLResourceCPUCacheModeDefaultCache</code></dt>
+<dd>
+
+
+<p>A set of optional arguments to influence the creation of a <a href="../Protocols/MTLResource.html">MTLResource</a> (<a href="../Protocols/MTLTexture.html">MTLTexture</a> or <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>)</p>
+
+<p>@constant MTLResourceCPUCacheModeDefault
+The default CPU cache mode for the resource.
+Applications should only investigate changing the cache mode if writing to normally cached buffers is known to
+cause performance issues due to cache pollution, as write combined memory can have surprising performance pitfalls.
+Another approach is to use non-temporal stores to normally cached memory (STNP on ARMv8, <em>mm_stream</em>* on x86_64).</p>
+
+<p>@constant MTLResourceCPUCacheModeWriteCombined
+Write combined memory is optimized for resources that the CPU will write into, but never read.
+On some implementations, writes may bypass caches avoiding cache pollution, and reads perform very poorly.</p>
+
+<p>@constant MTLResourceStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLResourceStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the resource.  Changes due to CPU stores outside of the Metal API must be
+indicated to Metal via <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>::didModifyRange:(NSRange)range.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This storage mode is only defined for OS X.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLResourceStorageModePrivate
+This mode allows the data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLResourceStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+<p>@constant MTLResourceHazardTrackingModeUntracked
+In this mode, Command encoder dependencies for this resource are tracked manually with <a href="../Protocols/MTLFence.html">MTLFence</a>.
+This value is always set for resources sub-allocated from a <a href="../Protocols/MTLHeap.html">MTLHeap</a> and may optionally be specified
+for non-heap resources.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MTLResourceCPUCacheModeWriteCombined"></a><code>MTLResourceCPUCacheModeWriteCombined</code></dt>
+<dd>
+
+
+<p>A set of optional arguments to influence the creation of a <a href="../Protocols/MTLResource.html">MTLResource</a> (<a href="../Protocols/MTLTexture.html">MTLTexture</a> or <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>)</p>
+
+<p>@constant MTLResourceCPUCacheModeDefault
+The default CPU cache mode for the resource.
+Applications should only investigate changing the cache mode if writing to normally cached buffers is known to
+cause performance issues due to cache pollution, as write combined memory can have surprising performance pitfalls.
+Another approach is to use non-temporal stores to normally cached memory (STNP on ARMv8, <em>mm_stream</em>* on x86_64).</p>
+
+<p>@constant MTLResourceCPUCacheModeWriteCombined
+Write combined memory is optimized for resources that the CPU will write into, but never read.
+On some implementations, writes may bypass caches avoiding cache pollution, and reads perform very poorly.</p>
+
+<p>@constant MTLResourceStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLResourceStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the resource.  Changes due to CPU stores outside of the Metal API must be
+indicated to Metal via <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>::didModifyRange:(NSRange)range.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This storage mode is only defined for OS X.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLResourceStorageModePrivate
+This mode allows the data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLResourceStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+<p>@constant MTLResourceHazardTrackingModeUntracked
+In this mode, Command encoder dependencies for this resource are tracked manually with <a href="../Protocols/MTLFence.html">MTLFence</a>.
+This value is always set for resources sub-allocated from a <a href="../Protocols/MTLHeap.html">MTLHeap</a> and may optionally be specified
+for non-heap resources.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MTLResourceStorageModeShared"></a><code>MTLResourceStorageModeShared</code></dt>
+<dd>
+
+
+<p>A set of optional arguments to influence the creation of a <a href="../Protocols/MTLResource.html">MTLResource</a> (<a href="../Protocols/MTLTexture.html">MTLTexture</a> or <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>)</p>
+
+<p>@constant MTLResourceCPUCacheModeDefault
+The default CPU cache mode for the resource.
+Applications should only investigate changing the cache mode if writing to normally cached buffers is known to
+cause performance issues due to cache pollution, as write combined memory can have surprising performance pitfalls.
+Another approach is to use non-temporal stores to normally cached memory (STNP on ARMv8, <em>mm_stream</em>* on x86_64).</p>
+
+<p>@constant MTLResourceCPUCacheModeWriteCombined
+Write combined memory is optimized for resources that the CPU will write into, but never read.
+On some implementations, writes may bypass caches avoiding cache pollution, and reads perform very poorly.</p>
+
+<p>@constant MTLResourceStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLResourceStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the resource.  Changes due to CPU stores outside of the Metal API must be
+indicated to Metal via <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>::didModifyRange:(NSRange)range.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This storage mode is only defined for OS X.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLResourceStorageModePrivate
+This mode allows the data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLResourceStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+<p>@constant MTLResourceHazardTrackingModeUntracked
+In this mode, Command encoder dependencies for this resource are tracked manually with <a href="../Protocols/MTLFence.html">MTLFence</a>.
+This value is always set for resources sub-allocated from a <a href="../Protocols/MTLHeap.html">MTLHeap</a> and may optionally be specified
+for non-heap resources.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MTLResourceStorageModeManaged"></a><code>MTLResourceStorageModeManaged</code></dt>
+<dd>
+
+
+<p>A set of optional arguments to influence the creation of a <a href="../Protocols/MTLResource.html">MTLResource</a> (<a href="../Protocols/MTLTexture.html">MTLTexture</a> or <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>)</p>
+
+<p>@constant MTLResourceCPUCacheModeDefault
+The default CPU cache mode for the resource.
+Applications should only investigate changing the cache mode if writing to normally cached buffers is known to
+cause performance issues due to cache pollution, as write combined memory can have surprising performance pitfalls.
+Another approach is to use non-temporal stores to normally cached memory (STNP on ARMv8, <em>mm_stream</em>* on x86_64).</p>
+
+<p>@constant MTLResourceCPUCacheModeWriteCombined
+Write combined memory is optimized for resources that the CPU will write into, but never read.
+On some implementations, writes may bypass caches avoiding cache pollution, and reads perform very poorly.</p>
+
+<p>@constant MTLResourceStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLResourceStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the resource.  Changes due to CPU stores outside of the Metal API must be
+indicated to Metal via <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>::didModifyRange:(NSRange)range.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This storage mode is only defined for OS X.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLResourceStorageModePrivate
+This mode allows the data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLResourceStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+<p>@constant MTLResourceHazardTrackingModeUntracked
+In this mode, Command encoder dependencies for this resource are tracked manually with <a href="../Protocols/MTLFence.html">MTLFence</a>.
+This value is always set for resources sub-allocated from a <a href="../Protocols/MTLHeap.html">MTLHeap</a> and may optionally be specified
+for non-heap resources.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MTLResourceStorageModePrivate"></a><code>MTLResourceStorageModePrivate</code></dt>
+<dd>
+
+
+<p>A set of optional arguments to influence the creation of a <a href="../Protocols/MTLResource.html">MTLResource</a> (<a href="../Protocols/MTLTexture.html">MTLTexture</a> or <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>)</p>
+
+<p>@constant MTLResourceCPUCacheModeDefault
+The default CPU cache mode for the resource.
+Applications should only investigate changing the cache mode if writing to normally cached buffers is known to
+cause performance issues due to cache pollution, as write combined memory can have surprising performance pitfalls.
+Another approach is to use non-temporal stores to normally cached memory (STNP on ARMv8, <em>mm_stream</em>* on x86_64).</p>
+
+<p>@constant MTLResourceCPUCacheModeWriteCombined
+Write combined memory is optimized for resources that the CPU will write into, but never read.
+On some implementations, writes may bypass caches avoiding cache pollution, and reads perform very poorly.</p>
+
+<p>@constant MTLResourceStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLResourceStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the resource.  Changes due to CPU stores outside of the Metal API must be
+indicated to Metal via <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>::didModifyRange:(NSRange)range.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This storage mode is only defined for OS X.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLResourceStorageModePrivate
+This mode allows the data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLResourceStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+<p>@constant MTLResourceHazardTrackingModeUntracked
+In this mode, Command encoder dependencies for this resource are tracked manually with <a href="../Protocols/MTLFence.html">MTLFence</a>.
+This value is always set for resources sub-allocated from a <a href="../Protocols/MTLHeap.html">MTLHeap</a> and may optionally be specified
+for non-heap resources.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MTLResourceStorageModeMemoryless"></a><code>MTLResourceStorageModeMemoryless</code></dt>
+<dd>
+
+
+<p>A set of optional arguments to influence the creation of a <a href="../Protocols/MTLResource.html">MTLResource</a> (<a href="../Protocols/MTLTexture.html">MTLTexture</a> or <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>)</p>
+
+<p>@constant MTLResourceCPUCacheModeDefault
+The default CPU cache mode for the resource.
+Applications should only investigate changing the cache mode if writing to normally cached buffers is known to
+cause performance issues due to cache pollution, as write combined memory can have surprising performance pitfalls.
+Another approach is to use non-temporal stores to normally cached memory (STNP on ARMv8, <em>mm_stream</em>* on x86_64).</p>
+
+<p>@constant MTLResourceCPUCacheModeWriteCombined
+Write combined memory is optimized for resources that the CPU will write into, but never read.
+On some implementations, writes may bypass caches avoiding cache pollution, and reads perform very poorly.</p>
+
+<p>@constant MTLResourceStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLResourceStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the resource.  Changes due to CPU stores outside of the Metal API must be
+indicated to Metal via <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>::didModifyRange:(NSRange)range.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This storage mode is only defined for OS X.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLResourceStorageModePrivate
+This mode allows the data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLResourceStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+<p>@constant MTLResourceHazardTrackingModeUntracked
+In this mode, Command encoder dependencies for this resource are tracked manually with <a href="../Protocols/MTLFence.html">MTLFence</a>.
+This value is always set for resources sub-allocated from a <a href="../Protocols/MTLHeap.html">MTLHeap</a> and may optionally be specified
+for non-heap resources.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MTLResourceHazardTrackingModeUntracked"></a><code>MTLResourceHazardTrackingModeUntracked</code></dt>
+<dd>
+
+
+<p>A set of optional arguments to influence the creation of a <a href="../Protocols/MTLResource.html">MTLResource</a> (<a href="../Protocols/MTLTexture.html">MTLTexture</a> or <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>)</p>
+
+<p>@constant MTLResourceCPUCacheModeDefault
+The default CPU cache mode for the resource.
+Applications should only investigate changing the cache mode if writing to normally cached buffers is known to
+cause performance issues due to cache pollution, as write combined memory can have surprising performance pitfalls.
+Another approach is to use non-temporal stores to normally cached memory (STNP on ARMv8, <em>mm_stream</em>* on x86_64).</p>
+
+<p>@constant MTLResourceCPUCacheModeWriteCombined
+Write combined memory is optimized for resources that the CPU will write into, but never read.
+On some implementations, writes may bypass caches avoiding cache pollution, and reads perform very poorly.</p>
+
+<p>@constant MTLResourceStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLResourceStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the resource.  Changes due to CPU stores outside of the Metal API must be
+indicated to Metal via <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>::didModifyRange:(NSRange)range.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This storage mode is only defined for OS X.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLResourceStorageModePrivate
+This mode allows the data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLResourceStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+<p>@constant MTLResourceHazardTrackingModeUntracked
+In this mode, Command encoder dependencies for this resource are tracked manually with <a href="../Protocols/MTLFence.html">MTLFence</a>.
+This value is always set for resources sub-allocated from a <a href="../Protocols/MTLHeap.html">MTLHeap</a> and may optionally be specified
+for non-heap resources.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MTLResourceOptionCPUCacheModeDefault"></a><code>MTLResourceOptionCPUCacheModeDefault</code></dt>
+<dd>
+
+
+<p>A set of optional arguments to influence the creation of a <a href="../Protocols/MTLResource.html">MTLResource</a> (<a href="../Protocols/MTLTexture.html">MTLTexture</a> or <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>)</p>
+
+<p>@constant MTLResourceCPUCacheModeDefault
+The default CPU cache mode for the resource.
+Applications should only investigate changing the cache mode if writing to normally cached buffers is known to
+cause performance issues due to cache pollution, as write combined memory can have surprising performance pitfalls.
+Another approach is to use non-temporal stores to normally cached memory (STNP on ARMv8, <em>mm_stream</em>* on x86_64).</p>
+
+<p>@constant MTLResourceCPUCacheModeWriteCombined
+Write combined memory is optimized for resources that the CPU will write into, but never read.
+On some implementations, writes may bypass caches avoiding cache pollution, and reads perform very poorly.</p>
+
+<p>@constant MTLResourceStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLResourceStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the resource.  Changes due to CPU stores outside of the Metal API must be
+indicated to Metal via <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>::didModifyRange:(NSRange)range.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This storage mode is only defined for OS X.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLResourceStorageModePrivate
+This mode allows the data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLResourceStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+<p>@constant MTLResourceHazardTrackingModeUntracked
+In this mode, Command encoder dependencies for this resource are tracked manually with <a href="../Protocols/MTLFence.html">MTLFence</a>.
+This value is always set for resources sub-allocated from a <a href="../Protocols/MTLHeap.html">MTLHeap</a> and may optionally be specified
+for non-heap resources.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MTLResourceOptionCPUCacheModeWriteCombined"></a><code>MTLResourceOptionCPUCacheModeWriteCombined</code></dt>
+<dd>
+
+
+<p>A set of optional arguments to influence the creation of a <a href="../Protocols/MTLResource.html">MTLResource</a> (<a href="../Protocols/MTLTexture.html">MTLTexture</a> or <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>)</p>
+
+<p>@constant MTLResourceCPUCacheModeDefault
+The default CPU cache mode for the resource.
+Applications should only investigate changing the cache mode if writing to normally cached buffers is known to
+cause performance issues due to cache pollution, as write combined memory can have surprising performance pitfalls.
+Another approach is to use non-temporal stores to normally cached memory (STNP on ARMv8, <em>mm_stream</em>* on x86_64).</p>
+
+<p>@constant MTLResourceCPUCacheModeWriteCombined
+Write combined memory is optimized for resources that the CPU will write into, but never read.
+On some implementations, writes may bypass caches avoiding cache pollution, and reads perform very poorly.</p>
+
+<p>@constant MTLResourceStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLResourceStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the resource.  Changes due to CPU stores outside of the Metal API must be
+indicated to Metal via <a href="../Protocols/MTLBuffer.html">MTLBuffer</a>::didModifyRange:(NSRange)range.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This storage mode is only defined for OS X.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLResourceStorageModePrivate
+This mode allows the data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLResourceStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+<p>@constant MTLResourceHazardTrackingModeUntracked
+In this mode, Command encoder dependencies for this resource are tracked manually with <a href="../Protocols/MTLFence.html">MTLFence</a>.
+This value is always set for resources sub-allocated from a <a href="../Protocols/MTLHeap.html">MTLHeap</a> and may optionally be specified
+for non-heap resources.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">MTLResource.h</code></p>
+                    </div>
+                    
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

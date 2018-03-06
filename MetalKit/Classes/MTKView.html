@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MTKView Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/autoResizeDrawable">autoResizeDrawable</option>
+		
+		<option value="//api/name/clearColor">clearColor</option>
+		
+		<option value="//api/name/clearDepth">clearDepth</option>
+		
+		<option value="//api/name/clearStencil">clearStencil</option>
+		
+		<option value="//api/name/colorPixelFormat">colorPixelFormat</option>
+		
+		<option value="//api/name/currentDrawable">currentDrawable</option>
+		
+		<option value="//api/name/currentRenderPassDescriptor">currentRenderPassDescriptor</option>
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/depthStencilPixelFormat">depthStencilPixelFormat</option>
+		
+		<option value="//api/name/depthStencilTexture">depthStencilTexture</option>
+		
+		<option value="//api/name/device">device</option>
+		
+		<option value="//api/name/drawableSize">drawableSize</option>
+		
+		<option value="//api/name/enableSetNeedsDisplay">enableSetNeedsDisplay</option>
+		
+		<option value="//api/name/framebufferOnly">framebufferOnly</option>
+		
+		<option value="//api/name/multisampleColorTexture">multisampleColorTexture</option>
+		
+		<option value="//api/name/paused">paused</option>
+		
+		<option value="//api/name/preferredFramesPerSecond">preferredFramesPerSecond</option>
+		
+		<option value="//api/name/presentsWithTransaction">presentsWithTransaction</option>
+		
+		<option value="//api/name/sampleCount">sampleCount</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/draw">- draw</option>
+		
+		<option value="//api/name/initWithCoder:">- initWithCoder:</option>
+		
+		<option value="//api/name/initWithFrame:device:">- initWithFrame:device:</option>
+		
+		<option value="//api/name/releaseDrawables">- releaseDrawables</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MTKView Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSView</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>CALayerDelegate<br />NSCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MTKView.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class MTKView</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithFrame:device:" title="initWithFrame:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:device:">&ndash;&nbsp;initWithFrame:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initalize the view with a frame and <a href="#//api/name/device">device</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithFrame:(CGRect)<em>frameRect</em> device:(nullable id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frameRect</code></th>
+						<td><p>The frame rectangle for the created view object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice to be used by the view to create Metal objects</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithFrame:<a href="#//api/name/device">device</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:" title="initWithCoder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:">&ndash;&nbsp;initWithCoder:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a view initalized from data in a given unarchiver</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithCoder:(nonnull NSCoder *)<em>coder</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>coder</code></th>
+						<td><p>An unarchiver object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithCoder:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The delegate handling common view operations</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak, nullable) id&lt;MTKViewDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property delegate</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/device" title="device"></a>
+	<h3 class="method-title"><code><a href="#//api/name/device">&nbsp;&nbsp;device</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The MTLDevice used to create Metal objects</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable) id&lt;MTLDevice&gt; device</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property device</p><p>This must be explicitly set by the application unless it was passed into the initializer. Defaults to nil</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentDrawable" title="currentDrawable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentDrawable">&nbsp;&nbsp;currentDrawable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The drawable to be used for the current frame.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) id&lt;CAMetalDrawable&gt; currentDrawable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property currentDrawable</p><p>currentDrawable is updated at the end <a href="#//api/name/draw">draw</a> (i.e. after the delegate&rsquo;s drawInMTKView method is called)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/framebufferOnly" title="framebufferOnly"></a>
+	<h3 class="method-title"><code><a href="#//api/name/framebufferOnly">&nbsp;&nbsp;framebufferOnly</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the <a href="#//api/name/currentDrawable">currentDrawable</a> can be used for sampling or texture read operations</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL framebufferOnly</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property framebufferOnly</p><p>This defaults to YES. This property controls whether or not the returned drawables' MTLTextures may only be used for framebuffer attachments (YES) or whether they may also be used for texture sampling and pixel read/write operations (NO). A value of YES allows the CAMetalLayer to allocate the MTLTexture objects in ways that are optimized for display purposes that makes them unsuitable for sampling. The recommended value for most applications is YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/presentsWithTransaction" title="presentsWithTransaction"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentsWithTransaction">&nbsp;&nbsp;presentsWithTransaction</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the layer should be presented synchronously</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL presentsWithTransaction</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property presentsWithTransaction</p><p>Defaults to NO. When NO, changes to the layer&rsquo;s render buffer appear on-screen asynchronously to normal layer updates. When YES, changes to the MTL content are sent to the screen via the standard CATransaction mechanisms.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/colorPixelFormat" title="colorPixelFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/colorPixelFormat">&nbsp;&nbsp;colorPixelFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The pixelFormat for the drawable&rsquo;s texture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) MTLPixelFormat colorPixelFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property colorPixelFormat</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/depthStencilPixelFormat" title="depthStencilPixelFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/depthStencilPixelFormat">&nbsp;&nbsp;depthStencilPixelFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The pixelFormat used to create <a href="#//api/name/depthStencilTexture">depthStencilTexture</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) MTLPixelFormat depthStencilPixelFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property depthStencilPixelFormat</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sampleCount" title="sampleCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleCount">&nbsp;&nbsp;sampleCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The sample count used to to create <a href="#//api/name/multisampleColorTexture">multisampleColorTexture</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSUInteger sampleCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sampleCount</p><p>This defaults to 1.  If sampleCount is greater than 1 a multisampled color texture will be created and the currentDrawable&rsquo;s texture will be set as the resolve texture in the <a href="#//api/name/currentRenderPassDescriptor">currentRenderPassDescriptor</a> and the store action will be set to MTLStoreActionMultisampleResolve</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clearColor" title="clearColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearColor">&nbsp;&nbsp;clearColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The clear color value used to generate the <a href="#//api/name/currentRenderPassDescriptor">currentRenderPassDescriptor</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) MTLClearColor clearColor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property clearColor</p><p>This defaults to (0.0, 0.0, 0.0, 1.0)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clearDepth" title="clearDepth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearDepth">&nbsp;&nbsp;clearDepth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The clear depth value used to generate the <a href="#//api/name/currentRenderPassDescriptor">currentRenderPassDescriptor</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) double clearDepth</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property clearDepth</p><p>This defaults to 1.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clearStencil" title="clearStencil"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearStencil">&nbsp;&nbsp;clearStencil</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The clear stencil value used to generate <a href="#//api/name/currentRenderPassDescriptor">currentRenderPassDescriptor</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) uint32_t clearStencil</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property clearStencil</p><p>This defaults to 0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/depthStencilTexture" title="depthStencilTexture"></a>
+	<h3 class="method-title"><code><a href="#//api/name/depthStencilTexture">&nbsp;&nbsp;depthStencilTexture</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A packed depth and stencil texture to be attached to a MTLRenderPassDescriptor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) id&lt;MTLTexture&gt; depthStencilTexture</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property depthStencilTexture</p><p>The view will generate the depth buffer using the specified depthPixelFormat.  This will be nil if <a href="#//api/name/depthStencilPixelFormat">depthStencilPixelFormat</a> is MTLPixelFormatInvalid.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/multisampleColorTexture" title="multisampleColorTexture"></a>
+	<h3 class="method-title"><code><a href="#//api/name/multisampleColorTexture">&nbsp;&nbsp;multisampleColorTexture</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A multisample color texture that will be resolved into the currentDrawable&rsquo;s texture</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) id&lt;MTLTexture&gt; multisampleColorTexture</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property multisampleColorTexture</p><p>The view will generate the multisample color buffer using the specified <a href="#//api/name/colorPixelFormat">colorPixelFormat</a>.  This will be nil if <a href="#//api/name/sampleCount">sampleCount</a> is less than or equal to 1.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/releaseDrawables" title="releaseDrawables"></a>
+	<h3 class="method-title"><code><a href="#//api/name/releaseDrawables">&ndash;&nbsp;releaseDrawables</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Release the <a href="#//api/name/depthStencilTexture">depthStencilTexture</a> and <a href="#//api/name/multisampleColorTexture">multisampleColorTexture</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)releaseDrawables</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method releaseDrawables</p><p>Can be called by the app to release the textures in order to conserve memory when it goes into the background.   The view will recreate <a href="#//api/name/multisampleColorTexture">multisampleColorTexture</a> or <a href="#//api/name/depthStencilTexture">depthStencilTexture</a> upon the next access of the respective properties.  Both <a href="#//api/name/multisampleColorTexture">multisampleColorTexture</a> and <a href="#//api/name/depthStencilTexture">depthStencilTexture</a> will be recreated in the access to <a href="#//api/name/currentRenderPassDescriptor">currentRenderPassDescriptor</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentRenderPassDescriptor" title="currentRenderPassDescriptor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentRenderPassDescriptor">&nbsp;&nbsp;currentRenderPassDescriptor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A render pass descriptor generated from the currentDrawable&rsquo;s texture and the view&rsquo;s depth, stencil, and sample buffers and clear values.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) MTLRenderPassDescriptor *currentRenderPassDescriptor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property currentRenderPassDescriptor</p><p>This is a convience property.  The view does not use this descriptor and there is no requirement for an app to use this descriptor.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/preferredFramesPerSecond" title="preferredFramesPerSecond"></a>
+	<h3 class="method-title"><code><a href="#//api/name/preferredFramesPerSecond">&nbsp;&nbsp;preferredFramesPerSecond</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The rate you want the view to re<a href="#//api/name/draw">draw</a> its contents.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger preferredFramesPerSecond</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property preferredFramesPerSecond</p><p>When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum refresh rate of the screen is 60 frames per second, that is also the highest frame rate the view sets as the actual frame rate. However, if you ask for a lower frame rate, it might choose 30, 20, 15 or some other factor to be the actual frame rate. Your application should choose a frame rate that it can consistently maintain. The default value is 60 frames per second.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enableSetNeedsDisplay" title="enableSetNeedsDisplay"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enableSetNeedsDisplay">&nbsp;&nbsp;enableSetNeedsDisplay</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Controls whether the view responds to setNeedsDisplay.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL enableSetNeedsDisplay</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @property enableSetNeedsDisplay</p><p>If true, then the view behaves similarily to a UIView or NSView, responding to calls to setNeedsDisplay. When the view has been marked for display, the view is automatically redisplayed on each pass through the application’s event loop. Setting enableSetNeedsDisplay to true will also pause the MTKView&rsquo;s internal render loop and updates will instead be event driven. The default value is false.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/autoResizeDrawable" title="autoResizeDrawable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/autoResizeDrawable">&nbsp;&nbsp;autoResizeDrawable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Controls whether to resize the drawable as the view changes size.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL autoResizeDrawable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property autoResizeDrawable</p><p>If true, the size of the currentDrawable&rsquo;s texture, <a href="#//api/name/depthStencilTexture">depthStencilTexture</a>, and <a href="#//api/name/multisampleColorTexture">multisampleColorTexture</a> will automatically resize as the view resizes.  If false, these textures will take on the size of <a href="#//api/name/drawableSize">drawableSize</a> and <a href="#//api/name/drawableSize">drawableSize</a> will not change. The default value is true.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/drawableSize" title="drawableSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/drawableSize">&nbsp;&nbsp;drawableSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The current size of drawable textures</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGSize drawableSize</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property drawableSize</p><p>The size currentDrawable&rsquo;s texture, <a href="#//api/name/depthStencilTexture">depthStencilTexture</a>, and <a href="#//api/name/multisampleColorTexture">multisampleColorTexture</a>.  If <a href="#//api/name/autoResizeDrawable">autoResizeDrawable</a> is true this value will be updated as the view&rsquo;s size changes. If <a href="#//api/name/autoResizeDrawable">autoResizeDrawable</a> is false, this can be set to fix the size of the drawable textures.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/paused" title="paused"></a>
+	<h3 class="method-title"><code><a href="#//api/name/paused">&nbsp;&nbsp;paused</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Controls whether the <a href="#//api/name/draw">draw</a> methods should countinue at <a href="#//api/name/preferredFramesPerSecond">preferredFramesPerSecond</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isPaused) BOOL paused</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property paused</p><p>If true, the <a href="#//api/name/delegate">delegate</a> will receive drawInMTKView: messages or the subclass will receive drawRect: messages at a rate of <a href="#//api/name/preferredFramesPerSecond">preferredFramesPerSecond</a> based on an internal timer. The default value is false.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The colorspace of the rendered frames. '</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable) CGColorSpaceRef colorspace NS_AVAILABLE_MAC ( 10 _12 )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property colorspace</p><p>If nil, no colormatching occurs.  If non-nil, the rendered content will be colormatched to the colorspace of the context containing this layer (typically the display&rsquo;s colorspace).  This property aliases the olorspace property or the view&rsquo;s CAMetalLayer</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/draw" title="draw"></a>
+	<h3 class="method-title"><code><a href="#//api/name/draw">&ndash;&nbsp;draw</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Manually ask the view to draw new contents. This causes the view to call either the drawInMTKView (<a href="#//api/name/delegate">delegate</a>) or drawRect (subclass) method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)draw</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method draw</p><p>Manually ask the view to draw new contents. This causes the view to call either the drawInMTKView (<a href="#//api/name/delegate">delegate</a>) or drawRect (subclass) method. This should be used when the view&rsquo;s <a href="#//api/name/paused">paused</a> proprety is set to true and <a href="#//api/name/enableSetNeedsDisplay">enableSetNeedsDisplay</a> is set to false.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTKView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

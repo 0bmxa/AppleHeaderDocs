@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DRDevice Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 DiscRecording Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/deviceForBSDName:">+ deviceForBSDName:</option>
+		
+		<option value="//api/name/deviceForIORegistryEntryPath:">+ deviceForIORegistryEntryPath:</option>
+		
+		<option value="//api/name/devices">+ devices</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/acquireExclusiveAccess">- acquireExclusiveAccess</option>
+		
+		<option value="//api/name/acquireMediaReservation">- acquireMediaReservation</option>
+		
+		<option value="//api/name/bsdName">- bsdName</option>
+		
+		<option value="//api/name/closeTray">- closeTray</option>
+		
+		<option value="//api/name/displayName">- displayName</option>
+		
+		<option value="//api/name/ejectMedia">- ejectMedia</option>
+		
+		<option value="//api/name/info">- info</option>
+		
+		<option value="//api/name/ioRegistryEntryPath">- ioRegistryEntryPath</option>
+		
+		<option value="//api/name/isEqualToDevice:">- isEqualToDevice:</option>
+		
+		<option value="//api/name/isValid">- isValid</option>
+		
+		<option value="//api/name/mediaIsAppendable">- mediaIsAppendable</option>
+		
+		<option value="//api/name/mediaIsBlank">- mediaIsBlank</option>
+		
+		<option value="//api/name/mediaIsBusy">- mediaIsBusy</option>
+		
+		<option value="//api/name/mediaIsErasable">- mediaIsErasable</option>
+		
+		<option value="//api/name/mediaIsOverwritable">- mediaIsOverwritable</option>
+		
+		<option value="//api/name/mediaIsPresent">- mediaIsPresent</option>
+		
+		<option value="//api/name/mediaIsReserved">- mediaIsReserved</option>
+		
+		<option value="//api/name/mediaIsTransitioning">- mediaIsTransitioning</option>
+		
+		<option value="//api/name/mediaSpaceFree">- mediaSpaceFree</option>
+		
+		<option value="//api/name/mediaSpaceOverwritable">- mediaSpaceOverwritable</option>
+		
+		<option value="//api/name/mediaSpaceUsed">- mediaSpaceUsed</option>
+		
+		<option value="//api/name/mediaType">- mediaType</option>
+		
+		<option value="//api/name/openTray">- openTray</option>
+		
+		<option value="//api/name/releaseExclusiveAccess">- releaseExclusiveAccess</option>
+		
+		<option value="//api/name/releaseMediaReservation">- releaseMediaReservation</option>
+		
+		<option value="//api/name/status">- status</option>
+		
+		<option value="//api/name/trayIsOpen">- trayIsOpen</option>
+		
+		<option value="//api/name/writesCD">- writesCD</option>
+		
+		<option value="//api/name/writesDVD">- writesDVD</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DRDevice Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DRDevice.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      DRDevice
+</code></pre><h3>About Devices</h3>
+
+
+<pre><code>            A DRDevice DRDevice represents a physical CD/DVD drive connected to the computer. This class is 
+            mainly for informational purposes since the device is configured by the burn 
+            engine before beginning to optimally handle the burn. The basis for obtaining the
+            device information is through two methods @link //apple_ref/occ/instm/DRDevice/info info @/link 
+            and @link //apple_ref/occ/instm/DRDevice/status status @/link. @link //apple_ref/occ/instm/DRDevice/info info @/link returns 
+            information pertaining to the drive as a whole and is not affected by the state 
+            of any media in the drive. @link //apple_ref/occ/instm/DRDevice/status status @/link returns information about the media in the drive as
+            well as those bits of information directly affected by the media (maximum burn speed,
+            BSD dev node name, etc.)
+
+            &lt;h3&gt;Obtaining Device instances&lt;/h3&gt;
+            The programmer cannot directly create DRDevices. Devices are managed by the burn engine
+            and are asked for by client code. The preferred way of obtaining an instance is
+            by registering with the @link //apple_ref/occ/cl/DRNotificationCenter DRNotificationCenter @/link and listening for the 
+            @link DRDeviceAppearedNotification DRDeviceAppearedNotification @/link. This notification is sent to all
+            observers when a device is first detected by the burn engine (such as when a device
+            is plugged in or turned on). A registered  observer is guaranteed to receive all 
+            @link DRDeviceAppearedNotification DRDeviceAppearedNotifications @/link. When a client registers for the 
+            @link DRDeviceAppearedNotification DRDeviceAppearedNotification @/link, the engine will ensure that
+            the client gets notified of all devices currently connected to the machine. When a device
+            is removed, registed observers will receive a @link DRDeviceDisappearedNotification DRDeviceDisappearedNotification @/link.
+
+            It's also possible to obtain a device instance from its IORegistry path 
+            (@link //apple_ref/occ/clm/DRDevice/deviceForIORegistryEntryPath: deviceForIORegistryEntryPath: @/link) 
+            or the BSD /dev node name (@link //apple_ref/occ/clm/DRDevice/deviceForBSDName: deviceForBSDName: @/link).
+            If you have a reference to a device instance, you can determine if the physical device
+            is still valid and connected by sending the @link //apple_ref/occ/instm/DRDevice/isValid isValid @/link method to the instance.
+
+            &lt;h3&gt;Device Control&lt;/h3&gt;
+            There is a limited set of operations that can be performed on a device. The most
+            important of these is &lt;i&gt;media reservation&lt;/i&gt;. Reserving media is a process by which
+            applications arbitrate for blank media. An application registers interest in 
+            obtaining a media reservation by caling @link //apple_ref/occ/instm/DRDevice/acquireMediaReservation acquireMediaReservation @/link and gives up
+            its interest by calling @link //apple_ref/occ/instm/DRDevice/releaseMediaReservation releaseMediaReservation @/link. Asking to acquire a reservation does
+            not mean you will get it! Another application may already have the reservation and 
+            will refuse to give it up to you. In this case, the only thing to do is to play fair and
+            wait until the @link DRDeviceMediaIsReservedKey DRDeviceMediaIsReservedKey @/link indicates that your app has obtained 
+            the reservation.
+
+            The device tray can be opened (@link //apple_ref/occ/instm/DRDevice/openTray openTray @/link) or 
+            closed (@link //apple_ref/occ/instm/DRDevice/closeTray closeTray @/link) and media 
+            can be ejected (@link //apple_ref/occ/instm/DRDevice/ejectMedia ejectMedia @/link).
+
+
+@category       DRDevice (InfoConvenience)
+</code></pre><p>This category on DRDevice defines methods that make retrieving
+                    the more commonly accessed DRDevice information dictionary properties easier.</p>
+
+<pre><code>@category       DRDevice (StatusConvenience)
+</code></pre><p>This category on DRDevice defines methods that make retrieving
+                    the more commonly accessed DRDevice <a href="#//api/name/status">status</a> dictionary properties easier.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/devices" title="devices"></a>
+	<h3 class="method-title"><code><a href="#//api/name/devices">+&nbsp;devices</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Obtains a static list of devices connected to the computer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray *)devices</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray of DRDevices.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         devices
+</code></pre><p>Returns all CD/DVD devices connected to the computer at the time this
+                    method is called. Since devices can come and go at any time, the output of this
+                    method is simply a snapshot of the set of devices connected.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceForBSDName:" title="deviceForBSDName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceForBSDName:">+&nbsp;deviceForBSDName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Obtains a DRDevice for the device corresponding to the bsd /dev node.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRDevice *)deviceForBSDName:(NSString *)<em>bsdName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bsdName</code></th>
+						<td><p>The bsd /dev node name.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRDevice object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         deviceForBSDName:
+</code></pre><p>If the device is not an authoring device (i.e., CDR, CDRW, DVR-R, etc), returns nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceForIORegistryEntryPath:" title="deviceForIORegistryEntryPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceForIORegistryEntryPath:">+&nbsp;deviceForIORegistryEntryPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Obtains a DRDevice for the device at the path.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRDevice *)deviceForIORegistryEntryPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>The IORegistry path to the device you wish to obtain a DRDEvice for.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRDevice object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         deviceForIORegistryEntryPath:
+</code></pre><p>If the device is not an authoring device (i.e., CDR, CDRW, DVR-R, etc), returns nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isValid" title="isValid"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isValid">&ndash;&nbsp;isValid</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns whether or not the device represented by the receiver is still attached
+                    to the computer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isValid</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns <i>YES</i> if device is valid and <i>NO</i> if not.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         isValid
+</code></pre><p>Because of the way some physical interconnects work, a device
+                    which is unplugged and replugged in does not necessarily look like the same
+                    device to the computer and would be invalid in that instance.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/info" title="info"></a>
+	<h3 class="method-title"><code><a href="#//api/name/info">&ndash;&nbsp;info</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary of information describing the device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)info</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSDictionary containing device information.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         info
+</code></pre><p>The information returned include the types of media the device can write to, how
+                    it&rsquo;s connected and its identifying information such as the vendor and product name.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/status" title="status"></a>
+	<h3 class="method-title"><code><a href="#//api/name/status">&ndash;&nbsp;status</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary of information describing the media in the device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)status</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSDictionary containing media information.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         status
+</code></pre><p>In addition to information about the media (type, space available/used, etc),
+                    the dictionary returned includes those pieces of information about the device
+                    itself which are in part determined by the media (i.e., maximum burn speed).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/openTray" title="openTray"></a>
+	<h3 class="method-title"><code><a href="#//api/name/openTray">&ndash;&nbsp;openTray</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Commands the device to open its tray.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)openTray</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns <i>YES</i> if the tray could be opened and <i>NO</i> if not.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         openTray
+</code></pre><p>Does nothing if the device does not have a tray (slotload). If there is media in
+                    the drive this method will do nothing and return false. In this case use
+                    @link //apple_ref/occ/instm/DRDevice/<a href="#//api/name/ejectMedia">ejectMedia</a> <a href="#//api/name/ejectMedia">ejectMedia</a> @/link to eject the media and open the tray.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/closeTray" title="closeTray"></a>
+	<h3 class="method-title"><code><a href="#//api/name/closeTray">&ndash;&nbsp;closeTray</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Commands the device to close its tray.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)closeTray</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns <i>YES</i> if the tray could be closed and <i>NO</i> if not.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         closeTray
+</code></pre><p>Does nothing if the device does not have a tray (slotload).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ejectMedia" title="ejectMedia"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ejectMedia">&ndash;&nbsp;ejectMedia</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Commands the device to eject the media.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)ejectMedia</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns <i>YES</i> if the media could be ejected and <i>NO</i> if not.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         ejectMedia
+</code></pre><p>This command first unmounts any volumes associated with the media and
+                    then ejects the media from the drive. If the media could not be ejected,
+                    most likely this is because a volume associated with the media could not be unmounted.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/acquireExclusiveAccess" title="acquireExclusiveAccess"></a>
+	<h3 class="method-title"><code><a href="#//api/name/acquireExclusiveAccess">&ndash;&nbsp;acquireExclusiveAccess</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Attempts to acquire an exclusive access session with the device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)acquireExclusiveAccess</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns <i>YES</i> if the exclusinve access is acquired and <i>NO</i> if not.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         acquireExclusiveAccess
+</code></pre><p>Acquiring exclusive access to the device prevents any process
+                    other than the one acquiring access from communicating with the
+                    device. So once exclusive access is granted, the device is unusable by any other process.
+                    Because of this all volumes mounted from media in the drive must be unmounted
+                    before exclusive access can be granted.</p>
+
+<pre><code>                Exclusive access can be acquired multiple times. Each time this method
+                is called, a call to @link //apple_ref/occ/instm/DRDevice/releaseExclusiveAccess releaseExclusiveAccess @/link&gt; must be made at a later time,
+                otherwise the process will never release its exclusive access.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/releaseExclusiveAccess" title="releaseExclusiveAccess"></a>
+	<h3 class="method-title"><code><a href="#//api/name/releaseExclusiveAccess">&ndash;&nbsp;releaseExclusiveAccess</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Releases the latest exclusive access request for the device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)releaseExclusiveAccess</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         releaseExclusiveAccess
+</code></pre><p>A call to this method must be made for every call to @link //apple_ref/occ/instm/DRDevice/<a href="#//api/name/acquireExclusiveAccess">acquireExclusiveAccess</a> <a href="#//api/name/acquireExclusiveAccess">acquireExclusiveAccess</a> @/link,
+                    otherwise the process will never release its exclusive access.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/acquireMediaReservation" title="acquireMediaReservation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/acquireMediaReservation">&ndash;&nbsp;acquireMediaReservation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicate an interest in the blank media reservation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)acquireMediaReservation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         acquireMediaReservation
+</code></pre><p>Blank media participates in a reservation system that allows applications to express
+                    their claim on blank media to other applications.  Indicating an interest in the reservation
+                    isn&rsquo;t enough to assume it&rsquo;s been acquired, as there are likely to be other applications in
+                    the system who have also indicated an interest in the blank media reservation.  You will
+                    receive a @link DRDeviceStatusChangedNotification DRDeviceStatusChangedNotification @/link with a value of <tt>TRUE</tt> for the
+                    @link DRDeviceMediaIsReservedKey DRDeviceMediaIsReservedKey @/link when the blank media reservation has been acquired.</p>
+
+<pre><code>                This function may be called multiple times. Each time it is called, a call to
+                @link //apple_ref/occ/instm/DRDevice/releaseMediaReservation releaseMediaReservation @/link must be made at a later time, otherwise the process will
+                never fully rescind its interest in the blank media reservation.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/releaseMediaReservation" title="releaseMediaReservation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/releaseMediaReservation">&ndash;&nbsp;releaseMediaReservation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Releases any media reservation that might be in place for the device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)releaseMediaReservation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         releaseMediaReservation
+</code></pre><p>If media is inserted and reserved, then the reservation will be passed
+                    on to the next process with a reservation request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isEqualToDevice:" title="isEqualToDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isEqualToDevice:">&ndash;&nbsp;isEqualToDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Compares the receiver to another device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToDevice:(DRDevice *)<em>otherDevice</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>otherDevice</code></th>
+						<td><p>Another DRDevice instance to compare to the receiver.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns <i>YES</i> if the receiver is equal to otherDevice.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         isEqualToDevice:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="InfoConvenience Methods" name="task_InfoConvenience Methods"></a>
+						<h2 class="task-title">InfoConvenience Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/writesCD" title="writesCD"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writesCD">&ndash;&nbsp;writesCD</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     writesCD
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writesCD</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns <i>YES</i> if the device has the ability to write to CD-R media.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     writesCD
+</code></pre><p>Reports the device&rsquo;s ability to burn to CD-type media.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writesDVD" title="writesDVD"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writesDVD">&ndash;&nbsp;writesDVD</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     writesDVD
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writesDVD</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns <i>YES</i> if the device has the ability to write to DVD media.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     writesDVD
+</code></pre><p>Reports the device&rsquo;s ability to burn to DVD-type media.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/displayName" title="displayName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/displayName">&ndash;&nbsp;displayName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     displayName
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)displayName</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     displayName
+</code></pre><p>Returns an NSString suitable for display in the user interface.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ioRegistryEntryPath" title="ioRegistryEntryPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ioRegistryEntryPath">&ndash;&nbsp;ioRegistryEntryPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     ioRegistryEntryPath
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)ioRegistryEntryPath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     ioRegistryEntryPath
+</code></pre><p>Returns the path to the device in the IO Registry.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="StatusConvenience Methods" name="task_StatusConvenience Methods"></a>
+						<h2 class="task-title">StatusConvenience Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/mediaIsPresent" title="mediaIsPresent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaIsPresent">&ndash;&nbsp;mediaIsPresent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaIsPresent
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)mediaIsPresent</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaIsPresent
+</code></pre><p>Reports the presence of the media.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaIsTransitioning" title="mediaIsTransitioning"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaIsTransitioning">&ndash;&nbsp;mediaIsTransitioning</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaIsTransitioning
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)mediaIsTransitioning</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaIsTransitioning
+</code></pre><p>Returns <i>YES</i> if the media is in transition (spinning up or down for example).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaIsBusy" title="mediaIsBusy"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaIsBusy">&ndash;&nbsp;mediaIsBusy</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaIsBusy
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)mediaIsBusy</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaIsBusy
+</code></pre><p>Returns <i>YES</i> if the media is in use by some process - even the one
+                making this call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaType" title="mediaType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaType">&ndash;&nbsp;mediaType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaType
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)mediaType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaType
+</code></pre><p>Returns the type of media currently inserted into the device.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaIsBlank" title="mediaIsBlank"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaIsBlank">&ndash;&nbsp;mediaIsBlank</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaIsBlank
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)mediaIsBlank</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaIsBlank
+</code></pre><p>Returns <i>YES</i> the media in the device is blank.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaIsAppendable" title="mediaIsAppendable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaIsAppendable">&ndash;&nbsp;mediaIsAppendable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaIsAppendable
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)mediaIsAppendable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaIsAppendable
+</code></pre><p>Returns <i>YES</i> if the media in the device can have more data appended to
+                any existing data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaIsOverwritable" title="mediaIsOverwritable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaIsOverwritable">&ndash;&nbsp;mediaIsOverwritable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaIsOverwritable
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)mediaIsOverwritable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaIsOverwritable
+</code></pre><p>Returns <i>YES</i> if the media in the device can be fully (re)written.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaIsErasable" title="mediaIsErasable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaIsErasable">&ndash;&nbsp;mediaIsErasable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaIsErasable
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)mediaIsErasable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaIsErasable
+</code></pre><p>Returns <i>YES</i> if the media can be erased (i.e., CD-RW, DVD-RW, etc).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaIsReserved" title="mediaIsReserved"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaIsReserved">&ndash;&nbsp;mediaIsReserved</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaIsReserved
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)mediaIsReserved</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaIsReserved
+</code></pre><p>Returns <i>YES</i> if the application calling this method currently holds
+                the reservation on the media.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaSpaceOverwritable" title="mediaSpaceOverwritable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaSpaceOverwritable">&ndash;&nbsp;mediaSpaceOverwritable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaSpaceOverwritable
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (DRMSF *)mediaSpaceOverwritable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaSpaceOverwritable
+</code></pre><p>Returns the amount of writable space on the media.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaSpaceUsed" title="mediaSpaceUsed"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaSpaceUsed">&ndash;&nbsp;mediaSpaceUsed</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaSpaceUsed
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (DRMSF *)mediaSpaceUsed</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaSpaceUsed
+</code></pre><p>Returns the amount of used space on the media.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaSpaceFree" title="mediaSpaceFree"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaSpaceFree">&ndash;&nbsp;mediaSpaceFree</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     mediaSpaceFree
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (DRMSF *)mediaSpaceFree</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaSpaceFree
+</code></pre><p>Returns the amount of free space on the media.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trayIsOpen" title="trayIsOpen"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trayIsOpen">&ndash;&nbsp;trayIsOpen</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     trayIsOpen
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)trayIsOpen</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns <i>YES</i> if the device has a tray and it is open.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     trayIsOpen
+</code></pre><p>Reports the tray state of the device.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bsdName" title="bsdName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bsdName">&ndash;&nbsp;bsdName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     bsdName
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)bsdName</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     bsdName
+</code></pre><p>Returns the bsd /dev node name.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

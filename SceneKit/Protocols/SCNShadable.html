@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SCNShadable Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SceneKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/__WATCHOS_PROHIBITED">__WATCHOS_PROHIBITED</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/handleBindingOfSymbol:usingBlock:">- handleBindingOfSymbol:usingBlock:</option>
+		
+		<option value="//api/name/handleUnbindingOfSymbol:usingBlock:">- handleUnbindingOfSymbol:usingBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SCNShadable Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SCNShadable.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol SCNShadable</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/__WATCHOS_PROHIBITED" title="__WATCHOS_PROHIBITED"></a>
+	<h3 class="method-title"><code><a href="#//api/name/__WATCHOS_PROHIBITED">&nbsp;&nbsp;__WATCHOS_PROHIBITED</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specifies a custom program used to render the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) SCNProgram *__WATCHOS_PROHIBITED</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property program</p><p>When a program is set, it overrides all the rendering parameters such as material settings and shaderModifiers.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNShadable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/handleBindingOfSymbol:usingBlock:" title="handleBindingOfSymbol:usingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/handleBindingOfSymbol:usingBlock:">&ndash;&nbsp;handleBindingOfSymbol:usingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the block to call at render time to bind the value for the specified symbol of the receiver&rsquo;s <a href="../Classes/SCNProgram.html">SCNProgram</a>. This method has no effect for symbols declared in shader modifiers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)handleBindingOfSymbol:(NSString *)<em>symbol</em> usingBlock:(nullable SCNBindingBlock)<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>symbol</code></th>
+						<td><p>The name of the symbol to bind a value for.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>The block to call to bind the specified symbol.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method handleBindingOfSymbol:usingBlock:</p><p>This method can only be used with OpenGL and OpenGLES based programs.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNShadable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/handleUnbindingOfSymbol:usingBlock:" title="handleUnbindingOfSymbol:usingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/handleUnbindingOfSymbol:usingBlock:">&ndash;&nbsp;handleUnbindingOfSymbol:usingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the block to call at render time to unbind the value for the specified symbol of the receiver&rsquo;s <a href="../Classes/SCNProgram.html">SCNProgram</a>. This method has no effect for symbols declared in shader modifiers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)handleUnbindingOfSymbol:(NSString *)<em>symbol</em> usingBlock:(nullable SCNBindingBlock)<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>symbol</code></th>
+						<td><p>The name of the symbol to unbind.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>The block to call to unbind the specified symbol.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method handleUnbindingOfSymbol:usingBlock:</p><p>This method can only be used with OpenGL and OpenGLES based programs.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNShadable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Dictionary of shader modifiers snippets, targeting entry points. The valid keys are the entry points described in the &ldquo;Shader Modifier Entry Point&rdquo; constants. The values are the code snippets formatted as described below.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSDictionary&lt;SCNShaderModifierEntryPoint,NSString*&gt; *API_AVAILABLE ( macos ( 10.9 )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property shaderModifiers</p><p>Shader modifiers allow you to inject shader code in the standard shaders of SceneKit. This injection is allowed in few controlled entry points, allowing specific kind of tasks in specific context. Each modifier can operate on specific structures along with access to global uniforms, that could be the standard SceneKit uniforms or its own declared uniforms.</p>
+
+<p>The structure of a shader modifier is:</p>
+
+<p>| // Custom GLSL uniforms declarations are of the form: [uniform type uniformName [= defaultValue]]
+| uniform float myGrayAmount = 3.0;
+|
+| // Custom Metal uniforms declarations require a #pragma and are of the form: [type name]
+| #pragma arguments
+| float myGrayAmount;
+|
+| // In Metal, you can also transfer varying values from the vertex shader (geometry modifier) to the fragment shader (surface/fragment modifier)
+| // In one (or both) of the modifier, declare the varying values
+| #pragma varyings
+| half3 myVec;
+|
+| // Output varying values in the geometry modifier
+| out.myVec = <em>geometry.normal.xyz * 0.5h + 0.5h;
+|
+| // And use them in the fragment modifier
+| </em>output.color.rgb = saturate(in.myVec);
+|
+| // Optional global function definitions (for Metal: references to uniforms in global functions are not supported).
+| float mySin(float t) {
+|    return sin(t);
+| }
+|
+| [#pragma transparent | opaque]
+| [#pragma body]
+|
+| // the shader modifier code snippet itself
+| float3 myColor = myGrayAmount;
+| _output.color.rgb += myColor;</p>
+
+<p>The <code>#pragma body</code> directive
+Is only needed if you declared functions that must not be included in the shader code itself.</p>
+
+<p>The <code>#pragma transparent</code> directive
+Forces the rendering to be blended using the following equation:
+<em>output.color.rgb + (1 - </em>output.color.a) * dst.rgb;
+where <code>dst</code> represents the current fragment color. The rgb components must be premultiplied.</p>
+
+<p>The <code>#pragma opaque</code> directive
+Forces the rendering to be opaque. It then ignores the alpha component of the fragment.</p>
+
+<p>The <a href="../Classes/SCNGeometry.html">SCNGeometry</a> and <a href="../Classes/SCNMaterial.html">SCNMaterial</a> classes are key-value coding compliant classes, which means that you can set values for arbitrary keys. Even if the key <code>myAmplitude</code> is not a declared property of the class, you can still set a value for it.
+Declaring a <code>myAmplitude</code> uniform in the shader modifier makes SceneKit observe the reveiver&rsquo;s <code>myAmplitude</code> key. Any change to that key will make SceneKit bind the uniform with the new value.
+Common scalar types wrapped by NSValue are supported.
+Metal Only:
+- MTLBuffer are also supported as values (introduced in macOS 10.13, iOS 11.0 and tvOS 11.0)
+- Complex data types (struct) declared in the Metal shader are supported.
+    - You can set them as a whole using NSData.
+    - Or you can set individual struct members using the member name as key and a value compatible with the member type.</p>
+
+<p>Custom uniforms can be animated using explicit animations.</p>
+
+<p>The following GLSL and Metal Shading Language types (and Objective-C counterparts) can be used to declare (and bind) custom uniforms:</p>
+
+<p>GLSL          | Metal Shading Language | Objective-C
+&mdash;&mdash;&mdash;&mdash;&ndash;┼&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;┼&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+int           | int                    | NSNumber, NSInteger, int
+float         | float                  | NSNumber, CGFloat, float, double
+vec2          | float2                 | CGPoint
+vec3          | float3                 | SCNVector3
+vec4          | float4                 | SCNVector4
+mat4, mat44   | float4x4               | SCNMatrix4
+sampler2D     | texture2d              | <a href="../Classes/SCNMaterialProperty.html">SCNMaterialProperty</a>
+samplerCube   | texturecube            | <a href="../Classes/SCNMaterialProperty.html">SCNMaterialProperty</a> (with a cube map)</p>
+
+<p>The following prefixes are reserved by SceneKit and should not be used in custom names:
+u<em>
+a</em>
+v_</p>
+
+<p>SceneKit declares the following built-in uniforms:</p>
+
+<p>GLSL                                        | Metal Shading Language                                |
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;┼&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-┤
+float u_time                                | float    scn_frame.time                               | The current time, in seconds
+vec2  u_inverseResolution                   | float2   scn_frame.inverseResolution                  | 1.0 / screen size
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;┼&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-┤
+mat4  u_viewTransform                       | float4x4 scn_frame.viewTransform                      | See SCNViewTransform
+mat4  u_inverseViewTransform                | float4x4 scn_frame.inverseViewTransform               |
+mat4  u_projectionTransform                 | float4x4 scn_frame.projectionTransform                | See SCNProjectionTransform
+mat4  u_inverseProjectionTransform          | float4x4 scn_frame.inverseProjectionTransform         |
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;┼&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-┤
+mat4  u_normalTransform                     | float4x4 scn_node.normalTransform                     | See SCNNormalTransform
+mat4  u_modelTransform                      | float4x4 scn_node.modelTransform                      | See SCNModelTransform
+mat4  u_inverseModelTransform               | float4x4 scn_node.inverseModelTransform               |
+mat4  u_modelViewTransform                  | float4x4 scn_node.modelViewTransform                  | See SCNModelViewTransform
+mat4  u_inverseModelViewTransform           | float4x4 scn_node.inverseModelViewTransform           |
+mat4  u_modelViewProjectionTransform        | float4x4 scn_node.modelViewProjectionTransform        | See SCNModelViewProjectionTransform
+mat4  u_inverseModelViewProjectionTransform | float4x4 scn_node.inverseModelViewProjectionTransform |
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;┼&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-┤
+mat2x3 u_boundingBox;                       | float2x3 scn_node.boundingBox                         | The bounding box of the current geometry, in model space, u_boundingBox[0].xyz and u_boundingBox[1].xyz being respectively the minimum and maximum corner of the box.</p>
+
+<p>When writing shaders using the Metal Shading Language a complete description of the type of the scn_frame variable (SCNSceneBuffer) can be found in the &lt;SceneKit/scn_metal> header file.
+The type of the scn_node variable is generated at compile time and there&rsquo;s no corresponding header file in the framework.</p>
+
+<p>Shader modifiers can be used to tweak SceneKit rendering by adding custom code at the following entry points:
+1. vertex
+2. surface
+3. lighting
+4. fragment
+See below for a detailed explanation of these entry points and the context they provide.</p>
+
+<p>Shader modifiers can be written in GLSL or Metal. Metal shaders won&rsquo;t run on iOS 8 and macOS 10.10 or earlier.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNShadable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

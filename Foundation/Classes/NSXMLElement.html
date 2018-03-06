@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSXMLElement Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/attributes">attributes</option>
+		
+		<option value="//api/name/namespaces">namespaces</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addAttribute:">- addAttribute:</option>
+		
+		<option value="//api/name/addChild:">- addChild:</option>
+		
+		<option value="//api/name/addNamespace:">- addNamespace:</option>
+		
+		<option value="//api/name/attributeForLocalName:URI:">- attributeForLocalName:URI:</option>
+		
+		<option value="//api/name/attributeForName:">- attributeForName:</option>
+		
+		<option value="//api/name/elementsForLocalName:URI:">- elementsForLocalName:URI:</option>
+		
+		<option value="//api/name/elementsForName:">- elementsForName:</option>
+		
+		<option value="//api/name/initWithKind:options:">- initWithKind:options:</option>
+		
+		<option value="//api/name/initWithName:">- initWithName:</option>
+		
+		<option value="//api/name/initWithName:URI:">- initWithName:URI:</option>
+		
+		<option value="//api/name/initWithName:stringValue:">- initWithName:stringValue:</option>
+		
+		<option value="//api/name/initWithXMLString:error:">- initWithXMLString:error:</option>
+		
+		<option value="//api/name/insertChild:atIndex:">- insertChild:atIndex:</option>
+		
+		<option value="//api/name/insertChildren:atIndex:">- insertChildren:atIndex:</option>
+		
+		<option value="//api/name/namespaceForPrefix:">- namespaceForPrefix:</option>
+		
+		<option value="//api/name/normalizeAdjacentTextNodesPreservingCDATA:">- normalizeAdjacentTextNodesPreservingCDATA:</option>
+		
+		<option value="//api/name/removeAttributeForName:">- removeAttributeForName:</option>
+		
+		<option value="//api/name/removeChildAtIndex:">- removeChildAtIndex:</option>
+		
+		<option value="//api/name/removeNamespaceForPrefix:">- removeNamespaceForPrefix:</option>
+		
+		<option value="//api/name/replaceChildAtIndex:withNode:">- replaceChildAtIndex:withNode:</option>
+		
+		<option value="//api/name/resolveNamespaceForName:">- resolveNamespaceForName:</option>
+		
+		<option value="//api/name/resolvePrefixForNamespaceURI:">- resolvePrefixForNamespaceURI:</option>
+		
+		<option value="//api/name/setAttributesAsDictionary:">- setAttributesAsDictionary:</option>
+		
+		<option value="//api/name/setAttributesWithDictionary:">- setAttributesWithDictionary:</option>
+		
+		<option value="//api/name/setChildren:">- setChildren:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSXMLElement Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/NSXMLNode.html">NSXMLNode</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSXMLElement.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class NSXMLElement
+</code></pre><p>Note: Trying to add a document, namespace, attribute, or node with a parent throws an exception. To add a node with a parent first detach or create a copy of it.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithName:" title="initWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:">&ndash;&nbsp;initWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an element <tt>&lt;name>&lt;/name></tt>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithName:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:URI:" title="initWithName:URI:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:URI:">&ndash;&nbsp;initWithName:URI:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an element whose full QName is specified.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithName:(NSString *)<em>name</em> URI:(nullable NSString *)<em>URI</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithName:URI:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:stringValue:" title="initWithName:stringValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:stringValue:">&ndash;&nbsp;initWithName:stringValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an element with a single text node child <tt>&lt;name>string&lt;/name></tt>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithName:(NSString *)<em>name</em> stringValue:(nullable NSString *)<em>string</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithName:stringValue:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithXMLString:error:" title="initWithXMLString:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithXMLString:error:">&ndash;&nbsp;initWithXMLString:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an element created from a string. Parse errors are collected in <tt>error</tt>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithXMLString:(NSString *)<em>string</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithXMLString:error:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithKind:options:" title="initWithKind:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithKind:options:">&ndash;&nbsp;initWithKind:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Inits a node with fidelity options as <a href="../Classes/NSXMLNode.html#//api/name/description">description</a> <a href="../Constants/NSXMLNodeOptions.html">NSXMLNodeOptions</a>.h</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithKind:(NSXMLNodeKind)<em>kind</em> options:(NSXMLNodeOptions)<em>options</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithKind:options:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementsForName:" title="elementsForName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementsForName:">&ndash;&nbsp;elementsForName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns all of the child elements that match this name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;NSXMLElement*&gt; *)elementsForName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method elementsForName:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementsForLocalName:URI:" title="elementsForLocalName:URI:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementsForLocalName:URI:">&ndash;&nbsp;elementsForLocalName:URI:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns all of the child elements that match this localname URI pair.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;NSXMLElement*&gt; *)elementsForLocalName:(NSString *)<em>localName</em> URI:(nullable NSString *)<em>URI</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method elementsForLocalName:URI
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addAttribute:" title="addAttribute:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addAttribute:">&ndash;&nbsp;addAttribute:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an attribute. Attributes with duplicate names are not added.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addAttribute:(NSXMLNode *)<em>attribute</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method addAttribute:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAttributeForName:" title="removeAttributeForName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAttributeForName:">&ndash;&nbsp;removeAttributeForName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes an attribute based on its name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAttributeForName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method removeAttributeForName:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributes" title="attributes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributes">&nbsp;&nbsp;attributes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the attributes. In the case of duplicate names, the first attribute with the name is used.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) NSArray&lt;NSXMLNode*&gt; *attributes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAttributesWithDictionary:" title="setAttributesWithDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAttributesWithDictionary:">&ndash;&nbsp;setAttributesWithDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the <a href="#//api/name/attributes">attributes</a> based on a name-value dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setAttributesWithDictionary:(NSDictionary&lt;NSString*,NSString*&gt; *)<em>attributes</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setAttributesWithDictionary:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributeForName:" title="attributeForName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributeForName:">&ndash;&nbsp;attributeForName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an attribute matching this name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSXMLNode *)attributeForName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method attributeForName:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributeForLocalName:URI:" title="attributeForLocalName:URI:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributeForLocalName:URI:">&ndash;&nbsp;attributeForLocalName:URI:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an attribute matching this localname URI pair.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSXMLNode *)attributeForLocalName:(NSString *)<em>localName</em> URI:(nullable NSString *)<em>URI</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method attributeForLocalName:URI:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addNamespace:" title="addNamespace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addNamespace:">&ndash;&nbsp;addNamespace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a namespace. Namespaces with duplicate names are not added.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addNamespace:(NSXMLNode *)<em>aNamespace</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method addNamespace:URI:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeNamespaceForPrefix:" title="removeNamespaceForPrefix:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeNamespaceForPrefix:">&ndash;&nbsp;removeNamespaceForPrefix:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a namespace with a particular name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeNamespaceForPrefix:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method addNamespace:URI:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/namespaces" title="namespaces"></a>
+	<h3 class="method-title"><code><a href="#//api/name/namespaces">&nbsp;&nbsp;namespaces</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the namespaces. In the case of duplicate names, the first namespace with the name is used.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) NSArray&lt;NSXMLNode*&gt; *namespaces</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/namespaceForPrefix:" title="namespaceForPrefix:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/namespaceForPrefix:">&ndash;&nbsp;namespaceForPrefix:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the namespace matching this prefix.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSXMLNode *)namespaceForPrefix:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method namespaceForPrefix:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resolveNamespaceForName:" title="resolveNamespaceForName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resolveNamespaceForName:">&ndash;&nbsp;resolveNamespaceForName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the namespace who matches the prefix of the name given. Looks in the entire namespace chain.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSXMLNode *)resolveNamespaceForName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method resolveNamespaceForName:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resolvePrefixForNamespaceURI:" title="resolvePrefixForNamespaceURI:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resolvePrefixForNamespaceURI:">&ndash;&nbsp;resolvePrefixForNamespaceURI:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the URI of this prefix. Looks in the entire namespace chain.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)resolvePrefixForNamespaceURI:(NSString *)<em>namespaceURI</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method resolvePrefixForNamespaceURI:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insertChild:atIndex:" title="insertChild:atIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insertChild:atIndex:">&ndash;&nbsp;insertChild:atIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Inserts a child at a particular index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)insertChild:(NSXMLNode *)<em>child</em> atIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method insertChild:atIndex:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insertChildren:atIndex:" title="insertChildren:atIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insertChildren:atIndex:">&ndash;&nbsp;insertChildren:atIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Insert several children at a particular index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)insertChildren:(NSArray&lt;NSXMLNode*&gt; *)<em>children</em> atIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method insertChildren:atIndex:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeChildAtIndex:" title="removeChildAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeChildAtIndex:">&ndash;&nbsp;removeChildAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a child at a particular index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeChildAtIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method removeChildAtIndex:atIndex:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setChildren:" title="setChildren:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setChildren:">&ndash;&nbsp;setChildren:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes all existing children and replaces them with the new children. Set children to nil to simply remove all children.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setChildren:(nullable NSArray&lt;NSXMLNode*&gt; *)<em>children</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method setChildren:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addChild:" title="addChild:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addChild:">&ndash;&nbsp;addChild:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a child to the end of the existing children.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addChild:(NSXMLNode *)<em>child</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method addChild:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/replaceChildAtIndex:withNode:" title="replaceChildAtIndex:withNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/replaceChildAtIndex:withNode:">&ndash;&nbsp;replaceChildAtIndex:withNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Replaces a child at a particular index with another child.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)replaceChildAtIndex:(NSUInteger)<em>index</em> withNode:(NSXMLNode *)<em>node</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method replaceChildAtIndex:withNode:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/normalizeAdjacentTextNodesPreservingCDATA:" title="normalizeAdjacentTextNodesPreservingCDATA:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/normalizeAdjacentTextNodesPreservingCDATA:">&ndash;&nbsp;normalizeAdjacentTextNodesPreservingCDATA:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adjacent text nodes are coalesced. If the node&rsquo;s value is the empty string, it is removed. This should be called with a value of NO before using XQuery or XPath.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)normalizeAdjacentTextNodesPreservingCDATA:(BOOL)<em>preserve</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method normalizeAdjacentTextNodesPreservingCDATA:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="NSDeprecated Methods" name="task_NSDeprecated Methods"></a>
+						<h2 class="task-title">NSDeprecated Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/setAttributesAsDictionary:" title="setAttributesAsDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAttributesAsDictionary:">&ndash;&nbsp;setAttributesAsDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the <a href="#//api/name/attributes">attributes</a> base on a name-value dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setAttributesAsDictionary:(NSDictionary *)<em>attributes</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method setAttributesAsDictionary:
+</code></pre><p>This method is deprecated and does not function correctly. Use <a href="#//api/name/setAttributesWithDictionary:">setAttributesWithDictionary:</a> instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSXMLElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

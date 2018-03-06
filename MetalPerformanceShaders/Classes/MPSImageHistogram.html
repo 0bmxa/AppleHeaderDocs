@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSImageHistogram Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/clipRectSource">clipRectSource</option>
+		
+		<option value="//api/name/histogramInfo">histogramInfo</option>
+		
+		<option value="//api/name/minPixelThresholdValue">minPixelThresholdValue</option>
+		
+		<option value="//api/name/zeroHistogram">zeroHistogram</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encodeToCommandBuffer:sourceTexture:histogram:histogramOffset:">- encodeToCommandBuffer:sourceTexture:histogram:histogramOffset:</option>
+		
+		<option value="//api/name/histogramSizeForSourceFormat:">- histogramSizeForSourceFormat:</option>
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:histogramInfo:">- initWithDevice:histogramInfo:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSImageHistogram Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSImageHistogram.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSImageHistogram</p><p>The MPSImageHistogram computes the histogram of an image.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/clipRectSource" title="clipRectSource"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clipRectSource">&nbsp;&nbsp;clipRectSource</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The source rectangle to use when reading data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) MTLRegion clipRectSource</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   clipRectSource</p><p>A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+completely within the source image, the intersection of the image bounds and clipRectSource will
+be used. The clipRectSource replaces the <a href="../Classes/MPSUnaryImageKernel.html">MPSUnaryImageKernel</a> offset parameter for this filter.
+The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/zeroHistogram" title="zeroHistogram"></a>
+	<h3 class="method-title"><code><a href="#//api/name/zeroHistogram">&nbsp;&nbsp;zeroHistogram</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Zero-initalize the histogram results</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) BOOL zeroHistogram</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   zeroHistogram</p><p>Indicates that the memory region in which the histogram results are to be written in the
+histogram buffer are to be zero-initialized or not. Default: YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/minPixelThresholdValue" title="minPixelThresholdValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minPixelThresholdValue">&nbsp;&nbsp;minPixelThresholdValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The minimum pixel threshold value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) vector_float4 minPixelThresholdValue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   minPixelThresholdValue</p><p>The histogram entries will be incremented only if pixel value is >= minPixelThresholdValue.
+The minPixelThresholdValue is a floating-point value.  For unsigned normalized textures, the
+minPixelThresholdValue should be a value between 0.0f and 1.0f (for eg. MTLPixelFormatRGBA8Unorm).
+For signed normalized textures, the minPixelThresholdValue should be a value between -1.0f and 1.0f
+(for eg. MTLPixelFormatRGBA8Snorm).  Default: vector_float4(0.0f).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/histogramInfo" title="histogramInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/histogramInfo">&nbsp;&nbsp;histogramInfo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return a structure describing the histogram content</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) MPSImageHistogramInfo histogramInfo</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   histogramInfo</p><p>Returns a MPSImageHistogramInfo structure describing the format of the
+histogram.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:histogramInfo:" title="initWithDevice:histogramInfo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:histogramInfo:">&ndash;&nbsp;initWithDevice:histogramInfo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specifies information to compute the histogram for channels of an image.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> histogramInfo:(const MPSImageHistogramInfo *__nonnull)<em>histogramInfo</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device the filter will run on</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>histogramInfo</code></th>
+						<td><p>Pointer to the MPSHistogramInfo struct</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSImageHistogram object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new <a href="../Classes/MPSKernel.html">MPSKernel</a> object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>While the standard NSSecureCoding/NSCoding method
+-initWithCoder: should work, since the file can&rsquo;t
+know which device your data is allocated on, we
+have to guess and may guess incorrectly.  To avoid
+that problem, use initWithCoder:device instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:sourceTexture:histogram:histogramOffset:" title="encodeToCommandBuffer:sourceTexture:histogram:histogramOffset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:sourceTexture:histogram:histogramOffset:">&ndash;&nbsp;encodeToCommandBuffer:sourceTexture:histogram:histogramOffset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode the filter to a command buffer using a MTLComputeCommandEncoder.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceTexture:(nonnull id&lt;MTLTexture&gt;)<em>source</em> histogram:(nonnull id&lt;MTLBuffer&gt;)<em>histogram</em> histogramOffset:(NSUInteger)<em>histogramOffset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>source</code></th>
+						<td><p>A valid MTLTexture containing the source image for the filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>histogram</code></th>
+						<td><p>A valid MTLBuffer to receive the histogram results.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>histogramOffset</code></th>
+						<td><p>Byte offset into histogram buffer at which to write the histogram results. Must be a multiple of 32 bytes.
+The histogram results / channel are stored together.  The number of channels for which
+histogram results are stored is determined by the number of channels in the image.
+If <a href="#//api/name/histogramInfo">histogramInfo</a>.histogramForAlpha is false and the source image is RGBA then only histogram
+results for RGB channels are stored.</p>
+
+<p>The histogram results are stored in the histogram buffer as follows:
+- histogram results for the R channel for all bins followed by
+- histogram results for the G channel for all bins followed by
+- histogram results for the B channel for all bins followed by
+- histogram results for the A channel for all bins</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The filter will not begin to execute until after the command
+buffer has been enqueued and committed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/histogramSizeForSourceFormat:" title="histogramSizeForSourceFormat:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/histogramSizeForSourceFormat:">&ndash;&nbsp;histogramSizeForSourceFormat:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The amount of space in the output MTLBuffer the histogram will take up.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (size_t)histogramSizeForSourceFormat:(MTLPixelFormat)<em>sourceFormat</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceFormat</code></th>
+						<td><p>The MTLPixelFormat of the source image. This is
+the source parameter of -encodeToCommandBuffer:
+sourceTexture:histogram:histogramOffset</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The number of bytes needed to store the result histograms.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This convenience function calculates the minimum amount of space
+needed in the output histogram for the results.  The MTLBuffer should
+be at least this length, longer if histogramOffset is non-zero.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

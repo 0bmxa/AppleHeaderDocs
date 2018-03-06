@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVContentKeySession Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/contentKeyRecipients">contentKeyRecipients</option>
+		
+		<option value="//api/name/contentProtectionSessionIdentifier">contentProtectionSessionIdentifier</option>
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/delegateQueue">delegateQueue</option>
+		
+		<option value="//api/name/keySystem">keySystem</option>
+		
+		<option value="//api/name/storageURL">storageURL</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/contentKeySessionWithKeySystem:">+ contentKeySessionWithKeySystem:</option>
+		
+		<option value="//api/name/contentKeySessionWithKeySystem:storageDirectoryAtURL:">+ contentKeySessionWithKeySystem:storageDirectoryAtURL:</option>
+		
+		<option value="//api/name/pendingExpiredSessionReportsWithAppIdentifier:storageDirectoryAtURL:">+ pendingExpiredSessionReportsWithAppIdentifier:storageDirectoryAtURL:</option>
+		
+		<option value="//api/name/removePendingExpiredSessionReports:withAppIdentifier:storageDirectoryAtURL:">+ removePendingExpiredSessionReports:withAppIdentifier:storageDirectoryAtURL:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addContentKeyRecipient:">- addContentKeyRecipient:</option>
+		
+		<option value="//api/name/expire">- expire</option>
+		
+		<option value="//api/name/makeSecureTokenForExpirationDateOfPersistableContentKey:completionHandler:">- makeSecureTokenForExpirationDateOfPersistableContentKey:completionHandler:</option>
+		
+		<option value="//api/name/processContentKeyRequestWithIdentifier:initializationData:options:">- processContentKeyRequestWithIdentifier:initializationData:options:</option>
+		
+		<option value="//api/name/removeContentKeyRecipient:">- removeContentKeyRecipient:</option>
+		
+		<option value="//api/name/renewExpiringResponseDataForContentKeyRequest:">- renewExpiringResponseDataForContentKeyRequest:</option>
+		
+		<option value="//api/name/setDelegate:queue:">- setDelegate:queue:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVContentKeySession Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVContentKeySession.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@constant      AVContentKeySystemClearKey</p><p>Used to specify clear key as the method of key delivery.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/contentKeySessionWithKeySystem:" title="contentKeySessionWithKeySystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeySessionWithKeySystem:">+&nbsp;contentKeySessionWithKeySystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new instance of AVContentKeySession to manage a collection of media content keys.
+@param         <a href="#//api/name/keySystem">keySystem</a>
+                A valid key system for retrieving keys.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)contentKeySessionWithKeySystem:(AVContentKeySystem)<em>keySystem</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new AVContentKeySession.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        contentKeySessionWithKeySystem:</p><p>This method returns an AVContentKeySession instance that is capable of managing collection of media content keys corresponding to the input <a href="#//api/name/keySystem">keySystem</a>. An NSInvalidArgumentException will be raised if the value of <a href="#//api/name/keySystem">keySystem</a> is unsupported.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentKeySessionWithKeySystem:storageDirectoryAtURL:" title="contentKeySessionWithKeySystem:storageDirectoryAtURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeySessionWithKeySystem:storageDirectoryAtURL:">+&nbsp;contentKeySessionWithKeySystem:storageDirectoryAtURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new instance of AVContentKeySession to manage a collection of media content keys.
+@param         <a href="#//api/name/keySystem">keySystem</a>
+                A valid key system for retrieving keys.
+@param         <a href="#//api/name/storageURL">storageURL</a>
+                URL to a writable directory that the session will use to facilitate expired session reports after abnormal session termination.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)contentKeySessionWithKeySystem:(AVContentKeySystem)<em>keySystem</em> storageDirectoryAtURL:(NSURL *)<em>storageURL</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new AVContentKeySession.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        contentKeySessionWithKeySystem:storageDirectoryAtURL:</p><p>This method returns an AVContentKeySession instance that is capable of managing collection of media content keys corresponding to the input <a href="#//api/name/keySystem">keySystem</a>. An NSInvalidArgumentException will be raised if the value of <a href="#//api/name/keySystem">keySystem</a> is unsupported.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDelegate:queue:" title="setDelegate:queue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDelegate:queue:">&ndash;&nbsp;setDelegate:queue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the receiver&rsquo;s <a href="#//api/name/delegate">delegate</a>. A <a href="#//api/name/delegate">delegate</a> is required to handle content key initialization.
+@param         <a href="#//api/name/delegate">delegate</a>
+                An object conforming to the <a href="../Protocols/AVContentKeySessionDelegate.html">AVContentKeySessionDelegate</a> protocol.
+@param         <a href="#//api/name/delegateQueue">delegateQueue</a>
+                A dispatch queue on which <a href="#//api/name/delegate">delegate</a> methods will be invoked whenever processes requiring content keys are executed asynchronously. Passing a value of nil for the <a href="#//api/name/delegateQueue">delegateQueue</a> parameter along with a non-nil value for the <a href="#//api/name/delegate">delegate</a> parameter will result in an invalid argument exception.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setDelegate:(nullable id&lt;AVContentKeySessionDelegate&gt;)<em>delegate</em> queue:(nullable dispatch_queue_t)<em>delegateQueue</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        setDelegate:queue:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The receiver&rsquo;s delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, weak, nullable) id&lt;AVContentKeySessionDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property      delegate</p><p>The value of this property is an object conforming to the <a href="../Protocols/AVContentKeySessionDelegate.html">AVContentKeySessionDelegate</a> protocol. The delegate is set using the <a href="#//api/name/setDelegate:queue:">setDelegate:queue:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegateQueue" title="delegateQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegateQueue">&nbsp;&nbsp;delegateQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The dispatch queue on which all <a href="#//api/name/delegate">delegate</a> methods will be invoked whenever processes requiring content keys are executed asynchronously.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable) dispatch_queue_t delegateQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property      delegateQueue</p><p>The value of this property is a dispatch_queue_t. The queue is set using the <a href="#//api/name/setDelegate:queue:">setDelegate:queue:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/storageURL" title="storageURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/storageURL">&nbsp;&nbsp;storageURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The storage URL provided when the AVContentKeySession was created. May be nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable) NSURL *storageURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property      storageURL</p><p>URL to a writable directory; may be nil. The session will use this to facilitate expired session reports after abnormal session termination.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/keySystem" title="keySystem"></a>
+	<h3 class="method-title"><code><a href="#//api/name/keySystem">&nbsp;&nbsp;keySystem</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The key system used for retrieving keys</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) AVContentKeySystem keySystem</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property      keySystem</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expire" title="expire"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expire">&ndash;&nbsp;expire</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tells the receiver to treat the session as having been intentionally and normally expired.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)expire</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        expire</p><p>When an instance of AVContentKeySession receives an expire message, all of its associated objects conforming to the <a href="../Protocols/AVContentKeyRecipient.html">AVContentKeyRecipient</a> protocol will become inoperable. Send this message only after you have finished operating on the media data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentProtectionSessionIdentifier" title="contentProtectionSessionIdentifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentProtectionSessionIdentifier">&nbsp;&nbsp;contentProtectionSessionIdentifier</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An opaque identifier for the current content protection session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable) NSData *contentProtectionSessionIdentifier</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property      contentProtectionSessionIdentifier</p><p>May be nil. Will call the delegate&rsquo;s contentKeySessionContentProtectionSessionIdentifierDidChange: when the identifier changes. The protection session ID is a unique string identifier generated by the AVContentKeySession that can be used by the application to identify content key session objects.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processContentKeyRequestWithIdentifier:initializationData:options:" title="processContentKeyRequestWithIdentifier:initializationData:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processContentKeyRequestWithIdentifier:initializationData:options:">&ndash;&nbsp;processContentKeyRequestWithIdentifier:initializationData:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Informs the receiver that it should attempt to instantiate a content decryption key using the specified initialization data.
+@param         identifier
+                Container- and protocol-specific identifier to be used to obtain a key response. Either identifier or initializationData must be non-nil. Both can be non-nil, if the content protection protocol requires both.
+@param         initializationData
+                Container- and protocol-specific data to be used to obtain a key response. Either identifier or initializationData must be non-nil. Both can be non-nil, if the content protection protocol requires both.
+@param         options
+                No options are defined at this time, may be nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)processContentKeyRequestWithIdentifier:(nullable id)<em>identifier</em> initializationData:(nullable NSData *)<em>initializationData</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        processContentKeyRequestWithIdentifier:initializationData:options:</p><p>May be used to generate an <a href="../Classes/AVContentKeyRequest.html">AVContentKeyRequest</a> from request initialization data already in hand, without awaiting such data during the processing of media data of an associated recipient.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renewExpiringResponseDataForContentKeyRequest:" title="renewExpiringResponseDataForContentKeyRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renewExpiringResponseDataForContentKeyRequest:">&ndash;&nbsp;renewExpiringResponseDataForContentKeyRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Informs the receiver that the already provided response data for an earlier <a href="../Classes/AVContentKeyRequest.html">AVContentKeyRequest</a> will imminently <a href="#//api/name/expire">expire</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)renewExpiringResponseDataForContentKeyRequest:(AVContentKeyRequest *)<em>contentKeyRequest</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        renewExpiringResponseDataForContentKeyRequest:</p><p>In response the receiver will invoke your <a href="#//api/name/delegate">delegate</a> with a new content key request entreating it to renew the expiring response data, via -contentKeySession:didProvideRenewingContentKeyRequest:.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/makeSecureTokenForExpirationDateOfPersistableContentKey:completionHandler:" title="makeSecureTokenForExpirationDateOfPersistableContentKey:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/makeSecureTokenForExpirationDateOfPersistableContentKey:completionHandler:">&ndash;&nbsp;makeSecureTokenForExpirationDateOfPersistableContentKey:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a secure server playback context (SPC) that the client could send to the key server to obtain an expiration date for the provided persistable content key data.
+@param         persistableContentKeyData
+                Persistable content key data that was previously created using [AVContentKeyRequest persistableContentKeyFromKeyVendorResponse:options:error:] or obtained via <a href="../Protocols/AVContentKeySessionDelegate.html">AVContentKeySessionDelegate</a> callback -contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:.
+@param         handler
+                Once the secure token is ready, this block will be called with the token or an error describing the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)makeSecureTokenForExpirationDateOfPersistableContentKey:(NSData *)<em>persistableContentKeyData</em> completionHandler:(void ( ^ ) ( NSData *_Nullable secureTokenData , NSError *_Nullable error ))<em>handler</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        makeSecureTokenForExpirationDateOfPersistableContentKey:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVContentKeySessionPendingExpiredSessionReports Methods" name="task_AVContentKeySessionPendingExpiredSessionReports Methods"></a>
+						<h2 class="task-title">AVContentKeySessionPendingExpiredSessionReports Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/pendingExpiredSessionReportsWithAppIdentifier:storageDirectoryAtURL:" title="pendingExpiredSessionReportsWithAppIdentifier:storageDirectoryAtURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pendingExpiredSessionReportsWithAppIdentifier:storageDirectoryAtURL:">+&nbsp;pendingExpiredSessionReportsWithAppIdentifier:storageDirectoryAtURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides &ldquo;expired session reports&rdquo; for prior AVContentKeySessions created with the specified app identifier that have expired either normally or abnormally.
+@param         appIdentifier
+                An opaque identifier for the application. The contents of this identifier depend on the particular protocol in use by the entity that controls the use of the media data.
+@param         <a href="#//api/name/storageURL">storageURL</a>
+                URL to a directory previously used with one or more instances of AVContentKeySession for the storage of expired session reports.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;NSData*&gt; *)pendingExpiredSessionReportsWithAppIdentifier:(NSData *)<em>appIdentifier</em> storageDirectoryAtURL:(NSURL *)<em>storageURL</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray containing instances of NSData, each containing a pending expired session report as a property-list serialization of an NSDictionary object. The contents of expired session reports depend on the particular protocol in use by the entity that controls the use of the media data.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        pendingExpiredSessionReportsWithAppIdentifier:storageDirectoryAtURL:</p><p>Note that no reports for sessions still in progress will be included.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removePendingExpiredSessionReports:withAppIdentifier:storageDirectoryAtURL:" title="removePendingExpiredSessionReports:withAppIdentifier:storageDirectoryAtURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removePendingExpiredSessionReports:withAppIdentifier:storageDirectoryAtURL:">+&nbsp;removePendingExpiredSessionReports:withAppIdentifier:storageDirectoryAtURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes expired session reports for prior AVContentKeySessions from storage. Once they have been removed, they will no longer be available via subsequent invocations of +pendingExpiredSessionReportsWithAppIdentifier:.
+@param         expiredSessionReports
+                An array of expired session reports to be discarded.
+@param         appIdentifier
+                An opaque identifier for the application. The contents of this identifier depend on the particular protocol in use by the entity that controls the use of the media data.
+@param         <a href="#//api/name/storageURL">storageURL</a>
+                URL to a writable folder.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)removePendingExpiredSessionReports:(NSArray&lt;NSData*&gt; *)<em>expiredSessionReports</em> withAppIdentifier:(NSData *)<em>appIdentifier</em> storageDirectoryAtURL:(NSURL *)<em>storageURL</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        removePendingExpiredSessionReports:withAppIdentifier:storageDirectoryAtURL:</p><p>This method is most suitable for use only after the specified expired session reports have been sent to the entity that controls the use of the media data and the entity has acknowledged their receipt.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVContentKeyRecipients Methods" name="task_AVContentKeyRecipients Methods"></a>
+						<h2 class="task-title">AVContentKeyRecipients Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/addContentKeyRecipient:" title="addContentKeyRecipient:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addContentKeyRecipient:">&ndash;&nbsp;addContentKeyRecipient:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Informs the receiver that the specified recipient will be used for the session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addContentKeyRecipient:(id&lt;AVContentKeyRecipient&gt;)<em>recipient</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        addContentKeyRecipient:</p><p>It is an error to add recipient to sessions that have received an <a href="#//api/name/expire">expire</a> message. It is also an error to add recipients after they have already begun to process media data (e.g. after an <a href="../Classes/AVURLAsset.html">AVURLAsset</a> has loaded the values of any of its keys). Such errors will result in NSInternalInconsistencyExceptions. Sending this message to an AVContentKeySession is atomic.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeContentKeyRecipient:" title="removeContentKeyRecipient:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeContentKeyRecipient:">&ndash;&nbsp;removeContentKeyRecipient:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Informs the receiver that the specified recipient will no longer be used.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeContentKeyRecipient:(id&lt;AVContentKeyRecipient&gt;)<em>recipient</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        removeContentKeyRecipient:</p><p>After the specified recipient is removed from the receiver it will become inoperable. Remove the recipient only after you have finished operating on the media data associated with it. Sending this message to an AVContentKeySession is atomic.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentKeyRecipients" title="contentKeyRecipients"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeyRecipients">&nbsp;&nbsp;contentKeyRecipients</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The array of recipients of content keys currently associated with the AVContentKeySession.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSArray&lt;id&lt;AVContentKeyRecipient&gt; &gt; *contentKeyRecipients</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property      contentKeyRecipients</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

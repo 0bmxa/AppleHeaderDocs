@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ODNode Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 OpenDirectory Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_6">_6</option>
+		
+		<option value="//api/name/configuration">configuration</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/nodeWithSession:name:error:">+ nodeWithSession:name:error:</option>
+		
+		<option value="//api/name/nodeWithSession:type:error:">+ nodeWithSession:type:error:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/accountPoliciesAndReturnError:">- accountPoliciesAndReturnError:</option>
+		
+		<option value="//api/name/addAccountPolicy:toCategory:error:">- addAccountPolicy:toCategory:error:</option>
+		
+		<option value="//api/name/createRecordWithRecordType:name:attributes:error:">- createRecordWithRecordType:name:attributes:error:</option>
+		
+		<option value="//api/name/customCall:sendData:error:">- customCall:sendData:error:</option>
+		
+		<option value="//api/name/customFunction:payload:error:">- customFunction:payload:error:</option>
+		
+		<option value="//api/name/initWithSession:name:error:">- initWithSession:name:error:</option>
+		
+		<option value="//api/name/initWithSession:type:error:">- initWithSession:type:error:</option>
+		
+		<option value="//api/name/nodeDetailsForKeys:error:">- nodeDetailsForKeys:error:</option>
+		
+		<option value="//api/name/passwordContentCheck:forRecordName:error:">- passwordContentCheck:forRecordName:error:</option>
+		
+		<option value="//api/name/policiesAndReturnError:">- policiesAndReturnError:</option>
+		
+		<option value="//api/name/recordWithRecordType:name:attributes:error:">- recordWithRecordType:name:attributes:error:</option>
+		
+		<option value="//api/name/removeAccountPolicy:fromCategory:error:">- removeAccountPolicy:fromCategory:error:</option>
+		
+		<option value="//api/name/removePolicy:error:">- removePolicy:error:</option>
+		
+		<option value="//api/name/setAccountPolicies:error:">- setAccountPolicies:error:</option>
+		
+		<option value="//api/name/setCredentialsUsingKerberosCache:error:">- setCredentialsUsingKerberosCache:error:</option>
+		
+		<option value="//api/name/setCredentialsWithRecordType:authenticationType:authenticationItems:continueItems:context:error:">- setCredentialsWithRecordType:authenticationType:authenticationItems:continueItems:context:error:</option>
+		
+		<option value="//api/name/setCredentialsWithRecordType:recordName:password:error:">- setCredentialsWithRecordType:recordName:password:error:</option>
+		
+		<option value="//api/name/setPolicies:error:">- setPolicies:error:</option>
+		
+		<option value="//api/name/setPolicy:value:error:">- setPolicy:value:error:</option>
+		
+		<option value="//api/name/subnodeNamesAndReturnError:">- subnodeNamesAndReturnError:</option>
+		
+		<option value="//api/name/supportedAttributesForRecordType:error:">- supportedAttributesForRecordType:error:</option>
+		
+		<option value="//api/name/supportedPoliciesAndReturnError:">- supportedPoliciesAndReturnError:</option>
+		
+		<option value="//api/name/supportedRecordTypesAndReturnError:">- supportedRecordTypesAndReturnError:</option>
+		
+		<option value="//api/name/unreachableSubnodeNamesAndReturnError:">- unreachableSubnodeNamesAndReturnError:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ODNode Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ODNode.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class       ODNode
+</code></pre><p>OpenDirectory uses nodes to represent different sources of directory information, via the local disk, LDAP, etc.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/nodeWithSession:type:error:" title="nodeWithSession:type:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nodeWithSession:type:error:">+&nbsp;nodeWithSession:type:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create an autoreleased ODNode of the given type, optionally in a specific session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)nodeWithSession:(ODSession *)<em>inSession</em> type:(ODNodeType)<em>inType</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     nodeWithSession:type:error:
+</code></pre><p>Autoreleased instance of an ODNode with a provided <a href="../Classes/ODSession.html">ODSession</a> and ODNodeType.  outError is
+                optional parameter, nil can be passed if error details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nodeWithSession:name:error:" title="nodeWithSession:name:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nodeWithSession:name:error:">+&nbsp;nodeWithSession:name:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create an autoreleased ODNode with the given name, optionally in a specific session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)nodeWithSession:(ODSession *)<em>inSession</em> name:(NSString *)<em>inName</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     nodeWithSession:name:error:
+</code></pre><p>autoreleased instance of an ODNode with a provided <a href="../Classes/ODSession.html">ODSession</a> and node name.  outError is
+                optional parameter, nil can be passed if error details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSession:type:error:" title="initWithSession:type:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSession:type:error:">&ndash;&nbsp;initWithSession:type:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize an ODNode instance of the given type, optionally in a specific session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithSession:(ODSession *)<em>inSession</em> type:(ODNodeType)<em>inType</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithSession:type:error:
+</code></pre><p>initialize instance of an ODNode with a provided <a href="../Classes/ODSession.html">ODSession</a> and ODNodeType.  outError is
+                optional parameter, nil can be passed if error details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSession:name:error:" title="initWithSession:name:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSession:name:error:">&ndash;&nbsp;initWithSession:name:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize an ODNode instance with the given name, optionally in a specific session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithSession:(ODSession *)<em>inSession</em> name:(NSString *)<em>inName</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithSession:name:error:
+</code></pre><p>initialize instance of an ODNode with a provided <a href="../Classes/ODSession.html">ODSession</a> and node name.  outError is optional
+                parameter, nil can be passed if error details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/subnodeNamesAndReturnError:" title="subnodeNamesAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/subnodeNamesAndReturnError:">&ndash;&nbsp;subnodeNamesAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns NSArray of node names for this node, which may contain sub-nodes or search policy nodes</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)subnodeNamesAndReturnError:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     subnodeNamesAndReturnError:
+</code></pre><p>Returns NSArray of node names for this node, which may contain sub-nodes or search policy nodes.
+                Commonly used with Search policy nodes.  outError is optional parameter, nil can be passed if error
+                details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unreachableSubnodeNamesAndReturnError:" title="unreachableSubnodeNamesAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unreachableSubnodeNamesAndReturnError:">&ndash;&nbsp;unreachableSubnodeNamesAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Will return NSArray of names of subnodes that are not currently reachable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)unreachableSubnodeNamesAndReturnError:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     unreachableSubnodeNamesAndReturnError:
+</code></pre><p>Will return NSArray of names of subnodes that are not currently reachable.  Commonly used with Search policy
+                nodes to determine if any nodes are currently unreachable, but may also return other subnodes if the
+                OpenDirectory plugin supports.  outError is optional parameter, nil can be passed if error details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_6" title="_6"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_6">&nbsp;&nbsp;_6</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The node name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSString *NS_AVAILABLE ( 10 _6</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property   nodeName
+</code></pre><p>The node name, corresponding to its path in OpenDirectory.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nodeDetailsForKeys:error:" title="nodeDetailsForKeys:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nodeDetailsForKeys:error:">&ndash;&nbsp;nodeDetailsForKeys:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary of information about the instance of ODNode</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)nodeDetailsForKeys:(NSArray *)<em>inKeys</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     nodeDetails:error:
+</code></pre><p>Returns a dictionary of information about the instance of ODNode.  Details such as Trust information
+                (kODAttributeTypeTrustInformation) or other Node details can be retrieved.  outError is optional parameter,
+                nil can be passed if error details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportedRecordTypesAndReturnError:" title="supportedRecordTypesAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportedRecordTypesAndReturnError:">&ndash;&nbsp;supportedRecordTypesAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a NSArray of the record types supported by this node.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)supportedRecordTypesAndReturnError:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     supportedRecordTypesAndReturnError:
+</code></pre><p>Returns a NSArray of the record types supported by this node.  If node does not support the check
+                then all possible types will be returned.  outError is optional parameter, nil can be passed if error details
+                are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportedAttributesForRecordType:error:" title="supportedAttributesForRecordType:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportedAttributesForRecordType:error:">&ndash;&nbsp;supportedAttributesForRecordType:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Will return a list of attribute types supported for that attribute if possible</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)supportedAttributesForRecordType:(ODRecordType)<em>inRecordType</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     supportedAttributesForRecordType:error:
+</code></pre><p>Will return a list of attribute types supported for that attribute if possible.  If no specific
+                types are available, then all possible values will be returned instead.  outError is optional parameter,
+                nil can be passed if error details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCredentialsWithRecordType:recordName:password:error:" title="setCredentialsWithRecordType:recordName:password:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCredentialsWithRecordType:recordName:password:error:">&ndash;&nbsp;setCredentialsWithRecordType:recordName:password:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the credentials for interaction with the ODNode</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setCredentialsWithRecordType:(ODRecordType)<em>inRecordType</em> recordName:(NSString *)<em>inRecordName</em> password:(NSString *)<em>inPassword</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setCredentialsWithRecordType:recordName:password:error:
+</code></pre><p>Sets the credentials for interaction with the ODNode.  Record references, etc. will use these credentials
+                to query or change data.  Setting the credentials on a node referenced by other OD object types will
+                change the credentials for all for all references.  outError is optional parameter, nil can be passed if error
+                details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCredentialsWithRecordType:authenticationType:authenticationItems:continueItems:context:error:" title="setCredentialsWithRecordType:authenticationType:authenticationItems:continueItems:context:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCredentialsWithRecordType:authenticationType:authenticationItems:continueItems:context:error:">&ndash;&nbsp;setCredentialsWithRecordType:authenticationType:authenticationItems:continueItems:context:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows use of other OpenDirectory types of authentications to set the credentials for an ODNode</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setCredentialsWithRecordType:(ODRecordType)<em>inRecordType</em> authenticationType:(ODAuthenticationType)<em>inType</em> authenticationItems:(NSArray *)<em>inItems</em> continueItems:(NSArray **)<em>outItems</em> context:(id *)<em>outContext</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setCredentialsWithRecordType:authType:authItems:outAuthItems:context:error:
+</code></pre><p>Allows the caller to use other types of authentications that are available in OpenDirectory, that may
+                require response-request loops, etc.  Not all OD plugins will support this call, look for
+                kODErrorCredentialsMethodNotSupported in outError.  outError is optional parameter, nil can be passed if
+                error details is not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCredentialsUsingKerberosCache:error:" title="setCredentialsUsingKerberosCache:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCredentialsUsingKerberosCache:error:">&ndash;&nbsp;setCredentialsUsingKerberosCache:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unsupported method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setCredentialsUsingKerberosCache:(NSString *)<em>inCacheName</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setCredentialsUsingKerberosCache:error:
+</code></pre><p>Unsupported method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createRecordWithRecordType:name:attributes:error:" title="createRecordWithRecordType:name:attributes:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createRecordWithRecordType:name:attributes:error:">&ndash;&nbsp;createRecordWithRecordType:name:attributes:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a record in this node, using the given name and attributes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ODRecord *)createRecordWithRecordType:(ODRecordType)<em>inRecordType</em> name:(NSString *)<em>inRecordName</em> attributes:(NSDictionary *)<em>inAttributes</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     createRecordWithRecordType:name:attributes:error:
+</code></pre><p>Takes all the provided attributes and type to create an entire record.  The function will assign a
+                UUID to the record automatically.  This UUID can be overwritten by the client by passing with the
+                other attributes.  inAttributes is optional, nil can be passed if no other attributes are to be set.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recordWithRecordType:name:attributes:error:" title="recordWithRecordType:name:attributes:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recordWithRecordType:name:attributes:error:">&ndash;&nbsp;recordWithRecordType:name:attributes:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an <a href="../Classes/ODRecord.html">ODRecord</a> object that references the requested type and name</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ODRecord *)recordWithRecordType:(ODRecordType)<em>inRecordType</em> name:(NSString *)<em>inRecordName</em> attributes:(id)<em>inAttributes</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     recordWithRecordType:name:attributes:error:
+</code></pre><p>Returns an <a href="../Classes/ODRecord.html">ODRecord</a> object that references the requested type and name.  The record will have cached the
+                attributes requested.  Further attributes can be requested via <a href="../Classes/ODRecord.html">ODRecord</a> APIs.  For performance it is best
+                to ask for as many attributes that are needed as possible up front.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/customCall:sendData:error:" title="customCall:sendData:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/customCall:sendData:error:">&ndash;&nbsp;customCall:sendData:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends a custom code to the node; input and output data formats are specific to the call.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSData *)customCall:(NSInteger)<em>inCustomCode</em> sendData:(NSData *)<em>inSendData</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     customCall:sendData:error:
+</code></pre><p>Sends a custom code to the node; input and output data formats are specific to the call.  outError is
+                optional parameter, nil can be passed if error details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/customFunction:payload:error:" title="customFunction:payload:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/customFunction:payload:error:">&ndash;&nbsp;customFunction:payload:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends a custom function call to the node; data is a type specific to the call.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)customFunction:(NSString *)<em>function</em> payload:(id)<em>payload</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     customFunction:payload:error:
+</code></pre><p>Sends a custom function call to the node; data is a type specific to the call.  &lsquo;error&rsquo; is an
+                optional parameter therefore nil can be passed if error details are not needed.  Return type is
+                defined by the custom function requested.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/configuration" title="configuration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/configuration">&nbsp;&nbsp;configuration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method configuration</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, strong) ODConfiguration *configuration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method configuration</p>
+
+<p>@abstract
+Returns an <a href="../Classes/ODConfiguration.html">ODConfiguration</a> object for the node.</p>
+
+<p>@discussion
+Returns an <a href="../Classes/ODConfiguration.html">ODConfiguration</a> object for the node.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/policiesAndReturnError:" title="policiesAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/policiesAndReturnError:">&ndash;&nbsp;policiesAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This will copy any policies configured for the node.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)policiesAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     policiesAndReturnError:
+</code></pre><p>This will copy any policies configured for the node.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportedPoliciesAndReturnError:" title="supportedPoliciesAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportedPoliciesAndReturnError:">&ndash;&nbsp;supportedPoliciesAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This will return a dictionary of supported policies.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)supportedPoliciesAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@function   supportedPoliciesAndReturnError:
+</code></pre><p>This will return a dictionary of supported policies, if appropriate, the value will be the maximum value allowed
+                for the policy in question.  For example, if password history is available, it will state how much history is
+                supported.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setPolicies:error:" title="setPolicies:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setPolicies:error:">&ndash;&nbsp;setPolicies:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This will set the policy for the node.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setPolicies:(NSDictionary *)<em>policies</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@function   setPolicies:error:
+</code></pre><p>This will set the policy for the node.  Policies are evaluated in combination with record-level policies.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setPolicy:value:error:" title="setPolicy:value:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setPolicy:value:error:">&ndash;&nbsp;setPolicy:value:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This will set a specific policy setting for the node.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setPolicy:(ODPolicyType)<em>policy</em> value:(id)<em>value</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@function   setPolicy:value:error:
+</code></pre><p>This will set a specific policy setting for the node.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removePolicy:error:" title="removePolicy:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removePolicy:error:">&ndash;&nbsp;removePolicy:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This will remove a specific policy setting from the node.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removePolicy:(ODPolicyType)<em>policy</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@function   removePolicy:value:error:
+</code></pre><p>This will remove a specific policy setting from the node.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addAccountPolicy:toCategory:error:" title="addAccountPolicy:toCategory:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addAccountPolicy:toCategory:error:">&ndash;&nbsp;addAccountPolicy:toCategory:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This will add an account policy to the node for the specified category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)addAccountPolicy:(NSDictionary *)<em>policy</em> toCategory:(ODPolicyCategoryType)<em>category</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>policy</code></th>
+						<td><p>a dictionary containing the specific policy to be added.
+                The dictionary may contain the following keys:
+                    kODPolicyKeyIdentifier a required key identifying the policy.
+                    kODPolicyKeyParameters an optional key containing a dictionary of
+                        parameters that can be used for informational purposes or in
+                        the policy format string.
+                    kODPolicyKeyContent a required key specifying the policy,
+                        from which a predicate will be created for evaluating
+                        the policy.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>category</code></th>
+						<td><p>a valid ODPolicyCategoryType to which the specified policy will be added.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>an optional NSError reference for error details.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a BOOL which signifies if the policy addition succeeded, otherwise error is set.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     addAccountPolicy:toCategory:error:
+</code></pre><p>This will add an account policy to the node for the specified category.
+                The specified policy will be applied to all users in the
+                specified node when policies are evaluated.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAccountPolicy:fromCategory:error:" title="removeAccountPolicy:fromCategory:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAccountPolicy:fromCategory:error:">&ndash;&nbsp;removeAccountPolicy:fromCategory:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This will remove an account policy from the node for the specified category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeAccountPolicy:(NSDictionary *)<em>policy</em> fromCategory:(ODPolicyCategoryType)<em>category</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>policy</code></th>
+						<td><p>a dictionary containing the specific policy to be
+                removed, with the same format as described in addAccountPolicy.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>category</code></th>
+						<td><p>a valid ODPolicyCategoryType from which the specified policy will be removed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>an optional NSError reference for error details.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a BOOL which signifies if the policy removal succeeded, otherwise error is set.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeAccountPolicy:fromCategory:error:
+</code></pre><p>This will remove an account policy from the node for the specified category.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAccountPolicies:error:" title="setAccountPolicies:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAccountPolicies:error:">&ndash;&nbsp;setAccountPolicies:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This will set the policies for the node.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setAccountPolicies:(NSDictionary *)<em>policies</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>policies</code></th>
+						<td><p>a dictionary containing all of the policies to be set
+                for the node.  The dictionary may contain the following keys:
+                    kODPolicyCategoryAuthentication an optional key with a value
+                        of an array of policy dictionaries that specify when
+                        authentications should be allowed.
+                    kODPolicyCategoryPasswordContent an optional key with a
+                        value of an array of policy dictionaries the specify the
+                        required content of passwords.
+                    kODPolicyCategoryPasswordChange an optional key with a value
+                    of an array of policy dictionaries that specify when
+                    passwords are required to be changed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>an optional NSError reference for error details.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a BOOL which signifies if the policy set succeeded, otherwise error is set.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setAccountPolicies:error:
+</code></pre><p>This will set the policies for the node, replacing any existing
+                policies.  All of the policies in the set will be applied to all
+                users in the specified node when policies are evaluated.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/accountPoliciesAndReturnError:" title="accountPoliciesAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/accountPoliciesAndReturnError:">&ndash;&nbsp;accountPoliciesAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary containing any policies configured for the node.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)accountPoliciesAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>an optional NSError reference for error details.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an NSDictionary containing all currently set policies.  The
+                format of the dictionary is the same as described in
+                setAccountPolicies.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     accountPoliciesAndReturnError:
+</code></pre><p>Returns a dictionary containing any policies configured for the node.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/passwordContentCheck:forRecordName:error:" title="passwordContentCheck:forRecordName:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/passwordContentCheck:forRecordName:error:">&ndash;&nbsp;passwordContentCheck:forRecordName:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Validates a password against the node&rsquo;s password content policies.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)passwordContentCheck:(NSString *)<em>password</em> forRecordName:(NSString *)<em>recordName</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>password</code></th>
+						<td><p>the password to be evaluated against the content policies.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>recordName</code></th>
+						<td><p>the name of the record.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>an optional NSError reference for error details.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a bool which signifies if the password passes all content policies, otherwise error is set.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     passwordContentCheck:forRecordName:error:
+</code></pre><p>Validates a password against the node&rsquo;s password content policies.
+                The node&rsquo;s password content policies will be evaluated to
+                determine if the password is acceptable.  May be used prior to
+                creating the record.</p>
+
+<pre><code>            This check is only definitive at the time it was requested. The
+            policy or the environment could change before the password change
+            is actually requested.  Errors from the password change request
+            should be consulted.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

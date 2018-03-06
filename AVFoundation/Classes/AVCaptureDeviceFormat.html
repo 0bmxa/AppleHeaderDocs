@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureDeviceFormat Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/formatDescription">formatDescription</option>
+		
+		<option value="//api/name/mediaType">mediaType</option>
+		
+		<option value="//api/name/videoSupportedFrameRateRanges">videoSupportedFrameRateRanges</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/isVideoStabilizationModeSupported:">- isVideoStabilizationModeSupported:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureDeviceFormat Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureDevice.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureDeviceFormat
+@abstract
+    An AVCaptureDeviceFormat wraps a CMFormatDescription and other format-related information, such as min and max framerate.</p>
+
+<p>@discussion
+    An <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a> exposes an array of formats, and its current activeFormat may be queried. The payload for the formats property is an array of AVCaptureDeviceFormat objects and the activeFormat property payload is an AVCaptureDeviceFormat. AVCaptureDeviceFormat is a thin wrapper around a CMFormatDescription, and can carry associated device format information that doesn&rsquo;t go in a CMFormatDescription, such as min and max frame rate. An AVCaptureDeviceFormat object is immutable. Its values do not change for the life of the object.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/mediaType" title="mediaType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaType">&nbsp;&nbsp;mediaType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property mediaType
+@abstract
+    An NSString describing the media type of an <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a> active or supported format.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVMediaType mediaType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property mediaType
+@abstract
+    An NSString describing the media type of an <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a> active or supported format.</p>
+
+<p>@discussion
+    Supported mediaTypes are listed in AVMediaFormat.h. This is a read-only property. The caller assumes no ownership of the returned value and should not CFRelease it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/formatDescription" title="formatDescription"></a>
+	<h3 class="method-title"><code><a href="#//api/name/formatDescription">&nbsp;&nbsp;formatDescription</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property formatDescription
+@abstract
+    A CMFormatDescription describing an <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a> active or supported format.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMFormatDescriptionRef formatDescription</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property formatDescription
+@abstract
+    A CMFormatDescription describing an <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a> active or supported format.</p>
+
+<p>@discussion
+    A CMFormatDescription describing an <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a> active or supported format. This is a read-only property. The caller assumes no ownership of the returned value and should not CFRelease it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoSupportedFrameRateRanges" title="videoSupportedFrameRateRanges"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoSupportedFrameRateRanges">&nbsp;&nbsp;videoSupportedFrameRateRanges</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property videoSupportedFrameRateRanges
+@abstract
+    A property indicating the format&rsquo;s supported frame rate ranges.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVFrameRateRange*&gt; *videoSupportedFrameRateRanges</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property videoSupportedFrameRateRanges
+@abstract
+    A property indicating the format&rsquo;s supported frame rate ranges.</p>
+
+<p>@discussion
+    videoSupportedFrameRateRanges is an array of <a href="../Classes/AVFrameRateRange.html">AVFrameRateRange</a> objects, one for each of the format&rsquo;s supported video frame rate ranges.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property videoFieldOfView
+@abstract
+    A property indicating the format&rsquo;s field of view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float videoFieldOfView NS_AVAILABLE_IOS ( 7 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property videoFieldOfView
+@abstract
+    A property indicating the format&rsquo;s field of view.</p>
+
+<p>@discussion
+    videoFieldOfView is a float value indicating the receiver&rsquo;s field of view in degrees. If field of view is unknown, a value of 0 is returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isVideoStabilizationModeSupported:" title="isVideoStabilizationModeSupported:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isVideoStabilizationModeSupported:">&ndash;&nbsp;isVideoStabilizationModeSupported:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method isVideoStabilizationModeSupported
+@abstract
+    Returns whether the format supports the given video stabilization mode.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isVideoStabilizationModeSupported:(AVCaptureVideoStabilizationMode)<em>videoStabilizationMode</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method isVideoStabilizationModeSupported
+@abstract
+    Returns whether the format supports the given video stabilization mode.</p>
+
+<p>@param videoStabilizationMode
+    An AVCaptureVideoStabilizationMode to be checked.</p>
+
+<p>@discussion
+    isVideoStabilizationModeSupported: returns a boolean value indicating whether the format can be stabilized using the given mode with [AVCaptureConnection setPreferredVideoStabilizationMode:].</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

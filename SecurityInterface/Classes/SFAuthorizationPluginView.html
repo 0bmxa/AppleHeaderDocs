@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SFAuthorizationPluginView Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SecurityInterface Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/buttonPressed:">- buttonPressed:</option>
+		
+		<option value="//api/name/callbacks">- callbacks</option>
+		
+		<option value="//api/name/didActivate">- didActivate</option>
+		
+		<option value="//api/name/didDeactivate">- didDeactivate</option>
+		
+		<option value="//api/name/displayView">- displayView</option>
+		
+		<option value="//api/name/engineRef">- engineRef</option>
+		
+		<option value="//api/name/firstKeyView">- firstKeyView</option>
+		
+		<option value="//api/name/firstResponder">- firstResponder</option>
+		
+		<option value="//api/name/initWithCallbacks:andEngineRef:">- initWithCallbacks:andEngineRef:</option>
+		
+		<option value="//api/name/lastError">- lastError</option>
+		
+		<option value="//api/name/lastKeyView">- lastKeyView</option>
+		
+		<option value="//api/name/setButton:enabled:">- setButton:enabled:</option>
+		
+		<option value="//api/name/setEnabled:">- setEnabled:</option>
+		
+		<option value="//api/name/updateView">- updateView</option>
+		
+		<option value="//api/name/viewForType:">- viewForType:</option>
+		
+		<option value="//api/name/willActivateWithUser:">- willActivateWithUser:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SFAuthorizationPluginView Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SFAuthorizationPluginView.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class SFAuthorizationPluginView
+</code></pre><p>SFAuthorizationPluginView provides AuthorizationPlugin writers with an easy way to provide a user interface for their AuthorizationPlugin without having to duplicate the standard authentication dialog or the login window dialog.  This class was designed to be subclassed by the AuthorizationPlugin writer.  The following methods were designed to be overridden: <a href="#//api/name/buttonPressed:">buttonPressed:</a>, <a href="#//api/name/didActivate">didActivate</a>, <a href="#//api/name/willActivateWithUser:">willActivateWithUser:</a>, <a href="#//api/name/didDeactivate">didDeactivate</a>, <a href="#//api/name/firstKeyView">firstKeyView</a>, <a href="#//api/name/firstResponder">firstResponder</a>, <a href="#//api/name/lastKeyView">lastKeyView</a>, <a href="#//api/name/setEnabled:">setEnabled:</a>, and <a href="#//api/name/viewForType:">viewForType:</a>.  In order to display the user interface, the AuthorizationPlugin should create an instance of your subclass and then call <a href="#//api/name/displayView">displayView</a>.  That will cause the appropriate dialog to be displayed and when credentials are needed, the overridden methods will be called in order to display the NSView provided by the subclass.</p>
+
+<pre><code>@category SFAuthorizationPluginView (SFHostControl)
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithCallbacks:andEngineRef:" title="initWithCallbacks:andEngineRef:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCallbacks:andEngineRef:">&ndash;&nbsp;initWithCallbacks:andEngineRef:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The initialization method of this class.  You must provide the <a href="#//api/name/callbacks">callbacks</a> and <a href="#//api/name/engineRef">engineRef</a> that were provided to the AuthorizationPlugin and AuthorizationMechanismRef.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithCallbacks:(const AuthorizationCallbacks *)<em>callbacks</em> andEngineRef:(AuthorizationEngineRef)<em>engineRef</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callbacks</code></th>
+						<td><p>The AuthorizationCallbacks provided to the AuthorizationPlugin.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>engineRef</code></th>
+						<td><p>The AuthorizationEngineRef provided to the AuthorizationMechanismRef.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithCallbacks:andEngineRef:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/engineRef" title="engineRef"></a>
+	<h3 class="method-title"><code><a href="#//api/name/engineRef">&ndash;&nbsp;engineRef</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An accessor method to the AuthorizationEngineRef provided to the init method.  Use this value when calling the functions of the AuthorizationCallbacks when you need to set the result or set a context value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (AuthorizationEngineRef)engineRef</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method engineRef
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/callbacks" title="callbacks"></a>
+	<h3 class="method-title"><code><a href="#//api/name/callbacks">&ndash;&nbsp;callbacks</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An accessor method to the AuthorizationEngineRef provided to the init method.  Use this to get the function pointers to SetResult, SetContextValue, etc.  See the AuthorizationCallbacks documentation for more details.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (const AuthorizationCallbacks *)callbacks</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method callbacks
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/buttonPressed:" title="buttonPressed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/buttonPressed:">&ndash;&nbsp;buttonPressed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When a user presses a button, this method will be called to inform the SFAuthorizationPluginView of the user&rsquo;s action. By default buttonPressed: will set a result of Deny when the OK or Login buttons are pressed.</p>
+
+<pre><code>If a user has pressed Login or OK button was pressed, the subclass needs to set the context values for the short name of the user so that user attributes can be looked up.  Use kAuthorizationEnvironmentUsername as the key.  The subclass should also set any additional context values that are needed by the authentication plugin to verify the user's credentials.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)buttonPressed:(SFButtonType)<em>inButtonType</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inButtonType</code></th>
+						<td><p>the type of button that was pressed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method buttonPressed:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastError" title="lastError"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastError">&ndash;&nbsp;lastError</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called by the Apple provided SecurityAgent plugin to get a description of the error that occurred during evaluation.  If no error occurred, the method should return nil.</p>
+
+<pre><code>A downstream mechanism that works in cooperation with the SFAuthorizationPluginView can set a context value using the kAuthorizationContextFlagSticky flag to make it available to the SFAuthorizationPluginView in case of an error.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSError *)lastError</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method lastError
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didActivate" title="didActivate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didActivate">&ndash;&nbsp;didActivate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when the user interface was made active by the AuthorizationPlugin.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didActivate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method didActivate
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willActivateWithUser:" title="willActivateWithUser:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willActivateWithUser:">&ndash;&nbsp;willActivateWithUser:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called by the Apple provided SecurityAgent plugin before the UI is made active.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)willActivateWithUser:(NSDictionary *)<em>inUserInformation</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inUserInformation</code></th>
+						<td><p>is a dictionary contains the following information:
+        kSFAuthorizationPluginViewUserNameKey - an NSString with the selected user&rsquo;s name
+        kSFAuthorizationPluginViewUserShortNameKey - an NSString with the selected user&rsquo;s short name</p>
+
+<pre><code>    The user name can be used to pre-populate a Text Field.
+    NOTE: inUserInformation may be nil.
+</code></pre></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method willActivateWithUser:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didDeactivate" title="didDeactivate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didDeactivate">&ndash;&nbsp;didDeactivate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when the user interface is deactivated by the AuthorizationPlugin.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didDeactivate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method didDeactivate
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/firstKeyView" title="firstKeyView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/firstKeyView">&ndash;&nbsp;firstKeyView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When called by the AuthorizationPlugin, the subclass should return the first view in the keyboard loop of the NSView.  The default value returned is nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSView *)firstKeyView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method firstKeyView
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/firstResponder" title="firstResponder"></a>
+	<h3 class="method-title"><code><a href="#//api/name/firstResponder">&ndash;&nbsp;firstResponder</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When called by the AuthorizationPlugin, the subclass should return the view that should get the focus for keyboard events.  The default value returned is nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSResponder *)firstResponder</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method firstResponder
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastKeyView" title="lastKeyView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastKeyView">&ndash;&nbsp;lastKeyView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When called by the AuthorizationPlugin, the subclass should return the last view in the keyboard loop for the view.  The default value returned is nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSView *)lastKeyView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method lastKeyView
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setEnabled:" title="setEnabled:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setEnabled:">&ndash;&nbsp;setEnabled:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When called by the AuthorizationPlugin, the subclass should call setEnabled: on the controls that are in its view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setEnabled:(BOOL)<em>inEnabled</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inEnabled</code></th>
+						<td><p>the state the controls should be in.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method setEnabled:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/viewForType:" title="viewForType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/viewForType:">&ndash;&nbsp;viewForType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When called by the AuthorizationPlugin, the subclass should return the appropriate NSView for the requested SFViewType.  The NSView and its contents should have the autoresize flags set as appropriate to allow for the view to be resized.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSView *)viewForType:(SFViewType)<em>inType</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inType</code></th>
+						<td><p>is the type of view being requested by the AuthorizationPlugin.</p>
+
+<pre><code>NOTE: Currently a maximum width of 394 points is supported, but Apple reserves the right to change that in the future.  Do not assume that the width of the NSView won't change.
+</code></pre></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method viewForType:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="SFHostControl Methods" name="task_SFHostControl Methods"></a>
+						<h2 class="task-title">SFHostControl Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/displayView" title="displayView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/displayView">&ndash;&nbsp;displayView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>displayView is called in order to display the user interface provided by the subclass.  If you subclass this method, be sure to call [super displayView].  displayView will raise an SFDisplayViewException exception if an error occurs displaying the authorization dialog.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)displayView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method displayView
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setButton:enabled:" title="setButton:enabled:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setButton:enabled:">&ndash;&nbsp;setButton:enabled:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The SFAuthorizationPluginView calls this when it would like to disable a button in the UI.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setButton:(SFButtonType)<em>inButtonType</em> enabled:(BOOL)<em>inEnabled</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inButtonType</code></th>
+						<td><p>the type of the button</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inEnabled</code></th>
+						<td><p>YES to enabled the button, NO to disable the button</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method setButton:enabled:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateView" title="updateView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateView">&ndash;&nbsp;updateView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>updateView is called in order to have a new or modified NSView loaded by the AuthorizationPlugin.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method updateView
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SFAuthorizationPluginView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

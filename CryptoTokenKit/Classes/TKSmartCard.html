@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>TKSmartCard Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CryptoTokenKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/allowedProtocols">allowedProtocols</option>
+		
+		<option value="//api/name/context">context</option>
+		
+		<option value="//api/name/currentProtocol">currentProtocol</option>
+		
+		<option value="//api/name/sensitive">sensitive</option>
+		
+		<option value="//api/name/slot">slot</option>
+		
+		<option value="//api/name/valid">valid</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/beginSessionWithReply:">- beginSessionWithReply:</option>
+		
+		<option value="//api/name/endSession">- endSession</option>
+		
+		<option value="//api/name/inSessionWithError:executeBlock:">- inSessionWithError:executeBlock:</option>
+		
+		<option value="//api/name/sendIns:p1:p2:data:le:reply:">- sendIns:p1:p2:data:le:reply:</option>
+		
+		<option value="//api/name/sendIns:p1:p2:data:le:sw:error:">- sendIns:p1:p2:data:le:sw:error:</option>
+		
+		<option value="//api/name/transmitRequest:reply:">- transmitRequest:reply:</option>
+		
+		<option value="//api/name/userInteractionForSecurePINChangeWithPINFormat:APDU:currentPINByteOffset:newPINByteOffset:">- userInteractionForSecurePINChangeWithPINFormat:APDU:currentPINByteOffset:newPINByteOffset:</option>
+		
+		<option value="//api/name/userInteractionForSecurePINVerificationWithPINFormat:APDU:PINByteOffset:">- userInteractionForSecurePINVerificationWithPINFormat:APDU:PINByteOffset:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">TKSmartCard Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>TKSmartCard.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Represents SmartCard inserted in the <a href="#//api/name/slot">slot</a>. Once the card is physically removed from the <a href="#//api/name/slot">slot</a>, the session object is in<a href="#//api/name/valid">valid</a> and will always fail the operation invoked on it.  In order to communicate with the card, an exclusive session must be established.
+Extension of base TKSmartCard interface implementing ISO7816-3 and ISO7816-4 structured APDU transmission.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/slot" title="slot"></a>
+	<h3 class="method-title"><code><a href="#//api/name/slot">&nbsp;&nbsp;slot</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Slot in which is this card inserted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) TKSmartCardSlot *slot</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Slot in which is this card inserted.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valid" title="valid"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valid">&nbsp;&nbsp;valid</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Flag indicating whether card is valid, i.e. it was not removed from the reader.  Use Key-Value-Observing to be notified about card removal.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL valid</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Flag indicating whether card is valid, i.e. it was not removed from the reader.  Use Key-Value-Observing to be notified about card removal.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allowedProtocols" title="allowedProtocols"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allowedProtocols">&nbsp;&nbsp;allowedProtocols</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Bitmask containing allowed protocols to be used when communicating with the card.  This property is consulted only during connection to the card, changes are not propagated to already connected session.  By default, any protocol can be used.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property TKSmartCardProtocol allowedProtocols</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Bitmask containing allowed protocols to be used when communicating with the card.  This property is consulted only during connection to the card, changes are not propagated to already connected session.  By default, any protocol can be used.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentProtocol" title="currentProtocol"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentProtocol">&nbsp;&nbsp;currentProtocol</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Protocol used for communication with the SmartCard.  If no card session is established, TKSmartCardProtocolNone is set.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) TKSmartCardProtocol currentProtocol</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Protocol used for communication with the SmartCard.  If no card session is established, TKSmartCardProtocolNone is set.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sensitive" title="sensitive"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sensitive">&nbsp;&nbsp;sensitive</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Flag indicating whether card session should be considered as sensitive.  Sensitive session always gets card after reset before communicating with it and never leaves card without reset to be used by another SmartCard object.  This might be important in case that card session contain some important state which should not leak to another SmartCard object (possibly running in another, foreign application).  Default is NO.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property BOOL sensitive</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Flag indicating whether card session should be considered as sensitive.  Sensitive session always gets card after reset before communicating with it and never leaves card without reset to be used by another SmartCard object.  This might be important in case that card session contain some important state which should not leak to another SmartCard object (possibly running in another, foreign application).  Default is NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/context" title="context"></a>
+	<h3 class="method-title"><code><a href="#//api/name/context">&nbsp;&nbsp;context</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>User-specified context kept as long as the card is powered.  Once the card is removed or another TKSmartCard object opens session, this property is automatically set to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable) id context</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>User-specified context kept as long as the card is powered.  Once the card is removed or another TKSmartCard object opens session, this property is automatically set to nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beginSessionWithReply:" title="beginSessionWithReply:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beginSessionWithReply:">&ndash;&nbsp;beginSessionWithReply:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Begins session with the card.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beginSessionWithReply:(void ( ^ ) ( BOOL success , NSError *__nullable error ))<em>reply</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>success</code></th>
+						<td><p>Signals whether session was successfully started.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>More information about error preventing the transaction to start</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Begins session with the card.</p><p>When session exists, other requests for sessions from other card objects to the same card are blocked. Session is reference-counted, the same amount of &lsquo;end&rsquo; calls must be done to really terminate the session. Note that finishing session does not automatically mean that the card is disconnected; it only happens when another session from different card object is requested.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/transmitRequest:reply:" title="transmitRequest:reply:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transmitRequest:reply:">&ndash;&nbsp;transmitRequest:reply:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Transmits raw command to the card.  This call is allowed only inside session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)transmitRequest:(NSData *)<em>request</em> reply:(void ( ^ ) ( NSData *__nullable response , NSError *__nullable error ))<em>reply</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>Request part of APDU</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>reponse</code></th>
+						<td><p>Response part of APDU, or nil if communication with the card failed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Error details when communication with the card failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Transmits raw command to the card.  This call is allowed only inside session.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/endSession" title="endSession"></a>
+	<h3 class="method-title"><code><a href="#//api/name/endSession">&ndash;&nbsp;endSession</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Terminates the transaction. If no transaction is pending any more, the connection will be closed if there is another session in the system waiting for the transaction.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)endSession</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Terminates the transaction. If no transaction is pending any more, the connection will be closed if there is another session in the system waiting for the transaction.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/userInteractionForSecurePINVerificationWithPINFormat:APDU:PINByteOffset:" title="userInteractionForSecurePINVerificationWithPINFormat:APDU:PINByteOffset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/userInteractionForSecurePINVerificationWithPINFormat:APDU:PINByteOffset:">&ndash;&nbsp;userInteractionForSecurePINVerificationWithPINFormat:APDU:PINByteOffset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new user interaction object for secure PIN verification using the SmartCard reader facilities (typically a HW keypad).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable TKSmartCardUserInteractionForSecurePINVerification *)userInteractionForSecurePINVerificationWithPINFormat:(TKSmartCardPINFormat *)<em>PINFormat</em> APDU:(NSData *)<em>APDU</em> PINByteOffset:(NSInteger)<em>PINByteOffset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>PINFormat</code></th>
+						<td><p>PIN format descriptor.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>APDU</code></th>
+						<td><p>Predefined APDU in which the SmartCard reader fills in the PIN.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>PINByteOffset</code></th>
+						<td><p>Offset in bytes within APDU data field to mark a location of a PIN block for filling in the entered PIN (currently unused, must be 0).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new user interaction object, or nil if this feature is not supported by the SmartCard reader. After the interaction has been successfully completed the operation result is available in the result properites.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a new user interaction object for secure PIN verification using the SmartCard reader facilities (typically a HW keypad).</p><div class="note"><p><strong>Note:</strong> This interaction is only allowed within a session.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/userInteractionForSecurePINChangeWithPINFormat:APDU:currentPINByteOffset:newPINByteOffset:" title="userInteractionForSecurePINChangeWithPINFormat:APDU:currentPINByteOffset:newPINByteOffset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/userInteractionForSecurePINChangeWithPINFormat:APDU:currentPINByteOffset:newPINByteOffset:">&ndash;&nbsp;userInteractionForSecurePINChangeWithPINFormat:APDU:currentPINByteOffset:newPINByteOffset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new user interaction object for secure PIN change using the SmartCard reader facilities (typically a HW keypad).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable TKSmartCardUserInteractionForSecurePINChange *)userInteractionForSecurePINChangeWithPINFormat:(TKSmartCardPINFormat *)<em>PINFormat</em> APDU:(NSData *)<em>APDU</em> currentPINByteOffset:(NSInteger)<em>currentPINByteOffset</em> newPINByteOffset:(NSInteger)<em>newPINByteOffset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>PINFormat</code></th>
+						<td><p>PIN format descriptor.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>APDU</code></th>
+						<td><p>Predefined APDU in which the SmartCard reader fills in the PIN(s).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>currentPINByteOffset</code></th>
+						<td><p>Offset in bytes within APDU data field to mark a location of a PIN block for filling in the current PIN.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newPINByteOffset</code></th>
+						<td><p>Offset in bytes within APDU data field to mark a location of a PIN block for filling in the new PIN.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new user interaction object, or nil if this feature is not supported by the SmartCard reader. After the interaction has been successfully completed the operation result is available in the result properites.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a new user interaction object for secure PIN change using the SmartCard reader facilities (typically a HW keypad).</p><div class="note"><p><strong>Note:</strong> This interaction is only allowed within a session.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="APDULevelTransmit Methods" name="task_APDULevelTransmit Methods"></a>
+						<h2 class="task-title">APDULevelTransmit Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>CLA byte which will be used for sendIns: APDU transmits.  Default value is 0x00.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property UInt8 cla __OSX_AVAILABLE ( 10.10 __IOS_AVAILABLE ( 9.0 __TVOS_AVAILABLE ( 11.0 __WATCHOS_AVAILABLE ( 4.0 )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>CLA byte which will be used for sendIns: APDU transmits.  Default value is 0x00.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendIns:p1:p2:data:le:reply:" title="sendIns:p1:p2:data:le:reply:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendIns:p1:p2:data:le:reply:">&ndash;&nbsp;sendIns:p1:p2:data:le:reply:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Transmits APDU to the card and returns response.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)sendIns:(UInt8)<em>ins</em> p1:(UInt8)<em>p1</em> p2:(UInt8)<em>p2</em> data:(nullable NSData *)<em>requestData</em> le:(nullable NSNumber *)<em>le</em> reply:(void ( ^ ) ( NSData *__nullable replyData , UInt16 sw , NSError *__nullable error ))<em>reply</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ins</code></th>
+						<td><p>INS code of the APDU</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>p1</code></th>
+						<td><p>P1 code of the APDU</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>p2</code></th>
+						<td><p>P2 code of the APDU</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requestData</code></th>
+						<td><p>Data field of the APDU, or nil if no input data field should be present (i.e case1 or case2 APDUs).  Length of the data serves as Lc field of the APDU.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>le</code></th>
+						<td><p>Expected number of bytes to be returned, or nil if no output data are expected (i.e. case1 or case3 APDUs). To get as much bytes as card provides, pass @0.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sw</code></th>
+						<td><p>SW1SW2 result code, first two bytes of returned card&rsquo;s reply.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>replyData</code></th>
+						<td><p>Block of returned data without SW1SW2 bytes, or nil if an error occured.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Contains error details when nil is returned.  Specific error is also filled in if there was no communication error, but card returned other SW code than 0x9000.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Transmits APDU to the card and returns response.</p><p>Asynchronous high level variant of command for transmitting APDU to the card.  Handles all ISO7816-4 APDU cases translation to proper sequences according to used protocol.  Consults useExtendedAPDU and useCommandChaining properties and uses these modes whenever appropriate and beneficial for sending requested APDU request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inSessionWithError:executeBlock:" title="inSessionWithError:executeBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inSessionWithError:executeBlock:">&ndash;&nbsp;inSessionWithError:executeBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Synchronous variant of session creation.  Begins the session, executes given block and ends session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)inSessionWithError:(NSError **)<em>error</em> executeBlock:(BOOL ( ^ ) ( NSError **error ))<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Error receiving more information when transaction failed to start or block failed for some reason.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>Block to be executed when the session was successfully begun.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns YES if the session was successfully begun and block returned YES, otherwise NO.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Synchronous variant of session creation.  Begins the session, executes given block and ends session.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendIns:p1:p2:data:le:sw:error:" title="sendIns:p1:p2:data:le:sw:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendIns:p1:p2:data:le:sw:error:">&ndash;&nbsp;sendIns:p1:p2:data:le:sw:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Transmits APDU to the card and returns response.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)sendIns:(UInt8)<em>ins</em> p1:(UInt8)<em>p1</em> p2:(UInt8)<em>p2</em> data:(nullable NSData *)<em>requestData</em> le:(nullable NSNumber *)<em>le</em> sw:(UInt16 *)<em>sw</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ins</code></th>
+						<td><p>INS code of the APDU</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>p1</code></th>
+						<td><p>P1 code of the APDU</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>p2</code></th>
+						<td><p>P2 code of the APDU</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>le</code></th>
+						<td><p>Expected number of bytes to be returned, or nil if no output data are expected (i.e. case1 or case3 APDUs). To get as much bytes as card provides, pass @0.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sw</code></th>
+						<td><p>On output, filled with SW1SW2 result code</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Contains error details when nil is returned.  Specific error is also filled in if there was no communication error, but card returned other SW code than 0x9000.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>Data field of the APDU.  Length of the data serves as Lc field of the APDU</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returned data field, excluding SW status bytes.  If an error occured, returns nil.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Transmits APDU to the card and returns response.</p><p>Synchronous high level variant of command for transmitting APDU to the card.  Handles all ISO7816-4 APDU cases translation to proper sequences according to used protocol.  Should be used in block passed to <a href="#//api/name/inSessionWithError:executeBlock:">[TKSmartCard inSessionWithError:executeBlock:]</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKSmartCard.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

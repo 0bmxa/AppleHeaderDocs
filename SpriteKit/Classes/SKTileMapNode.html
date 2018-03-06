@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SKTileMapNode Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SpriteKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/anchorPoint">anchorPoint</option>
+		
+		<option value="//api/name/blendMode">blendMode</option>
+		
+		<option value="//api/name/color">color</option>
+		
+		<option value="//api/name/colorBlendFactor">colorBlendFactor</option>
+		
+		<option value="//api/name/enableAutomapping">enableAutomapping</option>
+		
+		<option value="//api/name/lightingBitMask">lightingBitMask</option>
+		
+		<option value="//api/name/mapSize">mapSize</option>
+		
+		<option value="//api/name/numberOfColumns">numberOfColumns</option>
+		
+		<option value="//api/name/numberOfRows">numberOfRows</option>
+		
+		<option value="//api/name/shader">shader</option>
+		
+		<option value="//api/name/tileSet">tileSet</option>
+		
+		<option value="//api/name/tileSize">tileSize</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/tileMapNodeWithTileSet:columns:rows:tileSize:">+ tileMapNodeWithTileSet:columns:rows:tileSize:</option>
+		
+		<option value="//api/name/tileMapNodeWithTileSet:columns:rows:tileSize:fillWithTileGroup:">+ tileMapNodeWithTileSet:columns:rows:tileSize:fillWithTileGroup:</option>
+		
+		<option value="//api/name/tileMapNodeWithTileSet:columns:rows:tileSize:tileGroupLayout:">+ tileMapNodeWithTileSet:columns:rows:tileSize:tileGroupLayout:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/centerOfTileAtColumn:row:">- centerOfTileAtColumn:row:</option>
+		
+		<option value="//api/name/fillWithTileGroup:">- fillWithTileGroup:</option>
+		
+		<option value="//api/name/initWithTileSet:columns:rows:tileSize:">- initWithTileSet:columns:rows:tileSize:</option>
+		
+		<option value="//api/name/initWithTileSet:columns:rows:tileSize:fillWithTileGroup:">- initWithTileSet:columns:rows:tileSize:fillWithTileGroup:</option>
+		
+		<option value="//api/name/initWithTileSet:columns:rows:tileSize:tileGroupLayout:">- initWithTileSet:columns:rows:tileSize:tileGroupLayout:</option>
+		
+		<option value="//api/name/setTileGroup:andTileDefinition:forColumn:row:">- setTileGroup:andTileDefinition:forColumn:row:</option>
+		
+		<option value="//api/name/setTileGroup:forColumn:row:">- setTileGroup:forColumn:row:</option>
+		
+		<option value="//api/name/setValue:forAttributeNamed:">- setValue:forAttributeNamed:</option>
+		
+		<option value="//api/name/tileColumnIndexFromPosition:">- tileColumnIndexFromPosition:</option>
+		
+		<option value="//api/name/tileDefinitionAtColumn:row:">- tileDefinitionAtColumn:row:</option>
+		
+		<option value="//api/name/tileGroupAtColumn:row:">- tileGroupAtColumn:row:</option>
+		
+		<option value="//api/name/tileRowIndexFromPosition:">- tileRowIndexFromPosition:</option>
+		
+		<option value="//api/name/valueForAttributeNamed:">- valueForAttributeNamed:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SKTileMapNode Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/SKNode.html">SKNode</a> : UIResponder</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCoding<br />NSCopying</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SKTileMapNode.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A SpriteKit node used to render a 2D array of textured sprites. Uses <a href="../Classes/SKTileSet.html">SKTileSet</a> to determine what textures it can use to render. Separate tile map nodes can be layered on top of one another to achieve various effects, such as parallax scrolling.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/tileMapNodeWithTileSet:columns:rows:tileSize:" title="tileMapNodeWithTileSet:columns:rows:tileSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tileMapNodeWithTileSet:columns:rows:tileSize:">+&nbsp;tileMapNodeWithTileSet:columns:rows:tileSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a tile map node with the specified tile set and dimensions. The tiles of the map will be empty, equivalent to the nil tile definition/group.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)tileMapNodeWithTileSet:(SKTileSet *)<em>tileSet</em> columns:(NSUInteger)<em>columns</em> rows:(NSUInteger)<em>rows</em> tileSize:(CGSize)<em>tileSize</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSet</code></th>
+						<td><p>the tile set that is used to render the tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>columns</code></th>
+						<td><p>the number of columns in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rows</code></th>
+						<td><p>the number of rows in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSize</code></th>
+						<td><p>the size of each tile in points</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a tile map node with the specified tile set and dimensions. The tiles of the map will be empty, equivalent to the nil tile definition/group.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tileMapNodeWithTileSet:columns:rows:tileSize:fillWithTileGroup:" title="tileMapNodeWithTileSet:columns:rows:tileSize:fillWithTileGroup:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tileMapNodeWithTileSet:columns:rows:tileSize:fillWithTileGroup:">+&nbsp;tileMapNodeWithTileSet:columns:rows:tileSize:fillWithTileGroup:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a tile map node with the specified tile set and dimensions, and fill it with the specified tile group.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)tileMapNodeWithTileSet:(SKTileSet *)<em>tileSet</em> columns:(NSUInteger)<em>columns</em> rows:(NSUInteger)<em>rows</em> tileSize:(CGSize)<em>tileSize</em> fillWithTileGroup:(SKTileGroup *)<em>tileGroup</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSet</code></th>
+						<td><p>the tile set that is used to render the tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>columns</code></th>
+						<td><p>the number of columns in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rows</code></th>
+						<td><p>the number of rows in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSize</code></th>
+						<td><p>the size of each tile in points</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileGroup</code></th>
+						<td><p>the tile group we wish to fill the tile map with</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a tile map node with the specified tile set and dimensions, and fill it with the specified tile group.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tileMapNodeWithTileSet:columns:rows:tileSize:tileGroupLayout:" title="tileMapNodeWithTileSet:columns:rows:tileSize:tileGroupLayout:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tileMapNodeWithTileSet:columns:rows:tileSize:tileGroupLayout:">+&nbsp;tileMapNodeWithTileSet:columns:rows:tileSize:tileGroupLayout:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a tile map node with the specified tile set and dimensions, and fill it with a specific layout of tile groups that belong to the provided tile set. The tileGroupLayout array should match the dimensions of the tile map (i.e., the number of elements should be equal to columns * rows). Index 0 of the array maps to column 0, row 0 of the tile map. Index 1 is column 1, row 0, and so on, wrapping around to the next row once the index passes the number of columns in the tile map. If the array has fewer elements than the number of tiles in the map, the remaining tiles are initialized with the nil tile group. If the array has more elements than the number of tiles in the map, the extra tile groups are ignored.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)tileMapNodeWithTileSet:(SKTileSet *)<em>tileSet</em> columns:(NSUInteger)<em>columns</em> rows:(NSUInteger)<em>rows</em> tileSize:(CGSize)<em>tileSize</em> tileGroupLayout:(NSArray&lt;SKTileGroup*&gt; *)<em>tileGroupLayout</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSet</code></th>
+						<td><p>the tile set that is used to render the tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>columns</code></th>
+						<td><p>the number of columns in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rows</code></th>
+						<td><p>the number of rows in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSize</code></th>
+						<td><p>the size of each tile in points</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileGroupLayout</code></th>
+						<td><p>an array of tile groups that we want to use to fill the tile map</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a tile map node with the specified tile set and dimensions, and fill it with a specific layout of tile groups that belong to the provided tile set. The tileGroupLayout array should match the dimensions of the tile map (i.e., the number of elements should be equal to columns * rows). Index 0 of the array maps to column 0, row 0 of the tile map. Index 1 is column 1, row 0, and so on, wrapping around to the next row once the index passes the number of columns in the tile map. If the array has fewer elements than the number of tiles in the map, the remaining tiles are initialized with the nil tile group. If the array has more elements than the number of tiles in the map, the extra tile groups are ignored.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTileSet:columns:rows:tileSize:" title="initWithTileSet:columns:rows:tileSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTileSet:columns:rows:tileSize:">&ndash;&nbsp;initWithTileSet:columns:rows:tileSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a tile map node with the specified tile set and dimensions. The tiles of the map will be empty, equivalent to the nil tile definition/group.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTileSet:(SKTileSet *)<em>tileSet</em> columns:(NSUInteger)<em>columns</em> rows:(NSUInteger)<em>rows</em> tileSize:(CGSize)<em>tileSize</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSet</code></th>
+						<td><p>the tile set that is used to render the tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>columns</code></th>
+						<td><p>the number of columns in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rows</code></th>
+						<td><p>the number of rows in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSize</code></th>
+						<td><p>the size of each tile in points</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialize a tile map node with the specified tile set and dimensions. The tiles of the map will be empty, equivalent to the nil tile definition/group.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTileSet:columns:rows:tileSize:fillWithTileGroup:" title="initWithTileSet:columns:rows:tileSize:fillWithTileGroup:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTileSet:columns:rows:tileSize:fillWithTileGroup:">&ndash;&nbsp;initWithTileSet:columns:rows:tileSize:fillWithTileGroup:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a tile map node with the specified tile set and dimensions, and fill it with the specified tile group.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTileSet:(SKTileSet *)<em>tileSet</em> columns:(NSUInteger)<em>columns</em> rows:(NSUInteger)<em>rows</em> tileSize:(CGSize)<em>tileSize</em> fillWithTileGroup:(SKTileGroup *)<em>tileGroup</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSet</code></th>
+						<td><p>the tile set that is used to render the tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>columns</code></th>
+						<td><p>the number of columns in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rows</code></th>
+						<td><p>the number of rows in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSize</code></th>
+						<td><p>the size of each tile in points</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileGroup</code></th>
+						<td><p>the tile group we wish to fill the tile map with</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialize a tile map node with the specified tile set and dimensions, and fill it with the specified tile group.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTileSet:columns:rows:tileSize:tileGroupLayout:" title="initWithTileSet:columns:rows:tileSize:tileGroupLayout:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTileSet:columns:rows:tileSize:tileGroupLayout:">&ndash;&nbsp;initWithTileSet:columns:rows:tileSize:tileGroupLayout:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a tile map node with the specified tile set and dimensions, and fill it with a specific layout of tile groups that belong to the provided tile set. The tileGroupLayout array should match the dimensions of the tile map (i.e., the number of elements should be equal to columns * rows). Index 0 of the array maps to column 0, row 0 of the tile map. Index 1 is column 1, row 0, and so on, wrapping around to the next row once the index passes the number of columns in the tile map. If the array has fewer elements than the number of tiles in the map, the remaining tiles are initialized with the nil tile group. If the array has more elements than the number of tiles in the map, the extra tile groups are ignored.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTileSet:(SKTileSet *)<em>tileSet</em> columns:(NSUInteger)<em>columns</em> rows:(NSUInteger)<em>rows</em> tileSize:(CGSize)<em>tileSize</em> tileGroupLayout:(NSArray&lt;SKTileGroup*&gt; *)<em>tileGroupLayout</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSet</code></th>
+						<td><p>the tile set that is used to render the tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>columns</code></th>
+						<td><p>the number of columns in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rows</code></th>
+						<td><p>the number of rows in the map that can hold tiles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileSize</code></th>
+						<td><p>the size of each tile in points</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileGroupLayout</code></th>
+						<td><p>an array of tile groups that we want to use to fill the tile map</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialize a tile map node with the specified tile set and dimensions, and fill it with a specific layout of tile groups that belong to the provided tile set. The tileGroupLayout array should match the dimensions of the tile map (i.e., the number of elements should be equal to columns * rows). Index 0 of the array maps to column 0, row 0 of the tile map. Index 1 is column 1, row 0, and so on, wrapping around to the next row once the index passes the number of columns in the tile map. If the array has fewer elements than the number of tiles in the map, the remaining tiles are initialized with the nil tile group. If the array has more elements than the number of tiles in the map, the extra tile groups are ignored.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/numberOfColumns" title="numberOfColumns"></a>
+	<h3 class="method-title"><code><a href="#//api/name/numberOfColumns">&nbsp;&nbsp;numberOfColumns</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of columns in the tile map.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSUInteger numberOfColumns</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The number of columns in the tile map.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/numberOfRows" title="numberOfRows"></a>
+	<h3 class="method-title"><code><a href="#//api/name/numberOfRows">&nbsp;&nbsp;numberOfRows</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of rows in the tile map.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSUInteger numberOfRows</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The number of rows in the tile map.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tileSize" title="tileSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tileSize">&nbsp;&nbsp;tileSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The size of each tile in the map.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGSize tileSize</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The size of each tile in the map.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mapSize" title="mapSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mapSize">&nbsp;&nbsp;mapSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The size of the tile map. This is dependent on the <a href="#//api/name/tileSize">tileSize</a>, the number of columns and rows in the map, and the tile set type.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGSize mapSize</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The size of the tile map. This is dependent on the <a href="#//api/name/tileSize">tileSize</a>, the number of columns and rows in the map, and the tile set type.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tileSet" title="tileSet"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tileSet">&nbsp;&nbsp;tileSet</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The tile set being used by this tile map.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) SKTileSet *tileSet</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The tile set being used by this tile map.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/colorBlendFactor" title="colorBlendFactor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/colorBlendFactor">&nbsp;&nbsp;colorBlendFactor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Controls the blending between the texture and the tile map <a href="#//api/name/color">color</a>. The valid interval of values is from 0.0 up to and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0) if above.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGFloat colorBlendFactor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Controls the blending between the texture and the tile map <a href="#//api/name/color">color</a>. The valid interval of values is from 0.0 up to and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0) if above.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/color" title="color"></a>
+	<h3 class="method-title"><code><a href="#//api/name/color">&nbsp;&nbsp;color</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Base color for the tile map (If no texture is present, the color still is drawn).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) SKColor *color</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Base color for the tile map (If no texture is present, the color still is drawn).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/blendMode" title="blendMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/blendMode">&nbsp;&nbsp;blendMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the blend mode to use when composing the tile map with the final framebuffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) SKBlendMode blendMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sets the blend mode to use when composing the tile map with the final framebuffer.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/SKNode.html">SKNode</a>.<a href="../Constants/SKBlendMode.html">SKBlendMode</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anchorPoint" title="anchorPoint"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anchorPoint">&nbsp;&nbsp;anchorPoint</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Used to choose the location in the tile map that maps to its &lsquo;position&rsquo; in the parent&rsquo;s coordinate space. The valid interval for each input is from 0.0 up to and including 1.0.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGPoint anchorPoint</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Used to choose the location in the tile map that maps to its &lsquo;position&rsquo; in the parent&rsquo;s coordinate space. The valid interval for each input is from 0.0 up to and including 1.0.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shader" title="shader"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shader">&nbsp;&nbsp;shader</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A property that determines whether the tile map is rendered using a custom shader.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) SKShader *shader</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A property that determines whether the tile map is rendered using a custom shader.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Optional dictionary of SKAttributeValues
+Attributes can be used with custom SKShaders.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nonnull, copy) NSDictionary&lt;NSString*SKAttributeValue*&gt; *NS_AVAILABLE ( 10 _12 , 10 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Optional dictionary of SKAttributeValues
+Attributes can be used with custom SKShaders.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueForAttributeNamed:" title="valueForAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueForAttributeNamed:">&ndash;&nbsp;valueForAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable SKAttributeValue *)valueForAttributeNamed:(nonnull NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setValue:forAttributeNamed:" title="setValue:forAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setValue:forAttributeNamed:">&ndash;&nbsp;setValue:forAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setValue:(SKAttributeValue *)<em>value</em> forAttributeNamed:(nonnull NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lightingBitMask" title="lightingBitMask"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lightingBitMask">&nbsp;&nbsp;lightingBitMask</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Bitmask to indicate being lit by a set of lights using overlapping lighting categories.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) uint32_t lightingBitMask</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Bitmask to indicate being lit by a set of lights using overlapping lighting categories.</p>
+
+<p>A light whose category is set to a value that masks to non-zero using this mask will
+apply light to this sprite.</p>
+
+<p>When used together with a normal texture, complex lighting effects can be used.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enableAutomapping" title="enableAutomapping"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enableAutomapping">&nbsp;&nbsp;enableAutomapping</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL enableAutomapping</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fillWithTileGroup:" title="fillWithTileGroup:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fillWithTileGroup:">&ndash;&nbsp;fillWithTileGroup:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fill the entire tile map with the provided tile group.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)fillWithTileGroup:(nullable SKTileGroup *)<em>tileGroup</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileGroup</code></th>
+						<td><p>the tile group that will be used to fill the map</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Fill the entire tile map with the provided tile group.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tileDefinitionAtColumn:row:" title="tileDefinitionAtColumn:row:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tileDefinitionAtColumn:row:">&ndash;&nbsp;tileDefinitionAtColumn:row:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Look up the tile definition at the specified tile index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable SKTileDefinition *)tileDefinitionAtColumn:(NSUInteger)<em>column</em> row:(NSUInteger)<em>row</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>column</code></th>
+						<td><p>the column index of the tile</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>row</code></th>
+						<td><p>the row index of the tile</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Look up the tile definition at the specified tile index.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tileGroupAtColumn:row:" title="tileGroupAtColumn:row:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tileGroupAtColumn:row:">&ndash;&nbsp;tileGroupAtColumn:row:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Look up the tile group at the specified tile index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable SKTileGroup *)tileGroupAtColumn:(NSUInteger)<em>column</em> row:(NSUInteger)<em>row</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>column</code></th>
+						<td><p>the column index of the tile</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>row</code></th>
+						<td><p>the row index of the tile</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Look up the tile group at the specified tile index.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setTileGroup:forColumn:row:" title="setTileGroup:forColumn:row:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setTileGroup:forColumn:row:">&ndash;&nbsp;setTileGroup:forColumn:row:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the tile group at the specified tile index. When automapping is enabled, the appropriate tile definitions will automatically be selected and placed, possibly modifying neighboring tiles. When automapping is disabled, it will simply place the default center tile definition for the group, and will not modify any of the neihboring tiles.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setTileGroup:(nullable SKTileGroup *)<em>tileGroup</em> forColumn:(NSUInteger)<em>column</em> row:(NSUInteger)<em>row</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileGroup</code></th>
+						<td><p>the tile group we want to place in the map</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>column</code></th>
+						<td><p>the column index of the tile</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>row</code></th>
+						<td><p>the row index of the tile</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set the tile group at the specified tile index. When automapping is enabled, the appropriate tile definitions will automatically be selected and placed, possibly modifying neighboring tiles. When automapping is disabled, it will simply place the default center tile definition for the group, and will not modify any of the neihboring tiles.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setTileGroup:andTileDefinition:forColumn:row:" title="setTileGroup:andTileDefinition:forColumn:row:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setTileGroup:andTileDefinition:forColumn:row:">&ndash;&nbsp;setTileGroup:andTileDefinition:forColumn:row:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the tile group and tile defintion at the specified tile index. When automapping is enabled, it will attempt to resolve the surrounding tiles to allow the specified tile definition to be placed. When automapping is disabled, it will simply place the tile definition and not modify any of the neighboring tiles.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setTileGroup:(SKTileGroup *)<em>tileGroup</em> andTileDefinition:(SKTileDefinition *)<em>tileDefinition</em> forColumn:(NSUInteger)<em>column</em> row:(NSUInteger)<em>row</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileGroup</code></th>
+						<td><p>the tile group we want to place in the map</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tileDefinition</code></th>
+						<td><p>the tile definition we want to place in the map</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>column</code></th>
+						<td><p>the column index of the tile</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>row</code></th>
+						<td><p>the row index of the tile</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set the tile group and tile defintion at the specified tile index. When automapping is enabled, it will attempt to resolve the surrounding tiles to allow the specified tile definition to be placed. When automapping is disabled, it will simply place the tile definition and not modify any of the neighboring tiles.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tileColumnIndexFromPosition:" title="tileColumnIndexFromPosition:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tileColumnIndexFromPosition:">&ndash;&nbsp;tileColumnIndexFromPosition:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the column index of the tile that lies under the specified position. Returns NSUIntegerMax if the position does not fall within the tile map.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)tileColumnIndexFromPosition:(CGPoint)<em>position</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>position</code></th>
+						<td><p>the position we want to check against the tile map</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the column index of the tile that lies under the specified position. Returns NSUIntegerMax if the position does not fall within the tile map.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tileRowIndexFromPosition:" title="tileRowIndexFromPosition:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tileRowIndexFromPosition:">&ndash;&nbsp;tileRowIndexFromPosition:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the row index of the tile that lies under the specified position. Returns NSUIntegerMax if the position does not fall within the tile map.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)tileRowIndexFromPosition:(CGPoint)<em>position</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>position</code></th>
+						<td><p>the position we want to check against the tile map</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the row index of the tile that lies under the specified position. Returns NSUIntegerMax if the position does not fall within the tile map.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/centerOfTileAtColumn:row:" title="centerOfTileAtColumn:row:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/centerOfTileAtColumn:row:">&ndash;&nbsp;centerOfTileAtColumn:row:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the position of the center of the tile at the specified column and row.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGPoint)centerOfTileAtColumn:(NSUInteger)<em>column</em> row:(NSUInteger)<em>row</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>column</code></th>
+						<td><p>the column index of the tile</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>row</code></th>
+						<td><p>the row index of the tile</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the position of the center of the tile at the specified column and row.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKTileMapNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

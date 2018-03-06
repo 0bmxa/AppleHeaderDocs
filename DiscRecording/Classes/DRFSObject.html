@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DRFSObject Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 DiscRecording Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/baseName">- baseName</option>
+		
+		<option value="//api/name/effectiveFilesystemMask">- effectiveFilesystemMask</option>
+		
+		<option value="//api/name/explicitFilesystemMask">- explicitFilesystemMask</option>
+		
+		<option value="//api/name/isVirtual">- isVirtual</option>
+		
+		<option value="//api/name/mangledNameForFilesystem:">- mangledNameForFilesystem:</option>
+		
+		<option value="//api/name/mangledNames">- mangledNames</option>
+		
+		<option value="//api/name/parent">- parent</option>
+		
+		<option value="//api/name/propertiesForFilesystem:mergeWithOtherFilesystems:">- propertiesForFilesystem:mergeWithOtherFilesystems:</option>
+		
+		<option value="//api/name/propertyForKey:inFilesystem:mergeWithOtherFilesystems:">- propertyForKey:inFilesystem:mergeWithOtherFilesystems:</option>
+		
+		<option value="//api/name/setBaseName:">- setBaseName:</option>
+		
+		<option value="//api/name/setExplicitFilesystemMask:">- setExplicitFilesystemMask:</option>
+		
+		<option value="//api/name/setProperties:inFilesystem:">- setProperties:inFilesystem:</option>
+		
+		<option value="//api/name/setProperty:forKey:inFilesystem:">- setProperty:forKey:inFilesystem:</option>
+		
+		<option value="//api/name/setSpecificName:forFilesystem:">- setSpecificName:forFilesystem:</option>
+		
+		<option value="//api/name/setSpecificNames:">- setSpecificNames:</option>
+		
+		<option value="//api/name/sourcePath">- sourcePath</option>
+		
+		<option value="//api/name/specificNameForFilesystem:">- specificNameForFilesystem:</option>
+		
+		<option value="//api/name/specificNames">- specificNames</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DRFSObject Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DRFSObject.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          DRFSObject
+</code></pre><h3>About Content Creation</h3>
+
+
+<pre><code>            Content creation provides an interface for dynamic filesystem creation, allowing
+            complex filesystem hierarchies to be created and burned on-the-fly without having
+            to generate a complete on-disk representation.
+
+            DRFSObject is the root object for the objects contained in the Objective C 
+            content creation hierarchy. Through DRFSObject, file and folder objects
+            inherit a basic interface to getting and setting filesystem properties,
+            names and masks. The DRFSObject class is an abstract class, there are no
+            methods available to create a DRFSObject directly, you create @link //apple_ref/occ/cl/DRFile DRFile @/link and
+            @link //apple_ref/occ/cl/DRFolder DRFolder @/link objects instead.
+
+
+            &lt;h3&gt;Real and Virtual Objects&lt;/h3&gt;
+            The interface is designed around folder and file objects which are laid out
+            in a one-parent-many-children hierarchy - this should be a familiar concept for
+            anyone who's ever used a modern filesystem.  There are two kinds of objects in
+            this API; "real" objects and "virtual" objects, and the distinction is important.
+
+            &lt;ul&gt;
+            &lt;li&gt;A &lt;i&gt;real&lt;/i&gt; file or folder object corresponds directly to a file or folder
+                on disk.  The data for a real file object comes directly from the on-disk file.
+                The hierarchy underneath a real folder object corresponds 1:1 to the
+                hierarchy underneath the folder in the on-disk filesystem.&lt;/li&gt;
+
+            &lt;li&gt;A &lt;i&gt;virtual&lt;/i&gt; file or folder object does not have any actual representation
+                on disk.  The data for a virtual file object is specified through the API or
+                in a callback function.  The hierarchy underneath a virtual folder object 
+                is specified through the API.&lt;/li&gt;
+            &lt;/ul&gt;
+
+
+            &lt;h3&gt;Creating a Virtual Hierarchy&lt;/h3&gt;
+            In the hierarchy specified through this API, only virtual folders may be assigned
+            children.  Real files, virtual files, and real folders are all considered leaf
+            nodes and may not have children.  (Real folders may of course contain files and
+            folders, but the files and folders are specified by the on-disk representation and
+            may not be changed through the API unless the real folder is made virtual first.)
+
+            A hierarchy may be as simple as a single real folder, or it can be as complicated
+            as needed - for example, a virtual folder with a deep hierarchy of children which are
+            a complex mix of real files, virtual files, real folders, and virtual folders.
+
+
+            &lt;h3&gt;Converting From Real To Virtual&lt;/h3&gt;
+            A real folder can be dynamically converted to a virtual folder, in which case
+            its first level of children is read and converted into a virtual hierarchy.  The children
+            thus created will all be real.  For example: A real folder named &lt;i&gt;root&lt;/i&gt; is converted
+            into a virtual folder.  The on-disk folder contains a file named &lt;i&gt;file1&lt;/i&gt; and
+            a folder named &lt;i&gt;folder2&lt;/i&gt;.  After conversion, the result is a virtual folder named
+            &lt;i&gt;root&lt;/i&gt; with two children: the real file &lt;i&gt;file1&lt;/i&gt; and the real folder &lt;i&gt;folder2&lt;/i&gt;.
+
+
+            &lt;h3&gt;Base Names and Specific Names&lt;/h3&gt;
+            Because the content creation API is able to generate multiple filesystems which
+            require multiple varied naming conventions, a sensible system for naming is required.
+            Thus each file has a &lt;i&gt;base name&lt;/i&gt; which corresponds to its default name in any filesystem. 
+            Whenever possible, the base name will be used in the generated filesystem without
+            modification.
+
+            The initial base name for a real object is the name of the corresponding object
+            on disk.  The initial base name for a virtual object is specified when the object
+            is created.  The base names for both real and virtual objects may be modified using the
+            @link //apple_ref/occ/instm/DRFSObject/setBaseName: setBaseName: @/link method.
+
+            Inside a particular filesytem, if the base name cannot be used as-is (if, for example, it contains illegal
+            characters, exceeds the length requirements, or otherwise doesn't meet the required format)
+            then an acceptable name that meets the filesystem's criteria will be generated
+            automatically from the base name.  The name which is acceptable to a given filesystem
+            is that file's &lt;i&gt;specific name&lt;/i&gt; for that filesystem.
+
+            A specific name may be obtained and modified through this API, or may be left empty to
+            be automatically generated from the base name.  When a specific name is set through the API,
+            it will be modified to ensure that the name is legal according to the particular filesystem.
+
+            Even when a specific name is set or generated through the API, it may not be the actual name
+            used on the disc.  If an object's specific name conflicts with the specific name of another
+            of the object's siblings in that filesystem, one or both specific names will be &lt;i&gt;mangled&lt;/i&gt;
+            to obtain a unique name before burning, usually by adding a numeric mangle code such as _001
+            to each name.
+
+            There are two APIs available for getting the specific name from an object:
+
+            &lt;ul&gt;
+            &lt;li&gt;@link //apple_ref/occ/instm/DRFSObject/specificNameForFilesystem: specificNameForFilesystem: @/link returns the unmodified specific name, which would be used if there were
+            no conflicts.&lt;/li&gt;
+
+            &lt;ul&gt;@link //apple_ref/occ/instm/DRFSObject/mangledNameForFilesystem: mangledNameForFilesystem: @/link returns a modified specific name, mangled if necessary,
+            which is guaranteed to be unique amongst its siblings in the filesystem.&lt;/li&gt;
+            &lt;/ul&gt;
+
+            The filesystem keys are detailed in &lt;b&gt;Filesystem data accessors&lt;/b&gt;.  Most of the keys are 
+            straightforward; however, ISO-9660
+            is a special case, since there are two possible naming conventions for ISO-9660, level 1
+            (8.3, limited charset) and level 2 (30 chars, marginally expanded charset).  You can't
+            specify DRISO9660 when obtaining a name; instead, you must explicitly specify whether
+            you want the level 1 or level 2 name with DRISO9660LevelOne or DRISO9660LevelTwo.
+
+            If the object's
+            name does not conflict with any of its siblings, @link //apple_ref/occ/instm/DRFSObject/mangledNameForFilesystem: mangledNameForFilesystem: @/link will return the same
+            value as @link //apple_ref/occ/instm/DRFSObject/specificNameForFilesystem: specificNameForFilesystem: @/link.  The converse is not necessarily true -- one object may get
+            the actual specific name, and other files with name collisions will be mangled.
+
+            @link //apple_ref/occ/instm/DRFSObject/mangledNameForFilesystem: mangledNameForFilesystem: @/link will check each of the object's siblings in the hierarchy and mangle to
+            resolve any filename conflicts, so it can be a much more expensive call than @link //apple_ref/occ/instm/DRFSObject/specificNameForFilesystem: specificNameForFilesystem: @/link,
+            taking at worst O(N^2) time where N is the number of siblings.  However, actual performance
+            tends to be much better, closer to O(N), particularly when there are only a few collisions.
+            @link //apple_ref/occ/instm/DRFSObject/mangledNameForFilesystem: mangledNameForFilesystem: @/link has the advantage of allowing you to see (and to show the user) the exact
+            names which would be generated on the disc if the burn were started immediately.
+
+            Both @link //apple_ref/occ/instm/DRFSObject/specificNameForFilesystem: specificNameForFilesystem: @/link and @link //apple_ref/occ/instm/DRFSObject/mangledNameForFilesystem: mangledNameForFilesystem: @/link will cache information when possible, so
+            that names are only generated and mangled when necessary.  Adding or removing children
+            from a folder, or changing the base or specific name on an object, may cause
+            the cached names of the object's children or siblings to be recomputed.
+
+
+            &lt;h3&gt;Properties and Other Meta-Data&lt;/h3&gt;
+            Properties are generally accessed similarly to names.  Each object has overall
+            properties which apply to every filesystem, and it may also have different properties
+            in each filesystem.  For example, a file which has no relevance for a MacOS user
+            may be marked invisible in the HFS+ tree, but be visible in the Joliet tree.
+
+            The properties, like names, are also differentiated by filesystem. There is one
+            properties dictionary for @link DRAllFilesystems DRAllFilesystems @/link, and one properties dictionary for each
+            individual filesystem - @link DRISO9660 DRISO9660 @/link, @link DRJoliet DRJoliet @/link, @link DRHFSPlus DRHFSPlus @/link, etc.  
+
+            The properties for @link DRAllFilesystems DRAllFilesystems @/link are treated as the base value, and then the
+            properties in the specific filesystem dictionary are treated as overrides.
+
+            When obtaining properties with @link //apple_ref/occ/instm/DRFSObject/propertyForKey:inFilesystem:mergeWithOtherFilesystems: propertyForKey:inFilesystem:mergeWithOtherFilesystems: @/link or
+            @link //apple_ref/occ/instm/DRFSObject/propertiesForFilesystem:mergeWithOtherFilesystems: propertiesForFilesystem:mergeWithOtherFilesystems: @/link, you can specify whether you want to
+            automatically coalesce the properties between the specified filesystem dictionary and
+            the "all filesystems" dictionary.  This is useful if you want to obtain the effective
+            value of the property, because it will return the value from the "all filesystems"
+            dictionary if the specific filesystem does not assign an override. 
+
+
+
+            &lt;h3&gt;Filesystem Masks&lt;/h3&gt;
+            It's possible to suppress generation of particular items in a folder tree.  For example,
+            you may want a MacOS application file or bundle to only appear in the HFS+ tree, and
+            want an .EXE file to only appear in the Joliet tree.
+
+            Filesystem-specific suppression is handled through the @link //apple_ref/c/tag/DRFilesystemInclusionMask%32constants filesystem mask @/link.  The filesystem
+            mask is a bitfield which contains a 1 if the object will appear in the corresponding filesystem,
+            and 0 otherwise.  This can be used to generate arbitrarily complex trees, where in the most
+            complex case each filesystem may theoretically have its own unique and disjoint tree.
+            (Such discs are discouraged, however, since they may be confusing to the user.)
+
+            An object can be considered to have two mask values.  The first one is the &lt;i&gt;explicit mask&lt;/i&gt;
+            which has been set by the client, and may be zero if no mask has been set.  The other is the
+            &lt;i&gt;effective mask&lt;/i&gt;, which is the actual mask which will be used.
+
+            If the explicit mask is non-zero, then the object's effective mask is equal to the
+            bitwise AND of the object's explicit mask and its parent's effective mask.
+
+            If the explicit mask is zero, the object will use the same mask as its parent.  (In
+            other words, the effective mask is equal to the parent's effective mask.)
+
+            If the root of the hierarchy does not have an explicit mask set, the effective mask of
+            the root and all its descendants will be zero.
+
+            The explicit mask may be cleared by changing it to zero.  By doing this, the
+            object's explicit mask becomes zero and its effective mask will be inherited
+            from its parent.
+
+            If an object's effective mask is zero, it will not be included in the burn.  The major
+            exception to this rule is when the root folder's explicit/effective mask is zero - when
+            this happens, DiscRecording will assign a default mask, typically one which will result in
+            the most cross-platform disc possible.
+
+            If the effective mask of the root is zero at the time of the burn, DiscRecording will
+            automatically pick a default mask, typically one which will result in the most
+            cross-platform disc possible.
+
+            Some combinations of filesystem mask have special requirements; for example, Joliet is
+            based on ISO-9660, and requires that ISO-9660 be enabled on at least the root object.
+            (You can still have something appear in Joliet but not ISO-9660, however.)  Some
+            combinations in the future may be mutually exclusive. 
+
+            You do not have to set an explicit mask for anything but the root if you want all
+            filesystems to have the same data.  Since DiscRecording will automatically assign
+            a mask if none is provided, you do not even have to set an explicit mask for the root.
+
+
+            &lt;h3&gt;Symbolic Link Translation&lt;/h3&gt;
+            During the burn, when a symbolic link is encountered in the on-disk filesystem corresponding
+            to a real file or folder, the semantics of the link will be preserved as closely as possible.
+            If the link contains an absolute path, it will be copied unmodified.  If the link contains a
+            relative path, it will be modified to contain an appropriate path.  An important detail to
+            recognize is that since naming requirements vary between filesystems, the appropriate
+            path may be different for each filesystem.
+
+            For example, a relative link to
+            "my long, long directory/this: is an unusual$ filename.with_extension" 
+            will be modified to contain something like the following.  Note that each component of
+            the path has been modified to conform to the rules of the target filesystem.
+
+            &lt;ul&gt;
+            &lt;li&gt;ISO-9660 level 1: "MYLONGLO/THISISAN.WIT"&lt;/li&gt;
+            &lt;li&gt;ISO-9660 level 2: "MY LONG LONG DIRECTORY/THIS: IS AN UNU.WITH_EXTENSION"&lt;/li&gt;
+            &lt;li&gt;Joliet:           "my long, long directory/this: is an unusual filename.with_extension"&lt;/li&gt;
+            &lt;li&gt;HFS+:             "my long, long directory/this: is an unusual$ filename.with_extension"&lt;/li&gt;
+            &lt;/ul&gt;
+
+            The burn engine will make an effort to appropriately translate each component of the path.
+            However, it's still possible that the symlink might break in complex cases.
+            (For example, in the case of a relative-path symlink which traverses through an absolute-path
+            symlink, or when there are filename conflicts along a symlink's path which the burn
+            engine has to resolve by mangling.)
+
+            The burn engine's symlink preservation is usually good enough for most situations in which
+            symlinks are used.  And, when the source filesystem is the same as the target filesystem,
+            symlinks will be preserved perfectly.  (For example, the HFS+ filesystem generated from
+            an HFS+ source should never have symlink problems.)
+
+            However, the odds of symlink failure go up when there are complex arrangements of symlinks,
+            or when there are filename collisions which the burn engine resolves by mangling. 
+
+            This is expected behavior.  At present, the only way to create a perfect symlink which
+            is guaranteed to have a correct path on &lt;b&gt;all&lt;/b&gt; filesystems is to create a virtual symlink
+            using @link //apple_ref/occ/clm/DRFSObject/symLinkPointingTo:inFilesystem: symLinkPointingTo:inFilesystem: @/link.  
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/isVirtual" title="isVirtual"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isVirtual">&ndash;&nbsp;isVirtual</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates whether the receiver is real or virtual.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isVirtual</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><i>YES</i> if the receiver is virtual and <i>NO</i> if real.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     isVirtual
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sourcePath" title="sourcePath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourcePath">&ndash;&nbsp;sourcePath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the path to a real object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)sourcePath</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A path</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sourcePath
+</code></pre><p>This method only applies to DRFSObjects pointing to real objects.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parent" title="parent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parent">&ndash;&nbsp;parent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the parent folder (if any) of the receiver in the content hierarchy.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (DRFolder *)parent</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A @link //apple_ref/occ/cl/<a href="../Classes/DRFolder.html">DRFolder</a> <a href="../Classes/DRFolder.html">DRFolder</a> @/link object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     parent
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/baseName" title="baseName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/baseName">&ndash;&nbsp;baseName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the base name for the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)baseName</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The base name of the object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     baseName
+</code></pre><p>The base name is the name from which any necessary filesystem-specific
+                names are automatically generated.</p>
+
+<pre><code>            Because the content creation API is able to generate multiple filesystems
+            which require multiple varied naming conventions, a sensible system for
+            naming is required.  Thus each file has a base name which corresponds
+            to its default name in any filesystem.
+
+            Whenever possible, the base name will be used in the generated filesystem
+            without modification.  If the name cannot be used as-is (if, for example, it
+            contains illegal characters, exceeds the length requirements, doesn't
+            meet the required format, or a name collision is detected) then an acceptable
+            name that meets the filesystem's criteria will be generated automatically
+            from the base name.
+
+            The default base name for a real file or folder is the actual on-disk
+            name of the item.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setBaseName:" title="setBaseName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setBaseName:">&ndash;&nbsp;setBaseName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the base name for the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setBaseName:(NSString *)<em>baseName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>baseName</code></th>
+						<td><p>The new base name of the object.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setBaseName:
+</code></pre><p>The base name is the name from which any necessary filesystem-specific
+                names are automatically generated.</p>
+
+<pre><code>            Because the content creation API is able to generate multiple filesystems
+            which require multiple varied naming conventions, a sensible system for
+            naming is required.  Thus each file has a base name which corresponds
+            to its default name in any filesystem.
+
+            Whenever possible, the base name will be used in the generated filesystem
+            without modification.  If the name cannot be used as-is (if, for example, it
+            contains illegal characters, exceeds the length requirements, doesn't
+            meet the required format, or a name collision is detected) then an acceptable
+            name that meets the filesystem's criteria will be generated automatically
+            from the base name.
+
+            The default base name for a real file or folder is the actual on-disk
+            name of the item.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/specificNameForFilesystem:" title="specificNameForFilesystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/specificNameForFilesystem:">&ndash;&nbsp;specificNameForFilesystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a single filesystem-specific name for the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)specificNameForFilesystem:(NSString *)<em>filesystem</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem to return the name from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSString containing the name of the file.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     specificNameForFilesystem:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/specificNames" title="specificNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/specificNames">&ndash;&nbsp;specificNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns all the filesystem-specific names for the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)specificNames</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem to return the name from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSDictionary containing the name of the file on all the filesystems.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     specificNames
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSpecificName:forFilesystem:" title="setSpecificName:forFilesystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSpecificName:forFilesystem:">&ndash;&nbsp;setSpecificName:forFilesystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the name used for the receiver in a particular filesystem.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSpecificName:(NSString *)<em>name</em> forFilesystem:(NSString *)<em>filesystem</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name to set.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem to set the name for.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setSpecificName:forFilesystem:
+</code></pre><p>Every effort will be made to use the name passed in.  However, if
+                a name is illegal, it will be modified to fit the rules for the
+                filesystem&rsquo;s names.  Because of this, you should always call
+                @link //apple_ref/occ/instm/DRFSObject/<a href="#//api/name/specificNameForFilesystem:">specificNameForFilesystem:</a> <a href="#//api/name/specificNameForFilesystem:">specificNameForFilesystem:</a> @/link after to ensure
+                that you are always displaying the most current names to the user.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSpecificNames:" title="setSpecificNames:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSpecificNames:">&ndash;&nbsp;setSpecificNames:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the names used for the receiver in the different filesystems all at once.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSpecificNames:(NSDictionary *)<em>specificNames</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>specificNames</code></th>
+						<td><p>The names to set.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setSpecificNames:
+</code></pre><p>Takes an NSDictionary of filesystem keys with corresponding name strings as
+                their values for each specific filesystem name that should be set.</p>
+
+<pre><code>            Every effort will be made to use the names passed in.  However, if
+            a name is illegal, it will be modified to fit the rules for that
+            filesystem's names.  Because of this, you should always call
+            @link //apple_ref/occ/instm/DRFSObject/specificNames specificNames @/link after @link //apple_ref/occ/instm/DRFSObject/setSpecificNames: setSpecificNames: @/link to ensure
+            that you are always displaying the most current names to the user.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mangledNameForFilesystem:" title="mangledNameForFilesystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mangledNameForFilesystem:">&ndash;&nbsp;mangledNameForFilesystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a single filesystem-specific name for the receiver, mangled for uniqueness.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)mangledNameForFilesystem:(NSString *)<em>filesystem</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem to set the name for.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The name of the file mangled for filesystem constraints.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mangledNameForFilesystem:
+</code></pre><p>The string will be mangled for uniqueness amongst its siblings; if the burn
+                were to happen immediately after this call, this is the name which would be used
+                on the resulting disc.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mangledNames" title="mangledNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mangledNames">&ndash;&nbsp;mangledNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary containing all of the filesystem-specific names
+                for the receiver, each one mangled for uniqueness.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)mangledNames</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSDictionary containing the filesystem-specific mangled file names.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mangledNames
+</code></pre><p>The dictionary will return only the names which are indicated by the
+                receiver&rsquo;s effective mask.  If the receiver&rsquo;s effective mask is zero, an
+                empty dictionary is returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/propertyForKey:inFilesystem:mergeWithOtherFilesystems:" title="propertyForKey:inFilesystem:mergeWithOtherFilesystems:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/propertyForKey:inFilesystem:mergeWithOtherFilesystems:">&ndash;&nbsp;propertyForKey:inFilesystem:mergeWithOtherFilesystems:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a file/folder property specified by key for the specified filesystem.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)propertyForKey:(NSString *)<em>key</em> inFilesystem:(NSString *)<em>filesystem</em> mergeWithOtherFilesystems:(BOOL)<em>merge</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The property to return.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem to look in.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>merge</code></th>
+						<td><p>If <i>YES</i>, also look for the property in the umbrella @link DRAllFilesystems DRAllFilesystems @/link.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The value associated with the property.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     propertyForKey:inFilesystem:mergeWithOtherFilesystems:
+</code></pre><p>Normally you would call this method with merge set to <i>YES</i> since you are interested in the
+                property that will be used when writing the object to disc. But if you have a need to determine
+                what property is set just for a specific filesystem, then pass in <i>NO</i> for merge. In this case
+                only the specific filesystem is checked. So if @link DRHFSPlus DRHFSPlus @/link is passed in for filesystem and
+                merge is <i>NO</i> then the property returned is the value set for the HFS+ filesytem only. If
+                that property has not been directly set for HFS+ yet, then the returned value will be nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/propertiesForFilesystem:mergeWithOtherFilesystems:" title="propertiesForFilesystem:mergeWithOtherFilesystems:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/propertiesForFilesystem:mergeWithOtherFilesystems:">&ndash;&nbsp;propertiesForFilesystem:mergeWithOtherFilesystems:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns all the filesystem properties set for the specified filesystem.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)propertiesForFilesystem:(NSString *)<em>filesystem</em> mergeWithOtherFilesystems:(BOOL)<em>merge</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem to look in.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>merge</code></th>
+						<td><p>If <i>YES</i>, also look for properties in the umbrella @link DRAllFilesystems DRAllFilesystems @/link.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of property values.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     propertiesForFilesystem:mergeWithOtherFilesystems:
+</code></pre><p>Normally you would call this method with merge set to <i>YES</i> since you are interested in the
+                set of properties that will be used when writing the object to disc. But if you have a need to determine
+                what properties are set just for a specific filesystem, then pass in <i>NO</i> for merge. In this case
+                only the specific filesystem is checked. So if filesystem is set to @link DRHFSPlus DRHFSPlus @/link and
+                merge is <i>NO</i> then the properties dictionary contains the values set for the HFS+ filesytem only. If
+                no properties have been directly set for HFS+ yet, then this properties dictionary will be empty.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setProperty:forKey:inFilesystem:" title="setProperty:forKey:inFilesystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setProperty:forKey:inFilesystem:">&ndash;&nbsp;setProperty:forKey:inFilesystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the value of the receiver&rsquo;s property specified by key for the specific
+                filesystem.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setProperty:(id)<em>property</em> forKey:(NSString *)<em>key</em> inFilesystem:(NSString *)<em>filesystem</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>property</code></th>
+						<td><p>The value of the property.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The property key.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem to set the property in.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setProperty:forKey:inFilesystem:
+</code></pre><p>The property is set only in the filesystem dictionary specified by filesystem.
+                @link DRAllFilesystems DRAllFilesystems @/link may be specified as the filesystem in which case
+                the umbrella property affecting all filesystems at once will be set. Setting
+                a property for @link DRAllFilesystems DRAllFilesystems @/link does not preclude setting a filesystem specific
+                property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setProperties:inFilesystem:" title="setProperties:inFilesystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setProperties:inFilesystem:">&ndash;&nbsp;setProperties:inFilesystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the value of all the receiver&rsquo;s properties specified by the keys in properties
+                for the specific filesystem.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setProperties:(NSDictionary *)<em>properties</em> inFilesystem:(NSString *)<em>filesystem</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>properties</code></th>
+						<td><p>The value of the property.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem to set the property in.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setProperties:inFilesystem:
+</code></pre><p>The properties are set only in the filesystem dictionary specified by filesystem.
+                @link DRAllFilesystems DRAllFilesystems @/link may be specified as the filesystem
+                in which case he umbrella property affecting all filesystems at once will be set.
+                Setting properties for @link DRAllFilesystems DRAllFilesystems @/link does not preclude setting a filesystem specific
+                property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/explicitFilesystemMask" title="explicitFilesystemMask"></a>
+	<h3 class="method-title"><code><a href="#//api/name/explicitFilesystemMask">&ndash;&nbsp;explicitFilesystemMask</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the explicit filesystem mask set for the reciever.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (DRFilesystemInclusionMask)explicitFilesystemMask</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A filesystem mask</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     explicitFilesystemMask
+</code></pre><p>The explicit mask is one that has been explicitly set by a client
+                through the @link //apple_ref/occ/instm/DRFSObject/<a href="#//api/name/setExplicitFilesystemMask:">setExplicitFilesystemMask:</a> <a href="#//api/name/setExplicitFilesystemMask:">setExplicitFilesystemMask:</a> @/link method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setExplicitFilesystemMask:" title="setExplicitFilesystemMask:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setExplicitFilesystemMask:">&ndash;&nbsp;setExplicitFilesystemMask:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the filesystems the receiver will be included on.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setExplicitFilesystemMask:(DRFilesystemInclusionMask)<em>mask</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mask</code></th>
+						<td><p>A filesystem mask</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setExplicitFilesystemMask:
+</code></pre><p>The effective mask for an item cannot be more inclusive than the
+                effective mask of it&rsquo;s <a href="#//api/name/parent">parent</a>. If the mask set for a child is more inclusive than its parent&rsquo;s mask,
+                those filesystems not allowed by the <a href="#//api/name/parent">parent</a> will be stripped from the resulting effective mask of the
+                child.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/effectiveFilesystemMask" title="effectiveFilesystemMask"></a>
+	<h3 class="method-title"><code><a href="#//api/name/effectiveFilesystemMask">&ndash;&nbsp;effectiveFilesystemMask</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the effective filesystem mask set for the reciever.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (DRFilesystemInclusionMask)effectiveFilesystemMask</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A filesystem mask</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     effectiveFilesystemMask
+</code></pre><p>The <a href="#//api/name/parent">parent</a> filesystem mask is taken into account for the receiver.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFSObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

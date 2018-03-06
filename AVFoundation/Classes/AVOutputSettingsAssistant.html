@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVOutputSettingsAssistant Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/audioSettings">audioSettings</option>
+		
+		<option value="//api/name/outputFileType">outputFileType</option>
+		
+		<option value="//api/name/sourceAudioFormat">sourceAudioFormat</option>
+		
+		<option value="//api/name/sourceVideoAverageFrameDuration">sourceVideoAverageFrameDuration</option>
+		
+		<option value="//api/name/sourceVideoFormat">sourceVideoFormat</option>
+		
+		<option value="//api/name/videoSettings">videoSettings</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/availableOutputSettingsPresets">+ availableOutputSettingsPresets</option>
+		
+		<option value="//api/name/outputSettingsAssistantWithPreset:">+ outputSettingsAssistantWithPreset:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVOutputSettingsAssistant Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVOutputSettingsAssistant.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class AVOutputSettingsAssistant
+@abstract
+    A class, each instance of which specifies a set of parameters for configuring objects that use output settings dictionaries, for example AVAssetWriter &amp; AVAssetWriterInput, so that the resulting media file conforms to some specific criteria
+@discussion
+    Instances of AVOutputSettingsAssistant are typically created using a string constant representing a specific preset configuration, such as AVOutputSettingsPreset1280x720.  Once you have an instance, its properties can be used as a guide for creating and configuring an AVAssetWriter object and one or more AVAssetWriterInput objects.  If all the suggested properties are respected, the resulting media file will conform to the criteria implied by the preset.  Alternatively, the properties of an instance can be used as a "base" configuration which can be customized to suit your individual needs.
+
+    The recommendations made by an instance get better as you tell it more about the format of your source data.  For example, if you set the sourceVideoFormat property, the recommendation made by the videoSettings property will ensure that your video frames are not scaled up from a smaller size.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/availableOutputSettingsPresets" title="availableOutputSettingsPresets"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availableOutputSettingsPresets">+&nbsp;availableOutputSettingsPresets</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method availableOutputSettingsPresets
+@abstract
+    Returns the list of presets that can be used to create an instance of AVOutputSettingsAssistant
+@result
+    An NSArray of NSString objects, each of which is a preset identifier
+@discussion
+    Each preset in the returned list can be passed in to outputSettingsAssistantWithPreset: to create a new instance of AVOutputSettingsAssistant.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;AVOutputSettingsPreset&gt; *)availableOutputSettingsPresets</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method availableOutputSettingsPresets
+@abstract
+    Returns the list of presets that can be used to create an instance of AVOutputSettingsAssistant
+@result
+    An NSArray of NSString objects, each of which is a preset identifier
+@discussion
+    Each preset in the returned list can be passed in to outputSettingsAssistantWithPreset: to create a new instance of AVOutputSettingsAssistant.
+
+    On iOS, the returned array may be different between different device models.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVOutputSettingsAssistant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputSettingsAssistantWithPreset:" title="outputSettingsAssistantWithPreset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputSettingsAssistantWithPreset:">+&nbsp;outputSettingsAssistantWithPreset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method outputSettingsAssistantWithPreset:
+@abstract
+    Returns an instance of AVOutputSettingsAssistant corresponding to the given preset
+@param presetIdentifier
+    The string identifier, for example AVOutputSettingsPreset1280x720, for the desired preset
+@result
+    An instance of AVOutputSettingsAssistant with properties corresponding to the given preset, or nil if there is no such available preset.
+@discussion
+    The properties of the returned object can be used as a guide for creating and configuring an AVAssetWriter object and one or more AVAssetWriterInput objects.  If all the suggested properties are respected in creating the AVAssetWriter, the resulting media file will conform to the criteria implied by the preset.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)outputSettingsAssistantWithPreset:(AVOutputSettingsPreset)<em>presetIdentifier</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method outputSettingsAssistantWithPreset:
+@abstract
+    Returns an instance of AVOutputSettingsAssistant corresponding to the given preset
+@param presetIdentifier
+    The string identifier, for example AVOutputSettingsPreset1280x720, for the desired preset
+@result
+    An instance of AVOutputSettingsAssistant with properties corresponding to the given preset, or nil if there is no such available preset.
+@discussion
+    The properties of the returned object can be used as a guide for creating and configuring an AVAssetWriter object and one or more AVAssetWriterInput objects.  If all the suggested properties are respected in creating the AVAssetWriter, the resulting media file will conform to the criteria implied by the preset.
+
+    Use availableOutputSettingsPresets to get a list of presets identifiers that can be used with this method.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVOutputSettingsAssistant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/audioSettings" title="audioSettings"></a>
+	<h3 class="method-title"><code><a href="#//api/name/audioSettings">&nbsp;&nbsp;audioSettings</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property audioSettings
+@abstract
+    A dictionary of key/value pairs, as specified in AVAudioSettings.h, to be used when e.g. creating an instance of AVAssetWriterInput
+@discussion
+    The value of this property may change as a result of setting a new value for the sourceAudioFormat property.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSDictionary&lt;NSString*id&gt; *audioSettings</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property audioSettings
+@abstract
+    A dictionary of key/value pairs, as specified in AVAudioSettings.h, to be used when e.g. creating an instance of AVAssetWriterInput
+@discussion
+    The value of this property may change as a result of setting a new value for the sourceAudioFormat property.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVOutputSettingsAssistant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoSettings" title="videoSettings"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoSettings">&nbsp;&nbsp;videoSettings</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property videoSettings
+@abstract
+    A dictionary of key/value pairs, as specified in AVVideoSettings.h, to be used when e.g. creating an instance of AVAssetWriterInput
+@discussion
+    The value of this property may change as a result of setting a new value for the sourceVideoFormat property.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSDictionary&lt;NSString*id&gt; *videoSettings</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property videoSettings
+@abstract
+    A dictionary of key/value pairs, as specified in AVVideoSettings.h, to be used when e.g. creating an instance of AVAssetWriterInput
+@discussion
+    The value of this property may change as a result of setting a new value for the sourceVideoFormat property.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVOutputSettingsAssistant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputFileType" title="outputFileType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputFileType">&nbsp;&nbsp;outputFileType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property outputFileType
+@abstract
+    A UTI indicating the type of file to be written, to be used when e.g. creating an instance of AVAssetWriter
+@discussion
+    Use UTTypeCopyPreferredTagWithClass / kUTTagClassFilenameExtension to get a suitable file extension for a given file type.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVFileType outputFileType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property outputFileType
+@abstract
+    A UTI indicating the type of file to be written, to be used when e.g. creating an instance of AVAssetWriter
+@discussion
+    Use UTTypeCopyPreferredTagWithClass / kUTTagClassFilenameExtension to get a suitable file extension for a given file type.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVOutputSettingsAssistant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVOutputSettingsAssistant_SourceInformation Methods" name="task_AVOutputSettingsAssistant_SourceInformation Methods"></a>
+						<h2 class="task-title">AVOutputSettingsAssistant_SourceInformation Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sourceAudioFormat" title="sourceAudioFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceAudioFormat">&nbsp;&nbsp;sourceAudioFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property sourceAudioFormat
+@abstract
+    A CMAudioFormatDescription object describing the format of you audio data
+@discussion
+    Setting this property will allow the receiver to make a more informed recommendation for the audio settings that should be used.  After setting this property, you should re-query the audioSettings property to get the new recommendation.  The default value is NULL, which means that the receiver does not know anything about the format of your audio data.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) CMAudioFormatDescriptionRef sourceAudioFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property sourceAudioFormat
+@abstract
+    A CMAudioFormatDescription object describing the format of you audio data
+@discussion
+    Setting this property will allow the receiver to make a more informed recommendation for the audio settings that should be used.  After setting this property, you should re-query the audioSettings property to get the new recommendation.  The default value is NULL, which means that the receiver does not know anything about the format of your audio data.
+
+    If you set a non-NULL value for this property, and are using the receiver to initialize an AVAssetWriterInput, the same format description should be used to initialize the AVAssetWriterInput, along with the dictionary from the audioSettings property.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVOutputSettingsAssistant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sourceVideoFormat" title="sourceVideoFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceVideoFormat">&nbsp;&nbsp;sourceVideoFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property sourceVideoFormat
+@abstract
+    A CMVideoFormatDescription object describing the format of your video data
+@discussion
+    Setting this property will allow the receiver to make a more informed recommendation for the video settings that should be used.  After setting this property, you should re-query the videoSettings property to get the new recommendation.  The default value is NULL, which means that the receiver does not know anything about the format of your video data.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) CMVideoFormatDescriptionRef sourceVideoFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property sourceVideoFormat
+@abstract
+    A CMVideoFormatDescription object describing the format of your video data
+@discussion
+    Setting this property will allow the receiver to make a more informed recommendation for the video settings that should be used.  After setting this property, you should re-query the videoSettings property to get the new recommendation.  The default value is NULL, which means that the receiver does not know anything about the format of your video data.
+
+    If you set a non-NULL value for this property, and are using the receiver to initialize an AVAssetWriterInput, the same format description should be used to initialize the AVAssetWriterInput, along with the dictionary from the videoSettings property.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVOutputSettingsAssistant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sourceVideoAverageFrameDuration" title="sourceVideoAverageFrameDuration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceVideoAverageFrameDuration">&nbsp;&nbsp;sourceVideoAverageFrameDuration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property sourceVideoAverageFrameDuration
+@abstract
+    A CMTime describing the average frame duration (reciprocal of average frame rate) of your video data
+@discussion
+    Setting this property will allow the receiver to make a more informed recommendation for the video settings that should be used.  After setting this property, you should re-query the videoSettings property to get the new recommendation.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CMTime sourceVideoAverageFrameDuration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property sourceVideoAverageFrameDuration
+@abstract
+    A CMTime describing the average frame duration (reciprocal of average frame rate) of your video data
+@discussion
+    Setting this property will allow the receiver to make a more informed recommendation for the video settings that should be used.  After setting this property, you should re-query the videoSettings property to get the new recommendation.
+
+    The default value is 1/30, which means that the receiver is assuming that your source video has an average frame rate of 30fps.
+
+    It is an error to set this property to a value that is not positive or not numeric.  See CMTIME_IS_NUMERIC.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVOutputSettingsAssistant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property sourceVideoMinFrameDuration
+@abstract
+    A CMTime describing the minimum frame duration (reciprocal of the maximum frame rate) of your video data
+@discussion
+    Setting this property will allow the receiver to make a more informed recommendation for the video settings that should be used.  After setting this property, you should re-query the videoSettings property to get the new recommendation.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CMTime sourceVideoMinFrameDuration NS_AVAILABLE ( 10 _10 , 7 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property sourceVideoMinFrameDuration
+@abstract
+    A CMTime describing the minimum frame duration (reciprocal of the maximum frame rate) of your video data
+@discussion
+    Setting this property will allow the receiver to make a more informed recommendation for the video settings that should be used.  After setting this property, you should re-query the videoSettings property to get the new recommendation.
+
+    If your source of video data is an instance of AVAssetReaderOutput, you can discover the minimum frame duration of your source asset using the AVAssetTrack.minFrameDuration property.
+
+    The default value is 1/30, which means that the receiver is assuming that your source video has a maximum frame rate of 30fps.
+
+    It is an error to set this property to a value that is not positive or not numeric.  See CMTIME_IS_NUMERIC.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVOutputSettingsAssistant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CIQRCodeDescriptor Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreImage Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/errorCorrectedPayload">errorCorrectedPayload</option>
+		
+		<option value="//api/name/errorCorrectionLevel">errorCorrectionLevel</option>
+		
+		<option value="//api/name/maskPattern">maskPattern</option>
+		
+		<option value="//api/name/symbolVersion">symbolVersion</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/descriptorWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:">+ descriptorWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:">- initWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CIQRCodeDescriptor Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/CIBarcodeDescriptor.html">CIBarcodeDescriptor</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CIBarcodeDescriptor.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class CIQRCodeDescriptor
+@abstract
+    CIQRCodeDescriptor is a concrete subclass of <a href="../Classes/CIBarcodeDescriptor.html">CIBarcodeDescriptor</a> that defines an abstract representation of a QR code symbol.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/errorCorrectedPayload" title="errorCorrectedPayload"></a>
+	<h3 class="method-title"><code><a href="#//api/name/errorCorrectedPayload">&nbsp;&nbsp;errorCorrectedPayload</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property errorCorrectedPayload
+@abstract
+The error-corrected codewords that comprise the QR code symbol.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSData *errorCorrectedPayload</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property errorCorrectedPayload
+@abstract
+The error-corrected codewords that comprise the QR code symbol.</p>
+
+<p>@discussion
+QR Codes are formally specified in ISO/IEC 18004:2006(E). Section 6.4.10 &ldquo;Bitstream to codeword conversion&rdquo; specifies the set of 8-bit codewords in the symbol immediately prior to splitting the message into blocks and applying error correction.</p>
+
+<p>During decode, error correction is applied and if successful, the message is re-ordered to the state immediately following &ldquo;Bitstream to codeword coversion.&rdquo; The errorCorrectedPayload corresponds to this sequence of 8-bit codewords.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/symbolVersion" title="symbolVersion"></a>
+	<h3 class="method-title"><code><a href="#//api/name/symbolVersion">&nbsp;&nbsp;symbolVersion</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property symbolVersion
+@abstract
+    The version property corresponds to the size of the QR Code.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger symbolVersion</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property symbolVersion
+@abstract
+    The version property corresponds to the size of the QR Code.</p>
+
+<p>@discussion
+    QR Codes are square. ISO/IEC 18004 defines versions from 1 to 40, where a higher symbol version indicates a larger data carrying capacity. This field is required in order to properly interpret the error corrected payload.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maskPattern" title="maskPattern"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maskPattern">&nbsp;&nbsp;maskPattern</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property maskPattern
+@abstract
+    The data mask pattern for the QR code symbol.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) uint8_t maskPattern</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property maskPattern
+@abstract
+    The data mask pattern for the QR code symbol.</p>
+
+<p>@discussion
+    QR Codes support eight data mask patterns, which are used to avoid large black or large white areas inside the symbol body. Valid values range from 0 to 7.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/errorCorrectionLevel" title="errorCorrectionLevel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/errorCorrectionLevel">&nbsp;&nbsp;errorCorrectionLevel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property errorCorrectionLevel
+@abstract
+    The error correction level of the QR code.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) CIQRCodeErrorCorrectionLevel errorCorrectionLevel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property errorCorrectionLevel
+@abstract
+    The error correction level of the QR code.</p>
+
+<p>@discussion
+    QR Codes support four levels of Reed-Solomon error correction, in increasing error correction capability: L, M, Q, and H.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:" title="initWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:">&ndash;&nbsp;initWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithPayload:(NSData *)<em>errorCorrectedPayload</em> symbolVersion:(NSInteger)<em>symbolVersion</em> maskPattern:(uint8_t)<em>maskPattern</em> errorCorrectionLevel:(CIQRCodeErrorCorrectionLevel)<em>errorCorrectionLevel</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/descriptorWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:" title="descriptorWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/descriptorWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:">+&nbsp;descriptorWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)descriptorWithPayload:(NSData *)<em>errorCorrectedPayload</em> symbolVersion:(NSInteger)<em>symbolVersion</em> maskPattern:(uint8_t)<em>maskPattern</em> errorCorrectionLevel:(CIQRCodeErrorCorrectionLevel)<em>errorCorrectionLevel</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

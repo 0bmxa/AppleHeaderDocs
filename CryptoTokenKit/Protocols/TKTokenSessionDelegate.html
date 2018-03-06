@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>TKTokenSessionDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CryptoTokenKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/tokenSession:beginAuthForOperation:constraint:error:">- tokenSession:beginAuthForOperation:constraint:error:</option>
+		
+		<option value="//api/name/tokenSession:decryptData:usingKey:algorithm:error:">- tokenSession:decryptData:usingKey:algorithm:error:</option>
+		
+		<option value="//api/name/tokenSession:performKeyExchangeWithPublicKey:usingKey:algorithm:parameters:error:">- tokenSession:performKeyExchangeWithPublicKey:usingKey:algorithm:parameters:error:</option>
+		
+		<option value="//api/name/tokenSession:signData:usingKey:algorithm:error:">- tokenSession:signData:usingKey:algorithm:error:</option>
+		
+		<option value="//api/name/tokenSession:supportsOperation:usingKey:algorithm:">- tokenSession:supportsOperation:usingKey:algorithm:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">TKTokenSessionDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>TKToken.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/tokenSession:beginAuthForOperation:constraint:error:" title="tokenSession:beginAuthForOperation:constraint:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tokenSession:beginAuthForOperation:constraint:error:">&ndash;&nbsp;tokenSession:beginAuthForOperation:constraint:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Establishes a context for the requested authentication operation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable TKTokenAuthOperation *)tokenSession:(TKTokenSession *)<em>session</em> beginAuthForOperation:(TKTokenOperation)<em>operation</em> constraint:(TKTokenOperationConstraint)<em>constraint</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>session</code></th>
+						<td><p>Related <a href="../Classes/TKTokenSession.html">TKTokenSession</a> instance.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>operation</code></th>
+						<td><p>Identifier of the operation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>constraint</code></th>
+						<td><p>Constraint to be satisfied by this authentication operation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Error details (see TKError.h).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>authOperation Resulting context of the operation, which will be eventually finalized by receiving &lsquo;finishWithError:&rsquo;.  The resulting &lsquo;authOperation&rsquo; can be of any type based on <a href="../Classes/TKTokenAuthOperation.html">TKTokenAuthOperation</a>. For known types (e.g. <a href="../Classes/TKTokenPasswordAuthOperation.html">TKTokenPasswordAuthOperation</a>) the system will first fill in the context-specific properties (e.g. &lsquo;password&rsquo;) before triggering &lsquo;finishWithError:&rsquo;. When no authentication is actually needed (typically because the session is already authenticated for requested constraint), return instance of <a href="../Classes/TKTokenAuthOperation.html">TKTokenAuthOperation</a> class instead of any specific subclass.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Establishes a context for the requested authentication operation.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKToken.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tokenSession:supportsOperation:usingKey:algorithm:" title="tokenSession:supportsOperation:usingKey:algorithm:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tokenSession:supportsOperation:usingKey:algorithm:">&ndash;&nbsp;tokenSession:supportsOperation:usingKey:algorithm:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks whether specified operation and algorithm is supported on specified key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)tokenSession:(TKTokenSession *)<em>session</em> supportsOperation:(TKTokenOperation)<em>operation</em> usingKey:(TKTokenObjectID)<em>keyObjectID</em> algorithm:(TKTokenKeyAlgorithm *)<em>algorithm</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>session</code></th>
+						<td><p>Related <a href="../Classes/TKTokenSession.html">TKTokenSession</a> instance.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>operation</code></th>
+						<td><p>Type of cryptographic operation for which the list of supported algorithms should be retrieved.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keyObjectID</code></th>
+						<td><p>Identifier of the private key object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>algorithm</code></th>
+						<td><p>Algorithm with which the oepration should be performed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the operation is supported, NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Checks whether specified operation and algorithm is supported on specified key.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKToken.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tokenSession:signData:usingKey:algorithm:error:" title="tokenSession:signData:usingKey:algorithm:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tokenSession:signData:usingKey:algorithm:error:">&ndash;&nbsp;tokenSession:signData:usingKey:algorithm:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Performs cryptographic signature operation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)tokenSession:(TKTokenSession *)<em>session</em> signData:(NSData *)<em>dataToSign</em> usingKey:(TKTokenObjectID)<em>keyObjectID</em> algorithm:(TKTokenKeyAlgorithm *)<em>algorithm</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>session</code></th>
+						<td><p>Related <a href="../Classes/TKTokenSession.html">TKTokenSession</a> instance.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataToSign</code></th>
+						<td><p>Input data for the signature operation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keyObjectID</code></th>
+						<td><p>Identifier of the private key object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>algorithm</code></th>
+						<td><p>Requested signature algorithm to be used.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Error details (see TKError.h).  If authentication is required (by invoking beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Resulting signature, or nil if an error happened.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Performs cryptographic signature operation.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKToken.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tokenSession:decryptData:usingKey:algorithm:error:" title="tokenSession:decryptData:usingKey:algorithm:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tokenSession:decryptData:usingKey:algorithm:error:">&ndash;&nbsp;tokenSession:decryptData:usingKey:algorithm:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Decrypts ciphertext using private key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)tokenSession:(TKTokenSession *)<em>session</em> decryptData:(NSData *)<em>ciphertext</em> usingKey:(TKTokenObjectID)<em>keyObjectID</em> algorithm:(TKTokenKeyAlgorithm *)<em>algorithm</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>session</code></th>
+						<td><p>Related <a href="../Classes/TKTokenSession.html">TKTokenSession</a> instance.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ciphertext</code></th>
+						<td><p>Encrypted data to decrypt.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keyObjectID</code></th>
+						<td><p>Identifier of the private key object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>algorithm</code></th>
+						<td><p>Requested encryption/decryption algorithm to be used.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Error details (see TKError.h).  If authentication is required (by invoking beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Resulting decrypted plaintext, or nil if an error happened.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Decrypts ciphertext using private key.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKToken.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tokenSession:performKeyExchangeWithPublicKey:usingKey:algorithm:parameters:error:" title="tokenSession:performKeyExchangeWithPublicKey:usingKey:algorithm:parameters:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tokenSession:performKeyExchangeWithPublicKey:usingKey:algorithm:parameters:error:">&ndash;&nbsp;tokenSession:performKeyExchangeWithPublicKey:usingKey:algorithm:parameters:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Performs Diffie-Hellman style key exchange operation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)tokenSession:(TKTokenSession *)<em>session</em> performKeyExchangeWithPublicKey:(NSData *)<em>otherPartyPublicKeyData</em> usingKey:(TKTokenObjectID)<em>objectID</em> algorithm:(TKTokenKeyAlgorithm *)<em>algorithm</em> parameters:(TKTokenKeyExchangeParameters *)<em>parameters</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>session</code></th>
+						<td><p>Related <a href="../Classes/TKTokenSession.html">TKTokenSession</a> instance.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>otherPartyPublicKeyData</code></th>
+						<td><p>Raw public data of other party public key.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>objectID</code></th>
+						<td><p>Identifier of the private key object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>algorithm</code></th>
+						<td><p>Requested key exchange algorithm to be used.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>Additional parameters for key exchange operation.  Chosen algorithm dictates meaning of parameters.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Error details (see TKError.h).  If authentication is required (by invoking beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Result of key exchange operation, or nil if the operation failed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Performs Diffie-Hellman style key exchange operation.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKToken.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

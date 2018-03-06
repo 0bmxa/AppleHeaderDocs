@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSImageConvolution Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/bias">bias</option>
+		
+		<option value="//api/name/kernelHeight">kernelHeight</option>
+		
+		<option value="//api/name/kernelWidth">kernelWidth</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:kernelWidth:kernelHeight:weights:">- initWithDevice:kernelWidth:kernelHeight:weights:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSImageConvolution Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSUnaryImageKernel.html">MPSUnaryImageKernel</a> : <a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSImageConvolution.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSImageConvolution</p><p>The MPSImageConvolution convolves an image with given filter of odd width and height.
+The center of the kernel aligns with the MPSImageConvolution.offset. That is, the position
+of the top left corner of the area covered by the kernel is given by
+MPSImageConvolution.offset - {kernel_width>>1, kernel_height>>1, 0}</p>
+
+<p>Optimized cases include 3x3,5x5,7x7,9x9,11x11, 1xN and Nx1. If a convolution kernel
+does not fall into one of these cases but is a rank-1 matrix (a.k.a. separable)
+then it will fall on an optimzied separable path. Other convolutions will execute with
+full MxN complexity.</p>
+
+<p>If there are multiple channels in the source image, each channel is processed independently.</p>
+
+<p>@performance Separable convolution filters may perform better when done in two passes. A convolution filter
+is separable if the ratio of filter values between all rows is constant over the whole row. For
+example, this edge detection filter:
+<code>
+-1      0       1
+-2      0       2
+-1      0       1
+</code>
+can be separated into the product of two vectors:
+<code>
+1
+2      x    [-1  0   1]
+1
+</code>
+and consequently can be done as two, one-dimensional convolution passes back to back on the same image.
+In this way, the number of multiplies (ignoring the fact that we could skip zeros here) is reduced from
+3*3=9 to 3+3 = 6. There are similar savings for addition. For large filters, the savings can be profound.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/kernelHeight" title="kernelHeight"></a>
+	<h3 class="method-title"><code><a href="#//api/name/kernelHeight">&nbsp;&nbsp;kernelHeight</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The height of the filter window. Must be an odd number.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger kernelHeight</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property kernelHeight</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/kernelWidth" title="kernelWidth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/kernelWidth">&nbsp;&nbsp;kernelWidth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The width of the filter window. Must be an odd number.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger kernelWidth</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property kernelWidth</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bias" title="bias"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bias">&nbsp;&nbsp;bias</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property    bias</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) float bias</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property    bias</p><p>The bias is a value to be added to convolved pixel before it is converted back to the storage format.
+It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
+For example, many edge detection filters produce results in the range [-k,k]. By scaling the filter
+weights by 0.5/k and adding 0.5, the results will be in range [0,1] suitable for use with unorm formats.
+It can be used in combination with renormalization of the filter weights to do video ranging as part
+of the convolution effect. It can also just be used to increase the brightness of the image.</p>
+
+<p>Default value is 0.0f.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:kernelWidth:kernelHeight:weights:" title="initWithDevice:kernelWidth:kernelHeight:weights:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:kernelWidth:kernelHeight:weights:">&ndash;&nbsp;initWithDevice:kernelWidth:kernelHeight:weights:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a convolution filter</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> kernelWidth:(NSUInteger)<em>kernelWidth</em> kernelHeight:(NSUInteger)<em>kernelHeight</em> weights:(const float *__nonnull)<em>kernelWeights</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device the filter will run on</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>kernelWidth</code></th>
+						<td><p>the width of the kernel</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>kernelHeight</code></th>
+						<td><p>the height of the kernel</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>kernelWeights</code></th>
+						<td><p>A pointer to an array of <a href="#//api/name/kernelWidth">kernelWidth</a> * <a href="#//api/name/kernelHeight">kernelHeight</a> values to be used as the kernel.
+These are in row major order.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSImageConvolution object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new <a href="../Classes/MPSKernel.html">MPSKernel</a> object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>While the standard NSSecureCoding/NSCoding method
+-initWithCoder: should work, since the file can&rsquo;t
+know which device your data is allocated on, we
+have to guess and may guess incorrectly.  To avoid
+that problem, use initWithCoder:device instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>EAWiFiUnconfiguredAccessoryBrowser Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 ExternalAccessory Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/unconfiguredAccessories">unconfiguredAccessories</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/configureAccessory:withConfigurationUIOnViewController:">- configureAccessory:withConfigurationUIOnViewController:</option>
+		
+		<option value="//api/name/initWithDelegate:queue:">- initWithDelegate:queue:</option>
+		
+		<option value="//api/name/startSearchingForUnconfiguredAccessoriesMatchingPredicate:">- startSearchingForUnconfiguredAccessoriesMatchingPredicate:</option>
+		
+		<option value="//api/name/stopSearchingForUnconfiguredAccessories">- stopSearchingForUnconfiguredAccessories</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">EAWiFiUnconfiguredAccessoryBrowser Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>EAWiFiUnconfiguredAccessoryBrowser.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class brokers access to the MFi Wireless Accessory Configuration (WAC) process.
+This browser enables the application to scan for unconfigured accessories,
+connect them to the user&rsquo;s Wi-Fi infrastructure and configure attributes of
+the accessory.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property delegate</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (weak, nonatomic, nullable) id&lt;EAWiFiUnconfiguredAccessoryBrowserDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property delegate</p><p>The delegate object that will receive the browser events.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EAWiFiUnconfiguredAccessoryBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unconfiguredAccessories" title="unconfiguredAccessories"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unconfiguredAccessories">&nbsp;&nbsp;unconfiguredAccessories</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property unconfiguredAccessories</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, atomic) NSSet&lt;EAWiFiUnconfiguredAccessory*&gt; *unconfiguredAccessories</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property unconfiguredAccessories</p><p>The set of discovered unconfigured accessories described by <a href="../Classes/EAWiFiUnconfiguredAccessory.html">EAWiFiUnconfiguredAccessory</a> objects.
+This snapshot will only include objects matching the filter predicate defined when starting the search.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EAWiFiUnconfiguredAccessoryBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDelegate:queue:" title="initWithDelegate:queue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDelegate:queue:">&ndash;&nbsp;initWithDelegate:queue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Designated initializer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDelegate:(nullable id&lt;EAWiFiUnconfiguredAccessoryBrowserDelegate&gt;)<em>delegate</em> queue:(nullable dispatch_queue_t)<em>queue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The <a href="#//api/name/delegate">delegate</a> that will receive the <a href="../Protocols/EAWiFiUnconfiguredAccessoryBrowserDelegate.html">EAWiFiUnconfiguredAccessoryBrowserDelegate</a> events.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>queue</code></th>
+						<td><p>The dispatch queue the <a href="#//api/name/delegate">delegate</a> would like to receive events on. If nil the events will be on the main queue.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Instance object</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes an instance of the EAWiFiUnconfiguredAccessoryBrowser class
+which can be further configured based on the application&rsquo;s interests.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EAWiFiUnconfiguredAccessoryBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startSearchingForUnconfiguredAccessoriesMatchingPredicate:" title="startSearchingForUnconfiguredAccessoriesMatchingPredicate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startSearchingForUnconfiguredAccessoriesMatchingPredicate:">&ndash;&nbsp;startSearchingForUnconfiguredAccessoriesMatchingPredicate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start the search for unconfigured accessories</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startSearchingForUnconfiguredAccessoriesMatchingPredicate:(nullable NSPredicate *)<em>predicate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>predicate</code></th>
+						<td><p>The desired filter for unconfigured accessory results conforming to the <a href="../Classes/EAWiFiUnconfiguredAccessory.html">EAWiFiUnconfiguredAccessory</a> protocol.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Starts a Wi-Fi scan for unconfigured accessories. This power and resource intensive process and must
+only be used when actively searching for accessories. Scans should be stopped immediately when the
+desired accessories have been located.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EAWiFiUnconfiguredAccessoryBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopSearchingForUnconfiguredAccessories" title="stopSearchingForUnconfiguredAccessories"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopSearchingForUnconfiguredAccessories">&ndash;&nbsp;stopSearchingForUnconfiguredAccessories</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop the search for unconfigured MFi Wireless Accessory Configuration accessories</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopSearchingForUnconfiguredAccessories</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EAWiFiUnconfiguredAccessoryBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/configureAccessory:withConfigurationUIOnViewController:" title="configureAccessory:withConfigurationUIOnViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/configureAccessory:withConfigurationUIOnViewController:">&ndash;&nbsp;configureAccessory:withConfigurationUIOnViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Begin the configuration process for the chosen accessory</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)configureAccessory:(EAWiFiUnconfiguredAccessory *)<em>accessory</em> withConfigurationUIOnViewController:(UIViewController *)<em>viewController</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>accessory</code></th>
+						<td><p>The accessory the application wishes to configure</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>viewController</code></th>
+						<td><p>The UIViewController that will host the Apple guided setup UI in the host application.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Stop the search for unconfigured accessories and begins the configuration process of the specified <a href="../Classes/EAWiFiUnconfiguredAccessory.html">EAWiFiUnconfiguredAccessory</a>.
+The user is guided through the configuration process via Apple UI. This process can take up to a few minutes to complete.
+The host application <a href="#//api/name/delegate">delegate</a> will receive the didFinishConfiguringAccessory callback with an error that should be
+checked upon completion.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EAWiFiUnconfiguredAccessoryBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

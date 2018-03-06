@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSMatrixSolveTriangular Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:">- encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/initWithDevice:right:upper:transpose:unit:order:numberOfRightHandSides:alpha:">- initWithDevice:right:upper:transpose:unit:order:numberOfRightHandSides:alpha:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSMatrixSolveTriangular Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSMatrixBinaryKernel.html">MPSMatrixBinaryKernel</a> : <a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSMatrixSolve.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSMatrixSolveTriangular</p>
+
+<p>@dependency This depends on Metal.framework.</p><p>A MPSMatrixSolveTriangular finds the solution matrix to the
+triangular system:</p>
+
+<p>op(A) * X = alpha * B    or    X * op(A) = alpha * B</p>
+
+<p>Where A is either upper or lower triangular and op(A) is A**T
+or A.  B is the array of right hand sides for which the
+equations are to be solved.  X is the resulting matrix of
+solutions.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithDevice:right:upper:transpose:unit:order:numberOfRightHandSides:alpha:" title="initWithDevice:right:upper:transpose:unit:order:numberOfRightHandSides:alpha:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:right:upper:transpose:unit:order:numberOfRightHandSides:alpha:">&ndash;&nbsp;initWithDevice:right:upper:transpose:unit:order:numberOfRightHandSides:alpha:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize an MPSMatrixSolveTriangular object on a device</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> right:(BOOL)<em>right</em> upper:(BOOL)<em>upper</em> transpose:(BOOL)<em>transpose</em> unit:(BOOL)<em>unit</em> order:(NSUInteger)<em>order</em> numberOfRightHandSides:(NSUInteger)<em>numberOfRightHandSides</em> alpha:(double)<em>alpha</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device on which the kernel will execute.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>right</code></th>
+						<td><p>A boolean value which indicates if the
+coefficient matrix is multiplied on the left
+or right side of the solution.  NO indicates
+the multiplication is on the left.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>upper</code></th>
+						<td><p>A boolean value which indicates if the source
+is lower or upper triangular.  NO indicates
+that the coefficient matrix is lower triangular.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transpose</code></th>
+						<td><p>A boolean value which indicates if the source
+matrix should be used in transposed form.  NO
+indicates that the coefficient matrix is to be
+used normally.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>unit</code></th>
+						<td><p>A boolean value which indicates if the source
+matrix is unit triangular.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>order</code></th>
+						<td><p>The order of the source matrix and, if
+right == NO, the number of rows in the solution
+and right hand side matrices.  If right == YES
+the number of columns in the solution and right
+hand side matrices.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>numberOfRightHandSides</code></th>
+						<td><p>If right == NO, the number of columns in the
+solution and right hand side matrices.  The
+number of rows otherwise.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>alpha</code></th>
+						<td><p>A double precision value used to scale the right
+hand sides.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSMatrixSolveTriangular object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This function initializes a MPSMatrixSolveTriangular object.  It
+may allocate device side memory.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSolve.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode a MPSMatrixSolveTriangular kernel into a command Buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceMatrix:(MPSMatrix const *__nonnull)<em>sourceMatrix</em> rightHandSideMatrix:(MPSMatrix const *__nonnull)<em>rightHandSideMatrix</em> solutionMatrix:(MPSMatrix *__nonnull)<em>solutionMatrix</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the
+encoded filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> containing the source
+matrix.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rightHandSideMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> containing the right hand
+side values.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>solutionMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> to contain the result.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This function encodes the MPSMatrixSolveTriangular object to a
+valid command buffer.</p>
+
+<p>rightHandSideMatrix and solutionMatrix must be large enough to
+hold at least order * numberOfRightHandSides values starting at
+secondarySourceMatrixOrigin and resultMatrixOrigin respectively.</p>
+
+<p>sourceMatrix must be at least size order x order starting at
+primarySourceMatrixOrigin.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSolve.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

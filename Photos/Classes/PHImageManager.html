@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>PHImageManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Photos Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/defaultManager">+ defaultManager</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/cancelImageRequest:">- cancelImageRequest:</option>
+		
+		<option value="//api/name/requestImageDataForAsset:options:resultHandler:">- requestImageDataForAsset:options:resultHandler:</option>
+		
+		<option value="//api/name/requestImageForAsset:targetSize:contentMode:options:resultHandler:">- requestImageForAsset:targetSize:contentMode:options:resultHandler:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">PHImageManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>PHImageManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/defaultManager" title="defaultManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultManager">+&nbsp;defaultManager</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (PHImageManager *)defaultManager</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestImageForAsset:targetSize:contentMode:options:resultHandler:" title="requestImageForAsset:targetSize:contentMode:options:resultHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestImageForAsset:targetSize:contentMode:options:resultHandler:">&ndash;&nbsp;requestImageForAsset:targetSize:contentMode:options:resultHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Request an image representation for the specified asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (PHImageRequestID)requestImageForAsset:(PHAsset *)<em>asset</em> targetSize:(CGSize)<em>targetSize</em> contentMode:(PHImageContentMode)<em>contentMode</em> options:(nullable PHImageRequestOptions *)<em>options</em> resultHandler:(void ( ^ ) ( NSImage *__nullable result , NSDictionary *__nullable info ))<em>resultHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The asset whose image data is to be loaded.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetSize</code></th>
+						<td><p>The target size of image to be returned.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>contentMode</code></th>
+						<td><p>An option for how to fit the image to the aspect ratio of the requested size.
+     If the asset&rsquo;s aspect ratio does not match that of the given targetSize, contentMode determines how the image will be resized.
+       PHImageContentModeAspectFit: Fit the asked size by maintaining the aspect ratio, the delivered image may not necessarily be the asked targetSize (see <a href="../Constants/PHImageRequestOptionsDeliveryMode.html">PHImageRequestOptionsDeliveryMode</a> and <a href="../Constants/PHImageRequestOptionsResizeMode.html">PHImageRequestOptionsResizeMode</a>)
+       PHImageContentModeAspectFill: Fill the asked size, some portion of the content may be clipped, the delivered image may not necessarily be the asked targetSize (see <a href="../Constants/PHImageRequestOptionsDeliveryMode.html">PHImageRequestOptionsDeliveryMode</a> and <a href="../Constants/PHImageRequestOptionsResizeMode.html">PHImageRequestOptionsResizeMode</a>)
+       PHImageContentModeDefault: Use PHImageContentModeDefault when size is PHImageManagerMaximumSize (though no scaling/cropping will be done on the result)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>Options specifying how Photos should handle the request, format the requested image, and notify your app of progress or errors.
+     If <a href="../Classes/PHImageRequestOptions.html#//api/name/synchronous">[PHImageRequestOptions isSynchronous]</a> returns NO (or options is nil), resultHandler may be called 1 or more times. Typically in this case, resultHandler will be called asynchronously on the main thread with the requested results. However, if deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic, resultHandler may be called synchronously on the calling thread if any image data is immediately available. If the image data returned in this first pass is of insufficient quality, resultHandler will be called again, asychronously on the main thread at a later time with the &ldquo;correct&rdquo; results. If the request is cancelled, resultHandler may not be called at all.
+     If <a href="../Classes/PHImageRequestOptions.html#//api/name/synchronous">[PHImageRequestOptions isSynchronous]</a> returns YES, resultHandler will be called exactly once, synchronously and on the calling thread. Synchronous requests cannot be cancelled.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resultHandler</code></th>
+						<td><p>A block that is called one or more times either synchronously on the current thread or asynchronously on the main thread depending on the options specified in the <a href="../Classes/PHImageRequestOptions.html">PHImageRequestOptions</a> options parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A numeric identifier for the request. If you need to cancel the request before it completes, pass this identifier to the <a href="#//api/name/cancelImageRequest:">cancelImageRequest:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PHImageManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestImageDataForAsset:options:resultHandler:" title="requestImageDataForAsset:options:resultHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestImageDataForAsset:options:resultHandler:">&ndash;&nbsp;requestImageDataForAsset:options:resultHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Request largest represented image as data bytes for the specified asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (PHImageRequestID)requestImageDataForAsset:(PHAsset *)<em>asset</em> options:(nullable PHImageRequestOptions *)<em>options</em> resultHandler:(void ( ^ ) ( NSData *__nullable imageData , NSString *__nullable dataUTI , CGImagePropertyOrientation orientation , NSDictionary *__nullable info ))<em>resultHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The asset whose image data is to be loaded.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>Options specifying how Photos should handle the request, format the requested image, and notify your app of progress or errors.
+      If PHImageRequestOptionsVersionCurrent is requested and the asset has adjustments then the largest rendered image data is returned. In all other cases then the original image data is returned.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resultHandler</code></th>
+						<td><p>A block that is called exactly once either synchronously on the current thread or asynchronously on the main thread depending on the synchronous option specified in the <a href="../Classes/PHImageRequestOptions.html">PHImageRequestOptions</a> options parameter (deliveryMode is ignored).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PHImageManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelImageRequest:" title="cancelImageRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelImageRequest:">&ndash;&nbsp;cancelImageRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)cancelImageRequest:(PHImageRequestID)<em>requestID</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

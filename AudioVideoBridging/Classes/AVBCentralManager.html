@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVBCentralManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AudioVideoBridging Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/nextAvailableDynamicEntityID">+ nextAvailableDynamicEntityID</option>
+		
+		<option value="//api/name/nextAvailableDynamicEntityModelID">+ nextAvailableDynamicEntityModelID</option>
+		
+		<option value="//api/name/releaseDynamicEntityID:">+ releaseDynamicEntityID:</option>
+		
+		<option value="//api/name/releaseDynamicEntityModelID:">+ releaseDynamicEntityModelID:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/didAddInterface:">- didAddInterface:</option>
+		
+		<option value="//api/name/didRemoveInterface:">- didRemoveInterface:</option>
+		
+		<option value="//api/name/startControllerMatching">- startControllerMatching</option>
+		
+		<option value="//api/name/streamingEnabledInterfacesOnly">- streamingEnabledInterfacesOnly</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVBCentralManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVBCentralManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      AVBCentralManager
+</code></pre><p>AVBCentralManager provides centralized management of the <a href="../Classes/AVBInterface.html">AVBInterface</a> subclasses for the network interfaces of the computer.
+                Subclasses override the <code>didAddInterface:</code> and <code>didRemoveInterface:</code> methods to be notified when an
+                interface is added to or removed from the computer. Addition and removal can happen for any interface but is typically associated
+                with the Thunderbolt Ethernet Adapter.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/startControllerMatching" title="startControllerMatching"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startControllerMatching">&ndash;&nbsp;startControllerMatching</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method triggers the IOKit matching for the network controllers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startControllerMatching</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This is usually called by a subclass as the last thing in it&rsquo;s init method. This call is broken out of the AVBCentralManager&rsquo;s init method so that
+                subclasses can finish their setup before calling it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVBCentralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didAddInterface:" title="didAddInterface:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didAddInterface:">&ndash;&nbsp;didAddInterface:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called when an <a href="../Classes/AVBInterface.html">AVBInterface</a> object is created for a NIC, either when the central manager is first started up or when the NIC is added later.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didAddInterface:(AVBInterface *)<em>interface</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>interface</code></th>
+						<td><p>An instance of an <a href="../Classes/AVBInterface.html">AVBInterface</a> subclass (as appropriate for the NIC) which has been added for the discovered NIC.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The AVBCentralManager maintains it&rsquo;s own internal reference to the interface object until <code>didRemoveInterface:<code> is called with the same interface object,
+                subclasses do not need to maintain another reference to this. A subclass does not need to call the AVBCentralManager implementation.
+                Note this method is not called on the main thread and is not safe for performing UI actions.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVBCentralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didRemoveInterface:" title="didRemoveInterface:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didRemoveInterface:">&ndash;&nbsp;didRemoveInterface:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called when a NIC has been removed from the system and the central manager is cleaning it up.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didRemoveInterface:(AVBInterface *)<em>interface</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>interface</code></th>
+						<td><p>An instance of an <a href="../Classes/AVBInterface.html">AVBInterface</a> subclass (as appropriate for the NIC) which is being removed for the discovered NIC.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Note this method is not called on the main thread and is not safe for performing UI actions.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVBCentralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/streamingEnabledInterfacesOnly" title="streamingEnabledInterfacesOnly"></a>
+	<h3 class="method-title"><code><a href="#//api/name/streamingEnabledInterfacesOnly">&ndash;&nbsp;streamingEnabledInterfacesOnly</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is used to control if the central manager will create and process <a href="../Classes/AVBInterface.html">AVBInterface</a> objects for non streaming interfaces.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)streamingEnabledInterfacesOnly</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES for only AVB Enabled interfaces or NO for all interfaces.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The default value returned is YES and as such <a href="#//api/name/didAddInterface:">didAddInterface:</a> will be called for all AVB Enabled network interfaces only.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVBCentralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextAvailableDynamicEntityID" title="nextAvailableDynamicEntityID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextAvailableDynamicEntityID">+&nbsp;nextAvailableDynamicEntityID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is used to allocate a dynamic Entity ID .</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (uint64_t)nextAvailableDynamicEntityID</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The allocated dynamic entity ID or AVBNullEUI64 if allocation failed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The entity ID allocated by this call can be used for both publishing an Entity with the <a href="../Classes/AVB17221EntityDiscovery.html">AVB17221EntityDiscovery</a> class or as a controllerID for the <a href="../Classes/AVB17221ACMPMessage.html">AVB17221ACMPMessage</a> and <a href="../Classes/AVB17221AECPMessage.html">AVB17221AECPMessage</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVBCentralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/releaseDynamicEntityID:" title="releaseDynamicEntityID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/releaseDynamicEntityID:">+&nbsp;releaseDynamicEntityID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is used to release a previously allocated dynamic Entity ID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)releaseDynamicEntityID:(uint64_t)<em>entityID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityID</code></th>
+						<td><p>The entity ID to release that was previously allocated by <code>+nextAvailableDynamicEntityID</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVBCentralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextAvailableDynamicEntityModelID" title="nextAvailableDynamicEntityModelID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextAvailableDynamicEntityModelID">+&nbsp;nextAvailableDynamicEntityModelID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is used to allocate a dynamic Entity Model ID .</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (uint64_t)nextAvailableDynamicEntityModelID</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The allocated dynamic entity model ID or AVBNullEUI64 if allocation failed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The entity model ID allocated by this call can be used for publishing an Entity with the <a href="../Classes/AVB17221EntityDiscovery.html">AVB17221EntityDiscovery</a> class when using a dynamically generated or modified model.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVBCentralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/releaseDynamicEntityModelID:" title="releaseDynamicEntityModelID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/releaseDynamicEntityModelID:">+&nbsp;releaseDynamicEntityModelID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is used to release a previously allocated dynamic Entity Model ID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)releaseDynamicEntityModelID:(uint64_t)<em>entityModelID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityModelID</code></th>
+						<td><p>The entity ID to release that was previously allocated by <code>+nextAvailableDynamicEntityModelID</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVBCentralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

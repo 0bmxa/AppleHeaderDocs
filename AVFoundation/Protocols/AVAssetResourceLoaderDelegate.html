@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAssetResourceLoaderDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/resourceLoader:didCancelAuthenticationChallenge:">- resourceLoader:didCancelAuthenticationChallenge:</option>
+		
+		<option value="//api/name/resourceLoader:didCancelLoadingRequest:">- resourceLoader:didCancelLoadingRequest:</option>
+		
+		<option value="//api/name/resourceLoader:shouldWaitForLoadingOfRequestedResource:">- resourceLoader:shouldWaitForLoadingOfRequestedResource:</option>
+		
+		<option value="//api/name/resourceLoader:shouldWaitForRenewalOfRequestedResource:">- resourceLoader:shouldWaitForRenewalOfRequestedResource:</option>
+		
+		<option value="//api/name/resourceLoader:shouldWaitForResponseToAuthenticationChallenge:">- resourceLoader:shouldWaitForResponseToAuthenticationChallenge:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAssetResourceLoaderDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAssetResourceLoader.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@protocol       AVAssetResourceLoaderDelegate
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/resourceLoader:shouldWaitForLoadingOfRequestedResource:" title="resourceLoader:shouldWaitForLoadingOfRequestedResource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resourceLoader:shouldWaitForLoadingOfRequestedResource:">&ndash;&nbsp;resourceLoader:shouldWaitForLoadingOfRequestedResource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when assistance is required of the application to load a resource.
+@param      resourceLoader
+                The instance of <a href="../Classes/AVAssetResourceLoader.html">AVAssetResourceLoader</a> for which the loading request is being made.
+@param      loadingRequest
+                An instance of <a href="../Classes/AVAssetResourceLoadingRequest.html">AVAssetResourceLoadingRequest</a> that provides information about the requested resource.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)resourceLoader:(AVAssetResourceLoader *)<em>resourceLoader</em> shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)<em>loadingRequest</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the delegate can load the resource indicated by the AVAssetResourceLoadingRequest; otherwise NO.
+@discussion
+  Delegates receive this message when assistance is required of the application to load a resource. For example, this method is invoked to load decryption keys that have been specified using custom URL schemes.
+  If the result is YES, the resource loader expects invocation, either subsequently or immediately, of either <a href="../Classes/AVAssetResourceLoadingRequest.html#//api/name/finishLoading">[AVAssetResourceLoadingRequest finishLoading]</a> or <a href="../Classes/AVAssetResourceLoadingRequest.html#//api/name/finishLoadingWithError:">[AVAssetResourceLoadingRequest finishLoadingWithError:]</a>. If you intend to finish loading the resource after your handling of this message returns, you must retain the instance of AVAssetResourceLoadingRequest until after loading is finished.
+  If the result is NO, the resource loader treats the loading of the resource as having failed.
+  Note that if the delegate&rsquo;s implementation of -resourceLoader:shouldWaitForLoadingOfRequestedResource: returns YES without finishing the loading request immediately, it may be invoked again with another loading request before the prior request is finished; therefore in such cases the delegate should be prepared to manage multiple loading requests.</p>
+
+<p>  If an AVURLAsset is added to an AVContentKeySession object and a delegate is set on its AVAssetResourceLoader, that delegate&rsquo;s resourceLoader:shouldWaitForLoadingOfRequestedResource: method must specify which custom URL requests should be handled as content keys. This is done by returning YES and passing either AVStreamingKeyDeliveryPersistentContentKeyType or AVStreamingKeyDeliveryContentKeyType into <a href="../Classes/AVAssetResourceLoadingContentInformationRequest.html#//api/name/contentType">[AVAssetResourceLoadingContentInformationRequest setContentType:]</a> and then calling <a href="../Classes/AVAssetResourceLoadingRequest.html#//api/name/finishLoading">[AVAssetResourceLoadingRequest finishLoading]</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         resourceLoader:shouldWaitForLoadingOfRequestedResource:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resourceLoader:shouldWaitForRenewalOfRequestedResource:" title="resourceLoader:shouldWaitForRenewalOfRequestedResource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resourceLoader:shouldWaitForRenewalOfRequestedResource:">&ndash;&nbsp;resourceLoader:shouldWaitForRenewalOfRequestedResource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when assistance is required of the application to renew a resource.
+@param      resourceLoader
+The instance of <a href="../Classes/AVAssetResourceLoader.html">AVAssetResourceLoader</a> for which the loading request is being made.
+@param      renewalRequest
+An instance of <a href="../Classes/AVAssetResourceRenewalRequest.html">AVAssetResourceRenewalRequest</a> that provides information about the requested resource.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)resourceLoader:(AVAssetResourceLoader *)<em>resourceLoader</em> shouldWaitForRenewalOfRequestedResource:(AVAssetResourceRenewalRequest *)<em>renewalRequest</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the delegate can renew the resource indicated by the AVAssetResourceLoadingRequest; otherwise NO.
+@discussion
+Delegates receive this message when assistance is required of the application to renew a resource previously loaded by resourceLoader:shouldWaitForLoadingOfRequestedResource:. For example, this method is invoked to renew decryption keys that require renewal, as indicated in a response to a prior invocation of resourceLoader:shouldWaitForLoadingOfRequestedResource:.
+If the result is YES, the resource loader expects invocation, either subsequently or immediately, of either [AVAssetResourceRenewalRequest finishLoading] or [AVAssetResourceRenewalRequest finishLoadingWithError:]. If you intend to finish loading the resource after your handling of this message returns, you must retain the instance of AVAssetResourceRenewalRequest until after loading is finished.
+If the result is NO, the resource loader treats the loading of the resource as having failed.
+Note that if the delegate&rsquo;s implementation of -resourceLoader:shouldWaitForRenewalOfRequestedResource: returns YES without finishing the loading request immediately, it may be invoked again with another loading request before the prior request is finished; therefore in such cases the delegate should be prepared to manage multiple loading requests.</p>
+
+<p>  If an AVURLAsset is added to an AVContentKeySession object and a delegate is set on its AVAssetResourceLoader, that delegate&rsquo;s resourceLoader:shouldWaitForRenewalOfRequestedResource:renewalRequest method must specify which custom URL requests should be handled as content keys. This is done by returning YES and passing either AVStreamingKeyDeliveryPersistentContentKeyType or AVStreamingKeyDeliveryContentKeyType into <a href="../Classes/AVAssetResourceLoadingContentInformationRequest.html#//api/name/contentType">[AVAssetResourceLoadingContentInformationRequest setContentType:]</a> and then calling <a href="../Classes/AVAssetResourceLoadingRequest.html#//api/name/finishLoading">[AVAssetResourceLoadingRequest finishLoading]</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         resourceLoader:shouldWaitForRenewalOfRequestedResource:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resourceLoader:didCancelLoadingRequest:" title="resourceLoader:didCancelLoadingRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resourceLoader:didCancelLoadingRequest:">&ndash;&nbsp;resourceLoader:didCancelLoadingRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Informs the delegate that a prior loading request has been cancelled.
+@param      loadingRequest
+                The loading request that has been cancelled.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resourceLoader:(AVAssetResourceLoader *)<em>resourceLoader</em> didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)<em>loadingRequest</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         resourceLoader:didCancelLoadingRequest:</p><p>Previously issued loading requests can be cancelled when data from the resource is no longer required or when a loading request is superseded by new requests for data from the same resource. For example, if to complete a seek operation it becomes necessary to load a range of bytes that&rsquo;s different from a range previously requested, the prior request may be cancelled while the delegate is still handling it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resourceLoader:shouldWaitForResponseToAuthenticationChallenge:" title="resourceLoader:shouldWaitForResponseToAuthenticationChallenge:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resourceLoader:shouldWaitForResponseToAuthenticationChallenge:">&ndash;&nbsp;resourceLoader:shouldWaitForResponseToAuthenticationChallenge:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when assistance is required of the application to respond to an authentication challenge.
+@param      resourceLoader
+                The instance of <a href="../Classes/AVAssetResourceLoader.html">AVAssetResourceLoader</a> asking for help with an authentication challenge.
+@param      authenticationChallenge
+                An instance of NSURLAuthenticationChallenge.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)resourceLoader:(AVAssetResourceLoader *)<em>resourceLoader</em> shouldWaitForResponseToAuthenticationChallenge:(NSURLAuthenticationChallenge *)<em>authenticationChallenge</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         resourceLoader:shouldWaitForResponseToAuthenticationChallenge:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resourceLoader:didCancelAuthenticationChallenge:" title="resourceLoader:didCancelAuthenticationChallenge:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resourceLoader:didCancelAuthenticationChallenge:">&ndash;&nbsp;resourceLoader:didCancelAuthenticationChallenge:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Informs the delegate that a prior authentication challenge has been cancelled.
+@param      authenticationChallenge
+                The authentication challenge that has been cancelled.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resourceLoader:(AVAssetResourceLoader *)<em>resourceLoader</em> didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)<em>authenticationChallenge</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method         resourceLoader:didCancelAuthenticationChallenge:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetResourceLoader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>EKRecurrenceRule Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 EventKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/calendarIdentifier">calendarIdentifier</option>
+		
+		<option value="//api/name/daysOfTheMonth">daysOfTheMonth</option>
+		
+		<option value="//api/name/daysOfTheWeek">daysOfTheWeek</option>
+		
+		<option value="//api/name/daysOfTheYear">daysOfTheYear</option>
+		
+		<option value="//api/name/firstDayOfTheWeek">firstDayOfTheWeek</option>
+		
+		<option value="//api/name/frequency">frequency</option>
+		
+		<option value="//api/name/interval">interval</option>
+		
+		<option value="//api/name/monthsOfTheYear">monthsOfTheYear</option>
+		
+		<option value="//api/name/recurrenceEnd">recurrenceEnd</option>
+		
+		<option value="//api/name/setPositions">setPositions</option>
+		
+		<option value="//api/name/weeksOfTheYear">weeksOfTheYear</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:">- initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:</option>
+		
+		<option value="//api/name/initRecurrenceWithFrequency:interval:end:">- initRecurrenceWithFrequency:interval:end:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">EKRecurrenceRule Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/EKObject.html">EKObject</a> : NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>EKRecurrenceRule.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      EKRecurrenceRule
+</code></pre><p>This class describes the recurrence pattern for a repeating event. The recurrence rules that
+                can be expressed are not restricted to the recurrence patterns that can be set in Calendar&rsquo;s UI.</p>
+
+<pre><code>            It is currently not possible to directly modify a EKRecurrenceRule or any of its properties. 
+            This functionality is achieved by creating a new EKRecurrenceRule, and setting an event to use the new rule. 
+            When a new recurrence rule is set on an EKEvent, that change is not saved until the client 
+            has passed the modified event to EKEventStore's saveEvent: method.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initRecurrenceWithFrequency:interval:end:" title="initRecurrenceWithFrequency:interval:end:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initRecurrenceWithFrequency:interval:end:">&ndash;&nbsp;initRecurrenceWithFrequency:interval:end:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Simple initializer to create a recurrence.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initRecurrenceWithFrequency:(EKRecurrenceFrequency)<em>type</em> interval:(NSInteger)<em>interval</em> end:(nullable EKRecurrenceEnd *)<em>end</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initRecurrenceWithFrequency:interval:end:
+</code></pre><p>This is used to create a simple recurrence with a specific type, <a href="#//api/name/interval">interval</a> and end. If <a href="#//api/name/interval">interval</a> is
+                0, an exception is raised. The end parameter can be nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:" title="initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:">&ndash;&nbsp;initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The designated initializer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initRecurrenceWithFrequency:(EKRecurrenceFrequency)<em>type</em> interval:(NSInteger)<em>interval</em> daysOfTheWeek:(nullable NSArray&lt;EKRecurrenceDayOfWeek*&gt; *)<em>days</em> daysOfTheMonth:(nullable NSArray&lt;NSNumber*&gt; *)<em>monthDays</em> monthsOfTheYear:(nullable NSArray&lt;NSNumber*&gt; *)<em>months</em> weeksOfTheYear:(nullable NSArray&lt;NSNumber*&gt; *)<em>weeksOfTheYear</em> daysOfTheYear:(nullable NSArray&lt;NSNumber*&gt; *)<em>daysOfTheYear</em> setPositions:(nullable NSArray&lt;NSNumber*&gt; *)<em>setPositions</em> end:(nullable EKRecurrenceEnd *)<em>end</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>The type of recurrence</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>interval</code></th>
+						<td><p>The <a href="#//api/name/interval">interval</a>. Passing zero will raise an exception.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>weeksOfTheYear</code></th>
+						<td><p>An array of NSNumbers ([+/1] 1 to 53). Negative numbers infer counting from the end of the year.
+                                For example, -1 means the last week of the year. Valid only for yearly recurrences. Ignored otherwise.
+                                Corresponds to the BYWEEKNO value in the iCalendar specification.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>daysOfTheYear</code></th>
+						<td><p>An array of NSNumbers ([+/1] 1 to 366). Negative numbers infer counting from the end of the year.
+                                For example, -1 means the last day of the year. Valid only for yearly recurrences. Ignored otherwise.
+                                Corresponds to the BYYEARDAY value in the iCalendar specification.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>setPositions</code></th>
+						<td><p>An array of NSNumbers ([+/1] 1 to 366). Used at the end of recurrence computation to filter the list
+                                to the positions specified. Negative numbers indicate starting at the end, i.e. -1 indicates taking the
+                                last result of the set. Valid when <a href="#//api/name/daysOfTheWeek">daysOfTheWeek</a>, <a href="#//api/name/daysOfTheMonth">daysOfTheMonth</a>, <a href="#//api/name/monthsOfTheYear">monthsOfTheYear</a>, <a href="#//api/name/weeksOfTheYear">weeksOfTheYear</a>, or
+                                <a href="#//api/name/daysOfTheYear">daysOfTheYear</a> is passed. Ignored otherwise. Corresponds to the BYSETPOS value in the iCalendar specification.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>end</code></th>
+						<td><p>The recurrence end, or nil.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>daysOfTheWeek</code></th>
+						<td><p>An array of <a href="../Classes/EKRecurrenceDayOfWeek.html">EKRecurrenceDayOfWeek</a> objects. Valid for all recurrence types except daily. Ignored otherwise.
+                                Corresponds to the BYDAY value in the iCalendar specification.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>monthsOfTheYear</code></th>
+						<td><p>An array of NSNumbers (1 to 12). Valid only for yearly recurrences. Ignored otherwise. Corresponds to
+                                the BYMONTH value in the iCalendar specification.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>daysOfTheMonth</code></th>
+						<td><p>An array of NSNumbers ([+/-] 1 to 31). Negative numbers infer counting from the end of the month.
+                                For example, -1 means the last day of the month. Valid only for monthly recurrences. Ignored otherwise.
+                                Corresponds to the BYMONTHDAY value in the iCalendar specification.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:
+</code></pre><p>This can be used to build any kind of recurrence rule. But be aware that certain combinations make
+                no sense and will be ignored. For example, if you pass <a href="#//api/name/daysOfTheWeek">daysOfTheWeek</a> for a daily recurrence, they
+                will be ignored.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calendarIdentifier" title="calendarIdentifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calendarIdentifier">&nbsp;&nbsp;calendarIdentifier</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property       calendarIdentifier;
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *calendarIdentifier</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       calendarIdentifier;
+</code></pre><p>Calendar used by this recurrence rule.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recurrenceEnd" title="recurrenceEnd"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recurrenceEnd">&nbsp;&nbsp;recurrenceEnd</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property       recurrenceEnd
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) EKRecurrenceEnd *recurrenceEnd</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       recurrenceEnd
+</code></pre><p>This property defines when the the repeating event is scheduled to end. The end date can be specified by a number of
+                    occurrences, or with an end date.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/frequency" title="frequency"></a>
+	<h3 class="method-title"><code><a href="#//api/name/frequency">&nbsp;&nbsp;frequency</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property       frequency
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) EKRecurrenceFrequency frequency</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       frequency
+</code></pre><p>This property designates the unit of time used to describe the recurrence pattern.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/interval" title="interval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/interval">&nbsp;&nbsp;interval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property       interval
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger interval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       interval
+</code></pre><p>The interval of a EKRecurrenceRule is an integer value which specifies how often the recurrence rule repeats
+                    over the unit of time described by the <a href="../Constants/EKRecurrenceFrequency.html">EKRecurrenceFrequency</a>. For example, if the <a href="../Constants/EKRecurrenceFrequency.html">EKRecurrenceFrequency</a> is
+                    EKRecurrenceWeekly, then an interval of 1 means the pattern is repeated every week. A value of 2
+                    indicates it is repeated every other week, 3 means every third week, and so on. The value must be a
+                    positive integer; 0 is not a valid value, and nil will be returned if the client attempts to initialize a
+                    rule with a negative or zero interval.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/firstDayOfTheWeek" title="firstDayOfTheWeek"></a>
+	<h3 class="method-title"><code><a href="#//api/name/firstDayOfTheWeek">&nbsp;&nbsp;firstDayOfTheWeek</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property       firstDayOfTheWeek
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger firstDayOfTheWeek</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       firstDayOfTheWeek
+</code></pre><p>Recurrence patterns can specify which day of the week should be treated as the first day. Possible values for this
+                    property are integers 0 and 1-7, which correspond to days of the week with Sunday = 1. Zero indicates that the
+                    property is not set for this recurrence. The first day of the week only affects the way the recurrence is expanded
+                    for weekly recurrence patterns with an <a href="#//api/name/interval">interval</a> greater than 1. For those types of recurrence patterns, the
+                    Calendar framework will set firstDayOfTheWeek to be 2 (Monday). In all other cases, this property will be set
+                    to zero. The iCalendar spec stipulates that the default value is Monday if this property is not set.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/daysOfTheWeek" title="daysOfTheWeek"></a>
+	<h3 class="method-title"><code><a href="#//api/name/daysOfTheWeek">&nbsp;&nbsp;daysOfTheWeek</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property       daysOfTheWeek
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;EKRecurrenceDayOfWeek*&gt; *daysOfTheWeek</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       daysOfTheWeek
+</code></pre><p>This property is valid for rules whose <a href="../Constants/EKRecurrenceFrequency.html">EKRecurrenceFrequency</a> is EKRecurrenceFrequencyWeekly, EKRecurrenceFrequencyMonthly, or
+                    EKRecurrenceFrequencyYearly. This property can be accessed as an array containing one or more <a href="../Classes/EKRecurrenceDayOfWeek.html">EKRecurrenceDayOfWeek</a> objects
+                    corresponding to the days of the week the event recurs. For all other EKRecurrenceRules, this property is nil.
+                    This property corresponds to BYDAY in the iCalendar specification.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/daysOfTheMonth" title="daysOfTheMonth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/daysOfTheMonth">&nbsp;&nbsp;daysOfTheMonth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property       daysOfTheMonth
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;NSNumber*&gt; *daysOfTheMonth</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       daysOfTheMonth
+</code></pre><p>This property is valid for rules whose <a href="../Constants/EKRecurrenceFrequency.html">EKRecurrenceFrequency</a> is EKRecurrenceFrequencyMonthly, and that were initialized
+                    with one or more specific days of the month (not with a day of the week and week of the month). This property can be
+                    accessed as an array containing one or more NSNumbers corresponding to the days of the month the event recurs.
+                    For all other EKRecurrenceRules, this property is nil. This property corresponds to BYMONTHDAY in the iCalendar
+                    specification.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/daysOfTheYear" title="daysOfTheYear"></a>
+	<h3 class="method-title"><code><a href="#//api/name/daysOfTheYear">&nbsp;&nbsp;daysOfTheYear</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property       daysOfTheYear
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;NSNumber*&gt; *daysOfTheYear</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       daysOfTheYear
+</code></pre><p>This property is valid for rules whose <a href="../Constants/EKRecurrenceFrequency.html">EKRecurrenceFrequency</a> is EKRecurrenceFrequencyYearly. This property can be accessed
+                    as an array containing one or more NSNumbers corresponding to the days of the year the event recurs. For all other
+                    EKRecurrenceRules, this property is nil. This property corresponds to BYYEARDAY in the iCalendar specification. It should
+                    contain values between 1 to 366 or -366 to -1.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/weeksOfTheYear" title="weeksOfTheYear"></a>
+	<h3 class="method-title"><code><a href="#//api/name/weeksOfTheYear">&nbsp;&nbsp;weeksOfTheYear</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property       weeksOfTheYear
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;NSNumber*&gt; *weeksOfTheYear</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       weeksOfTheYear
+</code></pre><p>This property is valid for rules whose <a href="../Constants/EKRecurrenceFrequency.html">EKRecurrenceFrequency</a> is EKRecurrenceFrequencyYearly. This property can be accessed
+                    as an array containing one or more NSNumbers corresponding to the weeks of the year the event recurs. For all other
+                    EKRecurrenceRules, this property is nil. This property corresponds to BYWEEK in the iCalendar specification. It should
+                    contain integers from 1 to 53 or -1 to -53.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/monthsOfTheYear" title="monthsOfTheYear"></a>
+	<h3 class="method-title"><code><a href="#//api/name/monthsOfTheYear">&nbsp;&nbsp;monthsOfTheYear</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property       monthsOfTheYear
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;NSNumber*&gt; *monthsOfTheYear</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       monthsOfTheYear
+</code></pre><p>This property is valid for rules whose <a href="../Constants/EKRecurrenceFrequency.html">EKRecurrenceFrequency</a> is EKRecurrenceFrequencyYearly. This property can be accessed
+                    as an array containing one or more NSNumbers corresponding to the months of the year the event recurs. For all other
+                    EKRecurrenceRules, this property is nil. This property corresponds to BYMONTH in the iCalendar specification.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setPositions" title="setPositions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setPositions">&nbsp;&nbsp;setPositions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property       setPositions
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;NSNumber*&gt; *setPositions</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       setPositions
+</code></pre><p>This property is valid for rules which have a valid <a href="#//api/name/daysOfTheWeek">daysOfTheWeek</a>, <a href="#//api/name/daysOfTheMonth">daysOfTheMonth</a>, <a href="#//api/name/weeksOfTheYear">weeksOfTheYear</a>, or <a href="#//api/name/monthsOfTheYear">monthsOfTheYear</a> property.
+                    It allows you to specify a set of ordinal numbers to help choose which objects out of the set of selected events should be
+                    included. For example, setting the <a href="#//api/name/daysOfTheWeek">daysOfTheWeek</a> to Monday-Friday and including a value of -1 in the array would indicate
+                    the last weekday in the recurrence range (month, year, etc). This value corresponds to the iCalendar BYSETPOS property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKRecurrenceRule.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

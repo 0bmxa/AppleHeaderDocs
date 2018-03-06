@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CIImage Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreImage Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_4">_4</option>
+		
+		<option value="//api/name/_8">_8</option>
+		
+		<option value="//api/name/extent">extent</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/emptyImage">+ emptyImage</option>
+		
+		<option value="//api/name/imageWithBitmapData:bytesPerRow:size:format:colorSpace:">+ imageWithBitmapData:bytesPerRow:size:format:colorSpace:</option>
+		
+		<option value="//api/name/imageWithCGImage:">+ imageWithCGImage:</option>
+		
+		<option value="//api/name/imageWithCGImage:options:">+ imageWithCGImage:options:</option>
+		
+		<option value="//api/name/imageWithCGLayer:">+ imageWithCGLayer:</option>
+		
+		<option value="//api/name/imageWithCGLayer:options:">+ imageWithCGLayer:options:</option>
+		
+		<option value="//api/name/imageWithCVImageBuffer:">+ imageWithCVImageBuffer:</option>
+		
+		<option value="//api/name/imageWithCVImageBuffer:options:">+ imageWithCVImageBuffer:options:</option>
+		
+		<option value="//api/name/imageWithCVPixelBuffer:">+ imageWithCVPixelBuffer:</option>
+		
+		<option value="//api/name/imageWithCVPixelBuffer:options:">+ imageWithCVPixelBuffer:options:</option>
+		
+		<option value="//api/name/imageWithColor:">+ imageWithColor:</option>
+		
+		<option value="//api/name/imageWithContentsOfURL:">+ imageWithContentsOfURL:</option>
+		
+		<option value="//api/name/imageWithContentsOfURL:options:">+ imageWithContentsOfURL:options:</option>
+		
+		<option value="//api/name/imageWithData:">+ imageWithData:</option>
+		
+		<option value="//api/name/imageWithData:options:">+ imageWithData:options:</option>
+		
+		<option value="//api/name/imageWithIOSurface:">+ imageWithIOSurface:</option>
+		
+		<option value="//api/name/imageWithIOSurface:options:">+ imageWithIOSurface:options:</option>
+		
+		<option value="//api/name/imageWithImageProvider:size:::">+ imageWithImageProvider:size:::</option>
+		
+		<option value="//api/name/imageWithMTLTexture:options:">+ imageWithMTLTexture:options:</option>
+		
+		<option value="//api/name/imageWithTexture:size:flipped:colorSpace:">+ imageWithTexture:size:flipped:colorSpace:</option>
+		
+		<option value="//api/name/imageWithTexture:size:flipped:options:">+ imageWithTexture:size:flipped:options:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/autoAdjustmentFilters">- autoAdjustmentFilters</option>
+		
+		<option value="//api/name/autoAdjustmentFiltersWithOptions:">- autoAdjustmentFiltersWithOptions:</option>
+		
+		<option value="//api/name/imageByApplyingCGOrientation:">- imageByApplyingCGOrientation:</option>
+		
+		<option value="//api/name/imageByApplyingFilter:">- imageByApplyingFilter:</option>
+		
+		<option value="//api/name/imageByApplyingFilter:withInputParameters:">- imageByApplyingFilter:withInputParameters:</option>
+		
+		<option value="//api/name/imageByApplyingGaussianBlurWithSigma:">- imageByApplyingGaussianBlurWithSigma:</option>
+		
+		<option value="//api/name/imageByApplyingOrientation:">- imageByApplyingOrientation:</option>
+		
+		<option value="//api/name/imageByApplyingTransform:">- imageByApplyingTransform:</option>
+		
+		<option value="//api/name/imageByClampingToExtent">- imageByClampingToExtent</option>
+		
+		<option value="//api/name/imageByClampingToRect:">- imageByClampingToRect:</option>
+		
+		<option value="//api/name/imageByColorMatchingColorSpaceToWorkingSpace:NS_AVAILABLE:">- imageByColorMatchingColorSpaceToWorkingSpace:NS_AVAILABLE:</option>
+		
+		<option value="//api/name/imageByColorMatchingWorkingSpaceToColorSpace:NS_AVAILABLE:">- imageByColorMatchingWorkingSpaceToColorSpace:NS_AVAILABLE:</option>
+		
+		<option value="//api/name/imageByCompositingOverImage:">- imageByCompositingOverImage:</option>
+		
+		<option value="//api/name/imageByCroppingToRect:">- imageByCroppingToRect:</option>
+		
+		<option value="//api/name/imageByPremultiplyingAlpha">- imageByPremultiplyingAlpha</option>
+		
+		<option value="//api/name/imageBySamplingLinear">- imageBySamplingLinear</option>
+		
+		<option value="//api/name/imageBySamplingNearest">- imageBySamplingNearest</option>
+		
+		<option value="//api/name/imageBySettingAlphaOneInExtent:">- imageBySettingAlphaOneInExtent:</option>
+		
+		<option value="//api/name/imageBySettingProperties:">- imageBySettingProperties:</option>
+		
+		<option value="//api/name/imageByUnpremultiplyingAlpha">- imageByUnpremultiplyingAlpha</option>
+		
+		<option value="//api/name/imageTransformForCGOrientation:">- imageTransformForCGOrientation:</option>
+		
+		<option value="//api/name/imageTransformForOrientation:">- imageTransformForOrientation:</option>
+		
+		<option value="//api/name/initWithBitmapData:bytesPerRow:size:format:colorSpace:">- initWithBitmapData:bytesPerRow:size:format:colorSpace:</option>
+		
+		<option value="//api/name/initWithCGImage:">- initWithCGImage:</option>
+		
+		<option value="//api/name/initWithCGImage:options:">- initWithCGImage:options:</option>
+		
+		<option value="//api/name/initWithCGLayer:">- initWithCGLayer:</option>
+		
+		<option value="//api/name/initWithCGLayer:options:">- initWithCGLayer:options:</option>
+		
+		<option value="//api/name/initWithCVImageBuffer:">- initWithCVImageBuffer:</option>
+		
+		<option value="//api/name/initWithCVImageBuffer:options:">- initWithCVImageBuffer:options:</option>
+		
+		<option value="//api/name/initWithCVPixelBuffer:">- initWithCVPixelBuffer:</option>
+		
+		<option value="//api/name/initWithCVPixelBuffer:options:">- initWithCVPixelBuffer:options:</option>
+		
+		<option value="//api/name/initWithColor:">- initWithColor:</option>
+		
+		<option value="//api/name/initWithContentsOfURL:">- initWithContentsOfURL:</option>
+		
+		<option value="//api/name/initWithContentsOfURL:options:">- initWithContentsOfURL:options:</option>
+		
+		<option value="//api/name/initWithData:">- initWithData:</option>
+		
+		<option value="//api/name/initWithData:options:">- initWithData:options:</option>
+		
+		<option value="//api/name/initWithIOSurface:">- initWithIOSurface:</option>
+		
+		<option value="//api/name/initWithIOSurface:options:">- initWithIOSurface:options:</option>
+		
+		<option value="//api/name/initWithIOSurface:plane:format:options:">- initWithIOSurface:plane:format:options:</option>
+		
+		<option value="//api/name/initWithImageProvider:size:::">- initWithImageProvider:size:::</option>
+		
+		<option value="//api/name/initWithMTLTexture:options:">- initWithMTLTexture:options:</option>
+		
+		<option value="//api/name/initWithTexture:size:flipped:colorSpace:">- initWithTexture:size:flipped:colorSpace:</option>
+		
+		<option value="//api/name/initWithTexture:size:flipped:options:">- initWithTexture:size:flipped:options:</option>
+		
+		<option value="//api/name/regionOfInterestForImage:inRect:">- regionOfInterestForImage:inRect:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CIImage Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying<br />NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CIImage.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/imageWithCGImage:" title="imageWithCGImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithCGImage:">+&nbsp;imageWithCGImage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithCGImage:(CGImageRef)<em>image</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithCGImage:options:" title="imageWithCGImage:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithCGImage:options:">+&nbsp;imageWithCGImage:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithCGImage:(CGImageRef)<em>image</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithCGLayer:" title="imageWithCGLayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithCGLayer:">+&nbsp;imageWithCGLayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithCGLayer:(CGLayerRef)<em>layer</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithCGLayer:options:" title="imageWithCGLayer:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithCGLayer:options:">+&nbsp;imageWithCGLayer:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithCGLayer:(CGLayerRef)<em>layer</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithBitmapData:bytesPerRow:size:format:colorSpace:" title="imageWithBitmapData:bytesPerRow:size:format:colorSpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithBitmapData:bytesPerRow:size:format:colorSpace:">+&nbsp;imageWithBitmapData:bytesPerRow:size:format:colorSpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithBitmapData:(NSData *)<em>data</em> bytesPerRow:(size_t)<em>bytesPerRow</em> size:(CGSize)<em>size</em> format:(CIFormat)<em>format</em> colorSpace:(nullable CGColorSpaceRef)<em>colorSpace</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithTexture:size:flipped:colorSpace:" title="imageWithTexture:size:flipped:colorSpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithTexture:size:flipped:colorSpace:">+&nbsp;imageWithTexture:size:flipped:colorSpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithTexture:(unsigned int)<em>name</em> size:(CGSize)<em>size</em> flipped:(BOOL)<em>flipped</em> colorSpace:(nullable CGColorSpaceRef)<em>colorSpace</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithTexture:size:flipped:options:" title="imageWithTexture:size:flipped:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithTexture:size:flipped:options:">+&nbsp;imageWithTexture:size:flipped:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithTexture:(unsigned int)<em>name</em> size:(CGSize)<em>size</em> flipped:(BOOL)<em>flipped</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithMTLTexture:options:" title="imageWithMTLTexture:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithMTLTexture:options:">+&nbsp;imageWithMTLTexture:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable CIImage *)imageWithMTLTexture:(id&lt;MTLTexture&gt;)<em>texture</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithContentsOfURL:" title="imageWithContentsOfURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithContentsOfURL:">+&nbsp;imageWithContentsOfURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable CIImage *)imageWithContentsOfURL:(NSURL *)<em>url</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithContentsOfURL:options:" title="imageWithContentsOfURL:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithContentsOfURL:options:">+&nbsp;imageWithContentsOfURL:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable CIImage *)imageWithContentsOfURL:(NSURL *)<em>url</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithData:" title="imageWithData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithData:">+&nbsp;imageWithData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable CIImage *)imageWithData:(NSData *)<em>data</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithData:options:" title="imageWithData:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithData:options:">+&nbsp;imageWithData:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable CIImage *)imageWithData:(NSData *)<em>data</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithCVImageBuffer:" title="imageWithCVImageBuffer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithCVImageBuffer:">+&nbsp;imageWithCVImageBuffer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithCVImageBuffer:(CVImageBufferRef)<em>imageBuffer</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithCVImageBuffer:options:" title="imageWithCVImageBuffer:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithCVImageBuffer:options:">+&nbsp;imageWithCVImageBuffer:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithCVImageBuffer:(CVImageBufferRef)<em>imageBuffer</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithCVPixelBuffer:" title="imageWithCVPixelBuffer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithCVPixelBuffer:">+&nbsp;imageWithCVPixelBuffer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithCVPixelBuffer:(CVPixelBufferRef)<em>pixelBuffer</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithCVPixelBuffer:options:" title="imageWithCVPixelBuffer:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithCVPixelBuffer:options:">+&nbsp;imageWithCVPixelBuffer:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithCVPixelBuffer:(CVPixelBufferRef)<em>pixelBuffer</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithIOSurface:" title="imageWithIOSurface:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithIOSurface:">+&nbsp;imageWithIOSurface:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithIOSurface:(IOSurfaceRef)<em>surface</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithIOSurface:options:" title="imageWithIOSurface:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithIOSurface:options:">+&nbsp;imageWithIOSurface:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithIOSurface:(IOSurfaceRef)<em>surface</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageWithColor:" title="imageWithColor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithColor:">+&nbsp;imageWithColor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithColor:(CIColor *)<em>color</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/emptyImage" title="emptyImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/emptyImage">+&nbsp;emptyImage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)emptyImage</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCGImage:" title="initWithCGImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCGImage:">&ndash;&nbsp;initWithCGImage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCGImage:(CGImageRef)<em>image</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCGImage:options:" title="initWithCGImage:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCGImage:options:">&ndash;&nbsp;initWithCGImage:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCGImage:(CGImageRef)<em>image</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCGLayer:" title="initWithCGLayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCGLayer:">&ndash;&nbsp;initWithCGLayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCGLayer:(CGLayerRef)<em>layer</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCGLayer:options:" title="initWithCGLayer:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCGLayer:options:">&ndash;&nbsp;initWithCGLayer:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCGLayer:(CGLayerRef)<em>layer</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithData:" title="initWithData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithData:">&ndash;&nbsp;initWithData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithData:(NSData *)<em>data</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithData:options:" title="initWithData:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithData:options:">&ndash;&nbsp;initWithData:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithData:(NSData *)<em>data</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithBitmapData:bytesPerRow:size:format:colorSpace:" title="initWithBitmapData:bytesPerRow:size:format:colorSpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithBitmapData:bytesPerRow:size:format:colorSpace:">&ndash;&nbsp;initWithBitmapData:bytesPerRow:size:format:colorSpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithBitmapData:(NSData *)<em>data</em> bytesPerRow:(size_t)<em>bytesPerRow</em> size:(CGSize)<em>size</em> format:(CIFormat)<em>format</em> colorSpace:(nullable CGColorSpaceRef)<em>colorSpace</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTexture:size:flipped:colorSpace:" title="initWithTexture:size:flipped:colorSpace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTexture:size:flipped:colorSpace:">&ndash;&nbsp;initWithTexture:size:flipped:colorSpace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTexture:(unsigned int)<em>name</em> size:(CGSize)<em>size</em> flipped:(BOOL)<em>flipped</em> colorSpace:(nullable CGColorSpaceRef)<em>colorSpace</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTexture:size:flipped:options:" title="initWithTexture:size:flipped:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTexture:size:flipped:options:">&ndash;&nbsp;initWithTexture:size:flipped:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTexture:(unsigned int)<em>name</em> size:(CGSize)<em>size</em> flipped:(BOOL)<em>flipped</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithMTLTexture:options:" title="initWithMTLTexture:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithMTLTexture:options:">&ndash;&nbsp;initWithMTLTexture:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithMTLTexture:(id&lt;MTLTexture&gt;)<em>texture</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithContentsOfURL:" title="initWithContentsOfURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithContentsOfURL:">&ndash;&nbsp;initWithContentsOfURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithContentsOfURL:(NSURL *)<em>url</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithContentsOfURL:options:" title="initWithContentsOfURL:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithContentsOfURL:options:">&ndash;&nbsp;initWithContentsOfURL:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithContentsOfURL:(NSURL *)<em>url</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithIOSurface:" title="initWithIOSurface:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithIOSurface:">&ndash;&nbsp;initWithIOSurface:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithIOSurface:(IOSurfaceRef)<em>surface</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithIOSurface:options:" title="initWithIOSurface:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithIOSurface:options:">&ndash;&nbsp;initWithIOSurface:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithIOSurface:(IOSurfaceRef)<em>surface</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithIOSurface:plane:format:options:" title="initWithIOSurface:plane:format:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithIOSurface:plane:format:options:">&ndash;&nbsp;initWithIOSurface:plane:format:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithIOSurface:(IOSurfaceRef)<em>surface</em> plane:(size_t)<em>plane</em> format:(CIFormat)<em>format</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCVImageBuffer:" title="initWithCVImageBuffer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCVImageBuffer:">&ndash;&nbsp;initWithCVImageBuffer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCVImageBuffer:(CVImageBufferRef)<em>imageBuffer</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCVImageBuffer:options:" title="initWithCVImageBuffer:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCVImageBuffer:options:">&ndash;&nbsp;initWithCVImageBuffer:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCVImageBuffer:(CVImageBufferRef)<em>imageBuffer</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCVPixelBuffer:" title="initWithCVPixelBuffer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCVPixelBuffer:">&ndash;&nbsp;initWithCVPixelBuffer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCVPixelBuffer:(CVPixelBufferRef)<em>pixelBuffer</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCVPixelBuffer:options:" title="initWithCVPixelBuffer:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCVPixelBuffer:options:">&ndash;&nbsp;initWithCVPixelBuffer:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCVPixelBuffer:(CVPixelBufferRef)<em>pixelBuffer</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithColor:" title="initWithColor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithColor:">&ndash;&nbsp;initWithColor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithColor:(CIColor *)<em>color</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByApplyingTransform:" title="imageByApplyingTransform:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByApplyingTransform:">&ndash;&nbsp;imageByApplyingTransform:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByApplyingTransform:(CGAffineTransform)<em>matrix</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByApplyingOrientation:" title="imageByApplyingOrientation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByApplyingOrientation:">&ndash;&nbsp;imageByApplyingOrientation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByApplyingOrientation:(int)<em>orientation</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageTransformForOrientation:" title="imageTransformForOrientation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageTransformForOrientation:">&ndash;&nbsp;imageTransformForOrientation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGAffineTransform)imageTransformForOrientation:(int)<em>orientation</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByApplyingCGOrientation:" title="imageByApplyingCGOrientation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByApplyingCGOrientation:">&ndash;&nbsp;imageByApplyingCGOrientation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByApplyingCGOrientation:(CGImagePropertyOrientation)<em>orientation</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageTransformForCGOrientation:" title="imageTransformForCGOrientation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageTransformForCGOrientation:">&ndash;&nbsp;imageTransformForCGOrientation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGAffineTransform)imageTransformForCGOrientation:(CGImagePropertyOrientation)<em>orientation</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByCompositingOverImage:" title="imageByCompositingOverImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByCompositingOverImage:">&ndash;&nbsp;imageByCompositingOverImage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByCompositingOverImage:(CIImage *)<em>dest</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByCroppingToRect:" title="imageByCroppingToRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByCroppingToRect:">&ndash;&nbsp;imageByCroppingToRect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByCroppingToRect:(CGRect)<em>rect</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByClampingToExtent" title="imageByClampingToExtent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByClampingToExtent">&ndash;&nbsp;imageByClampingToExtent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByClampingToExtent</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByClampingToRect:" title="imageByClampingToRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByClampingToRect:">&ndash;&nbsp;imageByClampingToRect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByClampingToRect:(CGRect)<em>rect</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByApplyingFilter:withInputParameters:" title="imageByApplyingFilter:withInputParameters:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByApplyingFilter:withInputParameters:">&ndash;&nbsp;imageByApplyingFilter:withInputParameters:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByApplyingFilter:(NSString *)<em>filterName</em> withInputParameters:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>params</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByApplyingFilter:" title="imageByApplyingFilter:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByApplyingFilter:">&ndash;&nbsp;imageByApplyingFilter:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByApplyingFilter:(NSString *)<em>filterName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByColorMatchingColorSpaceToWorkingSpace:NS_AVAILABLE:" title="imageByColorMatchingColorSpaceToWorkingSpace:NS_AVAILABLE:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByColorMatchingColorSpaceToWorkingSpace:NS_AVAILABLE:">&ndash;&nbsp;imageByColorMatchingColorSpaceToWorkingSpace:NS_AVAILABLE:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable CIImage *)imageByColorMatchingColorSpaceToWorkingSpace:(CGColorSpaceRef)<em>colorSpace</em> NS_AVAILABLE</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByColorMatchingWorkingSpaceToColorSpace:NS_AVAILABLE:" title="imageByColorMatchingWorkingSpaceToColorSpace:NS_AVAILABLE:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByColorMatchingWorkingSpaceToColorSpace:NS_AVAILABLE:">&ndash;&nbsp;imageByColorMatchingWorkingSpaceToColorSpace:NS_AVAILABLE:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable CIImage *)imageByColorMatchingWorkingSpaceToColorSpace:(CGColorSpaceRef)<em>colorSpace</em> NS_AVAILABLE</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByPremultiplyingAlpha" title="imageByPremultiplyingAlpha"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByPremultiplyingAlpha">&ndash;&nbsp;imageByPremultiplyingAlpha</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByPremultiplyingAlpha</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByUnpremultiplyingAlpha" title="imageByUnpremultiplyingAlpha"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByUnpremultiplyingAlpha">&ndash;&nbsp;imageByUnpremultiplyingAlpha</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByUnpremultiplyingAlpha</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageBySettingAlphaOneInExtent:" title="imageBySettingAlphaOneInExtent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageBySettingAlphaOneInExtent:">&ndash;&nbsp;imageBySettingAlphaOneInExtent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageBySettingAlphaOneInExtent:(CGRect)<em>extent</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageByApplyingGaussianBlurWithSigma:" title="imageByApplyingGaussianBlurWithSigma:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageByApplyingGaussianBlurWithSigma:">&ndash;&nbsp;imageByApplyingGaussianBlurWithSigma:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageByApplyingGaussianBlurWithSigma:(double)<em>sigma</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageBySettingProperties:" title="imageBySettingProperties:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageBySettingProperties:">&ndash;&nbsp;imageBySettingProperties:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageBySettingProperties:(NSDictionary *)<em>properties</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageBySamplingLinear" title="imageBySamplingLinear"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageBySamplingLinear">&ndash;&nbsp;imageBySamplingLinear</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageBySamplingLinear</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageBySamplingNearest" title="imageBySamplingNearest"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageBySamplingNearest">&ndash;&nbsp;imageBySamplingNearest</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CIImage *)imageBySamplingNearest</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/extent" title="extent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/extent">&nbsp;&nbsp;extent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly) CGRect extent</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_8" title="_8"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_8">&nbsp;&nbsp;_8</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (atomic, readonly) NSDictionary&lt;NSString*id&gt; *NS_AVAILABLE ( 10 _8</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_4" title="_4"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_4">&nbsp;&nbsp;_4</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (atomic, readonly) CIFilterShape *NS_AVAILABLE_MAC ( 10 _4</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) CVPixelBufferRef pixelBuffer NS_AVAILABLE ( 10 _12 , 10 _0</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/regionOfInterestForImage:inRect:" title="regionOfInterestForImage:inRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/regionOfInterestForImage:inRect:">&ndash;&nbsp;regionOfInterestForImage:inRect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGRect)regionOfInterestForImage:(CIImage *)<em>image</em> inRect:(CGRect)<em>rect</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AutoAdjustment Methods" name="task_AutoAdjustment Methods"></a>
+						<h2 class="task-title">AutoAdjustment Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/autoAdjustmentFilters" title="autoAdjustmentFilters"></a>
+	<h3 class="method-title"><code><a href="#//api/name/autoAdjustmentFilters">&ndash;&nbsp;autoAdjustmentFilters</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;CIFilter*&gt; *)autoAdjustmentFilters</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/autoAdjustmentFiltersWithOptions:" title="autoAdjustmentFiltersWithOptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/autoAdjustmentFiltersWithOptions:">&ndash;&nbsp;autoAdjustmentFiltersWithOptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;CIFilter*&gt; *)autoAdjustmentFiltersWithOptions:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="CIImageProvider Methods" name="task_CIImageProvider Methods"></a>
+						<h2 class="task-title">CIImageProvider Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/imageWithImageProvider:size:::" title="imageWithImageProvider:size:::"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageWithImageProvider:size:::">+&nbsp;imageWithImageProvider:size:::</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (CIImage *)imageWithImageProvider:(id)<em>p</em> size:(size_t)<em>width</em> :</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithImageProvider:size:::" title="initWithImageProvider:size:::"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithImageProvider:size:::">&ndash;&nbsp;initWithImageProvider:size:::</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithImageProvider:(id)<em>p</em> size:(size_t)<em>width</em> :</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSCalendar Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/calendarIdentifier">calendarIdentifier</option>
+		
+		<option value="//api/name/currentCalendar">currentCalendar</option>
+		
+		<option value="//api/name/firstWeekday">firstWeekday</option>
+		
+		<option value="//api/name/locale">locale</option>
+		
+		<option value="//api/name/minimumDaysInFirstWeek">minimumDaysInFirstWeek</option>
+		
+		<option value="//api/name/timeZone">timeZone</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/calendarWithIdentifier:">+ calendarWithIdentifier:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/compareDate:toDate:toUnitGranularity:">- compareDate:toDate:toUnitGranularity:</option>
+		
+		<option value="//api/name/component:fromDate:">- component:fromDate:</option>
+		
+		<option value="//api/name/components:fromDate:">- components:fromDate:</option>
+		
+		<option value="//api/name/components:fromDate:toDate:options:">- components:fromDate:toDate:options:</option>
+		
+		<option value="//api/name/components:fromDateComponents:toDateComponents:options:">- components:fromDateComponents:toDateComponents:options:</option>
+		
+		<option value="//api/name/componentsInTimeZone:fromDate:">- componentsInTimeZone:fromDate:</option>
+		
+		<option value="//api/name/date:matchesComponents:">- date:matchesComponents:</option>
+		
+		<option value="//api/name/dateByAddingComponents:toDate:options:">- dateByAddingComponents:toDate:options:</option>
+		
+		<option value="//api/name/dateByAddingUnit:value:toDate:options:">- dateByAddingUnit:value:toDate:options:</option>
+		
+		<option value="//api/name/dateBySettingHour:minute:second:ofDate:options:">- dateBySettingHour:minute:second:ofDate:options:</option>
+		
+		<option value="//api/name/dateBySettingUnit:value:ofDate:options:">- dateBySettingUnit:value:ofDate:options:</option>
+		
+		<option value="//api/name/dateFromComponents:">- dateFromComponents:</option>
+		
+		<option value="//api/name/dateWithEra:year:month:day:hour:minute:second:nanosecond:">- dateWithEra:year:month:day:hour:minute:second:nanosecond:</option>
+		
+		<option value="//api/name/dateWithEra:yearForWeekOfYear:weekOfYear:weekday:hour:minute:second:nanosecond:">- dateWithEra:yearForWeekOfYear:weekOfYear:weekday:hour:minute:second:nanosecond:</option>
+		
+		<option value="//api/name/enumerateDatesStartingAfterDate:matchingComponents:options:usingBlock:">- enumerateDatesStartingAfterDate:matchingComponents:options:usingBlock:</option>
+		
+		<option value="//api/name/getEra:year:month:day:fromDate:">- getEra:year:month:day:fromDate:</option>
+		
+		<option value="//api/name/getEra:yearForWeekOfYear:weekOfYear:weekday:fromDate:">- getEra:yearForWeekOfYear:weekOfYear:weekday:fromDate:</option>
+		
+		<option value="//api/name/getHour:minute:second:nanosecond:fromDate:">- getHour:minute:second:nanosecond:fromDate:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithCalendarIdentifier:">- initWithCalendarIdentifier:</option>
+		
+		<option value="//api/name/isDate:equalToDate:toUnitGranularity:">- isDate:equalToDate:toUnitGranularity:</option>
+		
+		<option value="//api/name/isDate:inSameDayAsDate:">- isDate:inSameDayAsDate:</option>
+		
+		<option value="//api/name/isDateInToday:">- isDateInToday:</option>
+		
+		<option value="//api/name/isDateInTomorrow:">- isDateInTomorrow:</option>
+		
+		<option value="//api/name/isDateInWeekend:">- isDateInWeekend:</option>
+		
+		<option value="//api/name/isDateInYesterday:">- isDateInYesterday:</option>
+		
+		<option value="//api/name/maximumRangeOfUnit:">- maximumRangeOfUnit:</option>
+		
+		<option value="//api/name/minimumRangeOfUnit:">- minimumRangeOfUnit:</option>
+		
+		<option value="//api/name/nextDateAfterDate:matchingComponents:options:">- nextDateAfterDate:matchingComponents:options:</option>
+		
+		<option value="//api/name/nextDateAfterDate:matchingHour:minute:second:options:">- nextDateAfterDate:matchingHour:minute:second:options:</option>
+		
+		<option value="//api/name/nextDateAfterDate:matchingUnit:value:options:">- nextDateAfterDate:matchingUnit:value:options:</option>
+		
+		<option value="//api/name/nextWeekendStartDate:interval:options:afterDate:">- nextWeekendStartDate:interval:options:afterDate:</option>
+		
+		<option value="//api/name/ordinalityOfUnit:inUnit:forDate:">- ordinalityOfUnit:inUnit:forDate:</option>
+		
+		<option value="//api/name/rangeOfUnit:inUnit:forDate:">- rangeOfUnit:inUnit:forDate:</option>
+		
+		<option value="//api/name/rangeOfUnit:startDate:interval:forDate:">- rangeOfUnit:startDate:interval:forDate:</option>
+		
+		<option value="//api/name/rangeOfWeekendStartDate:interval:containingDate:">- rangeOfWeekendStartDate:interval:containingDate:</option>
+		
+		<option value="//api/name/startOfDayForDate:">- startOfDayForDate:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSCalendar Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/NSCopying.html">NSCopying</a><br /><a href="../Protocols/NSSecureCoding.html">NSSecureCoding</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSCalendar.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/currentCalendar" title="currentCalendar"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentCalendar">&nbsp;&nbsp;currentCalendar</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (class, readonly, copy) NSCalendar *currentCalendar</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (class, readonly, strong) NSCalendar *API_AVAILABLE ( macos ( 10.5 , ios ( 2.0 , watchos ( 2.0 , tvos ( 9.0 )</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calendarWithIdentifier:" title="calendarWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calendarWithIdentifier:">+&nbsp;calendarWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSCalendar *)calendarWithIdentifier:(NSCalendarIdentifier)<em>calendarIdentifierConstant</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCalendarIdentifier:" title="initWithCalendarIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCalendarIdentifier:">&ndash;&nbsp;initWithCalendarIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)initWithCalendarIdentifier:(NSCalendarIdentifier)<em>ident</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calendarIdentifier" title="calendarIdentifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calendarIdentifier">&nbsp;&nbsp;calendarIdentifier</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSCalendarIdentifier calendarIdentifier</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locale" title="locale"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locale">&nbsp;&nbsp;locale</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) NSLocale *locale</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/timeZone" title="timeZone"></a>
+	<h3 class="method-title"><code><a href="#//api/name/timeZone">&nbsp;&nbsp;timeZone</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (copy) NSTimeZone *timeZone</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/firstWeekday" title="firstWeekday"></a>
+	<h3 class="method-title"><code><a href="#//api/name/firstWeekday">&nbsp;&nbsp;firstWeekday</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property NSUInteger firstWeekday</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/minimumDaysInFirstWeek" title="minimumDaysInFirstWeek"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minimumDaysInFirstWeek">&nbsp;&nbsp;minimumDaysInFirstWeek</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property NSUInteger minimumDaysInFirstWeek</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/minimumRangeOfUnit:" title="minimumRangeOfUnit:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minimumRangeOfUnit:">&ndash;&nbsp;minimumRangeOfUnit:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSRange)minimumRangeOfUnit:(NSCalendarUnit)<em>unit</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maximumRangeOfUnit:" title="maximumRangeOfUnit:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maximumRangeOfUnit:">&ndash;&nbsp;maximumRangeOfUnit:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSRange)maximumRangeOfUnit:(NSCalendarUnit)<em>unit</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rangeOfUnit:inUnit:forDate:" title="rangeOfUnit:inUnit:forDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rangeOfUnit:inUnit:forDate:">&ndash;&nbsp;rangeOfUnit:inUnit:forDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSRange)rangeOfUnit:(NSCalendarUnit)<em>smaller</em> inUnit:(NSCalendarUnit)<em>larger</em> forDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ordinalityOfUnit:inUnit:forDate:" title="ordinalityOfUnit:inUnit:forDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ordinalityOfUnit:inUnit:forDate:">&ndash;&nbsp;ordinalityOfUnit:inUnit:forDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)ordinalityOfUnit:(NSCalendarUnit)<em>smaller</em> inUnit:(NSCalendarUnit)<em>larger</em> forDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rangeOfUnit:startDate:interval:forDate:" title="rangeOfUnit:startDate:interval:forDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rangeOfUnit:startDate:interval:forDate:">&ndash;&nbsp;rangeOfUnit:startDate:interval:forDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)rangeOfUnit:(NSCalendarUnit)<em>unit</em> startDate:(NSDate *_Nullable *_Nullable)<em>datep</em> interval:(nullable NSTimeInterval *)<em>tip</em> forDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateFromComponents:" title="dateFromComponents:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateFromComponents:">&ndash;&nbsp;dateFromComponents:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDate *)dateFromComponents:(NSDateComponents *)<em>comps</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/components:fromDate:" title="components:fromDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/components:fromDate:">&ndash;&nbsp;components:fromDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDateComponents *)components:(NSCalendarUnit)<em>unitFlags</em> fromDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateByAddingComponents:toDate:options:" title="dateByAddingComponents:toDate:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateByAddingComponents:toDate:options:">&ndash;&nbsp;dateByAddingComponents:toDate:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDate *)dateByAddingComponents:(NSDateComponents *)<em>comps</em> toDate:(NSDate *)<em>date</em> options:(NSCalendarOptions)<em>opts</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/components:fromDate:toDate:options:" title="components:fromDate:toDate:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/components:fromDate:toDate:options:">&ndash;&nbsp;components:fromDate:toDate:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDateComponents *)components:(NSCalendarUnit)<em>unitFlags</em> fromDate:(NSDate *)<em>startingDate</em> toDate:(NSDate *)<em>resultDate</em> options:(NSCalendarOptions)<em>opts</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getEra:year:month:day:fromDate:" title="getEra:year:month:day:fromDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getEra:year:month:day:fromDate:">&ndash;&nbsp;getEra:year:month:day:fromDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)getEra:(out nullable NSInteger *)<em>eraValuePointer</em> year:(out nullable NSInteger *)<em>yearValuePointer</em> month:(out nullable NSInteger *)<em>monthValuePointer</em> day:(out nullable NSInteger *)<em>dayValuePointer</em> fromDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getEra:yearForWeekOfYear:weekOfYear:weekday:fromDate:" title="getEra:yearForWeekOfYear:weekOfYear:weekday:fromDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getEra:yearForWeekOfYear:weekOfYear:weekday:fromDate:">&ndash;&nbsp;getEra:yearForWeekOfYear:weekOfYear:weekday:fromDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)getEra:(out nullable NSInteger *)<em>eraValuePointer</em> yearForWeekOfYear:(out nullable NSInteger *)<em>yearValuePointer</em> weekOfYear:(out nullable NSInteger *)<em>weekValuePointer</em> weekday:(out nullable NSInteger *)<em>weekdayValuePointer</em> fromDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getHour:minute:second:nanosecond:fromDate:" title="getHour:minute:second:nanosecond:fromDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getHour:minute:second:nanosecond:fromDate:">&ndash;&nbsp;getHour:minute:second:nanosecond:fromDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)getHour:(out nullable NSInteger *)<em>hourValuePointer</em> minute:(out nullable NSInteger *)<em>minuteValuePointer</em> second:(out nullable NSInteger *)<em>secondValuePointer</em> nanosecond:(out nullable NSInteger *)<em>nanosecondValuePointer</em> fromDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/component:fromDate:" title="component:fromDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/component:fromDate:">&ndash;&nbsp;component:fromDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)component:(NSCalendarUnit)<em>unit</em> fromDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateWithEra:year:month:day:hour:minute:second:nanosecond:" title="dateWithEra:year:month:day:hour:minute:second:nanosecond:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateWithEra:year:month:day:hour:minute:second:nanosecond:">&ndash;&nbsp;dateWithEra:year:month:day:hour:minute:second:nanosecond:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDate *)dateWithEra:(NSInteger)<em>eraValue</em> year:(NSInteger)<em>yearValue</em> month:(NSInteger)<em>monthValue</em> day:(NSInteger)<em>dayValue</em> hour:(NSInteger)<em>hourValue</em> minute:(NSInteger)<em>minuteValue</em> second:(NSInteger)<em>secondValue</em> nanosecond:(NSInteger)<em>nanosecondValue</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateWithEra:yearForWeekOfYear:weekOfYear:weekday:hour:minute:second:nanosecond:" title="dateWithEra:yearForWeekOfYear:weekOfYear:weekday:hour:minute:second:nanosecond:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateWithEra:yearForWeekOfYear:weekOfYear:weekday:hour:minute:second:nanosecond:">&ndash;&nbsp;dateWithEra:yearForWeekOfYear:weekOfYear:weekday:hour:minute:second:nanosecond:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDate *)dateWithEra:(NSInteger)<em>eraValue</em> yearForWeekOfYear:(NSInteger)<em>yearValue</em> weekOfYear:(NSInteger)<em>weekValue</em> weekday:(NSInteger)<em>weekdayValue</em> hour:(NSInteger)<em>hourValue</em> minute:(NSInteger)<em>minuteValue</em> second:(NSInteger)<em>secondValue</em> nanosecond:(NSInteger)<em>nanosecondValue</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startOfDayForDate:" title="startOfDayForDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startOfDayForDate:">&ndash;&nbsp;startOfDayForDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDate *)startOfDayForDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/componentsInTimeZone:fromDate:" title="componentsInTimeZone:fromDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/componentsInTimeZone:fromDate:">&ndash;&nbsp;componentsInTimeZone:fromDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDateComponents *)componentsInTimeZone:(NSTimeZone *)<em>timezone</em> fromDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/compareDate:toDate:toUnitGranularity:" title="compareDate:toDate:toUnitGranularity:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/compareDate:toDate:toUnitGranularity:">&ndash;&nbsp;compareDate:toDate:toUnitGranularity:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSComparisonResult)compareDate:(NSDate *)<em>date1</em> toDate:(NSDate *)<em>date2</em> toUnitGranularity:(NSCalendarUnit)<em>unit</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isDate:equalToDate:toUnitGranularity:" title="isDate:equalToDate:toUnitGranularity:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isDate:equalToDate:toUnitGranularity:">&ndash;&nbsp;isDate:equalToDate:toUnitGranularity:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isDate:(NSDate *)<em>date1</em> equalToDate:(NSDate *)<em>date2</em> toUnitGranularity:(NSCalendarUnit)<em>unit</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isDate:inSameDayAsDate:" title="isDate:inSameDayAsDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isDate:inSameDayAsDate:">&ndash;&nbsp;isDate:inSameDayAsDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isDate:(NSDate *)<em>date1</em> inSameDayAsDate:(NSDate *)<em>date2</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isDateInToday:" title="isDateInToday:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isDateInToday:">&ndash;&nbsp;isDateInToday:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isDateInToday:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isDateInYesterday:" title="isDateInYesterday:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isDateInYesterday:">&ndash;&nbsp;isDateInYesterday:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isDateInYesterday:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isDateInTomorrow:" title="isDateInTomorrow:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isDateInTomorrow:">&ndash;&nbsp;isDateInTomorrow:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isDateInTomorrow:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isDateInWeekend:" title="isDateInWeekend:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isDateInWeekend:">&ndash;&nbsp;isDateInWeekend:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isDateInWeekend:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rangeOfWeekendStartDate:interval:containingDate:" title="rangeOfWeekendStartDate:interval:containingDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rangeOfWeekendStartDate:interval:containingDate:">&ndash;&nbsp;rangeOfWeekendStartDate:interval:containingDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)rangeOfWeekendStartDate:(out NSDate *_Nullable *_Nullable)<em>datep</em> interval:(out nullable NSTimeInterval *)<em>tip</em> containingDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextWeekendStartDate:interval:options:afterDate:" title="nextWeekendStartDate:interval:options:afterDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextWeekendStartDate:interval:options:afterDate:">&ndash;&nbsp;nextWeekendStartDate:interval:options:afterDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)nextWeekendStartDate:(out NSDate *_Nullable *_Nullable)<em>datep</em> interval:(out nullable NSTimeInterval *)<em>tip</em> options:(NSCalendarOptions)<em>options</em> afterDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/components:fromDateComponents:toDateComponents:options:" title="components:fromDateComponents:toDateComponents:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/components:fromDateComponents:toDateComponents:options:">&ndash;&nbsp;components:fromDateComponents:toDateComponents:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDateComponents *)components:(NSCalendarUnit)<em>unitFlags</em> fromDateComponents:(NSDateComponents *)<em>startingDateComp</em> toDateComponents:(NSDateComponents *)<em>resultDateComp</em> options:(NSCalendarOptions)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateByAddingUnit:value:toDate:options:" title="dateByAddingUnit:value:toDate:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateByAddingUnit:value:toDate:options:">&ndash;&nbsp;dateByAddingUnit:value:toDate:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDate *)dateByAddingUnit:(NSCalendarUnit)<em>unit</em> value:(NSInteger)<em>value</em> toDate:(NSDate *)<em>date</em> options:(NSCalendarOptions)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enumerateDatesStartingAfterDate:matchingComponents:options:usingBlock:" title="enumerateDatesStartingAfterDate:matchingComponents:options:usingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enumerateDatesStartingAfterDate:matchingComponents:options:usingBlock:">&ndash;&nbsp;enumerateDatesStartingAfterDate:matchingComponents:options:usingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)enumerateDatesStartingAfterDate:(NSDate *)<em>start</em> matchingComponents:(NSDateComponents *)<em>comps</em> options:(NSCalendarOptions)<em>opts</em> usingBlock:(void ( NS_NOESCAPE ^ ) ( NSDate *_Nullable date , BOOL exactMatch , BOOL *stop ))<em>block</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextDateAfterDate:matchingComponents:options:" title="nextDateAfterDate:matchingComponents:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextDateAfterDate:matchingComponents:options:">&ndash;&nbsp;nextDateAfterDate:matchingComponents:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDate *)nextDateAfterDate:(NSDate *)<em>date</em> matchingComponents:(NSDateComponents *)<em>comps</em> options:(NSCalendarOptions)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextDateAfterDate:matchingUnit:value:options:" title="nextDateAfterDate:matchingUnit:value:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextDateAfterDate:matchingUnit:value:options:">&ndash;&nbsp;nextDateAfterDate:matchingUnit:value:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDate *)nextDateAfterDate:(NSDate *)<em>date</em> matchingUnit:(NSCalendarUnit)<em>unit</em> value:(NSInteger)<em>value</em> options:(NSCalendarOptions)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextDateAfterDate:matchingHour:minute:second:options:" title="nextDateAfterDate:matchingHour:minute:second:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextDateAfterDate:matchingHour:minute:second:options:">&ndash;&nbsp;nextDateAfterDate:matchingHour:minute:second:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDate *)nextDateAfterDate:(NSDate *)<em>date</em> matchingHour:(NSInteger)<em>hourValue</em> minute:(NSInteger)<em>minuteValue</em> second:(NSInteger)<em>secondValue</em> options:(NSCalendarOptions)<em>options</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateBySettingUnit:value:ofDate:options:" title="dateBySettingUnit:value:ofDate:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateBySettingUnit:value:ofDate:options:">&ndash;&nbsp;dateBySettingUnit:value:ofDate:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDate *)dateBySettingUnit:(NSCalendarUnit)<em>unit</em> value:(NSInteger)<em>v</em> ofDate:(NSDate *)<em>date</em> options:(NSCalendarOptions)<em>opts</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateBySettingHour:minute:second:ofDate:options:" title="dateBySettingHour:minute:second:ofDate:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateBySettingHour:minute:second:ofDate:options:">&ndash;&nbsp;dateBySettingHour:minute:second:ofDate:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDate *)dateBySettingHour:(NSInteger)<em>h</em> minute:(NSInteger)<em>m</em> second:(NSInteger)<em>s</em> ofDate:(NSDate *)<em>date</em> options:(NSCalendarOptions)<em>opts</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/date:matchesComponents:" title="date:matchesComponents:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/date:matchesComponents:">&ndash;&nbsp;date:matchesComponents:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)date:(NSDate *)<em>date</em> matchesComponents:(NSDateComponents *)<em>components</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCapturePhotoBracketSettings Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/bracketedSettings">bracketedSettings</option>
+		
+		<option value="//api/name/lensStabilizationEnabled">lensStabilizationEnabled</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:">+ photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:</option>
+		
+		<option value="//api/name/photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:">+ photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCapturePhotoBracketSettings Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCapturePhotoOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCapturePhotoBracketSettings
+@abstract
+    A concrete subclass of <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a> that describes a bracketed capture.</p>
+
+<p>@discussion
+    In addition to the properties expressed in the base class, an AVCapturePhotoBracketSettings contains an array of <a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a> objects, where each describes one individual photo in the bracket. <a href="#//api/name/bracketedSettings">bracketedSettings</a>.count must be &lt;= AVCapturePhotoOutput&rsquo;s -maxBracketedCapturePhotoCount. Capturing a photo bracket may require the allocation of additional resources.</p>
+
+<pre><code>When you request a bracketed capture, your AVCapturePhotoCaptureDelegate's -captureOutput:didFinishProcessing{Photo | RawPhoto}... callbacks are called back bracketSettings.count times and provided with the corresponding AVCaptureBracketedStillImageSettings object from your request.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:" title="photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:">+&nbsp;photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:
+@abstract
+    Creates an instance of AVCapturePhotoBracketSettings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)photoBracketSettingsWithRawPixelFormatType:(OSType)<em>rawPixelFormatType</em> processedFormat:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>processedFormat</em> bracketedSettings:(NSArray&lt;__kindofAVCaptureBracketedStillImageSettings*&gt; *)<em>bracketedSettings</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:
+@abstract
+    Creates an instance of AVCapturePhotoBracketSettings.</p>
+
+<p>@param rawPixelFormatType
+    One of the OSTypes contained in AVCapturePhotoOutput&rsquo;s -availableRawPhotoPixelFormatTypes array. May be set to 0 if you do not desire RAW capture.
+@param processedFormat
+    A dictionary of Core Video pixel buffer attributes or AVVideoSettings, analogous to AVCaptureStillImageOutput&rsquo;s outputSettings property. If you wish an uncompressed format, your dictionary must contain kCVPixelBufferPixelFormatTypeKey, and the format specified must be present in AVCapturePhotoOutput&rsquo;s -availablePhotoPixelFormatTypes array. kCVPixelBufferPixelFormatTypeKey is the only supported key when expressing uncompressed output. If you wish a compressed format, your dictionary must contain AVVideoCodecKey and the codec specified must be present in AVCapturePhotoOutput&rsquo;s -availablePhotoCodecTypes array. If you are specifying a compressed format, the AVVideoCompressionPropertiesKey is also supported, with a payload dictionary containing a single AVVideoQualityKey. If you only wish to capture RAW, you may pass a non-zero rawPixelFormatType and a nil processedFormat dictionary. If you pass a rawPixelFormatType of 0 AND a nil processedFormat dictionary, the default output of AVVideoCodecTypeJPEG will be delivered.
+@param <a href="#//api/name/bracketedSettings">bracketedSettings</a>
+    An array of <a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a> objects (defined in <a href="../Classes/AVCaptureStillImageOutput.html">AVCaptureStillImageOutput</a>.h). All must be of the same type, either <a href="../Classes/AVCaptureManualExposureBracketedStillImageSettings.html">AVCaptureManualExposureBracketedStillImageSettings</a> or <a href="../Classes/AVCaptureAutoExposureBracketedStillImageSettings.html">AVCaptureAutoExposureBracketedStillImageSettings</a>. <a href="#//api/name/bracketedSettings">bracketedSettings</a>.count must be &lt;= AVCapturePhotoOutput&rsquo;s -maxBracketedCapturePhotoCount.
+@result
+    An instance of AVCapturePhotoBracketSettings.</p>
+
+<p>@discussion
+    An NSInvalidArgumentException is thrown if <a href="#//api/name/bracketedSettings">bracketedSettings</a> is nil, contains zero elements, or mixes and matches different subclasses of <a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a>.</p>
+
+<pre><code>AVCapturePhotoBracketSettings do not support flashMode, autoStillImageStabilizationEnabled, livePhotoMovieFileURL or livePhotoMovieMetadata.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:" title="photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:">+&nbsp;photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:
+@abstract
+    Creates an instance of AVCapturePhotoBracketSettings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)photoBracketSettingsWithRawPixelFormatType:(OSType)<em>rawPixelFormatType</em> rawFileType:(nullable AVFileType)<em>rawFileType</em> processedFormat:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>processedFormat</em> processedFileType:(nullable AVFileType)<em>processedFileType</em> bracketedSettings:(NSArray&lt;AVCaptureBracketedStillImageSettings*&gt; *)<em>bracketedSettings</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:
+@abstract
+    Creates an instance of AVCapturePhotoBracketSettings.</p>
+
+<p>@param rawPixelFormatType
+    One of the OSTypes contained in AVCapturePhotoOutput&rsquo;s -availableRawPhotoPixelFormatTypes array. May be set to 0 if you do not desire RAW capture.
+@param rawFileType
+    The file container for which the RAW image should be formatted to be written. Pass nil if you have no preferred file container. A default container will be chosen for you.
+@param processedFormat
+    A dictionary of Core Video pixel buffer attributes or AVVideoSettings, analogous to AVCaptureStillImageOutput&rsquo;s outputSettings property. If you wish an uncompressed format, your dictionary must contain kCVPixelBufferPixelFormatTypeKey, and the format specified must be present in AVCapturePhotoOutput&rsquo;s -availablePhotoPixelFormatTypes array. kCVPixelBufferPixelFormatTypeKey is the only supported key when expressing uncompressed output. If you wish a compressed format, your dictionary must contain AVVideoCodecKey and the codec specified must be present in AVCapturePhotoOutput&rsquo;s -availablePhotoCodecTypes array. If you are specifying a compressed format, the AVVideoCompressionPropertiesKey is also supported, with a payload dictionary containing a single AVVideoQualityKey. If you only wish to capture RAW, you may pass a non-zero rawPixelFormatType and a nil processedFormat dictionary. If you pass a rawPixelFormatType of 0 AND a nil processedFormat dictionary, the default output of AVVideoCodecTypeJPEG will be delivered.
+@param processedFileType
+    The file container for which the processed image should be formatted to be written. Pass nil if you have no preferred file container. A default container will be chosen for you.
+@param <a href="#//api/name/bracketedSettings">bracketedSettings</a>
+    An array of <a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a> objects (defined in <a href="../Classes/AVCaptureStillImageOutput.html">AVCaptureStillImageOutput</a>.h). All must be of the same type, either <a href="../Classes/AVCaptureManualExposureBracketedStillImageSettings.html">AVCaptureManualExposureBracketedStillImageSettings</a> or <a href="../Classes/AVCaptureAutoExposureBracketedStillImageSettings.html">AVCaptureAutoExposureBracketedStillImageSettings</a>. <a href="#//api/name/bracketedSettings">bracketedSettings</a>.count must be &lt;= AVCapturePhotoOutput&rsquo;s -maxBracketedCapturePhotoCount.
+@result
+    An instance of AVCapturePhotoBracketSettings.</p>
+
+<p>@discussion
+    An NSInvalidArgumentException is thrown if <a href="#//api/name/bracketedSettings">bracketedSettings</a> is nil, contains zero elements, or mixes and matches different subclasses of <a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a>.</p>
+
+<pre><code>AVCapturePhotoBracketSettings do not support flashMode, autoStillImageStabilizationEnabled, livePhotoMovieFileURL or livePhotoMovieMetadata.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bracketedSettings" title="bracketedSettings"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bracketedSettings">&nbsp;&nbsp;bracketedSettings</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property bracketedSettings
+@abstract
+    An array of <a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a> objects you passed in -initWithFormat:rawPixelFormatType:bracketedSettings:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;__kindofAVCaptureBracketedStillImageSettings*&gt; *bracketedSettings</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property bracketedSettings
+@abstract
+    An array of <a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a> objects you passed in -initWithFormat:rawPixelFormatType:bracketedSettings:</p>
+
+<p>@discussion
+    This read-only property never returns nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lensStabilizationEnabled" title="lensStabilizationEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lensStabilizationEnabled">&nbsp;&nbsp;lensStabilizationEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property lensStabilizationEnabled
+@abstract
+    Specifies whether lens (optical) stabilization should be employed during the bracketed capture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isLensStabilizationEnabled) BOOL lensStabilizationEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property lensStabilizationEnabled
+@abstract
+    Specifies whether lens (optical) stabilization should be employed during the bracketed capture.</p>
+
+<p>@discussion
+    Default value is NO. This property may only be set to YES if AVCapturePhotoOutput&rsquo;s isLensStabilizationDuringBracketedCaptureSupported is YES. When set to YES, <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a> holds the lens steady for the duration of the bracket to counter hand shake and produce a sharper bracket of images.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

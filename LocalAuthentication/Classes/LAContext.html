@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>LAContext Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 LocalAuthentication Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_3">_3</option>
+		
+		<option value="//api/name/localizedFallbackTitle">localizedFallbackTitle</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/canEvaluatePolicy:error:">- canEvaluatePolicy:error:</option>
+		
+		<option value="//api/name/evaluateAccessControl:operation:localizedReason:reply:">- evaluateAccessControl:operation:localizedReason:reply:</option>
+		
+		<option value="//api/name/evaluatePolicy:localizedReason:reply:">- evaluatePolicy:localizedReason:reply:</option>
+		
+		<option value="//api/name/invalidate">- invalidate</option>
+		
+		<option value="//api/name/isCredentialSet:">- isCredentialSet:</option>
+		
+		<option value="//api/name/setCredential:type:">- setCredential:type:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">LAContext Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>LAContext.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/canEvaluatePolicy:error:" title="canEvaluatePolicy:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canEvaluatePolicy:error:">&ndash;&nbsp;canEvaluatePolicy:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>YES if the policy can be evaluated, NO otherwise.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)canEvaluatePolicy:(LAPolicy)<em>policy</em> error:(NSError *__autoreleasing *)<em>error</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the policy can be evaluated, NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LAContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluatePolicy:localizedReason:reply:" title="evaluatePolicy:localizedReason:reply:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluatePolicy:localizedReason:reply:">&ndash;&nbsp;evaluatePolicy:localizedReason:reply:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Typical error codes returned by this call are:
+@li          LAErrorUserFallback if user tapped the fallback button
+@li          LAErrorUserCancel if user has tapped the Cancel button
+@li          LAErrorSystemCancel if some system event interrupted the evaluation (e.g. Home button pressed).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)evaluatePolicy:(LAPolicy)<em>policy</em> localizedReason:(NSString *)<em>localizedReason</em> reply:(void ( ^ ) ( BOOL success , NSError *__nullable error ))<em>reply</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Typical error codes returned by this call are:
+@li          LAErrorUserFallback if user tapped the fallback button
+@li          LAErrorUserCancel if user has tapped the Cancel button
+@li          LAErrorSystemCancel if some system event interrupted the evaluation (e.g. Home button pressed).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LAContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/invalidate" title="invalidate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/invalidate">&ndash;&nbsp;invalidate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>         Invalidating a context that has been already invalidated has no effect.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)invalidate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>         Invalidating a context that has been already invalidated has no effect.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LAContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCredential:type:" title="setCredential:type:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCredential:type:">&ndash;&nbsp;setCredential:type:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setCredential:(nullable NSData *)<em>credential</em> type:(LACredentialType)<em>type</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isCredentialSet:" title="isCredentialSet:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isCredentialSet:">&ndash;&nbsp;isCredentialSet:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isCredentialSet:(LACredentialType)<em>type</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluateAccessControl:operation:localizedReason:reply:" title="evaluateAccessControl:operation:localizedReason:reply:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluateAccessControl:operation:localizedReason:reply:">&ndash;&nbsp;evaluateAccessControl:operation:localizedReason:reply:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)evaluateAccessControl:(SecAccessControlRef)<em>accessControl</em> operation:(LAAccessControlOperation)<em>operation</em> localizedReason:(NSString *)<em>localizedReason</em> reply:(void ( ^ ) ( BOOL success , NSError *__nullable error ))<em>reply</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localizedFallbackTitle" title="localizedFallbackTitle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localizedFallbackTitle">&nbsp;&nbsp;localizedFallbackTitle</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fallback button title.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, copy) NSString *localizedFallbackTitle</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Fallback button title.</p><p>Allows fallback button title customization. If set to empty string, the button will be hidden.
+             A default title &ldquo;Use Password&hellip;&rdquo; is used when this property is left nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LAContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cancel button title.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, copy) NSString *NS_AVAILABLE ( 10 _12 , 10 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Cancel button title.</p><p>Allows cancel button title customization. A default title &ldquo;Cancel&rdquo; is used when
+             this property is left nil or is set to empty string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LAContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_3" title="_3"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_3">&nbsp;&nbsp;_3</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Please note that setting this property with high values does not prevent biometry lockout after 5
+          wrong attempts.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable) NSNumber *NS_DEPRECATED_IOS ( 8 _3</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> Please note that setting this property with high values does not prevent biometry lockout after 5
+          wrong attempts.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LAContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A localized string from this property is displayed in the authentication UI if the caller didn&rsquo;t specify
+             its own authentication reason (e.g. a keychain operation with kSecUseAuthenticationContext). This property
+             is ignored if the authentication reason was provided by caller.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *API_AVAILABLE ( macos ( 10.13 , ios ( 11.0 API_UNAVAILABLE ( watchos , tvos )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A localized string from this property is displayed in the authentication UI if the caller didn&rsquo;t specify
+             its own authentication reason (e.g. a keychain operation with kSecUseAuthenticationContext). This property
+             is ignored if the authentication reason was provided by caller.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">LAContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

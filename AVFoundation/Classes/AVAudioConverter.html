@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAudioConverter Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/applicableEncodeBitRates">applicableEncodeBitRates</option>
+		
+		<option value="//api/name/applicableEncodeSampleRates">applicableEncodeSampleRates</option>
+		
+		<option value="//api/name/availableEncodeBitRates">availableEncodeBitRates</option>
+		
+		<option value="//api/name/availableEncodeChannelLayoutTags">availableEncodeChannelLayoutTags</option>
+		
+		<option value="//api/name/availableEncodeSampleRates">availableEncodeSampleRates</option>
+		
+		<option value="//api/name/bitRate">bitRate</option>
+		
+		<option value="//api/name/bitRateStrategy">bitRateStrategy</option>
+		
+		<option value="//api/name/channelMap">channelMap</option>
+		
+		<option value="//api/name/dither">dither</option>
+		
+		<option value="//api/name/downmix">downmix</option>
+		
+		<option value="//api/name/inputFormat">inputFormat</option>
+		
+		<option value="//api/name/magicCookie">magicCookie</option>
+		
+		<option value="//api/name/maximumOutputPacketSize">maximumOutputPacketSize</option>
+		
+		<option value="//api/name/outputFormat">outputFormat</option>
+		
+		<option value="//api/name/primeInfo">primeInfo</option>
+		
+		<option value="//api/name/primeMethod">primeMethod</option>
+		
+		<option value="//api/name/sampleRateConverterAlgorithm">sampleRateConverterAlgorithm</option>
+		
+		<option value="//api/name/sampleRateConverterQuality">sampleRateConverterQuality</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/convertToBuffer:error:withInputFromBlock:">- convertToBuffer:error:withInputFromBlock:</option>
+		
+		<option value="//api/name/convertToBuffer:fromBuffer:error:">- convertToBuffer:fromBuffer:error:</option>
+		
+		<option value="//api/name/initFromFormat:toFormat:">- initFromFormat:toFormat:</option>
+		
+		<option value="//api/name/reset">- reset</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAudioConverter Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAudioConverter.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class AVAudioConverter
+@abstract
+    AVAudioConverter converts streams of audio between various formats.
+@discussion
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initFromFormat:toFormat:" title="initFromFormat:toFormat:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromFormat:toFormat:">&ndash;&nbsp;initFromFormat:toFormat:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize from input and output formats.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initFromFormat:(AVAudioFormat *)<em>fromFormat</em> toFormat:(AVAudioFormat *)<em>toFormat</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fromFormat</code></th>
+						<td><p>The input format.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toFormat</code></th>
+						<td><p>The output format.
+    @discussion
+        Returns nil if the format conversion is not possible.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initFromFormat:toFormat:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reset" title="reset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reset">&ndash;&nbsp;reset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Resets the converter so that a new stream may be converted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)reset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method reset</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputFormat" title="inputFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputFormat">&nbsp;&nbsp;inputFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The format of the input audio stream. (NB. <a href="../Classes/AVAudioFormat.html">AVAudioFormat</a> includes the channel layout)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVAudioFormat *inputFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property inputFormat</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputFormat" title="outputFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputFormat">&nbsp;&nbsp;outputFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The format of the output audio stream. (NB. <a href="../Classes/AVAudioFormat.html">AVAudioFormat</a> includes the channel layout)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVAudioFormat *outputFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property outputFormat</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/channelMap" title="channelMap"></a>
+	<h3 class="method-title"><code><a href="#//api/name/channelMap">&nbsp;&nbsp;channelMap</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An array of integers indicating from which input to derive each output.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSArray&lt;NSNumber*&gt; *channelMap</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property channelMap</p><p>The array has size equal to the number of output channels. Each element&rsquo;s value is
+        the input channel number, starting with zero, that is to be copied to that output. A negative value means
+        that the output channel will have no source and will be silent.
+        Setting a channel map overrides channel mapping due to any channel layouts in the input and output formats that may have been supplied.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/magicCookie" title="magicCookie"></a>
+	<h3 class="method-title"><code><a href="#//api/name/magicCookie">&nbsp;&nbsp;magicCookie</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Decoders require some data in the form of a magicCookie in order to decode properly. Encoders will produce a magicCookie.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) NSData *magicCookie</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property magicCookie</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downmix" title="downmix"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downmix">&nbsp;&nbsp;downmix</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If YES and channel remapping is necessary, then channels will be mixed as appropriate instead of remapped. Default value is NO.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL downmix</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property downmix</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dither" title="dither"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dither">&nbsp;&nbsp;dither</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Setting YES will turn on dither, if dither makes sense in given the current formats and settings. Default value is NO.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL dither</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property dither</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sampleRateConverterQuality" title="sampleRateConverterQuality"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleRateConverterQuality">&nbsp;&nbsp;sampleRateConverterQuality</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An <a href="../Constants/AVAudioQuality.html">AVAudioQuality</a> value as defined in AVAudioSettings.h.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger sampleRateConverterQuality</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sampleRateConverterQuality</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sampleRateConverterAlgorithm" title="sampleRateConverterAlgorithm"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleRateConverterAlgorithm">&nbsp;&nbsp;sampleRateConverterAlgorithm</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An AVSampleRateConverterAlgorithmKey value as defined in AVAudioSettings.h.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) NSString *sampleRateConverterAlgorithm</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sampleRateConverterAlgorithm</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/primeMethod" title="primeMethod"></a>
+	<h3 class="method-title"><code><a href="#//api/name/primeMethod">&nbsp;&nbsp;primeMethod</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates the priming method to be used by the sample rate converter or decoder.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) AVAudioConverterPrimeMethod primeMethod</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property primeMethod</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/primeInfo" title="primeInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/primeInfo">&nbsp;&nbsp;primeInfo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates the the number of priming frames .</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) AVAudioConverterPrimeInfo primeInfo</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property primeInfo</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertToBuffer:fromBuffer:error:" title="convertToBuffer:fromBuffer:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertToBuffer:fromBuffer:error:">&ndash;&nbsp;convertToBuffer:fromBuffer:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform a simple conversion. That is, a conversion which does not involve codecs or sample rate conversion.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)convertToBuffer:(AVAudioPCMBuffer *)<em>outputBuffer</em> fromBuffer:(const AVAudioPCMBuffer *)<em>inputBuffer</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outputBuffer</code></th>
+						<td><p>The output buffer.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inputBuffer</code></th>
+						<td><p>The input buffer.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outError</code></th>
+						<td><p>An error if the conversion fails.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES is returned on success, NO when an error has occurred.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method convertToBuffer:fromBuffer:error:</p><p>The output buffer&rsquo;s frameCapacity should be at least at large as the inputBuffer&rsquo;s frameLength.
+        If the conversion involves a codec or sample rate conversion, you instead must use
+        <a href="#//api/name/convertToBuffer:error:withInputFromBlock:">convertToBuffer:error:withInputFromBlock:</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertToBuffer:error:withInputFromBlock:" title="convertToBuffer:error:withInputFromBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertToBuffer:error:withInputFromBlock:">&ndash;&nbsp;convertToBuffer:error:withInputFromBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform any supported conversion.
+    @param inputBlock
+        A block which will be called to get input data as needed. See description for AVAudioConverterInputBlock.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (AVAudioConverterOutputStatus)convertToBuffer:(AVAudioBuffer *)<em>outputBuffer</em> error:(NSError **)<em>outError</em> withInputFromBlock:(AVAudioConverterInputBlock)<em>inputBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outputBuffer</code></th>
+						<td><p>The output buffer.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outError</code></th>
+						<td><p>An error if the conversion fails.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <a href="../Constants/AVAudioConverterOutputStatus.html">AVAudioConverterOutputStatus</a> is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method convertToBuffer:error:withInputFromBlock:</p><p>It attempts to fill the buffer to its capacity. On return, the buffer&rsquo;s length indicates the number of
+        sample frames successfully converted.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Encoding Methods" name="task_Encoding Methods"></a>
+						<h2 class="task-title">Encoding Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/bitRate" title="bitRate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bitRate">&nbsp;&nbsp;bitRate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>bitRate in bits per second. Only applies when encoding.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger bitRate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property bitRate</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bitRateStrategy" title="bitRateStrategy"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bitRateStrategy">&nbsp;&nbsp;bitRateStrategy</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When encoding, an AVEncoderBitRateStrategyKey value constant as defined in AVAudioSettings.h. Returns nil if not encoding.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) NSString *bitRateStrategy</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property bitRateStrategy</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maximumOutputPacketSize" title="maximumOutputPacketSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maximumOutputPacketSize">&nbsp;&nbsp;maximumOutputPacketSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum size of an output packet, in bytes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger maximumOutputPacketSize</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property maximumOutputPacketSize</p><p>When encoding it is useful to know how large a packet can be in order to allocate a buffer to receive the output.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/availableEncodeBitRates" title="availableEncodeBitRates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availableEncodeBitRates">&nbsp;&nbsp;availableEncodeBitRates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When encoding, an NSArray of NSNumber of all bit rates provided by the codec. Returns nil if not encoding.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;NSNumber*&gt; *availableEncodeBitRates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property availableEncodeBitRates</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/applicableEncodeBitRates" title="applicableEncodeBitRates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/applicableEncodeBitRates">&nbsp;&nbsp;applicableEncodeBitRates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When encoding, an NSArray of NSNumber of bit rates that can be applied based on the current formats and settings. Returns nil if not encoding.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;NSNumber*&gt; *applicableEncodeBitRates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property applicableEncodeBitRates</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/availableEncodeSampleRates" title="availableEncodeSampleRates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availableEncodeSampleRates">&nbsp;&nbsp;availableEncodeSampleRates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When encoding, an NSArray of NSNumber of all output sample rates provided by the codec. Returns nil if not encoding.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;NSNumber*&gt; *availableEncodeSampleRates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property availableEncodeSampleRates</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/applicableEncodeSampleRates" title="applicableEncodeSampleRates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/applicableEncodeSampleRates">&nbsp;&nbsp;applicableEncodeSampleRates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When encoding, an NSArray of NSNumber of output sample rates that can be applied based on the current formats and settings. Returns nil if not encoding.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;NSNumber*&gt; *applicableEncodeSampleRates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property applicableEncodeSampleRates</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/availableEncodeChannelLayoutTags" title="availableEncodeChannelLayoutTags"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availableEncodeChannelLayoutTags">&nbsp;&nbsp;availableEncodeChannelLayoutTags</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When encoding, an NSArray of NSNumber of all output channel layout tags provided by the codec. Returns nil if not encoding.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;NSNumber*&gt; *availableEncodeChannelLayoutTags</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property availableEncodeChannelLayoutTags</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioConverter.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

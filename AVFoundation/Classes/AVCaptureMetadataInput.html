@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureMetadataInput Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/metadataInputWithFormatDescription:clock:">+ metadataInputWithFormatDescription:clock:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/appendTimedMetadataGroup:error:">- appendTimedMetadataGroup:error:</option>
+		
+		<option value="//api/name/initWithFormatDescription:clock:">- initWithFormatDescription:clock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureMetadataInput Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureInput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureMetadataInput
+@abstract
+    AVCaptureMetadataInput is a concrete subclass of <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> that provides a way for clients to supply AVMetadataItems to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>.</p>
+
+<p>@discussion
+    Instances of AVCaptureMetadataInput are input sources for <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a> that provide AVMetadataItems to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>. AVCaptureMetadataInputs present one and only one <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a>, which currently may only be connected to an <a href="../Classes/AVCaptureMovieFileOutput.html">AVCaptureMovieFileOutput</a>. The metadata supplied over the input port is provided by the client, and must conform to a client-supplied CMFormatDescription. The AVMetadataItems are supplied in an <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a>.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/metadataInputWithFormatDescription:clock:" title="metadataInputWithFormatDescription:clock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataInputWithFormatDescription:clock:">+&nbsp;metadataInputWithFormatDescription:clock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method metadataInputWithFormatDescription:clock:
+@abstract
+    Returns an AVCaptureMetadataInput instance that allows a client to provide AVTimedMetadataGroups to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)metadataInputWithFormatDescription:(CMMetadataFormatDescriptionRef)<em>desc</em> clock:(CMClockRef)<em>clock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method metadataInputWithFormatDescription:clock:
+@abstract
+    Returns an AVCaptureMetadataInput instance that allows a client to provide AVTimedMetadataGroups to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>.</p>
+
+<p>@param desc
+    A CMFormatDescription that defines the metadata to be supplied by the client. Throws an NSInvalidArgumentException if NULL is passed.
+@param clock
+    A CMClock that provided the timebase for the supplied samples. Throws an NSInvalidArgumentException if NULL is passed.
+@result
+    An AVCaptureMetadataInput instance.</p>
+
+<p>@discussion
+    This method returns an instance of AVCaptureMetadataInput that can be used to capture AVTimedMetadataGroups supplied by the client to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureInput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithFormatDescription:clock:" title="initWithFormatDescription:clock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFormatDescription:clock:">&ndash;&nbsp;initWithFormatDescription:clock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithFormatDescription:clock:
+@abstract
+    Creates an AVCaptureMetadataInput instance that allows a client to provide AVTimedMetadataGroups to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFormatDescription:(CMMetadataFormatDescriptionRef)<em>desc</em> clock:(CMClockRef)<em>clock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithFormatDescription:clock:
+@abstract
+    Creates an AVCaptureMetadataInput instance that allows a client to provide AVTimedMetadataGroups to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>.</p>
+
+<p>@param desc
+    A CMFormatDescription that defines the metadata to be supplied by the client. Throws NSInvalidArgumentException if NULL is passed.
+@param clock
+    A CMClock that provided the timebase for the supplied samples. Throws NSInvalidArgumentException if NULL is passed.
+@result
+    An AVCaptureMetadataInput instance, or nil, if the device could not be used for capture.</p>
+
+<p>@discussion
+    This method creates an instance of AVCaptureMetadataInput that can be used to capture AVTimedMetadataGroups supplied by the client to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureInput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/appendTimedMetadataGroup:error:" title="appendTimedMetadataGroup:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/appendTimedMetadataGroup:error:">&ndash;&nbsp;appendTimedMetadataGroup:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method appendTimedMetadataGroup:
+@abstract
+    Provides metadata to the <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)appendTimedMetadataGroup:(AVTimedMetadataGroup *)<em>metadata</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method appendTimedMetadataGroup:
+@abstract
+    Provides metadata to the <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>.</p>
+
+<p>@param metadata
+    An <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a> of metadata. Will throw an exception if nil. In order to denote a period of no metadata, an empty <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a> should be passed.</p>
+
+<p>@discussion
+    The provided <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a> will be provided to the <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>. The group&rsquo;s presentation timestamp is expressed in the context of the clock supplied to the initializer. It is not required that the <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a> have a duration; an empty <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a> can be supplied to denote a period of no metadata.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureInput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

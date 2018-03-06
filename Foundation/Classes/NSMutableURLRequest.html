@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSMutableURLRequest Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/HTTPBody">HTTPBody</option>
+		
+		<option value="//api/name/HTTPBodyStream">HTTPBodyStream</option>
+		
+		<option value="//api/name/HTTPMethod">HTTPMethod</option>
+		
+		<option value="//api/name/HTTPShouldHandleCookies">HTTPShouldHandleCookies</option>
+		
+		<option value="//api/name/URL">URL</option>
+		
+		<option value="//api/name/allHTTPHeaderFields">allHTTPHeaderFields</option>
+		
+		<option value="//api/name/cachePolicy">cachePolicy</option>
+		
+		<option value="//api/name/mainDocumentURL">mainDocumentURL</option>
+		
+		<option value="//api/name/timeoutInterval">timeoutInterval</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addValue:forHTTPHeaderField:">- addValue:forHTTPHeaderField:</option>
+		
+		<option value="//api/name/setValue:forHTTPHeaderField:">- setValue:forHTTPHeaderField:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSMutableURLRequest Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/NSURLRequest.html">NSURLRequest</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSURLRequest.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class NSMutableURLRequest
+</code></pre><p>This specialization of <a href="../Classes/NSURLRequest.html">NSURLRequest</a> is provided to aid
+    developers who may find it more convenient to mutate a single request
+    object for a series of <a href="#//api/name/URL">URL</a> loads instead of creating an immutable
+    <a href="../Classes/NSURLRequest.html">NSURLRequest</a> for each load. This programming model is supported by
+    the following contract stipulation between NSMutableURLRequest and
+    <a href="../Classes/NSURLConnection.html">NSURLConnection</a>: <a href="../Classes/NSURLConnection.html">NSURLConnection</a> makes a deep copy of each
+    NSMutableURLRequest object passed to one of its initializers.  <br/>
+    <p>NSMutableURLRequest is designed to be extended to support
+    protocol-specific data by adding categories to access a property
+    object provided in an interface targeted at protocol implementors.
+    <ul>
+    <li>Protocol implementors should direct their attention to the
+    NSMutableURLRequestExtensibility category on
+    NSMutableURLRequest for more information on how to provide
+    extensions on NSMutableURLRequest to support protocol-specific
+    request information.
+    <li>Clients of this API who wish to create NSMutableURLRequest
+    objects to load <a href="#//api/name/URL">URL</a> content should consult the protocol-specific
+    NSMutableURLRequest categories that are available. The
+    NSMutableHTTPURLRequest category on NSMutableURLRequest is an
+    example.
+    </ul></p>
+
+<pre><code>@category NSMutableURLRequest(NSMutableHTTPURLRequest) 
+The NSMutableHTTPURLRequest on NSMutableURLRequest provides methods
+for configuring information specific to HTTP protocol requests.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/URL" title="URL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/URL">&nbsp;&nbsp;URL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The URL of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) NSURL *URL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cachePolicy" title="cachePolicy"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cachePolicy">&nbsp;&nbsp;cachePolicy</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The cache policy of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property NSURLRequestCachePolicy cachePolicy</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/timeoutInterval" title="timeoutInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/timeoutInterval">&nbsp;&nbsp;timeoutInterval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the timeout interval of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property NSTimeInterval timeoutInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The timeout interval specifies the limit on the idle
+    interval allotted to a request in the process of loading. The &ldquo;idle
+    interval&rdquo; is defined as the period of time that has passed since the
+    last instance of load activity occurred for a request that is in the
+    process of loading. Hence, when an instance of load activity occurs
+    (e.g. bytes are received from the network for a request), the idle
+    interval for a request is reset to 0. If the idle interval ever
+    becomes greater than or equal to the timeout interval, the request
+    is considered to have timed out. This timeout interval is measured
+    in seconds.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mainDocumentURL" title="mainDocumentURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mainDocumentURL">&nbsp;&nbsp;mainDocumentURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the main document <a href="#//api/name/URL">URL</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) NSURL *mainDocumentURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The caller should pass the <a href="#//api/name/URL">URL</a> for an appropriate main
+    document, if known. For example, when loading a web page, the <a href="#//api/name/URL">URL</a>
+    of the main html document for the top-level frame should be
+    passed.  This main document will be used to implement the cookie
+    &ldquo;only from same domain as main document&rdquo; policy, and possibly
+    other things in the future.
+    NOTE: In the current implementation, the passed-in value is unused by the
+    framework. A fully functional version of this method will be available
+    in the future.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the <a href="../Constants/NSURLRequestNetworkServiceType.html">NSURLRequestNetworkServiceType</a> to associate with this request</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property NSURLRequestNetworkServiceType networkServiceType API_AVAILABLE ( macos ( 10.7 , ios ( 4.0 , watchos ( 2.0 , tvos ( 9.0 )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is used to provide the network layers with a hint as to the purpose
+of the request.  Most clients should not need to use this method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="NSMutableHTTPURLRequest Methods" name="task_NSMutableHTTPURLRequest Methods"></a>
+						<h2 class="task-title">NSMutableHTTPURLRequest Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/HTTPMethod" title="HTTPMethod"></a>
+	<h3 class="method-title"><code><a href="#//api/name/HTTPMethod">&nbsp;&nbsp;HTTPMethod</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the HTTP request method of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (copy) NSString *HTTPMethod</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allHTTPHeaderFields" title="allHTTPHeaderFields"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allHTTPHeaderFields">&nbsp;&nbsp;allHTTPHeaderFields</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the HTTP header fields of the receiver to the given
+    dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) NSDictionary&lt;NSString*NSString*&gt; *allHTTPHeaderFields</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method replaces all header fields that may have
+    existed before this method call.
+    <p>Since HTTP header fields must be string values, each object and
+    key in the dictionary passed to this method must answer YES when
+    sent an <tt>-isKindOfClass:[NSString class]</tt> message. If either
+    the key or value for a key-value pair answers NO when sent this
+    message, the key-value pair is skipped.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setValue:forHTTPHeaderField:" title="setValue:forHTTPHeaderField:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setValue:forHTTPHeaderField:">&ndash;&nbsp;setValue:forHTTPHeaderField:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the value of the given HTTP header field.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setValue:(nullable NSString *)<em>value</em> forHTTPHeaderField:(NSString *)<em>field</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>the header field value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>field</code></th>
+						<td><p>the header field name (case-insensitive).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method setValue:forHTTPHeaderField:
+</code></pre><p>If a value was previously set for the given header
+    field, that value is replaced with the given value. Note that, in
+    keeping with the HTTP RFC, HTTP header field names are
+    case-insensitive.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addValue:forHTTPHeaderField:" title="addValue:forHTTPHeaderField:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addValue:forHTTPHeaderField:">&ndash;&nbsp;addValue:forHTTPHeaderField:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an HTTP header field in the current header
+    dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addValue:(NSString *)<em>value</em> forHTTPHeaderField:(NSString *)<em>field</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>the header field value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>field</code></th>
+						<td><p>the header field name (case-insensitive).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method addValue:forHTTPHeaderField:
+</code></pre><p>This method provides a way to add values to header
+    fields incrementally. If a value was previously set for the given
+    header field, the given value is appended to the previously-existing
+    value. The appropriate field delimiter, a comma in the case of HTTP,
+    is added by the implementation, and should not be added to the given
+    value by the caller. Note that, in keeping with the HTTP RFC, HTTP
+    header field names are case-insensitive.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/HTTPBody" title="HTTPBody"></a>
+	<h3 class="method-title"><code><a href="#//api/name/HTTPBody">&nbsp;&nbsp;HTTPBody</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the request body data of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) NSData *HTTPBody</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This data is sent as the message body of the request, as
+    in done in an HTTP POST request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/HTTPBodyStream" title="HTTPBodyStream"></a>
+	<h3 class="method-title"><code><a href="#//api/name/HTTPBodyStream">&nbsp;&nbsp;HTTPBodyStream</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the request body to be the contents of the given stream.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, retain) NSInputStream *HTTPBodyStream</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The provided stream should be unopened; the request will take
+    over the stream&rsquo;s delegate.  The entire stream&rsquo;s contents will be
+    transmitted as the HTTP body of the request.  Note that the body stream
+    and the body data (set by <a href="#//api/name/HTTPBody">setHTTPBody:</a>, above) are mutually exclusive
+    - setting one will clear the other.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/HTTPShouldHandleCookies" title="HTTPShouldHandleCookies"></a>
+	<h3 class="method-title"><code><a href="#//api/name/HTTPShouldHandleCookies">&nbsp;&nbsp;HTTPShouldHandleCookies</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Decide whether default cookie handling will happen for
+    this request (YES if cookies should be sent with and set for this request;
+    otherwise NO).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property BOOL HTTPShouldHandleCookies</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The default is YES - in other words, cookies are sent from and
+    stored to the cookie manager by default.
+    NOTE: In releases prior to 10.3, this value is ignored</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLRequest.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

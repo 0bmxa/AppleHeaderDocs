@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>JSContext Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 JavaScriptCore Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/JSGlobalContextRef">JSGlobalContextRef</option>
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/exception">exception</option>
+		
+		<option value="//api/name/exceptionHandler">exceptionHandler</option>
+		
+		<option value="//api/name/globalObject">globalObject</option>
+		
+		<option value="//api/name/virtualMachine">virtualMachine</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/contextWithJSGlobalContextRef:">+ contextWithJSGlobalContextRef:</option>
+		
+		<option value="//api/name/currentArguments">+ currentArguments</option>
+		
+		<option value="//api/name/currentCallee">+ currentCallee</option>
+		
+		<option value="//api/name/currentContext">+ currentContext</option>
+		
+		<option value="//api/name/currentThis">+ currentThis</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/evaluateScript:">- evaluateScript:</option>
+		
+		<option value="//api/name/evaluateScript:withSourceURL:">- evaluateScript:withSourceURL:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithVirtualMachine:">- initWithVirtualMachine:</option>
+		
+		<option value="//api/name/objectForKeyedSubscript:">- objectForKeyedSubscript:</option>
+		
+		<option value="//api/name/setObject:forKeyedSubscript:">- setObject:forKeyedSubscript:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">JSContext Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>JSContext.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@interface</p><p>A JSContext is a JavaScript execution environment. All
+JavaScript execution takes place within a context, and all JavaScript values
+are tied to a context.</p>
+
+<p>@category</p><p>These functions are for bridging between the C API and the Objective-C API.</p>
+
+<p>@category</p><p>Instances of JSContext implement the following methods in order to enable
+support for subscript access by key and index, for example:</p>
+
+<p>@textblock
+    JSContext <em>context;
+    <a href="../Classes/JSValue.html">JSValue</a> </em>v = context[@&ldquo;X&rdquo;]; // Get value for &ldquo;X&rdquo; from the global object.
+    context[@&ldquo;Y&rdquo;] = v;          // Assign &lsquo;v&rsquo; to &ldquo;Y&rdquo; on the global object.
+@/textblock</p>
+
+<p>An object key passed as a subscript will be converted to a JavaScript value,
+and then the value converted to a string used to resolve a property of the
+global object.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a JSContext.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new context.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithVirtualMachine:" title="initWithVirtualMachine:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithVirtualMachine:">&ndash;&nbsp;initWithVirtualMachine:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a JSContext in the specified virtual machine.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithVirtualMachine:(JSVirtualMachine *)<em>virtualMachine</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>virtualMachine</code></th>
+						<td><p>The <a href="../Classes/JSVirtualMachine.html">JSVirtualMachine</a> in which the context will be created.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new context.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluateScript:" title="evaluateScript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluateScript:">&ndash;&nbsp;evaluateScript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluate a string of JavaScript code.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (JSValue *)evaluateScript:(NSString *)<em>script</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>script</code></th>
+						<td><p>A string containing the JavaScript code to evaluate.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The last value generated by the script.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluateScript:withSourceURL:" title="evaluateScript:withSourceURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluateScript:withSourceURL:">&ndash;&nbsp;evaluateScript:withSourceURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluate a string of JavaScript code, with a URL for the script&rsquo;s source file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (JSValue *)evaluateScript:(NSString *)<em>script</em> withSourceURL:(NSURL *)<em>sourceURL</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>script</code></th>
+						<td><p>A string containing the JavaScript code to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceURL</code></th>
+						<td><p>A URL for the script&rsquo;s source file. Used by debuggers and when reporting exceptions. This parameter is informative only: it does not change the behavior of the script.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The last value generated by the script.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentContext" title="currentContext"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentContext">+&nbsp;currentContext</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the JSContext that is currently executing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSContext *)currentContext</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The currently executing JSContext or nil if there isn&rsquo;t one.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>This method may be called from within an Objective-C block or method invoked
+as a callback from JavaScript to retrieve the callback&rsquo;s context. Outside of
+a callback from JavaScript this method will return nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentCallee" title="currentCallee"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentCallee">+&nbsp;currentCallee</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the JavaScript function that is currently executing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)currentCallee</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The currently executing JavaScript function or nil if there isn&rsquo;t one.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>This method may be called from within an Objective-C block or method invoked
+as a callback from JavaScript to retrieve the callback&rsquo;s context. Outside of
+a callback from JavaScript this method will return nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentThis" title="currentThis"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentThis">+&nbsp;currentThis</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the <code>this</code> value of the currently executing method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)currentThis</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The current <code>this</code> value or nil if there isn&rsquo;t one.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>This method may be called from within an Objective-C block or method invoked
+as a callback from JavaScript to retrieve the callback&rsquo;s this value. Outside
+of a callback from JavaScript this method will return nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentArguments" title="currentArguments"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentArguments">+&nbsp;currentArguments</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the arguments to the current callback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray *)currentArguments</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray of the arguments nil if there is no current callback.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>This method may be called from within an Objective-C block or method invoked
+as a callback from JavaScript to retrieve the callback&rsquo;s arguments, objects
+in the returned array are instances of <a href="../Classes/JSValue.html">JSValue</a>. Outside of a callback from
+JavaScript this method will return nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/globalObject" title="globalObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/globalObject">&nbsp;&nbsp;globalObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the global object of the context.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, strong) JSValue *globalObject</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The global object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p><p>This method retrieves the global object of the JavaScript execution context.
+Instances of JSContext originating from WebKit will return a reference to the
+WindowProxy object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/exception" title="exception"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exception">&nbsp;&nbsp;exception</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong) JSValue *exception</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p><p>The <code>exception</code> property may be used to throw an exception to JavaScript.</p>
+
+<p>Before a callback is made from JavaScript to an Objective-C block or method,
+the prior value of the exception property will be preserved and the property
+will be set to nil. After the callback has completed the new value of the
+exception property will be read, and prior value restored. If the new value
+of exception is not nil, the callback will result in that value being thrown.</p>
+
+<p>This property may also be used to check for uncaught exceptions arising from
+API function calls (since the default behaviour of <code>exceptionHandler</code> is to
+assign an uncaught exception to this property).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/exceptionHandler" title="exceptionHandler"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exceptionHandler">&nbsp;&nbsp;exceptionHandler</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (copy) void ( ^ ) ( JSContext *context , JSValue *exception ) exceptionHandler</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p><p>If a call to an API function results in an uncaught JavaScript <a href="#//api/name/exception">exception</a>, the
+<code>exceptionHandler</code> block will be invoked. The default implementation for the
+<a href="#//api/name/exception">exception</a> handler will store the <a href="#//api/name/exception">exception</a> to the <a href="#//api/name/exception">exception</a> property on
+context. As a consequence the default behaviour is for uncaught exceptions
+occurring within a callback from JavaScript to be rethrown upon return.
+Setting this value to nil will cause all exceptions occurring
+within a callback from JavaScript to be silently caught.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/virtualMachine" title="virtualMachine"></a>
+	<h3 class="method-title"><code><a href="#//api/name/virtualMachine">&nbsp;&nbsp;virtualMachine</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, strong) JSVirtualMachine *virtualMachine</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p><p>All instances of JSContext are associated with a <a href="../Classes/JSVirtualMachine.html">JSVirtualMachine</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (copy) NSString *NS_AVAILABLE ( 10 _10 , 8 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p><p>Name of the JSContext. Exposed when remote debugging the context.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="JSContextRefSupport Methods" name="task_JSContextRefSupport Methods"></a>
+						<h2 class="task-title">JSContextRefSupport Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/contextWithJSGlobalContextRef:" title="contextWithJSGlobalContextRef:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contextWithJSGlobalContextRef:">+&nbsp;contextWithJSGlobalContextRef:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a JSContext, wrapping its C API counterpart.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSContext *)contextWithJSGlobalContextRef:(JSGlobalContextRef)<em>jsGlobalContextRef</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The JSContext equivalent of the provided <a href="#//api/name/JSGlobalContextRef">JSGlobalContextRef</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/JSGlobalContextRef" title="JSGlobalContextRef"></a>
+	<h3 class="method-title"><code><a href="#//api/name/JSGlobalContextRef">&nbsp;&nbsp;JSGlobalContextRef</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the C API counterpart wrapped by a JSContext.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly)  JSGlobalContextRef</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The C API equivalent of this JSContext.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="SubscriptSupport Methods" name="task_SubscriptSupport Methods"></a>
+						<h2 class="task-title">SubscriptSupport Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/objectForKeyedSubscript:" title="objectForKeyedSubscript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectForKeyedSubscript:">&ndash;&nbsp;objectForKeyedSubscript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get a particular property on the global object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (JSValue *)objectForKeyedSubscript:(id)<em>key</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <a href="../Classes/JSValue.html">JSValue</a> for the global object&rsquo;s property.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setObject:forKeyedSubscript:" title="setObject:forKeyedSubscript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setObject:forKeyedSubscript:">&ndash;&nbsp;setObject:forKeyedSubscript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set a particular property on the global object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setObject:(id)<em>object</em> forKeyedSubscript:(NSObject&lt;NSCopying&gt; *)<em>key</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSContext.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

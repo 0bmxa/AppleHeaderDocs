@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVContentKeySessionDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/contentKeySession:contentKeyRequest:didFailWithError:">- contentKeySession:contentKeyRequest:didFailWithError:</option>
+		
+		<option value="//api/name/contentKeySession:didProvideContentKeyRequest:">- contentKeySession:didProvideContentKeyRequest:</option>
+		
+		<option value="//api/name/contentKeySession:didProvidePersistableContentKeyRequest:">- contentKeySession:didProvidePersistableContentKeyRequest:</option>
+		
+		<option value="//api/name/contentKeySession:didProvideRenewingContentKeyRequest:">- contentKeySession:didProvideRenewingContentKeyRequest:</option>
+		
+		<option value="//api/name/contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:">- contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:</option>
+		
+		<option value="//api/name/contentKeySession:shouldRetryContentKeyRequest:reason:">- contentKeySession:shouldRetryContentKeyRequest:reason:</option>
+		
+		<option value="//api/name/contentKeySessionContentProtectionSessionIdentifierDidChange:">- contentKeySessionContentProtectionSessionIdentifierDidChange:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVContentKeySessionDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVContentKeySession.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@constant      AVContentKeyRequestRetryReasonReceivedObsoleteContentKey</p><p>Indicates that the content key request should be retried because an obsolete key response was set on the previous content key request.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/contentKeySession:didProvideContentKeyRequest:" title="contentKeySession:didProvideContentKeyRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeySession:didProvideContentKeyRequest:">&ndash;&nbsp;contentKeySession:didProvideContentKeyRequest:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides the receiver with a new content key request.
+@param         session
+                An instance of <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> that&rsquo;s providing a new content key request.
+@param         keyRequest
+                An instance of <a href="../Classes/AVContentKeyRequest.html">AVContentKeyRequest</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentKeySession:(AVContentKeySession *)<em>session</em> didProvideContentKeyRequest:(AVContentKeyRequest *)<em>keyRequest</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        contentKeySession:didProvideContentKeyRequest:</p><p>Will be invoked by an <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> as a result of a call to -processContentKeyRequestWithIdentifier:initializationData:options:. Can be invoked during playback or other processing of an <a href="../Classes/AVURLAsset.html">AVURLAsset</a> added to the <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentKeySession:didProvideRenewingContentKeyRequest:" title="contentKeySession:didProvideRenewingContentKeyRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeySession:didProvideRenewingContentKeyRequest:">&ndash;&nbsp;contentKeySession:didProvideRenewingContentKeyRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides the receiver with a new content key request representing a renewal of an existing content key.
+@param         session
+                An instance of <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> that&rsquo;s providing a new content key request.
+@param         keyRequest
+                An instance of <a href="../Classes/AVContentKeyRequest.html">AVContentKeyRequest</a> representing renewal of a previous content key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentKeySession:(AVContentKeySession *)<em>session</em> didProvideRenewingContentKeyRequest:(AVContentKeyRequest *)<em>keyRequest</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        contentKeySession:didProvideRenewingContentKeyRequest:</p><p>Will be invoked by an <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> as the result of a call to -renewExpiringResponseDataForContentKeyRequest:.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentKeySession:didProvidePersistableContentKeyRequest:" title="contentKeySession:didProvidePersistableContentKeyRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeySession:didProvidePersistableContentKeyRequest:">&ndash;&nbsp;contentKeySession:didProvidePersistableContentKeyRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides the receiver with a new content key request that allows key persistence.
+@param         session
+                An instance of <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> that&rsquo;s providing a new content key request.
+@param         keyRequest
+                An instance of <a href="../Classes/AVPersistableContentKeyRequest.html">AVPersistableContentKeyRequest</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentKeySession:(AVContentKeySession *)<em>session</em> didProvidePersistableContentKeyRequest:(AVPersistableContentKeyRequest *)<em>keyRequest</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        contentKeySession:didProvidePersistableContentKeyRequest:</p><p>Will be invoked by an <a href="../Classes/AVContentKeyRequest.html">AVContentKeyRequest</a> as the result of a call to -respondByRequestingPersistableContentKeyRequest.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:" title="contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:">&ndash;&nbsp;contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides the receiver with an updated persistable content key for a particular key request.
+@param         session
+                An instance of <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> that is providing the updated persistable content key.
+@param         persistableContentKey
+                Updated persistable content key data that may be stored offline and used to answer future requests to content keys with matching key identifier.
+@param         keyIdentifier
+                Container- and protocol-specific identifier for the persistable content key that was updated.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentKeySession:(AVContentKeySession *)<em>session</em> didUpdatePersistableContentKey:(NSData *)<em>persistableContentKey</em> forContentKeyIdentifier:(id)<em>keyIdentifier</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:</p><p>If the content key session provides an updated persistable content key data, the previous key data is no longer valid and cannot be used to answer future loading requests.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentKeySession:contentKeyRequest:didFailWithError:" title="contentKeySession:contentKeyRequest:didFailWithError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeySession:contentKeyRequest:didFailWithError:">&ndash;&nbsp;contentKeySession:contentKeyRequest:didFailWithError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Informs the receiver a content key request has failed.
+@param         session
+                The instance of <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> that initiated the content key request.
+@param         keyRequest
+                The instance of <a href="../Classes/AVContentKeyRequest.html">AVContentKeyRequest</a> that has failed.
+@param         error
+                An instance of NSError that describes the failure that occurred.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentKeySession:(AVContentKeySession *)<em>session</em> contentKeyRequest:(AVContentKeyRequest *)<em>keyRequest</em> didFailWithError:(NSError *)<em>err</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        contentKeySession:contentKeyRequest:didFailWithError:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentKeySession:shouldRetryContentKeyRequest:reason:" title="contentKeySession:shouldRetryContentKeyRequest:reason:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeySession:shouldRetryContentKeyRequest:reason:">&ndash;&nbsp;contentKeySession:shouldRetryContentKeyRequest:reason:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides the receiver a content key request that should be retried because a previous content key request failed.
+@param         session
+                An instance of <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> that&rsquo;s providing the content key request that should be retried.
+@param         keyRequest
+                An instance of <a href="../Classes/AVContentKeyRequest.html">AVContentKeyRequest</a> that should be retried.
+@param         retryReason
+                An enum value to explain why the receiver could retry the new content key request.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)contentKeySession:(AVContentKeySession *)<em>session</em> shouldRetryContentKeyRequest:(AVContentKeyRequest *)<em>keyRequest</em> reason:(AVContentKeyRequestRetryReason)<em>retryReason</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A BOOL value indicating receiver&rsquo;s desire to retry the failed content key request.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        contentKeySession:shouldRetryContentKeyRequest:reason:</p><p>Will be invoked by an <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> when a content key request should be retried. The reason for failure of previous content key request is specified. The receiver can decide if it wants to request <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> to retry this key request based on the reason. If the receiver returns YES, <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> would restart the key request process. If the receiver returns NO or if it does not implement this delegate method, the content key request would fail and <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> would let the receiver know through <a href="#//api/name/contentKeySession:contentKeyRequest:didFailWithError:">contentKeySession:contentKeyRequest:didFailWithError:</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentKeySessionContentProtectionSessionIdentifierDidChange:" title="contentKeySessionContentProtectionSessionIdentifierDidChange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeySessionContentProtectionSessionIdentifierDidChange:">&ndash;&nbsp;contentKeySessionContentProtectionSessionIdentifierDidChange:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Informs the receiver that the value of <a href="../Classes/AVContentKeySession.html#//api/name/contentProtectionSessionIdentifier">[AVContentKeySession contentProtectionSessionIdentifier]</a> has changed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentKeySessionContentProtectionSessionIdentifierDidChange:(AVContentKeySession *)<em>session</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        contentKeySessionContentProtectionSessionIdentifierDidChange:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

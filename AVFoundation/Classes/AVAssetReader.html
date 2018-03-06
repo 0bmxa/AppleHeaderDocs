@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAssetReader Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/asset">asset</option>
+		
+		<option value="//api/name/error">error</option>
+		
+		<option value="//api/name/outputs">outputs</option>
+		
+		<option value="//api/name/status">status</option>
+		
+		<option value="//api/name/timeRange">timeRange</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/assetReaderWithAsset:error:">+ assetReaderWithAsset:error:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addOutput:">- addOutput:</option>
+		
+		<option value="//api/name/canAddOutput:">- canAddOutput:</option>
+		
+		<option value="//api/name/cancelReading">- cancelReading</option>
+		
+		<option value="//api/name/initWithAsset:error:">- initWithAsset:error:</option>
+		
+		<option value="//api/name/startReading">- startReading</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAssetReader Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAssetReader.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVAssetReader
+@abstract
+    AVAssetReader provides services for obtaining media data from an <a href="#//api/name/asset">asset</a>.</p>
+
+<p>@discussion
+    Instances of AVAssetReader read media data from an instance of <a href="../Classes/AVAsset.html">AVAsset</a>, whether the <a href="#//api/name/asset">asset</a> is file-based or represents an assembly of media data from multiple sources, as is the case with <a href="../Classes/AVComposition.html">AVComposition</a>.</p>
+
+<pre><code>Clients of AVAssetReader can read data from specific tracks of an asset and in specific formats by adding concrete instances of AVAssetReaderOutput to an AVAssetReader instance.
+
+AVAssetReaderTrackOutput, a concrete subclass of AVAssetReaderOutput, can either read the track's media samples in the format in which they are stored by the asset or convert the media samples to a different format.
+
+AVAssetReaderAudioMixOutput mixes multiple audio tracks of the asset after reading them, while AVAssetReaderVideoCompositionOutput composites multiple video tracks after reading them.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/assetReaderWithAsset:error:" title="assetReaderWithAsset:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetReaderWithAsset:error:">+&nbsp;assetReaderWithAsset:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method assetReaderWithAsset:error:
+@abstract
+    Returns an instance of AVAssetReader for reading media data from the specified <a href="#//api/name/asset">asset</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)assetReaderWithAsset:(AVAsset *)<em>asset</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of AVAssetReader.
+@discussion
+    If the specified <a href="#//api/name/asset">asset</a> belongs to a mutable subclass of <a href="../Classes/AVAsset.html">AVAsset</a>, <a href="../Classes/AVMutableComposition.html">AVMutableComposition</a> or <a href="../Classes/AVMutableMovie.html">AVMutableMovie</a>, the results of any <a href="#//api/name/asset">asset</a> reading operation are undefined if you mutate the <a href="#//api/name/asset">asset</a> after invoking <a href="#//api/name/startReading">startReading</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method assetReaderWithAsset:error:
+@abstract
+    Returns an instance of AVAssetReader for reading media data from the specified <a href="#//api/name/asset">asset</a>.</p>
+
+<p>@param <a href="#//api/name/asset">asset</a>
+    The <a href="#//api/name/asset">asset</a> from which media data is to be read.
+@param outError
+    On return, if initialization of the AVAssetReader fails, points to an NSError describing the nature of the failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithAsset:error:" title="initWithAsset:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAsset:error:">&ndash;&nbsp;initWithAsset:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithAsset:error:
+@abstract
+    Creates an instance of AVAssetReader for reading media data from the specified <a href="#//api/name/asset">asset</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithAsset:(AVAsset *)<em>asset</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithAsset:error:
+@abstract
+    Creates an instance of AVAssetReader for reading media data from the specified <a href="#//api/name/asset">asset</a>.</p>
+
+<p>@param <a href="#//api/name/asset">asset</a>
+    The <a href="#//api/name/asset">asset</a> from which media data is to be read.
+@param outError
+    On return, if initialization of the AVAssetReader fails, points to an NSError describing the nature of the failure.
+@result
+    An instance of AVAssetReader.
+@discussion
+    If the specified <a href="#//api/name/asset">asset</a> belongs to a mutable subclass of <a href="../Classes/AVAsset.html">AVAsset</a>, <a href="../Classes/AVMutableComposition.html">AVMutableComposition</a> or <a href="../Classes/AVMutableMovie.html">AVMutableMovie</a>, the results of any <a href="#//api/name/asset">asset</a> reading operation are undefined if you mutate the <a href="#//api/name/asset">asset</a> after invoking <a href="#//api/name/startReading">startReading</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asset" title="asset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asset">&nbsp;&nbsp;asset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property asset
+@abstract
+    The asset from which the receiver&rsquo;s <a href="#//api/name/outputs">outputs</a> read sample buffers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, readonly) AVAsset *asset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property asset
+@abstract
+    The asset from which the receiver&rsquo;s <a href="#//api/name/outputs">outputs</a> read sample buffers.</p>
+
+<p>@discussion
+    The value of this property is an <a href="../Classes/AVAsset.html">AVAsset</a>. Concrete instances of AVAssetReader that are created with specific <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a> instances must obtain those tracks from the asset returned by this property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/status" title="status"></a>
+	<h3 class="method-title"><code><a href="#//api/name/status">&nbsp;&nbsp;status</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property status
+@abstract
+    The status of reading sample buffers from the receiver&rsquo;s <a href="#//api/name/asset">asset</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) AVAssetReaderStatus status</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property status
+@abstract
+    The status of reading sample buffers from the receiver&rsquo;s asset.</p>
+
+<p>@discussion
+    The value of this property is an AVAssetReaderStatus that indicates whether reading is in progress, has completed successfully, has been canceled, or has failed. Clients of AVAssetReaderOutput objects should check the value of this property after <a href="../Classes/AVAssetReaderOutput.html#//api/name/copyNextSampleBuffer">[AVAssetReaderOutput copyNextSampleBuffer]</a> returns NULL to determine why no more samples could be read. This property is thread safe.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/error" title="error"></a>
+	<h3 class="method-title"><code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property error
+@abstract
+    If the receiver&rsquo;s <a href="#//api/name/status">status</a> is AVAssetReaderStatusFailed, this describes the error that caused the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable) NSError *error</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property error
+@abstract
+    If the receiver&rsquo;s <a href="#//api/name/status">status</a> is AVAssetReaderStatusFailed, this describes the error that caused the failure.</p>
+
+<p>@discussion
+    The value of this property is an NSError that describes what caused the receiver to no longer be able to read its <a href="#//api/name/asset">asset</a>. If the receiver&rsquo;s <a href="#//api/name/status">status</a> is not AVAssetReaderStatusFailed, the value of this property is nil. This property is thread safe.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/timeRange" title="timeRange"></a>
+	<h3 class="method-title"><code><a href="#//api/name/timeRange">&nbsp;&nbsp;timeRange</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property timeRange
+@abstract
+    Specifies a range of time that may limit the temporal portion of the receiver&rsquo;s <a href="#//api/name/asset">asset</a> from which media data will be read.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CMTimeRange timeRange</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property timeRange
+@abstract
+    Specifies a range of time that may limit the temporal portion of the receiver&rsquo;s <a href="#//api/name/asset">asset</a> from which media data will be read.</p>
+
+<p>@discussion
+    The intersection of the value of timeRange and CMTimeRangeMake(kCMTimeZero, <a href="#//api/name/asset">asset</a>.duration) will determine the time range of the <a href="#//api/name/asset">asset</a> from which media data will be read. The default value of timeRange is CMTimeRangeMake(kCMTimeZero, kCMTimePositiveInfinity).</p>
+
+<pre><code>This property cannot be set after reading has started.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputs" title="outputs"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputs">&nbsp;&nbsp;outputs</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property outputs
+@abstract
+    The outputs from which clients of receiver can read media data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVAssetReaderOutput*&gt; *outputs</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property outputs
+@abstract
+    The outputs from which clients of receiver can read media data.</p>
+
+<p>@discussion
+    The value of this property is an NSArray containing concrete instances of <a href="../Classes/AVAssetReaderOutput.html">AVAssetReaderOutput</a>. Outputs can be added to the receiver using the <a href="#//api/name/addOutput:">addOutput:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/canAddOutput:" title="canAddOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canAddOutput:">&ndash;&nbsp;canAddOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method canAddOutput:
+@abstract
+    Tests whether an output can be added to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)canAddOutput:(AVAssetReaderOutput *)<em>output</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method canAddOutput:
+@abstract
+    Tests whether an output can be added to the receiver.</p>
+
+<p>@param output
+    The <a href="../Classes/AVAssetReaderOutput.html">AVAssetReaderOutput</a> object to be tested.
+@result
+    A BOOL indicating whether the output can be added to the receiver.</p>
+
+<p>@discussion
+    An output that reads from a track of an <a href="#//api/name/asset">asset</a> other than the <a href="#//api/name/asset">asset</a> used to initialize the receiver cannot be added.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addOutput:" title="addOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addOutput:">&ndash;&nbsp;addOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method addOutput:
+@abstract
+    Adds an output to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addOutput:(AVAssetReaderOutput *)<em>output</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addOutput:
+@abstract
+    Adds an output to the receiver.</p>
+
+<p>@param output
+    The <a href="../Classes/AVAssetReaderOutput.html">AVAssetReaderOutput</a> object to be added.</p>
+
+<p>@discussion
+    Outputs are created with a reference to one or more <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a> objects. These tracks must be owned by the <a href="#//api/name/asset">asset</a> returned by the receiver&rsquo;s <a href="#//api/name/asset">asset</a> property.</p>
+
+<pre><code>Outputs cannot be added after reading has started.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startReading" title="startReading"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startReading">&ndash;&nbsp;startReading</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method startReading
+@abstract
+    Prepares the receiver for reading sample buffers from the <a href="#//api/name/asset">asset</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startReading</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method startReading
+@abstract
+    Prepares the receiver for reading sample buffers from the <a href="#//api/name/asset">asset</a>.</p>
+
+<p>@result
+    A BOOL indicating whether reading could be started.</p>
+
+<p>@discussion
+    This method validates the entire collection of settings for <a href="#//api/name/outputs">outputs</a> for tracks, for audio mixing, and for video composition and initiates reading from the receiver&rsquo;s <a href="#//api/name/asset">asset</a>.</p>
+
+<pre><code>If this method returns NO, clients can determine the nature of the failure by checking the value of the status and error properties.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelReading" title="cancelReading"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelReading">&ndash;&nbsp;cancelReading</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method cancelReading
+@abstract
+    Cancels any background work and prevents the receiver&rsquo;s <a href="#//api/name/outputs">outputs</a> from reading more samples.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cancelReading</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method cancelReading
+@abstract
+    Cancels any background work and prevents the receiver&rsquo;s outputs from reading more samples.</p>
+
+<p>@discussion
+    Clients that want to stop reading samples from the receiver before reaching the end of its time range should call this method to stop any background read ahead operations that the may have been in progress.</p>
+
+<pre><code>This method should not be called concurrently with any calls to [AVAssetReaderOutput copyNextSampleBuffer].
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReader.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

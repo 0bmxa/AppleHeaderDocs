@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSTemporaryVector Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/readCount">readCount</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/prefetchStorageWithCommandBuffer:descriptorList:">+ prefetchStorageWithCommandBuffer:descriptorList:</option>
+		
+		<option value="//api/name/temporaryVectorWithCommandBuffer:descriptor:">+ temporaryVectorWithCommandBuffer:descriptor:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithBuffer:descriptor:">- initWithBuffer:descriptor:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSTemporaryVector Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSVector.html">MPSVector</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSMatrixTypes.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>It may alias one or more other MPSTemporaryVector objects. Undesired data destruction
+due to aliasing is avoided using the <a href="#//api/name/readCount">readCount</a> property.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/temporaryVectorWithCommandBuffer:descriptor:" title="temporaryVectorWithCommandBuffer:descriptor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/temporaryVectorWithCommandBuffer:descriptor:">+&nbsp;temporaryVectorWithCommandBuffer:descriptor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a MPSTemporaryVector for use on a MTLCommandBuffer</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)temporaryVectorWithCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> descriptor:(nonnull MPSVectorDescriptor *)<em>descriptor</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>The MTLCommandBuffer on which the <a href="../Classes/MPSTemporaryMatrix.html">MPSTemporaryMatrix</a> will be exclusively used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>descriptor</code></th>
+						<td><p>A valid <a href="../Classes/MPSVectorDescriptor.html">MPSVectorDescriptor</a> describing the <a href="../Classes/MPSVector.html">MPSVector</a> format to create</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSTemporaryVector.  The object is not managed by a NSAutoreleasePool. The object will be
+released when the command buffer is committed. The underlying buffer will become invalid before
+this time due to the action of the <a href="#//api/name/readCount">readCount</a> property.  Please read and understand the use of
+the <a href="#//api/name/readCount">readCount</a> property before using this object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixTypes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prefetchStorageWithCommandBuffer:descriptorList:" title="prefetchStorageWithCommandBuffer:descriptorList:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prefetchStorageWithCommandBuffer:descriptorList:">+&nbsp;prefetchStorageWithCommandBuffer:descriptorList:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Help MPS decide which allocations to make ahead of time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)prefetchStorageWithCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> descriptorList:(NSArray&lt;MPSVectorDescriptor*&gt; *__nonnull)<em>descriptorList</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>The command buffer on which the MPSTemporaryVector will be used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>descriptorList</code></th>
+						<td><p>A NSArray of <a href="../Classes/MPSVectorDescriptor.html">MPSVectorDescriptor</a> objects, indicating vectors that will be created</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The buffer cache that underlies the MPSTemporaryVector can automatically allocate new storage as
+needed as you create new temporary vectors.  However, sometimes a more global view of what you
+plan to make is useful for maximizing memory reuse to get the most efficient operation.
+This class method hints to the cache what the list of matrices will be.</p>
+
+<p>It is never necessary to call this method. It is purely a performance and memory optimization.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixTypes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithBuffer:descriptor:" title="initWithBuffer:descriptor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithBuffer:descriptor:">&ndash;&nbsp;initWithBuffer:descriptor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>*** unavailable</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithBuffer:(nonnull id&lt;MTLBuffer&gt;)<em>buffer</em> descriptor:(nonnull MPSVectorDescriptor *)<em>descriptor</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixTypes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readCount" title="readCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readCount">&nbsp;&nbsp;readCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of times a temporary vector may be read by a <a href="../Classes/MPSMatrix.html">MPSMatrix</a>&hellip; kernel
+before its contents become undefined.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) NSUInteger readCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>MPSTemporaryVector objects must release their underlying buffers for reuse
+immediately after last use. So as to facilitate <em>prompt</em> convenient
+memory recycling, each time a MPSTemporaryVector is read by a
+<a href="../Classes/MPSMatrix.html">MPSMatrix</a>&hellip; -encode&hellip; method, its readCount is automatically
+decremented. When the readCount reaches 0, the underlying buffer is
+automatically made available for reuse to MPS for its own needs and for
+other MPSTemporaryVector objects prior to return from the -encode.. function.
+The contents of the buffer become undefined at this time.</p>
+
+<p>By default, the readCount is initialized to 1, indicating a matrix that
+may be overwritten any number of times, but read only once.</p>
+
+<p>You may change the readCount as desired to allow <a href="../Classes/MPSMatrix.html">MPSMatrix</a> kernels to read
+the MPSTemporaryVector additional times. However, it is an error to change
+the readCount once it is zero. It is an error to read or write to a
+MPSTemporaryVector with a zero readCount. You may set the readCount to 0
+yourself to cause the underlying buffer to be returned to MPS. Writing
+to a MPSTemporaryVector does not adjust the readCount.</p>
+
+<p>The Metal API Validation layer will assert if a MPSTemporaryVector is
+deallocated with non-zero readCount to help identify cases when resources
+are not returned promptly.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixTypes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

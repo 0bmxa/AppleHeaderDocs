@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSMatrixSolveCholesky Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:">- encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/initWithDevice:upper:order:numberOfRightHandSides:">- initWithDevice:upper:order:numberOfRightHandSides:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSMatrixSolveCholesky Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSMatrixBinaryKernel.html">MPSMatrixBinaryKernel</a> : <a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSMatrixSolve.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSMatrixSolveCholesky</p>
+
+<p>@dependency This depends on Metal.framework.</p><p>A MPSMatrixSolveCholesky finds the solution matrix to the system:</p>
+
+<p>A * X = B</p>
+
+<p>Where A is symmetric positive definite.  B is the array of
+right hand sides for which the equations are to be solved.
+X is the resulting matrix of solutions.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithDevice:upper:order:numberOfRightHandSides:" title="initWithDevice:upper:order:numberOfRightHandSides:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:upper:order:numberOfRightHandSides:">&ndash;&nbsp;initWithDevice:upper:order:numberOfRightHandSides:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize an MPSMatrixSolveCholesky object on a device</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> upper:(BOOL)<em>upper</em> order:(NSUInteger)<em>order</em> numberOfRightHandSides:(NSUInteger)<em>numberOfRightHandSides</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device on which the kernel will execute.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>upper</code></th>
+						<td><p>A boolean value which indicates if the source
+matrix stores the lower or upper triangular
+factors.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>order</code></th>
+						<td><p>The order of the source matrix and the number of
+rows in the solution and right hand side matrices.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>numberOfRightHandSides</code></th>
+						<td><p>The number of columns in the solution and right hand side
+matrices.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSMatrixSolveCholesky object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSolve.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode a MPSMatrixSolveCholesky kernel into a command Buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceMatrix:(MPSMatrix const *__nonnull)<em>sourceMatrix</em> rightHandSideMatrix:(MPSMatrix const *__nonnull)<em>rightHandSideMatrix</em> solutionMatrix:(MPSMatrix *__nonnull)<em>solutionMatrix</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> containing the source matrix in factored
+form as returned by a previous successful execution of a
+<a href="../Classes/MPSMatrixDecompositionCholesky.html">MPSMatrixDecompositionCholesky</a> kernel.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rightHandSideMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> containing the right hand side values.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>solutionMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> to contain the result.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This function encodes the MPSMatrixSolveCholesky object to a valid
+command buffer. sourceMatrix should contain either the lower or upper triangular
+factors corresponding to the factorization returned by a previous execution
+of <a href="../Classes/MPSMatrixDecompositionCholesky.html">MPSMatrixDecompositionCholesky</a>.</p>
+
+<p>rightHandSideMatrix and solutionMatrix must be large enough to hold a matrix
+of size order x numberOfRightHandSides starting at secondarySourceMatrixOrigin and
+resultMatrixOrigin respectively.</p>
+
+<p>sourceMatrix must be at least size order x order starting at primarySourceMatrixOrigin.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSolve.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSHTTPCookie Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/HTTPOnly">HTTPOnly</option>
+		
+		<option value="//api/name/comment">comment</option>
+		
+		<option value="//api/name/commentURL">commentURL</option>
+		
+		<option value="//api/name/domain">domain</option>
+		
+		<option value="//api/name/expiresDate">expiresDate</option>
+		
+		<option value="//api/name/name">name</option>
+		
+		<option value="//api/name/path">path</option>
+		
+		<option value="//api/name/portList">portList</option>
+		
+		<option value="//api/name/properties">properties</option>
+		
+		<option value="//api/name/secure">secure</option>
+		
+		<option value="//api/name/sessionOnly">sessionOnly</option>
+		
+		<option value="//api/name/value">value</option>
+		
+		<option value="//api/name/version">version</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/cookieWithProperties:">+ cookieWithProperties:</option>
+		
+		<option value="//api/name/cookiesWithResponseHeaderFields:forURL:">+ cookiesWithResponseHeaderFields:forURL:</option>
+		
+		<option value="//api/name/requestHeaderFieldsWithCookies:">+ requestHeaderFieldsWithCookies:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithProperties:">- initWithProperties:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSHTTPCookie Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSHTTPCookie.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class NSHTTPCookie
+</code></pre><p>A NSHTTPCookie instance represents a single http cookie. It is
+    an immutable object initialized from a dictionary that contains
+    the various cookie attributes. It has accessors to get the various
+    attributes of a cookie.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithProperties:" title="initWithProperties:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithProperties:">&ndash;&nbsp;initWithProperties:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a NSHTTPCookie object with a dictionary of
+    parameters</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithProperties:(NSDictionary&lt;NSHTTPCookiePropertyKey,id&gt; *)<em>properties</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>properties</code></th>
+						<td><p>The dictionary of <a href="#//api/name/properties">properties</a> to be used to
+    initialize this cookie.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An initialized NSHTTPCookie, or nil if the set of
+    dictionary keys is invalid, for example because a required key is
+    missing, or a recognized key maps to an illegal <a href="#//api/name/value">value</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithProperties:
+</code></pre><p>Supported dictionary keys and <a href="#//api/name/value">value</a> types for the
+    given dictionary are as follows.</p>
+
+<pre><code>All properties can handle an NSString value, but some can also
+handle other types.
+
+&lt;table border="1" cellspacing="2" cellpadding="4"&gt;
+&lt;tr&gt;
+    &lt;th&gt;Property key constant&lt;/th&gt;
+    &lt;th&gt;Type of value&lt;/th&gt;
+    &lt;th&gt;Required&lt;/th&gt;
+    &lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookieComment&lt;/td&gt;
+    &lt;td&gt;NSString&lt;/td&gt;
+    &lt;td&gt;NO&lt;/td&gt;
+    &lt;td&gt;Comment for the cookie. Only valid for version 1 cookies and
+    later. Default is nil.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookieCommentURL&lt;/td&gt;
+    &lt;td&gt;NSURL or NSString&lt;/td&gt;
+    &lt;td&gt;NO&lt;/td&gt;
+    &lt;td&gt;Comment URL for the cookie. Only valid for version 1 cookies
+    and later. Default is nil.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookieDomain&lt;/td&gt;
+    &lt;td&gt;NSString&lt;/td&gt;
+    &lt;td&gt;Special, a value for either NSHTTPCookieOriginURL or
+    NSHTTPCookieDomain must be specified.&lt;/td&gt;
+    &lt;td&gt;Domain for the cookie. Inferred from the value for
+    NSHTTPCookieOriginURL if not provided.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookieDiscard&lt;/td&gt;
+    &lt;td&gt;NSString&lt;/td&gt;
+    &lt;td&gt;NO&lt;/td&gt;
+    &lt;td&gt;A string stating whether the cookie should be discarded at
+    the end of the session. String value must be either "TRUE" or
+    "FALSE". Default is "FALSE", unless this is cookie is version
+    1 or greater and a value for NSHTTPCookieMaximumAge is not
+    specified, in which case it is assumed "TRUE".&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookieExpires&lt;/td&gt;
+    &lt;td&gt;NSDate or NSString&lt;/td&gt;
+    &lt;td&gt;NO&lt;/td&gt;
+    &lt;td&gt;Expiration date for the cookie. Used only for version 0
+    cookies. Ignored for version 1 or greater.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookieMaximumAge&lt;/td&gt;
+    &lt;td&gt;NSString&lt;/td&gt;
+    &lt;td&gt;NO&lt;/td&gt;
+    &lt;td&gt;A string containing an integer value stating how long in
+    seconds the cookie should be kept, at most. Only valid for
+    version 1 cookies and later. Default is "0".&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookieName&lt;/td&gt;
+    &lt;td&gt;NSString&lt;/td&gt;
+    &lt;td&gt;YES&lt;/td&gt;
+    &lt;td&gt;Name of the cookie&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookieOriginURL&lt;/td&gt;
+    &lt;td&gt;NSURL or NSString&lt;/td&gt;
+    &lt;td&gt;Special, a value for either NSHTTPCookieOriginURL or
+    NSHTTPCookieDomain must be specified.&lt;/td&gt;
+    &lt;td&gt;URL that set this cookie. Used as default for other fields
+    as noted.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookiePath&lt;/td&gt;
+    &lt;td&gt;NSString&lt;/td&gt;
+    &lt;td&gt;NO&lt;/td&gt;
+    &lt;td&gt;Path for the cookie. Inferred from the value for
+    NSHTTPCookieOriginURL if not provided. Default is "/".&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookiePort&lt;/td&gt;
+    &lt;td&gt;NSString&lt;/td&gt;
+    &lt;td&gt;NO&lt;/td&gt;
+    &lt;td&gt;comma-separated integer values specifying the ports for the
+    cookie. Only valid for version 1 cookies and later. Default is
+    empty string ("").&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookieSecure&lt;/td&gt;
+    &lt;td&gt;NSString&lt;/td&gt;
+    &lt;td&gt;NO&lt;/td&gt;
+    &lt;td&gt;A string stating whether the cookie should be transmitted
+    only over secure channels. String value must be either "TRUE"
+    or "FALSE". Default is "FALSE".&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookieValue&lt;/td&gt;
+    &lt;td&gt;NSString&lt;/td&gt;
+    &lt;td&gt;YES&lt;/td&gt;
+    &lt;td&gt;Value of the cookie&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;NSHTTPCookieVersion&lt;/td&gt;
+    &lt;td&gt;NSString&lt;/td&gt;
+    &lt;td&gt;NO&lt;/td&gt;
+    &lt;td&gt;Specifies the version of the cookie. Must be either "0" or
+    "1". Default is "0".&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;
+All other keys are ignored.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cookieWithProperties:" title="cookieWithProperties:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cookieWithProperties:">+&nbsp;cookieWithProperties:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allocates and initializes an NSHTTPCookie with the given
+    dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSHTTPCookie *)cookieWithProperties:(NSDictionary&lt;NSHTTPCookiePropertyKey,id&gt; *)<em>properties</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>properties</code></th>
+						<td><p>The dictionary to use to initialize this cookie.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A newly-created and autoreleased NSHTTPCookie instance, or
+    nil if the set of dictionary keys is invalid, for example because
+    a required key is missing, or a recognized key maps to an illegal
+    <a href="#//api/name/value">value</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method cookieWithProperties:
+</code></pre><p>See the NSHTTPCookie <tt>-initWithProperties:</tt>
+    method for more information on the constraints imposed on the
+    dictionary, and for descriptions of the supported keys and values.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestHeaderFieldsWithCookies:" title="requestHeaderFieldsWithCookies:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestHeaderFieldsWithCookies:">+&nbsp;requestHeaderFieldsWithCookies:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return a dictionary of header fields that can be used to add the
+    specified cookies to the request.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSDictionary&lt;NSString*,NSString*&gt; *)requestHeaderFieldsWithCookies:(NSArray&lt;NSHTTPCookie*&gt; *)<em>cookies</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cookies</code></th>
+						<td><p>The cookies to turn into request headers.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <a href="../Classes/NSDictionary.html">NSDictionary</a> where the keys are header field names, and the values
+    are the corresponding header field values.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method requestHeaderFieldsWithCookies:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cookiesWithResponseHeaderFields:forURL:" title="cookiesWithResponseHeaderFields:forURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cookiesWithResponseHeaderFields:forURL:">+&nbsp;cookiesWithResponseHeaderFields:forURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return an array of cookies parsed from the specified response header fields and URL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;NSHTTPCookie*&gt; *)cookiesWithResponseHeaderFields:(NSDictionary&lt;NSString*,NSString*&gt; *)<em>headerFields</em> forURL:(NSURL *)<em>URL</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>headerFields</code></th>
+						<td><p>The response header fields to check for cookies.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>URL</code></th>
+						<td><p>The URL that the cookies came from - relevant to how the cookies are interpeted.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <a href="../Classes/NSArray.html">NSArray</a> of NSHTTPCookie objects</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method cookiesWithResponseHeaderFields:forURL:
+</code></pre><p>This method will ignore irrelevant header fields so
+    you can pass a dictionary containing data other than cookie data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/properties" title="properties"></a>
+	<h3 class="method-title"><code><a href="#//api/name/properties">&nbsp;&nbsp;properties</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary representation of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSDictionary&lt;NSHTTPCookiePropertyKey,id&gt; *properties</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The dictionary representation of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method returns a dictionary representation of the
+    NSHTTPCookie which can be saved and passed to
+    <tt>-initWithProperties:</tt> or <tt>+cookieWithProperties:</tt>
+    later to reconstitute an equivalent cookie.
+    <p>See the NSHTTPCookie <tt>-initWithProperties:</tt> method for
+    more information on the constraints imposed on the dictionary, and
+    for descriptions of the supported keys and values.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/version" title="version"></a>
+	<h3 class="method-title"><code><a href="#//api/name/version">&nbsp;&nbsp;version</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the version of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger version</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the version of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Version 0 maps to &ldquo;old-style&rdquo; Netscape cookies.
+    Version 1 maps to RFC2965 cookies. There may be future versions.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the name of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSString *name</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the name of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/value" title="value"></a>
+	<h3 class="method-title"><code><a href="#//api/name/value">&nbsp;&nbsp;value</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the value of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSString *value</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the value of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expiresDate" title="expiresDate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expiresDate">&nbsp;&nbsp;expiresDate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the expires date of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSDate *expiresDate</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the expires date of the receiver.</p><p>The expires date of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The expires date is the date when the cookie should be
+    deleted. The result will be nil if there is no specific expires
+    date. This will be the case only for &ldquo;session-only&rdquo; cookies.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sessionOnly" title="sessionOnly"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sessionOnly">&nbsp;&nbsp;sessionOnly</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns whether the receiver is session-only.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isSessionOnly) BOOL sessionOnly</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if this receiver should be discarded at the end of the
+    session (regardless of expiration date), NO if receiver need not
+    be discarded at the end of the session.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/domain" title="domain"></a>
+	<h3 class="method-title"><code><a href="#//api/name/domain">&nbsp;&nbsp;domain</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the domain of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSString *domain</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The domain of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This <a href="#//api/name/value">value</a> specifies URL domain to which the cookie
+    should be sent. A domain with a leading dot means the cookie
+    should be sent to subdomains as well, assuming certain other
+    restrictions are valid. See RFC 2965 for more detail.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/path" title="path"></a>
+	<h3 class="method-title"><code><a href="#//api/name/path">&nbsp;&nbsp;path</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the path of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSString *path</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The path of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This <a href="#//api/name/value">value</a> specifies the URL path under the cookie&rsquo;s
+    <a href="#//api/name/domain">domain</a> for which this cookie should be sent. The cookie will also
+    be sent for children of that path, so &ldquo;/&rdquo; is the most general.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/secure" title="secure"></a>
+	<h3 class="method-title"><code><a href="#//api/name/secure">&nbsp;&nbsp;secure</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns whether the receiver should be sent only over
+    secure channels</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isSecure) BOOL secure</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if this cookie should be sent only over secure channels,
+    NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Cookies may be marked secure by a server (or by a javascript).
+    Cookies marked as such must only be sent via an encrypted connection to
+    trusted servers (i.e. via SSL or TLS), and should not be delievered to any
+    javascript applications to prevent cross-site scripting vulnerabilities.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/HTTPOnly" title="HTTPOnly"></a>
+	<h3 class="method-title"><code><a href="#//api/name/HTTPOnly">&nbsp;&nbsp;HTTPOnly</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns whether the receiver should only be sent to HTTP servers
+    per RFC 2965</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isHTTPOnly) BOOL HTTPOnly</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if this cookie should only be sent via HTTP headers,
+    NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Cookies may be marked as HTTPOnly by a server (or by a javascript).
+    Cookies marked as such must only be sent via HTTP Headers in HTTP Requests
+    for URL&rsquo;s that match both the <a href="#//api/name/path">path</a> and <a href="#//api/name/domain">domain</a> of the respective Cookies.
+    Specifically these cookies should not be delivered to any javascript
+    applications to prevent cross-site scripting vulnerabilities.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/comment" title="comment"></a>
+	<h3 class="method-title"><code><a href="#//api/name/comment">&nbsp;&nbsp;comment</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the comment of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSString *comment</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The comment of the receiver, or nil if the receiver has no
+    comment.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This <a href="#//api/name/value">value</a> specifies a string which is suitable for
+    presentation to the user explaining the contents and purpose of this
+    cookie. It may be nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commentURL" title="commentURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commentURL">&nbsp;&nbsp;commentURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the <a href="#//api/name/comment">comment</a> URL of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSURL *commentURL</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <a href="#//api/name/comment">comment</a> URL of the receiver, or nil if the receiver
+    has no <a href="#//api/name/comment">comment</a> URL.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This <a href="#//api/name/value">value</a> specifies a URL which is suitable for
+    presentation to the user as a link for further information about
+    this cookie. It may be nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/portList" title="portList"></a>
+	<h3 class="method-title"><code><a href="#//api/name/portList">&nbsp;&nbsp;portList</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the list ports to which the receiver should be
+    sent.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSArray&lt;NSNumber*&gt; *portList</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The list ports to which the receiver should be sent. The
+    array may be nil, in which case this cookie can be sent to any
+    port.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This <a href="#//api/name/value">value</a> specifies an <a href="../Classes/NSArray.html">NSArray</a> of NSNumbers
+    (containing integers) which specify the only ports to which this
+    cookie should be sent.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSHTTPCookie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

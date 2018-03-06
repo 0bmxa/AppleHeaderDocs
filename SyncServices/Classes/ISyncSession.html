@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ISyncSession Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SyncServices Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/beginSessionInBackgroundWithClient:entityNames:target:selector:">+ beginSessionInBackgroundWithClient:entityNames:target:selector:</option>
+		
+		<option value="//api/name/beginSessionInBackgroundWithClient:entityNames:target:selector:lastAnchors:">+ beginSessionInBackgroundWithClient:entityNames:target:selector:lastAnchors:</option>
+		
+		<option value="//api/name/beginSessionWithClient:entityNames:beforeDate:">+ beginSessionWithClient:entityNames:beforeDate:</option>
+		
+		<option value="//api/name/beginSessionWithClient:entityNames:beforeDate:lastAnchors:">+ beginSessionWithClient:entityNames:beforeDate:lastAnchors:</option>
+		
+		<option value="//api/name/cancelPreviousBeginSessionWithClient:">+ cancelPreviousBeginSessionWithClient:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/cancelSyncing">- cancelSyncing</option>
+		
+		<option value="//api/name/changeEnumeratorForEntityNames:">- changeEnumeratorForEntityNames:</option>
+		
+		<option value="//api/name/clientAcceptedChangesForRecordWithIdentifier:formattedRecord:newRecordIdentifier:">- clientAcceptedChangesForRecordWithIdentifier:formattedRecord:newRecordIdentifier:</option>
+		
+		<option value="//api/name/clientChangedRecordIdentifiers:">- clientChangedRecordIdentifiers:</option>
+		
+		<option value="//api/name/clientCommittedAcceptedChanges">- clientCommittedAcceptedChanges</option>
+		
+		<option value="//api/name/clientCommittedAcceptedChangesWithNextAnchors:">- clientCommittedAcceptedChangesWithNextAnchors:</option>
+		
+		<option value="//api/name/clientDidResetEntityNames:">- clientDidResetEntityNames:</option>
+		
+		<option value="//api/name/clientFinishedPushingChangesWithNextAnchors:">- clientFinishedPushingChangesWithNextAnchors:</option>
+		
+		<option value="//api/name/clientInfoForRecordWithIdentifier:">- clientInfoForRecordWithIdentifier:</option>
+		
+		<option value="//api/name/clientLostRecordWithIdentifier:shouldReplaceOnNextSync:">- clientLostRecordWithIdentifier:shouldReplaceOnNextSync:</option>
+		
+		<option value="//api/name/clientRefusedChangesForRecordWithIdentifier:">- clientRefusedChangesForRecordWithIdentifier:</option>
+		
+		<option value="//api/name/clientWantsToPushAllRecordsForEntityNames:">- clientWantsToPushAllRecordsForEntityNames:</option>
+		
+		<option value="//api/name/deleteRecordWithIdentifier:">- deleteRecordWithIdentifier:</option>
+		
+		<option value="//api/name/finishSyncing">- finishSyncing</option>
+		
+		<option value="//api/name/isCancelled">- isCancelled</option>
+		
+		<option value="//api/name/ping">- ping</option>
+		
+		<option value="//api/name/prepareToPullChangesForEntityNames:beforeDate:">- prepareToPullChangesForEntityNames:beforeDate:</option>
+		
+		<option value="//api/name/prepareToPullChangesInBackgroundForEntityNames:target:selector:">- prepareToPullChangesInBackgroundForEntityNames:target:selector:</option>
+		
+		<option value="//api/name/pushChange:">- pushChange:</option>
+		
+		<option value="//api/name/pushChangesFromRecord:withIdentifier:">- pushChangesFromRecord:withIdentifier:</option>
+		
+		<option value="//api/name/setClientInfo:forRecordWithIdentifier:">- setClientInfo:forRecordWithIdentifier:</option>
+		
+		<option value="//api/name/shouldPullChangesForEntityName:">- shouldPullChangesForEntityName:</option>
+		
+		<option value="//api/name/shouldPushAllRecordsForEntityName:">- shouldPushAllRecordsForEntityName:</option>
+		
+		<option value="//api/name/shouldPushChangesForEntityName:">- shouldPushChangesForEntityName:</option>
+		
+		<option value="//api/name/shouldReplaceAllRecordsOnClientForEntityName:">- shouldReplaceAllRecordsOnClientForEntityName:</option>
+		
+		<option value="//api/name/snapshotOfRecordsInTruth">- snapshotOfRecordsInTruth</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ISyncSession Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ISyncSession.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/beginSessionWithClient:entityNames:beforeDate:" title="beginSessionWithClient:entityNames:beforeDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beginSessionWithClient:entityNames:beforeDate:">+&nbsp;beginSessionWithClient:entityNames:beforeDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (ISyncSession *)beginSessionWithClient:(ISyncClient *)<em>client</em> entityNames:(NSArray *)<em>entityNames</em> beforeDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beginSessionInBackgroundWithClient:entityNames:target:selector:" title="beginSessionInBackgroundWithClient:entityNames:target:selector:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beginSessionInBackgroundWithClient:entityNames:target:selector:">+&nbsp;beginSessionInBackgroundWithClient:entityNames:target:selector:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (void)beginSessionInBackgroundWithClient:(ISyncClient *)<em>client</em> entityNames:(NSArray *)<em>entityNames</em> target:(id)<em>target</em> selector:(SEL)<em>selector</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelPreviousBeginSessionWithClient:" title="cancelPreviousBeginSessionWithClient:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelPreviousBeginSessionWithClient:">+&nbsp;cancelPreviousBeginSessionWithClient:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (void)cancelPreviousBeginSessionWithClient:(ISyncClient *)<em>client</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beginSessionWithClient:entityNames:beforeDate:lastAnchors:" title="beginSessionWithClient:entityNames:beforeDate:lastAnchors:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beginSessionWithClient:entityNames:beforeDate:lastAnchors:">+&nbsp;beginSessionWithClient:entityNames:beforeDate:lastAnchors:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (ISyncSession *)beginSessionWithClient:(ISyncClient *)<em>client</em> entityNames:(NSArray *)<em>entityNames</em> beforeDate:(NSDate *)<em>date</em> lastAnchors:(NSDictionary *)<em>anchors</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beginSessionInBackgroundWithClient:entityNames:target:selector:lastAnchors:" title="beginSessionInBackgroundWithClient:entityNames:target:selector:lastAnchors:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beginSessionInBackgroundWithClient:entityNames:target:selector:lastAnchors:">+&nbsp;beginSessionInBackgroundWithClient:entityNames:target:selector:lastAnchors:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (void)beginSessionInBackgroundWithClient:(ISyncClient *)<em>client</em> entityNames:(NSArray *)<em>entityNames</em> target:(id)<em>target</em> selector:(SEL)<em>selector</em> lastAnchors:(NSDictionary *)<em>anchors</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientDidResetEntityNames:" title="clientDidResetEntityNames:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientDidResetEntityNames:">&ndash;&nbsp;clientDidResetEntityNames:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clientDidResetEntityNames:(NSArray *)<em>entityNames</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientWantsToPushAllRecordsForEntityNames:" title="clientWantsToPushAllRecordsForEntityNames:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientWantsToPushAllRecordsForEntityNames:">&ndash;&nbsp;clientWantsToPushAllRecordsForEntityNames:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clientWantsToPushAllRecordsForEntityNames:(NSArray *)<em>entityNames</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldPushChangesForEntityName:" title="shouldPushChangesForEntityName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldPushChangesForEntityName:">&ndash;&nbsp;shouldPushChangesForEntityName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldPushChangesForEntityName:(NSString *)<em>entityName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldPushAllRecordsForEntityName:" title="shouldPushAllRecordsForEntityName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldPushAllRecordsForEntityName:">&ndash;&nbsp;shouldPushAllRecordsForEntityName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldPushAllRecordsForEntityName:(NSString *)<em>entityName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldPullChangesForEntityName:" title="shouldPullChangesForEntityName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldPullChangesForEntityName:">&ndash;&nbsp;shouldPullChangesForEntityName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldPullChangesForEntityName:(NSString *)<em>entityName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldReplaceAllRecordsOnClientForEntityName:" title="shouldReplaceAllRecordsOnClientForEntityName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldReplaceAllRecordsOnClientForEntityName:">&ndash;&nbsp;shouldReplaceAllRecordsOnClientForEntityName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldReplaceAllRecordsOnClientForEntityName:(NSString *)<em>entityName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pushChange:" title="pushChange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pushChange:">&ndash;&nbsp;pushChange:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)pushChange:(ISyncChange *)<em>change</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pushChangesFromRecord:withIdentifier:" title="pushChangesFromRecord:withIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pushChangesFromRecord:withIdentifier:">&ndash;&nbsp;pushChangesFromRecord:withIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)pushChangesFromRecord:(NSDictionary *)<em>record</em> withIdentifier:(NSString *)<em>recordId</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteRecordWithIdentifier:" title="deleteRecordWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteRecordWithIdentifier:">&ndash;&nbsp;deleteRecordWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)deleteRecordWithIdentifier:(NSString *)<em>recordId</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientLostRecordWithIdentifier:shouldReplaceOnNextSync:" title="clientLostRecordWithIdentifier:shouldReplaceOnNextSync:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientLostRecordWithIdentifier:shouldReplaceOnNextSync:">&ndash;&nbsp;clientLostRecordWithIdentifier:shouldReplaceOnNextSync:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clientLostRecordWithIdentifier:(NSString *)<em>recordId</em> shouldReplaceOnNextSync:(BOOL)<em>flag</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientFinishedPushingChangesWithNextAnchors:" title="clientFinishedPushingChangesWithNextAnchors:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientFinishedPushingChangesWithNextAnchors:">&ndash;&nbsp;clientFinishedPushingChangesWithNextAnchors:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clientFinishedPushingChangesWithNextAnchors:(NSDictionary *)<em>anchors</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareToPullChangesForEntityNames:beforeDate:" title="prepareToPullChangesForEntityNames:beforeDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareToPullChangesForEntityNames:beforeDate:">&ndash;&nbsp;prepareToPullChangesForEntityNames:beforeDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)prepareToPullChangesForEntityNames:(NSArray *)<em>entityNames</em> beforeDate:(NSDate *)<em>date</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareToPullChangesInBackgroundForEntityNames:target:selector:" title="prepareToPullChangesInBackgroundForEntityNames:target:selector:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareToPullChangesInBackgroundForEntityNames:target:selector:">&ndash;&nbsp;prepareToPullChangesInBackgroundForEntityNames:target:selector:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)prepareToPullChangesInBackgroundForEntityNames:(NSArray *)<em>entityNames</em> target:(id)<em>target</em> selector:(SEL)<em>selector</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/changeEnumeratorForEntityNames:" title="changeEnumeratorForEntityNames:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/changeEnumeratorForEntityNames:">&ndash;&nbsp;changeEnumeratorForEntityNames:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSEnumerator *)changeEnumeratorForEntityNames:(NSArray *)<em>entityNames</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientAcceptedChangesForRecordWithIdentifier:formattedRecord:newRecordIdentifier:" title="clientAcceptedChangesForRecordWithIdentifier:formattedRecord:newRecordIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientAcceptedChangesForRecordWithIdentifier:formattedRecord:newRecordIdentifier:">&ndash;&nbsp;clientAcceptedChangesForRecordWithIdentifier:formattedRecord:newRecordIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clientAcceptedChangesForRecordWithIdentifier:(NSString *)<em>recordId</em> formattedRecord:(NSDictionary *)<em>formattedRecord</em> newRecordIdentifier:(NSString *)<em>recordId</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientRefusedChangesForRecordWithIdentifier:" title="clientRefusedChangesForRecordWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientRefusedChangesForRecordWithIdentifier:">&ndash;&nbsp;clientRefusedChangesForRecordWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clientRefusedChangesForRecordWithIdentifier:(NSString *)<em>recordId</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientCommittedAcceptedChanges" title="clientCommittedAcceptedChanges"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientCommittedAcceptedChanges">&ndash;&nbsp;clientCommittedAcceptedChanges</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clientCommittedAcceptedChanges</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientCommittedAcceptedChangesWithNextAnchors:" title="clientCommittedAcceptedChangesWithNextAnchors:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientCommittedAcceptedChangesWithNextAnchors:">&ndash;&nbsp;clientCommittedAcceptedChangesWithNextAnchors:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clientCommittedAcceptedChangesWithNextAnchors:(NSDictionary *)<em>anchors</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientChangedRecordIdentifiers:" title="clientChangedRecordIdentifiers:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientChangedRecordIdentifiers:">&ndash;&nbsp;clientChangedRecordIdentifiers:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clientChangedRecordIdentifiers:(NSDictionary *)<em>oldToNew</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isCancelled" title="isCancelled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isCancelled">&ndash;&nbsp;isCancelled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isCancelled</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelSyncing" title="cancelSyncing"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelSyncing">&ndash;&nbsp;cancelSyncing</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)cancelSyncing</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/finishSyncing" title="finishSyncing"></a>
+	<h3 class="method-title"><code><a href="#//api/name/finishSyncing">&ndash;&nbsp;finishSyncing</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)finishSyncing</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientInfoForRecordWithIdentifier:" title="clientInfoForRecordWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientInfoForRecordWithIdentifier:">&ndash;&nbsp;clientInfoForRecordWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)clientInfoForRecordWithIdentifier:(NSString *)<em>recordId</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setClientInfo:forRecordWithIdentifier:" title="setClientInfo:forRecordWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setClientInfo:forRecordWithIdentifier:">&ndash;&nbsp;setClientInfo:forRecordWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setClientInfo:(id&lt;NSCoding&gt;)<em>clientInfo</em> forRecordWithIdentifier:(NSString *)<em>recordId</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/snapshotOfRecordsInTruth" title="snapshotOfRecordsInTruth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/snapshotOfRecordsInTruth">&ndash;&nbsp;snapshotOfRecordsInTruth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ISyncRecordSnapshot *)snapshotOfRecordsInTruth</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ping" title="ping"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ping">&ndash;&nbsp;ping</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)ping</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

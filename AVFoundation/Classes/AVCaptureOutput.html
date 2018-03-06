@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureOutput Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/connections">connections</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/connectionWithMediaType:">- connectionWithMediaType:</option>
+		
+		<option value="//api/name/metadataOutputRectOfInterestForRect:">- metadataOutputRectOfInterestForRect:</option>
+		
+		<option value="//api/name/rectForMetadataOutputRectOfInterest:">- rectForMetadataOutputRectOfInterest:</option>
+		
+		<option value="//api/name/transformedMetadataObjectForMetadataObject:connection:">- transformedMetadataObjectForMetadataObject:connection:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureOutput Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureOutputBase.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureOutput
+@abstract
+    AVCaptureOutput is an abstract class that defines an interface for an output destination of an AVCaptureSession.</p>
+
+<p>@discussion
+    AVCaptureOutput provides an abstract interface for connecting capture output destinations, such as files and video previews, to an AVCaptureSession.</p>
+
+<pre><code>An AVCaptureOutput can have multiple connections represented by AVCaptureConnection objects, one for each stream of media that it receives from an AVCaptureInput. An AVCaptureOutput does not have any connections when it is first created. When an output is added to an AVCaptureSession, connections are created that map media data from that session's inputs to its outputs.
+
+Concrete AVCaptureOutput instances can be added to an AVCaptureSession using the [AVCaptureSession addOutput:] and [AVCaptureSession addOutputWithNoConnections:] methods.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/connections" title="connections"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connections">&nbsp;&nbsp;connections</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property connections
+@abstract
+    The connections that describe the flow of media data to the receiver from AVCaptureInputs.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVCaptureConnection*&gt; *connections</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property connections
+@abstract
+    The connections that describe the flow of media data to the receiver from AVCaptureInputs.</p>
+
+<p>@discussion
+    The value of this property is an NSArray of <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> objects, each describing the mapping between the receiver and the AVCaptureInputPorts of one or more AVCaptureInputs.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureOutputBase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectionWithMediaType:" title="connectionWithMediaType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectionWithMediaType:">&ndash;&nbsp;connectionWithMediaType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method connectionWithMediaType:
+@abstract
+    Returns the first connection in the <a href="#//api/name/connections">connections</a> array with an inputPort of the specified mediaType.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable AVCaptureConnection *)connectionWithMediaType:(AVMediaType)<em>mediaType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method connectionWithMediaType:
+@abstract
+    Returns the first connection in the <a href="#//api/name/connections">connections</a> array with an inputPort of the specified mediaType.</p>
+
+<p>@param mediaType
+    An AVMediaType constant from AVMediaFormat.h, e.g. AVMediaTypeVideo.</p>
+
+<p>@discussion
+    This convenience method returns the first <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> in the receiver&rsquo;s <a href="#//api/name/connections">connections</a> array that has an <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a> of the specified mediaType. If no connection with the specified mediaType is found, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureOutputBase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/transformedMetadataObjectForMetadataObject:connection:" title="transformedMetadataObjectForMetadataObject:connection:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transformedMetadataObjectForMetadataObject:connection:">&ndash;&nbsp;transformedMetadataObjectForMetadataObject:connection:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method transformedMetadataObjectForMetadataObject:connection:
+@abstract
+    Converts an AVMetadataObject&rsquo;s visual properties to the receiver&rsquo;s coordinates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable AVMetadataObject *)transformedMetadataObjectForMetadataObject:(AVMetadataObject *)<em>metadataObject</em> connection:(AVCaptureConnection *)<em>connection</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method transformedMetadataObjectForMetadataObject:connection:
+@abstract
+    Converts an AVMetadataObject&rsquo;s visual properties to the receiver&rsquo;s coordinates.</p>
+
+<p>@param metadataObject
+    An <a href="../Classes/AVMetadataObject.html">AVMetadataObject</a> originating from the same <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> as the receiver.
+@param connection
+    The receiver&rsquo;s connection whose <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> matches that of the metadata object to be converted.
+@result
+    An <a href="../Classes/AVMetadataObject.html">AVMetadataObject</a> whose properties are in output coordinates.</p>
+
+<p>@discussion
+    <a href="../Classes/AVMetadataObject.html">AVMetadataObject</a> bounds may be expressed as a rect where {0,0} represents the top left of the picture area, and {1,1} represents the bottom right on an unrotated picture. Face metadata objects likewise express yaw and roll angles with respect to an unrotated picture. -transformedMetadataObjectForMetadataObject:connection: converts the visual properties in the coordinate space of the supplied <a href="../Classes/AVMetadataObject.html">AVMetadataObject</a> to the coordinate space of the receiver. The conversion takes orientation, mirroring, and scaling into consideration. If the provided metadata object originates from an input source other than the preview layer&rsquo;s, nil will be returned.</p>
+
+<pre><code>If an AVCaptureVideoDataOutput instance's connection's videoOrientation or videoMirrored properties are set to non-default values, the output applies the desired mirroring and orientation by physically rotating and or flipping sample buffers as they pass through it. AVCaptureStillImageOutput, on the other hand, does not physically rotate its buffers. It attaches an appropriate kCGImagePropertyOrientation number to captured still image buffers (see ImageIO/CGImageProperties.h) indicating how the image should be displayed on playback. Likewise, AVCaptureMovieFileOutput does not physically apply orientation/mirroring to its sample buffers -- it uses a QuickTime track matrix to indicate how the buffers should be rotated and/or flipped on playback.
+
+transformedMetadataObjectForMetadataObject:connection: alters the visual properties of the provided metadata object to match the physical rotation / mirroring of the sample buffers provided by the receiver through the indicated connection. I.e., for video data output, adjusted metadata object coordinates are rotated/mirrored. For still image and movie file output, they are not.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureOutputBase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataOutputRectOfInterestForRect:" title="metadataOutputRectOfInterestForRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataOutputRectOfInterestForRect:">&ndash;&nbsp;metadataOutputRectOfInterestForRect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method metadataOutputRectOfInterestForRect:
+@abstract
+    Converts a rectangle in the receiver&rsquo;s coordinate space to a rectangle of interest in the coordinate space of an <a href="../Classes/AVCaptureMetadataOutput.html">AVCaptureMetadataOutput</a> whose capture device is providing input to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGRect)metadataOutputRectOfInterestForRect:(CGRect)<em>rectInOutputCoordinates</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method metadataOutputRectOfInterestForRect:
+@abstract
+    Converts a rectangle in the receiver&rsquo;s coordinate space to a rectangle of interest in the coordinate space of an <a href="../Classes/AVCaptureMetadataOutput.html">AVCaptureMetadataOutput</a> whose capture device is providing input to the receiver.</p>
+
+<p>@param rectInOutputCoordinates
+    A CGRect in the receiver&rsquo;s coordinates.
+@result
+    A CGRect in the coordinate space of the metadata output whose capture device is providing input to the receiver.</p>
+
+<p>@discussion
+    <a href="../Classes/AVCaptureMetadataOutput.html">AVCaptureMetadataOutput</a> rectOfInterest is expressed as a CGRect where {0,0} represents the top left of the picture area, and {1,1} represents the bottom right on an unrotated picture. This convenience method converts a rectangle in the coordinate space of the receiver to a rectangle of interest in the coordinate space of an <a href="../Classes/AVCaptureMetadataOutput.html">AVCaptureMetadataOutput</a> whose <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a> is providing input to the receiver. The conversion takes orientation, mirroring, and scaling into consideration. See <a href="#//api/name/transformedMetadataObjectForMetadataObject:connection:">transformedMetadataObjectForMetadataObject:connection:</a> for a full discussion of how orientation and mirroring are applied to sample buffers passing through the output.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureOutputBase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rectForMetadataOutputRectOfInterest:" title="rectForMetadataOutputRectOfInterest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rectForMetadataOutputRectOfInterest:">&ndash;&nbsp;rectForMetadataOutputRectOfInterest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method rectForMetadataOutputRectOfInterest:
+@abstract
+    Converts a rectangle of interest in the coordinate space of an <a href="../Classes/AVCaptureMetadataOutput.html">AVCaptureMetadataOutput</a> whose capture device is providing input to the receiver to a rectangle in the receiver&rsquo;s coordinates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGRect)rectForMetadataOutputRectOfInterest:(CGRect)<em>rectInMetadataOutputCoordinates</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method rectForMetadataOutputRectOfInterest:
+@abstract
+    Converts a rectangle of interest in the coordinate space of an <a href="../Classes/AVCaptureMetadataOutput.html">AVCaptureMetadataOutput</a> whose capture device is providing input to the receiver to a rectangle in the receiver&rsquo;s coordinates.</p>
+
+<p>@param rectInMetadataOutputCoordinates
+    A CGRect in the coordinate space of the metadata output whose capture device is providing input to the receiver.
+@result
+    A CGRect in the receiver&rsquo;s coordinates.</p>
+
+<p>@discussion
+    <a href="../Classes/AVCaptureMetadataOutput.html">AVCaptureMetadataOutput</a> rectOfInterest is expressed as a CGRect where {0,0} represents the top left of the picture area, and {1,1} represents the bottom right on an unrotated picture. This convenience method converts a rectangle in the coordinate space of an <a href="../Classes/AVCaptureMetadataOutput.html">AVCaptureMetadataOutput</a> whose <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a> is providing input to the coordinate space of the receiver. The conversion takes orientation, mirroring, and scaling into consideration. See <a href="#//api/name/transformedMetadataObjectForMetadataObject:connection:">transformedMetadataObjectForMetadataObject:connection:</a> for a full discussion of how orientation and mirroring are applied to sample buffers passing through the output.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureOutputBase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

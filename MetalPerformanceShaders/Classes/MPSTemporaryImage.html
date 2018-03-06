@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSTemporaryImage Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/readCount">readCount</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/defaultAllocator">+ defaultAllocator</option>
+		
+		<option value="//api/name/prefetchStorageWithCommandBuffer:imageDescriptorList:">+ prefetchStorageWithCommandBuffer:imageDescriptorList:</option>
+		
+		<option value="//api/name/temporaryImageWithCommandBuffer:imageDescriptor:">+ temporaryImageWithCommandBuffer:imageDescriptor:</option>
+		
+		<option value="//api/name/temporaryImageWithCommandBuffer:textureDescriptor:">+ temporaryImageWithCommandBuffer:textureDescriptor:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithDevice:imageDescriptor:">- initWithDevice:imageDescriptor:</option>
+		
+		<option value="//api/name/initWithTexture:featureChannels:">- initWithTexture:featureChannels:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSTemporaryImage Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSImage.html">MPSImage</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSImage.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSTemporaryImage
+@dependency <a href="../Classes/MPSImage.html">MPSImage</a></p><p>What is temporary memory? It is memory, plain and simple. Analogy: If we
+use an app as an analogy for a command buffer, then &ldquo;Regular memory&rdquo;
+(such as what backs a MPSImage or the typical MTLTexture) would be memory
+that you allocate at launch and never free. Temporary memory would be memory
+that you free when you are done with it so it can be used for something
+else as needed later in your app.  You /could/ write your app to allocate
+everything you will ever need up front, but this is very inefficient and
+quite frankly a pain to plan out in advance. You don&rsquo;t do it for your app,
+so why would you do it for your command buffers?</p>
+
+<p>Welcome to the 1970&rsquo;s! We have added a heap.</p>
+
+<p>Unsurprisingly, MPSTemporaryImages can provide for profound reduction in
+the the amount of memory used by your application.  Like malloc, MPS
+maintains a heap of memory usable in a command buffer. Over the lifetime
+of a command buffer, the same piece of memory may be reused many times.
+This means that each time the same meory is reused, it aliases with previous
+uses. If we aren&rsquo;t careful, we might find that needed data is overwritten
+by successive allocations. However, this is no different than accessing freed
+memory only to discover it doesn&rsquo;t contain what you thought it did anymore,
+so you should be able to keep out of trouble by following a few simple rules,
+like with malloc.</p>
+
+<p>To this end, we added some restrictions to help you out and get a bit more
+performance. Some comments are appended in parentheses below to extend the
+analogy of command buffer = program:</p>
+
+<ul>
+<li><p>The textures are MTLStorageModePrivate. You can not, for example, use
+[MTLTexture getBytes&hellip;] or [MTLTexture replaceRegion&hellip;] with them.
+MPSTemporaryImages are strictly read and written by the GPU. (There is
+protected memory to prevent other processes from overwriting your heap.)</p></li>
+<li><p>The temporary image may be used only on a single MTLCommandBuffer.
+This limits the chronology to a single linear time stream. (The heap
+is specific to just one command buffer. There are no mutexes to
+coordinate timing of simultaneous access by multiple GPUs. Nor are we
+likely to like them if there were. So, we disallow it.)</p></li>
+<li><p>The <a href="#//api/name/readCount">readCount</a> property must be managed correctly. Please see
+the description of the <a href="#//api/name/readCount">readCount</a> property for full details. (The <a href="#//api/name/readCount">readCount</a>
+is a reference count for the block of memory that holds your data. The
+usual undefined behaviors apply to reading data that has been released.
+We assert when we can to prevent that from happening accidentally,
+just as a program might segfault. The <a href="#//api/name/readCount">readCount</a> counts procedural users
+of the object &ndash; <a href="../Classes/MPSKernel.html">MPSKernel</a>.encode&hellip; calls that read the MPSTemporaryImage.
+As each reads from it, the <a href="#//api/name/readCount">readCount</a> is automatically decremented. The
+texture data will be freed in typical usage at the right time as the
+<a href="#//api/name/readCount">readCount</a> reaches zero, typically with little user involvement other
+than to set the <a href="#//api/name/readCount">readCount</a> up front. We did examine using the main MPSTemporaryImage
+reference count for this instead so that ARC would do work for you automatically.
+Alas, ARC destroys things at end of scope rather than promptly, sometimes resulting
+in greatly increased memory usage. These allocations are large! So, we
+use this method instead.)</p></li>
+</ul>
+
+
+<p>Since MPSTemporaryImages can only be used with a single MTLCommandBuffer,
+and can not be used off the GPU, they generally should not be kept
+around past the completion of the MTLCommandBuffer. The lifetime of
+MPSTemporaryImages is expected to be typically extremely short, perhaps
+only a few lines of code. Like malloc, it is intended to be fairly cheap
+to make MPSTemporaryImages and throw them away. Please do so.</p>
+
+<p>To keep the lifetime of the underlying texture allocation as short as
+possible, the underlying texture is not allocated until the first time
+the MPSTemporaryImage is used by a <a href="../Classes/MPSCNNKernel.html">MPSCNNKernel</a> or the .texture property
+is read. The <a href="#//api/name/readCount">readCount</a> property serves to limit the lifetime on the
+other end.</p>
+
+<p>You may use the MPSTemporaryImage.texture with <a href="../Classes/MPSUnaryImageKernel.html">MPSUnaryImageKernel</a> -encode&hellip; methods,
+iff featureChannels &lt;= 4 and the MTLTexture conforms to requirements of that <a href="../Classes/MPSKernel.html">MPSKernel</a>.
+There is no locking mechanism provided to prevent a MTLTexture returned
+from the .texture property from becoming invalid when the <a href="#//api/name/readCount">readCount</a> reaches 0.</p>
+
+<p>MPSTemporaryImages can otherwise be used wherever MPSImages are used.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/defaultAllocator" title="defaultAllocator"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultAllocator">+&nbsp;defaultAllocator</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code> Get a well known MPSImageAllocator that makes MPSTemporaryImages 
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull id&lt;MPSImageAllocator&gt;)defaultAllocator</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code> Get a well known MPSImageAllocator that makes MPSTemporaryImages 
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/temporaryImageWithCommandBuffer:imageDescriptor:" title="temporaryImageWithCommandBuffer:imageDescriptor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/temporaryImageWithCommandBuffer:imageDescriptor:">+&nbsp;temporaryImageWithCommandBuffer:imageDescriptor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a MPSTemporaryImage for use on a MTLCommandBuffer</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)temporaryImageWithCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> imageDescriptor:(const MPSImageDescriptor *__nonnull)<em>imageDescriptor</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>The MTLCommandBuffer on which the MPSTemporaryImage will be exclusively used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageDescriptor</code></th>
+						<td><p>A valid imageDescriptor describing the <a href="../Classes/MPSImage.html">MPSImage</a> format to create.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSTemporaryImage.  The object will be released when the command buffer
+is committed. The underlying texture will become invalid before this time
+due to the action of the <a href="#//api/name/readCount">readCount</a> property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/temporaryImageWithCommandBuffer:textureDescriptor:" title="temporaryImageWithCommandBuffer:textureDescriptor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/temporaryImageWithCommandBuffer:textureDescriptor:">+&nbsp;temporaryImageWithCommandBuffer:textureDescriptor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Low level interface for creating a MPSTemporaryImage using a MTLTextureDescriptor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)temporaryImageWithCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> textureDescriptor:(const MTLTextureDescriptor *__nonnull)<em>textureDescriptor</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>The command buffer on which the MPSTemporaryImage may be used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>textureDescriptor</code></th>
+						<td><p>A texture descriptor describing the MPSTemporaryImage texture</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSTemporaryImage.  The object will be released when the command buffer
+is committed. The underlying texture will become invalid before this time
+due to the action of the <a href="#//api/name/readCount">readCount</a> property.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This function provides access to MTLPixelFormats not typically covered by -initForCommandBuffer:imageDescriptor:
+The feature channels will be inferred from the MTLPixelFormat without changing the width.
+The following restrictions apply:</p>
+
+<p>MTLTextureType must be MTLTextureType2D or MTLTextureType2DArray
+MTLTextureUsage must contain at least one of MTLTextureUsageShaderRead, MTLTextureUsageShaderWrite
+MTLStorageMode must be MTLStorageModePrivate
+depth must be 1</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prefetchStorageWithCommandBuffer:imageDescriptorList:" title="prefetchStorageWithCommandBuffer:imageDescriptorList:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prefetchStorageWithCommandBuffer:imageDescriptorList:">+&nbsp;prefetchStorageWithCommandBuffer:imageDescriptorList:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Help MPS decide which allocations to make ahead of time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)prefetchStorageWithCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> imageDescriptorList:(NSArray&lt;MPSImageDescriptor*&gt; *__nonnull)<em>descriptorList</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>The command buffer on which the MPSTemporaryImages will be used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>descriptorList</code></th>
+						<td><p>A NSArray of MPSImageDescriptors, indicating images that will be created</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The texture cache that underlies the MPSTemporaryImage can automatically allocate new storage as
+needed as you create new temporary images.  However, sometimes a more global view of what you
+plan to make is useful for maximizing memory reuse to get the most efficient operation.
+This class method hints to the cache what the list of images will be.</p>
+
+<p>It is never necessary to call this method. It is purely a performance and memory optimization.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTexture:featureChannels:" title="initWithTexture:featureChannels:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTexture:featureChannels:">&ndash;&nbsp;initWithTexture:featureChannels:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unavailable. Use temporaryImageForCommandBuffer:textureDescriptor: or -temporaryImageForCommandBuffer:imageDescriptor: instead.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithTexture:(nonnull id&lt;MTLTexture&gt;)<em>texture</em> featureChannels:(NSUInteger)<em>featureChannels</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Unavailable. Use temporaryImageForCommandBuffer:textureDescriptor: or -temporaryImageForCommandBuffer:imageDescriptor: instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:imageDescriptor:" title="initWithDevice:imageDescriptor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:imageDescriptor:">&ndash;&nbsp;initWithDevice:imageDescriptor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unavailable. Use itemporaryImageForCommandBuffer:textureDescriptor: instead.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> imageDescriptor:(const MPSImageDescriptor *__nonnull)<em>imageDescriptor</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Unavailable. Use itemporaryImageForCommandBuffer:textureDescriptor: instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readCount" title="readCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readCount">&nbsp;&nbsp;readCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) NSUInteger readCount</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

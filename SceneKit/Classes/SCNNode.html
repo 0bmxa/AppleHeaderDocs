@@ -1,0 +1,2981 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SCNNode Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SceneKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/__WATCHOS_PROHIBITED">__WATCHOS_PROHIBITED</option>
+		
+		<option value="//api/name/camera">camera</option>
+		
+		<option value="//api/name/childNodes">childNodes</option>
+		
+		<option value="//api/name/geometry">geometry</option>
+		
+		<option value="//api/name/hidden">hidden</option>
+		
+		<option value="//api/name/light">light</option>
+		
+		<option value="//api/name/name">name</option>
+		
+		<option value="//api/name/opacity">opacity</option>
+		
+		<option value="//api/name/parentNode">parentNode</option>
+		
+		<option value="//api/name/pivot">pivot</option>
+		
+		<option value="//api/name/position">position</option>
+		
+		<option value="//api/name/presentationNode">presentationNode</option>
+		
+		<option value="//api/name/rendererDelegate">rendererDelegate</option>
+		
+		<option value="//api/name/renderingOrder">renderingOrder</option>
+		
+		<option value="//api/name/rotation">rotation</option>
+		
+		<option value="//api/name/scale">scale</option>
+		
+		<option value="//api/name/transform">transform</option>
+		
+		<option value="//api/name/worldTransform">worldTransform</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/node">+ node</option>
+		
+		<option value="//api/name/nodeWithGeometry:">+ nodeWithGeometry:</option>
+		
+		<option value="//api/name/nodeWithMDLObject:">+ nodeWithMDLObject:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addAudioPlayer:">- addAudioPlayer:</option>
+		
+		<option value="//api/name/addChildNode:">- addChildNode:</option>
+		
+		<option value="//api/name/addParticleSystem:">- addParticleSystem:</option>
+		
+		<option value="//api/name/childNodeWithName:recursively:">- childNodeWithName:recursively:</option>
+		
+		<option value="//api/name/childNodesPassingTest:">- childNodesPassingTest:</option>
+		
+		<option value="//api/name/clone">- clone</option>
+		
+		<option value="//api/name/convertPosition:fromNode:">- convertPosition:fromNode:</option>
+		
+		<option value="//api/name/convertPosition:toNode:">- convertPosition:toNode:</option>
+		
+		<option value="//api/name/convertTransform:fromNode:">- convertTransform:fromNode:</option>
+		
+		<option value="//api/name/convertTransform:toNode:">- convertTransform:toNode:</option>
+		
+		<option value="//api/name/convertVector:fromNode:">- convertVector:fromNode:</option>
+		
+		<option value="//api/name/convertVector:toNode:">- convertVector:toNode:</option>
+		
+		<option value="//api/name/enumerateChildNodesUsingBlock:">- enumerateChildNodesUsingBlock:</option>
+		
+		<option value="//api/name/enumerateHierarchyUsingBlock:">- enumerateHierarchyUsingBlock:</option>
+		
+		<option value="//api/name/flattenedClone">- flattenedClone</option>
+		
+		<option value="//api/name/hitTestWithSegmentFromPoint:toPoint:options:">- hitTestWithSegmentFromPoint:toPoint:options:</option>
+		
+		<option value="//api/name/insertChildNode:atIndex:">- insertChildNode:atIndex:</option>
+		
+		<option value="//api/name/localRotateBy:">- localRotateBy:</option>
+		
+		<option value="//api/name/localTranslateBy:">- localTranslateBy:</option>
+		
+		<option value="//api/name/lookAt:">- lookAt:</option>
+		
+		<option value="//api/name/lookAt:up:localFront:">- lookAt:up:localFront:</option>
+		
+		<option value="//api/name/removeAllAudioPlayers">- removeAllAudioPlayers</option>
+		
+		<option value="//api/name/removeAllParticleSystems">- removeAllParticleSystems</option>
+		
+		<option value="//api/name/removeAudioPlayer:">- removeAudioPlayer:</option>
+		
+		<option value="//api/name/removeFromParentNode">- removeFromParentNode</option>
+		
+		<option value="//api/name/removeParticleSystem:">- removeParticleSystem:</option>
+		
+		<option value="//api/name/replaceChildNode:with:">- replaceChildNode:with:</option>
+		
+		<option value="//api/name/rotateBy:aroundTarget:">- rotateBy:aroundTarget:</option>
+		
+		<option value="//api/name/setWorldTransform:">- setWorldTransform:</option>
+		
+		<option value="//api/name/simdConvertPosition:fromNode:">- simdConvertPosition:fromNode:</option>
+		
+		<option value="//api/name/simdConvertPosition:toNode:">- simdConvertPosition:toNode:</option>
+		
+		<option value="//api/name/simdConvertTransform:fromNode:">- simdConvertTransform:fromNode:</option>
+		
+		<option value="//api/name/simdConvertTransform:toNode:">- simdConvertTransform:toNode:</option>
+		
+		<option value="//api/name/simdConvertVector:fromNode:">- simdConvertVector:fromNode:</option>
+		
+		<option value="//api/name/simdConvertVector:toNode:">- simdConvertVector:toNode:</option>
+		
+		<option value="//api/name/simdLocalRotateBy:">- simdLocalRotateBy:</option>
+		
+		<option value="//api/name/simdLocalTranslateBy:">- simdLocalTranslateBy:</option>
+		
+		<option value="//api/name/simdLookAt:">- simdLookAt:</option>
+		
+		<option value="//api/name/simdLookAt:up:localFront:">- simdLookAt:up:localFront:</option>
+		
+		<option value="//api/name/simdRotateBy:aroundTarget:">- simdRotateBy:aroundTarget:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SCNNode Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying<br />NSSecureCoding<br /><a href="../Protocols/SCNActionable.html">SCNActionable</a><br /><a href="../Protocols/SCNAnimatable.html">SCNAnimatable</a><br /><a href="../Protocols/SCNBoundingVolume.html">SCNBoundingVolume</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SCNNode.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class SCNNode</p><p>It encapsulates the <a href="#//api/name/position">position</a>, rotations, and other transforms of a <a href="#//api/name/node">node</a>, which define a coordinate system.
+             The coordinate systems of all the sub-nodes are relative to the one of their parent <a href="#//api/name/node">node</a>.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/node" title="node"></a>
+	<h3 class="method-title"><code><a href="#//api/name/node">+&nbsp;node</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and initializes a node instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)node</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method node</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nodeWithGeometry:" title="nodeWithGeometry:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nodeWithGeometry:">+&nbsp;nodeWithGeometry:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and initializes a <a href="#//api/name/node">node</a> instance with the specified <a href="#//api/name/geometry">geometry</a> attached.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (SCNNode *)nodeWithGeometry:(nullable SCNGeometry *)<em>geometry</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>geometry</code></th>
+						<td><p>The <a href="#//api/name/geometry">geometry</a> to attach.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method nodeWithGeometry:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clone" title="clone"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clone">&ndash;&nbsp;clone</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a copy of the receiver. The returned instance is autoreleased.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)clone</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method clone</p><p>The copy is recursive: every child <a href="#//api/name/node">node</a> will be cloned, too. For a non-recursive copy, use copy instead.
+The copied nodes will share their attached objects (<a href="#//api/name/light">light</a>, <a href="#//api/name/geometry">geometry</a>, <a href="#//api/name/camera">camera</a>, &hellip;) with the original instances;
+if you want, for example, to change the materials of the copy independently of the original object, you&rsquo;ll
+have to copy the <a href="#//api/name/geometry">geometry</a> of the <a href="#//api/name/node">node</a> separately.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flattenedClone" title="flattenedClone"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flattenedClone">&ndash;&nbsp;flattenedClone</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)flattenedClone</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the name of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSString *name</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property name</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/light" title="light"></a>
+	<h3 class="method-title"><code><a href="#//api/name/light">&nbsp;&nbsp;light</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the light attached to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) SCNLight *light</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property light</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/camera" title="camera"></a>
+	<h3 class="method-title"><code><a href="#//api/name/camera">&nbsp;&nbsp;camera</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the camera attached to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) SCNCamera *camera</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property camera</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/geometry" title="geometry"></a>
+	<h3 class="method-title"><code><a href="#//api/name/geometry">&nbsp;&nbsp;geometry</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the geometry attached to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) SCNGeometry *geometry</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property geometry</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the skinner attached to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) SCNSkinner *API_AVAILABLE ( macos ( 10.9 )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property skinner</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/transform" title="transform"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transform">&nbsp;&nbsp;transform</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the receiver&rsquo;s transform. Animatable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) SCNMatrix4 transform</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property transform</p><p>The transform is the combination of the <a href="#//api/name/position">position</a>, <a href="#//api/name/rotation">rotation</a> and <a href="#//api/name/scale">scale</a> defined below. So when the transform is set, the receiver&rsquo;s <a href="#//api/name/position">position</a>, <a href="#//api/name/rotation">rotation</a> and <a href="#//api/name/scale">scale</a> are changed to match the new transform.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/worldTransform" title="worldTransform"></a>
+	<h3 class="method-title"><code><a href="#//api/name/worldTransform">&nbsp;&nbsp;worldTransform</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the receiver&rsquo;s <a href="#//api/name/transform">transform</a> in world space (relative to the scene&rsquo;s root <a href="#//api/name/node">node</a>). Animatable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SCNMatrix4 worldTransform</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property worldTransform</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setWorldTransform:" title="setWorldTransform:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setWorldTransform:">&ndash;&nbsp;setWorldTransform:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setWorldTransform:(SCNMatrix4)<em>worldTransform</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/position" title="position"></a>
+	<h3 class="method-title"><code><a href="#//api/name/position">&nbsp;&nbsp;position</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the receiver&rsquo;s position. Animatable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) SCNVector3 position</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property position</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rotation" title="rotation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotation">&nbsp;&nbsp;rotation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the receiver&rsquo;s rotation. Animatable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) SCNVector4 rotation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property rotation</p><p>The rotation is axis angle rotation. The three first components are the axis, the fourth one is the rotation (in radian).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scale" title="scale"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scale">&nbsp;&nbsp;scale</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the receiver&rsquo;s scale. Animatable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) SCNVector3 scale</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property scale</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pivot" title="pivot"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pivot">&nbsp;&nbsp;pivot</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the receiver&rsquo;s pivot. Animatable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) SCNMatrix4 pivot</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property pivot</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hidden" title="hidden"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hidden">&nbsp;&nbsp;hidden</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines whether the receiver is displayed. Defaults to NO. Animatable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isHidden) BOOL hidden</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property hidden</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/opacity" title="opacity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/opacity">&nbsp;&nbsp;opacity</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the opacity of the receiver. Default is 1. Animatable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGFloat opacity</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property opacity</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renderingOrder" title="renderingOrder"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderingOrder">&nbsp;&nbsp;renderingOrder</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines the rendering order of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger renderingOrder</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property renderingOrder</p><p>Nodes with greater rendering orders are rendered last. Defaults to 0.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parentNode" title="parentNode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parentNode">&nbsp;&nbsp;parentNode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the parent <a href="#//api/name/node">node</a> of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) SCNNode *parentNode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property parentNode</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/childNodes" title="childNodes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/childNodes">&nbsp;&nbsp;childNodes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the child <a href="#//api/name/node">node</a> array of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;SCNNode*&gt; *childNodes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property childNodes</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addChildNode:" title="addChildNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addChildNode:">&ndash;&nbsp;addChildNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Appends the <a href="#//api/name/node">node</a> to the receiver’s <a href="#//api/name/childNodes">childNodes</a> array.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addChildNode:(SCNNode *)<em>child</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>child</code></th>
+						<td><p>The <a href="#//api/name/node">node</a> to be added to the receiver’s <a href="#//api/name/childNodes">childNodes</a> array.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addChildNode:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insertChildNode:atIndex:" title="insertChildNode:atIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insertChildNode:atIndex:">&ndash;&nbsp;insertChildNode:atIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Insert a <a href="#//api/name/node">node</a> in the <a href="#//api/name/childNodes">childNodes</a> array at the specified index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)insertChildNode:(SCNNode *)<em>child</em> atIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>child</code></th>
+						<td><p>The <a href="#//api/name/node">node</a> to insert.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>index</code></th>
+						<td><p>Index in the <a href="#//api/name/childNodes">childNodes</a> array to insert the <a href="#//api/name/node">node</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method insertChildNode:atIndex:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeFromParentNode" title="removeFromParentNode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeFromParentNode">&ndash;&nbsp;removeFromParentNode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the <a href="#//api/name/node">node</a> from the <a href="#//api/name/childNodes">childNodes</a> array of the receiver’s <a href="#//api/name/parentNode">parentNode</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeFromParentNode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method removeFromParentNode</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/replaceChildNode:with:" title="replaceChildNode:with:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/replaceChildNode:with:">&ndash;&nbsp;replaceChildNode:with:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove `child' from the childNode array of the receiver and insert &lsquo;child2&rsquo; if non-nil in its <a href="#//api/name/position">position</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)replaceChildNode:(SCNNode *)<em>oldChild</em> with:(SCNNode *)<em>newChild</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>oldChild</code></th>
+						<td><p>The <a href="#//api/name/node">node</a> to replace in the <a href="#//api/name/childNodes">childNodes</a> array.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newChild</code></th>
+						<td><p>The new <a href="#//api/name/node">node</a> that will replace the previous one.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method replaceChildNode:with:</p><p>If the <a href="#//api/name/parentNode">parentNode</a> of `child' is not the receiver, the behavior is undefined.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/childNodeWithName:recursively:" title="childNodeWithName:recursively:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/childNodeWithName:recursively:">&ndash;&nbsp;childNodeWithName:recursively:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the first <a href="#//api/name/node">node</a> found in the <a href="#//api/name/node">node</a> tree with the specified <a href="#//api/name/name">name</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable SCNNode *)childNodeWithName:(NSString *)<em>name</em> recursively:(BOOL)<em>recursively</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The <a href="#//api/name/name">name</a> of the <a href="#//api/name/node">node</a> you are searching for.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>recursively</code></th>
+						<td><p>Set to YES if you want the search to look through the sub-nodes recursively.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method childNodeWithName:recursively:</p><p>The search uses a pre-order tree traversal.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/childNodesPassingTest:" title="childNodesPassingTest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/childNodesPassingTest:">&ndash;&nbsp;childNodesPassingTest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the child nodes of the receiver that passes a test in a given Block.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;SCNNode*&gt; *)childNodesPassingTest:(NS_NOESCAPE BOOL ( ^ ) ( SCNNode *child , BOOL *stop ))<em>predicate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>predicate</code></th>
+						<td><p>The block to apply to child nodes of the receiver. The block takes two arguments: &ldquo;child&rdquo; is a child <a href="#//api/name/node">node</a> and &ldquo;stop&rdquo; is a reference to a Boolean value. The block can set the value to YES to stop further processing of the <a href="#//api/name/node">node</a> hierarchy. The stop argument is an out-only argument. You should only ever set this Boolean to YES within the Block. The Block returns a Boolean value that indicates whether &ldquo;child&rdquo; passed the test.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method childNodesPassingTest:</p><p>The search is recursive and uses a pre-order tree traversal.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enumerateChildNodesUsingBlock:" title="enumerateChildNodesUsingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enumerateChildNodesUsingBlock:">&ndash;&nbsp;enumerateChildNodesUsingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Executes a given block on each child <a href="#//api/name/node">node</a> under the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)enumerateChildNodesUsingBlock:(NS_NOESCAPE void ( ^ ) ( SCNNode *child , BOOL *stop ))<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>The block to apply to child nodes of the receiver. The block takes two arguments: &ldquo;child&rdquo; is a child <a href="#//api/name/node">node</a> and &ldquo;stop&rdquo; is a reference to a Boolean value. The block can set the value to YES to stop further processing of the <a href="#//api/name/node">node</a> hierarchy. The stop argument is an out-only argument. You should only ever set this Boolean to YES within the Block.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method enumerateChildNodesUsingBlock:</p><p>The search is recursive and uses a pre-order tree traversal.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enumerateHierarchyUsingBlock:" title="enumerateHierarchyUsingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enumerateHierarchyUsingBlock:">&ndash;&nbsp;enumerateHierarchyUsingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Executes a given block on the receiver and its child nodes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)enumerateHierarchyUsingBlock:(NS_NOESCAPE void ( ^ ) ( SCNNode *node , BOOL *stop ))<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>The block to apply to the receiver and its child nodes. The block takes two arguments: &ldquo;node&rdquo; is a <a href="#//api/name/node">node</a> in the hierarchy of the receiver (including the receiver) and &ldquo;stop&rdquo; is a reference to a Boolean value. The block can set the value to YES to stop further processing of the <a href="#//api/name/node">node</a> hierarchy. The stop argument is an out-only argument. You should only ever set this Boolean to YES within the Block.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method enumerateHierarchyUsingBlock:</p><p>The search is recursive and uses a pre-order tree traversal.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertPosition:toNode:" title="convertPosition:toNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertPosition:toNode:">&ndash;&nbsp;convertPosition:toNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Converts a <a href="#//api/name/position">position</a> from the receiver’s coordinate system to that of the specified <a href="#//api/name/node">node</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (SCNVector3)convertPosition:(SCNVector3)<em>position</em> toNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>position</code></th>
+						<td><p>A <a href="#//api/name/position">position</a> specified in the local coordinate system of the receiver.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The <a href="#//api/name/node">node</a> into whose coordinate system &ldquo;position&rdquo; is to be converted. If &ldquo;node&rdquo; is nil, this method instead converts to world coordinates.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method convertPosition:toNode:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertPosition:fromNode:" title="convertPosition:fromNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertPosition:fromNode:">&ndash;&nbsp;convertPosition:fromNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Converts a <a href="#//api/name/position">position</a> from the coordinate system of a given <a href="#//api/name/node">node</a> to that of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (SCNVector3)convertPosition:(SCNVector3)<em>position</em> fromNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>position</code></th>
+						<td><p>A <a href="#//api/name/position">position</a> specified in the local coordinate system of &ldquo;node&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The <a href="#//api/name/node">node</a> from whose coordinate system &ldquo;position&rdquo; is to be converted. If &ldquo;node&rdquo; is nil, this method instead converts from world coordinates.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method convertPosition:fromNode:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertVector:toNode:" title="convertVector:toNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertVector:toNode:">&ndash;&nbsp;convertVector:toNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Converts a vector from the coordinate system of a given <a href="#//api/name/node">node</a> to that of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (SCNVector3)convertVector:(SCNVector3)<em>vector</em> toNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vector</code></th>
+						<td><p>A vector specified in the local coordinate system the receiver.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The <a href="#//api/name/node">node</a> defining the space from which the vector should be transformed. If &ldquo;node&rdquo; is nil, this method instead converts from world coordinates.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>vector transformed from receiver local space to <a href="#//api/name/node">node</a> local space.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertVector:fromNode:" title="convertVector:fromNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertVector:fromNode:">&ndash;&nbsp;convertVector:fromNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Converts a vector from the coordinate system of a given <a href="#//api/name/node">node</a> to that of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (SCNVector3)convertVector:(SCNVector3)<em>vector</em> fromNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vector</code></th>
+						<td><p>A vector specified in the local coordinate system of &ldquo;node&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The <a href="#//api/name/node">node</a> defining the space to which the vector should be transformed to. If &ldquo;node&rdquo; is nil, this method instead converts from world coordinates.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>vector transformed from <a href="#//api/name/node">node</a> space to reveiver local space.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertTransform:toNode:" title="convertTransform:toNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertTransform:toNode:">&ndash;&nbsp;convertTransform:toNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Converts a <a href="#//api/name/transform">transform</a> from the receiver’s coordinate system to that of the specified <a href="#//api/name/node">node</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (SCNMatrix4)convertTransform:(SCNMatrix4)<em>transform</em> toNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transform</code></th>
+						<td><p>A <a href="#//api/name/transform">transform</a> specified in the local coordinate system of the receiver.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The <a href="#//api/name/node">node</a> into whose coordinate system &ldquo;transform&rdquo; is to be converted. If &ldquo;node&rdquo; is nil, this method instead converts to world coordinates.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method convertTransform:toNode:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertTransform:fromNode:" title="convertTransform:fromNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertTransform:fromNode:">&ndash;&nbsp;convertTransform:fromNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Converts a <a href="#//api/name/transform">transform</a> from the coordinate system of a given <a href="#//api/name/node">node</a> to that of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (SCNMatrix4)convertTransform:(SCNMatrix4)<em>transform</em> fromNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transform</code></th>
+						<td><p>A <a href="#//api/name/transform">transform</a> specified in the local coordinate system of &ldquo;node&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The <a href="#//api/name/node">node</a> from whose coordinate system &ldquo;transform&rdquo; is to be converted. If &ldquo;node&rdquo; is nil, this method instead converts from world coordinates.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method convertTransform:fromNode:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/__WATCHOS_PROHIBITED" title="__WATCHOS_PROHIBITED"></a>
+	<h3 class="method-title"><code><a href="#//api/name/__WATCHOS_PROHIBITED">&nbsp;&nbsp;__WATCHOS_PROHIBITED</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An array of Core Image filters that are applied to the rendering of the receiver and its child nodes. Animatable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray&lt;CIFilter*&gt; *API_AVAILABLE ( macos ( 10.9 ) ) __WATCHOS_PROHIBITED</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property filters</p><p>Defaults to nil. Filter properties should be modified by calling setValue:forKeyPath: on each <a href="#//api/name/node">node</a> that the filter is attached to. If the inputs of the filter are modified directly after the filter is attached to a <a href="#//api/name/node">node</a>, the behavior is undefined.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/presentationNode" title="presentationNode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentationNode">&nbsp;&nbsp;presentationNode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the presentation <a href="#//api/name/node">node</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SCNNode *presentationNode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property presentationNode</p><p>Returns a copy of the <a href="#//api/name/node">node</a> containing all the properties as they were at the start of the current transaction, with any active animations applied.
+             This gives a close approximation to the version of the <a href="#//api/name/node">node</a> that is currently displayed.
+             The effect of attempting to modify the returned <a href="#//api/name/node">node</a> in any way is undefined. The returned <a href="#//api/name/node">node</a> has no parent and no child nodes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rendererDelegate" title="rendererDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rendererDelegate">&nbsp;&nbsp;rendererDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specifies the receiver&rsquo;s renderer delegate object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, nullable) id&lt;SCNNodeRendererDelegate&gt; rendererDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property rendererDelegate</p><p>Setting a renderer delegate prevents the SceneKit renderer from drawing the <a href="#//api/name/node">node</a> and lets you use custom OpenGL code instead.
+             The preferred way to customize the rendering is to tweak the material properties of the different materials of the node&rsquo;s <a href="#//api/name/geometry">geometry</a>. <a href="../Classes/SCNMaterial.html">SCNMaterial</a> conforms to the <a href="../Protocols/SCNShadable.html">SCNShadable</a> protocol and allows for more advanced rendering using GLSL.
+             You would typically use a renderer delegate with a <a href="#//api/name/node">node</a> that has no <a href="#//api/name/geometry">geometry</a> and only serves as a location in space. An example would be attaching a particle system to that <a href="#//api/name/node">node</a> and render it with custom OpenGL code.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hitTestWithSegmentFromPoint:toPoint:options:" title="hitTestWithSegmentFromPoint:toPoint:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hitTestWithSegmentFromPoint:toPoint:options:">&ndash;&nbsp;hitTestWithSegmentFromPoint:toPoint:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of <a href="../Classes/SCNHitTestResult.html">SCNHitTestResult</a> for each <a href="#//api/name/node">node</a> in the receiver&rsquo;s sub tree that intersects the specified segment.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;SCNHitTestResult*&gt; *)hitTestWithSegmentFromPoint:(SCNVector3)<em>pointA</em> toPoint:(SCNVector3)<em>pointB</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pointA</code></th>
+						<td><p>The first point of the segment relative to the receiver.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pointB</code></th>
+						<td><p>The second point of the segment relative to the receiver.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>Optional parameters (see the &ldquo;Hit test options&rdquo; section in <a href="../Protocols/SCNSceneRenderer.html">SCNSceneRenderer</a>.h for the available options).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method hitTestWithSegmentFromPoint:toPoint:options:</p><p>See <a href="../Protocols/SCNSceneRenderer.html">SCNSceneRenderer</a>.h for a screen-space hit testing method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="SCNAudioSupport Methods" name="task_SCNAudioSupport Methods"></a>
+						<h2 class="task-title">SCNAudioSupport Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/addAudioPlayer:" title="addAudioPlayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addAudioPlayer:">&ndash;&nbsp;addAudioPlayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add an audio player to the <a href="#//api/name/node">node</a> and starts playing it right away.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addAudioPlayer:(SCNAudioPlayer *)<em>player</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addAudioPlayer:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNAudioSource.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAllAudioPlayers" title="removeAllAudioPlayers"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAllAudioPlayers">&ndash;&nbsp;removeAllAudioPlayers</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove all audio players from this <a href="#//api/name/node">node</a> and stop playing them.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAllAudioPlayers</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method removeAllAudioPlayers</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNAudioSource.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAudioPlayer:" title="removeAudioPlayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAudioPlayer:">&ndash;&nbsp;removeAudioPlayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove the given audio player from this <a href="#//api/name/node">node</a> and stop playing it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAudioPlayer:(SCNAudioPlayer *)<em>player</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method removeAudioPlayer:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNAudioSource.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="SCNModelIO Methods" name="task_SCNModelIO Methods"></a>
+						<h2 class="task-title">SCNModelIO Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/nodeWithMDLObject:" title="nodeWithMDLObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nodeWithMDLObject:">+&nbsp;nodeWithMDLObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)nodeWithMDLObject:(MDLObject *)<em>mdlObject</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Transforms Methods" name="task_Transforms Methods"></a>
+						<h2 class="task-title">Transforms Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/lookAt:" title="lookAt:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lookAt:">&ndash;&nbsp;lookAt:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience for calling <a href="#//api/name/lookAt:up:localFront:">lookAt:up:localFront:</a> with worldUp set to <code>self.worldUp</code>
+and localFront [SCNNode localFront].</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)lookAt:(SCNVector3)<em>worldTarget</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>worldTarget</code></th>
+						<td><p>target <a href="#//api/name/position">position</a> in world space.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Convenience for calling <a href="#//api/name/lookAt:up:localFront:">lookAt:up:localFront:</a> with worldUp set to <code>self.worldUp</code>
+and localFront [SCNNode localFront].</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lookAt:up:localFront:" title="lookAt:up:localFront:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lookAt:up:localFront:">&ndash;&nbsp;lookAt:up:localFront:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the orientation of the <a href="#//api/name/node">node</a> so its front vector is pointing toward a given
+target. Using a reference up vector in world space and a front vector in
+local space.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)lookAt:(SCNVector3)<em>worldTarget</em> up:(SCNVector3)<em>worldUp</em> localFront:(SCNVector3)<em>localFront</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>worldTarget</code></th>
+						<td><p><a href="#//api/name/position">position</a> in world space.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>worldUp</code></th>
+						<td><p>the up vector in world space.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>localFront</code></th>
+						<td><p>the front vector in local space.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set the orientation of the <a href="#//api/name/node">node</a> so its front vector is pointing toward a given
+target. Using a reference up vector in world space and a front vector in
+local space.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localTranslateBy:" title="localTranslateBy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localTranslateBy:">&ndash;&nbsp;localTranslateBy:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Translate the current <a href="#//api/name/node">node</a> <a href="#//api/name/position">position</a> along the given vector in local space.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)localTranslateBy:(SCNVector3)<em>translation</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>translation</code></th>
+						<td><p>the translation in local space.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Translate the current <a href="#//api/name/node">node</a> <a href="#//api/name/position">position</a> along the given vector in local space.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localRotateBy:" title="localRotateBy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localRotateBy:">&ndash;&nbsp;localRotateBy:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Apply a the given <a href="#//api/name/rotation">rotation</a> to the current one.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)localRotateBy:(SCNQuaternion)<em>rotation</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rotation</code></th>
+						<td><p><a href="#//api/name/rotation">rotation</a> in local space.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Apply a the given <a href="#//api/name/rotation">rotation</a> to the current one.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rotateBy:aroundTarget:" title="rotateBy:aroundTarget:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotateBy:aroundTarget:">&ndash;&nbsp;rotateBy:aroundTarget:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Apply a <a href="#//api/name/rotation">rotation</a> relative to a target point in parent space.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)rotateBy:(SCNQuaternion)<em>worldRotation</em> aroundTarget:(SCNVector3)<em>worldTarget</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>worldRotation</code></th>
+						<td><p><a href="#//api/name/rotation">rotation</a> to apply in world space.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>worldTarget</code></th>
+						<td><p><a href="#//api/name/position">position</a> of the target in world space.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Apply a <a href="#//api/name/rotation">rotation</a> relative to a target point in parent space.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="SIMD Methods" name="task_SIMD Methods"></a>
+						<h2 class="task-title">SIMD Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/simdConvertPosition:toNode:" title="simdConvertPosition:toNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/simdConvertPosition:toNode:">&ndash;&nbsp;simdConvertPosition:toNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (simd_float3)simdConvertPosition:(simd_float3)<em>position</em> toNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/simdConvertPosition:fromNode:" title="simdConvertPosition:fromNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/simdConvertPosition:fromNode:">&ndash;&nbsp;simdConvertPosition:fromNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (simd_float3)simdConvertPosition:(simd_float3)<em>position</em> fromNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/simdConvertVector:toNode:" title="simdConvertVector:toNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/simdConvertVector:toNode:">&ndash;&nbsp;simdConvertVector:toNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (simd_float3)simdConvertVector:(simd_float3)<em>vector</em> toNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/simdConvertVector:fromNode:" title="simdConvertVector:fromNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/simdConvertVector:fromNode:">&ndash;&nbsp;simdConvertVector:fromNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (simd_float3)simdConvertVector:(simd_float3)<em>vector</em> fromNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/simdConvertTransform:toNode:" title="simdConvertTransform:toNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/simdConvertTransform:toNode:">&ndash;&nbsp;simdConvertTransform:toNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (simd_float4x4)simdConvertTransform:(simd_float4x4)<em>transform</em> toNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/simdConvertTransform:fromNode:" title="simdConvertTransform:fromNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/simdConvertTransform:fromNode:">&ndash;&nbsp;simdConvertTransform:fromNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (simd_float4x4)simdConvertTransform:(simd_float4x4)<em>transform</em> fromNode:(nullable SCNNode *)<em>node</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/simdLookAt:" title="simdLookAt:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/simdLookAt:">&ndash;&nbsp;simdLookAt:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)simdLookAt:(vector_float3)<em>worldTarget</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/simdLookAt:up:localFront:" title="simdLookAt:up:localFront:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/simdLookAt:up:localFront:">&ndash;&nbsp;simdLookAt:up:localFront:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)simdLookAt:(vector_float3)<em>worldTarget</em> up:(vector_float3)<em>worldUp</em> localFront:(simd_float3)<em>localFront</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/simdLocalTranslateBy:" title="simdLocalTranslateBy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/simdLocalTranslateBy:">&ndash;&nbsp;simdLocalTranslateBy:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)simdLocalTranslateBy:(simd_float3)<em>translation</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/simdLocalRotateBy:" title="simdLocalRotateBy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/simdLocalRotateBy:">&ndash;&nbsp;simdLocalRotateBy:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)simdLocalRotateBy:(simd_quatf)<em>rotation</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/simdRotateBy:aroundTarget:" title="simdRotateBy:aroundTarget:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/simdRotateBy:aroundTarget:">&ndash;&nbsp;simdRotateBy:aroundTarget:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)simdRotateBy:(simd_quatf)<em>worldRotation</em> aroundTarget:(simd_float3)<em>worldTarget</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="SCNParticleSystemSupport Methods" name="task_SCNParticleSystemSupport Methods"></a>
+						<h2 class="task-title">SCNParticleSystemSupport Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/addParticleSystem:" title="addParticleSystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addParticleSystem:">&ndash;&nbsp;addParticleSystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addParticleSystem:(SCNParticleSystem *)<em>system</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAllParticleSystems" title="removeAllParticleSystems"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAllParticleSystems">&ndash;&nbsp;removeAllParticleSystems</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAllParticleSystems</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeParticleSystem:" title="removeParticleSystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeParticleSystem:">&ndash;&nbsp;removeParticleSystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeParticleSystem:(SCNParticleSystem *)<em>system</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

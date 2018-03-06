@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSMatrixVectorMultiplication Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encodeToCommandBuffer:inputMatrix:inputVector:resultVector:MPS_SWIFT_NAME:">- encodeToCommandBuffer:inputMatrix:inputVector:resultVector:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/initWithDevice:">- initWithDevice:</option>
+		
+		<option value="//api/name/initWithDevice:rows:columns:">- initWithDevice:rows:columns:</option>
+		
+		<option value="//api/name/initWithDevice:transpose:rows:columns:alpha:beta:">- initWithDevice:transpose:rows:columns:alpha:beta:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSMatrixVectorMultiplication Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSMatrixBinaryKernel.html">MPSMatrixBinaryKernel</a> : <a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSMatrixMultiplication.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSMatrixVectorMultiplication</p>
+
+<p>@dependency This depends on Metal.framework.</p><p>A MPSMatrixVectorMultiplication object computes:</p>
+
+<p>y = alpha * op(A) * x + beta * y</p>
+
+<p>A is a matrix represented by a <a href="../Classes/MPSMatrix.html">MPSMatrix</a> object. alpha and beta
+are scalar values (of the same data type as values of y) which are
+applied as shown above.  A may have an optional transposition
+operation applied.</p>
+
+<p>A MPSMatrixVectorMultiplication object is initialized with the transpose
+operator to apply to A, sizes for the operation to perform,
+and the scalar values alpha and beta.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithDevice:transpose:rows:columns:alpha:beta:" title="initWithDevice:transpose:rows:columns:alpha:beta:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:transpose:rows:columns:alpha:beta:">&ndash;&nbsp;initWithDevice:transpose:rows:columns:alpha:beta:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize an MPSMatrixVectorMultiplication object on a device for a given size
+and desired transpose and scale values.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> transpose:(BOOL)<em>transpose</em> rows:(NSUInteger)<em>rows</em> columns:(NSUInteger)<em>columns</em> alpha:(double)<em>alpha</em> beta:(double)<em>beta</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device on which the kernel will execute.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transpose</code></th>
+						<td><p>A boolean value which indicates if the input matrix should be
+used in transposed form.  if &lsquo;YES&rsquo; then op(A) == A**T, otherwise
+op(A) == A.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rows</code></th>
+						<td><p>The number of rows in the input matrix op(A), and the number of elements
+in the vector y.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>columns</code></th>
+						<td><p>The number of columns in the input matrix op(A), and the number of
+elements in the input vector x.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>alpha</code></th>
+						<td><p>The scale factor to apply to the product.  Specified in double
+precision.  Will be converted to the appropriate precision in the
+implementation subject to rounding and/or clamping as necessary.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beta</code></th>
+						<td><p>The scale factor to apply to the initial values of y.  Specified
+in double precision.  Will be converted to the appropriate precision in the
+implementation subject to rounding and/or clamping as necessary.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSMatrixVectorMultiplication object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixMultiplication.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:rows:columns:" title="initWithDevice:rows:columns:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:rows:columns:">&ndash;&nbsp;initWithDevice:rows:columns:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience initialization for a matrix-vector multiplication
+with no transposition, unit scaling of the product, and no
+accumulation of the result.  The scaling factors alpha and beta
+are taken to be 1.0 and 0.0 respectively.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> rows:(NSUInteger)<em>rows</em> columns:(NSUInteger)<em>columns</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device on which the kernel will execute.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rows</code></th>
+						<td><p>The number of rows in the input matrix A, and the number of elements
+in the vector y.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>columns</code></th>
+						<td><p>The number of columns in the input matrix A, and the number of
+elements in the input vector x.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSMatrixVectorMultiplication object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixMultiplication.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:" title="initWithDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:">&ndash;&nbsp;initWithDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use the above initialization method instead.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Use the above initialization method instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixMultiplication.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:inputMatrix:inputVector:resultVector:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:inputMatrix:inputVector:resultVector:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:inputMatrix:inputVector:resultVector:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:inputMatrix:inputVector:resultVector:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode a MPSMatrixVectorMultiplication object to a command buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> inputMatrix:(MPSMatrix const *__nonnull)<em>inputMatrix</em> inputVector:(MPSVector const *__nonnull)<em>inputVector</em> resultVector:(MPSVector *__nonnull)<em>resultVector</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded kernel.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inputMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> object which specifies the input matrix A.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inputVector</code></th>
+						<td><p>A valid <a href="../Classes/MPSVector.html">MPSVector</a> object which specifies the input vector x.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resultVector</code></th>
+						<td><p>A valid <a href="../Classes/MPSVector.html">MPSVector</a> object which specifies the addend vector which will
+also be overwritten by the result.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The left input matrix must be large enough to hold an array of size (rows x columns)
+elements beginning at primarySourceMatrixOrigin.</p>
+
+<p>The input vector must be large enough to hold an array of size (columns)
+elements beginning at secondarySourceMatrixOrigin.x  secondarySourceMatrixOrigin.y and
+secondarySourceMatrixOrigin.z must be zero.</p>
+
+<p>The result vector must be large enough to hold an array of size (rows)
+elements beginning at resultMatrixOrigin.x.  resultMatrixOrigin.y and
+resultMatrixOrigin.z must be zero.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixMultiplication.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

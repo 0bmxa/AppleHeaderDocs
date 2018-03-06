@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSMatrixDecompositionCholesky Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encodeToCommandBuffer:sourceMatrix:resultMatrix:status:MPS_SWIFT_NAME:">- encodeToCommandBuffer:sourceMatrix:resultMatrix:status:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/initWithDevice:lower:order:">- initWithDevice:lower:order:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSMatrixDecompositionCholesky Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSMatrixUnaryKernel.html">MPSMatrixUnaryKernel</a> : <a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSMatrixDecomposition.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSMatrixDecompositionCholesky</p>
+
+<p>@dependency This depends on Metal.framework.</p><p>A <a href="../Classes/MPSMatrixDecompositionLU.html">MPSMatrixDecompositionLU</a> object computes one of the following
+factorizations of a matrix A:</p>
+
+<p>A = L * L<strong>T
+A = U</strong>T * U</p>
+
+<p>A is a symmetric positive-definite matrix for which the
+factorization is to be computed. L and U are lower and upper
+triangular matrices respectively.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithDevice:lower:order:" title="initWithDevice:lower:order:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:lower:order:">&ndash;&nbsp;initWithDevice:lower:order:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize an MPSMatrixDecompositionCholesky object on a device</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> lower:(BOOL)<em>lower</em> order:(NSUInteger)<em>order</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device on which the kernel will execute.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lower</code></th>
+						<td><p>A boolean value indicating if the lower triangular
+part of the source matrix is stored.  If lower = YES
+the lower triangular part will be used and the factor
+will be written to the lower triangular part of the
+result, otherwise the upper triangular part will be used
+and the factor will be written to the upper triangular
+part.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>order</code></th>
+						<td><p>The number of rows and columns in the source matrix.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSMatrixDecompositionCholesky object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixDecomposition.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:sourceMatrix:resultMatrix:status:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:sourceMatrix:resultMatrix:status:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:sourceMatrix:resultMatrix:status:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:sourceMatrix:resultMatrix:status:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode a MPSMatrixDecompositionCholesky kernel into a command Buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceMatrix:(MPSMatrix const *__nonnull)<em>sourceMatrix</em> resultMatrix:(MPSMatrix *__nonnull)<em>resultMatrix</em> status:(__nullable id&lt;MTLBuffer&gt;)<em>status</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> containing the source data.  Must have
+enough space to hold a order x order matrix.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resultMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> to contain the result.  Must have enough
+space to hold a order x order matrix.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>status</code></th>
+						<td><p>A MTLBuffer which indicates the resulting <a href="../Constants/MPSMatrixDecompositionStatus.html">MPSMatrixDecompositionStatus</a>
+value.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This function encodes the MPSMatrixDecompositionCholesky object to a valid
+command buffer.</p>
+
+<p>If during the factorization a leading minor of the matrix is found to be
+not positive definite, MPSMatrixDecompositionNonPositiveDefinite will be returned
+in the provided status buffer.  Previously computed pivots and the non positive
+pivot are written to the result, but the factorization does not complete.
+The data referenced by the MTLBuffer is not valid until the command buffer has completed
+execution.  If the matrix return status is not desired NULL may be provided.</p>
+
+<p>If the return status is MPSMatrixDecompositionStatusSuccess, resultMatrix
+contains the resulting factors in its lower or upper triangular regions
+respectively.</p>
+
+<p>This kernel functions either in-place, if the result matrix
+completely aliases the source matrix, or out-of-place.  If there
+is any partial overlap between input and output data the results
+are undefined.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixDecomposition.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

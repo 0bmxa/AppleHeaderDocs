@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSURLProtocol Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/cachedResponse">cachedResponse</option>
+		
+		<option value="//api/name/client">client</option>
+		
+		<option value="//api/name/request">request</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/canInitWithRequest:">+ canInitWithRequest:</option>
+		
+		<option value="//api/name/canInitWithTask:">+ canInitWithTask:</option>
+		
+		<option value="//api/name/canonicalRequestForRequest:">+ canonicalRequestForRequest:</option>
+		
+		<option value="//api/name/propertyForKey:inRequest:">+ propertyForKey:inRequest:</option>
+		
+		<option value="//api/name/registerClass:">+ registerClass:</option>
+		
+		<option value="//api/name/removePropertyForKey:inRequest:">+ removePropertyForKey:inRequest:</option>
+		
+		<option value="//api/name/requestIsCacheEquivalent:toRequest:">+ requestIsCacheEquivalent:toRequest:</option>
+		
+		<option value="//api/name/setProperty:forKey:inRequest:">+ setProperty:forKey:inRequest:</option>
+		
+		<option value="//api/name/unregisterClass:">+ unregisterClass:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithRequest:cachedResponse:client:">- initWithRequest:cachedResponse:client:</option>
+		
+		<option value="//api/name/initWithTask:cachedResponse:client:">- initWithTask:cachedResponse:client:</option>
+		
+		<option value="//api/name/startLoading">- startLoading</option>
+		
+		<option value="//api/name/stopLoading">- stopLoading</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSURLProtocol Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSURLProtocol.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class NSURLProtocol
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithRequest:cachedResponse:client:" title="initWithRequest:cachedResponse:client:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithRequest:cachedResponse:client:">&ndash;&nbsp;initWithRequest:cachedResponse:client:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an NSURLProtocol given <a href="#//api/name/request">request</a>,
+    cached response, and <a href="#//api/name/client">client</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithRequest:(NSURLRequest *)<em>request</em> cachedResponse:(nullable NSCachedURLResponse *)<em>cachedResponse</em> client:(nullable id&lt;NSURLProtocolClient&gt;)<em>client</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>The <a href="#//api/name/request">request</a> to load.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cachedResponse</code></th>
+						<td><p>A response that has been retrieved from the
+    cache for the given <a href="#//api/name/request">request</a>. The protocol implementation should
+    apply protocol-specific validity checks if such tests are
+    necessary.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>client</code></th>
+						<td><p>The <a href="../Protocols/NSURLProtocolClient.html">NSURLProtocolClient</a> object that serves as the
+    interface the protocol implementation can use to report results back
+    to the URL loading system.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithRequest:cachedResponse:client:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/client" title="client"></a>
+	<h3 class="method-title"><code><a href="#//api/name/client">&nbsp;&nbsp;client</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the <a href="../Protocols/NSURLProtocolClient.html">NSURLProtocolClient</a> of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, retain) id&lt;NSURLProtocolClient&gt; client</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <a href="../Protocols/NSURLProtocolClient.html">NSURLProtocolClient</a> of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/request" title="request"></a>
+	<h3 class="method-title"><code><a href="#//api/name/request">&nbsp;&nbsp;request</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the <a href="../Classes/NSURLRequest.html">NSURLRequest</a> of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSURLRequest *request</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <a href="../Classes/NSURLRequest.html">NSURLRequest</a> of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cachedResponse" title="cachedResponse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cachedResponse">&nbsp;&nbsp;cachedResponse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the <a href="../Classes/NSCachedURLResponse.html">NSCachedURLResponse</a> of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSCachedURLResponse *cachedResponse</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <a href="../Classes/NSCachedURLResponse.html">NSCachedURLResponse</a> of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/canInitWithRequest:" title="canInitWithRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canInitWithRequest:">+&nbsp;canInitWithRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method determines whether this protocol can handle
+    the given <a href="#//api/name/request">request</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)canInitWithRequest:(NSURLRequest *)<em>request</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>A <a href="#//api/name/request">request</a> to inspect.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the protocol can handle the given <a href="#//api/name/request">request</a>, NO if not.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method canInitWithRequest:
+</code></pre><p>A concrete subclass should inspect the given <a href="#//api/name/request">request</a> and
+    determine whether or not the implementation can perform a load with
+    that <a href="#//api/name/request">request</a>. This is an abstract method. Sublasses must provide an
+    implementation.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/canonicalRequestForRequest:" title="canonicalRequestForRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canonicalRequestForRequest:">+&nbsp;canonicalRequestForRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method returns a canonical version of the given
+    <a href="#//api/name/request">request</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)<em>request</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>A <a href="#//api/name/request">request</a> to make canonical.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The canonical form of the given <a href="#//api/name/request">request</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method canonicalRequestForRequest:
+</code></pre><p>It is up to each concrete protocol implementation to
+    define what &ldquo;canonical&rdquo; means. However, a protocol should
+    guarantee that the same input <a href="#//api/name/request">request</a> always yields the same
+    canonical form. Special consideration should be given when
+    implementing this method since the canonical form of a <a href="#//api/name/request">request</a> is
+    used to look up objects in the URL cache, a process which performs
+    equality checks between <a href="../Classes/NSURLRequest.html">NSURLRequest</a> objects.
+    <p>
+    This is an abstract method; sublasses must provide an
+    implementation.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestIsCacheEquivalent:toRequest:" title="requestIsCacheEquivalent:toRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestIsCacheEquivalent:toRequest:">+&nbsp;requestIsCacheEquivalent:toRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Compares two requests for equivalence with regard to caching.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)requestIsCacheEquivalent:(NSURLRequest *)<em>a</em> toRequest:(NSURLRequest *)<em>b</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the two requests are cache-equivalent, NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method requestIsCacheEquivalent:toRequest:
+</code></pre><p>Requests are considered euqivalent for cache purposes
+    if and only if they would be handled by the same protocol AND that
+    protocol declares them equivalent after performing
+    implementation-specific checks.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startLoading" title="startLoading"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startLoading">&ndash;&nbsp;startLoading</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts protocol-specific loading of a <a href="#//api/name/request">request</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startLoading</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method startLoading
+</code></pre><p>When this method is called, the protocol implementation
+    should start loading a <a href="#//api/name/request">request</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopLoading" title="stopLoading"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopLoading">&ndash;&nbsp;stopLoading</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops protocol-specific loading of a <a href="#//api/name/request">request</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopLoading</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method stopLoading
+</code></pre><p>When this method is called, the protocol implementation
+    should end the work of loading a <a href="#//api/name/request">request</a>. This could be in response
+    to a cancel operation, so protocol implementations must be able to
+    handle this call while a load is in progress.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/propertyForKey:inRequest:" title="propertyForKey:inRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/propertyForKey:inRequest:">+&nbsp;propertyForKey:inRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the property in the given <a href="#//api/name/request">request</a> previously
+    stored with the given key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable id)propertyForKey:(NSString *)<em>key</em> inRequest:(NSURLRequest *)<em>request</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The string to use for the property lookup.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>The <a href="#//api/name/request">request</a> to use for the property lookup.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The property stored with the given key, or nil if no property
+    had previously been stored with the given key in the given <a href="#//api/name/request">request</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method propertyForKey:inRequest:
+</code></pre><p>The purpose of this method is to provide an interface
+    for protocol implementors to access protocol-specific information
+    associated with <a href="../Classes/NSURLRequest.html">NSURLRequest</a> objects.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setProperty:forKey:inRequest:" title="setProperty:forKey:inRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setProperty:forKey:inRequest:">+&nbsp;setProperty:forKey:inRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stores the given property in the given <a href="#//api/name/request">request</a> using the
+    given key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setProperty:(id)<em>value</em> forKey:(NSString *)<em>key</em> inRequest:(NSMutableURLRequest *)<em>request</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The property to store.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The string to use for the property storage.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>The <a href="#//api/name/request">request</a> in which to store the property.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method setProperty:forKey:inRequest:
+</code></pre><p>The purpose of this method is to provide an interface
+    for protocol implementors to customize protocol-specific
+    information associated with <a href="../Classes/NSMutableURLRequest.html">NSMutableURLRequest</a> objects.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removePropertyForKey:inRequest:" title="removePropertyForKey:inRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removePropertyForKey:inRequest:">+&nbsp;removePropertyForKey:inRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove any property stored under the given key</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)removePropertyForKey:(NSString *)<em>key</em> inRequest:(NSMutableURLRequest *)<em>request</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key whose value should be removed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>The <a href="#//api/name/request">request</a> to be modified</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method removePropertyForKey:inRequest:
+</code></pre><p>Like <a href="#//api/name/setProperty:forKey:inRequest:">setProperty:forKey:inRequest:</a> above, the purpose of this
+        method is to give protocol implementors the ability to store
+        protocol-specific information in an <a href="../Classes/NSURLRequest.html">NSURLRequest</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerClass:" title="registerClass:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerClass:">+&nbsp;registerClass:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method registers a protocol class, making it visible
+    to several other NSURLProtocol class methods.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)registerClass:(Class)<em>protocolClass</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocolClass</code></th>
+						<td><p>the class to register.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the protocol was registered successfully, NO if not.
+    The only way that failure can occur is if the given class is not a
+    subclass of NSURLProtocol.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method registerClass:
+</code></pre><p>When the URL loading system begins to load a <a href="#//api/name/request">request</a>,
+    each protocol class that has been registered is consulted in turn to
+    see if it can be initialized with a given <a href="#//api/name/request">request</a>. The first
+    protocol handler class to provide a YES answer to
+    <tt>+canInitWithRequest:</tt> &ldquo;wins&rdquo; and that protocol
+    implementation is used to perform the URL load. There is no
+    guarantee that all registered protocol classes will be consulted.
+    Hence, it should be noted that registering a class places it first
+    on the list of classes that will be consulted in calls to
+    <tt>+canInitWithRequest:</tt>, moving it in front of all classes
+    that had been registered previously.
+    <p>A similar design governs the process to create the canonical form
+    of a <a href="#//api/name/request">request</a> with the <tt>+canonicalRequestForRequest:</tt> class
+    method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unregisterClass:" title="unregisterClass:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unregisterClass:">+&nbsp;unregisterClass:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method unregisters a protocol.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)unregisterClass:(Class)<em>protocolClass</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocolClass</code></th>
+						<td><p>The class to unregister.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method unregisterClass:
+</code></pre><p>After unregistration, a protocol class is no longer
+    consulted in calls to NSURLProtocol class methods.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLProtocol.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="NSURLSessionTaskAdditions Methods" name="task_NSURLSessionTaskAdditions Methods"></a>
+						<h2 class="task-title">NSURLSessionTaskAdditions Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/canInitWithTask:" title="canInitWithTask:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canInitWithTask:">+&nbsp;canInitWithTask:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)canInitWithTask:(NSURLSessionTask *)<em>task</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTask:cachedResponse:client:" title="initWithTask:cachedResponse:client:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTask:cachedResponse:client:">&ndash;&nbsp;initWithTask:cachedResponse:client:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTask:(NSURLSessionTask *)<em>task</em> cachedResponse:(nullable NSCachedURLResponse *)<em>cachedResponse</em> client:(nullable id&lt;NSURLProtocolClient&gt;)<em>client</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSURLSessionTask *API_AVAILABLE ( macos ( 10.10 , ios ( 8.0 , watchos ( 2.0 , tvos ( 9.0 )</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSFileWrapper Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/directory">directory</option>
+		
+		<option value="//api/name/fileAttributes">fileAttributes</option>
+		
+		<option value="//api/name/fileWrappers">fileWrappers</option>
+		
+		<option value="//api/name/filename">filename</option>
+		
+		<option value="//api/name/preferredFilename">preferredFilename</option>
+		
+		<option value="//api/name/regularFile">regularFile</option>
+		
+		<option value="//api/name/regularFileContents">regularFileContents</option>
+		
+		<option value="//api/name/serializedRepresentation">serializedRepresentation</option>
+		
+		<option value="//api/name/symbolicLink">symbolicLink</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addFileWithPath:">- addFileWithPath:</option>
+		
+		<option value="//api/name/addFileWrapper:">- addFileWrapper:</option>
+		
+		<option value="//api/name/addRegularFileWithContents:preferredFilename:">- addRegularFileWithContents:preferredFilename:</option>
+		
+		<option value="//api/name/addSymbolicLinkWithDestination:preferredFilename:">- addSymbolicLinkWithDestination:preferredFilename:</option>
+		
+		<option value="//api/name/initDirectoryWithFileWrappers:">- initDirectoryWithFileWrappers:</option>
+		
+		<option value="//api/name/initRegularFileWithContents:">- initRegularFileWithContents:</option>
+		
+		<option value="//api/name/initSymbolicLinkWithDestination:">- initSymbolicLinkWithDestination:</option>
+		
+		<option value="//api/name/initSymbolicLinkWithDestinationURL:">- initSymbolicLinkWithDestinationURL:</option>
+		
+		<option value="//api/name/initWithCoder:">- initWithCoder:</option>
+		
+		<option value="//api/name/initWithPath:">- initWithPath:</option>
+		
+		<option value="//api/name/initWithSerializedRepresentation:">- initWithSerializedRepresentation:</option>
+		
+		<option value="//api/name/initWithURL:options:error:">- initWithURL:options:error:</option>
+		
+		<option value="//api/name/keyForFileWrapper:">- keyForFileWrapper:</option>
+		
+		<option value="//api/name/matchesContentsOfURL:">- matchesContentsOfURL:</option>
+		
+		<option value="//api/name/needsToBeUpdatedFromPath:">- needsToBeUpdatedFromPath:</option>
+		
+		<option value="//api/name/readFromURL:options:error:">- readFromURL:options:error:</option>
+		
+		<option value="//api/name/removeFileWrapper:">- removeFileWrapper:</option>
+		
+		<option value="//api/name/symbolicLinkDestination">- symbolicLinkDestination</option>
+		
+		<option value="//api/name/updateFromPath:">- updateFromPath:</option>
+		
+		<option value="//api/name/writeToFile:atomically:updateFilenames:">- writeToFile:atomically:updateFilenames:</option>
+		
+		<option value="//api/name/writeToURL:options:originalContentsURL:error:">- writeToURL:options:originalContentsURL:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSFileWrapper Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/NSCoding.html">NSCoding</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSFileWrapper.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithURL:options:error:" title="initWithURL:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithURL:options:error:">&ndash;&nbsp;initWithURL:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithURL:(NSURL *)<em>url</em> options:(NSFileWrapperReadingOptions)<em>options</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initDirectoryWithFileWrappers:" title="initDirectoryWithFileWrappers:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initDirectoryWithFileWrappers:">&ndash;&nbsp;initDirectoryWithFileWrappers:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initDirectoryWithFileWrappers:(NSDictionary&lt;NSString*,NSFileWrapper*&gt; *)<em>childrenByPreferredName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initRegularFileWithContents:" title="initRegularFileWithContents:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initRegularFileWithContents:">&ndash;&nbsp;initRegularFileWithContents:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initRegularFileWithContents:(NSData *)<em>contents</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initSymbolicLinkWithDestinationURL:" title="initSymbolicLinkWithDestinationURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initSymbolicLinkWithDestinationURL:">&ndash;&nbsp;initSymbolicLinkWithDestinationURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initSymbolicLinkWithDestinationURL:(NSURL *)<em>url</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSerializedRepresentation:" title="initWithSerializedRepresentation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSerializedRepresentation:">&ndash;&nbsp;initWithSerializedRepresentation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithSerializedRepresentation:(NSData *)<em>serializeRepresentation</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:" title="initWithCoder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:">&ndash;&nbsp;initWithCoder:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *)<em>inCoder</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/directory" title="directory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/directory">&nbsp;&nbsp;directory</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isDirectory) BOOL directory</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/regularFile" title="regularFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/regularFile">&nbsp;&nbsp;regularFile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isRegularFile) BOOL regularFile</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/symbolicLink" title="symbolicLink"></a>
+	<h3 class="method-title"><code><a href="#//api/name/symbolicLink">&nbsp;&nbsp;symbolicLink</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isSymbolicLink) BOOL symbolicLink</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/preferredFilename" title="preferredFilename"></a>
+	<h3 class="method-title"><code><a href="#//api/name/preferredFilename">&nbsp;&nbsp;preferredFilename</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) NSString *preferredFilename</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filename" title="filename"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filename">&nbsp;&nbsp;filename</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) NSString *filename</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileAttributes" title="fileAttributes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileAttributes">&nbsp;&nbsp;fileAttributes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (copy) NSDictionary&lt;NSString*id&gt; *fileAttributes</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/matchesContentsOfURL:" title="matchesContentsOfURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/matchesContentsOfURL:">&ndash;&nbsp;matchesContentsOfURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)matchesContentsOfURL:(NSURL *)<em>url</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readFromURL:options:error:" title="readFromURL:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readFromURL:options:error:">&ndash;&nbsp;readFromURL:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)readFromURL:(NSURL *)<em>url</em> options:(NSFileWrapperReadingOptions)<em>options</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeToURL:options:originalContentsURL:error:" title="writeToURL:options:originalContentsURL:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeToURL:options:originalContentsURL:error:">&ndash;&nbsp;writeToURL:options:originalContentsURL:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writeToURL:(NSURL *)<em>url</em> options:(NSFileWrapperWritingOptions)<em>options</em> originalContentsURL:(nullable NSURL *)<em>originalContentsURL</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/serializedRepresentation" title="serializedRepresentation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serializedRepresentation">&nbsp;&nbsp;serializedRepresentation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSData *serializedRepresentation</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addFileWrapper:" title="addFileWrapper:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addFileWrapper:">&ndash;&nbsp;addFileWrapper:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)addFileWrapper:(NSFileWrapper *)<em>child</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addRegularFileWithContents:preferredFilename:" title="addRegularFileWithContents:preferredFilename:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addRegularFileWithContents:preferredFilename:">&ndash;&nbsp;addRegularFileWithContents:preferredFilename:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)addRegularFileWithContents:(NSData *)<em>data</em> preferredFilename:(NSString *)<em>fileName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeFileWrapper:" title="removeFileWrapper:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeFileWrapper:">&ndash;&nbsp;removeFileWrapper:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeFileWrapper:(NSFileWrapper *)<em>child</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileWrappers" title="fileWrappers"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileWrappers">&nbsp;&nbsp;fileWrappers</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSDictionary&lt;NSString*NSFileWrapper*&gt; *fileWrappers</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/keyForFileWrapper:" title="keyForFileWrapper:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/keyForFileWrapper:">&ndash;&nbsp;keyForFileWrapper:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)keyForFileWrapper:(NSFileWrapper *)<em>child</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/regularFileContents" title="regularFileContents"></a>
+	<h3 class="method-title"><code><a href="#//api/name/regularFileContents">&nbsp;&nbsp;regularFileContents</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSData *regularFileContents</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSURL *API_AVAILABLE ( macos ( 10.6 , ios ( 4.0 , watchos ( 2.0 , tvos ( 9.0 )</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="NSDeprecated Methods" name="task_NSDeprecated Methods"></a>
+						<h2 class="task-title">NSDeprecated Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithPath:" title="initWithPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPath:">&ndash;&nbsp;initWithPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)initWithPath:(NSString *)<em>path</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initSymbolicLinkWithDestination:" title="initSymbolicLinkWithDestination:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initSymbolicLinkWithDestination:">&ndash;&nbsp;initSymbolicLinkWithDestination:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initSymbolicLinkWithDestination:(NSString *)<em>path</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/needsToBeUpdatedFromPath:" title="needsToBeUpdatedFromPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/needsToBeUpdatedFromPath:">&ndash;&nbsp;needsToBeUpdatedFromPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)needsToBeUpdatedFromPath:(NSString *)<em>path</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateFromPath:" title="updateFromPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateFromPath:">&ndash;&nbsp;updateFromPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)updateFromPath:(NSString *)<em>path</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeToFile:atomically:updateFilenames:" title="writeToFile:atomically:updateFilenames:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeToFile:atomically:updateFilenames:">&ndash;&nbsp;writeToFile:atomically:updateFilenames:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writeToFile:(NSString *)<em>path</em> atomically:(BOOL)<em>atomicFlag</em> updateFilenames:(BOOL)<em>updateFilenamesFlag</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addFileWithPath:" title="addFileWithPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addFileWithPath:">&ndash;&nbsp;addFileWithPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)addFileWithPath:(NSString *)<em>path</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addSymbolicLinkWithDestination:preferredFilename:" title="addSymbolicLinkWithDestination:preferredFilename:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addSymbolicLinkWithDestination:preferredFilename:">&ndash;&nbsp;addSymbolicLinkWithDestination:preferredFilename:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)addSymbolicLinkWithDestination:(NSString *)<em>path</em> preferredFilename:(NSString *)<em>filename</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/symbolicLinkDestination" title="symbolicLinkDestination"></a>
+	<h3 class="method-title"><code><a href="#//api/name/symbolicLinkDestination">&ndash;&nbsp;symbolicLinkDestination</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)symbolicLinkDestination</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

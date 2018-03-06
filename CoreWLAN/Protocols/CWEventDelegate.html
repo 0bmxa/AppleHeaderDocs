@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CWEventDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreWLAN Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/bssidDidChangeForWiFiInterfaceWithName:">- bssidDidChangeForWiFiInterfaceWithName:</option>
+		
+		<option value="//api/name/clientConnectionInterrupted">- clientConnectionInterrupted</option>
+		
+		<option value="//api/name/clientConnectionInvalidated">- clientConnectionInvalidated</option>
+		
+		<option value="//api/name/countryCodeDidChangeForWiFiInterfaceWithName:">- countryCodeDidChangeForWiFiInterfaceWithName:</option>
+		
+		<option value="//api/name/linkDidChangeForWiFiInterfaceWithName:">- linkDidChangeForWiFiInterfaceWithName:</option>
+		
+		<option value="//api/name/linkQualityDidChangeForWiFiInterfaceWithName:rssi:transmitRate:">- linkQualityDidChangeForWiFiInterfaceWithName:rssi:transmitRate:</option>
+		
+		<option value="//api/name/modeDidChangeForWiFiInterfaceWithName:">- modeDidChangeForWiFiInterfaceWithName:</option>
+		
+		<option value="//api/name/powerStateDidChangeForWiFiInterfaceWithName:">- powerStateDidChangeForWiFiInterfaceWithName:</option>
+		
+		<option value="//api/name/rangingReportEventForWiFiInterfaceWithName:data:error:">- rangingReportEventForWiFiInterfaceWithName:data:error:</option>
+		
+		<option value="//api/name/scanCacheUpdatedForWiFiInterfaceWithName:">- scanCacheUpdatedForWiFiInterfaceWithName:</option>
+		
+		<option value="//api/name/ssidDidChangeForWiFiInterfaceWithName:">- ssidDidChangeForWiFiInterfaceWithName:</option>
+		
+		<option value="//api/name/virtualInterfaceStateChangedForWiFiInterfaceWithName:">- virtualInterfaceStateChangedForWiFiInterfaceWithName:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CWEventDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>CWWiFiClient.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol</p>
+
+<p>@abstract
+Receive Wi-Fi event notifications.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/clientConnectionInterrupted" title="clientConnectionInterrupted"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientConnectionInterrupted">&ndash;&nbsp;clientConnectionInterrupted</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)clientConnectionInterrupted</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@abstract
+Invoked if the connection to the Wi-Fi subsystem is temporarily interrupted.</p>
+
+<p>@discussion
+All event notifications for which the Wi-Fi client has registered will be automatically re-registered if
+the connection is interrupted.
+The Wi-Fi client should re-sync any local state which is updated as a result of Wi-Fi event notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientConnectionInvalidated" title="clientConnectionInvalidated"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientConnectionInvalidated">&ndash;&nbsp;clientConnectionInvalidated</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)clientConnectionInvalidated</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@abstract
+Invoked if the connection to the Wi-Fi subsystem is permanently invalidated.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/powerStateDidChangeForWiFiInterfaceWithName:" title="powerStateDidChangeForWiFiInterfaceWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/powerStateDidChangeForWiFiInterfaceWithName:">&ndash;&nbsp;powerStateDidChangeForWiFiInterfaceWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)powerStateDidChangeForWiFiInterfaceWithName:(NSString *)<em>interfaceName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param interfaceName
+The name of the Wi-Fi interface.</p>
+
+<p>@abstract
+Invoked when the Wi-Fi power state changes.</p>
+
+<p>@discussion
+Use <a href="../Classes/CWWiFiClient.html#//api/name/startMonitoringEventWithType:error:">[CWWiFiClient startMonitoringEventWithType:error:]</a> with the CWEventTypePowerDidChange event type
+to register for power event notifications.
+Use <a href="../Classes/CWInterface.html#//api/name/powerOn">[CWInterface powerOn]</a> to query the current Wi-Fi power state.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ssidDidChangeForWiFiInterfaceWithName:" title="ssidDidChangeForWiFiInterfaceWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ssidDidChangeForWiFiInterfaceWithName:">&ndash;&nbsp;ssidDidChangeForWiFiInterfaceWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)ssidDidChangeForWiFiInterfaceWithName:(NSString *)<em>interfaceName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param interfaceName
+The name of the Wi-Fi interface.</p>
+
+<p>@abstract
+Invoked when the current SSID changes.</p>
+
+<p>@discussion
+Use <a href="../Classes/CWWiFiClient.html#//api/name/startMonitoringEventWithType:error:">[CWWiFiClient startMonitoringEventWithType:error:]</a> with the CWEventTypeSSIDDidChange event type
+to register for SSID event notifications.
+Use <a href="../Classes/CWInterface.html#//api/name/ssidData">[CWInterface ssidData]</a> or <a href="../Classes/CWInterface.html#//api/name/ssid">[CWInterface ssid]</a> to query the current SSID.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bssidDidChangeForWiFiInterfaceWithName:" title="bssidDidChangeForWiFiInterfaceWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bssidDidChangeForWiFiInterfaceWithName:">&ndash;&nbsp;bssidDidChangeForWiFiInterfaceWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)bssidDidChangeForWiFiInterfaceWithName:(NSString *)<em>interfaceName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param interfaceName
+The name of the Wi-Fi interface.</p>
+
+<p>@abstract
+Invoked when the current BSSID changes.</p>
+
+<p>@discussion
+Use <a href="../Classes/CWWiFiClient.html#//api/name/startMonitoringEventWithType:error:">[CWWiFiClient startMonitoringEventWithType:error:]</a> with the CWEventTypeBSSIDDidChange event type
+to register for BSSID event notifications.
+Use <a href="../Classes/CWInterface.html#//api/name/bssid">[CWInterface bssid]</a> to query the current BSSID.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/countryCodeDidChangeForWiFiInterfaceWithName:" title="countryCodeDidChangeForWiFiInterfaceWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/countryCodeDidChangeForWiFiInterfaceWithName:">&ndash;&nbsp;countryCodeDidChangeForWiFiInterfaceWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)countryCodeDidChangeForWiFiInterfaceWithName:(NSString *)<em>interfaceName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param interfaceName
+The name of the Wi-Fi interface.</p>
+
+<p>@abstract
+Invoked when the currently adopted country code changes.</p>
+
+<p>@discussion
+Use <a href="../Classes/CWWiFiClient.html#//api/name/startMonitoringEventWithType:error:">[CWWiFiClient startMonitoringEventWithType:error:]</a> with the CWEventTypeCountryCodeDidChange event type
+to register for country code event notifications.
+Use <a href="../Classes/CWInterface.html#//api/name/countryCode">[CWInterface countryCode]</a> to query the currently adopted country code.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/virtualInterfaceStateChangedForWiFiInterfaceWithName:" title="virtualInterfaceStateChangedForWiFiInterfaceWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/virtualInterfaceStateChangedForWiFiInterfaceWithName:">&ndash;&nbsp;virtualInterfaceStateChangedForWiFiInterfaceWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)virtualInterfaceStateChangedForWiFiInterfaceWithName:(NSString *)<em>interfaceName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param interfaceName
+The name of the Wi-Fi interface.</p>
+
+<p>@abstract
+Invoked when any state of WiFi virtual interface changes.</p>
+
+<p>@discussion
+Use <a href="../Classes/CWWiFiClient.html#//api/name/startMonitoringEventWithType:error:">[CWWiFiClient startMonitoringEventWithType:error:]</a> with the CWEventTypeVirtualInterfaceStateChanged event type
+to register for virtual interface state changed notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rangingReportEventForWiFiInterfaceWithName:data:error:" title="rangingReportEventForWiFiInterfaceWithName:data:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rangingReportEventForWiFiInterfaceWithName:data:error:">&ndash;&nbsp;rangingReportEventForWiFiInterfaceWithName:data:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)rangingReportEventForWiFiInterfaceWithName:(NSString *)<em>interfaceName</em> data:(NSArray *)<em>rangingData</em> error:(NSError *)<em>err</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param interfaceName
+The name of the Wi-Fi interface.</p>
+
+<p>@param rangingData
+Dictionary containing distance measurement data.</p>
+
+<p>@abstract
+Invoked when WiFi ranging measurement completed.</p>
+
+<p>@discussion
+Use <a href="../Classes/CWWiFiClient.html#//api/name/startMonitoringEventWithType:error:">[CWWiFiClient startMonitoringEventWithType:error:]</a> with the CWEventTypeRangingReportEvent event type
+to register for ranging event notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/linkDidChangeForWiFiInterfaceWithName:" title="linkDidChangeForWiFiInterfaceWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/linkDidChangeForWiFiInterfaceWithName:">&ndash;&nbsp;linkDidChangeForWiFiInterfaceWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)linkDidChangeForWiFiInterfaceWithName:(NSString *)<em>interfaceName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param interfaceName
+The name of the Wi-Fi interface.</p>
+
+<p>@abstract
+Invoked when the Wi-Fi link state changes.</p>
+
+<p>@discussion
+Use <a href="../Classes/CWWiFiClient.html#//api/name/startMonitoringEventWithType:error:">[CWWiFiClient startMonitoringEventWithType:error:]</a> with the CWEventTypeLinkDidChange event type
+to register for link event notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/linkQualityDidChangeForWiFiInterfaceWithName:rssi:transmitRate:" title="linkQualityDidChangeForWiFiInterfaceWithName:rssi:transmitRate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/linkQualityDidChangeForWiFiInterfaceWithName:rssi:transmitRate:">&ndash;&nbsp;linkQualityDidChangeForWiFiInterfaceWithName:rssi:transmitRate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)linkQualityDidChangeForWiFiInterfaceWithName:(NSString *)<em>interfaceName</em> rssi:(NSInteger)<em>rssi</em> transmitRate:(double)<em>transmitRate</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param interfaceName
+The name of the Wi-Fi interface.</p>
+
+<p>@param rssi
+The RSSI value for the currently associated network on the Wi-Fi interface.</p>
+
+<p>@param transmitRate
+The transmit rate for the currently associated network on the Wi-Fi interface.</p>
+
+<p>@abstract
+Invoked when the Wi-Fi link quality changes.</p>
+
+<p>@discussion
+Use <a href="../Classes/CWWiFiClient.html#//api/name/startMonitoringEventWithType:error:">[CWWiFiClient startMonitoringEventWithType:error:]</a> with the CWEventTypeLinkQualityDidChange event type
+to register for link quality event notifications.
+Use <a href="../Classes/CWInterface.html#//api/name/rssiValue">[CWInterface rssiValue]</a> and <a href="../Classes/CWInterface.html#//api/name/transmitRate">[CWInterface transmitRate]</a> to query the current RSSI and transmit rate, respectively.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/modeDidChangeForWiFiInterfaceWithName:" title="modeDidChangeForWiFiInterfaceWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/modeDidChangeForWiFiInterfaceWithName:">&ndash;&nbsp;modeDidChangeForWiFiInterfaceWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)modeDidChangeForWiFiInterfaceWithName:(NSString *)<em>interfaceName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param interfaceName
+The name of the Wi-Fi interface.</p>
+
+<p>@abstract
+Invoked when the Wi-Fi operating mode changes.</p>
+
+<p>@discussion
+Use <a href="../Classes/CWWiFiClient.html#//api/name/startMonitoringEventWithType:error:">[CWWiFiClient startMonitoringEventWithType:error:]</a> with the CWEventTypeModeDidChange event type
+to register for interface mode event notifications.
+Use <a href="../Classes/CWInterface.html#//api/name/interfaceMode">[CWInterface interfaceMode]</a> to query the current operating mode.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanCacheUpdatedForWiFiInterfaceWithName:" title="scanCacheUpdatedForWiFiInterfaceWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanCacheUpdatedForWiFiInterfaceWithName:">&ndash;&nbsp;scanCacheUpdatedForWiFiInterfaceWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scanCacheUpdatedForWiFiInterfaceWithName:(NSString *)<em>interfaceName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+
+<p>@param interfaceName
+The name of the Wi-Fi interface.</p>
+
+<p>@abstract
+Invoked when the Wi-Fi interface scan cache is updated with new scan results.</p>
+
+<p>@discussion
+Use <a href="../Classes/CWWiFiClient.html#//api/name/startMonitoringEventWithType:error:">[CWWiFiClient startMonitoringEventWithType:error:]</a> with the CWEventTypeScanCacheUpdated event type
+to register for scan cache event notifications.
+Use <a href="../Classes/CWInterface.html#//api/name/cachedScanResults">[CWInterface cachedScanResults]</a> to query scan cache results from the last scan.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CWWiFiClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

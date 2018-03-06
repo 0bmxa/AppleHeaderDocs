@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MTLStorageMode Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Metal Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MTLStorageMode Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>MTLResource.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">MTLStorageMode</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>@enum MTLStorageMode</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSUInteger, MTLStorageMode ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLStorageModeShared</a> = 0,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLStorageModeManaged</a> = 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLStorageModePrivate</a> = 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">MTLStorageModeMemoryless</a> = 3,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="MTLStorageModeShared"></a><code>MTLStorageModeShared</code></dt>
+<dd>
+
+
+<p>Describes location and CPU mapping of <a href="../Protocols/MTLTexture.html">MTLTexture</a>.
+@constant MTLStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the texture resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the texture resource.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLStorageModePrivate
+This mode allows the texture resource data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MTLStorageModeManaged"></a><code>MTLStorageModeManaged</code></dt>
+<dd>
+
+
+<p>Describes location and CPU mapping of <a href="../Protocols/MTLTexture.html">MTLTexture</a>.
+@constant MTLStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the texture resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the texture resource.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLStorageModePrivate
+This mode allows the texture resource data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MTLStorageModePrivate"></a><code>MTLStorageModePrivate</code></dt>
+<dd>
+
+
+<p>Describes location and CPU mapping of <a href="../Protocols/MTLTexture.html">MTLTexture</a>.
+@constant MTLStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the texture resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the texture resource.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLStorageModePrivate
+This mode allows the texture resource data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="MTLStorageModeMemoryless"></a><code>MTLStorageModeMemoryless</code></dt>
+<dd>
+
+
+<p>Describes location and CPU mapping of <a href="../Protocols/MTLTexture.html">MTLTexture</a>.
+@constant MTLStorageModeShared
+In this mode, CPU and device will nominally both use the same underlying memory when accessing the contents of the texture resource.
+However, coherency is only guaranteed at command buffer boundaries to minimize the required flushing of CPU and GPU caches.
+This is the default storage mode for iOS Textures.</p>
+
+<p>@constant MTLStorageModeManaged
+This mode relaxes the coherency requirements and requires that the developer make explicit requests to maintain
+coherency between a CPU and GPU version of the texture resource.  In order for CPU to access up to date GPU results,
+first, a blit synchronizations must be completed (see synchronize methods of <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>).
+Blit overhead is only incurred if GPU has modified the resource.
+This is the default storage mode for OS X Textures.</p>
+
+<p>@constant MTLStorageModePrivate
+This mode allows the texture resource data to be kept entirely to GPU (or driver) private memory that will never be accessed by the CPU directly, so no
+conherency of any kind must be maintained.</p>
+
+<p>@constant MTLStorageModeMemoryless
+This mode allows creation of resources that do not have a GPU or CPU memory backing, but do have on-chip storage for TBDR
+devices. The contents of the on-chip storage is undefined and does not persist, but its configuration is controlled by the
+<a href="../Protocols/MTLTexture.html">MTLTexture</a> descriptor. Textures created with MTLStorageModeMemoryless dont have an IOAccelResource at any point in their
+lifetime. The only way to populate such resource is to perform rendering operations on it. Blit operations are disallowed.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">MTLResource.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">MTLResource.h</code></p>
+                    </div>
+                    
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

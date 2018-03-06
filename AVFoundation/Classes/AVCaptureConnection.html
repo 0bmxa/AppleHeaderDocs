@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureConnection Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_7">_7</option>
+		
+		<option value="//api/name/_9">_9</option>
+		
+		<option value="//api/name/active">active</option>
+		
+		<option value="//api/name/audioChannels">audioChannels</option>
+		
+		<option value="//api/name/enabled">enabled</option>
+		
+		<option value="//api/name/inputPorts">inputPorts</option>
+		
+		<option value="//api/name/output">output</option>
+		
+		<option value="//api/name/supportsVideoMirroring">supportsVideoMirroring</option>
+		
+		<option value="//api/name/supportsVideoOrientation">supportsVideoOrientation</option>
+		
+		<option value="//api/name/videoMirrored">videoMirrored</option>
+		
+		<option value="//api/name/videoOrientation">videoOrientation</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/connectionWithInputPort:videoPreviewLayer:">+ connectionWithInputPort:videoPreviewLayer:</option>
+		
+		<option value="//api/name/connectionWithInputPorts:output:">+ connectionWithInputPorts:output:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithInputPort:videoPreviewLayer:">- initWithInputPort:videoPreviewLayer:</option>
+		
+		<option value="//api/name/initWithInputPorts:output:">- initWithInputPorts:output:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureConnection Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureSession.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureConnection
+@abstract
+    AVCaptureConnection represents a connection between an <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a> or ports, and an <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> or <a href="../Classes/AVCaptureVideoPreviewLayer.html">AVCaptureVideoPreviewLayer</a> present in an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a>.</p>
+
+<p>@discussion
+    AVCaptureInputs have one or more AVCaptureInputPorts. AVCaptureOutputs can accept data from one or more sources (example - an <a href="../Classes/AVCaptureMovieFileOutput.html">AVCaptureMovieFileOutput</a> accepts both video and audio data). AVCaptureVideoPreviewLayers can accept data from one <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a> whose mediaType is AVMediaTypeVideo. When an input or <a href="#//api/name/output">output</a> is added to a session, or a video preview layer is associated with a session, the session greedily forms connections between all the compatible AVCaptureInputs' ports and AVCaptureOutputs or AVCaptureVideoPreviewLayers. Iterating through an output&rsquo;s connections or a video preview layer&rsquo;s sole connection, a client may enable or disable the flow of data from a given input to a given <a href="#//api/name/output">output</a> or preview layer.</p>
+
+<pre><code>Connections involving audio expose an array of AVCaptureAudioChannel objects, which can be used for monitoring levels.
+
+Connections involving video expose video specific properties, such as videoMirrored and videoOrientation.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/connectionWithInputPorts:output:" title="connectionWithInputPorts:output:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectionWithInputPorts:output:">+&nbsp;connectionWithInputPorts:output:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method connectionWithInputPorts:output:
+@abstract
+    Returns an AVCaptureConnection instance describing a connection between the specified <a href="#//api/name/inputPorts">inputPorts</a> and the specified <a href="#//api/name/output">output</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)connectionWithInputPorts:(NSArray&lt;AVCaptureInputPort*&gt; *)<em>ports</em> output:(AVCaptureOutput *)<em>output</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method connectionWithInputPorts:output:
+@abstract
+    Returns an AVCaptureConnection instance describing a connection between the specified <a href="#//api/name/inputPorts">inputPorts</a> and the specified <a href="#//api/name/output">output</a>.</p>
+
+<p>@param ports
+    An array of <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a> objects associated with <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> objects.
+@param <a href="#//api/name/output">output</a>
+    An <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> object.
+@result
+    An AVCaptureConnection instance joining the specified <a href="#//api/name/inputPorts">inputPorts</a> to the specified <a href="#//api/name/output">output</a> port.</p>
+
+<p>@discussion
+    This method returns an instance of AVCaptureConnection that may be subsequently added to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a> instance using AVCaptureSession&rsquo;s -addConnection: method. When using -addInput: or -addOutput:, connections are formed between all compatible inputs and outputs automatically. You do not need to manually create and add connections to the session unless you use the primitive -addInputWithNoConnections: or -addOutputWithNoConnections: methods.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectionWithInputPort:videoPreviewLayer:" title="connectionWithInputPort:videoPreviewLayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectionWithInputPort:videoPreviewLayer:">+&nbsp;connectionWithInputPort:videoPreviewLayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method connectionWithInputPort:videoPreviewLayer:
+@abstract
+    Returns an AVCaptureConnection instance describing a connection between the specified inputPort and the specified <a href="../Classes/AVCaptureVideoPreviewLayer.html">AVCaptureVideoPreviewLayer</a> instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)connectionWithInputPort:(AVCaptureInputPort *)<em>port</em> videoPreviewLayer:(AVCaptureVideoPreviewLayer *)<em>layer</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method connectionWithInputPort:videoPreviewLayer:
+@abstract
+    Returns an AVCaptureConnection instance describing a connection between the specified inputPort and the specified <a href="../Classes/AVCaptureVideoPreviewLayer.html">AVCaptureVideoPreviewLayer</a> instance.</p>
+
+<p>@param port
+    An <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a> object associated with an <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> object.
+@param layer
+    An <a href="../Classes/AVCaptureVideoPreviewLayer.html">AVCaptureVideoPreviewLayer</a> object.
+@result
+    An AVCaptureConnection instance joining the specified inputPort to the specified video preview layer.</p>
+
+<p>@discussion
+    This method returns an instance of AVCaptureConnection that may be subsequently added to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a> instance using AVCaptureSession&rsquo;s -addConnection: method. When using AVCaptureVideoPreviewLayer&rsquo;s -initWithSession: or -setSession:, a connection is formed between the first compatible input port and the video preview layer automatically. You do not need to manually create and add connections to the session unless you use AVCaptureVideoPreviewLayer&rsquo;s primitive -initWithSessionWithNoConnection: or -setSessionWithNoConnection: methods.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithInputPorts:output:" title="initWithInputPorts:output:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithInputPorts:output:">&ndash;&nbsp;initWithInputPorts:output:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithInputPorts:output:
+@abstract
+    Returns an AVCaptureConnection instance describing a connection between the specified <a href="#//api/name/inputPorts">inputPorts</a> and the specified <a href="#//api/name/output">output</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithInputPorts:(NSArray&lt;AVCaptureInputPort*&gt; *)<em>ports</em> output:(AVCaptureOutput *)<em>output</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithInputPorts:output:
+@abstract
+    Returns an AVCaptureConnection instance describing a connection between the specified <a href="#//api/name/inputPorts">inputPorts</a> and the specified <a href="#//api/name/output">output</a>.</p>
+
+<p>@param ports
+    An array of <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a> objects associated with <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> objects.
+@param <a href="#//api/name/output">output</a>
+    An <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> object.
+@result
+    An AVCaptureConnection instance joining the specified <a href="#//api/name/inputPorts">inputPorts</a> to the specified <a href="#//api/name/output">output</a> port.</p>
+
+<p>@discussion
+    This method returns an instance of AVCaptureConnection that may be subsequently added to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a> instance using AVCaptureSession&rsquo;s -addConnection: method. When using -addInput: or -addOutput:, connections are formed between all compatible inputs and outputs automatically. You do not need to manually create and add connections to the session unless you use the primitive -addInputWithNoConnections: or -addOutputWithNoConnections: methods.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithInputPort:videoPreviewLayer:" title="initWithInputPort:videoPreviewLayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithInputPort:videoPreviewLayer:">&ndash;&nbsp;initWithInputPort:videoPreviewLayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithInputPort:videoPreviewLayer:
+@abstract
+    Returns an AVCaptureConnection instance describing a connection between the specified inputPort
+    and the specified <a href="../Classes/AVCaptureVideoPreviewLayer.html">AVCaptureVideoPreviewLayer</a> instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithInputPort:(AVCaptureInputPort *)<em>port</em> videoPreviewLayer:(AVCaptureVideoPreviewLayer *)<em>layer</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithInputPort:videoPreviewLayer:
+@abstract
+    Returns an AVCaptureConnection instance describing a connection between the specified inputPort
+    and the specified <a href="../Classes/AVCaptureVideoPreviewLayer.html">AVCaptureVideoPreviewLayer</a> instance.</p>
+
+<p>@param port
+    An <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a> object associated with an <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> object.
+@param layer
+    An <a href="../Classes/AVCaptureVideoPreviewLayer.html">AVCaptureVideoPreviewLayer</a> object.
+@result
+    An AVCaptureConnection instance joining the specified inputPort to the specified video preview layer.</p>
+
+<p>@discussion
+    This method returns an instance of AVCaptureConnection that may be subsequently added to an <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a> instance using AVCaptureSession&rsquo;s -addConnection: method. When using AVCaptureVideoPreviewLayer&rsquo;s -initWithSession: or -setSession:, a connection is formed between the first compatible input port and the video preview layer automatically. You do not need to manually create and add connections to the session unless you use AVCaptureVideoPreviewLayer&rsquo;s primitive -initWithSessionWithNoConnection: or -setSessionWithNoConnection: methods.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputPorts" title="inputPorts"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputPorts">&nbsp;&nbsp;inputPorts</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property inputPorts
+@abstract
+    An array of <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a> instances providing data through this connection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVCaptureInputPort*&gt; *inputPorts</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property inputPorts
+@abstract
+    An array of <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a> instances providing data through this connection.</p>
+
+<p>@discussion
+    An AVCaptureConnection may involve one or more AVCaptureInputPorts producing data to the connection&rsquo;s <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a>. This property is read-only. An AVCaptureConnection&rsquo;s inputPorts remain static for the life of the object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/output" title="output"></a>
+	<h3 class="method-title"><code><a href="#//api/name/output">&nbsp;&nbsp;output</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property output
+@abstract
+    The <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> instance consuming data from this connection&rsquo;s <a href="#//api/name/inputPorts">inputPorts</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVCaptureOutput *output</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property output
+@abstract
+    The <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> instance consuming data from this connection&rsquo;s <a href="#//api/name/inputPorts">inputPorts</a>.</p>
+
+<p>@discussion
+    An AVCaptureConnection may involve one or more AVCaptureInputPorts producing data to the connection&rsquo;s <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a>. This property is read-only. An AVCaptureConnection&rsquo;s output remains static for the life of the object. Note that a connection can either be to an output or a video preview layer, but never to both.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_7" title="_7"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_7">&nbsp;&nbsp;_7</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property videoPreviewLayer
+@abstract
+    The <a href="../Classes/AVCaptureVideoPreviewLayer.html">AVCaptureVideoPreviewLayer</a> instance consuming data from this connection&rsquo;s inputPort.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVCaptureVideoPreviewLayer *NS_AVAILABLE ( 10 _7</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property videoPreviewLayer
+@abstract
+    The <a href="../Classes/AVCaptureVideoPreviewLayer.html">AVCaptureVideoPreviewLayer</a> instance consuming data from this connection&rsquo;s inputPort.</p>
+
+<p>@discussion
+    An AVCaptureConnection may involve one <a href="../Classes/AVCaptureInputPort.html">AVCaptureInputPort</a> producing data to an <a href="../Classes/AVCaptureVideoPreviewLayer.html">AVCaptureVideoPreviewLayer</a> object. This property is read-only. An AVCaptureConnection&rsquo;s videoPreviewLayer remains static for the life of the object. Note that a connection can either be to an <a href="#//api/name/output">output</a> or a video preview layer, but never to both.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enabled" title="enabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enabled">&nbsp;&nbsp;enabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property enabled
+@abstract
+    Indicates whether the connection&rsquo;s <a href="#//api/name/output">output</a> should consume data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isEnabled) BOOL enabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property enabled
+@abstract
+    Indicates whether the connection&rsquo;s <a href="#//api/name/output">output</a> should consume data.</p>
+
+<p>@discussion
+    The value of this property is a BOOL that determines whether the receiver&rsquo;s <a href="#//api/name/output">output</a> should consume data from its connected <a href="#//api/name/inputPorts">inputPorts</a> when a session is running. Clients can set this property to stop the flow of data to a given <a href="#//api/name/output">output</a> during capture. The default value is YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/active" title="active"></a>
+	<h3 class="method-title"><code><a href="#//api/name/active">&nbsp;&nbsp;active</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property active
+@abstract
+    Indicates whether the receiver&rsquo;s <a href="#//api/name/output">output</a> is currently capable of consuming data through this connection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isActive) BOOL active</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property active
+@abstract
+    Indicates whether the receiver&rsquo;s output is currently capable of consuming data through this connection.</p>
+
+<p>@discussion
+    The value of this property is a BOOL that determines whether the receiver&rsquo;s output can consume data provided through this connection. This property is read-only. Clients may key-value observe this property to know when a session&rsquo;s configuration forces a connection to become inactive. The default value is YES.</p>
+
+<pre><code>Prior to iOS 11, the audio connection feeding an AVCaptureAudioDataOutput is made inactive when using AVCaptureSessionPresetPhoto or the equivalent photo format using [AVCaptureDevice activeFormat]. On iOS 11 and later, the audio connection feeding AVCaptureAudioDataOutput is active for all presets and device formats.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/audioChannels" title="audioChannels"></a>
+	<h3 class="method-title"><code><a href="#//api/name/audioChannels">&nbsp;&nbsp;audioChannels</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property audioChannels
+@abstract
+    An array of <a href="../Classes/AVCaptureAudioChannel.html">AVCaptureAudioChannel</a> objects representing individual channels of audio data flowing through the connection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVCaptureAudioChannel*&gt; *audioChannels</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property audioChannels
+@abstract
+    An array of <a href="../Classes/AVCaptureAudioChannel.html">AVCaptureAudioChannel</a> objects representing individual channels of audio data flowing through the connection.</p>
+
+<p>@discussion
+    This property is only applicable to AVCaptureConnection instances involving audio. In such connections, the audioChannels array contains one <a href="../Classes/AVCaptureAudioChannel.html">AVCaptureAudioChannel</a> object for each channel of audio data flowing through this connection.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsVideoMirroring" title="supportsVideoMirroring"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsVideoMirroring">&nbsp;&nbsp;supportsVideoMirroring</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property supportsVideoMirroring
+@abstract
+    Indicates whether the connection supports setting the <a href="#//api/name/videoMirrored">videoMirrored</a> property.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isVideoMirroringSupported) BOOL supportsVideoMirroring</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property supportsVideoMirroring
+@abstract
+    Indicates whether the connection supports setting the <a href="#//api/name/videoMirrored">videoMirrored</a> property.</p>
+
+<p>@discussion
+    This property is only applicable to AVCaptureConnection instances involving video. In such connections, the <a href="#//api/name/videoMirrored">videoMirrored</a> property may only be set if
+    <a href="#//api/name/supportsVideoMirroring">isVideoMirroringSupported</a> returns YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoMirrored" title="videoMirrored"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoMirrored">&nbsp;&nbsp;videoMirrored</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property videoMirrored
+@abstract
+    Indicates whether the video flowing through the connection should be mirrored about its vertical axis.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isVideoMirrored) BOOL videoMirrored</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property videoMirrored
+@abstract
+    Indicates whether the video flowing through the connection should be mirrored about its vertical axis.</p>
+
+<p>@discussion
+    This property is only applicable to AVCaptureConnection instances involving video. if <a href="#//api/name/supportsVideoMirroring">isVideoMirroringSupported</a> returns YES, videoMirrored may be set to flip the video about its vertical axis and produce a mirror-image effect.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsVideoOrientation" title="supportsVideoOrientation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsVideoOrientation">&nbsp;&nbsp;supportsVideoOrientation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property supportsVideoOrientation
+@abstract
+    Indicates whether the connection supports setting the <a href="#//api/name/videoOrientation">videoOrientation</a> property.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isVideoOrientationSupported) BOOL supportsVideoOrientation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property supportsVideoOrientation
+@abstract
+    Indicates whether the connection supports setting the <a href="#//api/name/videoOrientation">videoOrientation</a> property.</p>
+
+<p>@discussion
+    This property is only applicable to AVCaptureConnection instances involving video. In such connections, the <a href="#//api/name/videoOrientation">videoOrientation</a> property may only be set if <a href="#//api/name/supportsVideoOrientation">isVideoOrientationSupported</a> returns YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoOrientation" title="videoOrientation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoOrientation">&nbsp;&nbsp;videoOrientation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property videoOrientation
+@abstract
+    Indicates whether the video flowing through the connection should be rotated to a given orientation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) AVCaptureVideoOrientation videoOrientation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property videoOrientation
+@abstract
+    Indicates whether the video flowing through the connection should be rotated to a given orientation.</p>
+
+<p>@discussion
+    This property is only applicable to AVCaptureConnection instances involving video. If <a href="#//api/name/supportsVideoOrientation">isVideoOrientationSupported</a> returns YES, videoOrientation may be set to rotate the video buffers being consumed by the connection&rsquo;s <a href="#//api/name/output">output</a>. Note that setting videoOrientation does not necessarily result in a physical rotation of video buffers. For instance, a video connection to an <a href="../Classes/AVCaptureMovieFileOutput.html">AVCaptureMovieFileOutput</a> handles orientation using a Quicktime track matrix. In the <a href="../Classes/AVCaptureStillImageOutput.html">AVCaptureStillImageOutput</a>, orientation is handled using Exif tags.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_9" title="_9"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_9">&nbsp;&nbsp;_9</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property supportsVideoMaxFrameDuration
+@abstract
+    Indicates whether the connection supports setting the videoMaxFrameDuration property.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isVideoMaxFrameDurationSupported) BOOL supportsVideoMaxFrameDuration NS_DEPRECATED ( 10 _9</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property supportsVideoMaxFrameDuration
+@abstract
+    Indicates whether the connection supports setting the videoMaxFrameDuration property.</p>
+
+<p>@discussion
+    This property is only applicable to AVCaptureConnection instances involving video. In such connections, the videoMaxFrameDuration property may only be set if <a href="#//api/name/_9">isVideoMaxFrameDurationSupported</a> returns YES.</p>
+
+<pre><code>This property is deprecated on iOS, where min and max frame rate adjustments are applied exclusively at the AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On Mac OS X, frame rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections to output different frame rates.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property videoMaxScaleAndCropFactor
+@abstract
+    Indicates the maximum video scale and crop factor supported by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGFloat videoMaxScaleAndCropFactor NS_AVAILABLE_IOS ( 5 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property videoMaxScaleAndCropFactor
+@abstract
+    Indicates the maximum video scale and crop factor supported by the receiver.</p>
+
+<p>@discussion
+    This property is only applicable to AVCaptureConnection instances involving video. In such connections, the videoMaxScaleAndCropFactor property specifies the maximum CGFloat value that may be used when setting the videoScaleAndCropFactor property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

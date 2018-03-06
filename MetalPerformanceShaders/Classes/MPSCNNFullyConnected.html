@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSCNNFullyConnected Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:">- initWithDevice:</option>
+		
+		<option value="//api/name/initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:">- initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:</option>
+		
+		<option value="//api/name/initWithDevice:weights:">- initWithDevice:weights:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSCNNFullyConnected Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSCNNConvolution.html">MPSCNNConvolution</a> : <a href="../Classes/MPSCNNKernel.html">MPSCNNKernel</a> : <a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSCNNConvolution.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSCNNFullyConnected
+@dependency This depends on Metal.framework</p><p>The MPSCNNFullyConnected specifies a fully connected convolution layer a.k.a. Inner product
+layer. A fully connected CNN layer is one where every input channel is connected
+to every output channel. The kernel width is equal to width of source image
+and the kernel height is equal to the height of source image. Width and height of the output
+is 1x1. Thus, it takes a srcW x srcH x Ni MPSCNNImage, convolves it with Weights[No][SrcW][srcH][Ni]
+and produces a 1 x 1 x No output. The following must be true:
+<code>
+kernelWidth  == source.width
+kernelHeight == source.height
+clipRect.size.width == 1
+clipRect.size.height == 1
+</code>
+One can think of a fully connected layer as a matrix multiplication that flattens an image into a vector of length
+srcW<em>srcH</em>Ni. The weights are arragned in a matrix of dimension No x (srcW<em>srcH</em>Ni) for product output vectors
+of length No. The strideInPixelsX, strideInPixelsY, and group must be 1. Offset is not applicable and is ignored.
+Since clipRect is clamped to the destination image bounds, if the destination is 1x1, one doesn&rsquo;t need to set the
+clipRect.</p>
+
+<p>Note that one can implement an inner product using <a href="../Classes/MPSCNNConvolution.html">MPSCNNConvolution</a> by setting
+<code>
+offset = (kernelWidth/2,kernelHeight/2)
+clipRect.origin = (ox,oy), clipRect.size = (1,1)
+strideX = strideY = group = 1
+</code>
+However, using the MPSCNNFullyConnected for this is better for performance as it lets us choose the most
+performant method which may not be possible when using a general convolution. For example,
+we may internally use matrix multiplication or special reduction kernels for a specific platform.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:" title="initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:">&ndash;&nbsp;initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a fully connected kernel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> convolutionDescriptor:(const MPSCNNConvolutionDescriptor *__nonnull)<em>fullyConnectedDescriptor</em> kernelWeights:(const float *__nonnull)<em>kernelWeights</em> biasTerms:(const float *__nullable)<em>biasTerms</em> flags:(MPSCNNConvolutionFlags)<em>flags</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which this MPSCNNFullyConnected filter will be used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fullyConnectedDescriptor</code></th>
+						<td><p>A pointer to a <a href="../Classes/MPSCNNConvolutionDescriptor.html">MPSCNNConvolutionDescriptor</a>. strideInPixelsX, strideInPixelsY and group
+properties of fullyConnectedDescriptor must be set to 1 (default).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>kernelWeights</code></th>
+						<td><p>A pointer to a weights array.  Each entry is a float value. The number of entries is =
+inputFeatureChannels * outputFeatureChannels * kernelHeight * kernelWidth
+The layout of filter weight is so that it can be reinterpreted as 4D tensor (array)
+weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ inputChannels / groups ]
+Weights are converted to half float (fp16) internally for best performance.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>biasTerms</code></th>
+						<td><p>A pointer to bias terms to be applied to the convolution output.  Each entry is a float value.
+The number of entries is = numberOfOutputFeatureMaps</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flags</code></th>
+						<td><p>Currently unused. Pass MPSCNNConvolutionFlagsNone</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid <a href="../Classes/MPSCNNConvolution.html">MPSCNNConvolution</a> object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:weights:" title="initWithDevice:weights:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:weights:">&ndash;&nbsp;initWithDevice:weights:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a fully connected kernel</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> weights:(nonnull id&lt;MPSCNNConvolutionDataSource&gt;)<em>weights</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which this MPSCNNFullyConnected filter will be used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>weights</code></th>
+						<td><p>A pointer to a object that conforms to the <a href="../Protocols/MPSCNNConvolutionDataSource.html">MPSCNNConvolutionDataSource</a>
+protocol. The <a href="../Protocols/MPSCNNConvolutionDataSource.html">MPSCNNConvolutionDataSource</a> protocol declares the methods that an
+instance of MPSCNNFullyConnected uses to obtain the weights and bias terms
+for the CNN fully connected filter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSCNNFullyConnected object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new <a href="../Classes/MPSKernel.html">MPSKernel</a> object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>While the standard NSSecureCoding/NSCoding method
+-initWithCoder: should work, since the file can&rsquo;t
+know which device your data is allocated on, we
+have to guess and may guess incorrectly.  To avoid
+that problem, use initWithCoder:device instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:" title="initWithDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:">&ndash;&nbsp;initWithDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

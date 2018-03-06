@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>WebPolicyDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 WebKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/webView:decidePolicyForMIMEType:request:frame:decisionListener:">- webView:decidePolicyForMIMEType:request:frame:decisionListener:</option>
+		
+		<option value="//api/name/webView:decidePolicyForNavigationAction:request:frame:decisionListener:">- webView:decidePolicyForNavigationAction:request:frame:decisionListener:</option>
+		
+		<option value="//api/name/webView:decidePolicyForNewWindowAction:request:newFrameName:decisionListener:">- webView:decidePolicyForNewWindowAction:request:newFrameName:decisionListener:</option>
+		
+		<option value="//api/name/webView:unableToImplementPolicyWithError:frame:">- webView:unableToImplementPolicyWithError:frame:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">WebPolicyDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>WebPolicyDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@category WebPolicyDelegate
+</code></pre><p>While loading a URL, WebKit asks the WebPolicyDelegate for
+    policies that determine the action of what to do with the URL or the data that
+    the URL represents. Typically, the policy handler methods are called in this order:</p>
+
+<pre><code>decidePolicyForNewWindowAction:request:newFrameName:decisionListener: (at most once)&lt;BR&gt;
+decidePolicyForNavigationAction:request:frame:decisionListener: (zero or more times)&lt;BR&gt;
+decidePolicyForMIMEType:request:frame: (zero or more times)&lt;BR&gt;
+
+New window policy is always checked. Navigation policy is checked
+for the initial load and every redirect unless blocked by an
+earlier policy. Content policy is checked once the content type is
+known, unless an earlier policy prevented it.
+
+In rare cases, content policy might be checked more than
+once. This occurs when loading a "multipart/x-mixed-replace"
+document, also known as "server push". In this case, multiple
+documents come in one navigation, with each replacing the last. In
+this case, conent policy will be checked for each one.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/webView:decidePolicyForNavigationAction:request:frame:decisionListener:" title="webView:decidePolicyForNavigationAction:request:frame:decisionListener:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:decidePolicyForNavigationAction:request:frame:decisionListener:">&ndash;&nbsp;webView:decidePolicyForNavigationAction:request:frame:decisionListener:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called to decide what to do with a proposed navigation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>webView</em> decidePolicyForNavigationAction:(NSDictionary *)<em>actionInformation</em> request:(NSURLRequest *)<em>request</em> frame:(WebFrame *)<em>frame</em> decisionListener:(id&lt;WebPolicyDecisionListener&gt;)<em>listener</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>actionInformation</code></th>
+						<td><p>Dictionary that describes the action that triggered this navigation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>The request for the proposed navigation</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The <a href="../Classes/WebFrame.html">WebFrame</a> in which the navigation is happening</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>listener</code></th>
+						<td><p>The object to call when the decision is made</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>   @method webView:decidePolicyForNavigationAction:request:frame:decisionListener:</p><p>This method will be called before loading starts, and
+   on every redirect.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPolicyDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:decidePolicyForNewWindowAction:request:newFrameName:decisionListener:" title="webView:decidePolicyForNewWindowAction:request:newFrameName:decisionListener:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:decidePolicyForNewWindowAction:request:newFrameName:decisionListener:">&ndash;&nbsp;webView:decidePolicyForNewWindowAction:request:newFrameName:decisionListener:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webView:decidePolicyForNewWindowAction:request:newFrameName:decisionListener:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>webView</em> decidePolicyForNewWindowAction:(NSDictionary *)<em>actionInformation</em> request:(NSURLRequest *)<em>request</em> newFrameName:(NSString *)<em>frameName</em> decisionListener:(id&lt;WebPolicyDecisionListener&gt;)<em>listener</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>actionInformation</code></th>
+						<td><p>Dictionary that describes the action that triggered this navigation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>The request for the proposed navigation</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frameName</code></th>
+						<td><p>The frame in which the navigation is taking place</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>listener</code></th>
+						<td><p>The object to call when the decision is made</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:decidePolicyForNewWindowAction:request:newFrameName:decisionListener:
+</code></pre><p>This method is called to decide what to do with an targetted nagivation that would open a new window.</p><p>This method is provided so that modified clicks on a targetted link which
+    opens a new frame can prevent the new window from being opened if they decide to
+    do something else, like download or present the new frame in a specialized way.</p>
+
+<pre><code>&lt;p&gt;If this method picks a policy of Use, the new window will be
+opened, and decidePolicyForNavigationAction:request:frame:decisionListner:
+will be called with a WebNavigationType of WebNavigationTypeOther
+in its action. This is to avoid possible confusion about the modifiers.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPolicyDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:decidePolicyForMIMEType:request:frame:decisionListener:" title="webView:decidePolicyForMIMEType:request:frame:decisionListener:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:decidePolicyForMIMEType:request:frame:decisionListener:">&ndash;&nbsp;webView:decidePolicyForMIMEType:request:frame:decisionListener:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webView:decidePolicyForMIMEType:request:frame:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>webView</em> decidePolicyForMIMEType:(NSString *)<em>type</em> request:(NSURLRequest *)<em>request</em> frame:(WebFrame *)<em>frame</em> decisionListener:(id&lt;WebPolicyDecisionListener&gt;)<em>listener</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>MIME type for the resource.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>A NSURLRequest for the partially loaded content.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame which is loading the URL.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>listener</code></th>
+						<td><p>The object to call when the decision is made</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:decidePolicyForMIMEType:request:frame:
+</code></pre><p>Returns the policy for content which has been partially loaded.
+    Sent after webView:didStartProvisionalLoadForFrame: is sent on the <a href="../Protocols/WebFrameLoadDelegate.html">WebFrameLoadDelegate</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPolicyDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:unableToImplementPolicyWithError:frame:" title="webView:unableToImplementPolicyWithError:frame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:unableToImplementPolicyWithError:frame:">&ndash;&nbsp;webView:unableToImplementPolicyWithError:frame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webView:unableToImplementPolicy:error:forURL:inFrame:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>webView</em> unableToImplementPolicyWithError:(NSError *)<em>error</em> frame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error that caused the policy to not be implemented.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame in which the policy could not be implemented.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:unableToImplementPolicy:error:forURL:inFrame:
+</code></pre><p>Called when a WebPolicy could not be implemented. It is up to the client to display appropriate feedback.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPolicyDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

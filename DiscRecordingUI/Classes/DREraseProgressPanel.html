@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DREraseProgressPanel Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 DiscRecordingUI Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/progressPanel">+ progressPanel</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/beginProgressPanelForErase:">- beginProgressPanelForErase:</option>
+		
+		<option value="//api/name/beginProgressSheetForErase:modalForWindow:">- beginProgressSheetForErase:modalForWindow:</option>
+		
+		<option value="//api/name/description">- description</option>
+		
+		<option value="//api/name/setDescription:">- setDescription:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DREraseProgressPanel Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSPanel</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DREraseProgressPanel.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          DREraseProgressPanel
+</code></pre><p>A DREraseProgressPanel object manages a panel that displays
+                    and updates erase progress. The erase panel is responsible
+                    for begining the erase.</p>
+
+<pre><code>                The erase is begun and a progress panel is displayed on screen 
+                by calling @link //apple_ref/occ/instm/DREraseProgressPanel/beginProgressSheetForErase:modalForWindow: beginProgressSheetForErase:modalForWindow: @/link 
+                if a sheet interface is desired, or 
+                @link //apple_ref/occ/instm/DREraseProgressPanel/beginProgressPanelForErase: beginProgressPanelForErase:  @/link for a non-modal panel.
+
+                A DREraseProgressPanel sends a 
+                @link //apple_ref/occ/instm/NSObject/eraseProgressPanel:eraseDidFinish: eraseProgressPanel:eraseDidFinish: @/link message to it's delegate 
+                when the erase completes. This method allows the delegate 
+                to take over end-of-erase handling from the erase progress 
+                panel to customize error dialogs or user notification.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/progressPanel" title="progressPanel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/progressPanel">+&nbsp;progressPanel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and returns an instance of the erase progress panel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DREraseProgressPanel *)progressPanel</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A pointer to the newly created DREraseProgressPanel.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         progressPanel
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DREraseProgressPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beginProgressSheetForErase:modalForWindow:" title="beginProgressSheetForErase:modalForWindow:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beginProgressSheetForErase:modalForWindow:">&ndash;&nbsp;beginProgressSheetForErase:modalForWindow:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Presents the progress panel as a sheet and begins the erase process.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beginProgressSheetForErase:(DRErase *)<em>erase</em> modalForWindow:(NSWindow *)<em>docWindow</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>erase</code></th>
+						<td><p>The object performing the erase.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>docWindow</code></th>
+						<td><p>The window the sheet will be attached to. If docWindow is
+                                not nil, the panel slides down as a sheet running as a
+                                document modal window. If owner is nil, this is an error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         beginProgressSheetForErase:modalForWindow:
+</code></pre><p>This method returns control to the caller after it has displayed the
+                    progress sheet and begun the erase. Once the method has returned the
+                    caller can perform other operations while the erase continues.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DREraseProgressPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beginProgressPanelForErase:" title="beginProgressPanelForErase:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beginProgressPanelForErase:">&ndash;&nbsp;beginProgressPanelForErase:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Presents the progress panel on screen and begins the erase process.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beginProgressPanelForErase:(DRErase *)<em>erase</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>erase</code></th>
+						<td><p>The object performing the erase.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         beginProgressPanelForErase:
+</code></pre><p>This method returns control to the caller after it has displayed the
+                    progress sheet and begun the erase. Once the method has returned the
+                    caller can perform other operations while the erase continues.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DREraseProgressPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDescription:" title="setDescription:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDescription:">&ndash;&nbsp;setDescription:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the panel text displayed to the user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setDescription:(NSString *)<em>description</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>description</code></th>
+						<td><p>The text to display.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         setDescription:
+</code></pre><p>The panel&rsquo;s <a href="#//api/name/description">description</a> is typically a short text string that gives an
+                    indication to the user what operation is being performed. If no <a href="#//api/name/description">description</a>
+                    is explicitly set, the progress panel uses a standard text string suitable
+                    to the erase.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DREraseProgressPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/description" title="description"></a>
+	<h3 class="method-title"><code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the description string displayed in the panel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSString containing the text of the description.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         description
+</code></pre><p>If no description is explicitly set, this method will return the standard
+                    text string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DREraseProgressPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

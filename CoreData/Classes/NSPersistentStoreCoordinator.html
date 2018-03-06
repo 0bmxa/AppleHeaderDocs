@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSPersistentStoreCoordinator Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreData Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/managedObjectModel">managedObjectModel</option>
+		
+		<option value="//api/name/persistentStores">persistentStores</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/elementsDerivedFromExternalRecordURL:">+ elementsDerivedFromExternalRecordURL:</option>
+		
+		<option value="//api/name/metadataForPersistentStoreOfType:URL:error:">+ metadataForPersistentStoreOfType:URL:error:</option>
+		
+		<option value="//api/name/metadataForPersistentStoreOfType:URL:options:error:">+ metadataForPersistentStoreOfType:URL:options:error:</option>
+		
+		<option value="//api/name/metadataForPersistentStoreWithURL:error:">+ metadataForPersistentStoreWithURL:error:</option>
+		
+		<option value="//api/name/registerStoreClass:forStoreType:">+ registerStoreClass:forStoreType:</option>
+		
+		<option value="//api/name/removeUbiquitousContentAndPersistentStoreAtURL:options:error:">+ removeUbiquitousContentAndPersistentStoreAtURL:options:error:</option>
+		
+		<option value="//api/name/setMetadata:forPersistentStoreOfType:URL:error:">+ setMetadata:forPersistentStoreOfType:URL:error:</option>
+		
+		<option value="//api/name/setMetadata:forPersistentStoreOfType:URL:options:error:">+ setMetadata:forPersistentStoreOfType:URL:options:error:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/URLForPersistentStore:">- URLForPersistentStore:</option>
+		
+		<option value="//api/name/addPersistentStoreWithDescription:completionHandler:">- addPersistentStoreWithDescription:completionHandler:</option>
+		
+		<option value="//api/name/addPersistentStoreWithType:configuration:URL:options:error:">- addPersistentStoreWithType:configuration:URL:options:error:</option>
+		
+		<option value="//api/name/destroyPersistentStoreAtURL:withType:options:error:">- destroyPersistentStoreAtURL:withType:options:error:</option>
+		
+		<option value="//api/name/executeRequest:withContext:error:">- executeRequest:withContext:error:</option>
+		
+		<option value="//api/name/importStoreWithIdentifier:fromExternalRecordsDirectory:toURL:options:withType:error:">- importStoreWithIdentifier:fromExternalRecordsDirectory:toURL:options:withType:error:</option>
+		
+		<option value="//api/name/initWithManagedObjectModel:">- initWithManagedObjectModel:</option>
+		
+		<option value="//api/name/lock">- lock</option>
+		
+		<option value="//api/name/managedObjectIDForURIRepresentation:">- managedObjectIDForURIRepresentation:</option>
+		
+		<option value="//api/name/metadataForPersistentStore:">- metadataForPersistentStore:</option>
+		
+		<option value="//api/name/migratePersistentStore:toURL:options:withType:error:">- migratePersistentStore:toURL:options:withType:error:</option>
+		
+		<option value="//api/name/performBlock:">- performBlock:</option>
+		
+		<option value="//api/name/performBlockAndWait:">- performBlockAndWait:</option>
+		
+		<option value="//api/name/persistentStoreForURL:">- persistentStoreForURL:</option>
+		
+		<option value="//api/name/removePersistentStore:error:">- removePersistentStore:error:</option>
+		
+		<option value="//api/name/replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:">- replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:</option>
+		
+		<option value="//api/name/setMetadata:forPersistentStore:">- setMetadata:forPersistentStore:</option>
+		
+		<option value="//api/name/setURL:forPersistentStore:">- setURL:forPersistentStore:</option>
+		
+		<option value="//api/name/tryLock">- tryLock</option>
+		
+		<option value="//api/name/unlock">- unlock</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSPersistentStoreCoordinator Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSLocking</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSPersistentStoreCoordinator.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithManagedObjectModel:" title="initWithManagedObjectModel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithManagedObjectModel:">&ndash;&nbsp;initWithManagedObjectModel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithManagedObjectModel:(NSManagedObjectModel *)<em>model</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/managedObjectModel" title="managedObjectModel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/managedObjectModel">&nbsp;&nbsp;managedObjectModel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, strong) NSManagedObjectModel *managedObjectModel</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/persistentStores" title="persistentStores"></a>
+	<h3 class="method-title"><code><a href="#//api/name/persistentStores">&nbsp;&nbsp;persistentStores</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, strong) NSArray&lt;__kindofNSPersistentStore*&gt; *persistentStores</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) NSString *API_AVAILABLE ( macosx ( 10.10 , ios ( 8.0 )</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/persistentStoreForURL:" title="persistentStoreForURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/persistentStoreForURL:">&ndash;&nbsp;persistentStoreForURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable __kindof NSPersistentStore *)persistentStoreForURL:(NSURL *)<em>URL</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/URLForPersistentStore:" title="URLForPersistentStore:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/URLForPersistentStore:">&ndash;&nbsp;URLForPersistentStore:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSURL *)URLForPersistentStore:(NSPersistentStore *)<em>store</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setURL:forPersistentStore:" title="setURL:forPersistentStore:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setURL:forPersistentStore:">&ndash;&nbsp;setURL:forPersistentStore:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setURL:(NSURL *)<em>url</em> forPersistentStore:(NSPersistentStore *)<em>store</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addPersistentStoreWithType:configuration:URL:options:error:" title="addPersistentStoreWithType:configuration:URL:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addPersistentStoreWithType:configuration:URL:options:error:">&ndash;&nbsp;addPersistentStoreWithType:configuration:URL:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable __kindof NSPersistentStore *)addPersistentStoreWithType:(NSString *)<em>storeType</em> configuration:(nullable NSString *)<em>configuration</em> URL:(nullable NSURL *)<em>storeURL</em> options:(nullable NSDictionary *)<em>options</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addPersistentStoreWithDescription:completionHandler:" title="addPersistentStoreWithDescription:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addPersistentStoreWithDescription:completionHandler:">&ndash;&nbsp;addPersistentStoreWithDescription:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addPersistentStoreWithDescription:(NSPersistentStoreDescription *)<em>storeDescription</em> completionHandler:(void ( ^ ) ( NSPersistentStoreDescription *, NSError *_Nullable ))<em>block</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removePersistentStore:error:" title="removePersistentStore:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removePersistentStore:error:">&ndash;&nbsp;removePersistentStore:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removePersistentStore:(NSPersistentStore *)<em>store</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMetadata:forPersistentStore:" title="setMetadata:forPersistentStore:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMetadata:forPersistentStore:">&ndash;&nbsp;setMetadata:forPersistentStore:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setMetadata:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>metadata</em> forPersistentStore:(NSPersistentStore *)<em>store</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataForPersistentStore:" title="metadataForPersistentStore:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataForPersistentStore:">&ndash;&nbsp;metadataForPersistentStore:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary&lt;NSString*,id&gt; *)metadataForPersistentStore:(NSPersistentStore *)<em>store</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/managedObjectIDForURIRepresentation:" title="managedObjectIDForURIRepresentation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/managedObjectIDForURIRepresentation:">&ndash;&nbsp;managedObjectIDForURIRepresentation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSManagedObjectID *)managedObjectIDForURIRepresentation:(NSURL *)<em>url</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/executeRequest:withContext:error:" title="executeRequest:withContext:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/executeRequest:withContext:error:">&ndash;&nbsp;executeRequest:withContext:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)executeRequest:(NSPersistentStoreRequest *)<em>request</em> withContext:(NSManagedObjectContext *)<em>context</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerStoreClass:forStoreType:" title="registerStoreClass:forStoreType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerStoreClass:forStoreType:">+&nbsp;registerStoreClass:forStoreType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (void)registerStoreClass:(Class _Nullable)<em>storeClass</em> forStoreType:(NSString *)<em>storeType</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataForPersistentStoreOfType:URL:options:error:" title="metadataForPersistentStoreOfType:URL:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataForPersistentStoreOfType:URL:options:error:">+&nbsp;metadataForPersistentStoreOfType:URL:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDictionary&lt;NSString*,id&gt; *)metadataForPersistentStoreOfType:(NSString *)<em>storeType</em> URL:(NSURL *)<em>url</em> options:(nullable NSDictionary *)<em>options</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMetadata:forPersistentStoreOfType:URL:options:error:" title="setMetadata:forPersistentStoreOfType:URL:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMetadata:forPersistentStoreOfType:URL:options:error:">+&nbsp;setMetadata:forPersistentStoreOfType:URL:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)setMetadata:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>metadata</em> forPersistentStoreOfType:(NSString *)<em>storeType</em> URL:(NSURL *)<em>url</em> options:(nullable NSDictionary *)<em>options</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementsDerivedFromExternalRecordURL:" title="elementsDerivedFromExternalRecordURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementsDerivedFromExternalRecordURL:">+&nbsp;elementsDerivedFromExternalRecordURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSDictionary *)elementsDerivedFromExternalRecordURL:(NSURL *)<em>fileURL</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/importStoreWithIdentifier:fromExternalRecordsDirectory:toURL:options:withType:error:" title="importStoreWithIdentifier:fromExternalRecordsDirectory:toURL:options:withType:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/importStoreWithIdentifier:fromExternalRecordsDirectory:toURL:options:withType:error:">&ndash;&nbsp;importStoreWithIdentifier:fromExternalRecordsDirectory:toURL:options:withType:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSPersistentStore *)importStoreWithIdentifier:(nullable NSString *)<em>storeIdentifier</em> fromExternalRecordsDirectory:(NSURL *)<em>externalRecordsURL</em> toURL:(NSURL *)<em>destinationURL</em> options:(nullable NSDictionary *)<em>options</em> withType:(NSString *)<em>storeType</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/migratePersistentStore:toURL:options:withType:error:" title="migratePersistentStore:toURL:options:withType:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/migratePersistentStore:toURL:options:withType:error:">&ndash;&nbsp;migratePersistentStore:toURL:options:withType:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSPersistentStore *)migratePersistentStore:(NSPersistentStore *)<em>store</em> toURL:(NSURL *)<em>URL</em> options:(nullable NSDictionary *)<em>options</em> withType:(NSString *)<em>storeType</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/destroyPersistentStoreAtURL:withType:options:error:" title="destroyPersistentStoreAtURL:withType:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/destroyPersistentStoreAtURL:withType:options:error:">&ndash;&nbsp;destroyPersistentStoreAtURL:withType:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)destroyPersistentStoreAtURL:(NSURL *)<em>url</em> withType:(NSString *)<em>storeType</em> options:(nullable NSDictionary *)<em>options</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:" title="replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:">&ndash;&nbsp;replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)replacePersistentStoreAtURL:(NSURL *)<em>destinationURL</em> destinationOptions:(nullable NSDictionary *)<em>destinationOptions</em> withPersistentStoreFromURL:(NSURL *)<em>sourceURL</em> sourceOptions:(nullable NSDictionary *)<em>sourceOptions</em> storeType:(NSString *)<em>storeType</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performBlock:" title="performBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performBlock:">&ndash;&nbsp;performBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)performBlock:(void ( ^ ) ( void ))<em>block</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performBlockAndWait:" title="performBlockAndWait:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performBlockAndWait:">&ndash;&nbsp;performBlockAndWait:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)performBlockAndWait:(void ( NS_NOESCAPE ^ ) ( void ))<em>block</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataForPersistentStoreWithURL:error:" title="metadataForPersistentStoreWithURL:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataForPersistentStoreWithURL:error:">+&nbsp;metadataForPersistentStoreWithURL:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDictionary *)metadataForPersistentStoreWithURL:(NSURL *)<em>url</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lock" title="lock"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lock">&ndash;&nbsp;lock</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)lock</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unlock" title="unlock"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unlock">&ndash;&nbsp;unlock</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)unlock</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tryLock" title="tryLock"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tryLock">&ndash;&nbsp;tryLock</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)tryLock</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadataForPersistentStoreOfType:URL:error:" title="metadataForPersistentStoreOfType:URL:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadataForPersistentStoreOfType:URL:error:">+&nbsp;metadataForPersistentStoreOfType:URL:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDictionary&lt;NSString*,id&gt; *)metadataForPersistentStoreOfType:(nullable NSString *)<em>storeType</em> URL:(NSURL *)<em>url</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMetadata:forPersistentStoreOfType:URL:error:" title="setMetadata:forPersistentStoreOfType:URL:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMetadata:forPersistentStoreOfType:URL:error:">+&nbsp;setMetadata:forPersistentStoreOfType:URL:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)setMetadata:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>metadata</em> forPersistentStoreOfType:(nullable NSString *)<em>storeType</em> URL:(NSURL *)<em>url</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeUbiquitousContentAndPersistentStoreAtURL:options:error:" title="removeUbiquitousContentAndPersistentStoreAtURL:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeUbiquitousContentAndPersistentStoreAtURL:options:error:">+&nbsp;removeUbiquitousContentAndPersistentStoreAtURL:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)removeUbiquitousContentAndPersistentStoreAtURL:(NSURL *)<em>storeURL</em> options:(nullable NSDictionary *)<em>options</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSCNNConvolution Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/channelMultiplier">channelMultiplier</option>
+		
+		<option value="//api/name/dilationRateX">dilationRateX</option>
+		
+		<option value="//api/name/dilationRateY">dilationRateY</option>
+		
+		<option value="//api/name/groups">groups</option>
+		
+		<option value="//api/name/inputFeatureChannels">inputFeatureChannels</option>
+		
+		<option value="//api/name/neuronParameterA">neuronParameterA</option>
+		
+		<option value="//api/name/neuronParameterB">neuronParameterB</option>
+		
+		<option value="//api/name/neuronParameterC">neuronParameterC</option>
+		
+		<option value="//api/name/neuronType">neuronType</option>
+		
+		<option value="//api/name/outputFeatureChannels">outputFeatureChannels</option>
+		
+		<option value="//api/name/subPixelScaleFactor">subPixelScaleFactor</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encodeToCommandBuffer:sourceImage:destinationImage:state:MPS_SWIFT_NAME:">- encodeToCommandBuffer:sourceImage:destinationImage:state:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:">- initWithDevice:</option>
+		
+		<option value="//api/name/initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:">- initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:</option>
+		
+		<option value="//api/name/initWithDevice:weights:">- initWithDevice:weights:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSCNNConvolution Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSCNNKernel.html">MPSCNNKernel</a> : <a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSCNNConvolution.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSCNNConvolution
+@dependency This depends on Metal.framework</p><p>The MPSCNNConvolution specifies a convolution.
+The MPSCNNConvolution convolves the input image with a set of filters, each producing one feature map in the output image.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/inputFeatureChannels" title="inputFeatureChannels"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputFeatureChannels">&nbsp;&nbsp;inputFeatureChannels</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of feature channels per pixel in the input image.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger inputFeatureChannels</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   inputFeatureChannels</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputFeatureChannels" title="outputFeatureChannels"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputFeatureChannels">&nbsp;&nbsp;outputFeatureChannels</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of feature channels per pixel in the output image.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger outputFeatureChannels</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   outputFeatureChannels</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/groups" title="groups"></a>
+	<h3 class="method-title"><code><a href="#//api/name/groups">&nbsp;&nbsp;groups</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Number of groups input and output channels are divided into.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger groups</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   groups</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/subPixelScaleFactor" title="subPixelScaleFactor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/subPixelScaleFactor">&nbsp;&nbsp;subPixelScaleFactor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sub pixel scale factor which was passed in as part of <a href="../Classes/MPSCNNConvolutionDescriptor.html">MPSCNNConvolutionDescriptor</a> when creating this MPSCNNConvolution object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger subPixelScaleFactor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   subPixelScaleFactor</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dilationRateX" title="dilationRateX"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dilationRateX">&nbsp;&nbsp;dilationRateX</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Dilation rate which was passed in as part of <a href="../Classes/MPSCNNConvolutionDescriptor.html">MPSCNNConvolutionDescriptor</a> when creating this MPSCNNConvolution object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger dilationRateX</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   dilationRateX</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dilationRateY" title="dilationRateY"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dilationRateY">&nbsp;&nbsp;dilationRateY</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Dilation rate which was passed in as part of <a href="../Classes/MPSCNNConvolutionDescriptor.html">MPSCNNConvolutionDescriptor</a> when creating this MPSCNNConvolution object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger dilationRateY</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   dilationRate</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><a href="../Classes/MPSCNNNeuron.html">MPSCNNNeuron</a> filter to be applied as part of convolution.
+Can be nil in wich case no neuron activation fuction is applied.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) const MPSCNNNeuron *neuron MPS_AVAILABLE_STARTING_BUT_DEPRECATED ( &quot;A MPSCNNNeuron is much too heavy for this purpose. Please use MPSCNNConvolutionNeuronFusedDescriptor instead.&quot; , ios ( 10.0 , 11.0 , tvos ( 10.0 , 11.0 )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   neuron</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronType" title="neuronType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronType">&nbsp;&nbsp;neuronType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The type of neuron to append to the convolution</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) MPSCNNNeuronType neuronType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Please see class description for a full list. Default is MPSCNNNeuronTypeNone.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronParameterA" title="neuronParameterA"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronParameterA">&nbsp;&nbsp;neuronParameterA</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameter &ldquo;a&rdquo; for the neuron.  Default: 1.0f</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) float neuronParameterA</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Please see class description for interpretation of a.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronParameterB" title="neuronParameterB"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronParameterB">&nbsp;&nbsp;neuronParameterB</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameter &ldquo;b&rdquo; for the neuron.  Default: 1.0f</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) float neuronParameterB</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Please see class description for interpretation of b.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronParameterC" title="neuronParameterC"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronParameterC">&nbsp;&nbsp;neuronParameterC</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameter &ldquo;c&rdquo; for the neuron.  Default: 1.0f</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) float neuronParameterC</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Please see class description for interpretation of c.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/channelMultiplier" title="channelMultiplier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/channelMultiplier">&nbsp;&nbsp;channelMultiplier</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Channel multiplier.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger channelMultiplier</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For convolution created with <a href="../Classes/MPSCNNDepthWiseConvolutionDescriptor.html">MPSCNNDepthWiseConvolutionDescriptor</a>, it is the number of
+output feature channels for each input channel. See <a href="../Classes/MPSCNNDepthWiseConvolutionDescriptor.html">MPSCNNDepthWiseConvolutionDescriptor</a> for more details.
+Default is 0 which means regular CNN convolution.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:" title="initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:">&ndash;&nbsp;initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a convolution kernel</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> convolutionDescriptor:(const MPSCNNConvolutionDescriptor *__nonnull)<em>convolutionDescriptor</em> kernelWeights:(const float *__nonnull)<em>kernelWeights</em> biasTerms:(const float *__nullable)<em>biasTerms</em> flags:(MPSCNNConvolutionFlags)<em>flags</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which this MPSCNNConvolution filter will be used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>convolutionDescriptor</code></th>
+						<td><p>A pointer to a <a href="../Classes/MPSCNNConvolutionDescriptor.html">MPSCNNConvolutionDescriptor</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>kernelWeights</code></th>
+						<td><p>A pointer to a weights array.  Each entry is a float value. The number of entries is =
+<a href="#//api/name/inputFeatureChannels">inputFeatureChannels</a> * <a href="#//api/name/outputFeatureChannels">outputFeatureChannels</a> * kernelHeight * kernelWidth
+The layout of filter weight is so that it can be reinterpreted as 4D tensor (array)
+weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ inputChannels / <a href="#//api/name/groups">groups</a> ]
+Weights are converted to half float (fp16) internally for best performance.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>biasTerms</code></th>
+						<td><p>A pointer to bias terms to be applied to the convolution output.  Each entry is a float value.
+The number of entries is = numberOfOutputFeatureMaps</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flags</code></th>
+						<td><p>Currently unused. Pass MPSCNNConvolutionFlagsNone</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSCNNConvolution object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:weights:" title="initWithDevice:weights:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:weights:">&ndash;&nbsp;initWithDevice:weights:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a convolution kernel</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> weights:(nonnull id&lt;MPSCNNConvolutionDataSource&gt;)<em>weights</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which this MPSCNNConvolution filter will be used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>weights</code></th>
+						<td><p>A pointer to a object that conforms to the <a href="../Protocols/MPSCNNConvolutionDataSource.html">MPSCNNConvolutionDataSource</a>
+protocol. The <a href="../Protocols/MPSCNNConvolutionDataSource.html">MPSCNNConvolutionDataSource</a> protocol declares the methods that an
+instance of MPSCNNConvolution uses to obtain the weights and bias terms
+for the CNN convolution filter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSCNNConvolution object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new <a href="../Classes/MPSKernel.html">MPSKernel</a> object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>While the standard NSSecureCoding/NSCoding method
+-initWithCoder: should work, since the file can&rsquo;t
+know which device your data is allocated on, we
+have to guess and may guess incorrectly.  To avoid
+that problem, use initWithCoder:device instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:" title="initWithDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:">&ndash;&nbsp;initWithDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:sourceImage:destinationImage:state:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:sourceImage:destinationImage:state:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:sourceImage:destinationImage:state:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:sourceImage:destinationImage:state:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode a <a href="../Classes/MPSCNNKernel.html">MPSCNNKernel</a> into a command Buffer.  The operation shall proceed out-of-place.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceImage:(MPSImage *__nonnull)<em>sourceImage</em> destinationImage:(MPSImage *__nonnull)<em>destinationImage</em> state:(__autoreleasing MPSCNNConvolutionState *__nonnull *__nonnull)<em>outState</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceImage</code></th>
+						<td><p>A valid <a href="../Classes/MPSImage.html">MPSImage</a> object containing the source image.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationImage</code></th>
+						<td><p>A valid <a href="../Classes/MPSImage.html">MPSImage</a> to be overwritten by result image. destinationImage may not alias sourceImage.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outState</code></th>
+						<td><p>A pointer to recieve a state that is consumed by <a href="../Classes/MPSCNNConvolutionTranspose.html">MPSCNNConvolutionTranspose</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNConvolution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

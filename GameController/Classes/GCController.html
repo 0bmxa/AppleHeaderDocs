@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>GCController Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 GameController Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/attachedToDevice">attachedToDevice</option>
+		
+		<option value="//api/name/controllerPausedHandler">controllerPausedHandler</option>
+		
+		<option value="//api/name/extendedGamepad">extendedGamepad</option>
+		
+		<option value="//api/name/gamepad">gamepad</option>
+		
+		<option value="//api/name/handlerQueue">handlerQueue</option>
+		
+		<option value="//api/name/microGamepad">microGamepad</option>
+		
+		<option value="//api/name/playerIndex">playerIndex</option>
+		
+		<option value="//api/name/vendorName">vendorName</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/controllers">+ controllers</option>
+		
+		<option value="//api/name/startWirelessControllerDiscoveryWithCompletionHandler:">+ startWirelessControllerDiscoveryWithCompletionHandler:</option>
+		
+		<option value="//api/name/stopWirelessControllerDiscovery">+ stopWirelessControllerDiscovery</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">GCController Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>GCController.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Controllers are available to an application that links to GameController.framework. There are 2 ways to access controllers
+paired to the system, adopt both to ensure the best user experience:</p>
+
+<p>1: Querying for the the current array or controllers using <a href="#//api/name/controllers">[GCController controllers]</a>.
+2: Registering for Connection/Disconnection notifications from NSNotificationCenter.</p>
+
+<p>Only <a href="#//api/name/controllers">controllers</a> that support one of the allowed profiles, such as <a href="../Classes/GCGamepad.html">GCGamepad</a>, will be enumerated. Check for the profile
+supported before using a controller in your application. Ignore a controller that doesn&rsquo;t support a profile that suits
+your application, as the user will expect their controller to either be fully supported or not supported at all.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/controllerPausedHandler" title="controllerPausedHandler"></a>
+	<h3 class="method-title"><code><a href="#//api/name/controllerPausedHandler">&nbsp;&nbsp;controllerPausedHandler</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set this block to be notified when a user intends to suspend or resume the current game state. A controller will have a button
+dedicated to suspending and resuming play and invoking context sensitive actions. During event handling the system will
+notify the application using this block such that the application can handle the suspension and resumption from the given controller.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) void ( ^ ) ( GCController *controller ) controllerPausedHandler</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set this block to be notified when a user intends to suspend or resume the current game state. A controller will have a button
+dedicated to suspending and resuming play and invoking context sensitive actions. During event handling the system will
+notify the application using this block such that the application can handle the suspension and resumption from the given controller.</p>
+
+<p>Use this to implement your canonical transition to a pause menu for example if that is your application&rsquo;s desired handling
+of suspension in play. You may pause and resume base don game state as well so the event is only called each time the
+pause/resume button is pressed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GCController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/handlerQueue" title="handlerQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/handlerQueue">&nbsp;&nbsp;handlerQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The dispatch queue that element value change handlers are submitted on. The default queue is main, and setting this to any
+other queue will make value change handlers dispatch async on the given queue. This is useful if the main game loop
+of the application is not on main, or if input logic is handled on another thread from the main game loop.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (retain) dispatch_queue_t handlerQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The dispatch queue that element value change handlers are submitted on. The default queue is main, and setting this to any
+other queue will make value change handlers dispatch async on the given queue. This is useful if the main game loop
+of the application is not on main, or if input logic is handled on another thread from the main game loop.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/GCControllerAxisInput.html">GCControllerAxisInput</a>.valueChangedHandler</p></code></li>
+					
+					<li><code><p><a href="../Classes/GCControllerButtonInput.html">GCControllerButtonInput</a>.valueChangedHandler</p></code></li>
+					
+					<li><code><p><a href="../Classes/GCControllerButtonInput.html">GCControllerButtonInput</a>.pressedChangedHandler</p></code></li>
+					
+					<li><code><p><a href="../Classes/GCControllerDirectionPad.html">GCControllerDirectionPad</a>.valueChangedHandler</p></code></li>
+					
+					<li><code><p><a href="../Classes/GCMotion.html">GCMotion</a>.valueChangedHandler</p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GCController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vendorName" title="vendorName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vendorName">&nbsp;&nbsp;vendorName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A vendor supplied name. May be nil, and is not guaranteed to be unique. This should not be used as a key in a dictionary,
+but simply as a way to present some basic information about the controller in testing or to the user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy, nullable) NSString *vendorName</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A vendor supplied name. May be nil, and is not guaranteed to be unique. This should not be used as a key in a dictionary,
+but simply as a way to present some basic information about the controller in testing or to the user.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GCController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attachedToDevice" title="attachedToDevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attachedToDevice">&nbsp;&nbsp;attachedToDevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A controller may be form fitting or otherwise closely attached to the device. This closeness to other inputs on the device
+may suggest that interaction with the device may use other inputs easily. This is presented to developers to allow them to
+make informed descisions about UI and interactions to choose for their game in this situation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isAttachedToDevice) BOOL attachedToDevice</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A controller may be form fitting or otherwise closely attached to the device. This closeness to other inputs on the device
+may suggest that interaction with the device may use other inputs easily. This is presented to developers to allow them to
+make informed descisions about UI and interactions to choose for their game in this situation.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GCController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playerIndex" title="playerIndex"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playerIndex">&nbsp;&nbsp;playerIndex</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A player index for the controller, defaults to GCControllerPlayerIndexUnset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) GCControllerPlayerIndex playerIndex</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A player index for the controller, defaults to GCControllerPlayerIndexUnset.</p>
+
+<p>This can be set both for the application to keep track of <a href="#//api/name/controllers">controllers</a> and as a signal to make a controller display a player
+index on a set of LEDs or some other mechanism.</p>
+
+<p>A controller is not guranteed to have a visual display of the playerIndex, playerIndex does not persist for a controller
+with regards to a system.</p>
+
+<p>Negative values less than GCControllerPlayerIndexUnset will just map back to GCControllerPlayerIndexUnset when read back.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GCController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/gamepad" title="gamepad"></a>
+	<h3 class="method-title"><code><a href="#//api/name/gamepad">&nbsp;&nbsp;gamepad</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Gets the profile for the controller that suits current application.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, readonly, nullable) GCGamepad *gamepad</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Gets the profile for the controller that suits current application.</p>
+
+<p>There are two supported profiles, with an additional optional profile for motion as well.
+Each controller may be able to map its inputs into all profiles or just one kind of profile. Query for the controller
+profile that suits your game, the simplest kind will be supported by the broadest variety
+of <a href="#//api/name/controllers">controllers</a>. A controller supporting the Extended Gamepad profile for example supports the Gamepad profile and more.
+As such it can always be used just in the Gamepad profile if that suits the game.</p>
+
+<p>A physical controller that supports a profile must support it completely. That means that all buttons and axis inputs must
+be valid inputs that a developer can utilize.</p>
+
+<p>If a controller does not support the given profile the returned value will be nil. Use this to filter <a href="#//api/name/controllers">controllers</a> if the
+application requires a specific kind of profile.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GCController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/microGamepad" title="microGamepad"></a>
+	<h3 class="method-title"><code><a href="#//api/name/microGamepad">&nbsp;&nbsp;microGamepad</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, readonly, nullable) GCMicroGamepad *microGamepad</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/extendedGamepad" title="extendedGamepad"></a>
+	<h3 class="method-title"><code><a href="#//api/name/extendedGamepad">&nbsp;&nbsp;extendedGamepad</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, readonly, nullable) GCExtendedGamepad *extendedGamepad</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Gets the motion input profile. This profile is optional and may be available if the controller is attached to a device that supports motion.
+If this is nil the controller does not support motion input and only the <a href="#//api/name/gamepad">gamepad</a> &amp; <a href="#//api/name/extendedGamepad">extendedGamepad</a> profiles are available.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, readonly, nullable) GCMotion *NS_AVAILABLE ( 10 _10 , 8 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Gets the motion input profile. This profile is optional and may be available if the controller is attached to a device that supports motion.
+If this is nil the controller does not support motion input and only the <a href="#//api/name/gamepad">gamepad</a> &amp; <a href="#//api/name/extendedGamepad">extendedGamepad</a> profiles are available.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/gamepad">@property gamepad</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/extendedGamepad">@property extendedGamepad</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GCController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/controllers" title="controllers"></a>
+	<h3 class="method-title"><code><a href="#//api/name/controllers">+&nbsp;controllers</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get a list of controllers currently attached to the system.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;GCController*&gt; *)controllers</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get a list of controllers currently attached to the system.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GCController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startWirelessControllerDiscoveryWithCompletionHandler:" title="startWirelessControllerDiscoveryWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startWirelessControllerDiscoveryWithCompletionHandler:">+&nbsp;startWirelessControllerDiscoveryWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start discovery of new wireless <a href="#//api/name/controllers">controllers</a> that are discoverable. This is an asynchronous and the supplied completionHandler
+will get called once no more devices can be found. If there are already multiple <a href="#//api/name/controllers">controllers</a> available for use, there
+may be little reason to automatically start discovery of new wireless <a href="#//api/name/controllers">controllers</a>. In this situation it may be best to
+allow the user to start discovery manually via in-game UI.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)startWirelessControllerDiscoveryWithCompletionHandler:(nullable void ( ^ ) ( void ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>an optional handler that is called when discovery stops. (may be nil, in which case you will not be notified when discovery stops)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Start discovery of new wireless <a href="#//api/name/controllers">controllers</a> that are discoverable. This is an asynchronous and the supplied completionHandler
+will get called once no more devices can be found. If there are already multiple <a href="#//api/name/controllers">controllers</a> available for use, there
+may be little reason to automatically start discovery of new wireless <a href="#//api/name/controllers">controllers</a>. In this situation it may be best to
+allow the user to start discovery manually via in-game UI.</p>
+
+<p>Once discovery has started new <a href="#//api/name/controllers">controllers</a> will notify themselves as connected via GCControllerDidConnectNotification.
+As the notification arrives the controller is also available in the <a href="#//api/name/controllers">controllers</a> array.</p>
+
+<p>The completionHandler could be used to update UI and/or game state to indicate that no more <a href="#//api/name/controllers">controllers</a> will be found
+and the current set of <a href="#//api/name/controllers">controllers</a> is what is available for use in the game.</p>
+
+<p>If a completionHandler was provided, it will be called once when discovery stops. Either from an explicit call to
+<a href="#//api/name/stopWirelessControllerDiscovery">stopWirelessControllerDiscovery</a> or from timing out or stopping in its natural course of operation. Thus the
+completionHandler will at most be called once per call to startWirelessControllerDiscoveryWithCompletionHandler:.</p>
+
+<p>The completionHandler may also not get called at all, if for example startWirelessControllerDiscoveryWithCompletionHandler:
+is called multiple times during dicovery. For this case the net effect is that the completionHandler is replaced with each call
+and only the last one set before discovery stops will be called.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/stopWirelessControllerDiscovery">+ stopWirelessControllerDiscovery</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/controllers">+ controllers</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GCController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopWirelessControllerDiscovery" title="stopWirelessControllerDiscovery"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopWirelessControllerDiscovery">+&nbsp;stopWirelessControllerDiscovery</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If no more <a href="#//api/name/controllers">controllers</a> are needed, depending on game state or number of <a href="#//api/name/controllers">controllers</a> supported by a game, the discovery
+process can be stopped. Calling stopWirelessControllerDiscovery when no discovery is currently in progress will return
+immediately without any effect, thus it is safe to call even if the completionHandler of
+<a href="#//api/name/startWirelessControllerDiscoveryWithCompletionHandler:">startWirelessControllerDiscoveryWithCompletionHandler:</a> has been called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)stopWirelessControllerDiscovery</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If no more <a href="#//api/name/controllers">controllers</a> are needed, depending on game state or number of <a href="#//api/name/controllers">controllers</a> supported by a game, the discovery
+process can be stopped. Calling stopWirelessControllerDiscovery when no discovery is currently in progress will return
+immediately without any effect, thus it is safe to call even if the completionHandler of
+<a href="#//api/name/startWirelessControllerDiscoveryWithCompletionHandler:">startWirelessControllerDiscoveryWithCompletionHandler:</a> has been called.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/startWirelessControllerDiscoveryWithCompletionHandler:">+ startWirelessControllerDiscoveryWithCompletionHandler:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GCController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

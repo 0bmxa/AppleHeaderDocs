@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSURLCache Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/currentDiskUsage">currentDiskUsage</option>
+		
+		<option value="//api/name/currentMemoryUsage">currentMemoryUsage</option>
+		
+		<option value="//api/name/diskCapacity">diskCapacity</option>
+		
+		<option value="//api/name/memoryCapacity">memoryCapacity</option>
+		
+		<option value="//api/name/sharedURLCache">sharedURLCache</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/cachedResponseForRequest:">- cachedResponseForRequest:</option>
+		
+		<option value="//api/name/getCachedResponseForDataTask:completionHandler:">- getCachedResponseForDataTask:completionHandler:</option>
+		
+		<option value="//api/name/initWithMemoryCapacity:diskCapacity:diskPath:">- initWithMemoryCapacity:diskCapacity:diskPath:</option>
+		
+		<option value="//api/name/removeAllCachedResponses">- removeAllCachedResponses</option>
+		
+		<option value="//api/name/removeCachedResponseForDataTask:">- removeCachedResponseForDataTask:</option>
+		
+		<option value="//api/name/removeCachedResponseForRequest:">- removeCachedResponseForRequest:</option>
+		
+		<option value="//api/name/removeCachedResponsesSinceDate:">- removeCachedResponsesSinceDate:</option>
+		
+		<option value="//api/name/storeCachedResponse:forDataTask:">- storeCachedResponse:forDataTask:</option>
+		
+		<option value="//api/name/storeCachedResponse:forRequest:">- storeCachedResponse:forRequest:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSURLCache Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSURLCache.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sharedURLCache" title="sharedURLCache"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedURLCache">&nbsp;&nbsp;sharedURLCache</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the shared NSURLCache instance or
+    sets the NSURLCache instance shared by all clients of
+    the current process. This will be the new object returned when
+    calls to the <tt>sharedURLCache</tt> method are made.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (class, strong) NSURLCache *sharedURLCache</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the shared NSURLCache instance.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property sharedURLCache
+</code></pre><p>Unless set explicitly through a call to
+    <tt>+setSharedURLCache:</tt>, this method returns an NSURLCache
+    instance created with the following default values:
+    <ul>
+    <li>Memory capacity: 4 megabytes (4 * 1024 * 1024 bytes)
+    <li>Disk capacity: 20 megabytes (20 * 1024 * 1024 bytes)
+    <li>Disk path: <nobr>(user home directory)/Library/Caches/(application bundle id)</nobr>
+    </ul>
+    <p>Users who do not have special caching requirements or
+    constraints should find the default shared cache instance
+    acceptable. If this default shared cache instance is not
+    acceptable, <tt>+setSharedURLCache:</tt> can be called to set a
+    different NSURLCache instance to be returned from this method.
+    Callers should take care to ensure that the setter is called
+    at a time when no other caller has a reference to the previously-set
+    shared URL cache. This is to prevent storing cache data from
+    becoming unexpectedly unretrievable.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLCache.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithMemoryCapacity:diskCapacity:diskPath:" title="initWithMemoryCapacity:diskCapacity:diskPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithMemoryCapacity:diskCapacity:diskPath:">&ndash;&nbsp;initWithMemoryCapacity:diskCapacity:diskPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an NSURLCache with the given capacity and
+    path.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithMemoryCapacity:(NSUInteger)<em>memoryCapacity</em> diskCapacity:(NSUInteger)<em>diskCapacity</em> diskPath:(nullable NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>memoryCapacity</code></th>
+						<td><p>the capacity, measured in bytes, for the cache in memory.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>diskCapacity</code></th>
+						<td><p>the capacity, measured in bytes, for the cache on disk.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>the path on disk where the cache data is stored.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an initialized NSURLCache, with the given capacity, backed
+    by disk.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithMemoryCapacity:diskCapacity:diskPath:
+</code></pre><p>The returned NSURLCache is backed by disk, so
+    developers can be more liberal with space when choosing the
+    capacity for this kind of cache. A disk cache measured in the tens
+    of megabytes should be acceptable in most cases.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLCache.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cachedResponseForRequest:" title="cachedResponseForRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cachedResponseForRequest:">&ndash;&nbsp;cachedResponseForRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the <a href="../Classes/NSCachedURLResponse.html">NSCachedURLResponse</a> stored in the cache with
+    the given request.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSCachedURLResponse *)cachedResponseForRequest:(NSURLRequest *)<em>request</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>the <a href="../Classes/NSURLRequest.html">NSURLRequest</a> to use as a key for the lookup.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <a href="../Classes/NSCachedURLResponse.html">NSCachedURLResponse</a> stored in the cache with the given
+    request, or nil if there is no <a href="../Classes/NSCachedURLResponse.html">NSCachedURLResponse</a> stored with the
+    given request.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method cachedResponseForRequest:
+</code></pre><p>The method returns nil if there is no
+    <a href="../Classes/NSCachedURLResponse.html">NSCachedURLResponse</a> stored using the given request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLCache.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/storeCachedResponse:forRequest:" title="storeCachedResponse:forRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/storeCachedResponse:forRequest:">&ndash;&nbsp;storeCachedResponse:forRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stores the given <a href="../Classes/NSCachedURLResponse.html">NSCachedURLResponse</a> in the cache using
+    the given request.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)storeCachedResponse:(NSCachedURLResponse *)<em>cachedResponse</em> forRequest:(NSURLRequest *)<em>request</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cachedResponse</code></th>
+						<td><p>The cached response to store.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>the <a href="../Classes/NSURLRequest.html">NSURLRequest</a> to use as a key for the storage.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method storeCachedResponse:forRequest:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLCache.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeCachedResponseForRequest:" title="removeCachedResponseForRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeCachedResponseForRequest:">&ndash;&nbsp;removeCachedResponseForRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the <a href="../Classes/NSCachedURLResponse.html">NSCachedURLResponse</a> from the cache that is
+    stored using the given request.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeCachedResponseForRequest:(NSURLRequest *)<em>request</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>the <a href="../Classes/NSURLRequest.html">NSURLRequest</a> to use as a key for the lookup.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method removeCachedResponseForRequest:
+</code></pre><p>No action is taken if there is no <a href="../Classes/NSCachedURLResponse.html">NSCachedURLResponse</a>
+    stored with the given request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLCache.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAllCachedResponses" title="removeAllCachedResponses"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAllCachedResponses">&ndash;&nbsp;removeAllCachedResponses</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Clears the given cache, removing all <a href="../Classes/NSCachedURLResponse.html">NSCachedURLResponse</a>
+    objects that it stores.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAllCachedResponses</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method removeAllCachedResponses
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLCache.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeCachedResponsesSinceDate:" title="removeCachedResponsesSinceDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeCachedResponsesSinceDate:">&ndash;&nbsp;removeCachedResponsesSinceDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Clears the given cache of any cached responses since the provided date.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeCachedResponsesSinceDate:(NSDate *)<em>date</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method removeCachedResponsesSince:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLCache.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/memoryCapacity" title="memoryCapacity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/memoryCapacity">&nbsp;&nbsp;memoryCapacity</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>In-memory capacity of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property NSUInteger memoryCapacity</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The in-memory capacity, measured in bytes, for the receiver.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>At the time this call is made, the in-memory cache will truncate its contents to the size given, if necessary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLCache.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/diskCapacity" title="diskCapacity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/diskCapacity">&nbsp;&nbsp;diskCapacity</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The on-disk capacity of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property NSUInteger diskCapacity</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The on-disk capacity, measured in bytes, for the receiver. On mutation the on-disk cache will truncate its contents to the size given, if necessary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLCache.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentMemoryUsage" title="currentMemoryUsage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentMemoryUsage">&nbsp;&nbsp;currentMemoryUsage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the current amount of space consumed by the
+    in-memory cache of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger currentMemoryUsage</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the current usage of the in-memory cache of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This size, measured in bytes, indicates the current
+    usage of the in-memory cache.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLCache.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentDiskUsage" title="currentDiskUsage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentDiskUsage">&nbsp;&nbsp;currentDiskUsage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the current amount of space consumed by the
+    on-disk cache of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger currentDiskUsage</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the current usage of the on-disk cache of the receiver.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This size, measured in bytes, indicates the current
+    usage of the on-disk cache.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLCache.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="NSURLSessionTaskAdditions Methods" name="task_NSURLSessionTaskAdditions Methods"></a>
+						<h2 class="task-title">NSURLSessionTaskAdditions Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/storeCachedResponse:forDataTask:" title="storeCachedResponse:forDataTask:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/storeCachedResponse:forDataTask:">&ndash;&nbsp;storeCachedResponse:forDataTask:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)storeCachedResponse:(NSCachedURLResponse *)<em>cachedResponse</em> forDataTask:(NSURLSessionDataTask *)<em>dataTask</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getCachedResponseForDataTask:completionHandler:" title="getCachedResponseForDataTask:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getCachedResponseForDataTask:completionHandler:">&ndash;&nbsp;getCachedResponseForDataTask:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)getCachedResponseForDataTask:(NSURLSessionDataTask *)<em>dataTask</em> completionHandler:(void ( ^ ) ( NSCachedURLResponse *_Nullable cachedResponse ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeCachedResponseForDataTask:" title="removeCachedResponseForDataTask:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeCachedResponseForDataTask:">&ndash;&nbsp;removeCachedResponseForDataTask:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeCachedResponseForDataTask:(NSURLSessionDataTask *)<em>dataTask</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

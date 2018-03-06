@@ -1,0 +1,3243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>JSValue Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 JavaScriptCore Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/JSValueRef">JSValueRef</option>
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/context">context</option>
+		
+		<option value="//api/name/isBoolean">isBoolean</option>
+		
+		<option value="//api/name/isNull">isNull</option>
+		
+		<option value="//api/name/isNumber">isNumber</option>
+		
+		<option value="//api/name/isObject">isObject</option>
+		
+		<option value="//api/name/isString">isString</option>
+		
+		<option value="//api/name/isUndefined">isUndefined</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/valueWithBool:inContext:">+ valueWithBool:inContext:</option>
+		
+		<option value="//api/name/valueWithDouble:inContext:">+ valueWithDouble:inContext:</option>
+		
+		<option value="//api/name/valueWithInt32:inContext:">+ valueWithInt32:inContext:</option>
+		
+		<option value="//api/name/valueWithJSValueRef:inContext:">+ valueWithJSValueRef:inContext:</option>
+		
+		<option value="//api/name/valueWithNewArrayInContext:">+ valueWithNewArrayInContext:</option>
+		
+		<option value="//api/name/valueWithNewErrorFromMessage:inContext:">+ valueWithNewErrorFromMessage:inContext:</option>
+		
+		<option value="//api/name/valueWithNewObjectInContext:">+ valueWithNewObjectInContext:</option>
+		
+		<option value="//api/name/valueWithNewRegularExpressionFromPattern:flags:inContext:">+ valueWithNewRegularExpressionFromPattern:flags:inContext:</option>
+		
+		<option value="//api/name/valueWithNullInContext:">+ valueWithNullInContext:</option>
+		
+		<option value="//api/name/valueWithObject:inContext:">+ valueWithObject:inContext:</option>
+		
+		<option value="//api/name/valueWithPoint:inContext:">+ valueWithPoint:inContext:</option>
+		
+		<option value="//api/name/valueWithRange:inContext:">+ valueWithRange:inContext:</option>
+		
+		<option value="//api/name/valueWithRect:inContext:">+ valueWithRect:inContext:</option>
+		
+		<option value="//api/name/valueWithSize:inContext:">+ valueWithSize:inContext:</option>
+		
+		<option value="//api/name/valueWithUInt32:inContext:">+ valueWithUInt32:inContext:</option>
+		
+		<option value="//api/name/valueWithUndefinedInContext:">+ valueWithUndefinedInContext:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/callWithArguments:">- callWithArguments:</option>
+		
+		<option value="//api/name/constructWithArguments:">- constructWithArguments:</option>
+		
+		<option value="//api/name/defineProperty:descriptor:">- defineProperty:descriptor:</option>
+		
+		<option value="//api/name/deleteProperty:">- deleteProperty:</option>
+		
+		<option value="//api/name/hasProperty:">- hasProperty:</option>
+		
+		<option value="//api/name/invokeMethod:withArguments:">- invokeMethod:withArguments:</option>
+		
+		<option value="//api/name/isEqualToObject:">- isEqualToObject:</option>
+		
+		<option value="//api/name/isEqualWithTypeCoercionToObject:">- isEqualWithTypeCoercionToObject:</option>
+		
+		<option value="//api/name/isInstanceOf:">- isInstanceOf:</option>
+		
+		<option value="//api/name/objectAtIndexedSubscript:">- objectAtIndexedSubscript:</option>
+		
+		<option value="//api/name/objectForKeyedSubscript:">- objectForKeyedSubscript:</option>
+		
+		<option value="//api/name/setObject:atIndexedSubscript:">- setObject:atIndexedSubscript:</option>
+		
+		<option value="//api/name/setObject:forKeyedSubscript:">- setObject:forKeyedSubscript:</option>
+		
+		<option value="//api/name/setValue:atIndex:">- setValue:atIndex:</option>
+		
+		<option value="//api/name/setValue:forProperty:">- setValue:forProperty:</option>
+		
+		<option value="//api/name/toArray">- toArray</option>
+		
+		<option value="//api/name/toBool">- toBool</option>
+		
+		<option value="//api/name/toDate">- toDate</option>
+		
+		<option value="//api/name/toDictionary">- toDictionary</option>
+		
+		<option value="//api/name/toDouble">- toDouble</option>
+		
+		<option value="//api/name/toInt32">- toInt32</option>
+		
+		<option value="//api/name/toNumber">- toNumber</option>
+		
+		<option value="//api/name/toObject">- toObject</option>
+		
+		<option value="//api/name/toObjectOfClass:">- toObjectOfClass:</option>
+		
+		<option value="//api/name/toPoint">- toPoint</option>
+		
+		<option value="//api/name/toRange">- toRange</option>
+		
+		<option value="//api/name/toRect">- toRect</option>
+		
+		<option value="//api/name/toSize">- toSize</option>
+		
+		<option value="//api/name/toString">- toString</option>
+		
+		<option value="//api/name/toUInt32">- toUInt32</option>
+		
+		<option value="//api/name/valueAtIndex:">- valueAtIndex:</option>
+		
+		<option value="//api/name/valueForProperty:">- valueForProperty:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">JSValue Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>JSValue.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@interface</p><p>A JSValue is a reference to a JavaScript value. Every JSValue
+originates from a <a href="../Classes/JSContext.html">JSContext</a> and holds a strong reference to it.
+When a JSValue instance method creates a new JSValue, the new value
+originates from the same <a href="../Classes/JSContext.html">JSContext</a>.</p>
+
+<p>All JSValues values also originate from a <a href="../Classes/JSVirtualMachine.html">JSVirtualMachine</a></p><p>Instances of JSValue implement the following methods in order to enable
+support for subscript access by key and index, for example:</p>
+
+<p>@textblock
+    JSValue <em>objectA, </em>objectB;
+    JSValue <em>v1 = object[@&ldquo;X&rdquo;]; // Get value for property &ldquo;X&rdquo; from &lsquo;object&rsquo;.
+    JSValue </em>v2 = object[42];   // Get value for index 42 from &lsquo;object&rsquo;.
+    object[@&ldquo;Y&rdquo;] = v1;          // Assign &lsquo;v1&rsquo; to property &ldquo;Y&rdquo; of &lsquo;object&rsquo;.
+    object[101] = v2;           // Assign &lsquo;v2&rsquo; to index 101 of &lsquo;object&rsquo;.
+@/textblock</p>
+
+<p>An object key passed as a subscript will be converted to a JavaScript value,
+and then the value converted to a string used as a property name.</p>
+
+<p>@category</p><p>Objective-C methods exported to JavaScript may have argument and/or return
+values of struct types, provided that conversion to and from the struct is
+supported by JSValue. Support is provided for any types where JSValue
+contains both a class method <code>valueWith<Type>:inContext:</code>, and and instance
+method <code>to<Type></code>- where the string <code><Type></code> in these selector names match,
+with the first argument to the former being of the same struct type as the
+return type of the latter.
+Support is provided for structs of type CGPoint, NSRange, CGRect and CGSize.</p>
+
+<p>@category</p><p>These functions are for bridging between the C API and the Objective-C API.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/context" title="context"></a>
+	<h3 class="method-title"><code><a href="#//api/name/context">&nbsp;&nbsp;context</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Classes/JSContext.html">JSContext</a> that this value originates from.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, strong) JSContext *context</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithObject:inContext:" title="valueWithObject:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithObject:inContext:">+&nbsp;valueWithObject:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a JSValue by converting an Objective-C object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithObject:(id)<em>value</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The Objective-C object to be converted.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new JSValue.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>The resulting JSValue retains the provided Objective-C object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithBool:inContext:" title="valueWithBool:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithBool:inContext:">+&nbsp;valueWithBool:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a JavaScript value from a BOOL primitive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithBool:(BOOL)<em>value</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The <a href="../Classes/JSContext.html">JSContext</a> in which the resulting JSValue will be created.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new JSValue representing the equivalent boolean value.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithDouble:inContext:" title="valueWithDouble:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithDouble:inContext:">+&nbsp;valueWithDouble:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a JavaScript value from a double primitive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithDouble:(double)<em>value</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The <a href="../Classes/JSContext.html">JSContext</a> in which the resulting JSValue will be created.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new JSValue representing the equivalent boolean value.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithInt32:inContext:" title="valueWithInt32:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithInt32:inContext:">+&nbsp;valueWithInt32:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a JavaScript value from an <code>int32_t</code> primitive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithInt32:(int32_t)<em>value</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The <a href="../Classes/JSContext.html">JSContext</a> in which the resulting JSValue will be created.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new JSValue representing the equivalent boolean value.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithUInt32:inContext:" title="valueWithUInt32:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithUInt32:inContext:">+&nbsp;valueWithUInt32:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a JavaScript value from a <code>uint32_t</code> primitive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithUInt32:(uint32_t)<em>value</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The <a href="../Classes/JSContext.html">JSContext</a> in which the resulting JSValue will be created.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new JSValue representing the equivalent boolean value.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithNewObjectInContext:" title="valueWithNewObjectInContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithNewObjectInContext:">+&nbsp;valueWithNewObjectInContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new, empty JavaScript object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithNewObjectInContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The <a href="../Classes/JSContext.html">JSContext</a> in which the resulting object will be created.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new JavaScript object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithNewArrayInContext:" title="valueWithNewArrayInContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithNewArrayInContext:">+&nbsp;valueWithNewArrayInContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new, empty JavaScript array.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithNewArrayInContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The <a href="../Classes/JSContext.html">JSContext</a> in which the resulting array will be created.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new JavaScript array.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithNewRegularExpressionFromPattern:flags:inContext:" title="valueWithNewRegularExpressionFromPattern:flags:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithNewRegularExpressionFromPattern:flags:inContext:">+&nbsp;valueWithNewRegularExpressionFromPattern:flags:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new JavaScript regular expression object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithNewRegularExpressionFromPattern:(NSString *)<em>pattern</em> flags:(NSString *)<em>flags</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pattern</code></th>
+						<td><p>The regular expression pattern.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flags</code></th>
+						<td><p>The regular expression flags.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The <a href="../Classes/JSContext.html">JSContext</a> in which the resulting regular expression object will be created.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new JavaScript regular expression object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithNewErrorFromMessage:inContext:" title="valueWithNewErrorFromMessage:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithNewErrorFromMessage:inContext:">+&nbsp;valueWithNewErrorFromMessage:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new JavaScript error object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithNewErrorFromMessage:(NSString *)<em>message</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>The error message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The <a href="../Classes/JSContext.html">JSContext</a> in which the resulting error object will be created.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new JavaScript error object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithNullInContext:" title="valueWithNullInContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithNullInContext:">+&nbsp;valueWithNullInContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create the JavaScript value <code>null</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithNullInContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The <a href="../Classes/JSContext.html">JSContext</a> to which the resulting JSValue belongs.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The JSValue representing the JavaScript value <code>null</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithUndefinedInContext:" title="valueWithUndefinedInContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithUndefinedInContext:">+&nbsp;valueWithUndefinedInContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create the JavaScript value <code>undefined</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithUndefinedInContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The <a href="../Classes/JSContext.html">JSContext</a> to which the resulting JSValue belongs.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The JSValue representing the JavaScript value <code>undefined</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toObject" title="toObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toObject">&ndash;&nbsp;toObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert this JSValue to an Objective-C object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)toObject</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The Objective-C representation of this JSValue.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>The JSValue is converted to an Objective-C object according
+to the conversion rules specified above.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toObjectOfClass:" title="toObjectOfClass:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toObjectOfClass:">&ndash;&nbsp;toObjectOfClass:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to an Objective-C object of a specific class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)toObjectOfClass:(Class)<em>expectedClass</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An Objective-C object of the specified Class or <code>nil</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>The JSValue is converted to an Objective-C object of the specified Class.
+If the result is not of the specified Class then <code>nil</code> will be returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toBool" title="toBool"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toBool">&ndash;&nbsp;toBool</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to a boolean.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)toBool</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The boolean result of the conversion.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>The JSValue is converted to a boolean according to the rules specified
+by the JavaScript language.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toDouble" title="toDouble"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toDouble">&ndash;&nbsp;toDouble</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to a double.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (double)toDouble</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The double result of the conversion.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>The JSValue is converted to a number according to the rules specified
+by the JavaScript language.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toInt32" title="toInt32"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toInt32">&ndash;&nbsp;toInt32</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to an <code>int32_t</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int32_t)toInt32</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <code>int32_t</code> result of the conversion.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>The JSValue is converted to an integer according to the rules specified
+by the JavaScript language.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toUInt32" title="toUInt32"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toUInt32">&ndash;&nbsp;toUInt32</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to a <code>uint32_t</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (uint32_t)toUInt32</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <code>uint32_t</code> result of the conversion.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>The JSValue is converted to an integer according to the rules specified
+by the JavaScript language.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toNumber" title="toNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toNumber">&ndash;&nbsp;toNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to a NSNumber.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSNumber *)toNumber</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The NSNumber result of the conversion.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>If the JSValue represents a boolean, a NSNumber value of YES or NO
+will be returned. For all other types the value will be converted to a number according
+to the rules specified by the JavaScript language.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toString" title="toString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toString">&ndash;&nbsp;toString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to a NSString.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)toString</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The NSString containing the result of the conversion.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>The JSValue is converted to a string according to the rules specified
+by the JavaScript language.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toDate" title="toDate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toDate">&ndash;&nbsp;toDate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to a NSDate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDate *)toDate</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The NSDate created using the converted time interval.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>The value is converted to a number representing a time interval
+since 1970 which is then used to create a new NSDate instance.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toArray" title="toArray"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toArray">&ndash;&nbsp;toArray</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to a NSArray.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)toArray</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The NSArray containing the recursively converted contents of the
+converted JavaScript array.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>If the value is <code>null</code> or <code>undefined</code> then <code>nil</code> is returned.
+If the value is not an object then a JavaScript TypeError will be thrown.
+The property <code>length</code> is read from the object, converted to an unsigned
+integer, and an NSArray of this size is allocated. Properties corresponding
+to indicies within the array bounds will be copied to the array, with
+JSValues converted to equivalent Objective-C objects as specified.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toDictionary" title="toDictionary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toDictionary">&ndash;&nbsp;toDictionary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to a NSDictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)toDictionary</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The NSDictionary containing the recursively converted contents of
+the converted JavaScript object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>If the value is <code>null</code> or <code>undefined</code> then <code>nil</code> is returned.
+If the value is not an object then a JavaScript TypeError will be thrown.
+All enumerable properties of the object are copied to the dictionary, with
+JSValues converted to equivalent Objective-C objects as specified.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueForProperty:" title="valueForProperty:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueForProperty:">&ndash;&nbsp;valueForProperty:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Access a property of a JSValue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (JSValue *)valueForProperty:(NSString *)<em>property</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The JSValue for the requested property or the JSValue <code>undefined</code>
+if the property does not exist.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setValue:forProperty:" title="setValue:forProperty:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setValue:forProperty:">&ndash;&nbsp;setValue:forProperty:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set a property on a JSValue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setValue:(id)<em>value</em> forProperty:(NSString *)<em>property</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteProperty:" title="deleteProperty:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteProperty:">&ndash;&nbsp;deleteProperty:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Delete a property from a JSValue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)deleteProperty:(NSString *)<em>property</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if deletion is successful, NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasProperty:" title="hasProperty:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasProperty:">&ndash;&nbsp;hasProperty:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if a JSValue has a property.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasProperty:(NSString *)<em>property</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns YES if property is present on the value.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>This method has the same function as the JavaScript operator <code>in</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/defineProperty:descriptor:" title="defineProperty:descriptor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defineProperty:descriptor:">&ndash;&nbsp;defineProperty:descriptor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Define properties with custom descriptors on JSValues.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)defineProperty:(NSString *)<em>property</em> descriptor:(id)<em>descriptor</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>This method may be used to create a data or accessor property on an object.
+This method operates in accordance with the Object.defineProperty method in the
+JavaScript language.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueAtIndex:" title="valueAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueAtIndex:">&ndash;&nbsp;valueAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Access an indexed (numerical) property on a JSValue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (JSValue *)valueAtIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The JSValue for the property at the specified index.
+Returns the JavaScript value <code>undefined</code> if no property exists at that index.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setValue:atIndex:" title="setValue:atIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setValue:atIndex:">&ndash;&nbsp;setValue:atIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set an indexed (numerical) property on a JSValue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setValue:(id)<em>value</em> atIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>For JSValues that are JavaScript arrays, indices greater than
+UINT_MAX - 1 will not affect the length of the array.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isUndefined" title="isUndefined"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isUndefined">&nbsp;&nbsp;isUndefined</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if a JSValue corresponds to the JavaScript value <code>undefined</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL isUndefined</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isNull" title="isNull"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isNull">&nbsp;&nbsp;isNull</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if a JSValue corresponds to the JavaScript value <code>null</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL isNull</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isBoolean" title="isBoolean"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isBoolean">&nbsp;&nbsp;isBoolean</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if a JSValue is a boolean.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL isBoolean</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isNumber" title="isNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isNumber">&nbsp;&nbsp;isNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if a JSValue is a number.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL isNumber</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p><p>In JavaScript, there is no differentiation between types of numbers.
+Semantically all numbers behave like doubles except in special cases like bit
+operations.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isString" title="isString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isString">&nbsp;&nbsp;isString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if a JSValue is a string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL isString</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isObject" title="isObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isObject">&nbsp;&nbsp;isObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if a JSValue is an object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL isObject</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if a JSValue is an array.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL isArray NS_AVAILABLE ( 10 _11 , 9 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isEqualToObject:" title="isEqualToObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isEqualToObject:">&ndash;&nbsp;isEqualToObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Compare two JSValues using JavaScript&rsquo;s <code>===</code> operator.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToObject:(id)<em>value</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isEqualWithTypeCoercionToObject:" title="isEqualWithTypeCoercionToObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isEqualWithTypeCoercionToObject:">&ndash;&nbsp;isEqualWithTypeCoercionToObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Compare two JSValues using JavaScript&rsquo;s <code>==</code> operator.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isEqualWithTypeCoercionToObject:(id)<em>value</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isInstanceOf:" title="isInstanceOf:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isInstanceOf:">&ndash;&nbsp;isInstanceOf:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if a JSValue is an instance of another object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isInstanceOf:(id)<em>value</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>This method has the same function as the JavaScript operator <code>instanceof</code>.
+If an object other than a JSValue is passed, it will first be converted according to
+the aforementioned rules.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/callWithArguments:" title="callWithArguments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/callWithArguments:">&ndash;&nbsp;callWithArguments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoke a JSValue as a function.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (JSValue *)callWithArguments:(NSArray *)<em>arguments</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>arguments</code></th>
+						<td><p>The arguments to pass to the function.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The return value of the function call.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>In JavaScript, if a function doesn&rsquo;t explicitly return a value then it
+implicitly returns the JavaScript value <code>undefined</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/constructWithArguments:" title="constructWithArguments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/constructWithArguments:">&ndash;&nbsp;constructWithArguments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoke a JSValue as a constructor.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (JSValue *)constructWithArguments:(NSArray *)<em>arguments</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>arguments</code></th>
+						<td><p>The arguments to pass to the constructor.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The return value of the constructor call.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>This is equivalent to using the <code>new</code> syntax in JavaScript.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/invokeMethod:withArguments:" title="invokeMethod:withArguments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/invokeMethod:withArguments:">&ndash;&nbsp;invokeMethod:withArguments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoke a method on a JSValue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (JSValue *)invokeMethod:(NSString *)<em>method</em> withArguments:(NSArray *)<em>arguments</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>method</code></th>
+						<td><p>The name of the method to be invoked.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>arguments</code></th>
+						<td><p>The arguments to pass to the method.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The return value of the method call.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Accesses the property named <code>method</code> from this value and
+calls the resulting value as a function, passing this JSValue as the <code>this</code>
+value along with the specified arguments.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="SubscriptSupport Methods" name="task_SubscriptSupport Methods"></a>
+						<h2 class="task-title">SubscriptSupport Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/objectForKeyedSubscript:" title="objectForKeyedSubscript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectForKeyedSubscript:">&ndash;&nbsp;objectForKeyedSubscript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (JSValue *)objectForKeyedSubscript:(id)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectAtIndexedSubscript:" title="objectAtIndexedSubscript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectAtIndexedSubscript:">&ndash;&nbsp;objectAtIndexedSubscript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (JSValue *)objectAtIndexedSubscript:(NSUInteger)<em>index</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setObject:forKeyedSubscript:" title="setObject:forKeyedSubscript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setObject:forKeyedSubscript:">&ndash;&nbsp;setObject:forKeyedSubscript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setObject:(id)<em>object</em> forKeyedSubscript:(NSObject&lt;NSCopying&gt; *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setObject:atIndexedSubscript:" title="setObject:atIndexedSubscript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setObject:atIndexedSubscript:">&ndash;&nbsp;setObject:atIndexedSubscript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setObject:(id)<em>object</em> atIndexedSubscript:(NSUInteger)<em>index</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="StructSupport Methods" name="task_StructSupport Methods"></a>
+						<h2 class="task-title">StructSupport Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/valueWithPoint:inContext:" title="valueWithPoint:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithPoint:inContext:">+&nbsp;valueWithPoint:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a JSValue from a CGPoint.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithPoint:(CGPoint)<em>point</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A newly allocated JavaScript object containing properties
+named <code>x</code> and <code>y</code>, with values from the CGPoint.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithRange:inContext:" title="valueWithRange:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithRange:inContext:">+&nbsp;valueWithRange:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a JSValue from a NSRange.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithRange:(NSRange)<em>range</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A newly allocated JavaScript object containing properties
+named <code>location</code> and <code>length</code>, with values from the NSRange.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithRect:inContext:" title="valueWithRect:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithRect:inContext:">+&nbsp;valueWithRect:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method
+@abstract
+Create a JSValue from a CGRect.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithRect:(CGRect)<em>rect</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A newly allocated JavaScript object containing properties
+named <code>x</code>, <code>y</code>, <code>width</code>, and <code>height</code>, with values from the CGRect.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method
+@abstract
+Create a JSValue from a CGRect.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueWithSize:inContext:" title="valueWithSize:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithSize:inContext:">+&nbsp;valueWithSize:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a JSValue from a CGSize.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithSize:(CGSize)<em>size</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A newly allocated JavaScript object containing properties
+named <code>width</code> and <code>height</code>, with values from the CGSize.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toPoint" title="toPoint"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toPoint">&ndash;&nbsp;toPoint</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to a CGPoint.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGPoint)toPoint</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new CGPoint.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Reads the properties named <code>x</code> and <code>y</code> from
+this JSValue, and converts the results to double.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toRange" title="toRange"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toRange">&ndash;&nbsp;toRange</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to an NSRange.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSRange)toRange</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new NSRange.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Reads the properties named <code>location</code> and
+<code>length</code> from this JSValue and converts the results to double.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toRect" title="toRect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toRect">&ndash;&nbsp;toRect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to a CGRect.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGRect)toRect</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new CGRect.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Reads the properties named <code>x</code>, <code>y</code>,
+<code>width</code>, and <code>height</code> from this JSValue and converts the results to double.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toSize" title="toSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toSize">&ndash;&nbsp;toSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convert a JSValue to a CGSize.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGSize)toSize</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The new CGSize.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p><p>Reads the properties named <code>width</code> and
+<code>height</code> from this JSValue and converts the results to double.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="JSValueRefSupport Methods" name="task_JSValueRefSupport Methods"></a>
+						<h2 class="task-title">JSValueRefSupport Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/valueWithJSValueRef:inContext:" title="valueWithJSValueRef:inContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueWithJSValueRef:inContext:">+&nbsp;valueWithJSValueRef:inContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a JSValue, wrapping its C API counterpart.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (JSValue *)valueWithJSValueRef:(JSValueRef)<em>value</em> inContext:(JSContext *)<em>context</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The Objective-C API equivalent of the specified <a href="#//api/name/JSValueRef">JSValueRef</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/JSValueRef" title="JSValueRef"></a>
+	<h3 class="method-title"><code><a href="#//api/name/JSValueRef">&nbsp;&nbsp;JSValueRef</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the C API counterpart wrapped by a <a href="../Classes/JSContext.html">JSContext</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly)  JSValueRef</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The C API equivalent of this JSValue.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">JSValue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

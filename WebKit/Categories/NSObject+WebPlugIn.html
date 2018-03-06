@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSObject(WebPlugIn) Category Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 WebKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/objectForWebScript">objectForWebScript</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/webPlugInDestroy">- webPlugInDestroy</option>
+		
+		<option value="//api/name/webPlugInInitialize">- webPlugInInitialize</option>
+		
+		<option value="//api/name/webPlugInMainResourceDidFailWithError:">- webPlugInMainResourceDidFailWithError:</option>
+		
+		<option value="//api/name/webPlugInMainResourceDidFinishLoading">- webPlugInMainResourceDidFinishLoading</option>
+		
+		<option value="//api/name/webPlugInMainResourceDidReceiveData:">- webPlugInMainResourceDidReceiveData:</option>
+		
+		<option value="//api/name/webPlugInMainResourceDidReceiveResponse:">- webPlugInMainResourceDidReceiveResponse:</option>
+		
+		<option value="//api/name/webPlugInSetIsSelected:">- webPlugInSetIsSelected:</option>
+		
+		<option value="//api/name/webPlugInStart">- webPlugInStart</option>
+		
+		<option value="//api/name/webPlugInStop">- webPlugInStop</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSObject(WebPlugIn) Category Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>WebPlugin.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>WebPlugIn is an informal protocol that enables interaction between an application
+and web related plug-ins it may contain.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/webPlugInInitialize" title="webPlugInInitialize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webPlugInInitialize">&ndash;&nbsp;webPlugInInitialize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tell the plug-in to perform one-time initialization.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webPlugInInitialize</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webPlugInInitialize
+</code></pre><p>This method must be only called once per instance of the plug-in
+    object and must be called before any other methods in this protocol.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webPlugInStart" title="webPlugInStart"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webPlugInStart">&ndash;&nbsp;webPlugInStart</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tell the plug-in to start normal operation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webPlugInStart</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webPlugInStart
+</code></pre><p>The plug-in usually begins drawing, playing sounds and/or
+    animation in this method.  This method must be called before calling <a href="#//api/name/webPlugInStop">webPlugInStop</a>.
+    This method may called more than once, provided that the application has
+    already called <a href="#//api/name/webPlugInInitialize">webPlugInInitialize</a> and that each call to webPlugInStart is followed
+    by a call to <a href="#//api/name/webPlugInStop">webPlugInStop</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webPlugInStop" title="webPlugInStop"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webPlugInStop">&ndash;&nbsp;webPlugInStop</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tell the plug-in to stop normal operation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webPlugInStop</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webPlugInStop
+</code></pre><p>webPlugInStop must be called before this method.  This method may be
+    called more than once, provided that the application has already called
+    <a href="#//api/name/webPlugInInitialize">webPlugInInitialize</a> and that each call to webPlugInStop is preceded by a call to
+    <a href="#//api/name/webPlugInStart">webPlugInStart</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webPlugInDestroy" title="webPlugInDestroy"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webPlugInDestroy">&ndash;&nbsp;webPlugInDestroy</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tell the plug-in perform cleanup and prepare to be deallocated.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webPlugInDestroy</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webPlugInDestroy
+</code></pre><p>The plug-in typically releases memory and other resources in this
+    method.  If the plug-in has retained the WebPlugInContainer, it must release
+    it in this mehthod.  This method must be only called once per instance of the
+    plug-in object.  No other methods in this interface may be called after the
+    application has called webPlugInDestroy.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webPlugInSetIsSelected:" title="webPlugInSetIsSelected:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webPlugInSetIsSelected:">&ndash;&nbsp;webPlugInSetIsSelected:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webPlugInSetIsSelected:
+@discusssion Informs the plug-in whether or not it is selected.  This is typically
+used to allow the plug-in to alter it's appearance when selected.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webPlugInSetIsSelected:(BOOL)<em>isSelected</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webPlugInSetIsSelected:
+@discusssion Informs the plug-in whether or not it is selected.  This is typically
+used to allow the plug-in to alter it's appearance when selected.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectForWebScript" title="objectForWebScript"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectForWebScript">&nbsp;&nbsp;objectForWebScript</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@property objectForWebScript
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) id objectForWebScript</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the object that exposes the plug-in&rsquo;s interface.  The class of this
+    object can implement methods from the WebScripting informal protocol.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property objectForWebScript
+</code></pre><p>objectForWebScript is used to expose a plug-in&rsquo;s scripting interface.  The
+    methods of the object are exposed to the script environment.  See the WebScripting
+    informal protocol for more details.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webPlugInMainResourceDidReceiveResponse:" title="webPlugInMainResourceDidReceiveResponse:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webPlugInMainResourceDidReceiveResponse:">&ndash;&nbsp;webPlugInMainResourceDidReceiveResponse:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called on the plug-in when WebKit receives -connection:didReceiveResponse:
+    for the plug-in&rsquo;s main resource.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webPlugInMainResourceDidReceiveResponse:(NSURLResponse *)<em>response</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webPlugInMainResourceDidReceiveResponse:
+</code></pre><p>This method is only sent to the plug-in if the
+    WebPlugInShouldLoadMainResourceKey argument passed to the plug-in was NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webPlugInMainResourceDidReceiveData:" title="webPlugInMainResourceDidReceiveData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webPlugInMainResourceDidReceiveData:">&ndash;&nbsp;webPlugInMainResourceDidReceiveData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called on the plug-in when WebKit recieves -connection:didReceiveData:
+    for the plug-in&rsquo;s main resource.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webPlugInMainResourceDidReceiveData:(NSData *)<em>data</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webPlugInMainResourceDidReceiveData:
+</code></pre><p>This method is only sent to the plug-in if the
+    WebPlugInShouldLoadMainResourceKey argument passed to the plug-in was NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webPlugInMainResourceDidFailWithError:" title="webPlugInMainResourceDidFailWithError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webPlugInMainResourceDidFailWithError:">&ndash;&nbsp;webPlugInMainResourceDidFailWithError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called on the plug-in when WebKit receives -connection:didFailWithError:
+    for the plug-in&rsquo;s main resource.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webPlugInMainResourceDidFailWithError:(NSError *)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webPlugInMainResourceDidFailWithError:
+</code></pre><p>This method is only sent to the plug-in if the
+    WebPlugInShouldLoadMainResourceKey argument passed to the plug-in was NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webPlugInMainResourceDidFinishLoading" title="webPlugInMainResourceDidFinishLoading"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webPlugInMainResourceDidFinishLoading">&ndash;&nbsp;webPlugInMainResourceDidFinishLoading</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called on the plug-in when WebKit receives -connectionDidFinishLoading:
+    for the plug-in&rsquo;s main resource.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webPlugInMainResourceDidFinishLoading</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webPlugInMainResourceDidFinishLoading
+</code></pre><p>This method is only sent to the plug-in if the
+    WebPlugInShouldLoadMainResourceKey argument passed to the plug-in was NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

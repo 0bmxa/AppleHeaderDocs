@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IMServicePlugInGroupListEditingSupport Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IMServicePlugIn Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addGroups:">- addGroups:</option>
+		
+		<option value="//api/name/addHandles:toGroup:">- addHandles:toGroup:</option>
+		
+		<option value="//api/name/removeGroups:">- removeGroups:</option>
+		
+		<option value="//api/name/removeHandles:fromGroup:">- removeHandles:fromGroup:</option>
+		
+		<option value="//api/name/renameGroup:toGroup:">- renameGroup:toGroup:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IMServicePlugInGroupListEditingSupport Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/IMServicePlugInGroupListSupport.html">IMServicePlugInGroupListSupport</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>IMServicePlugInGroupListSupport.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@protocol   IMServicePlugInGroupListEditingSupport
+</code></pre><p>Implementing this protocol on your service plug-in&rsquo;s principal class indicates that your
+                service supports editing the group list.  It requires that you also implement the
+                <a href="../Protocols/IMServicePlugInGroupListSupport.html">IMServicePlugInGroupListSupport</a> protocol.</p>
+
+<pre><code>            If implementing this protocol, you must also include "IMServiceCapabilityGroupListEditingSupport"
+            in the "IMServiceCapabilities" key in the Info.plist of your service plug-in.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/addGroups:" title="addGroups:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addGroups:">&ndash;&nbsp;addGroups:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     addGroups:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (oneway void)addGroups:(NSArray *)<em>groupNames</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>groupNames</code></th>
+						<td><p>An array of NSString objects, corresponding to the
+                            names of the added groups</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     addGroups:
+</code></pre><p>Messages calls this method when the user had added one or
+                more groups to the group list.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMServicePlugInGroupListSupport.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeGroups:" title="removeGroups:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeGroups:">&ndash;&nbsp;removeGroups:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     removeGroups:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (oneway void)removeGroups:(NSArray *)<em>groupNames</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>groupNames</code></th>
+						<td><p>An array of NSString objects, corresponding to the
+                            names of the removed groups</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeGroups:
+</code></pre><p>Messages calls this method when the user had removed one or
+                more groups from the group list.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMServicePlugInGroupListSupport.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renameGroup:toGroup:" title="renameGroup:toGroup:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renameGroup:toGroup:">&ndash;&nbsp;renameGroup:toGroup:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     renameGroup:toGroup:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (oneway void)renameGroup:(NSString *)<em>oldGroupName</em> toGroup:(NSString *)<em>newGroupName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>oldGroupName</code></th>
+						<td><p>The former name of the group</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newGroupName</code></th>
+						<td><p>The new name of the group</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     renameGroup:toGroup:
+</code></pre><p>Messages calls this method when the user renames a group.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMServicePlugInGroupListSupport.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addHandles:toGroup:" title="addHandles:toGroup:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addHandles:toGroup:">&ndash;&nbsp;addHandles:toGroup:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     addHandles:toGroup:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (oneway void)addHandles:(NSArray *)<em>handles</em> toGroup:(NSString *)<em>groupName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handles</code></th>
+						<td><p>The added handles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>groupName</code></th>
+						<td><p>The name of the group</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     addHandles:toGroup:
+</code></pre><p>Messages calls this method when the user adds member handles to a group.</p>
+
+<pre><code>            In the event that the user moves a member from one group to
+            another group, Messages will first call this method for the
+            destination group, and then call removeHandles:fromGroup:
+            for the source group.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMServicePlugInGroupListSupport.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeHandles:fromGroup:" title="removeHandles:fromGroup:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeHandles:fromGroup:">&ndash;&nbsp;removeHandles:fromGroup:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     removeHandles:fromGroup:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (oneway void)removeHandles:(NSArray *)<em>handles</em> fromGroup:(NSString *)<em>groupName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handles</code></th>
+						<td><p>The removed handles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>groupName</code></th>
+						<td><p>The name of the group</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeHandles:fromGroup:
+</code></pre><p>Messages calls this method when the adds member handles to a group.</p>
+
+<pre><code>            In the event that the user moves a member from one group to
+            another group, Messages will first call addHandles:toGroup: 
+            for the destination group, and then call this method for
+            the source group.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMServicePlugInGroupListSupport.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

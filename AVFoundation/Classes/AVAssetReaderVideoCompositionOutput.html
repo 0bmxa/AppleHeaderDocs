@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAssetReaderVideoCompositionOutput Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_9">_9</option>
+		
+		<option value="//api/name/videoComposition">videoComposition</option>
+		
+		<option value="//api/name/videoSettings">videoSettings</option>
+		
+		<option value="//api/name/videoTracks">videoTracks</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:">+ assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithVideoTracks:videoSettings:">- initWithVideoTracks:videoSettings:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAssetReaderVideoCompositionOutput Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVAssetReaderOutput.html">AVAssetReaderOutput</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAssetReaderOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVAssetReaderVideoCompositionOutput
+@abstract
+    AVAssetReaderVideoCompositionOutput is a concrete subclass of AVAssetReaderOutput that defines an interface for reading video frames that have been composited together from the frames in one or more AVAssetTracks of an AVAssetReader&rsquo;s AVAsset.</p>
+
+<p>@discussion
+    Clients can read the video frames composited from one or more asset tracks by adding an instance of AVAssetReaderVideoCompositionOutput to an AVAssetReader using the <a href="../Classes/AVAssetReader.html#//api/name/addOutput:">[AVAssetReader addOutput:]</a> method.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:" title="assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:">+&nbsp;assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:
+@abstract
+    Creates an instance of AVAssetReaderVideoCompositionOutput for reading composited video from the specified video tracks and supplying media data according to the specified video settings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)assetReaderVideoCompositionOutputWithVideoTracks:(NSArray&lt;AVAssetTrack*&gt; *)<em>videoTracks</em> videoSettings:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>videoSettings</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:
+@abstract
+    Creates an instance of AVAssetReaderVideoCompositionOutput for reading composited video from the specified video tracks and supplying media data according to the specified video settings.</p>
+
+<p>@param tracks
+    An NSArray of <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a> objects from which the resulting AVAssetReaderVideoCompositionOutput should read video frames for compositing.
+@param <a href="#//api/name/videoSettings">videoSettings</a>
+    An NSDictionary of video settings to be used for video output.  See AVVideoSettings.h for more information about how to construct a video settings dictionary.
+@result
+    An instance of AVAssetReaderVideoCompositionOutput.</p>
+
+<p>@discussion
+    Each track must be one of the tracks owned by the target AVAssetReader&rsquo;s asset and must be of media type AVMediaTypeVideo.</p>
+
+<pre><code>A value of nil for videoSettings configures the output to return samples in a convenient uncompressed format, with properties determined according to the properties of the specified video tracks.  Initialization will fail if the video settings cannot be used with the specified tracks.
+
+AVAssetReaderVideoCompositionOutput can only produce uncompressed output.  This means that the video settings dictionary must follow the rules for uncompressed video output, as laid out in AVVideoSettings.h.  In addition, the following keys are not supported:
+
+    AVVideoCleanApertureKey
+    AVVideoPixelAspectRatioKey
+    AVVideoScalingModeKey
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithVideoTracks:videoSettings:" title="initWithVideoTracks:videoSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithVideoTracks:videoSettings:">&ndash;&nbsp;initWithVideoTracks:videoSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithVideoTracks:videoSettings:
+@abstract
+    Creates an instance of AVAssetReaderVideoCompositionOutput for reading composited video from the specified video tracks and supplying media data according to the specified video settings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithVideoTracks:(NSArray&lt;AVAssetTrack*&gt; *)<em>videoTracks</em> videoSettings:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>videoSettings</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of AVAssetReaderVideoCompositionOutput.</p>
+
+<p>@discussion
+    Each track must be one of the tracks owned by the target AVAssetReader&rsquo;s asset and must be of media type AVMediaTypeVideo.</p>
+
+<pre><code>A value of nil for videoSettings configures the output to return samples in a convenient uncompressed format, with properties determined according to the properties of the specified video tracks.  Initialization will fail if the video settings cannot be used with the specified tracks.
+
+AVAssetReaderVideoCompositionOutput can only produce uncompressed output.  This means that the video settings dictionary must follow the rules for uncompressed video output, as laid out in AVVideoSettings.h.  In addition, the following keys are not supported:
+
+    AVVideoCleanApertureKey
+    AVVideoPixelAspectRatioKey
+    AVVideoScalingModeKey
+</code></pre>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithVideoTracks:videoSettings:
+@abstract
+    Creates an instance of AVAssetReaderVideoCompositionOutput for reading composited video from the specified video tracks and supplying media data according to the specified video settings.</p>
+
+<p>@param tracks
+    An NSArray of <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a> objects from which the resulting AVAssetReaderVideoCompositionOutput should read video frames for compositing.
+@param <a href="#//api/name/videoSettings">videoSettings</a>
+    An NSDictionary of video settings to be used for video output.  See AVVideoSettings.h for more information about how to construct a video settings dictionary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoTracks" title="videoTracks"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoTracks">&nbsp;&nbsp;videoTracks</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property videoTracks
+@abstract
+    The tracks from which the receiver reads composited video.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVAssetTrack*&gt; *videoTracks</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property videoTracks
+@abstract
+    The tracks from which the receiver reads composited video.</p>
+
+<p>@discussion
+    The value of this property is an NSArray of AVAssetTracks owned by the target AVAssetReader&rsquo;s asset.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoSettings" title="videoSettings"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoSettings">&nbsp;&nbsp;videoSettings</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property videoSettings
+@abstract
+    The video settings used by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSDictionary&lt;NSString*id&gt; *videoSettings</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property videoSettings
+@abstract
+    The video settings used by the receiver.</p>
+
+<p>@discussion
+    The value of this property is an NSDictionary that contains values for keys as specified by AVVideoSettings.h.  A value of nil indicates that the receiver will return video frames in a convenient uncompressed format, with properties determined according to the properties of the receiver&rsquo;s video tracks.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoComposition" title="videoComposition"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoComposition">&nbsp;&nbsp;videoComposition</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property videoComposition
+@abstract
+    The composition of video used by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) AVVideoComposition *videoComposition</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property videoComposition
+@abstract
+    The composition of video used by the receiver.</p>
+
+<p>@discussion
+    The value of this property is an <a href="../Classes/AVVideoComposition.html">AVVideoComposition</a> that can be used to specify the visual arrangement of video frames read from each source track over the timeline of the source asset.</p>
+
+<pre><code>This property cannot be set after reading has started.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_9" title="_9"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_9">&nbsp;&nbsp;_9</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property customVideoCompositor
+@abstract
+    Indicates the custom video compositor instance used by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) id&lt;AVVideoCompositing&gt; customVideoCompositor NS_AVAILABLE ( 10 _9</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property customVideoCompositor
+@abstract
+    Indicates the custom video compositor instance used by the receiver.</p>
+
+<p>@discussion
+    This property is nil if there is no video compositor, or if the internal video compositor is in use.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

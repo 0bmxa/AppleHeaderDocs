@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSObject(PDEPanel) Category Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 ApplicationServices Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/PPDOptionKeyValueDidChange:ppdChoice:">- PPDOptionKeyValueDidChange:ppdChoice:</option>
+		
+		<option value="//api/name/panelKind">- panelKind</option>
+		
+		<option value="//api/name/panelName">- panelName</option>
+		
+		<option value="//api/name/panelView">- panelView</option>
+		
+		<option value="//api/name/printWindowWillClose:">- printWindowWillClose:</option>
+		
+		<option value="//api/name/restoreValuesAndReturnError:">- restoreValuesAndReturnError:</option>
+		
+		<option value="//api/name/saveValuesAndReturnError:">- saveValuesAndReturnError:</option>
+		
+		<option value="//api/name/shouldHide">- shouldHide</option>
+		
+		<option value="//api/name/shouldPrint">- shouldPrint</option>
+		
+		<option value="//api/name/shouldShowHelp">- shouldShowHelp</option>
+		
+		<option value="//api/name/summaryInfo">- summaryInfo</option>
+		
+		<option value="//api/name/supportedPPDOptionKeys">- supportedPPDOptionKeys</option>
+		
+		<option value="//api/name/willShow">- willShow</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSObject(PDEPanel) Category Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>PDEPluginInterface.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol   PDEPanel</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/willShow" title="willShow"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willShow">&ndash;&nbsp;willShow</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The panel should complete any final preperations it needs
+                before the panel is shown.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)willShow</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     willShow</p><p>The panel may want to use this method to lazily prepare
+                its user interface.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldHide" title="shouldHide"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldHide">&ndash;&nbsp;shouldHide</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Prepare the panel to be removed from the user&rsquo;s sight.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldHide</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Return YES if it is okay to hide panel and NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     shouldHide</p><p>This method is invoked by the print system just before the panel is
+                removed fromthe user&rsquo;s sight. The panel can use this opportunity
+                for any final interaction with the user, perhaps to check the user&rsquo;s
+                input. A panel that needs more interaction with the user, perhaps
+                because some of the input values were invalid, should return NO.
+                Returning YES indicates that the panel can be hidden, probably to
+                show another panel or to dismiss the printing dialog.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/saveValuesAndReturnError:" title="saveValuesAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveValuesAndReturnError:">&ndash;&nbsp;saveValuesAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Take the values from the panel&rsquo;s user interface and write them to
+                the appropriate settings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)saveValuesAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     saveValuesAndReturnError:</p><p>This is the panel&rsquo;s chance to write the values from its user interface
+                controls to the permanent store. Depending upon the panel type the values may
+                be stored in the print settings or into the page format. Panels of type
+                kGeneralPageSetupDialogTypeIDStr will generally store values into the page
+                format while panels of type kGeneralPrintDialogTypeIDStr will write to
+                the print settings. The panel should use the provided PDEPlugInCallbackProtocol
+                to obtain the settings and tickets it needs to write into.</p>
+
+<pre><code>            A panel will usually be asked to write its values when the user dismisses
+            the dialog, other than via cancel, or when the user has asked that a preset
+            be saved.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/restoreValuesAndReturnError:" title="restoreValuesAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/restoreValuesAndReturnError:">&ndash;&nbsp;restoreValuesAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the panel&rsquo;s user interface elements based upon the appropriate settings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)restoreValuesAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     restoreValuesAndReturnError</p><p>The panel should refresh its user interface elements by reading values from
+                the page format or print settings. The panel should use the provided
+                PDEPlugInCallbackProtocol to obtain the settings and tickets it needs to read.</p>
+
+<pre><code>            A panel will usually be asked to read its setting just before it is first
+            shown and when the user selects a new preset.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportedPPDOptionKeys" title="supportedPPDOptionKeys"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportedPPDOptionKeys">&ndash;&nbsp;supportedPPDOptionKeys</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The panel takes responsability for displaying user interface elements for the
+                PPD option keys returned from this call.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray *)supportedPPDOptionKeys</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     supportedPPDOptionKeys</p><p>Any PPD option keys not claimed by a PDEPanel are provided with a dynamically built
+                user interface in the Printer Features panel.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/PPDOptionKeyValueDidChange:ppdChoice:" title="PPDOptionKeyValueDidChange:ppdChoice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/PPDOptionKeyValueDidChange:ppdChoice:">&ndash;&nbsp;PPDOptionKeyValueDidChange:ppdChoice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Inform the panel that, external to the panel, the specified PPD
+                choice has been made.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)PPDOptionKeyValueDidChange:(NSString *)<em>option</em> ppdChoice:(NSString *)<em>choice</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     PPDOptionKeyValueDidChange</p><p>During PPD conflict resolution the choice for a panel controlled PPD option
+                may need to be changed by another panel. This call informs the panel
+                that a setting has been changed. The panel should update any internal data it maintains
+                in regards to this PPD option key.</p>
+
+<pre><code>            The 'option' and 'choice' values are taken from the printer's PPD. For
+            example the PPD fragment:
+
+                *OpenUI *TraySwitch/Tray Switch:    Boolean
+                *TraySwitch True/On: "1 dict dup /TraySwitch true put setpagedevice"
+                *TraySwitch False/Off: "1 dict dup /TraySwitch false put setpagedevice"
+                *CloseUI: *TraySwitch
+
+            describes the option 'TraySwitch'. It has 2 choices: 'True' and 'False'.
+            If another panel caused the choice of the option key 'TraySwitch' to be
+            altered to 'True'then this method will be called with the 'option' parameter
+            set to @"TraySwitch" and the 'choice parameter set to @"True".
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/panelView" title="panelView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/panelView">&ndash;&nbsp;panelView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the panel&rsquo;s view.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSView *_Nullable)panelView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     panelView</p><p>The panel&rsquo;s controls are rendered into a single view. The print system
+                invokes this method to obtain the panel&rsquo;s view so that it can be embedded
+                into the print dialog.</p>
+
+<pre><code>            This method has "Get" semantics: any references owned by the
+            PDE must be released by the PDE.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/panelName" title="panelName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/panelName">&ndash;&nbsp;panelName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the panel&rsquo;s name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)panelName</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     panelName</p><p>This is the localized name of the panel. It will be placed into
+                the panel menu.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/panelKind" title="panelKind"></a>
+	<h3 class="method-title"><code><a href="#//api/name/panelKind">&ndash;&nbsp;panelKind</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the panel&rsquo;s kind.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)panelKind</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     panelKind</p><p>A panel&rsquo;s kind is used to allow a plugin to override a system panel.
+                PMPrintingDialogExtensions.h lists the kinds for the print system provided
+                panels. If a PDF panel is not supposed to override a print system provided
+                panel then it should return a unique string for its kind.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/summaryInfo" title="summaryInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/summaryInfo">&ndash;&nbsp;summaryInfo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return localized, textual descriptions of the panel&rsquo;s settings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *_Nullable)summaryInfo</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     summaryInfo</p><p>Each key in the dictionary must be an NSString providing the name
+                of the setting. The value for the key must be an NSString describing
+                the value for the setting. The strings should be localized for the
+                current user. For example a key in the dictionary for the copies and
+                pages panel might have the key &lsquo;Page Range&rsquo; and the value &lsquo;All&rsquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldShowHelp" title="shouldShowHelp"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldShowHelp">&ndash;&nbsp;shouldShowHelp</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The panel should show panel specific help if it is available.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldShowHelp</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Return YES if the default printing help should be shown and NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     shouldShowHelp</p><p>When a given panel is visible and the user clicks on the help
+                icon in a print dialog or sheet, the current panel&rsquo;s shouldShowHelp
+                method is invoked. If the panel implements custom help, the
+                panel should then present that help and return NO. If this method is not
+                implemented by a panel or the panel&rsquo;s shouldShowHelp method returns YES,
+                the default printing help will be presented.</p>
+
+<pre><code>            Invoked only in Mac OS X version 10.5 and later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldPrint" title="shouldPrint"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldPrint">&ndash;&nbsp;shouldPrint</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The panel should indicate whether the user should be allowed to print.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldPrint</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Return YES unless the printing state for the panel does not allow printing.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     shouldPrint</p><p>When a user has performed an action in a print dialog or sheet
+                that will initiate printing, prior to dismissing the dialog, a panel&rsquo;s
+                shouldPrint method is invoked, allowing a panel to indicate that the
+                current state of the dialog should not allow printing. Prior to returning
+                NO, a panel should present information to the user as to why printing is not
+                allowed.</p>
+
+<pre><code>            Most panels have no need to implement a 'shouldPrint' method. Typically
+            a panel manages its state so that it is always valid for the user to
+            click the print button or otherwise initiate a printing action.
+
+            Invoked only in Mac OS X version 10.5 and later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/printWindowWillClose:" title="printWindowWillClose:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/printWindowWillClose:">&ndash;&nbsp;printWindowWillClose:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The print dialog or sheet is closing and a panel should perform
+                any special tasks that are needed before the window is closed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)printWindowWillClose:(BOOL)<em>userCanceled</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     printWindowWillClose</p><p>This is the print panel&rsquo;s chance to peform any special tasks before
+                the print dialog or sheet goes away. The &lsquo;userCanceled&rsquo; parameter
+                is true if the print window is being being dismissed because the user
+                canceled the dialog or sheet.</p>
+
+<pre><code>            One reason for implementing a printWindowWillClose is so that a panel
+            can remove any notification observers it has added.
+
+            Invoked only in Mac OS X version 10.6 and later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSFileHandle Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/availableData">availableData</option>
+		
+		<option value="//api/name/fileDescriptor">fileDescriptor</option>
+		
+		<option value="//api/name/fileHandleWithNullDevice">fileHandleWithNullDevice</option>
+		
+		<option value="//api/name/fileHandleWithStandardError">fileHandleWithStandardError</option>
+		
+		<option value="//api/name/fileHandleWithStandardInput">fileHandleWithStandardInput</option>
+		
+		<option value="//api/name/fileHandleWithStandardOutput">fileHandleWithStandardOutput</option>
+		
+		<option value="//api/name/offsetInFile">offsetInFile</option>
+		
+		<option value="//api/name/readabilityHandler">readabilityHandler</option>
+		
+		<option value="//api/name/writeabilityHandler">writeabilityHandler</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/fileHandleForReadingAtPath:">+ fileHandleForReadingAtPath:</option>
+		
+		<option value="//api/name/fileHandleForReadingFromURL:error:">+ fileHandleForReadingFromURL:error:</option>
+		
+		<option value="//api/name/fileHandleForUpdatingAtPath:">+ fileHandleForUpdatingAtPath:</option>
+		
+		<option value="//api/name/fileHandleForUpdatingURL:error:">+ fileHandleForUpdatingURL:error:</option>
+		
+		<option value="//api/name/fileHandleForWritingAtPath:">+ fileHandleForWritingAtPath:</option>
+		
+		<option value="//api/name/fileHandleForWritingToURL:error:">+ fileHandleForWritingToURL:error:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/acceptConnectionInBackgroundAndNotify">- acceptConnectionInBackgroundAndNotify</option>
+		
+		<option value="//api/name/acceptConnectionInBackgroundAndNotifyForModes:">- acceptConnectionInBackgroundAndNotifyForModes:</option>
+		
+		<option value="//api/name/closeFile">- closeFile</option>
+		
+		<option value="//api/name/initWithCoder:">- initWithCoder:</option>
+		
+		<option value="//api/name/initWithFileDescriptor:">- initWithFileDescriptor:</option>
+		
+		<option value="//api/name/initWithFileDescriptor:closeOnDealloc:">- initWithFileDescriptor:closeOnDealloc:</option>
+		
+		<option value="//api/name/readDataOfLength:">- readDataOfLength:</option>
+		
+		<option value="//api/name/readDataToEndOfFile">- readDataToEndOfFile</option>
+		
+		<option value="//api/name/readInBackgroundAndNotify">- readInBackgroundAndNotify</option>
+		
+		<option value="//api/name/readInBackgroundAndNotifyForModes:">- readInBackgroundAndNotifyForModes:</option>
+		
+		<option value="//api/name/readToEndOfFileInBackgroundAndNotify">- readToEndOfFileInBackgroundAndNotify</option>
+		
+		<option value="//api/name/readToEndOfFileInBackgroundAndNotifyForModes:">- readToEndOfFileInBackgroundAndNotifyForModes:</option>
+		
+		<option value="//api/name/seekToEndOfFile">- seekToEndOfFile</option>
+		
+		<option value="//api/name/seekToFileOffset:">- seekToFileOffset:</option>
+		
+		<option value="//api/name/synchronizeFile">- synchronizeFile</option>
+		
+		<option value="//api/name/truncateFileAtOffset:">- truncateFileAtOffset:</option>
+		
+		<option value="//api/name/waitForDataInBackgroundAndNotify">- waitForDataInBackgroundAndNotify</option>
+		
+		<option value="//api/name/waitForDataInBackgroundAndNotifyForModes:">- waitForDataInBackgroundAndNotifyForModes:</option>
+		
+		<option value="//api/name/writeData:">- writeData:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSFileHandle Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/NSSecureCoding.html">NSSecureCoding</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSFileHandle.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/availableData" title="availableData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availableData">&nbsp;&nbsp;availableData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSData *availableData</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readDataToEndOfFile" title="readDataToEndOfFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readDataToEndOfFile">&ndash;&nbsp;readDataToEndOfFile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSData *)readDataToEndOfFile</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readDataOfLength:" title="readDataOfLength:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readDataOfLength:">&ndash;&nbsp;readDataOfLength:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSData *)readDataOfLength:(NSUInteger)<em>length</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeData:" title="writeData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeData:">&ndash;&nbsp;writeData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)writeData:(NSData *)<em>data</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/offsetInFile" title="offsetInFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/offsetInFile">&nbsp;&nbsp;offsetInFile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) unsigned long long offsetInFile</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/seekToEndOfFile" title="seekToEndOfFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/seekToEndOfFile">&ndash;&nbsp;seekToEndOfFile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (unsigned long long)seekToEndOfFile</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/seekToFileOffset:" title="seekToFileOffset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/seekToFileOffset:">&ndash;&nbsp;seekToFileOffset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)seekToFileOffset:(unsigned long long)<em>offset</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/truncateFileAtOffset:" title="truncateFileAtOffset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/truncateFileAtOffset:">&ndash;&nbsp;truncateFileAtOffset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)truncateFileAtOffset:(unsigned long long)<em>offset</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/synchronizeFile" title="synchronizeFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/synchronizeFile">&ndash;&nbsp;synchronizeFile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)synchronizeFile</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/closeFile" title="closeFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/closeFile">&ndash;&nbsp;closeFile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)closeFile</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithFileDescriptor:closeOnDealloc:" title="initWithFileDescriptor:closeOnDealloc:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFileDescriptor:closeOnDealloc:">&ndash;&nbsp;initWithFileDescriptor:closeOnDealloc:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFileDescriptor:(int)<em>fd</em> closeOnDealloc:(BOOL)<em>closeopt</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:" title="initWithCoder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:">&ndash;&nbsp;initWithCoder:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *)<em>coder</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="NSFileHandleCreation Methods" name="task_NSFileHandleCreation Methods"></a>
+						<h2 class="task-title">NSFileHandleCreation Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/fileHandleWithStandardInput" title="fileHandleWithStandardInput"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileHandleWithStandardInput">&nbsp;&nbsp;fileHandleWithStandardInput</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (class, readonly, strong) NSFileHandle *fileHandleWithStandardInput</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileHandleWithStandardOutput" title="fileHandleWithStandardOutput"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileHandleWithStandardOutput">&nbsp;&nbsp;fileHandleWithStandardOutput</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (class, readonly, strong) NSFileHandle *fileHandleWithStandardOutput</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileHandleWithStandardError" title="fileHandleWithStandardError"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileHandleWithStandardError">&nbsp;&nbsp;fileHandleWithStandardError</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (class, readonly, strong) NSFileHandle *fileHandleWithStandardError</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileHandleWithNullDevice" title="fileHandleWithNullDevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileHandleWithNullDevice">&nbsp;&nbsp;fileHandleWithNullDevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (class, readonly, strong) NSFileHandle *fileHandleWithNullDevice</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileHandleForReadingAtPath:" title="fileHandleForReadingAtPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileHandleForReadingAtPath:">+&nbsp;fileHandleForReadingAtPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)fileHandleForReadingAtPath:(NSString *)<em>path</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileHandleForWritingAtPath:" title="fileHandleForWritingAtPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileHandleForWritingAtPath:">+&nbsp;fileHandleForWritingAtPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)fileHandleForWritingAtPath:(NSString *)<em>path</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileHandleForUpdatingAtPath:" title="fileHandleForUpdatingAtPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileHandleForUpdatingAtPath:">+&nbsp;fileHandleForUpdatingAtPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)fileHandleForUpdatingAtPath:(NSString *)<em>path</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileHandleForReadingFromURL:error:" title="fileHandleForReadingFromURL:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileHandleForReadingFromURL:error:">+&nbsp;fileHandleForReadingFromURL:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)fileHandleForReadingFromURL:(NSURL *)<em>url</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileHandleForWritingToURL:error:" title="fileHandleForWritingToURL:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileHandleForWritingToURL:error:">+&nbsp;fileHandleForWritingToURL:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)fileHandleForWritingToURL:(NSURL *)<em>url</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileHandleForUpdatingURL:error:" title="fileHandleForUpdatingURL:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileHandleForUpdatingURL:error:">+&nbsp;fileHandleForUpdatingURL:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)fileHandleForUpdatingURL:(NSURL *)<em>url</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="NSFileHandleAsynchronousAccess Methods" name="task_NSFileHandleAsynchronousAccess Methods"></a>
+						<h2 class="task-title">NSFileHandleAsynchronousAccess Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/readInBackgroundAndNotifyForModes:" title="readInBackgroundAndNotifyForModes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readInBackgroundAndNotifyForModes:">&ndash;&nbsp;readInBackgroundAndNotifyForModes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)readInBackgroundAndNotifyForModes:(nullable NSArray&lt;NSRunLoopMode&gt; *)<em>modes</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readInBackgroundAndNotify" title="readInBackgroundAndNotify"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readInBackgroundAndNotify">&ndash;&nbsp;readInBackgroundAndNotify</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)readInBackgroundAndNotify</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readToEndOfFileInBackgroundAndNotifyForModes:" title="readToEndOfFileInBackgroundAndNotifyForModes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readToEndOfFileInBackgroundAndNotifyForModes:">&ndash;&nbsp;readToEndOfFileInBackgroundAndNotifyForModes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)readToEndOfFileInBackgroundAndNotifyForModes:(nullable NSArray&lt;NSRunLoopMode&gt; *)<em>modes</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readToEndOfFileInBackgroundAndNotify" title="readToEndOfFileInBackgroundAndNotify"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readToEndOfFileInBackgroundAndNotify">&ndash;&nbsp;readToEndOfFileInBackgroundAndNotify</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)readToEndOfFileInBackgroundAndNotify</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/acceptConnectionInBackgroundAndNotifyForModes:" title="acceptConnectionInBackgroundAndNotifyForModes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/acceptConnectionInBackgroundAndNotifyForModes:">&ndash;&nbsp;acceptConnectionInBackgroundAndNotifyForModes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)acceptConnectionInBackgroundAndNotifyForModes:(nullable NSArray&lt;NSRunLoopMode&gt; *)<em>modes</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/acceptConnectionInBackgroundAndNotify" title="acceptConnectionInBackgroundAndNotify"></a>
+	<h3 class="method-title"><code><a href="#//api/name/acceptConnectionInBackgroundAndNotify">&ndash;&nbsp;acceptConnectionInBackgroundAndNotify</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)acceptConnectionInBackgroundAndNotify</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/waitForDataInBackgroundAndNotifyForModes:" title="waitForDataInBackgroundAndNotifyForModes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/waitForDataInBackgroundAndNotifyForModes:">&ndash;&nbsp;waitForDataInBackgroundAndNotifyForModes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)waitForDataInBackgroundAndNotifyForModes:(nullable NSArray&lt;NSRunLoopMode&gt; *)<em>modes</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/waitForDataInBackgroundAndNotify" title="waitForDataInBackgroundAndNotify"></a>
+	<h3 class="method-title"><code><a href="#//api/name/waitForDataInBackgroundAndNotify">&ndash;&nbsp;waitForDataInBackgroundAndNotify</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)waitForDataInBackgroundAndNotify</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readabilityHandler" title="readabilityHandler"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readabilityHandler">&nbsp;&nbsp;readabilityHandler</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) void ( ^ ) ( NSFileHandle *) ( macos ( 10.7 ) , ios ( 5.0 ) , watchos ( 2.0 ) , tvos ( 9.0 ) ) readabilityHandler</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeabilityHandler" title="writeabilityHandler"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeabilityHandler">&nbsp;&nbsp;writeabilityHandler</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy) void ( ^ ) ( NSFileHandle *) ( macos ( 10.7 ) , ios ( 5.0 ) , watchos ( 2.0 ) , tvos ( 9.0 ) ) writeabilityHandler</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="NSFileHandlePlatformSpecific Methods" name="task_NSFileHandlePlatformSpecific Methods"></a>
+						<h2 class="task-title">NSFileHandlePlatformSpecific Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithFileDescriptor:" title="initWithFileDescriptor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFileDescriptor:">&ndash;&nbsp;initWithFileDescriptor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFileDescriptor:(int)<em>fd</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileDescriptor" title="fileDescriptor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileDescriptor">&nbsp;&nbsp;fileDescriptor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) int fileDescriptor</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVMutableMovie Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/defaultMediaDataStorage">defaultMediaDataStorage</option>
+		
+		<option value="//api/name/interleavingPeriod">interleavingPeriod</option>
+		
+		<option value="//api/name/metadata">metadata</option>
+		
+		<option value="//api/name/modified">modified</option>
+		
+		<option value="//api/name/preferredRate">preferredRate</option>
+		
+		<option value="//api/name/preferredTransform">preferredTransform</option>
+		
+		<option value="//api/name/preferredVolume">preferredVolume</option>
+		
+		<option value="//api/name/timescale">timescale</option>
+		
+		<option value="//api/name/tracks">tracks</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/movieWithData:options:error:">+ movieWithData:options:error:</option>
+		
+		<option value="//api/name/movieWithSettingsFromMovie:options:error:">+ movieWithSettingsFromMovie:options:error:</option>
+		
+		<option value="//api/name/movieWithURL:options:error:">+ movieWithURL:options:error:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addMutableTrackWithMediaType:copySettingsFromTrack:options:">- addMutableTrackWithMediaType:copySettingsFromTrack:options:</option>
+		
+		<option value="//api/name/addMutableTracksCopyingSettingsFromTracks:options:">- addMutableTracksCopyingSettingsFromTracks:options:</option>
+		
+		<option value="//api/name/initWithData:options:error:">- initWithData:options:error:</option>
+		
+		<option value="//api/name/initWithSettingsFromMovie:options:error:">- initWithSettingsFromMovie:options:error:</option>
+		
+		<option value="//api/name/initWithURL:options:error:">- initWithURL:options:error:</option>
+		
+		<option value="//api/name/insertEmptyTimeRange:">- insertEmptyTimeRange:</option>
+		
+		<option value="//api/name/insertTimeRange:ofAsset:atTime:copySampleData:error:">- insertTimeRange:ofAsset:atTime:copySampleData:error:</option>
+		
+		<option value="//api/name/mutableTrackCompatibleWithTrack:">- mutableTrackCompatibleWithTrack:</option>
+		
+		<option value="//api/name/removeTimeRange:">- removeTimeRange:</option>
+		
+		<option value="//api/name/removeTrack:">- removeTrack:</option>
+		
+		<option value="//api/name/scaleTimeRange:toDuration:">- scaleTimeRange:toDuration:</option>
+		
+		<option value="//api/name/trackWithTrackID:">- trackWithTrackID:</option>
+		
+		<option value="//api/name/tracksWithMediaCharacteristic:">- tracksWithMediaCharacteristic:</option>
+		
+		<option value="//api/name/tracksWithMediaType:">- tracksWithMediaType:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVMutableMovie Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVMovie.html">AVMovie</a> : <a href="../Classes/AVAsset.html">AVAsset</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVMovie.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          AVMutableMovie
+</code></pre><p>By default, after creating an AVMutableMovie the <a href="#//api/name/defaultMediaDataStorage">defaultMediaDataStorage</a> property will be nil and each associated AVMutableMovieTrack&rsquo;s mediaDataStorage property will be nil. If you want to create an AVMutableMovie from a file and then append sample buffers to any of its <a href="#//api/name/tracks">tracks</a>, you must first set one of these properties to indicate where the sample data should be written.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/movieWithURL:options:error:" title="movieWithURL:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/movieWithURL:options:error:">+&nbsp;movieWithURL:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an AVMutableMovie object from a movie header stored in a QuickTime movie file or ISO base media file.
+    @param          URL
+                    An NSURL object that specifies a file containing a movie header.
+    @param          options
+                    An NSDictionary object that contains keys for specifying options for the initialization of the AVMutableMovie object. Currently no keys are defined.
+    @param          outError
+                    If an error occurs creating a movie, describes the nature of the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)movieWithURL:(NSURL *)<em>URL</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An AVMutableMovie object</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         movieWithURL:options:error:
+</code></pre><p>By default, the <a href="#//api/name/defaultMediaDataStorage">defaultMediaDataStorage</a> property will be nil and each associated AVMutableMovieTrack&rsquo;s mediaDataStorage property will be nil.
+                    If you want to create an AVMutableMovie from a file and then append sample buffers to any of its <a href="#//api/name/tracks">tracks</a>, you must first set one of these properties
+                    to indicate where the sample data should be written.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithURL:options:error:" title="initWithURL:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithURL:options:error:">&ndash;&nbsp;initWithURL:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an AVMutableMovie object from a movie header stored in a QuickTime movie file or ISO base media file.
+    @param          URL
+                    An NSURL object that specifies a file containing a movie header.
+    @param          options
+                    An NSDictionary object that contains keys for specifying options for the initialization of the AVMutableMovie object. Currently no keys are defined.
+    @param          outError
+                    If an error occurs creating a movie, describes the nature of the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithURL:(NSURL *)<em>URL</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An AVMutableMovie object</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithURL:options:error:
+</code></pre><p>By default, the <a href="#//api/name/defaultMediaDataStorage">defaultMediaDataStorage</a> property will be nil and each associated AVMutableMovieTrack&rsquo;s mediaDataStorage property will be nil.
+                    If you want to create an AVMutableMovie from a file and then append sample buffers to any of its <a href="#//api/name/tracks">tracks</a>, you must first set one of these properties
+                    to indicate where the sample data should be written.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/movieWithData:options:error:" title="movieWithData:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/movieWithData:options:error:">+&nbsp;movieWithData:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an AVMutableMovie object from a movie header stored in an NSData object.
+    @param          data
+                    An NSData object containing a movie header.
+    @param          options
+                    An NSDictionary object that contains keys for specifying options for the initialization of the AVMutableMovie object. Currently no keys are defined.
+    @param          outError
+                    If an error occurs creating a movie, describes the nature of the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)movieWithData:(NSData *)<em>data</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An AVMutableMovie object</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         movieWithData:options:error:
+</code></pre><p>You can use this method to operate on movie headers that are not stored in files. In general you should avoid loading an entire movie file with its media data into an instance of NSData!</p>
+
+<pre><code>                By default, the defaultMediaDataStorage property will be nil and each associated AVMutableMovieTrack's mediaDataStorage property will be nil. If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its tracks, you must first set one of these properties to indicate where the sample data should be written.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithData:options:error:" title="initWithData:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithData:options:error:">&ndash;&nbsp;initWithData:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an AVMutableMovie object from a movie header stored in an NSData object.
+    @param          data
+                    An NSData object containing a movie header.
+    @param          options
+                    An NSDictionary object that contains keys for specifying options for the initialization of the AVMutableMovie object. Currently no keys are defined.
+    @param          outError
+                    If an error occurs creating a movie, describes the nature of the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithData:(NSData *)<em>data</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An AVMutableMovie object</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithData:options:error:
+</code></pre><p>You can use this method to operate on movie headers that are not stored in files. In general you should avoid loading an entire movie file with its media data into an instance of NSData!</p>
+
+<pre><code>                By default, the defaultMediaDataStorage property will be nil and each associated AVMutableMovieTrack's mediaDataStorage property will be nil. If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its tracks, you must first set one of these properties to indicate where the sample data should be written.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/movieWithSettingsFromMovie:options:error:" title="movieWithSettingsFromMovie:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/movieWithSettingsFromMovie:options:error:">+&nbsp;movieWithSettingsFromMovie:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an AVMutableMovie object without <a href="#//api/name/tracks">tracks</a> (and therefore without media).
+    @param          movie
+                    If you wish to transfer settings from an existing movie (including movie userdata and <a href="#//api/name/metadata">metadata</a>, preferred rate, preferred volume, etc.), pass a reference to an <a href="../Classes/AVMovie.html">AVMovie</a> object representing that movie. Otherwise pass nil. The userdata and <a href="#//api/name/metadata">metadata</a> from the source movie may need to be converted if the format of that movie differs from fileType; you may wish to inspect the userdata or <a href="#//api/name/metadata">metadata</a> of the receiver to ensure that important data was copied.
+    @param          options
+                    An NSDictionary object that contains keys for specifying options for the initialization of the AVMutableMovie object. Currently no keys are defined; pass nil for default initialization behavior.
+    @param          outError
+                    If an error occurs creating a movie, describes the nature of the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)movieWithSettingsFromMovie:(nullable AVMovie *)<em>movie</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An AVMutableMovie object
+    @discussion
+                    By default, the <a href="#//api/name/defaultMediaDataStorage">defaultMediaDataStorage</a> property will be nil and each associated AVMovieTrack&rsquo;s mediaDataStorage property will be nil.
+                    If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its <a href="#//api/name/tracks">tracks</a>, you must first set one of these properties to indicate where the sample data should be written.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         movieWithSettingsFromMovie:options:error:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSettingsFromMovie:options:error:" title="initWithSettingsFromMovie:options:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSettingsFromMovie:options:error:">&ndash;&nbsp;initWithSettingsFromMovie:options:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an AVMutableMovie object without <a href="#//api/name/tracks">tracks</a> (and therefore without media).
+    @param          movie
+                    If you wish to transfer settings from an existing movie (including movie userdata and <a href="#//api/name/metadata">metadata</a>, preferred rate, preferred volume, etc.), pass a reference to an <a href="../Classes/AVMovie.html">AVMovie</a> object representing that movie. Otherwise pass nil. The userdata and <a href="#//api/name/metadata">metadata</a> from the source movie may need to be converted if the format of that movie differs from fileType; you may wish to inspect the userdata or <a href="#//api/name/metadata">metadata</a> of the receiver to ensure that important data was copied.
+    @param          options
+                    An NSDictionary object that contains keys for specifying options for the initialization of the AVMutableMovie object. Currently no keys are defined; pass nil for default initialization behavior.
+    @param          outError
+                    If an error occurs creating a movie, describes the nature of the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithSettingsFromMovie:(nullable AVMovie *)<em>movie</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An AVMutableMovie object
+    @discussion
+                    By default, the <a href="#//api/name/defaultMediaDataStorage">defaultMediaDataStorage</a> property will be nil and each associated AVMovieTrack&rsquo;s mediaDataStorage property will be nil.
+                    If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its <a href="#//api/name/tracks">tracks</a>, you must first set one of these properties to indicate where the sample data should be written.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithSettingsFromMovie:options:error:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/preferredRate" title="preferredRate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/preferredRate">&nbsp;&nbsp;preferredRate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The natural rate at which the movie is to be played; often but not always 1.0.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) float preferredRate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       preferredRate
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/preferredVolume" title="preferredVolume"></a>
+	<h3 class="method-title"><code><a href="#//api/name/preferredVolume">&nbsp;&nbsp;preferredVolume</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The preferred volume of the audible media data of the movie; often but not always 1.0.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) float preferredVolume</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       preferredVolume
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/preferredTransform" title="preferredTransform"></a>
+	<h3 class="method-title"><code><a href="#//api/name/preferredTransform">&nbsp;&nbsp;preferredTransform</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A CGAffineTransform indicating the transform specified in the movie&rsquo;s storage container as the preferred transformation of the visual media data for display purposes; the value is often but not always CGAffineTransformIdentity.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGAffineTransform preferredTransform</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       preferredTransform
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/timescale" title="timescale"></a>
+	<h3 class="method-title"><code><a href="#//api/name/timescale">&nbsp;&nbsp;timescale</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>For file types that contain a &lsquo;moov&rsquo; atom, such as QuickTime Movie files, specifies the time scale of the movie.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) CMTimeScale timescale</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       timescale
+</code></pre><p>The default movie time scale is 600. In certain cases, you may want to set this to a different value. For instance, a movie that
+                    contains a single audio track should typically have the movie time scale set to the media time scale of that track.</p>
+
+<pre><code>                This property should be set on a new empty movie before any edits are performed on the movie.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tracks" title="tracks"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tracks">&nbsp;&nbsp;tracks</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The tracks in a mutable movie.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVMutableMovieTrack*&gt; *tracks</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       tracks
+</code></pre><p>The value of this property is an array of tracks the mutable movie contains; the tracks are of type <a href="../Classes/AVMutableMovieTrack.html">AVMutableMovieTrack</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVMutableMovieTrackLevelEditing Methods" name="task_AVMutableMovieTrackLevelEditing Methods"></a>
+						<h2 class="task-title">AVMutableMovieTrackLevelEditing Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/mutableTrackCompatibleWithTrack:" title="mutableTrackCompatibleWithTrack:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mutableTrackCompatibleWithTrack:">&ndash;&nbsp;mutableTrackCompatibleWithTrack:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides a reference to a track of a mutable movie into which any time range of an AVAssetTrack
+                    can be inserted (via <a href="../Classes/AVMutableMovieTrack.html#//api/name/insertTimeRange:ofTrack:atTime:copySampleData:error:">[AVMutableMovieTrack insertTimeRange:ofTrack:atTime:copySampleData:error:]</a>).
+    @param          track
+                    A reference to the <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a> from which a time range may be inserted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable AVMutableMovieTrack *)mutableTrackCompatibleWithTrack:(AVAssetTrack *)<em>track</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <a href="../Classes/AVMutableMovieTrack.html">AVMutableMovieTrack</a> that can accommodate the insertion.
+                    If no such track is available, the result is nil. A new track of the same media type
+                    as the <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a> can be created via <a href="#//api/name/addMutableTrackWithMediaType:copySettingsFromTrack:options:">addMutableTrackWithMediaType:copySettingsFromTrack:options:</a>,
+                    and this new track will be compatible.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         mutableTrackCompatibleWithTrack:
+</code></pre><p>For best performance, the number of <a href="#//api/name/tracks">tracks</a> in a movie should be kept to a minimum, corresponding to the
+                    number for which media data must be presented in parallel. If media data of the same type is to be presented
+                    serially, even from multiple assets, a single track of that media type should be used. This method,
+                    -mutableTrackCompatibleWithTrack:, can help the client to identify an existing target track for an insertion.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addMutableTrackWithMediaType:copySettingsFromTrack:options:" title="addMutableTrackWithMediaType:copySettingsFromTrack:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addMutableTrackWithMediaType:copySettingsFromTrack:options:">&ndash;&nbsp;addMutableTrackWithMediaType:copySettingsFromTrack:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an empty track to the target movie.
+    @param          mediaType
+                    The media type of the new track (e.g. AVMediaTypeVideo for a video track).
+    @param          track
+                    If you wish to transfer settings from an existing track, including track userdata and <a href="#//api/name/metadata">metadata</a>, width, height, preferred volume, etc., pass a reference to an <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a> representing that track. Otherwise pass nil.
+    @param          options
+                    An NSDictionary object that contains keys for specifying options for the initialization of the new <a href="../Classes/AVMutableMovieTrack.html">AVMutableMovieTrack</a> object. Currently no keys are defined; pass nil for default initialization behavior.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable AVMutableMovieTrack *)addMutableTrackWithMediaType:(AVMediaType)<em>mediaType</em> copySettingsFromTrack:(nullable AVAssetTrack *)<em>track</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <a href="../Classes/AVMutableMovieTrack.html">AVMutableMovieTrack</a> object</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         addMutableTrackWithMediaType:copySettingsFromTrack:options:
+</code></pre><p>The trackID of the newly added track is a property of the returned instance of <a href="../Classes/AVMutableMovieTrack.html">AVMutableMovieTrack</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addMutableTracksCopyingSettingsFromTracks:options:" title="addMutableTracksCopyingSettingsFromTracks:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addMutableTracksCopyingSettingsFromTracks:options:">&ndash;&nbsp;addMutableTracksCopyingSettingsFromTracks:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds one or more empty <a href="#//api/name/tracks">tracks</a> to the target movie, copying track settings from the source <a href="#//api/name/tracks">tracks</a>.
+    @param          existingTracks
+                    An array of <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a> objects.
+    @param          options
+                    An NSDictionary object that contains keys for specifying options for the initialization of the new <a href="../Classes/AVMutableMovieTrack.html">AVMutableMovieTrack</a> objects. Currently no keys are defined; pass nil for default initialization behavior.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVMutableMovieTrack*&gt; *)addMutableTracksCopyingSettingsFromTracks:(NSArray&lt;AVAssetTrack*&gt; *)<em>existingTracks</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An array of <a href="../Classes/AVMutableMovieTrack.html">AVMutableMovieTrack</a> objects; the index of a track in this array is the same as the index of its source track in the existingTracks array.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         addMutableTracksCopyingSettingsFromTracks:options:
+</code></pre><p>This method creates one or more empty <a href="#//api/name/tracks">tracks</a> in the target movie and configures those <a href="#//api/name/tracks">tracks</a> with settings (such as track userdata and <a href="#//api/name/metadata">metadata</a>, width, height, and preferred volume) copied from the source <a href="#//api/name/tracks">tracks</a> in the existingTracks array. Also, properties involving pairs of <a href="#//api/name/tracks">tracks</a> (such as track references) are copied from the source <a href="#//api/name/tracks">tracks</a> to the target <a href="#//api/name/tracks">tracks</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeTrack:" title="removeTrack:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeTrack:">&ndash;&nbsp;removeTrack:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a track from the target movie.
+    @param          track
+                    The track to be removed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeTrack:(AVMovieTrack *)<em>track</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         removeTrack:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVMutableMovieMovieLevelEditing Methods" name="task_AVMutableMovieMovieLevelEditing Methods"></a>
+						<h2 class="task-title">AVMutableMovieMovieLevelEditing Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/modified" title="modified"></a>
+	<h3 class="method-title"><code><a href="#//api/name/modified">&nbsp;&nbsp;modified</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether a movie has been modified.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isModified) BOOL modified</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       modified
+</code></pre><p>The value of this property is a BOOL that indicates whether the AVMutableMovie object has been modified since it was created, was last written, or had its modified state cleared via a call to setModified:NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/defaultMediaDataStorage" title="defaultMediaDataStorage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultMediaDataStorage">&nbsp;&nbsp;defaultMediaDataStorage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The default storage container for media data added to a movie.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) AVMediaDataStorage *defaultMediaDataStorage</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       defaultMediaDataStorage
+</code></pre><p>The value of this property is an <a href="../Classes/AVMediaDataStorage.html">AVMediaDataStorage</a> object that indicates where sample data that is added to a movie should be written, for any track for whose mediaDataStorage property is nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/interleavingPeriod" title="interleavingPeriod"></a>
+	<h3 class="method-title"><code><a href="#//api/name/interleavingPeriod">&nbsp;&nbsp;interleavingPeriod</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A CMTime that indicates the duration for interleaving runs of samples of each track.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CMTime interleavingPeriod</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       interleavingPeriod
+</code></pre><p>The default interleaving period is 0.5 seconds.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insertTimeRange:ofAsset:atTime:copySampleData:error:" title="insertTimeRange:ofAsset:atTime:copySampleData:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insertTimeRange:ofAsset:atTime:copySampleData:error:">&ndash;&nbsp;insertTimeRange:ofAsset:atTime:copySampleData:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Inserts all the <a href="#//api/name/tracks">tracks</a> of a timeRange of an asset into a movie.
+    @param          timeRange
+                    The time range of the asset to be inserted.
+    @param          asset
+                    An <a href="../Classes/AVAsset.html">AVAsset</a> object indicating the source of the inserted media. Only instances of <a href="../Classes/AVURLAsset.html">AVURLAsset</a> and <a href="../Classes/AVComposition.html">AVComposition</a> are supported.
+                    Must not be nil.
+    @param          startTime
+                    The time in the target movie at which the media is to be inserted.
+    @param          copySampleData
+                    A BOOL value that indicates whether sample data is to be copied from the source to the destination during edits.
+                    If YES, the sample data is written to the location specified by the track property mediaDataStorage if non-nil,
+                    or else by the movie property <a href="#//api/name/defaultMediaDataStorage">defaultMediaDataStorage</a> if non-nil; if both are nil, the method will fail and return NO.
+                    If NO, sample data will not be written and sample references to the samples in their original container will be added as necessary.
+                    Note that in this case, this method will fail if the source <a href="../Classes/AVAsset.html">AVAsset</a> is not able to provide sample reference information for the original container.
+    @param          outError
+                    If the insertion fails, an NSError object that describes the nature of the failure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)insertTimeRange:(CMTimeRange)<em>timeRange</em> ofAsset:(AVAsset *)<em>asset</em> atTime:(CMTime)<em>startTime</em> copySampleData:(BOOL)<em>copySampleData</em> error:(NSError *_Nullable *_Nullable)<em>outError</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A BOOL value that indicates the success of the insertion.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         insertTimeRange:ofAsset:atTime:copySampleData:error:
+</code></pre><p>This method may add new <a href="#//api/name/tracks">tracks</a> to the target movie to ensure that all <a href="#//api/name/tracks">tracks</a> of the asset are represented in the inserted timeRange.
+                    Existing content at the specified startTime will be pushed out by the duration of timeRange.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insertEmptyTimeRange:" title="insertEmptyTimeRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insertEmptyTimeRange:">&ndash;&nbsp;insertEmptyTimeRange:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an empty time range to the target movie.
+    @param          timeRange
+                    The time range to be made empty. Note that you cannot add empty time ranges to the end of a movie.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)insertEmptyTimeRange:(CMTimeRange)<em>timeRange</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         insertEmptyTimeRange:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeTimeRange:" title="removeTimeRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeTimeRange:">&ndash;&nbsp;removeTimeRange:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a specified time range from a movie.
+    @param          timeRange
+                    The time range to be removed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeTimeRange:(CMTimeRange)<em>timeRange</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         removeTimeRange:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scaleTimeRange:toDuration:" title="scaleTimeRange:toDuration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scaleTimeRange:toDuration:">&ndash;&nbsp;scaleTimeRange:toDuration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Changes the duration of a time range of a movie.
+    @param          timeRange
+                    The time range to be scaled.
+    @param          duration
+                    The new duration of the time range.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scaleTimeRange:(CMTimeRange)<em>timeRange</em> toDuration:(CMTime)<em>duration</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         scaleTimeRange:toDuration:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVMutableMovieTrackInspection Methods" name="task_AVMutableMovieTrackInspection Methods"></a>
+						<h2 class="task-title">AVMutableMovieTrackInspection Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/trackWithTrackID:" title="trackWithTrackID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackWithTrackID:">&ndash;&nbsp;trackWithTrackID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides an instance of <a href="../Classes/AVMutableMovieTrack.html">AVMutableMovieTrack</a> that represents the track of the specified trackID.
+  @param        trackID
+                The trackID of the requested <a href="../Classes/AVMutableMovieTrack.html">AVMutableMovieTrack</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable AVMutableMovieTrack *)trackWithTrackID:(CMPersistentTrackID)<em>trackID</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of <a href="../Classes/AVMutableMovieTrack.html">AVMutableMovieTrack</a>; may be nil if no track of the specified trackID is available.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       trackWithTrackID:</p><p>Becomes callable without blocking when the key @&ldquo;tracks&rdquo; has been loaded</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tracksWithMediaType:" title="tracksWithMediaType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tracksWithMediaType:">&ndash;&nbsp;tracksWithMediaType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides an array of AVMutableMovieTracks of the asset that present media of the specified media type.
+  @param        mediaType
+                The media type according to which the receiver filters its AVMutableMovieTracks. (Media types are defined in AVMediaFormat.h)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVMutableMovieTrack*&gt; *)tracksWithMediaType:(AVMediaType)<em>mediaType</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray of AVMutableMovieTracks; may be empty if no <a href="#//api/name/tracks">tracks</a> of the specified media type are available.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       tracksWithMediaType:</p><p>Becomes callable without blocking when the key @&ldquo;tracks&rdquo; has been loaded</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tracksWithMediaCharacteristic:" title="tracksWithMediaCharacteristic:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tracksWithMediaCharacteristic:">&ndash;&nbsp;tracksWithMediaCharacteristic:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides an array of AVMutableMovieTracks of the asset that present media with the specified characteristic.
+  @param        mediaCharacteristic
+                The media characteristic according to which the receiver filters its AVMutableMovieTracks. (Media characteristics are defined in AVMediaFormat.h)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVMutableMovieTrack*&gt; *)tracksWithMediaCharacteristic:(AVMediaCharacteristic)<em>mediaCharacteristic</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray of AVMutableMovieTracks; may be empty if no <a href="#//api/name/tracks">tracks</a> with the specified characteristic are available.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method       tracksWithMediaCharacteristic:</p><p>Becomes callable without blocking when the key @&ldquo;tracks&rdquo; has been loaded</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVMutableMovieMetadataEditing Methods" name="task_AVMutableMovieMetadataEditing Methods"></a>
+						<h2 class="task-title">AVMutableMovieMetadataEditing Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/metadata" title="metadata"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadata">&nbsp;&nbsp;metadata</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A collection of metadata stored by the movie.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSArray&lt;AVMetadataItem*&gt; *metadata</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       metadata
+</code></pre><p>The value of this property is an array of <a href="../Classes/AVMetadataItem.html">AVMetadataItem</a> objects representing the collection of metadata stored by the movie.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVMovie.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CNContactStore Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Contacts Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/authorizationStatusForEntityType:">+ authorizationStatusForEntityType:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/containersMatchingPredicate:error:">- containersMatchingPredicate:error:</option>
+		
+		<option value="//api/name/defaultContainerIdentifier">- defaultContainerIdentifier</option>
+		
+		<option value="//api/name/enumerateContactsWithFetchRequest:error:usingBlock:">- enumerateContactsWithFetchRequest:error:usingBlock:</option>
+		
+		<option value="//api/name/executeSaveRequest:error:">- executeSaveRequest:error:</option>
+		
+		<option value="//api/name/groupsMatchingPredicate:error:">- groupsMatchingPredicate:error:</option>
+		
+		<option value="//api/name/requestAccessForEntityType:completionHandler:">- requestAccessForEntityType:completionHandler:</option>
+		
+		<option value="//api/name/unifiedContactWithIdentifier:keysToFetch:error:">- unifiedContactWithIdentifier:keysToFetch:error:</option>
+		
+		<option value="//api/name/unifiedContactsMatchingPredicate:keysToFetch:error:">- unifiedContactsMatchingPredicate:keysToFetch:error:</option>
+		
+		<option value="//api/name/unifiedMeContactWithKeysToFetch:error:">- unifiedMeContactWithKeysToFetch:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CNContactStore Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CNContactStore.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The CNContactStore is a thread safe class that can fetch and save contacts, fetch and save groups, and fetch containers.</p><div class="note"><p><strong>Note:</strong> Some good practices are:
+1) Only fetch contact properties that will be used.
+2) When fetching all contacts and caching the results, first fetch all contact identifiers only. Then fetch batches of detailed contacts by identifiers as you need them.
+3) To aggregate several contact fetches collect a set of unique contact identifiers from the fetches. Then fetch batches of detailed contacts by identifiers.
+4) When CNContactStoreDidChangeNotification is posted, if you cache any fetched contacts/groups/containers then they must be refetched and the old cached objects released.</p></div>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/authorizationStatusForEntityType:" title="authorizationStatusForEntityType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/authorizationStatusForEntityType:">+&nbsp;authorizationStatusForEntityType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates the current authorization status to access contact data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (CNAuthorizationStatus)authorizationStatusForEntityType:(CNEntityType)<em>entityType</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the authorization status for the given entityType.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Based upon the access, the application could display or hide its UI elements that would access any Contacts API. This method is thread safe.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContactStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestAccessForEntityType:completionHandler:" title="requestAccessForEntityType:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestAccessForEntityType:completionHandler:">&ndash;&nbsp;requestAccessForEntityType:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Request access to the user&rsquo;s contacts.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)requestAccessForEntityType:(CNEntityType)<em>entityType</em> completionHandler:(void ( ^ ) ( BOOL granted , NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityType</code></th>
+						<td><p>Set to CNEntityTypeContacts.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>This block is called upon completion. If the user grants access then granted is YES and error is nil. Otherwise granted is NO with an error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Users are able to grant or deny access to contact data on a per-application basis. To request access to contact data, call requestAccessForEntityType:completionHandler:. This will not block the application while the user is being asked to grant or deny access. The user will only be prompted the first time access is requested; any subsequent CNContactStore calls will use the existing permissions. The completion handler is called on an arbitrary queue.</p><div class="note"><p><strong>Note:</strong> Recommended to use CNContactStore instance methods in this completion handler instead of the UI main thread. This method is optional when CNContactStore is used on a background thread. If it is not used in that case, CNContactStore will block if the user is asked to grant or deny access.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContactStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unifiedContactsMatchingPredicate:keysToFetch:error:" title="unifiedContactsMatchingPredicate:keysToFetch:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unifiedContactsMatchingPredicate:keysToFetch:error:">&ndash;&nbsp;unifiedContactsMatchingPredicate:keysToFetch:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch all unified contacts matching a given predicate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray&lt;CNContact*&gt; *)unifiedContactsMatchingPredicate:(NSPredicate *)<em>predicate</em> keysToFetch:(NSArray&lt;id&lt;CNKeyDescriptor&gt; &gt; *)<em>keys</em> error:(NSError *__nullable *__nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>predicate</code></th>
+						<td><p>The predicate to match against.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keys</code></th>
+						<td><p>The properties to fetch into the returned <a href="../Classes/CNContact.html">CNContact</a> objects. Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, contains error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An array of <a href="../Classes/CNContact.html">CNContact</a> objects matching the predicate. If no matches are found, an empty array is returned. If an error occurs, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Due to unification the returned contacts may have a different identifier.</p><div class="note"><p><strong>Note:</strong> To fetch all contacts use <a href="#//api/name/enumerateContactsWithFetchRequest:error:usingBlock:">enumerateContactsWithFetchRequest:error:usingBlock:</a>.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContactStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unifiedContactWithIdentifier:keysToFetch:error:" title="unifiedContactWithIdentifier:keysToFetch:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unifiedContactWithIdentifier:keysToFetch:error:">&ndash;&nbsp;unifiedContactWithIdentifier:keysToFetch:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch a unified contact with a given identifier.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable CNContact *)unifiedContactWithIdentifier:(NSString *)<em>identifier</em> keysToFetch:(NSArray&lt;id&lt;CNKeyDescriptor&gt; &gt; *)<em>keys</em> error:(NSError *__nullable *__nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>The identifier of the contact to fetch.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keys</code></th>
+						<td><p>The properties to fetch into the returned <a href="../Classes/CNContact.html">CNContact</a> object. Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, contains error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The unified contact matching or linked to the identifier. If no contact with the given identifier is found, nil is returned and error is set to CNErrorCodeRecordDoesNotExist.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Due to unification the returned contact may have a different identifier. To fetch a batch of contacts by identifiers use <a href="../Classes/CNContact.html#//api/name/predicateForContactsWithIdentifiers:">[CNContact predicateForContactsWithIdentifiers:]</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContactStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unifiedMeContactWithKeysToFetch:error:" title="unifiedMeContactWithKeysToFetch:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unifiedMeContactWithKeysToFetch:error:">&ndash;&nbsp;unifiedMeContactWithKeysToFetch:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch the unified contact that is the &ldquo;me&rdquo; card.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable CNContact *)unifiedMeContactWithKeysToFetch:(NSArray&lt;id&lt;CNKeyDescriptor&gt; &gt; *)<em>keys</em> error:(NSError *__nullable *__nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keys</code></th>
+						<td><p>The properties to fetch into the returned <a href="../Classes/CNContact.html">CNContact</a> object. Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, contains error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The unified contact that is the &ldquo;me&rdquo; card. If no &ldquo;me&rdquo; card is set, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Fetches the contact that is represented in the user interface as &ldquo;My Card&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContactStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enumerateContactsWithFetchRequest:error:usingBlock:" title="enumerateContactsWithFetchRequest:error:usingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enumerateContactsWithFetchRequest:error:usingBlock:">&ndash;&nbsp;enumerateContactsWithFetchRequest:error:usingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Enumerates all contacts matching a contact fetch request.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)enumerateContactsWithFetchRequest:(CNContactFetchRequest *)<em>fetchRequest</em> error:(NSError *__nullable *__nullable)<em>error</em> usingBlock:(void ( ^ ) ( CNContact *contact , BOOL *stop ))<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fetchRequest</code></th>
+						<td><p>The contact fetch request that specifies the search criteria.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, contains error information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>Called for each matching contact. Set *stop to YES to stop the enumeration.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if successful, otherwise NO.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method will wait until the enumeration is finished. If there are no results the block is not called and YES is returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContactStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/groupsMatchingPredicate:error:" title="groupsMatchingPredicate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/groupsMatchingPredicate:error:">&ndash;&nbsp;groupsMatchingPredicate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch all groups matching a given predicate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray&lt;CNGroup*&gt; *)groupsMatchingPredicate:(nullable NSPredicate *)<em>predicate</em> error:(NSError *__nullable *__nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>predicate</code></th>
+						<td><p>The predicate to match against. Set to nil to match all groups.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, contains error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An array of <a href="../Classes/CNGroup.html">CNGroup</a> objects matching the predicate. If no matches are found, an empty array is returned. If an error occurs, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Use only predicates from CNGroup+Predicates.h. Compound predicates are not supported.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContactStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/containersMatchingPredicate:error:" title="containersMatchingPredicate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/containersMatchingPredicate:error:">&ndash;&nbsp;containersMatchingPredicate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch all containers matching a given predicate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray&lt;CNContainer*&gt; *)containersMatchingPredicate:(nullable NSPredicate *)<em>predicate</em> error:(NSError *__nullable *__nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>predicate</code></th>
+						<td><p>The predicate to match against. Set to nil to match all containers.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, contains error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An array of <a href="../Classes/CNContainer.html">CNContainer</a> objects matching the predicate. If no matches are found, an empty array is returned. If an error occurs, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Use only predicates from CNContainer+Predicates.h. Compound predicates are not supported.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContactStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/executeSaveRequest:error:" title="executeSaveRequest:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/executeSaveRequest:error:">&ndash;&nbsp;executeSaveRequest:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Executes a save request.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)executeSaveRequest:(CNSaveRequest *)<em>saveRequest</em> error:(NSError *__nullable *__nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>saveRequest</code></th>
+						<td><p>Save request to execute.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, contains error information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if successful, otherwise NO.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Do not access objects when save request is executing. A save request with contacts may modify the contacts while executing. A save request only applies the changes to the objects. If there are overlapping changes with multiple, concurrent CNSaveRequests then the last saved change wins.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContactStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/defaultContainerIdentifier" title="defaultContainerIdentifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultContainerIdentifier">&ndash;&nbsp;defaultContainerIdentifier</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The identifier of the default container.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)defaultContainerIdentifier</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The identifier of the default container. If the caller lacks Contacts authorization or an error occurs, nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This identifier can be used to fetch the default container.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNContactStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

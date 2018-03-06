@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IOSurface Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IOSurface Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/NS_RETURNS_INNER_POINTER">NS_RETURNS_INNER_POINTER</option>
+		
+		<option value="//api/name/allocationSize">allocationSize</option>
+		
+		<option value="//api/name/allowsPixelSizeCasting">allowsPixelSizeCasting</option>
+		
+		<option value="//api/name/bytesPerElement">bytesPerElement</option>
+		
+		<option value="//api/name/bytesPerRow">bytesPerRow</option>
+		
+		<option value="//api/name/elementHeight">elementHeight</option>
+		
+		<option value="//api/name/elementWidth">elementWidth</option>
+		
+		<option value="//api/name/height">height</option>
+		
+		<option value="//api/name/inUse">inUse</option>
+		
+		<option value="//api/name/localUseCount">localUseCount</option>
+		
+		<option value="//api/name/pixelFormat">pixelFormat</option>
+		
+		<option value="//api/name/planeCount">planeCount</option>
+		
+		<option value="//api/name/seed">seed</option>
+		
+		<option value="//api/name/width">width</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/allAttachments">- allAttachments</option>
+		
+		<option value="//api/name/attachmentForKey:">- attachmentForKey:</option>
+		
+		<option value="//api/name/baseAddressOfPlaneAtIndex:">- baseAddressOfPlaneAtIndex:</option>
+		
+		<option value="//api/name/bytesPerElementOfPlaneAtIndex:">- bytesPerElementOfPlaneAtIndex:</option>
+		
+		<option value="//api/name/bytesPerRowOfPlaneAtIndex:">- bytesPerRowOfPlaneAtIndex:</option>
+		
+		<option value="//api/name/decrementUseCount">- decrementUseCount</option>
+		
+		<option value="//api/name/elementHeightOfPlaneAtIndex:">- elementHeightOfPlaneAtIndex:</option>
+		
+		<option value="//api/name/elementWidthOfPlaneAtIndex:">- elementWidthOfPlaneAtIndex:</option>
+		
+		<option value="//api/name/heightOfPlaneAtIndex:">- heightOfPlaneAtIndex:</option>
+		
+		<option value="//api/name/incrementUseCount">- incrementUseCount</option>
+		
+		<option value="//api/name/initWithProperties:">- initWithProperties:</option>
+		
+		<option value="//api/name/lockWithOptions:seed:">- lockWithOptions:seed:</option>
+		
+		<option value="//api/name/removeAllAttachments">- removeAllAttachments</option>
+		
+		<option value="//api/name/removeAttachmentForKey:">- removeAttachmentForKey:</option>
+		
+		<option value="//api/name/setAllAttachments:">- setAllAttachments:</option>
+		
+		<option value="//api/name/setAttachment:forKey:">- setAttachment:forKey:</option>
+		
+		<option value="//api/name/setPurgeable:oldState:">- setPurgeable:oldState:</option>
+		
+		<option value="//api/name/unlockWithOptions:seed:">- unlockWithOptions:seed:</option>
+		
+		<option value="//api/name/widthOfPlaneAtIndex:">- widthOfPlaneAtIndex:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IOSurface Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>IOSurfaceObjC.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithProperties:" title="initWithProperties:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithProperties:">&ndash;&nbsp;initWithProperties:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithProperties:(NSDictionary&lt;IOSurfacePropertyKey,id&gt; *)<em>properties</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lockWithOptions:seed:" title="lockWithOptions:seed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lockWithOptions:seed:">&ndash;&nbsp;lockWithOptions:seed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (kern_return_t)lockWithOptions:(IOSurfaceLockOptions)<em>options</em> seed:(nullable uint32_t *)<em>seed</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unlockWithOptions:seed:" title="unlockWithOptions:seed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unlockWithOptions:seed:">&ndash;&nbsp;unlockWithOptions:seed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (kern_return_t)unlockWithOptions:(IOSurfaceLockOptions)<em>options</em> seed:(nullable uint32_t *)<em>seed</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allocationSize" title="allocationSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allocationSize">&nbsp;&nbsp;allocationSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger allocationSize</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/width" title="width"></a>
+	<h3 class="method-title"><code><a href="#//api/name/width">&nbsp;&nbsp;width</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger width</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/height" title="height"></a>
+	<h3 class="method-title"><code><a href="#//api/name/height">&nbsp;&nbsp;height</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger height</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/NS_RETURNS_INNER_POINTER" title="NS_RETURNS_INNER_POINTER"></a>
+	<h3 class="method-title"><code><a href="#//api/name/NS_RETURNS_INNER_POINTER">&nbsp;&nbsp;NS_RETURNS_INNER_POINTER</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) void *NS_RETURNS_INNER_POINTER</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pixelFormat" title="pixelFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pixelFormat">&nbsp;&nbsp;pixelFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) OSType pixelFormat</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bytesPerRow" title="bytesPerRow"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bytesPerRow">&nbsp;&nbsp;bytesPerRow</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger bytesPerRow</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bytesPerElement" title="bytesPerElement"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bytesPerElement">&nbsp;&nbsp;bytesPerElement</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger bytesPerElement</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementWidth" title="elementWidth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementWidth">&nbsp;&nbsp;elementWidth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger elementWidth</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementHeight" title="elementHeight"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementHeight">&nbsp;&nbsp;elementHeight</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger elementHeight</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/seed" title="seed"></a>
+	<h3 class="method-title"><code><a href="#//api/name/seed">&nbsp;&nbsp;seed</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) uint32_t seed</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/planeCount" title="planeCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/planeCount">&nbsp;&nbsp;planeCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger planeCount</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/widthOfPlaneAtIndex:" title="widthOfPlaneAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/widthOfPlaneAtIndex:">&ndash;&nbsp;widthOfPlaneAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)widthOfPlaneAtIndex:(NSUInteger)<em>planeIndex</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/heightOfPlaneAtIndex:" title="heightOfPlaneAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/heightOfPlaneAtIndex:">&ndash;&nbsp;heightOfPlaneAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)heightOfPlaneAtIndex:(NSUInteger)<em>planeIndex</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bytesPerRowOfPlaneAtIndex:" title="bytesPerRowOfPlaneAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bytesPerRowOfPlaneAtIndex:">&ndash;&nbsp;bytesPerRowOfPlaneAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)bytesPerRowOfPlaneAtIndex:(NSUInteger)<em>planeIndex</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bytesPerElementOfPlaneAtIndex:" title="bytesPerElementOfPlaneAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bytesPerElementOfPlaneAtIndex:">&ndash;&nbsp;bytesPerElementOfPlaneAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)bytesPerElementOfPlaneAtIndex:(NSUInteger)<em>planeIndex</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementWidthOfPlaneAtIndex:" title="elementWidthOfPlaneAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementWidthOfPlaneAtIndex:">&ndash;&nbsp;elementWidthOfPlaneAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)elementWidthOfPlaneAtIndex:(NSUInteger)<em>planeIndex</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementHeightOfPlaneAtIndex:" title="elementHeightOfPlaneAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementHeightOfPlaneAtIndex:">&ndash;&nbsp;elementHeightOfPlaneAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)elementHeightOfPlaneAtIndex:(NSUInteger)<em>planeIndex</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/baseAddressOfPlaneAtIndex:" title="baseAddressOfPlaneAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/baseAddressOfPlaneAtIndex:">&ndash;&nbsp;baseAddressOfPlaneAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void *)baseAddressOfPlaneAtIndex:(NSUInteger)<em>planeIndex</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAttachment:forKey:" title="setAttachment:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAttachment:forKey:">&ndash;&nbsp;setAttachment:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setAttachment:(id)<em>anObject</em> forKey:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attachmentForKey:" title="attachmentForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attachmentForKey:">&ndash;&nbsp;attachmentForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)attachmentForKey:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAttachmentForKey:" title="removeAttachmentForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAttachmentForKey:">&ndash;&nbsp;removeAttachmentForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAttachmentForKey:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAllAttachments:" title="setAllAttachments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAllAttachments:">&ndash;&nbsp;setAllAttachments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setAllAttachments:(NSDictionary&lt;NSString*,id&gt; *)<em>dict</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allAttachments" title="allAttachments"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allAttachments">&ndash;&nbsp;allAttachments</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDictionary&lt;NSString*,id&gt; *)allAttachments</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAllAttachments" title="removeAllAttachments"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAllAttachments">&ndash;&nbsp;removeAllAttachments</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAllAttachments</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inUse" title="inUse"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inUse">&nbsp;&nbsp;inUse</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isInUse) BOOL inUse</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/incrementUseCount" title="incrementUseCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/incrementUseCount">&ndash;&nbsp;incrementUseCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)incrementUseCount</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/decrementUseCount" title="decrementUseCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/decrementUseCount">&ndash;&nbsp;decrementUseCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)decrementUseCount</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localUseCount" title="localUseCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localUseCount">&nbsp;&nbsp;localUseCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) int32_t localUseCount</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allowsPixelSizeCasting" title="allowsPixelSizeCasting"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allowsPixelSizeCasting">&nbsp;&nbsp;allowsPixelSizeCasting</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL allowsPixelSizeCasting</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setPurgeable:oldState:" title="setPurgeable:oldState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setPurgeable:oldState:">&ndash;&nbsp;setPurgeable:oldState:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (kern_return_t)setPurgeable:(IOSurfacePurgeabilityState)<em>newState</em> oldState:(IOSurfacePurgeabilityState *__nullable)<em>oldState</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

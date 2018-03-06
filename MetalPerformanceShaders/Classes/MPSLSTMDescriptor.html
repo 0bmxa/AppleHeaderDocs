@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSLSTMDescriptor Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/cellGateInputWeights">cellGateInputWeights</option>
+		
+		<option value="//api/name/cellGateMemoryWeights">cellGateMemoryWeights</option>
+		
+		<option value="//api/name/cellGateRecurrentWeights">cellGateRecurrentWeights</option>
+		
+		<option value="//api/name/cellToOutputNeuronParamA">cellToOutputNeuronParamA</option>
+		
+		<option value="//api/name/cellToOutputNeuronParamB">cellToOutputNeuronParamB</option>
+		
+		<option value="//api/name/cellToOutputNeuronParamC">cellToOutputNeuronParamC</option>
+		
+		<option value="//api/name/cellToOutputNeuronType">cellToOutputNeuronType</option>
+		
+		<option value="//api/name/forgetGateInputWeights">forgetGateInputWeights</option>
+		
+		<option value="//api/name/forgetGateMemoryWeights">forgetGateMemoryWeights</option>
+		
+		<option value="//api/name/forgetGateRecurrentWeights">forgetGateRecurrentWeights</option>
+		
+		<option value="//api/name/inputGateInputWeights">inputGateInputWeights</option>
+		
+		<option value="//api/name/inputGateMemoryWeights">inputGateMemoryWeights</option>
+		
+		<option value="//api/name/inputGateRecurrentWeights">inputGateRecurrentWeights</option>
+		
+		<option value="//api/name/memoryWeightsAreDiagonal">memoryWeightsAreDiagonal</option>
+		
+		<option value="//api/name/outputGateInputWeights">outputGateInputWeights</option>
+		
+		<option value="//api/name/outputGateMemoryWeights">outputGateMemoryWeights</option>
+		
+		<option value="//api/name/outputGateRecurrentWeights">outputGateRecurrentWeights</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/createLSTMDescriptorWithInputFeatureChannels:outputFeatureChannels:">+ createLSTMDescriptorWithInputFeatureChannels:outputFeatureChannels:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSLSTMDescriptor Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSRNNDescriptor.html">MPSRNNDescriptor</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSRNNLayer.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSLSTMDescriptor
+@dependency This depends on Metal.framework</p><p>The MPSLSTMDescriptor specifies a LSTM block/layer descriptor.
+The RNN layer initialized with a MPSLSTMDescriptor transforms the input data (image or matrix),
+the memory cell data and previous output with a set of filters, each producing one feature map in
+the output data and memory cell, according to the LSTM formulae detailed below.
+The user may provide the LSTM unit a single input or a sequence of inputs.</p>
+
+<p>Description of operation:</p>
+
+<p>Let x_j be the input data (at time index t of sequence,
+j index containing quadruplet: batch index, x,y and feature index (x=y=0 for matrices)).
+Let h0_j be the recurrent input (previous output) data from previous time step (at time index t-1 of sequence).
+Let h1_i be the output data produced at this time step.
+Let c0_j be the previous memory cell data (at time index t-1 of sequence).
+Let c1_i be the new memory cell data (at time index t-1 of sequence).</p>
+
+<p>Let Wi_ij, Ui_ij, Vi_ij, be the input gate weights for input, recurrent input and memory cell (peephole) data respectively
+Let bi_i be the bias for the input gate</p>
+
+<p>Let Wf_ij, Uf_ij, Vf_ij, be the forget gate weights for input, recurrent input and memory cell data respectively
+Let bf_i be the bias for the forget gate</p>
+
+<p>Let Wo_ij, Uo_ij, Vo_ij, be the output gate weights for input, recurrent input and memory cell data respectively
+Let bo_i be the bias for the output gate</p>
+
+<p>Let Wc_ij, Uc_ij, Vc_ij, be the memory cell gate weights for input, recurrent input and memory cell data respectively
+Let bc_i be the bias for the memory cell gate</p>
+
+<p>Let gi(x), gf(x), go(x), gc(x) be neuron activation function for the input, forget, output gate and memory cell gate
+Let gh(x) be the activation function applied to result memory cell data</p>
+
+<p>Then the new memory cell data c1_j and output image h1_i are computed as follows:</p>
+
+<p>I_i = gi(  Wi_ij * x_j  +  Ui_ij * h0_j  +  Vi_ij * c0_j  + bi_i  )
+F_i = gf(  Wf_ij * x_j  +  Uf_ij * h0_j  +  Vf_ij * c0_j  + bf_i  )
+C_i = gc(  Wc_ij * x_j  +  Uc_ij * h0_j  +  Vc_ij * c0_j  + bc_i  )</p>
+
+<p>c1_i = F_i c0_i  +  I_i C_i</p>
+
+<p>O_i = go(  Wo_ij * x_j  +  Uo_ij * h0_j  +  Vo_ij * c1_j  + bo_i  )</p>
+
+<p>h1_i = O_i gh( c1_i )</p>
+
+<p>The &lsquo;*&rsquo; stands for convolution (see @ref <a href="../Classes/MPSRNNImageInferenceLayer.html">MPSRNNImageInferenceLayer</a>) or matrix-vector/matrix multiplication</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/memoryWeightsAreDiagonal" title="memoryWeightsAreDiagonal"></a>
+	<h3 class="method-title"><code><a href="#//api/name/memoryWeightsAreDiagonal">&nbsp;&nbsp;memoryWeightsAreDiagonal</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If YES, then the &lsquo;peephole&rsquo; weight matrices will be diagonal matrices represented as
+vectors of length the number of features in memory cells, that will be multiplied pointwise
+with the peephole matrix or image in order to achieve the diagonal (nonmixing) update.
+Defaults to NO.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) BOOL memoryWeightsAreDiagonal</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   memoryWeightsAreDiagonal</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputGateInputWeights" title="inputGateInputWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputGateInputWeights">&nbsp;&nbsp;inputGateInputWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Wi_ij&rsquo;, bias &lsquo;bi_i&rsquo; and neuron &lsquo;gi&rsquo; from the LSTM formula.
+If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; inputGateInputWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   inputGateInputWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputGateRecurrentWeights" title="inputGateRecurrentWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputGateRecurrentWeights">&nbsp;&nbsp;inputGateRecurrentWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Ui_ij&rsquo; from the LSTM formula.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; inputGateRecurrentWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   inputGateRecurrentWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputGateMemoryWeights" title="inputGateMemoryWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputGateMemoryWeights">&nbsp;&nbsp;inputGateMemoryWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Vi_ij&rsquo; - the &lsquo;peephole&rsquo; weights - from the LSTM formula.
+if YES == <a href="#//api/name/memoryWeightsAreDiagonal">memoryWeightsAreDiagonal</a>, then the number of weights used is the number of features
+in the memory cell image/matrix.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; inputGateMemoryWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   inputGateMemoryWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/forgetGateInputWeights" title="forgetGateInputWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/forgetGateInputWeights">&nbsp;&nbsp;forgetGateInputWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Wf_ij&rsquo;, bias &lsquo;bf_i&rsquo; and neuron &lsquo;gf&rsquo; from the LSTM formula.
+If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; forgetGateInputWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   forgetGateInputWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/forgetGateRecurrentWeights" title="forgetGateRecurrentWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/forgetGateRecurrentWeights">&nbsp;&nbsp;forgetGateRecurrentWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Uf_ij&rsquo; from the LSTM formula.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; forgetGateRecurrentWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   forgetGateRecurrentWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/forgetGateMemoryWeights" title="forgetGateMemoryWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/forgetGateMemoryWeights">&nbsp;&nbsp;forgetGateMemoryWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Vf_ij&rsquo; - the &lsquo;peephole&rsquo; weights - from the LSTM formula.
+if YES == <a href="#//api/name/memoryWeightsAreDiagonal">memoryWeightsAreDiagonal</a>, then the number of weights used is the number of features
+in the memory cell image/matrix.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; forgetGateMemoryWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   forgetGateMemoryWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputGateInputWeights" title="outputGateInputWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputGateInputWeights">&nbsp;&nbsp;outputGateInputWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Wo_ij&rsquo;, bias &lsquo;bo_i&rsquo; and neuron &lsquo;go&rsquo; from the LSTM formula.
+If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; outputGateInputWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   outputGateInputWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputGateRecurrentWeights" title="outputGateRecurrentWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputGateRecurrentWeights">&nbsp;&nbsp;outputGateRecurrentWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Uo_ij&rsquo; from the LSTM formula.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; outputGateRecurrentWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   outputGateRecurrentWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputGateMemoryWeights" title="outputGateMemoryWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputGateMemoryWeights">&nbsp;&nbsp;outputGateMemoryWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Vo_ij&rsquo; - the &lsquo;peephole&rsquo; weights - from the LSTM.
+if YES == <a href="#//api/name/memoryWeightsAreDiagonal">memoryWeightsAreDiagonal</a>, then the number of weights used is the number of features
+in the memory cell image/matrix.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; outputGateMemoryWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   outputGateMemoryWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cellGateInputWeights" title="cellGateInputWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cellGateInputWeights">&nbsp;&nbsp;cellGateInputWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Wc_ij&rsquo;, bias &lsquo;bc_i&rsquo; and neuron &lsquo;gc&rsquo; from the LSTM formula.
+If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; cellGateInputWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   cellGateInputWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cellGateRecurrentWeights" title="cellGateRecurrentWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cellGateRecurrentWeights">&nbsp;&nbsp;cellGateRecurrentWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Uc_ij&rsquo; from the LSTM formula.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; cellGateRecurrentWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   cellGateRecurrentWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cellGateMemoryWeights" title="cellGateMemoryWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cellGateMemoryWeights">&nbsp;&nbsp;cellGateMemoryWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Vc_ij&rsquo; - the &lsquo;peephole&rsquo; weights - from the LSTM formula.
+if YES == <a href="#//api/name/memoryWeightsAreDiagonal">memoryWeightsAreDiagonal</a>, then the number of weights used is the number of features
+in the memory cell image/matrix.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; cellGateMemoryWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   cellGateMemoryWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cellToOutputNeuronType" title="cellToOutputNeuronType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cellToOutputNeuronType">&nbsp;&nbsp;cellToOutputNeuronType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Neuron type definition for &lsquo;gh&rsquo;, see @ref <a href="../Constants/MPSCNNNeuronType.html">MPSCNNNeuronType</a>. Defaults to MPSCNNNeuronTypeTanH.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) MPSCNNNeuronType cellToOutputNeuronType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   cellToOutputNeuronType</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cellToOutputNeuronParamA" title="cellToOutputNeuronParamA"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cellToOutputNeuronParamA">&nbsp;&nbsp;cellToOutputNeuronParamA</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Neuron parameter A for &lsquo;gh&rsquo;. Defaults to 1.0f.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) float cellToOutputNeuronParamA</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   cellToOutputNeuronParamA</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cellToOutputNeuronParamB" title="cellToOutputNeuronParamB"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cellToOutputNeuronParamB">&nbsp;&nbsp;cellToOutputNeuronParamB</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Neuron parameter B for &lsquo;gh&rsquo;. Defaults to 1.0f.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) float cellToOutputNeuronParamB</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   cellToOutputNeuronParamB</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cellToOutputNeuronParamC" title="cellToOutputNeuronParamC"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cellToOutputNeuronParamC">&nbsp;&nbsp;cellToOutputNeuronParamC</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Neuron parameter C for &lsquo;gh&rsquo;. Defaults to 1.0f.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) float cellToOutputNeuronParamC</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   cellToOutputNeuronParamC</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createLSTMDescriptorWithInputFeatureChannels:outputFeatureChannels:" title="createLSTMDescriptorWithInputFeatureChannels:outputFeatureChannels:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createLSTMDescriptorWithInputFeatureChannels:outputFeatureChannels:">+&nbsp;createLSTMDescriptorWithInputFeatureChannels:outputFeatureChannels:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a LSTM descriptor.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)createLSTMDescriptorWithInputFeatureChannels:(NSUInteger)<em>inputFeatureChannels</em> outputFeatureChannels:(NSUInteger)<em>outputFeatureChannels</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inputFeatureChannels</code></th>
+						<td><p>The number of feature channels in the input image/matrix. Must be >= 1.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outputFeatureChannels</code></th>
+						<td><p>The number of feature channels in the output image/matrix. Must be >= 1.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSNNLSTMDescriptor object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

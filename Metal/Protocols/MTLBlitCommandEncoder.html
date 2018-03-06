@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MTLBlitCommandEncoder Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Metal Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:">- copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:</option>
+		
+		<option value="//api/name/copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:">- copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:</option>
+		
+		<option value="//api/name/copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:">- copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:</option>
+		
+		<option value="//api/name/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:">- copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:</option>
+		
+		<option value="//api/name/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:">- copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:</option>
+		
+		<option value="//api/name/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:">- copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:</option>
+		
+		<option value="//api/name/fillBuffer:range:value:">- fillBuffer:range:value:</option>
+		
+		<option value="//api/name/generateMipmapsForTexture:">- generateMipmapsForTexture:</option>
+		
+		<option value="//api/name/synchronizeResource:">- synchronizeResource:</option>
+		
+		<option value="//api/name/synchronizeTexture:slice:level:">- synchronizeTexture:slice:level:</option>
+		
+		<option value="//api/name/updateFence:">- updateFence:</option>
+		
+		<option value="//api/name/waitForFence:">- waitForFence:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MTLBlitCommandEncoder Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/MTLCommandEncoder.html">MTLCommandEncoder</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MTLBlitCommandEncoder.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol MTLBlitCommandEncoder</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/synchronizeResource:" title="synchronizeResource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/synchronizeResource:">&ndash;&nbsp;synchronizeResource:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Flush any copy of this resource from the device&rsquo;s caches, and invalidate any CPU caches if needed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)synchronizeResource:(id&lt;MTLResource&gt;)<em>resource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resource</code></th>
+						<td><p>The resource to page off.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method synchronizeResource:</p><p>When the device writes to a resource with a storage mode of MTLResourceStorageModeManaged, those writes may be cached (for example, in VRAM or on chip renderer cache),
+making any CPU access (either MTLBuffer.contents or [MTLTexture getBytes:&hellip;] and [MTLTexture replaceRegion:]) produce undefined results.  To allow the CPU to see what the device
+has written, a CommandBuffer containing this synchronization must be executed.  After completion of the CommandBuffer, the CPU can access the contents of the resource safely.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/synchronizeTexture:slice:level:" title="synchronizeTexture:slice:level:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/synchronizeTexture:slice:level:">&ndash;&nbsp;synchronizeTexture:slice:level:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Flush any copy of this image from the device&rsquo;s caches, and invalidate CPU caches if needed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)synchronizeTexture:(id&lt;MTLTexture&gt;)<em>texture</em> slice:(NSUInteger)<em>slice</em> level:(NSUInteger)<em>level</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>texture</code></th>
+						<td><p>The texture to page off.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>slice</code></th>
+						<td><p>The slice of the texture to page off.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>The mipmap level of the texture to flush.
+@discussion
+See the discussion of -synchronizeResource.   -synchronizeTexture:slice:mipmapLevel performs the same role, except it may flush only a subset of the texture storage, rather than the entire texture.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method synchronizeTexture:slice:mipmapLevel:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:" title="copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:">&ndash;&nbsp;copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Copy a rectangle of pixels between textures.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)copyFromTexture:(id&lt;MTLTexture&gt;)<em>sourceTexture</em> sourceSlice:(NSUInteger)<em>sourceSlice</em> sourceLevel:(NSUInteger)<em>sourceLevel</em> sourceOrigin:(MTLOrigin)<em>sourceOrigin</em> sourceSize:(MTLSize)<em>sourceSize</em> toTexture:(id&lt;MTLTexture&gt;)<em>destinationTexture</em> destinationSlice:(NSUInteger)<em>destinationSlice</em> destinationLevel:(NSUInteger)<em>destinationLevel</em> destinationOrigin:(MTLOrigin)<em>destinationOrigin</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:" title="copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:">&ndash;&nbsp;copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Copy an image from a buffer into a texture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)copyFromBuffer:(id&lt;MTLBuffer&gt;)<em>sourceBuffer</em> sourceOffset:(NSUInteger)<em>sourceOffset</em> sourceBytesPerRow:(NSUInteger)<em>sourceBytesPerRow</em> sourceBytesPerImage:(NSUInteger)<em>sourceBytesPerImage</em> sourceSize:(MTLSize)<em>sourceSize</em> toTexture:(id&lt;MTLTexture&gt;)<em>destinationTexture</em> destinationSlice:(NSUInteger)<em>destinationSlice</em> destinationLevel:(NSUInteger)<em>destinationLevel</em> destinationOrigin:(MTLOrigin)<em>destinationOrigin</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:" title="copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:">&ndash;&nbsp;copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Copy an image from a buffer into a texture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)copyFromBuffer:(id&lt;MTLBuffer&gt;)<em>sourceBuffer</em> sourceOffset:(NSUInteger)<em>sourceOffset</em> sourceBytesPerRow:(NSUInteger)<em>sourceBytesPerRow</em> sourceBytesPerImage:(NSUInteger)<em>sourceBytesPerImage</em> sourceSize:(MTLSize)<em>sourceSize</em> toTexture:(id&lt;MTLTexture&gt;)<em>destinationTexture</em> destinationSlice:(NSUInteger)<em>destinationSlice</em> destinationLevel:(NSUInteger)<em>destinationLevel</em> destinationOrigin:(MTLOrigin)<em>destinationOrigin</em> options:(MTLBlitOption)<em>options</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:" title="copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:">&ndash;&nbsp;copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Copy an image from a texture into a buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)copyFromTexture:(id&lt;MTLTexture&gt;)<em>sourceTexture</em> sourceSlice:(NSUInteger)<em>sourceSlice</em> sourceLevel:(NSUInteger)<em>sourceLevel</em> sourceOrigin:(MTLOrigin)<em>sourceOrigin</em> sourceSize:(MTLSize)<em>sourceSize</em> toBuffer:(id&lt;MTLBuffer&gt;)<em>destinationBuffer</em> destinationOffset:(NSUInteger)<em>destinationOffset</em> destinationBytesPerRow:(NSUInteger)<em>destinationBytesPerRow</em> destinationBytesPerImage:(NSUInteger)<em>destinationBytesPerImage</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:" title="copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:">&ndash;&nbsp;copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Copy an image from a texture into a buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)copyFromTexture:(id&lt;MTLTexture&gt;)<em>sourceTexture</em> sourceSlice:(NSUInteger)<em>sourceSlice</em> sourceLevel:(NSUInteger)<em>sourceLevel</em> sourceOrigin:(MTLOrigin)<em>sourceOrigin</em> sourceSize:(MTLSize)<em>sourceSize</em> toBuffer:(id&lt;MTLBuffer&gt;)<em>destinationBuffer</em> destinationOffset:(NSUInteger)<em>destinationOffset</em> destinationBytesPerRow:(NSUInteger)<em>destinationBytesPerRow</em> destinationBytesPerImage:(NSUInteger)<em>destinationBytesPerImage</em> options:(MTLBlitOption)<em>options</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:sourceOptions:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/generateMipmapsForTexture:" title="generateMipmapsForTexture:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/generateMipmapsForTexture:">&ndash;&nbsp;generateMipmapsForTexture:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Generate mipmaps for a texture from the base level up to the max level.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)generateMipmapsForTexture:(id&lt;MTLTexture&gt;)<em>texture</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method generateMipmapsForTexture:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fillBuffer:range:value:" title="fillBuffer:range:value:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fillBuffer:range:value:">&ndash;&nbsp;fillBuffer:range:value:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fill a buffer with a fixed value in each byte.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)fillBuffer:(id&lt;MTLBuffer&gt;)<em>buffer</em> range:(NSRange)<em>range</em> value:(uint8_t)<em>value</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method fillBuffer:range:value:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:" title="copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:">&ndash;&nbsp;copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Basic memory copy between buffers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)copyFromBuffer:(id&lt;MTLBuffer&gt;)<em>sourceBuffer</em> sourceOffset:(NSUInteger)<em>sourceOffset</em> toBuffer:(id&lt;MTLBuffer&gt;)<em>destinationBuffer</em> destinationOffset:(NSUInteger)<em>destinationOffset</em> size:(NSUInteger)<em>size</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateFence:" title="updateFence:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateFence:">&ndash;&nbsp;updateFence:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Update the event to capture all GPU work so far enqueued by this encoder.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateFence:(id&lt;MTLFence&gt;)<em>fence</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method updateFence:</p><p>The event is updated at kernel submission to maintain global order and prevent deadlock.
+Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/waitForFence:" title="waitForFence:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/waitForFence:">&ndash;&nbsp;waitForFence:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Prevent further GPU work until the event is reached.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)waitForFence:(id&lt;MTLFence&gt;)<em>fence</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method waitForFence:</p><p>The event is evaluated at kernel submision to maintain global order and prevent deadlock.
+Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLBlitCommandEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

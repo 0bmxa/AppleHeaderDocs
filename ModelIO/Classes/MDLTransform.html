@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MDLTransform Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 ModelIO Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/rotation">rotation</option>
+		
+		<option value="//api/name/scale">scale</option>
+		
+		<option value="//api/name/shear">shear</option>
+		
+		<option value="//api/name/translation">translation</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithIdentity">- initWithIdentity</option>
+		
+		<option value="//api/name/initWithMatrix:">- initWithMatrix:</option>
+		
+		<option value="//api/name/initWithMatrix:resetsTransform:">- initWithMatrix:resetsTransform:</option>
+		
+		<option value="//api/name/initWithTransformComponent:">- initWithTransformComponent:</option>
+		
+		<option value="//api/name/initWithTransformComponent:resetsTransform:">- initWithTransformComponent:resetsTransform:</option>
+		
+		<option value="//api/name/rotationAtTime:">- rotationAtTime:</option>
+		
+		<option value="//api/name/rotationMatrixAtTime:">- rotationMatrixAtTime:</option>
+		
+		<option value="//api/name/scaleAtTime:">- scaleAtTime:</option>
+		
+		<option value="//api/name/setIdentity">- setIdentity</option>
+		
+		<option value="//api/name/setMatrix:forTime:">- setMatrix:forTime:</option>
+		
+		<option value="//api/name/setRotation:forTime:">- setRotation:forTime:</option>
+		
+		<option value="//api/name/setScale:forTime:">- setScale:forTime:</option>
+		
+		<option value="//api/name/setShear:forTime:">- setShear:forTime:</option>
+		
+		<option value="//api/name/setTranslation:forTime:">- setTranslation:forTime:</option>
+		
+		<option value="//api/name/shearAtTime:">- shearAtTime:</option>
+		
+		<option value="//api/name/translationAtTime:">- translationAtTime:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MDLTransform Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/MDLTransformComponent.html">MDLTransformComponent</a><br />NSCopying</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MDLTransform.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Concrete implementation of <a href="../Protocols/MDLTransformComponent.html">MDLTransformComponent</a>.
+For more complex transform components create a class that conforms to
+<a href="../Protocols/MDLTransformComponent.html">MDLTransformComponent</a>.</p><p>Setting any of <a href="#//api/name/scale">scale</a>, <a href="#//api/name/translation">translation</a>, or <a href="#//api/name/rotation">rotation</a> individually will
+set the matrix property, and clear any timing information.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithIdentity" title="initWithIdentity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithIdentity">&ndash;&nbsp;initWithIdentity</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithIdentity</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTransformComponent:" title="initWithTransformComponent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTransformComponent:">&ndash;&nbsp;initWithTransformComponent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTransformComponent:(id&lt;MDLTransformComponent&gt;)<em>component</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTransformComponent:resetsTransform:" title="initWithTransformComponent:resetsTransform:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTransformComponent:resetsTransform:">&ndash;&nbsp;initWithTransformComponent:resetsTransform:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTransformComponent:(id&lt;MDLTransformComponent&gt;)<em>component</em> resetsTransform:(BOOL)<em>resetsTransform</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithMatrix:" title="initWithMatrix:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithMatrix:">&ndash;&nbsp;initWithMatrix:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialization with a matrix assumes the matrix is an invertible, homogeneous
+affine transform matrix. Retrieving transform components after initialization
+with a non-affine matrix will yield those of the identity transform.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithMatrix:(matrix_float4x4)<em>matrix</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialization with a matrix assumes the matrix is an invertible, homogeneous
+affine transform matrix. Retrieving transform components after initialization
+with a non-affine matrix will yield those of the identity transform.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLTransform.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithMatrix:resetsTransform:" title="initWithMatrix:resetsTransform:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithMatrix:resetsTransform:">&ndash;&nbsp;initWithMatrix:resetsTransform:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithMatrix:(matrix_float4x4)<em>matrix</em> resetsTransform:(BOOL)<em>resetsTransform</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setIdentity" title="setIdentity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setIdentity">&ndash;&nbsp;setIdentity</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set all transform components to identity</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setIdentity</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set all transform components to identity</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLTransform.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/translationAtTime:" title="translationAtTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/translationAtTime:">&ndash;&nbsp;translationAtTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (vector_float3)translationAtTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rotationAtTime:" title="rotationAtTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotationAtTime:">&ndash;&nbsp;rotationAtTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (vector_float3)rotationAtTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shearAtTime:" title="shearAtTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shearAtTime:">&ndash;&nbsp;shearAtTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (vector_float3)shearAtTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scaleAtTime:" title="scaleAtTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scaleAtTime:">&ndash;&nbsp;scaleAtTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (vector_float3)scaleAtTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMatrix:forTime:" title="setMatrix:forTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMatrix:forTime:">&ndash;&nbsp;setMatrix:forTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setMatrix:(matrix_float4x4)<em>matrix</em> forTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setTranslation:forTime:" title="setTranslation:forTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setTranslation:forTime:">&ndash;&nbsp;setTranslation:forTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setTranslation:(vector_float3)<em>translation</em> forTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setRotation:forTime:" title="setRotation:forTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setRotation:forTime:">&ndash;&nbsp;setRotation:forTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setRotation:(vector_float3)<em>rotation</em> forTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setShear:forTime:" title="setShear:forTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setShear:forTime:">&ndash;&nbsp;setShear:forTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setShear:(vector_float3)<em>shear</em> forTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setScale:forTime:" title="setScale:forTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setScale:forTime:">&ndash;&nbsp;setScale:forTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setScale:(vector_float3)<em>scale</em> forTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rotationMatrixAtTime:" title="rotationMatrixAtTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotationMatrixAtTime:">&ndash;&nbsp;rotationMatrixAtTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Construct a right handed <a href="#//api/name/rotation">rotation</a> matrix at the specified time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (matrix_float4x4)rotationMatrixAtTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Construct a right handed <a href="#//api/name/rotation">rotation</a> matrix at the specified time</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLTransform.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/translation" title="translation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/translation">&nbsp;&nbsp;translation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If these properties are read and animation data exists the earliest value is returned.
+Otherwise, if there is no animation data, the value of the property is the same at all times and that value is returned.
+If written, timing information for said property is removed. To retain or add timing information, use the set:forTime selectors instead.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) vector_float3 translation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If these properties are read and animation data exists the earliest value is returned.
+Otherwise, if there is no animation data, the value of the property is the same at all times and that value is returned.
+If written, timing information for said property is removed. To retain or add timing information, use the set:forTime selectors instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLTransform.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rotation" title="rotation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotation">&nbsp;&nbsp;rotation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) vector_float3 rotation</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shear" title="shear"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shear">&nbsp;&nbsp;shear</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) vector_float3 shear</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scale" title="scale"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scale">&nbsp;&nbsp;scale</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) vector_float3 scale</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

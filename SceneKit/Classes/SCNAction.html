@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SCNAction Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SceneKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/duration">duration</option>
+		
+		<option value="//api/name/speed">speed</option>
+		
+		<option value="//api/name/timingFunction">timingFunction</option>
+		
+		<option value="//api/name/timingMode">timingMode</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/customActionWithDuration:actionBlock:">+ customActionWithDuration:actionBlock:</option>
+		
+		<option value="//api/name/fadeInWithDuration:">+ fadeInWithDuration:</option>
+		
+		<option value="//api/name/fadeOpacityBy:duration:">+ fadeOpacityBy:duration:</option>
+		
+		<option value="//api/name/fadeOpacityTo:duration:">+ fadeOpacityTo:duration:</option>
+		
+		<option value="//api/name/fadeOutWithDuration:">+ fadeOutWithDuration:</option>
+		
+		<option value="//api/name/group:">+ group:</option>
+		
+		<option value="//api/name/hide">+ hide</option>
+		
+		<option value="//api/name/javaScriptActionWithScript:duration:">+ javaScriptActionWithScript:duration:</option>
+		
+		<option value="//api/name/moveBy:duration:">+ moveBy:duration:</option>
+		
+		<option value="//api/name/moveByX:y:z:duration:">+ moveByX:y:z:duration:</option>
+		
+		<option value="//api/name/moveTo:duration:">+ moveTo:duration:</option>
+		
+		<option value="//api/name/playAudioSource:waitForCompletion:">+ playAudioSource:waitForCompletion:</option>
+		
+		<option value="//api/name/removeFromParentNode">+ removeFromParentNode</option>
+		
+		<option value="//api/name/repeatAction:count:">+ repeatAction:count:</option>
+		
+		<option value="//api/name/repeatActionForever:">+ repeatActionForever:</option>
+		
+		<option value="//api/name/rotateByAngle:aroundAxis:duration:">+ rotateByAngle:aroundAxis:duration:</option>
+		
+		<option value="//api/name/rotateByX:y:z:duration:">+ rotateByX:y:z:duration:</option>
+		
+		<option value="//api/name/rotateToAxisAngle:duration:">+ rotateToAxisAngle:duration:</option>
+		
+		<option value="//api/name/rotateToX:y:z:duration:">+ rotateToX:y:z:duration:</option>
+		
+		<option value="//api/name/rotateToX:y:z:duration:shortestUnitArc:">+ rotateToX:y:z:duration:shortestUnitArc:</option>
+		
+		<option value="//api/name/runBlock:">+ runBlock:</option>
+		
+		<option value="//api/name/runBlock:queue:">+ runBlock:queue:</option>
+		
+		<option value="//api/name/scaleBy:duration:">+ scaleBy:duration:</option>
+		
+		<option value="//api/name/scaleTo:duration:">+ scaleTo:duration:</option>
+		
+		<option value="//api/name/sequence:">+ sequence:</option>
+		
+		<option value="//api/name/unhide">+ unhide</option>
+		
+		<option value="//api/name/waitForDuration:">+ waitForDuration:</option>
+		
+		<option value="//api/name/waitForDuration:withRange:">+ waitForDuration:withRange:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/reversedAction">- reversedAction</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SCNAction Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying<br />NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SCNAction.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/duration" title="duration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/duration">&nbsp;&nbsp;duration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This is the expected duration of an action’s animation. The actual time an action takes to complete is modified by the <a href="#//api/name/speed">speed</a> property of the action.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSTimeInterval duration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property duration</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNAction.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/timingMode" title="timingMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/timingMode">&nbsp;&nbsp;timingMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The timing mode used to execute an action.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) SCNActionTimingMode timingMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property timingMode</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNAction.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/timingFunction" title="timingFunction"></a>
+	<h3 class="method-title"><code><a href="#//api/name/timingFunction">&nbsp;&nbsp;timingFunction</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When set, prodives a custom timing via a block. Applies after
+the &lsquo;timingMode&rsquo; property is taken into account, defaults to nil</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable) SCNActionTimingFunction timingFunction</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>When set, prodives a custom timing via a block. Applies after
+the &lsquo;timingMode&rsquo; property is taken into account, defaults to nil</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Blocks/SCNActionTimingFunction.html">SCNActionTimingFunction</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNAction.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/speed" title="speed"></a>
+	<h3 class="method-title"><code><a href="#//api/name/speed">&nbsp;&nbsp;speed</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A speed factor that modifies how fast an action runs. Defaults to 1.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGFloat speed</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property speed</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNAction.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reversedAction" title="reversedAction"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reversedAction">&ndash;&nbsp;reversedAction</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an action that reverses the behavior of another action.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (SCNAction *)reversedAction</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method reversedAction</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNAction.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/moveByX:y:z:duration:" title="moveByX:y:z:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/moveByX:y:z:duration:">+&nbsp;moveByX:y:z:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)moveByX:(CGFloat)<em>deltaX</em> y:(CGFloat)<em>deltaY</em> z:(CGFloat)<em>deltaZ</em> duration:(NSTimeInterval)<em>duration</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/moveBy:duration:" title="moveBy:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/moveBy:duration:">+&nbsp;moveBy:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)moveBy:(SCNVector3)<em>delta</em> duration:(NSTimeInterval)<em>duration</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/moveTo:duration:" title="moveTo:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/moveTo:duration:">+&nbsp;moveTo:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)moveTo:(SCNVector3)<em>location</em> duration:(NSTimeInterval)<em>duration</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rotateByX:y:z:duration:" title="rotateByX:y:z:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotateByX:y:z:duration:">+&nbsp;rotateByX:y:z:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)rotateByX:(CGFloat)<em>xAngle</em> y:(CGFloat)<em>yAngle</em> z:(CGFloat)<em>zAngle</em> duration:(NSTimeInterval)<em>duration</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rotateToX:y:z:duration:" title="rotateToX:y:z:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotateToX:y:z:duration:">+&nbsp;rotateToX:y:z:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)rotateToX:(CGFloat)<em>xAngle</em> y:(CGFloat)<em>yAngle</em> z:(CGFloat)<em>zAngle</em> duration:(NSTimeInterval)<em>duration</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rotateToX:y:z:duration:shortestUnitArc:" title="rotateToX:y:z:duration:shortestUnitArc:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotateToX:y:z:duration:shortestUnitArc:">+&nbsp;rotateToX:y:z:duration:shortestUnitArc:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)rotateToX:(CGFloat)<em>xAngle</em> y:(CGFloat)<em>yAngle</em> z:(CGFloat)<em>zAngle</em> duration:(NSTimeInterval)<em>duration</em> shortestUnitArc:(BOOL)<em>shortestUnitArc</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rotateByAngle:aroundAxis:duration:" title="rotateByAngle:aroundAxis:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotateByAngle:aroundAxis:duration:">+&nbsp;rotateByAngle:aroundAxis:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)rotateByAngle:(CGFloat)<em>angle</em> aroundAxis:(SCNVector3)<em>axis</em> duration:(NSTimeInterval)<em>duration</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rotateToAxisAngle:duration:" title="rotateToAxisAngle:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotateToAxisAngle:duration:">+&nbsp;rotateToAxisAngle:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)rotateToAxisAngle:(SCNVector4)<em>axisAngle</em> duration:(NSTimeInterval)<em>duration</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scaleBy:duration:" title="scaleBy:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scaleBy:duration:">+&nbsp;scaleBy:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)scaleBy:(CGFloat)<em>scale</em> duration:(NSTimeInterval)<em>sec</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scaleTo:duration:" title="scaleTo:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scaleTo:duration:">+&nbsp;scaleTo:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)scaleTo:(CGFloat)<em>scale</em> duration:(NSTimeInterval)<em>sec</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sequence:" title="sequence:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sequence:">+&nbsp;sequence:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)sequence:(NSArray&lt;SCNAction*&gt; *)<em>actions</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/group:" title="group:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/group:">+&nbsp;group:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)group:(NSArray&lt;SCNAction*&gt; *)<em>actions</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/repeatAction:count:" title="repeatAction:count:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/repeatAction:count:">+&nbsp;repeatAction:count:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)repeatAction:(SCNAction *)<em>action</em> count:(NSUInteger)<em>count</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/repeatActionForever:" title="repeatActionForever:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/repeatActionForever:">+&nbsp;repeatActionForever:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)repeatActionForever:(SCNAction *)<em>action</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fadeInWithDuration:" title="fadeInWithDuration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fadeInWithDuration:">+&nbsp;fadeInWithDuration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)fadeInWithDuration:(NSTimeInterval)<em>sec</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fadeOutWithDuration:" title="fadeOutWithDuration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fadeOutWithDuration:">+&nbsp;fadeOutWithDuration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)fadeOutWithDuration:(NSTimeInterval)<em>sec</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fadeOpacityBy:duration:" title="fadeOpacityBy:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fadeOpacityBy:duration:">+&nbsp;fadeOpacityBy:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)fadeOpacityBy:(CGFloat)<em>factor</em> duration:(NSTimeInterval)<em>sec</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fadeOpacityTo:duration:" title="fadeOpacityTo:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fadeOpacityTo:duration:">+&nbsp;fadeOpacityTo:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)fadeOpacityTo:(CGFloat)<em>opacity</em> duration:(NSTimeInterval)<em>sec</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hide" title="hide"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hide">+&nbsp;hide</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)hide</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unhide" title="unhide"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unhide">+&nbsp;unhide</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)unhide</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/waitForDuration:" title="waitForDuration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/waitForDuration:">+&nbsp;waitForDuration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)waitForDuration:(NSTimeInterval)<em>sec</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/waitForDuration:withRange:" title="waitForDuration:withRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/waitForDuration:withRange:">+&nbsp;waitForDuration:withRange:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)waitForDuration:(NSTimeInterval)<em>sec</em> withRange:(NSTimeInterval)<em>durationRange</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeFromParentNode" title="removeFromParentNode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeFromParentNode">+&nbsp;removeFromParentNode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)removeFromParentNode</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/runBlock:" title="runBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/runBlock:">+&nbsp;runBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)runBlock:(void ( ^ ) ( SCNNode *node ))<em>block</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/runBlock:queue:" title="runBlock:queue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/runBlock:queue:">+&nbsp;runBlock:queue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)runBlock:(void ( ^ ) ( SCNNode *node ))<em>block</em> queue:(dispatch_queue_t)<em>queue</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/javaScriptActionWithScript:duration:" title="javaScriptActionWithScript:duration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/javaScriptActionWithScript:duration:">+&nbsp;javaScriptActionWithScript:duration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)javaScriptActionWithScript:(NSString *)<em>script</em> duration:(NSTimeInterval)<em>seconds</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/customActionWithDuration:actionBlock:" title="customActionWithDuration:actionBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/customActionWithDuration:actionBlock:">+&nbsp;customActionWithDuration:actionBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)customActionWithDuration:(NSTimeInterval)<em>seconds</em> actionBlock:(void ( ^ ) ( SCNNode *node , CGFloat elapsedTime ))<em>block</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playAudioSource:waitForCompletion:" title="playAudioSource:waitForCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playAudioSource:waitForCompletion:">+&nbsp;playAudioSource:waitForCompletion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an action that plays a sound</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (SCNAction *)playAudioSource:(SCNAudioSource *)<em>source</em> waitForCompletion:(BOOL)<em>wait</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>source</code></th>
+						<td><p>The audio source to play (see <a href="../Classes/SCNAudioSource.html">SCNAudioSource</a>.h)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>wait</code></th>
+						<td><p>If YES, then the <a href="#//api/name/duration">duration</a> of this action is the same
+as the length of the audio playback. If NO, the action is considered
+to have completed immediately.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates an action that plays a sound</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNAction.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

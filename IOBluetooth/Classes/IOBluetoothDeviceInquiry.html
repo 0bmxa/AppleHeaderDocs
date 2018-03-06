@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IOBluetoothDeviceInquiry Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IOBluetooth Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/inquiryLength">inquiryLength</option>
+		
+		<option value="//api/name/searchType">searchType</option>
+		
+		<option value="//api/name/updateNewDeviceNames">updateNewDeviceNames</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/inquiryWithDelegate:">+ inquiryWithDelegate:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/clearFoundDevices">- clearFoundDevices</option>
+		
+		<option value="//api/name/foundDevices">- foundDevices</option>
+		
+		<option value="//api/name/initWithDelegate:">- initWithDelegate:</option>
+		
+		<option value="//api/name/setSearchCriteria:majorDeviceClass:minorDeviceClass:">- setSearchCriteria:majorDeviceClass:minorDeviceClass:</option>
+		
+		<option value="//api/name/start">- start</option>
+		
+		<option value="//api/name/stop">- stop</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IOBluetoothDeviceInquiry Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>IOBluetoothDeviceInquiry.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          IOBluetoothDeviceInquiry
+</code></pre><p>You should only use this object if your application needs to know about in-range devices and cannot
+                    use the GUI provided by the IOBluetoothUI framework. It will not let you perform unlimited back-to-back
+                    inquiries, but will instead throttle the number of attempted inquiries if too many are attempted within
+                    a small window of time.
+                    Important Note: DO NOT perform remote name requests on devices from <a href="#//api/name/delegate">delegate</a> methods or while this
+                    object is in use. If you wish to do your own remote name requests on devices, do them after you have
+                    stopped this object. If you do not heed this warning, you could potentially deadlock your process.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (assign) id delegate</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inquiryWithDelegate:" title="inquiryWithDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inquiryWithDelegate:">+&nbsp;inquiryWithDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class method to create an inquiry object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)inquiryWithDelegate:(id)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>A <a href="#//api/name/delegate">delegate</a> object that wishes to receive messages from the inquiry object. Delegate methods are listed below, under <a href="../Protocols/IOBluetoothDeviceInquiryDelegate.html">IOBluetoothDeviceInquiryDelegate</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A pointer to the created IOBluetoothDeviceInquiry object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     inquiryWithDelegate
+</code></pre><p>The inquiry is NOT automatically started. You musts call <a href="#//api/name/start">start</a> on it to <a href="#//api/name/start">start</a> the search for in-range devices.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDelegate:" title="initWithDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDelegate:">&ndash;&nbsp;initWithDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an alloc&rsquo;d inquiry object, and sets the <a href="#//api/name/delegate">delegate</a> object, as if <a href="#//api/name/delegate">setDelegate:</a> were called on it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDelegate:(id)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>A <a href="#//api/name/delegate">delegate</a> object that wishes to receive messages from the inquiry object. Delegate methods are listed below, under <a href="../Protocols/IOBluetoothDeviceInquiryDelegate.html">IOBluetoothDeviceInquiryDelegate</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A pointer to the initialized IOBluetoothDeviceInquiry object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithDelegate
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/start" title="start"></a>
+	<h3 class="method-title"><code><a href="#//api/name/start">&ndash;&nbsp;start</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tells inquiry object to begin the inquiry and name updating process, if specified.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)start</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if start was successful. Returns kIOReturnBusy if the object is already in process. May return other IOReturn values, as appropriate.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     start
+</code></pre><p>Calling start multiple times in rapid succession or back-to-back will probably not produce the intended
+                results. Inquiries are throttled if they are called too quickly in succession.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stop" title="stop"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stop">&ndash;&nbsp;stop</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Halts the inquiry object. Could either stop the search for new devices, or the updating of found device names.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)stop</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the inquiry is successfully stopped. Returns kIOReturnNotPermitted if the inquiry object is already stopped. May return other IOReturn values, as appropriate.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     stop
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inquiryLength" title="inquiryLength"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inquiryLength">&nbsp;&nbsp;inquiryLength</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the length of the inquiry that is performed each time <a href="#//api/name/start">start</a> is used on an inquiry object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign) uint8_t inquiryLength</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>seconds</code></th>
+						<td><p>Number of seconds the inquiry will search for in-range devices before refreshing device names, if specified.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Number of seconds the search will be performed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setInquiryLength
+</code></pre><p>A default of 10 seconds is used, unless a different value is specified using this method.  Note that if you
+                have called <a href="#//api/name/start">start</a> again too quickly, your inquiry may actually take much longer than what length you
+                specify, as inquiries are throttled in the system. Also note that if you have the inquiry object updating
+                device names for you, the whole inquiry process could be much longer than the specified length, depending
+                on the number of devices found and how responsive to name requests they are. If you -must- have a strict
+                inquiry length, disable name updates. In other words, this &ldquo;length&rdquo; only refers to the actual device discovery
+                portion of the whole inquiry process.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/searchType" title="searchType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/searchType">&nbsp;&nbsp;searchType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the devices that are found.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign) IOBluetoothDeviceSearchTypes searchType</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>searchType</code></th>
+						<td><p>Bluetooth versions the search will discover.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setSearchType
+</code></pre><p>A default of kIOBluetoothDeviceSearchClassic is used, unless a different value is specified using this method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateNewDeviceNames" title="updateNewDeviceNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateNewDeviceNames">&nbsp;&nbsp;updateNewDeviceNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets whether or not the inquiry object will retrieve the names of devices found during the search.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign) BOOL updateNewDeviceNames</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inValue</code></th>
+						<td><p>Pass TRUE if names are to be updated, otherwise pass FALSE.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setUpdateNewDeviceNames
+</code></pre><p>The default value for the inquiry object is TRUE, unless this method is used to change it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/foundDevices" title="foundDevices"></a>
+	<h3 class="method-title"><code><a href="#//api/name/foundDevices">&ndash;&nbsp;foundDevices</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns found <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> objects as an array.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)foundDevices</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an NSArray of <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> objects.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     foundDevices
+</code></pre><p>Will not return nil. If there are no devices found, returns an array with length of 0.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clearFoundDevices" title="clearFoundDevices"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearFoundDevices">&ndash;&nbsp;clearFoundDevices</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes all found devices from the inquiry object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)clearFoundDevices</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     clearFoundDevices
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSearchCriteria:majorDeviceClass:minorDeviceClass:" title="setSearchCriteria:majorDeviceClass:minorDeviceClass:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSearchCriteria:majorDeviceClass:minorDeviceClass:">&ndash;&nbsp;setSearchCriteria:majorDeviceClass:minorDeviceClass:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to set the criteria for the device search.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSearchCriteria:(BluetoothServiceClassMajor)<em>inServiceClassMajor</em> majorDeviceClass:(BluetoothDeviceClassMajor)<em>inMajorDeviceClass</em> minorDeviceClass:(BluetoothDeviceClassMinor)<em>inMinorDeviceClass</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inServiceClassMajor</code></th>
+						<td><p>Set the major service class for found devices. Set to kBluetoothServiceClassMajorAny for all devices. See BluetoothAssignedNumbers.h for possible values.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inMajorDeviceClass</code></th>
+						<td><p>Set the major device class for found devices. Set to kBluetoothDeviceClassMajorAny for all devices. See BluetoothAssignedNumbers.h for possible values.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inMinorDeviceClass</code></th>
+						<td><p>Set the minor device class for found devices. Set to kBluetoothDeviceClassMinorAny for all devices. See BluetoothAssignedNumbers.h for possible values.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setSearchCriteria
+</code></pre><p>The default inquiry object will search for all types of devices. If you wish to find only keyboards, for example, you might use this method like this:</p>
+
+<pre><code>            [myInquiryObject        setSearchCriteria:kBluetoothServiceClassMajorAny
+                                    majorDeviceClass:kBluetoothDeviceClassMajorPeripheral
+                                    minorDeviceClass:kBluetoothDeviceClassMinorPeripheral1Keyboard];
+
+            However, we recommend only using this if you are certain of the device class you are looking for, as some
+            devices may report a different/unexpected device class, and the search may miss the device you are interested in.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

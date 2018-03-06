@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureSession Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_9">_9</option>
+		
+		<option value="//api/name/inputs">inputs</option>
+		
+		<option value="//api/name/outputs">outputs</option>
+		
+		<option value="//api/name/running">running</option>
+		
+		<option value="//api/name/sessionPreset">sessionPreset</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addConnection:">- addConnection:</option>
+		
+		<option value="//api/name/addInput:">- addInput:</option>
+		
+		<option value="//api/name/addInputWithNoConnections:">- addInputWithNoConnections:</option>
+		
+		<option value="//api/name/addOutput:">- addOutput:</option>
+		
+		<option value="//api/name/addOutputWithNoConnections:">- addOutputWithNoConnections:</option>
+		
+		<option value="//api/name/beginConfiguration">- beginConfiguration</option>
+		
+		<option value="//api/name/canAddConnection:">- canAddConnection:</option>
+		
+		<option value="//api/name/canAddInput:">- canAddInput:</option>
+		
+		<option value="//api/name/canAddOutput:">- canAddOutput:</option>
+		
+		<option value="//api/name/canSetSessionPreset:">- canSetSessionPreset:</option>
+		
+		<option value="//api/name/commitConfiguration">- commitConfiguration</option>
+		
+		<option value="//api/name/removeConnection:">- removeConnection:</option>
+		
+		<option value="//api/name/removeInput:">- removeInput:</option>
+		
+		<option value="//api/name/removeOutput:">- removeOutput:</option>
+		
+		<option value="//api/name/startRunning">- startRunning</option>
+		
+		<option value="//api/name/stopRunning">- stopRunning</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureSession Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureSession.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureSession
+@abstract
+    AVCaptureSession is the central hub of the AVFoundation capture classes.</p>
+
+<p>@discussion
+    To perform a real-time capture, a client may instantiate AVCaptureSession and add appropriate AVCaptureInputs, such as AVCaptureDeviceInput, and outputs, such as AVCaptureMovieFileOutput. <a href="#//api/name/startRunning">[AVCaptureSession startRunning]</a> starts the flow of data from the inputs to the outputs, and <a href="#//api/name/stopRunning">[AVCaptureSession stopRunning]</a> stops the flow. A client may set the <a href="#//api/name/sessionPreset">sessionPreset</a> property to customize the quality level or bitrate of the output.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/canSetSessionPreset:" title="canSetSessionPreset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canSetSessionPreset:">&ndash;&nbsp;canSetSessionPreset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method canSetSessionPreset:
+@abstract
+    Returns whether the receiver can be configured with the given preset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)canSetSessionPreset:(AVCaptureSessionPreset)<em>preset</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method canSetSessionPreset:
+@abstract
+    Returns whether the receiver can be configured with the given preset.</p>
+
+<p>@param preset
+    An AVCaptureSession preset.
+@result
+    YES if the receiver can be set to the given preset, NO otherwise.</p>
+
+<p>@discussion
+    An AVCaptureSession instance can be associated with a preset that configures its <a href="#//api/name/inputs">inputs</a> and <a href="#//api/name/outputs">outputs</a> to fulfill common use cases. This method can be used to determine if the receiver supports the desired preset given its current input and output configuration. The receiver&rsquo;s <a href="#//api/name/sessionPreset">sessionPreset</a> property may only be set to a certain preset if this method returns YES for that preset.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sessionPreset" title="sessionPreset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sessionPreset">&nbsp;&nbsp;sessionPreset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property sessionPreset
+@abstract
+    Indicates the session preset currently in use by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) AVCaptureSessionPreset sessionPreset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sessionPreset
+@abstract
+    Indicates the session preset currently in use by the receiver.</p>
+
+<p>@discussion
+    The value of this property is an AVCaptureSessionPreset indicating the current session preset in use by the receiver. The sessionPreset property may be set while the receiver is <a href="#//api/name/running">running</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputs" title="inputs"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputs">&nbsp;&nbsp;inputs</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property inputs
+@abstract
+    An NSArray of AVCaptureInputs currently added to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;__kindofAVCaptureInput*&gt; *inputs</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property inputs
+@abstract
+    An NSArray of AVCaptureInputs currently added to the receiver.</p>
+
+<p>@discussion
+    The value of this property is an NSArray of AVCaptureInputs currently added to the receiver. Clients can add AVCaptureInputs to a session by calling <a href="#//api/name/addInput:">addInput:</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/canAddInput:" title="canAddInput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canAddInput:">&ndash;&nbsp;canAddInput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method canAddInput:
+@abstract
+    Returns whether the proposed input can be added to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)canAddInput:(AVCaptureInput *)<em>input</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method canAddInput:
+@abstract
+    Returns whether the proposed input can be added to the receiver.</p>
+
+<p>@param input
+    An <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> instance.
+@result
+    YES if the proposed input can be added to the receiver, NO otherwise.</p>
+
+<p>@discussion
+    An <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> instance can only be added to a session using <a href="#//api/name/addInput:">addInput:</a> if -canAddInput: returns YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addInput:" title="addInput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addInput:">&ndash;&nbsp;addInput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method addInput:
+@abstract
+    Adds an <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> to the session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addInput:(AVCaptureInput *)<em>input</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addInput:
+@abstract
+    Adds an <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> to the session.</p>
+
+<p>@param input
+    An <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> instance.</p>
+
+<p>@discussion
+    An <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> instance can only be added to a session using -addInput: if <a href="#//api/name/canAddInput:">canAddInput:</a> returns YES. -addInput: may be called while the session is <a href="#//api/name/running">running</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeInput:" title="removeInput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeInput:">&ndash;&nbsp;removeInput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method removeInput:
+@abstract
+    Removes an <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> from the session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeInput:(AVCaptureInput *)<em>input</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method removeInput:
+@abstract
+    Removes an <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> from the session.</p>
+
+<p>@param input
+    An <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> instance.</p>
+
+<p>@discussion
+    -removeInput: may be called while the session is <a href="#//api/name/running">running</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputs" title="outputs"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputs">&nbsp;&nbsp;outputs</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property outputs
+@abstract
+    An NSArray of AVCaptureOutputs currently added to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;__kindofAVCaptureOutput*&gt; *outputs</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property outputs
+@abstract
+    An NSArray of AVCaptureOutputs currently added to the receiver.</p>
+
+<p>@discussion
+    The value of this property is an NSArray of AVCaptureOutputs currently added to the receiver. Clients can add AVCaptureOutputs to a session by calling <a href="#//api/name/addOutput:">addOutput:</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/canAddOutput:" title="canAddOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canAddOutput:">&ndash;&nbsp;canAddOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method canAddOutput:
+@abstract
+    Returns whether the proposed output can be added to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)canAddOutput:(AVCaptureOutput *)<em>output</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method canAddOutput:
+@abstract
+    Returns whether the proposed output can be added to the receiver.</p>
+
+<p>@param output
+    An <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> instance.
+@result
+    YES if the proposed output can be added to the receiver, NO otherwise.</p>
+
+<p>@discussion
+    An <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> instance can only be added to a session using <a href="#//api/name/addOutput:">addOutput:</a> if -canAddOutput: returns YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addOutput:" title="addOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addOutput:">&ndash;&nbsp;addOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method addOutput:
+@abstract
+    Adds an <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> to the session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addOutput:(AVCaptureOutput *)<em>output</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addOutput:
+@abstract
+    Adds an <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> to the session.</p>
+
+<p>@param output
+    An <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> instance.</p>
+
+<p>@discussion
+    An <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> instance can only be added to a session using -addOutput: if <a href="#//api/name/canAddOutput:">canAddOutput:</a> returns YES. -addOutput: may be called while the session is <a href="#//api/name/running">running</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeOutput:" title="removeOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeOutput:">&ndash;&nbsp;removeOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method removeOutput:
+@abstract
+    Removes an <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> from the session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeOutput:(AVCaptureOutput *)<em>output</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method removeOutput:
+@abstract
+    Removes an <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> from the session.</p>
+
+<p>@param output
+    An <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> instance.</p>
+
+<p>@discussion
+    -removeOutput: may be called while the session is <a href="#//api/name/running">running</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addInputWithNoConnections:" title="addInputWithNoConnections:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addInputWithNoConnections:">&ndash;&nbsp;addInputWithNoConnections:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method addInputWithNoConnections:
+@abstract
+    Adds an <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> to the session without forming any connections.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addInputWithNoConnections:(AVCaptureInput *)<em>input</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addInputWithNoConnections:
+@abstract
+    Adds an <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> to the session without forming any connections.</p>
+
+<p>@param input
+    An <a href="../Classes/AVCaptureInput.html">AVCaptureInput</a> instance.</p>
+
+<p>@discussion
+    -addInputWithNoConnections: may be called while the session is <a href="#//api/name/running">running</a>. The <a href="#//api/name/addInput:">addInput:</a> method is the preferred method for adding an input to an AVCaptureSession. -addInputWithNoConnections: may be called if you need fine-grained control over which <a href="#//api/name/inputs">inputs</a> are connected to which <a href="#//api/name/outputs">outputs</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addOutputWithNoConnections:" title="addOutputWithNoConnections:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addOutputWithNoConnections:">&ndash;&nbsp;addOutputWithNoConnections:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method addOutputWithNoConnections:
+@abstract
+    Adds an <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> to the session without forming any connections.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addOutputWithNoConnections:(AVCaptureOutput *)<em>output</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addOutputWithNoConnections:
+@abstract
+    Adds an <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> to the session without forming any connections.</p>
+
+<p>@param output
+    An <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> instance.</p>
+
+<p>@discussion
+    -addOutputWithNoConnections: may be called while the session is <a href="#//api/name/running">running</a>. The <a href="#//api/name/addOutput:">addOutput:</a> method is the preferred method for adding an output to an AVCaptureSession. -addOutputWithNoConnections: may be called if you need fine-grained control over which <a href="#//api/name/inputs">inputs</a> are connected to which <a href="#//api/name/outputs">outputs</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/canAddConnection:" title="canAddConnection:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canAddConnection:">&ndash;&nbsp;canAddConnection:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method canAddConnection:
+@abstract
+    Returns whether the proposed connection can be added to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)canAddConnection:(AVCaptureConnection *)<em>connection</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method canAddConnection:
+@abstract
+    Returns whether the proposed connection can be added to the receiver.</p>
+
+<p>@param connection
+    An <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> instance.</p>
+
+<p>@discussion
+    An <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> instance can only be added to a session using <a href="#//api/name/addConnection:">addConnection:</a> if canAddConnection: returns YES. When using <a href="#//api/name/addInput:">addInput:</a> or <a href="#//api/name/addOutput:">addOutput:</a>, connections are formed automatically between all compatible <a href="#//api/name/inputs">inputs</a> and <a href="#//api/name/outputs">outputs</a>. Manually adding connections is only necessary when adding an input or output with no connections.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addConnection:" title="addConnection:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addConnection:">&ndash;&nbsp;addConnection:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method addConnection:
+@abstract
+    Adds an <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> to the session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addConnection:(AVCaptureConnection *)<em>connection</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addConnection:
+@abstract
+    Adds an <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> to the session.</p>
+
+<p>@param connection
+    An <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> instance.</p>
+
+<p>@discussion
+    An <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> instance can only be added to a session using -addConnection: if <a href="#//api/name/canAddConnection:">canAddConnection:</a> returns YES. When using <a href="#//api/name/addInput:">addInput:</a> or <a href="#//api/name/addOutput:">addOutput:</a>, connections are formed automatically between all compatible <a href="#//api/name/inputs">inputs</a> and <a href="#//api/name/outputs">outputs</a>. Manually adding connections is only necessary when adding an input or output with no connections. -addConnection: may be called while the session is <a href="#//api/name/running">running</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeConnection:" title="removeConnection:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeConnection:">&ndash;&nbsp;removeConnection:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method removeConnection:
+@abstract
+    Removes an <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> from the session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeConnection:(AVCaptureConnection *)<em>connection</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method removeConnection:
+@abstract
+    Removes an <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> from the session.</p>
+
+<p>@param connection
+    An <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> instance.</p>
+
+<p>@discussion
+    -removeConnection: may be called while the session is <a href="#//api/name/running">running</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beginConfiguration" title="beginConfiguration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beginConfiguration">&ndash;&nbsp;beginConfiguration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method beginConfiguration
+@abstract
+    When paired with <a href="#//api/name/commitConfiguration">commitConfiguration</a>, allows a client to batch multiple configuration operations on a <a href="#//api/name/running">running</a> session into atomic updates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beginConfiguration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method beginConfiguration
+@abstract
+    When paired with commitConfiguration, allows a client to batch multiple configuration operations on a running session into atomic updates.</p>
+
+<p>@discussion
+    -beginConfiguration / -commitConfiguration are AVCaptureSession&rsquo;s mechanism for batching multiple configuration operations on a running session into atomic updates. After calling [session beginConfiguration], clients may add or remove outputs, alter the sessionPreset, or configure individual AVCaptureInput or Output properties. All changes will be pended until the client calls [session commitConfiguration], at which time they will be applied together. -beginConfiguration / <a href="#//api/name/commitConfiguration">commitConfiguration</a> pairs may be nested, and will only be applied when the outermost commit is invoked.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commitConfiguration" title="commitConfiguration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commitConfiguration">&ndash;&nbsp;commitConfiguration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method commitConfiguration
+@abstract
+    When preceded by <a href="#//api/name/beginConfiguration">beginConfiguration</a>, allows a client to batch multiple configuration operations on a <a href="#//api/name/running">running</a> session into atomic updates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commitConfiguration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method commitConfiguration
+@abstract
+    When preceded by beginConfiguration, allows a client to batch multiple configuration operations on a running session into atomic updates.</p>
+
+<p>@discussion
+    -beginConfiguration / -commitConfiguration are AVCaptureSession&rsquo;s mechanism for batching multiple configuration operations on a running session into atomic updates. After calling [session beginConfiguration], clients may add or remove outputs, alter the sessionPreset, or configure individual AVCaptureInput or Output properties. All changes will be pended until the client calls [session commitConfiguration], at which time they will be applied together. <a href="#//api/name/beginConfiguration">beginConfiguration</a> / -commitConfiguration pairs may be nested, and will only be applied when the outermost commit is invoked.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/running" title="running"></a>
+	<h3 class="method-title"><code><a href="#//api/name/running">&nbsp;&nbsp;running</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property running
+@abstract
+    Indicates whether the session is currently running.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isRunning) BOOL running</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property running
+@abstract
+    Indicates whether the session is currently running.</p>
+
+<p>@discussion
+    The value of this property is a BOOL indicating whether the receiver is running. Clients can key value observe the value of this property to be notified when the session automatically starts or stops running.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property interrupted
+@abstract
+    Indicates whether the session is being interrupted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isInterrupted) BOOL interrupted NS_AVAILABLE_IOS ( 4 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property interrupted
+@abstract
+    Indicates whether the session is being interrupted.</p>
+
+<p>@discussion
+    The value of this property is a BOOL indicating whether the receiver is currently being interrupted, such as by a phone call or alarm. Clients can key value observe the value of this property to be notified when the session ceases to be interrupted and again has access to needed hardware resources.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startRunning" title="startRunning"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startRunning">&ndash;&nbsp;startRunning</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method startRunning
+@abstract
+    Starts an AVCaptureSession instance <a href="#//api/name/running">running</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startRunning</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method startRunning
+@abstract
+    Starts an AVCaptureSession instance <a href="#//api/name/running">running</a>.</p>
+
+<p>@discussion
+    Clients invoke -startRunning to start the flow of data from <a href="#//api/name/inputs">inputs</a> to <a href="#//api/name/outputs">outputs</a> connected to the AVCaptureSession instance. This call blocks until the session object has completely started up or failed. A failure to start <a href="#//api/name/running">running</a> is reported through the AVCaptureSessionRuntimeErrorNotification mechanism.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopRunning" title="stopRunning"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopRunning">&ndash;&nbsp;stopRunning</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method stopRunning
+@abstract
+    Stops an AVCaptureSession instance that is currently <a href="#//api/name/running">running</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopRunning</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method stopRunning
+@abstract
+    Stops an AVCaptureSession instance that is currently <a href="#//api/name/running">running</a>.</p>
+
+<p>@discussion
+    Clients invoke -stopRunning to stop the flow of data from <a href="#//api/name/inputs">inputs</a> to <a href="#//api/name/outputs">outputs</a> connected to the AVCaptureSession instance. This call blocks until the session object has completely stopped.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_9" title="_9"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_9">&nbsp;&nbsp;_9</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property masterClock
+@abstract
+    Provides the master clock being used for output synchronization.
+@discussion
+    The masterClock is readonly. Use masterClock to synchronize <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> data with external data sources (e.g motion samples). All capture output sample buffer timestamps are on the masterClock timebase.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) CMClockRef masterClock NS_AVAILABLE ( 10 _9</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property masterClock
+@abstract
+    Provides the master clock being used for output synchronization.
+@discussion
+    The masterClock is readonly. Use masterClock to synchronize AVCaptureOutput data with external data sources (e.g motion samples). All capture output sample buffer timestamps are on the masterClock timebase.</p>
+
+<pre><code>For example, if you want to reverse synchronize the output timestamps to the original timestamps, you can do the following: In captureOutput:didOutputSampleBuffer:fromConnection:
+
+AVCaptureInputPort *port = [[connection inputPorts] objectAtIndex:0];
+CMClockRef originalClock = [port clock];
+
+CMTime syncedPTS = CMSampleBufferGetPresentationTime( sampleBuffer );
+CMTime originalPTS = CMSyncConvertTime( syncedPTS, [session masterClock], originalClock );
+
+This property is key-value observable.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

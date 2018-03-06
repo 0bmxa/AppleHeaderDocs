@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>GKGaussianDistribution Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 GameplayKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/deviation">deviation</option>
+		
+		<option value="//api/name/mean">mean</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithRandomSource:lowestValue:highestValue:">- initWithRandomSource:lowestValue:highestValue:</option>
+		
+		<option value="//api/name/initWithRandomSource:mean:deviation:">- initWithRandomSource:mean:deviation:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">GKGaussianDistribution Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/GKRandomDistribution.html">GKRandomDistribution</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>GKRandomDistribution.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A gaussian distribution is biased towards the <a href="#//api/name/mean">mean</a> value, the possible outcomes are spread out from the <a href="#//api/name/mean">mean</a>
+with decreasing probability. Values within 1 <a href="#//api/name/deviation">deviation</a> of the <a href="#//api/name/mean">mean</a> make up 68.27% of the distribution, values
+within 2 deviations make up 95% and values within 3 deviations make up 99.7%.</p>
+
+<p>Note that a gaussian distribution&rsquo;s unbounded behavior beyond 3 deviations is undesired,
+thus this distribution deviates nominally by modifying the bounds to 3 deviations.
+Thus values within 3 deviations actually make up 100% of the distribution.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/mean" title="mean"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mean">&nbsp;&nbsp;mean</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The mean, or expected, value of the distribution. Values are more probable the closer to the mean they are.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) float mean</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The mean, or expected, value of the distribution. Values are more probable the closer to the mean they are.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRandomDistribution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviation" title="deviation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviation">&nbsp;&nbsp;deviation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The deviation, often called &lsquo;sigma&rsquo;, is the deviation from the <a href="#//api/name/mean">mean</a> that would include roughly 68% of the distribution.
+The range of the distribution is [<a href="#//api/name/mean">mean</a> - 3 * deviation, <a href="#//api/name/mean">mean</a> + 3 * deviation]. Values beyond 3 deviations
+are considered so improbable that they are removed from the output set.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) float deviation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The deviation, often called &lsquo;sigma&rsquo;, is the deviation from the <a href="#//api/name/mean">mean</a> that would include roughly 68% of the distribution.
+The range of the distribution is [<a href="#//api/name/mean">mean</a> - 3 * deviation, <a href="#//api/name/mean">mean</a> + 3 * deviation]. Values beyond 3 deviations
+are considered so improbable that they are removed from the output set.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRandomDistribution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithRandomSource:lowestValue:highestValue:" title="initWithRandomSource:lowestValue:highestValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithRandomSource:lowestValue:highestValue:">&ndash;&nbsp;initWithRandomSource:lowestValue:highestValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a Gaussian random distribution within the range [lowest, highest] using a source to grab input values from.
+This sets the gaussian parameters to:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithRandomSource:(id&lt;GKRandom&gt;)<em>source</em> lowestValue:(NSInteger)<em>lowestInclusive</em> highestValue:(NSInteger)<em>highestInclusive</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a Gaussian random distribution within the range [lowest, highest] using a source to grab input values from.
+This sets the gaussian parameters to:</p>
+
+<p><a href="#//api/name/mean">mean</a> = (highest + lowest) / 2
+<a href="#//api/name/deviation">deviation</a> = (highest - lowest) / 6</p>
+
+<p>The <a href="#//api/name/mean">mean</a> and <a href="#//api/name/deviation">deviation</a> will be floating point numbers even if the distribution is meant to produce integer values.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/mean">@property mean</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/deviation">@property deviation</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRandomDistribution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithRandomSource:mean:deviation:" title="initWithRandomSource:mean:deviation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithRandomSource:mean:deviation:">&ndash;&nbsp;initWithRandomSource:mean:deviation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a Gaussian random distribution within the range [<a href="#//api/name/mean">mean</a> - 3 * <a href="#//api/name/deviation">deviation</a>, <a href="#//api/name/mean">mean</a> + 3 * deviation]
+using a source to grab input values from.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithRandomSource:(id&lt;GKRandom&gt;)<em>source</em> mean:(float)<em>mean</em> deviation:(float)<em>deviation</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a Gaussian random distribution within the range [<a href="#//api/name/mean">mean</a> - 3 * <a href="#//api/name/deviation">deviation</a>, <a href="#//api/name/mean">mean</a> + 3 * deviation]
+using a source to grab input values from.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRandomDistribution.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IOBluetoothSDPDataElement Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IOBluetooth Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/withElementValue:">+ withElementValue:</option>
+		
+		<option value="//api/name/withSDPDataElementRef:">+ withSDPDataElementRef:</option>
+		
+		<option value="//api/name/withType:sizeDescriptor:size:value:">+ withType:sizeDescriptor:size:value:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/containsDataElement:">- containsDataElement:</option>
+		
+		<option value="//api/name/containsValue:">- containsValue:</option>
+		
+		<option value="//api/name/getArrayValue">- getArrayValue</option>
+		
+		<option value="//api/name/getDataValue">- getDataValue</option>
+		
+		<option value="//api/name/getNumberValue">- getNumberValue</option>
+		
+		<option value="//api/name/getSDPDataElementRef">- getSDPDataElementRef</option>
+		
+		<option value="//api/name/getSize">- getSize</option>
+		
+		<option value="//api/name/getSizeDescriptor">- getSizeDescriptor</option>
+		
+		<option value="//api/name/getStringValue">- getStringValue</option>
+		
+		<option value="//api/name/getTypeDescriptor">- getTypeDescriptor</option>
+		
+		<option value="//api/name/getUUIDValue">- getUUIDValue</option>
+		
+		<option value="//api/name/getValue">- getValue</option>
+		
+		<option value="//api/name/initWithElementValue:">- initWithElementValue:</option>
+		
+		<option value="//api/name/initWithType:sizeDescriptor:size:value:">- initWithType:sizeDescriptor:size:value:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IOBluetoothSDPDataElement Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCoding<br />NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>IOBluetoothSDPDataElement.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class IOBluetoothSDPDataElement
+</code></pre><p>The data types described by the spec have been mapped onto the base Foundation classes NSNumber,
+                NSArray, NSData as well as <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a>.  The number and boolean types (type descriptor 1, 2
+                and 5) are represented as NSNumber objects with the exception of 128-bit numbers which are
+                represented as NSData objects in their raw format.  The UUID type (type descriptor 3) is
+                represented by <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a>.  The string and URL types (type descriptor 4 and 8) are
+                represented by NSString.  The sequence types (type descriptor 6 and 7) are represented by NSArray.</p>
+
+<pre><code>            Typically, you will not need to create an IOBluetoothSDPDataElement directly, the system will
+            do that automatically for both client and server operations.  However, the current API for adding 
+            SDP services to the system does allow the use of an NSDictionary based format for creating new 
+            services.  The purpose for that is to allow a service to be built up completely in a text file
+            (a plist for example) and then easily imported into an app and added to the system without a 
+            lot of tedious code to build up the entire SDP service record.
+
+            The basis for that NSDictionary structure comes from the IOBluetoothSDPDataElement.  At its
+            simplest, a data element is made up of three parts: the type descriptor, the size (from which
+            the size descriptor is generated) and the actual value.  To provide a complete representation
+            of a data element, an NSDictionary with three entries can be used.  Each of the three entries
+            has a key/value pair representing one of the three attributes of a data element.  The first
+            key/value pair has a key 'DataElementType' that contains a number value with the actual
+            type descriptor for the data element.  The second pair has a key 'DataElementSize' that
+            contains the actual size of the element in bytes.  The size descriptor will be calculated
+            based on the size and type of the element.  The third pair is the value itself whose key is
+            'DataElementValue' and whose type corresponds to the type mapping above.
+
+            In addition to this complete description of a data element, their are some shortcuts that
+            can be used for some of the common types and sizes.
+
+            If the 'DataElementType' value is one of the numeric types (1, 2), the 'DataElementValue' 
+            can be an NSData instead of an NSNumber.  In that case, the numeric data is taken in network 
+            byte order (MSB first).  Additionally, the 'DataElementSize' parameter may be omitted and the 
+            size will be taken from the length of the data object.
+
+            If the 'DataElementType' value is the nil type (0), no 'DataElementSize' or 'DataElementValue'
+            entries are needed.
+
+            If the 'DataElementType' value is any of the other types, the 'DataElementSize' entry is not
+            needed since the size will be taken directly from the value (data, array, string).
+
+            In the case where the element is an unsigned, 32-bit integer (type descriptor 1, size descriptor
+            4), the value itself may simply be a number (instead of a dictionary as in the previous examples).
+
+            In the case where the element is a UUID (type descriptor 3), the value itself may be a data object.  
+            The UUID type will be inferred and the size taken from the length of the data object.
+
+            In the case where the element is a text string (type descriptor 4), the value may be a string object.
+            The text string type will be inferred and the size taken from the length of the string.
+
+            In the case where the element is a data element sequence, the value may be an array object.  The
+            type will be inferred and the size taken from the length of the array.  Additionally, the array
+            must contain sub-elements that will be parsed out individually.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/withElementValue:" title="withElementValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withElementValue:">+&nbsp;withElementValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new IOBluetoothSDPDataElement with the given value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withElementValue:(NSObject *)<em>element</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>element</code></th>
+						<td><p>The data element value of one of the specified types.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the newly allocated data element object.  Returns nil if there was an error parsing the element
+            value.  The returned IOBluetoothSDPDataElement object has been autoreleased, so it is not necessary
+            for the caller to release it.  If the object is to be referenced and kept around, retain should be
+            called.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method withElementValue:
+</code></pre><p>The value must follow the format listed above and must be an instance of NSData, NSString, NSNumber,
+                NSArray, NSDictionary, <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withType:sizeDescriptor:size:value:" title="withType:sizeDescriptor:size:value:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withType:sizeDescriptor:size:value:">+&nbsp;withType:sizeDescriptor:size:value:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new IOBluetoothSDPDataElement with the given attributes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withType:(BluetoothSDPDataElementTypeDescriptor)<em>type</em> sizeDescriptor:(BluetoothSDPDataElementSizeDescriptor)<em>newSizeDescriptor</em> size:(uint32_t)<em>newSize</em> value:(NSObject *)<em>newValue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>size</code></th>
+						<td><p>The size of the data element in bytes (make sure it is a valid size for the given size descriptor).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The raw value itself.  This must be the base NSString, NSNumber, NSArray or NSData objects.  It
+                    may not be NSDictionary.  If a dictionary format is present, use <a href="#//api/name/withElementValue:">withElementValue:</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>typeDescriptor</code></th>
+						<td><p>The type descriptor for the data element.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sizeDescriptor</code></th>
+						<td><p>The size descriptor for the data element (verify it matches the size parameter).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the newly allocated data element object.  Returns nil if an error is encountered (not likely
+                    due to the limited error checking currently done).  The returned IOBluetoothSDPDataElement
+                    object has been autoreleased, so it is not necessary for the caller to release it.  If the
+                    object is to be referenced and kept around, retain should be called.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method withType:sizeDescriptor:size:value:
+</code></pre><p>Warning - be careful using this method.  There is next to no error checking done on the
+                attributes.  It is entirely possible to construct an invalid data element.  It is recommended
+                that <a href="#//api/name/withElementValue:">withElementValue:</a> be used instead of this one.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withSDPDataElementRef:" title="withSDPDataElementRef:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withSDPDataElementRef:">+&nbsp;withSDPDataElementRef:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method call to convert an IOBluetoothSDPDataElementRef into an IOBluetoothSDPDataElement *.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withSDPDataElementRef:(IOBluetoothSDPDataElementRef)<em>sdpDataElementRef</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sdpDataElementRef</code></th>
+						<td><p>IOBluetoothSDPDataElementRef for which an IOBluetoothSDPDataElement * is desired.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the IOBluetoothSDPDataElement * for the given IOBluetoothSDPDataElementRef.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method withSDPDataElementRef:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithElementValue:" title="initWithElementValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithElementValue:">&ndash;&nbsp;initWithElementValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a new IOBluetoothSDPDataElement with the given value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithElementValue:(NSObject *)<em>element</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>element</code></th>
+						<td><p>The data element value of one of the specified types.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns self if successful.  Returns nil if there was an error parsing the element value.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithElementValue:
+</code></pre><p>The value must follow the format listed above and must be an instance of NSData, NSString, NSNumber,
+                NSArray, NSDictionary, <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithType:sizeDescriptor:size:value:" title="initWithType:sizeDescriptor:size:value:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithType:sizeDescriptor:size:value:">&ndash;&nbsp;initWithType:sizeDescriptor:size:value:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a new IOBluetoothSDPDataElement with the given attributes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithType:(BluetoothSDPDataElementTypeDescriptor)<em>newType</em> sizeDescriptor:(BluetoothSDPDataElementSizeDescriptor)<em>newSizeDescriptor</em> size:(uint32_t)<em>newSize</em> value:(NSObject *)<em>newValue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>size</code></th>
+						<td><p>The size of the data element in bytes (make sure it is a valid size for the given size descriptor).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The raw value itself.  This must be the base NSString, NSNumber, NSArray or NSData objects.  It
+                    may not be NSDictionary.  If a dictionary format is present, use <a href="#//api/name/withElementValue:">withElementValue:</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>typeDescriptor</code></th>
+						<td><p>The type descriptor for the data element.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sizeDescriptor</code></th>
+						<td><p>The size descriptor for the data element (verify it matches the size parameter).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns self if successful.  Returns nil if an error is encountered (not likely
+                    due to the limited error checking currently done).</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method initWithType:sizeDescriptor:size:value:
+</code></pre><p>Warning - be careful using this method.  There is next to no error checking done on the
+                attributes.  It is entirely possible to construct an invalid data element.  It is recommended
+                that <a href="#//api/name/withElementValue:">withElementValue:</a> be used instead of this one.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getSDPDataElementRef" title="getSDPDataElementRef"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getSDPDataElementRef">&ndash;&nbsp;getSDPDataElementRef</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an IOBluetoothSDPDataElementRef representation of the target IOBluetoothSDPDataElement object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothSDPDataElementRef)getSDPDataElementRef</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an IOBluetoothSDPDataElementRef representation of the target IOBluetoothSDPDataElement object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getSDPDataElementRef
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getTypeDescriptor" title="getTypeDescriptor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getTypeDescriptor">&ndash;&nbsp;getTypeDescriptor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the SDP spec defined data element type descriptor for the target data element.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BluetoothSDPDataElementTypeDescriptor)getTypeDescriptor</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the type descriptor for the target data element.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getTypeDescriptor
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getSizeDescriptor" title="getSizeDescriptor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getSizeDescriptor">&ndash;&nbsp;getSizeDescriptor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the SDP spec defined data element size descriptor for the target data element.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BluetoothSDPDataElementSizeDescriptor)getSizeDescriptor</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the size descriptor for the target data element.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getSizeDescriptor
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getSize" title="getSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getSize">&ndash;&nbsp;getSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the size in bytes of the target data element.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (uint32_t)getSize</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the size in bytes of the target data element.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getSize
+</code></pre><p>The size is valid whether the data element has a fixed or variable size descriptor.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getNumberValue" title="getNumberValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getNumberValue">&ndash;&nbsp;getNumberValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the data element is represented by a number, it returns the value as an NSNumber.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSNumber *)getNumberValue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an NSNumber representation of the data element if it is a numeric type.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getNumberValue
+</code></pre><p>The data types represented by a number are 1 (unsigned int), 2 (signed int) and 5 (boolean)
+                except for 128-bit versions of 1 and 2.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getDataValue" title="getDataValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDataValue">&ndash;&nbsp;getDataValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the data element is represented by a data object, it returns the value as an NSData.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSData *)getDataValue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an NSData representation of the data element if it is a 128-bit number.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getDataValue
+</code></pre><p>The data types represented by a data object are 128-bit versions of 1 (unsigned int) and
+                2 (signed int).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getStringValue" title="getStringValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getStringValue">&ndash;&nbsp;getStringValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the data element is represented by a string object, it returns the value as an NSString.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)getStringValue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an NSString representation of the data element if it is a text or URL type.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getStringValue
+</code></pre><p>The data types represented by a string object are 4 (text string) and 8 (URL).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getArrayValue" title="getArrayValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getArrayValue">&ndash;&nbsp;getArrayValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the data element is represented by an array object, it returns the value as an NSArray.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)getArrayValue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an NSArray representation of the data element if it is a sequence type.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getArrayValue
+</code></pre><p>The data types represented by an array object are 6 (data element sequence) and 7 (data
+                element alternative).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getUUIDValue" title="getUUIDValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getUUIDValue">&ndash;&nbsp;getUUIDValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the data element is a UUID (type 3), it returns the value as an <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothSDPUUID *)getUUIDValue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a> representation of the data element if it is a UUID.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getUUIDValue
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getValue" title="getValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getValue">&ndash;&nbsp;getValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the object value of the data element.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSObject *)getValue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the object value of the target data element.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getValue
+</code></pre><p>The value returned may be an NSNumber, NSString, NSData, NSArray or IOBluetoothSDPDataElement
+                depending on the type of the data element.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/containsDataElement:" title="containsDataElement:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/containsDataElement:">&ndash;&nbsp;containsDataElement:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks to see if the target data element is the same as the dataElement parameter or if it contains
+                the dataElement parameter (if its a sequence type).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)containsDataElement:(IOBluetoothSDPDataElement *)<em>dataElement</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataElement</code></th>
+						<td><p>The data element to compare with (and search for).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns TRUE if the target either matches the given data element or if it contains the given data element.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method containsDataElement:
+</code></pre><p>If the target data element is not a sequence type, this method simply compares the two data elements.  If
+                it is a sequence type, it will search through the sequence (and sub-sequences) for the dataElement
+                parameter.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/containsValue:" title="containsValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/containsValue:">&ndash;&nbsp;containsValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks to see if the target data element&rsquo;s value is the same as the value parameter or if it contains
+                the value parameter.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)containsValue:(NSObject *)<em>cmpValue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cmpValue</code></th>
+						<td><p>The value to compare with (and search for).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns TRUE if the target&rsquo;s value either matches the given value or if it contains the given value.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method containsValue:
+</code></pre><p>This method works just like <a href="#//api/name/containsDataElement:">containsDataElement:</a> except that it is comparing the value objects directly.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPDataElement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

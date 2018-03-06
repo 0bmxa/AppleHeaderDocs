@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MDLSubmeshTopology Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 ModelIO Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/edgeCreaseCount">edgeCreaseCount</option>
+		
+		<option value="//api/name/edgeCreaseIndices">edgeCreaseIndices</option>
+		
+		<option value="//api/name/edgeCreases">edgeCreases</option>
+		
+		<option value="//api/name/faceCount">faceCount</option>
+		
+		<option value="//api/name/faceTopology">faceTopology</option>
+		
+		<option value="//api/name/holeCount">holeCount</option>
+		
+		<option value="//api/name/holes">holes</option>
+		
+		<option value="//api/name/vertexCreaseCount">vertexCreaseCount</option>
+		
+		<option value="//api/name/vertexCreaseIndices">vertexCreaseIndices</option>
+		
+		<option value="//api/name/vertexCreases">vertexCreases</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithSubmesh:">- initWithSubmesh:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MDLSubmeshTopology Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MDLSubmesh.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@header <a href="../Classes/MDLSubmesh.html">MDLSubmesh</a>.h
+@framework ModelIO</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithSubmesh:" title="initWithSubmesh:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSubmesh:">&ndash;&nbsp;initWithSubmesh:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>create a topology object corresponding to the topology in the submesh</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithSubmesh:(MDLSubmesh *)<em>submesh</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithSubmesh:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLSubmesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/faceTopology" title="faceTopology"></a>
+	<h3 class="method-title"><code><a href="#//api/name/faceTopology">&nbsp;&nbsp;faceTopology</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A buffer of 8 bit unsigned integer values, where each entry corresponds
+to the number of vertices making up a face.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) id&lt;MDLMeshBuffer&gt; faceTopology</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property faceTopologyBuffer</p><p>A submesh containing two triangles, a four sided polygon, and a
+line, would contain the data 3 3 4 2.
+If geometryType is of a fixed type, such as triangles, the buffer
+is optional, and will be created on demand if read.</p>
+
+<p>Indices to the vertex buffer will be stored in the index buffer
+correspondingly. In the example above, the indices would be stored
+in order, three indices for the first triangle, followed by three
+for the second, followed by four for the polygon, and finally two
+indices for the line.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLSubmesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/faceCount" title="faceCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/faceCount">&nbsp;&nbsp;faceCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of faces encoded in faceTopologyBuffer</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSUInteger faceCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property faceCount</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLSubmesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vertexCreaseIndices" title="vertexCreaseIndices"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vertexCreaseIndices">&nbsp;&nbsp;vertexCreaseIndices</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A crease value at a vertex to be applied during subdivision. Vertex creases
+A zero value is smooth, a one value is peaked. It is intended to be used
+with an index buffer, where the index buffer entries are vertex indices.
+The corresponding values in the corner sharpness attribute indicate the
+corner sharpness of those vertices. The index buffer is sparse. If a mesh
+has three sharp vertices, then the index buffer will have three entries.
+Since the number of entries in this vertex buffer is likely to be different
+than the number of entries in any other vertex buffer, it shouldn&rsquo;t be
+interleaved with other data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) id&lt;MDLMeshBuffer&gt; vertexCreaseIndices</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A crease value at a vertex to be applied during subdivision. Vertex creases
+A zero value is smooth, a one value is peaked. It is intended to be used
+with an index buffer, where the index buffer entries are vertex indices.
+The corresponding values in the corner sharpness attribute indicate the
+corner sharpness of those vertices. The index buffer is sparse. If a mesh
+has three sharp vertices, then the index buffer will have three entries.
+Since the number of entries in this vertex buffer is likely to be different
+than the number of entries in any other vertex buffer, it shouldn&rsquo;t be
+interleaved with other data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLSubmesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vertexCreases" title="vertexCreases"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vertexCreases">&nbsp;&nbsp;vertexCreases</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) id&lt;MDLMeshBuffer&gt; vertexCreases</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vertexCreaseCount" title="vertexCreaseCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vertexCreaseCount">&nbsp;&nbsp;vertexCreaseCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of vertex creases encoded in <a href="#//api/name/vertexCreases">vertexCreases</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSUInteger vertexCreaseCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property vertexCreaseCount</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLSubmesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/edgeCreaseIndices" title="edgeCreaseIndices"></a>
+	<h3 class="method-title"><code><a href="#//api/name/edgeCreaseIndices">&nbsp;&nbsp;edgeCreaseIndices</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A crease value at an edge to be applied during subdivision. Edge creases
+A zero value is smooth, a one value is peaked. It is intended to be used
+with an index buffer, where the index buffer entries are edge index pairs.
+Accordingly, there will be two index entries for each edge sharpness entry,
+and the sharpness entry corresponds to the edge itself.
+The corresponding values in the edge sharpness attribute indicate the
+edge sharpness of those edges.  The index buffer is sparse. If a mesh
+has three sharp edges, then the index buffer will have six entries.
+Since the number of entries in this vertex buffer is likely to be different
+than the number of entries in any other vertex buffer, it shouldn&rsquo;t be
+interleaved with other data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) id&lt;MDLMeshBuffer&gt; edgeCreaseIndices</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A crease value at an edge to be applied during subdivision. Edge creases
+A zero value is smooth, a one value is peaked. It is intended to be used
+with an index buffer, where the index buffer entries are edge index pairs.
+Accordingly, there will be two index entries for each edge sharpness entry,
+and the sharpness entry corresponds to the edge itself.
+The corresponding values in the edge sharpness attribute indicate the
+edge sharpness of those edges.  The index buffer is sparse. If a mesh
+has three sharp edges, then the index buffer will have six entries.
+Since the number of entries in this vertex buffer is likely to be different
+than the number of entries in any other vertex buffer, it shouldn&rsquo;t be
+interleaved with other data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLSubmesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/edgeCreases" title="edgeCreases"></a>
+	<h3 class="method-title"><code><a href="#//api/name/edgeCreases">&nbsp;&nbsp;edgeCreases</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) id&lt;MDLMeshBuffer&gt; edgeCreases</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/edgeCreaseCount" title="edgeCreaseCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/edgeCreaseCount">&nbsp;&nbsp;edgeCreaseCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of edge creases encoded in <a href="#//api/name/edgeCreases">edgeCreases</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSUInteger edgeCreaseCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property edgeCreaseCount</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLSubmesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/holes" title="holes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/holes">&nbsp;&nbsp;holes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The hole attribute is a vertex attribute of single integer values where
+each integer is an index of a face that is to be used as a hole. If there
+are two holes in a mesh, then the vertex buffer will have two entries.
+Since the number of entries in this vertex buffer is likely to be different
+than the number of entries in any other vertex buffer, it shouldn&rsquo;t be
+interleaved with other data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) id&lt;MDLMeshBuffer&gt; holes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The hole attribute is a vertex attribute of single integer values where
+each integer is an index of a face that is to be used as a hole. If there
+are two holes in a mesh, then the vertex buffer will have two entries.
+Since the number of entries in this vertex buffer is likely to be different
+than the number of entries in any other vertex buffer, it shouldn&rsquo;t be
+interleaved with other data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLSubmesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/holeCount" title="holeCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/holeCount">&nbsp;&nbsp;holeCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of <a href="#//api/name/holes">holes</a> encoded in <a href="#//api/name/holes">holes</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSUInteger holeCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property holeCount</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLSubmesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

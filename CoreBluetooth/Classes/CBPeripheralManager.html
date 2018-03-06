@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CBPeripheralManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreBluetooth Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/isAdvertising">isAdvertising</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/authorizationStatus">+ authorizationStatus</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addService:">- addService:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithDelegate:queue:">- initWithDelegate:queue:</option>
+		
+		<option value="//api/name/initWithDelegate:queue:options:">- initWithDelegate:queue:options:</option>
+		
+		<option value="//api/name/publishL2CAPChannelWithEncryption:">- publishL2CAPChannelWithEncryption:</option>
+		
+		<option value="//api/name/removeAllServices">- removeAllServices</option>
+		
+		<option value="//api/name/removeService:">- removeService:</option>
+		
+		<option value="//api/name/respondToRequest:withResult:">- respondToRequest:withResult:</option>
+		
+		<option value="//api/name/setDesiredConnectionLatency:forCentral:">- setDesiredConnectionLatency:forCentral:</option>
+		
+		<option value="//api/name/startAdvertising:">- startAdvertising:</option>
+		
+		<option value="//api/name/stopAdvertising">- stopAdvertising</option>
+		
+		<option value="//api/name/unpublishL2CAPChannel:">- unpublishL2CAPChannel:</option>
+		
+		<option value="//api/name/updateValue:forCharacteristic:onSubscribedCentrals:">- updateValue:forCharacteristic:onSubscribedCentrals:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CBPeripheralManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/CBManager.html">CBManager</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CBPeripheralManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class CBPeripheralManager</p><p>The <code>CBPeripheralManager</code> class is an abstraction of the Peripheral and Broadcaster GAP roles, and the GATT Server
+role. Its primary function is to allow you to manage published services within the GATT database, and to advertise these services
+to other devices.
+Each application has sandboxed access to the shared GATT database. You can add services to the database by calling {@link addService:};
+they can be removed via {@link removeService:} and {@link removeAllServices}, as appropriate. While a service is in the database,
+it is visible to and can be accessed by any connected GATT Client. However, applications that have not specified the &ldquo;bluetooth-peripheral&rdquo;
+background mode will have the contents of their service(s) &ldquo;disabled&rdquo; when in the background. Any remote device trying to access
+characteristic values or descriptors during this time will receive an error response.
+Once you&rsquo;ve published services that you want to share, you can ask to advertise their availability and allow other devices to connect
+to you by calling {@link startAdvertising:}. Like the GATT database, advertisement is managed at the system level and shared by all
+applications. This means that even if you aren&rsquo;t advertising at the moment, someone else might be!</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property delegate</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak, nullable) id&lt;CBPeripheralManagerDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property delegate</p><p>The delegate object that will receive peripheral events.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isAdvertising" title="isAdvertising"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAdvertising">&nbsp;&nbsp;isAdvertising</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property isAdvertising</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) BOOL isAdvertising</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property isAdvertising</p><p>Whether or not the peripheral is currently advertising data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/authorizationStatus" title="authorizationStatus"></a>
+	<h3 class="method-title"><code><a href="#//api/name/authorizationStatus">+&nbsp;authorizationStatus</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method authorizationStatus</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (CBPeripheralManagerAuthorizationStatus)authorizationStatus</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The current authorization status for sharing data while backgrounded. For the constants returned, see {@link CBPeripheralManagerAuthorizationStatus}.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method authorizationStatus</p><p>This method does not prompt the user for access. You can use it to detect restricted access and simply hide UI instead of
+                prompting for access.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Constants/CBPeripheralManagerAuthorizationStatus.html">CBPeripheralManagerAuthorizationStatus</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDelegate:queue:" title="initWithDelegate:queue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDelegate:queue:">&ndash;&nbsp;initWithDelegate:queue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithDelegate:queue:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDelegate:(nullable id&lt;CBPeripheralManagerDelegate&gt;)<em>delegate</em> queue:(nullable dispatch_queue_t)<em>queue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The <a href="#//api/name/delegate">delegate</a> that will receive peripheral role events.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>queue</code></th>
+						<td><p>The dispatch queue on which the events will be dispatched.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithDelegate:queue:</p><p>The initialization call. The events of the peripheral role will be dispatched on the provided queue.
+If <i>nil</i>, the main queue will be used.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDelegate:queue:options:" title="initWithDelegate:queue:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDelegate:queue:options:">&ndash;&nbsp;initWithDelegate:queue:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithDelegate:queue:options:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDelegate:(nullable id&lt;CBPeripheralManagerDelegate&gt;)<em>delegate</em> queue:(nullable dispatch_queue_t)<em>queue</em> options:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The <a href="#//api/name/delegate">delegate</a> that will receive peripheral role events.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>queue</code></th>
+						<td><p>The dispatch queue on which the events will be dispatched.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>An optional dictionary specifying options for the manager.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithDelegate:queue:options:</p><p>The initialization call. The events of the peripheral role will be dispatched on the provided queue.
+If <i>nil</i>, the main queue will be used.</p>
+
+<pre><code>@seealso        CBPeripheralManagerOptionShowPowerAlertKey
+@seealso        CBPeripheralManagerOptionRestoreIdentifierKey
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startAdvertising:" title="startAdvertising:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startAdvertising:">&ndash;&nbsp;startAdvertising:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method startAdvertising:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startAdvertising:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>advertisementData</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>advertisementData</code></th>
+						<td><p>An optional dictionary containing the data to be advertised.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method startAdvertising:</p><p>Starts advertising. Supported advertising data types are <code>CBAdvertisementDataLocalNameKey</code>
+and <code>CBAdvertisementDataServiceUUIDsKey</code>.
+When in the foreground, an application can utilize up to 28 bytes of space in the initial advertisement data for
+any combination of the supported advertising data types. If this space is used up, there are an additional 10 bytes of
+space in the scan response that can be used only for the local name. Note that these sizes do not include the 2 bytes
+of header information that are required for each new data type. Any service UUIDs that do not fit in the allotted space
+will be added to a special &ldquo;overflow&rdquo; area, and can only be discovered by an iOS device that is explicitly scanning
+for them.
+While an application is in the background, the local name will not be used and all service UUIDs will be placed in the
+&ldquo;overflow&rdquo; area. However, applications that have not specified the &ldquo;bluetooth-peripheral&rdquo; background mode will not be able
+to advertise anything while in the background.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopAdvertising" title="stopAdvertising"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopAdvertising">&ndash;&nbsp;stopAdvertising</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method stopAdvertising</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopAdvertising</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method stopAdvertising</p><p>Stops advertising.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDesiredConnectionLatency:forCentral:" title="setDesiredConnectionLatency:forCentral:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDesiredConnectionLatency:forCentral:">&ndash;&nbsp;setDesiredConnectionLatency:forCentral:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method setDesiredConnectionLatency:forCentral:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setDesiredConnectionLatency:(CBPeripheralManagerConnectionLatency)<em>latency</em> forCentral:(CBCentral *)<em>central</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>latency</code></th>
+						<td><p>The desired connection latency.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>central</code></th>
+						<td><p>A connected central.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setDesiredConnectionLatency:forCentral:</p><p>Sets the desired connection latency for an existing connection to <i>central</i>. Connection latency changes are not guaranteed, so the
+resultant latency may vary. If a desired latency is not set, the latency chosen by <i>central</i> at the time of connection establishment
+will be used. Typically, it is not necessary to change the latency.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Constants/CBPeripheralManagerConnectionLatency.html">CBPeripheralManagerConnectionLatency</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addService:" title="addService:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addService:">&ndash;&nbsp;addService:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method addService:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addService:(CBMutableService *)<em>service</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>service</code></th>
+						<td><p>A GATT service.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addService:</p><p>Publishes a service and its associated characteristic(s) to the local database. If the service contains included services,
+they must be published first.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeService:" title="removeService:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeService:">&ndash;&nbsp;removeService:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method removeService:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeService:(CBMutableService *)<em>service</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>service</code></th>
+						<td><p>A GATT service.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method removeService:</p><p>Removes a published service from the local database. If the service is included by other service(s), they must be removed
+first.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAllServices" title="removeAllServices"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAllServices">&ndash;&nbsp;removeAllServices</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method removeAllServices</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAllServices</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method removeAllServices</p><p>Removes all published services from the local database.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/respondToRequest:withResult:" title="respondToRequest:withResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/respondToRequest:withResult:">&ndash;&nbsp;respondToRequest:withResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method respondToRequest:withResult:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)respondToRequest:(CBATTRequest *)<em>request</em> withResult:(CBATTError)<em>result</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>The original request that was received from the central.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>The result of attempting to fulfill <i>request</i>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method respondToRequest:withResult:</p><p>Used to respond to request(s) received via the @link peripheralManager:didReceiveReadRequest: @/link or
+@link peripheralManager:didReceiveWriteRequests: @/link <a href="#//api/name/delegate">delegate</a> methods.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateValue:forCharacteristic:onSubscribedCentrals:" title="updateValue:forCharacteristic:onSubscribedCentrals:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateValue:forCharacteristic:onSubscribedCentrals:">&ndash;&nbsp;updateValue:forCharacteristic:onSubscribedCentrals:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method updateValue:forCharacteristic:onSubscribedCentrals:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)updateValue:(NSData *)<em>value</em> forCharacteristic:(CBMutableCharacteristic *)<em>characteristic</em> onSubscribedCentrals:(nullable NSArray&lt;CBCentral*&gt; *)<em>centrals</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The value to be sent via a notification/indication.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>characteristic</code></th>
+						<td><p>The characteristic whose value has changed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>centrals</code></th>
+						<td><p>A list of <code>CBCentral</code> objects to receive the update. Note that centrals which have not subscribed to
+<i>characteristic</i> will be ignored. If <i>nil</i>, all centrals that are subscribed to <i>characteristic</i> will be updated.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><i>YES</i> if the update could be sent, or <i>NO</i> if the underlying transmit queue is full. If <i>NO</i> was returned,
+the <a href="#//api/name/delegate">delegate</a> method @link peripheralManagerIsReadyToUpdateSubscribers: @/link will be called once space has become
+available, and the update should be re-sent if so desired.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method updateValue:forCharacteristic:onSubscribedCentrals:</p><p>Sends an updated characteristic value to one or more centrals, via a notification or indication. If <i>value</i> exceeds
+                            {@link maximumUpdateValueLength}, it will be truncated to fit.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/publishL2CAPChannelWithEncryption:" title="publishL2CAPChannelWithEncryption:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/publishL2CAPChannelWithEncryption:">&ndash;&nbsp;publishL2CAPChannelWithEncryption:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method publishL2CAPChannelWithEncryption:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)publishL2CAPChannelWithEncryption:(BOOL)<em>encryptionRequired</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>encryptionRequired</code></th>
+						<td><p>YES if the service requires the link to be encrypted before a stream can be established.  NO if the service can be used over
+                                    an unsecured link.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method publishL2CAPChannelWithEncryption:</p><p>Create a listener for incoming L2CAP Channel connections.  The system will determine an unused PSM at the time of publishing, which will be returned
+                    with @link peripheralManager:didPublishL2CAPChannel:error: @/link.  L2CAP Channels are not discoverable by themselves, so it is the application&rsquo;s
+                    responsibility to handle PSM discovery on the client.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unpublishL2CAPChannel:" title="unpublishL2CAPChannel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unpublishL2CAPChannel:">&ndash;&nbsp;unpublishL2CAPChannel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method unpublishL2CAPChannel:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unpublishL2CAPChannel:(CBL2CAPPSM)<em>PSM</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>PSM</code></th>
+						<td><p>The service PSM to be removed from the system.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method unpublishL2CAPChannel:</p><p>Removes a published service from the local system.  No new connections for this PSM will be accepted, and any existing L2CAP channels
+                    using this PSM will be closed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

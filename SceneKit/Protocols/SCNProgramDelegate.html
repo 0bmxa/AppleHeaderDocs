@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SCNProgramDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SceneKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/program:bindValueForSymbol:atLocation:programID:renderer:">- program:bindValueForSymbol:atLocation:programID:renderer:</option>
+		
+		<option value="//api/name/program:handleError:">- program:handleError:</option>
+		
+		<option value="//api/name/program:unbindValueForSymbol:atLocation:programID:renderer:">- program:unbindValueForSymbol:atLocation:programID:renderer:</option>
+		
+		<option value="//api/name/programIsOpaque:">- programIsOpaque:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SCNProgramDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SCNShadable.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol SCNProgramDelegate</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/program:bindValueForSymbol:atLocation:programID:renderer:" title="program:bindValueForSymbol:atLocation:programID:renderer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/program:bindValueForSymbol:atLocation:programID:renderer:">&ndash;&nbsp;program:bindValueForSymbol:atLocation:programID:renderer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked on the delegate to let it bind program values and/or also bind associated graphics resources (such as textures).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)program:(SCNProgram *)<em>program</em> bindValueForSymbol:(NSString *)<em>symbol</em> atLocation:(unsigned int)<em>location</em> programID:(unsigned int)<em>programID</em> renderer:(SCNRenderer *)<em>renderer</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>program</code></th>
+						<td><p>The program to bind values for.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>symbol</code></th>
+						<td><p>The name of the symbol to bind a value for.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>location</code></th>
+						<td><p>The location of the symbol within the program object to be modified.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>programID</code></th>
+						<td><p>The program object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>renderer</code></th>
+						<td><p>The renderer that is currently rendering the scene.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method program:withID:bindValueForSymbol:atLocation:renderer:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNShadable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/program:unbindValueForSymbol:atLocation:programID:renderer:" title="program:unbindValueForSymbol:atLocation:programID:renderer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/program:unbindValueForSymbol:atLocation:programID:renderer:">&ndash;&nbsp;program:unbindValueForSymbol:atLocation:programID:renderer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked on the delegate to let it unbind program values and/or also unbind associated graphic resources (such as textures).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)program:(SCNProgram *)<em>program</em> unbindValueForSymbol:(NSString *)<em>symbol</em> atLocation:(unsigned int)<em>location</em> programID:(unsigned int)<em>programID</em> renderer:(SCNRenderer *)<em>renderer</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>program</code></th>
+						<td><p>The program to unbind values for.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>symbol</code></th>
+						<td><p>The name of the symbol to unbind a value for.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>location</code></th>
+						<td><p>The location of the symbol within the program object to be modified.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>programID</code></th>
+						<td><p>The program object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>renderer</code></th>
+						<td><p>The renderer that is currently rendering the scene.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method program:withID:bindValueForSymbol:atLocation:renderer:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNShadable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/program:handleError:" title="program:handleError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/program:handleError:">&ndash;&nbsp;program:handleError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked on the delegate whenever a compilation error occurs.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)program:(SCNProgram *)<em>program</em> handleError:(NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>program</code></th>
+						<td><p>The program that generated a compilation error.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The compilation error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method handleError</p><p>Error domain is SCNErrorDomain.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNShadable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/programIsOpaque:" title="programIsOpaque:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/programIsOpaque:">&ndash;&nbsp;programIsOpaque:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The delegate should implement this mehod and return NO if the fragments generated by the program are not opaque.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)programIsOpaque:(SCNProgram *)<em>program</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>program</code></th>
+						<td><p>The queried program.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method programIsOpaque</p><p>This is deprecated. Use SCNProgram&rsquo;s opaque property instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNShadable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

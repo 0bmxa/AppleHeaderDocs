@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>InstallerSection Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 InstallerPlugins Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/activePane">activePane</option>
+		
+		<option value="//api/name/bundle">bundle</option>
+		
+		<option value="//api/name/firstPane">firstPane</option>
+		
+		<option value="//api/name/installerState">installerState</option>
+		
+		<option value="//api/name/shouldLoad">shouldLoad</option>
+		
+		<option value="//api/name/title">title</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/didLoadMainNib">- didLoadMainNib</option>
+		
+		<option value="//api/name/gotoPane:">- gotoPane:</option>
+		
+		<option value="//api/name/sharedDictionary">- sharedDictionary</option>
+		
+		<option value="//api/name/willLoadMainNib">- willLoadMainNib</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">InstallerSection Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>InstallerSection.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      InstallerSection
+</code></pre><p>The InstallerSection class declares an interface for a section within the Installer&rsquo;s UI.</p>
+
+<pre><code>            The InstallerSection is the main controller of this section and contains all the panes which
+            are actually displayed in the Installer's UI.  The InstallerSection itself does not display
+            anything, but rather provides the InstallerPanes which do.
+
+            Each InstallerSection (or subclass) must be within its own bundle.  The NSPrincipalClass for
+            this bundle must be specified as an InstallerSection or a subclass.
+
+            Typically an InstallerSection is not subclassed because most of the functionality can be
+            provided through the Info.plist and the default nib.
+
+            The default nib for a section is specified by the NSMainNibFile key in the Info.plist
+            for the section's bundle.
+
+            The title for the section is specified by the InstallerSectionTitle key.             
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/bundle" title="bundle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bundle">&nbsp;&nbsp;bundle</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     bundle
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly, strong) NSBundle *bundle</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     bundle
+</code></pre><p>This method returns the NSBundle in which the InstallerSection is located.  Since InstallerSection is not
+                typically overriden, the bundle returned may not necessarily be the same bundle as the InstallerSection
+                class.</p>
+
+<pre><code>            Use this method to gain access to bundle resources.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerSection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/title" title="title"></a>
+	<h3 class="method-title"><code><a href="#//api/name/title">&nbsp;&nbsp;title</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     title
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly, strong) NSString *title</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     title
+</code></pre><p>Returns the title for the section defined in the Info.plist file for the section&rsquo;s <a href="#//api/name/bundle">bundle</a>.  The title
+                retrieved using the &ldquo;InstallerSectionTitle&rdquo; key in the Info.plist for the section&rsquo;s <a href="#//api/name/bundle">bundle</a> and that key must
+                be present in the InfoPlist.strings file for title to be localized.</p>
+
+<pre><code>            Although subclasses can override this method and return a dynamic title at runtime, the title is only
+            retrieved for display once (immediatly following the shouldLoad method, if shouldLoad returns YES).
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerSection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/firstPane" title="firstPane"></a>
+	<h3 class="method-title"><code><a href="#//api/name/firstPane">&nbsp;&nbsp;firstPane</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     firstPane
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly, strong) InstallerPane *firstPane</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     firstPane
+</code></pre><p>Returns the first pane specified by the firstPane outlet.  This pane is the first
+                pane entered when the section first becomes active.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerSection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldLoad" title="shouldLoad"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldLoad">&nbsp;&nbsp;shouldLoad</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     shouldLoad
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly) BOOL shouldLoad</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     shouldLoad
+</code></pre><p>Called when a section is first about to be fully loaded.  By default this method
+                returns YES.  A Subclass can override this method and determine at runtime if the
+                section makes sense.  Return NO and the section will not be further loaded.  sections are
+                never fully unloaded.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerSection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willLoadMainNib" title="willLoadMainNib"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willLoadMainNib">&ndash;&nbsp;willLoadMainNib</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method willLoadMainNib
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)willLoadMainNib</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method willLoadMainNib
+</code></pre><p>Each InstallerSection object can define a default nib to be loaded by the Installer at the optimal
+                time.  Before this default nib is loaded willLoadMainNib will be called.  <a href="#//api/name/didLoadMainNib">didLoadMainNib</a> is
+                called when the nib is successfully loaded.  The nib may be loaded way before the content
+                is display on the screen, so awakeFromNib methods should not assume the content is displayed
+                to the user.  WillEnter/DidEnter method should be used to determine when views are actually &ldquo;in view.&rdquo;</p>
+
+<pre><code>            A default nib is specified for a section in the Info.plist for the section using the NSMainNibFile key.
+
+            A subclass can override this method to do any necessary work before the main nib is loaded or
+            to actually load a custom nib if no default nib is specified.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerSection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didLoadMainNib" title="didLoadMainNib"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didLoadMainNib">&ndash;&nbsp;didLoadMainNib</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     didLoadMainNib
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didLoadMainNib</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     didLoadMainNib
+</code></pre><p>Called immediatly after the default nib for the section is loaded.
+                If no default nib is specified, didLoadMainNib is called immediately
+                after <a href="#//api/name/willLoadMainNib">willLoadMainNib</a> is called.</p>
+
+<pre><code>            didLoadMainNib is called before the section's panes are in view.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerSection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sharedDictionary" title="sharedDictionary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedDictionary">&ndash;&nbsp;sharedDictionary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     sharedDictionary
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSMutableDictionary *)sharedDictionary</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sharedDictionary
+</code></pre><p>A global Mutable Dictionary which is global to the Install
+                session. Use this dictionary to pass information between sections.</p>
+
+<pre><code>            This dictionary should not be used to store state for your section or its panes.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerSection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/installerState" title="installerState"></a>
+	<h3 class="method-title"><code><a href="#//api/name/installerState">&nbsp;&nbsp;installerState</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the Installer State object for the current install session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly, strong) InstallerState *installerState</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     installerState
+</code></pre><p>Returns an object which describes the Installer choices and status
+                at the given time.  Plugins cannot influence this state, it should only
+                be used for informational purposes.  See <a href="../Classes/InstallerState.html">InstallerState</a>.h for more details.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerSection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/activePane" title="activePane"></a>
+	<h3 class="method-title"><code><a href="#//api/name/activePane">&nbsp;&nbsp;activePane</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the current active page for this section.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly, strong) InstallerPane *activePane</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     activePane
+</code></pre><p>If the section is active, it will return the current active page.  If the section
+                is not active, nil will be returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerSection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/gotoPane:" title="gotoPane:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/gotoPane:">&ndash;&nbsp;gotoPane:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     gotoPane:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)gotoPane:(InstallerPane *)<em>pane</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     gotoPane:
+</code></pre><p>This method causes the current pane to exit and &ldquo;pane&rdquo; to be made active.  This effectively replaces the current
+                pane and does not place the current pane onto the pane stack.</p>
+
+<pre><code>            gotoPane does not invoke shouldExit method for the current pane.
+
+            gotoPane is typically not overriden by a subclass.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerSection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

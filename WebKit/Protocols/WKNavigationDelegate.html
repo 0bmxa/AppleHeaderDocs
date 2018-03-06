@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>WKNavigationDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 WebKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/webView:decidePolicyForNavigationAction:decisionHandler:">- webView:decidePolicyForNavigationAction:decisionHandler:</option>
+		
+		<option value="//api/name/webView:decidePolicyForNavigationResponse:decisionHandler:">- webView:decidePolicyForNavigationResponse:decisionHandler:</option>
+		
+		<option value="//api/name/webView:didCommitNavigation:">- webView:didCommitNavigation:</option>
+		
+		<option value="//api/name/webView:didFailNavigation:withError:">- webView:didFailNavigation:withError:</option>
+		
+		<option value="//api/name/webView:didFailProvisionalNavigation:withError:">- webView:didFailProvisionalNavigation:withError:</option>
+		
+		<option value="//api/name/webView:didFinishNavigation:">- webView:didFinishNavigation:</option>
+		
+		<option value="//api/name/webView:didReceiveAuthenticationChallenge:completionHandler:">- webView:didReceiveAuthenticationChallenge:completionHandler:</option>
+		
+		<option value="//api/name/webView:didReceiveServerRedirectForProvisionalNavigation:">- webView:didReceiveServerRedirectForProvisionalNavigation:</option>
+		
+		<option value="//api/name/webView:didStartProvisionalNavigation:">- webView:didStartProvisionalNavigation:</option>
+		
+		<option value="//api/name/webViewWebContentProcessDidTerminate:">- webViewWebContentProcessDidTerminate:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">WKNavigationDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>WKNavigationDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A class conforming to the WKNavigationDelegate protocol can provide
+methods for tracking progress for main frame navigations and for deciding
+policy for main frame and subframe navigations.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/webView:decidePolicyForNavigationAction:decisionHandler:" title="webView:decidePolicyForNavigationAction:decisionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:decidePolicyForNavigationAction:decisionHandler:">&ndash;&nbsp;webView:decidePolicyForNavigationAction:decisionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Decides whether to allow or cancel a navigation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> decidePolicyForNavigationAction:(WKNavigationAction *)<em>navigationAction</em> decisionHandler:(void ( ^ ) ( WKNavigationActionPolicy ))<em>decisionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>navigationAction</code></th>
+						<td><p>Descriptive information about the action
+triggering the navigation request.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>decisionHandler</code></th>
+						<td><p>The decision handler to call to allow or cancel the
+navigation. The argument is one of the constants of the enumerated type <a href="../Constants/WKNavigationActionPolicy.html">WKNavigationActionPolicy</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If you do not implement this method, the web view will load the request or, if appropriate, forward it to another application.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKNavigationDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:decidePolicyForNavigationResponse:decisionHandler:" title="webView:decidePolicyForNavigationResponse:decisionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:decidePolicyForNavigationResponse:decisionHandler:">&ndash;&nbsp;webView:decidePolicyForNavigationResponse:decisionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Decides whether to allow or cancel a navigation after its
+response is known.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> decidePolicyForNavigationResponse:(WKNavigationResponse *)<em>navigationResponse</em> decisionHandler:(void ( ^ ) ( WKNavigationResponsePolicy ))<em>decisionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>navigationResponse</code></th>
+						<td><p>Descriptive information about the navigation
+response.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>decisionHandler</code></th>
+						<td><p>The decision handler to call to allow or cancel the
+navigation. The argument is one of the constants of the enumerated type <a href="../Constants/WKNavigationResponsePolicy.html">WKNavigationResponsePolicy</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If you do not implement this method, the web view will allow the response, if the web view can show it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKNavigationDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didStartProvisionalNavigation:" title="webView:didStartProvisionalNavigation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didStartProvisionalNavigation:">&ndash;&nbsp;webView:didStartProvisionalNavigation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when a main frame navigation starts.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> didStartProvisionalNavigation:(null_unspecified WKNavigation *)<em>navigation</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>navigation</code></th>
+						<td><p>The navigation.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKNavigationDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didReceiveServerRedirectForProvisionalNavigation:" title="webView:didReceiveServerRedirectForProvisionalNavigation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didReceiveServerRedirectForProvisionalNavigation:">&ndash;&nbsp;webView:didReceiveServerRedirectForProvisionalNavigation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when a server redirect is received for the main
+frame.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> didReceiveServerRedirectForProvisionalNavigation:(null_unspecified WKNavigation *)<em>navigation</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>navigation</code></th>
+						<td><p>The navigation.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKNavigationDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didFailProvisionalNavigation:withError:" title="webView:didFailProvisionalNavigation:withError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didFailProvisionalNavigation:withError:">&ndash;&nbsp;webView:didFailProvisionalNavigation:withError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when an error occurs while starting to load data for
+the main frame.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> didFailProvisionalNavigation:(null_unspecified WKNavigation *)<em>navigation</em> withError:(NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>navigation</code></th>
+						<td><p>The navigation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error that occurred.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKNavigationDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didCommitNavigation:" title="webView:didCommitNavigation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didCommitNavigation:">&ndash;&nbsp;webView:didCommitNavigation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when content starts arriving for the main frame.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> didCommitNavigation:(null_unspecified WKNavigation *)<em>navigation</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>navigation</code></th>
+						<td><p>The navigation.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKNavigationDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didFinishNavigation:" title="webView:didFinishNavigation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didFinishNavigation:">&ndash;&nbsp;webView:didFinishNavigation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when a main frame navigation completes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> didFinishNavigation:(null_unspecified WKNavigation *)<em>navigation</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>navigation</code></th>
+						<td><p>The navigation.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKNavigationDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didFailNavigation:withError:" title="webView:didFailNavigation:withError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didFailNavigation:withError:">&ndash;&nbsp;webView:didFailNavigation:withError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when an error occurs during a committed main frame
+navigation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> didFailNavigation:(null_unspecified WKNavigation *)<em>navigation</em> withError:(NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view invoking the delegate method.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>navigation</code></th>
+						<td><p>The navigation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error that occurred.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKNavigationDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didReceiveAuthenticationChallenge:completionHandler:" title="webView:didReceiveAuthenticationChallenge:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didReceiveAuthenticationChallenge:completionHandler:">&ndash;&nbsp;webView:didReceiveAuthenticationChallenge:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the web view needs to respond to an authentication challenge.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WKWebView *)<em>webView</em> didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)<em>challenge</em> completionHandler:(void ( ^ ) ( NSURLSessionAuthChallengeDisposition disposition , NSURLCredential *_Nullable credential ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view that received the authentication challenge.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>challenge</code></th>
+						<td><p>The authentication challenge.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>The completion handler you must invoke to respond to the challenge. The
+disposition argument is one of the constants of the enumerated type
+NSURLSessionAuthChallengeDisposition. When disposition is NSURLSessionAuthChallengeUseCredential,
+the credential argument is the credential to use, or nil to indicate continuing without a
+credential.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If you do not implement this method, the web view will respond to the authentication challenge with the NSURLSessionAuthChallengeRejectProtectionSpace disposition.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKNavigationDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webViewWebContentProcessDidTerminate:" title="webViewWebContentProcessDidTerminate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webViewWebContentProcessDidTerminate:">&ndash;&nbsp;webViewWebContentProcessDidTerminate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the web view&rsquo;s web content process is terminated.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webViewWebContentProcessDidTerminate:(WKWebView *)<em>webView</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The web view whose underlying web content process was terminated.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WKNavigationDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

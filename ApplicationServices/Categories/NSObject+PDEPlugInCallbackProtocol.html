@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSObject(PDEPlugInCallbackProtocol) Category Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 ApplicationServices Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/PMPrinter">- PMPrinter</option>
+		
+		<option value="//api/name/pageFormat">- pageFormat</option>
+		
+		<option value="//api/name/ppdFile">- ppdFile</option>
+		
+		<option value="//api/name/printSession">- printSession</option>
+		
+		<option value="//api/name/printSettings">- printSettings</option>
+		
+		<option value="//api/name/willChangePPDOptionKeyValue:ppdChoice:">- willChangePPDOptionKeyValue:ppdChoice:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSObject(PDEPlugInCallbackProtocol) Category Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>PDEPluginInterface.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol   PDEPlugInCallbackProtocol</p><p>An print system created instance implementing the informal protocol,
+                PDEPlugInCallbackProtocol, is passed to PDEPlugin as part of the PDEPlugIn&rsquo;s
+                PDEPanelsForType:withHostInfo: message. The PDEPlugIn is expected to
+                hold on to the passed in instance and to use this PDEPlugInCallbackProtocol
+                to query the print system for relevant information. The PDEPlugin can
+                pass the instance implementing PDEPlugInCallbackProtocol to PDEPanels
+                as needed.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/printSession" title="printSession"></a>
+	<h3 class="method-title"><code><a href="#//api/name/printSession">&ndash;&nbsp;printSession</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return a reference to the current print session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (PMPrintSession)printSession</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     printSession</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/printSettings" title="printSettings"></a>
+	<h3 class="method-title"><code><a href="#//api/name/printSettings">&ndash;&nbsp;printSettings</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return a reference to the print settings object that is
+                being modified by the printer dialog.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable PMPrintSettings)printSettings</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     printSettings</p><p>This method will return nil if the current print dialog is
+                not operating on a print settings. The page setup dialog is
+                the most obvious case where this method will return nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pageFormat" title="pageFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pageFormat">&ndash;&nbsp;pageFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return a reference to the page format that is being used
+                by the printer dialog.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable PMPageFormat)pageFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     pageFormat</p><p>The caller should be prepared for this method to return nil
+                if the current print dialog is operating without a page format
+                instance. Today both the print and page setup dialogs will return
+                a reference to a page format object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/PMPrinter" title="PMPrinter"></a>
+	<h3 class="method-title"><code><a href="#//api/name/PMPrinter">&ndash;&nbsp;PMPrinter</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return a reference to the current printer instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (PMPrinter)PMPrinter</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     PMPrinter</p><p>When the page setup dialog is displayed this method will return
+                the user&rsquo;s default printer. When the print dialog is displayed this
+                method will return the printer currently selected in the print dialog.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ppdFile" title="ppdFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ppdFile">&ndash;&nbsp;ppdFile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return a pointer to the CUPS ppd information for the current printer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable ppd_file_t *)ppdFile</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     ppdFile</p><p>Once the caller has the pointer to the CUPS PPD structure the CUPS
+                PPD functions can be used to query the PPD and to set PPD options.
+                A description of some of the CUPS PPD functions is here:
+                <a href="http://127.0.0.1:631/spm.html">http://127.0.0.1:631/spm.html</a>#3_3</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willChangePPDOptionKeyValue:ppdChoice:" title="willChangePPDOptionKeyValue:ppdChoice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willChangePPDOptionKeyValue:ppdChoice:">&ndash;&nbsp;willChangePPDOptionKeyValue:ppdChoice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>@method       changePPDOptionKeyValue:ppdChoiceKey:</li>
+<li>@abstract A PDEPlugIn makes this call to let the print system know that</li>
+<li><pre><code>        the plugin intends to alter the choice for a PPD option.
+</code></pre>
+
+<p>*</p></li>
+<li>@discussion   When a print dialog plugin intends to change the choice for a</li>
+<li><pre><code>        PPD option it notifies the print system with this call. If the
+</code></pre></li>
+<li><pre><code>        desired choice is in conflict with other currently selected PPD options
+</code></pre></li>
+<li><pre><code>        then the print system will try to do conflict resolution. This may
+</code></pre></li>
+<li><pre><code>        include presenting the user with a dialog explaining the conflict
+</code></pre></li>
+<li><pre><code>        and allowing the user to cancel the change.
+</code></pre>
+
+<p>*</p></li>
+<li><pre><code>        The 'option' parameter names a main key from the printer's PPD.
+</code></pre></li>
+<li><pre><code>        As an example take the following PPD fragment:
+</code></pre>
+
+<p>*</p></li>
+<li><pre><code>            *OpenUI *MediaType/Paper Type: PickOne
+</code></pre></li>
+<li><pre><code>            *MediaType Plain/Plain: ""
+</code></pre></li>
+<li><pre><code>            *MediaType Transparency/Transparency: ""
+</code></pre></li>
+<li><pre><code>            *CloseUI: *MediaType
+</code></pre>
+
+<p>*</p></li>
+<li><pre><code>        If a panel wishes to switch the value of the option key 'MediaType'
+</code></pre></li>
+<li><pre><code>        to the choice 'Transparency' then it should invoke this callback
+</code></pre></li>
+<li><pre><code>        passing @"MediaType" and @"Transparency" as the 'option' and
+</code></pre></li>
+<li><pre><code>        'choice' parameters. If that choice is allowed then YES will be
+</code></pre></li>
+<li><pre><code>        returned otherwise NO.
+</code></pre></li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)willChangePPDOptionKeyValue:(NSString *)<em>option</em> ppdChoice:(NSString *)<em>choice</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<ul>
+<li>@method       changePPDOptionKeyValue:ppdChoiceKey:</li>
+<li>@abstract A PDEPlugIn makes this call to let the print system know that</li>
+<li><pre><code>        the plugin intends to alter the choice for a PPD option.
+</code></pre>
+
+<p>*</p></li>
+<li>@discussion   When a print dialog plugin intends to change the choice for a</li>
+<li><pre><code>        PPD option it notifies the print system with this call. If the
+</code></pre></li>
+<li><pre><code>        desired choice is in conflict with other currently selected PPD options
+</code></pre></li>
+<li><pre><code>        then the print system will try to do conflict resolution. This may
+</code></pre></li>
+<li><pre><code>        include presenting the user with a dialog explaining the conflict
+</code></pre></li>
+<li><pre><code>        and allowing the user to cancel the change.
+</code></pre>
+
+<p>*</p></li>
+<li><pre><code>        The 'option' parameter names a main key from the printer's PPD.
+</code></pre></li>
+<li><pre><code>        As an example take the following PPD fragment:
+</code></pre>
+
+<p>*</p></li>
+<li><pre><code>            *OpenUI *MediaType/Paper Type: PickOne
+</code></pre></li>
+<li><pre><code>            *MediaType Plain/Plain: ""
+</code></pre></li>
+<li><pre><code>            *MediaType Transparency/Transparency: ""
+</code></pre></li>
+<li><pre><code>            *CloseUI: *MediaType
+</code></pre>
+
+<p>*</p></li>
+<li><pre><code>        If a panel wishes to switch the value of the option key 'MediaType'
+</code></pre></li>
+<li><pre><code>        to the choice 'Transparency' then it should invoke this callback
+</code></pre></li>
+<li><pre><code>        passing @"MediaType" and @"Transparency" as the 'option' and
+</code></pre></li>
+<li><pre><code>        'choice' parameters. If that choice is allowed then YES will be
+</code></pre></li>
+<li><pre><code>        returned otherwise NO.
+</code></pre></li>
+<li><p>@result       Returns YES if the plugin should make the change and returns NO if the</p></li>
+<li><pre><code>        user or the print system would like the change not to occur.
+</code></pre></li>
+</ul>
+
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PDEPluginInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVVideoCompositionCoreAnimationTool Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:">+ videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:</option>
+		
+		<option value="//api/name/videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:">+ videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:</option>
+		
+		<option value="//api/name/videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:">+ videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVVideoCompositionCoreAnimationTool Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVVideoComposition.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          AVVideoCompositionCoreAnimationTool
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:" title="videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:">+&nbsp;videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add a Core Animation layer to the video composition</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)videoCompositionCoreAnimationToolWithAdditionalLayer:(CALayer *)<em>layer</em> asTrackID:(CMPersistentTrackID)<em>trackID</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method                     videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:
+</code></pre><p>Include a Core Animation layer as an individual track input in video composition.
+                                This layer should not come from, or be added to, another layer tree.
+                                trackID should not match any real trackID in the source. Use <a href="../Classes/AVAsset.html#//api/name/unusedTrackID">[AVAsset unusedTrackID]</a>
+                                to obtain a trackID that&rsquo;s guaranteed not to coincide with the trackID of any track of the asset.
+                                AVVideoCompositionInstructions should reference trackID where the rendered animation should be included.
+                                For best performance, no transform should be set in the <a href="../Classes/AVVideoCompositionLayerInstruction.html">AVVideoCompositionLayerInstruction</a> for this trackID.
+                                Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
+                                -contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
+                                to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
+                                as when using it to back a UIView.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVVideoComposition.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:" title="videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:">+&nbsp;videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Compose the composited video frames with the Core Animation layer</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:(CALayer *)<em>videoLayer</em> inLayer:(CALayer *)<em>animationLayer</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method                     videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:
+</code></pre><p>Place composited video frames in videoLayer and render animationLayer
+                                to produce the final frame. Normally videoLayer should be in animationLayer&rsquo;s sublayer tree.
+                                The animationLayer should not come from, or be added to, another layer tree.
+                                Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
+                                -contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
+                                to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
+                                as when using it to back a UIView.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVVideoComposition.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:" title="videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:">+&nbsp;videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Compose the composited video frames with the Core Animation layer</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:(NSArray&lt;CALayer*&gt; *)<em>videoLayers</em> inLayer:(CALayer *)<em>animationLayer</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method                     videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:
+</code></pre><p>Duplicate the composited video frames in each videoLayer and render animationLayer
+                                to produce the final frame. Normally videoLayers should be in animationLayer&rsquo;s sublayer tree.
+                                The animationLayer should not come from, or be added to, another layer tree.
+                                Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
+                                -contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
+                                to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
+                                as when using it to back a UIView.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVVideoComposition.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSNNImageNode Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/exportFromGraph">exportFromGraph</option>
+		
+		<option value="//api/name/format">format</option>
+		
+		<option value="//api/name/handle">handle</option>
+		
+		<option value="//api/name/imageAllocator">imageAllocator</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/exportedNodeWithHandle:">+ exportedNodeWithHandle:</option>
+		
+		<option value="//api/name/nodeWithHandle:">+ nodeWithHandle:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithHandle:">- initWithHandle:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSNNImageNode Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSNNGraphNodes.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSNNImageNode</p><p>MPS neural network graphs are made up of filter nodes connected by
+image (or state) nodes. An image node is produced by one filter but
+may be consumed by more than one filter.</p>
+
+<p>Most image nodes will be created by MPS and made available through
+<a href="../Classes/MPSNNFilterNode.html">MPSNNFilterNode</a>.resultImage. Image nodes that are not created by MPS
+(i.e. &ldquo;the graph inputs&rdquo;) must be created by you.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithHandle:" title="initWithHandle:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithHandle:">&ndash;&nbsp;initWithHandle:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithHandle:(NSObject&lt;MPSHandle&gt; *__nullable)<em>handle</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nodeWithHandle:" title="nodeWithHandle:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nodeWithHandle:">+&nbsp;nodeWithHandle:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)nodeWithHandle:(NSObject&lt;MPSHandle&gt; *__nullable)<em>handle</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/exportedNodeWithHandle:" title="exportedNodeWithHandle:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exportedNodeWithHandle:">+&nbsp;exportedNodeWithHandle:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a autoreleased MPSNNImageNode with <a href="#//api/name/exportFromGraph">exportFromGraph</a> = YES.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)exportedNodeWithHandle:(NSObject&lt;MPSHandle&gt; *__nullable)<em>handle</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Note: image is still temporary. See MPSNNImageNode.<a href="#//api/name/imageAllocator">imageAllocator</a> parameter.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraphNodes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/handle" title="handle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/handle">&nbsp;&nbsp;handle</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>MPS resource identifier</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, readwrite, retain) id&lt;MPSHandle&gt; handle</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>See <a href="../Protocols/MPSHandle.html">MPSHandle</a> protocol description.  Default: nil</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraphNodes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/format" title="format"></a>
+	<h3 class="method-title"><code><a href="#//api/name/format">&nbsp;&nbsp;format</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The preferred precision for the image</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) MPSImageFeatureChannelFormat format</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Default: MPSImageFeatureChannelFormatNone, meaning MPS should pick a format
+Typically, this is 16-bit floating-point.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraphNodes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageAllocator" title="imageAllocator"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageAllocator">&nbsp;&nbsp;imageAllocator</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Configurability for image allocation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic, nonnull, retain) id&lt;MPSImageAllocator&gt; imageAllocator</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Allows you to influence how the image is allocated
+Default: <a href="../Classes/MPSTemporaryImage.html">MPSTemporaryImage</a>.defaultAllocator</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraphNodes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/exportFromGraph" title="exportFromGraph"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exportFromGraph">&nbsp;&nbsp;exportFromGraph</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tag a image node for view later</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) BOOL exportFromGraph</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Most image nodes are private to the graph. These alias memory heavily and
+consequently generally have invalid state when the graph exists.  When
+exportFromGraph = YES, the image is preserved and made available through
+the [<a href="../Classes/MPSNNGraph.html">MPSNNGraph</a> encode&hellip; intermediateImages:&hellip; list.</p>
+
+<p>CAUTION: exporting an image from a graph prevents MPS from
+recycling memory. It will nearly always cause the
+amount of memory used by the graph to increase by the size
+of the image. There will probably be a performance
+regression accordingly.  This feature should generally
+be used only when the node is needed as an input for
+further work and recomputing it is prohibitively costly.</p>
+
+<p>Default: NO</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraphNodes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

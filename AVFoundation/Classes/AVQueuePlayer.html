@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVQueuePlayer Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/queuePlayerWithItems:">+ queuePlayerWithItems:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/advanceToNextItem">- advanceToNextItem</option>
+		
+		<option value="//api/name/canInsertItem:afterItem:">- canInsertItem:afterItem:</option>
+		
+		<option value="//api/name/initWithItems:">- initWithItems:</option>
+		
+		<option value="//api/name/insertItem:afterItem:">- insertItem:afterItem:</option>
+		
+		<option value="//api/name/items">- items</option>
+		
+		<option value="//api/name/removeAllItems">- removeAllItems</option>
+		
+		<option value="//api/name/removeItem:">- removeItem:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVQueuePlayer Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVPlayer.html">AVPlayer</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVPlayer.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          AVQueuePlayer
+
+@abstract
+  AVQueuePlayer is a subclass of AVPlayer that offers an interface for multiple-item playback.
+
+@discussion
+  AVQueuePlayer extends AVPlayer with methods for managing a queue of items to be played in sequence.
+  It plays these items as gaplessly as possible in the current runtime environment, depending on 
+  the timely availability of media data for the enqueued items.
+
+  For best performance clients should typically enqueue only as many AVPlayerItems as are necessary
+  to ensure smooth playback. Note that once an item is enqueued it becomes eligible to be loaded and
+  made ready for playback, with whatever I/O and processing overhead that entails.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/queuePlayerWithItems:" title="queuePlayerWithItems:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/queuePlayerWithItems:">+&nbsp;queuePlayerWithItems:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an instance of AVQueuePlayer and enqueues the AVPlayerItems from the specified array.
+    @param      <a href="#//api/name/items">items</a>
+      An NSArray of AVPlayerItems with which to populate the player&rsquo;s queue initially.
+    @result
+      An instance of AVQueuePlayer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)queuePlayerWithItems:(NSArray&lt;AVPlayerItem*&gt; *)<em>items</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     queuePlayerWithItems:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithItems:" title="initWithItems:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithItems:">&ndash;&nbsp;initWithItems:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an instance of AVQueuePlayer by enqueueing the AVPlayerItems from the specified array.
+    @param      <a href="#//api/name/items">items</a>
+      An NSArray of AVPlayerItems with which to populate the player&rsquo;s queue initially.
+    @result
+      An instance of AVQueuePlayer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (AVQueuePlayer *)initWithItems:(NSArray&lt;AVPlayerItem*&gt; *)<em>items</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithItems:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/items" title="items"></a>
+	<h3 class="method-title"><code><a href="#//api/name/items">&ndash;&nbsp;items</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides an array of the currently enqueued items.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVPlayerItem*&gt; *)items</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray containing the enqueued AVPlayerItems.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     items
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/advanceToNextItem" title="advanceToNextItem"></a>
+	<h3 class="method-title"><code><a href="#//api/name/advanceToNextItem">&ndash;&nbsp;advanceToNextItem</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Ends playback of the current item and initiates playback of the next item in the player&rsquo;s queue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)advanceToNextItem</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     advanceToNextItem
+</code></pre><p>Removes the current item from the play queue.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/canInsertItem:afterItem:" title="canInsertItem:afterItem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canInsertItem:afterItem:">&ndash;&nbsp;canInsertItem:afterItem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tests whether an <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> can be inserted into the player&rsquo;s queue.
+    @param      item
+      The <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> to be tested.
+    @param      afterItem
+      The item that the item to be tested is to follow in the queue. Pass nil to test whether the item can be appended to the queue.
+    @result
+      An indication of whether the item can be inserted into the queue after the specified item.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)canInsertItem:(AVPlayerItem *)<em>item</em> afterItem:(nullable AVPlayerItem *)<em>afterItem</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     canInsertItem:afterItem:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insertItem:afterItem:" title="insertItem:afterItem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insertItem:afterItem:">&ndash;&nbsp;insertItem:afterItem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Places an <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> after the specified item in the queue.
+    @param      item
+      The item to be inserted.
+    @param      afterItem
+      The item that the newly inserted item should follow in the queue. Pass nil to append the item to the queue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)insertItem:(AVPlayerItem *)<em>item</em> afterItem:(nullable AVPlayerItem *)<em>afterItem</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     insertItem:afterItem:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeItem:" title="removeItem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeItem:">&ndash;&nbsp;removeItem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes an <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> from the queue.
+    @param      item
+      The item to be removed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeItem:(AVPlayerItem *)<em>item</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeItem:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAllItems" title="removeAllItems"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAllItems">&ndash;&nbsp;removeAllItems</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes all <a href="#//api/name/items">items</a> from the queue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAllItems</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeAllItems
+</code></pre><p>Stops playback by the target.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

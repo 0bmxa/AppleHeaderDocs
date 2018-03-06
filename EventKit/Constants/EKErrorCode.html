@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>EKErrorCode Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 EventKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">EKErrorCode Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>EKError.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">EKErrorCode</h3>
+                    
+					
+					<div class="section section-overview">
+                        <pre><code>@enum       EKErrorCode
+</code></pre><p>These error codes are used as the codes for all NSError instances stemmming from the
+                Calendar Framework.</p>
+
+<pre><code>@constant   EKErrorEventNotMutable                  The event is not mutable and cannot be saved/deleted.
+@constant   EKErrorNoCalendar                       The event has no calendar set.
+@constant   EKErrorNoStartDate                      The event has no start date set.
+@constant   EKErrorNoEndDate                        The event has no end date set.
+@constant   EKErrorDatesInverted                    The end date is before the start date.
+@constant   EKErrorInternalFailure                  An internal error occurred.
+@constant   EKErrorCalendarReadOnly                 Calendar can not have events added to it.
+@constant   EKErrorDurationGreaterThanRecurrence    The duration of an event is greater than the recurrence interval.
+@constant   EKErrorAlarmGreaterThanRecurrence       The alarm interval is greater than the recurrence interval
+@constant   EKErrorStartDateTooFarInFuture          The start date is further into the future than the calendar will display.
+@constant   EKErrorStartDateCollidesWithOtherOccurrence The start date specified collides with another occurrence of that event, and the current calendar doesn't allow it.
+@constant   EKErrorObjectBelongsToDifferentStore    The object you are passing doesn't belong to the calendar store you're dealing with.
+@constant   EKErrorInvitesCannotBeMoved             The event is an invite, and therefore cannot move to another calendar.
+@constant   EKErrorInvalidSpan                      An invalid span was passed when saving/deleting.
+@constant   EKErrorCalendarHasNoSource              An attempt to save a calendar with no source set was made.
+@constant   EKErrorCalendarSourceCannotBeModified   The calendar cannot be moved to another source.
+@constant   EKErrorCalendarIsImmutable              The calendar is immutable and cannot be modified or deleted.
+@constant   EKErrorSourceDoesNotAllowCalendarAddDelete   Some sources (accounts) do not allow calendars to be added or removed.
+@constant   EKErrorRecurringReminderRequiresDueDate A recurring reminder requires a due date.
+@constant   EKErrorStructuredLocationsNotSupported  The source this calendar belongs to does not support structured locations.
+@constant   EKErrorReminderLocationsNotSupported    This source doesn't support locations on Reminders.
+@constant   EKErrorAlarmProximityNotSupported       This source doesn't allow alarm proximity (geofencing).
+@constant   EKErrorCalendarDoesNotAllowEvents       You are trying to add an event to a calendar that does not allow events.
+@constant   EKErrorCalendarDoesNotAllowReminders    You are trying to add a reminder to a calendar that does not allow reminders.
+@constant   EKErrorSourceDoesNotAllowReminders      You are trying to add a calendar that allows reminders to a source that does not allow them.
+@constant   EKErrorSourceDoesNotAllowEvents         You are trying to add a calendar that allows events to a source that does not allow them.
+@constant   EKErrorPriorityIsInvalid                You have set an invalid priority for a reminder.  Priorities must be between 0 and 9.
+@constant   EKErrorInvalidEntityType                This is not a valid EKEntityType
+@constant   EKErrorProcedureAlarmsNotMutable        Procedure alarms may not be created or modified.
+@constant   EKErrorEventStoreNotAuthorized          The user has not authorized your application to access their events and/or reminders.
+@constant   EKErrorOSNotSupported                   The action is not supported on the current operating system.
+</code></pre>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSInteger, EKErrorCode ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorEventNotMutable</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorNoCalendar</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorNoStartDate</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorNoEndDate</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorDatesInverted</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorInternalFailure</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorCalendarReadOnly</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorDurationGreaterThanRecurrence</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorAlarmGreaterThanRecurrence</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorStartDateTooFarInFuture</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorStartDateCollidesWithOtherOccurrence</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorObjectBelongsToDifferentStore</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorInvitesCannotBeMoved</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorInvalidSpan</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorCalendarHasNoSource</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorCalendarSourceCannotBeModified</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorCalendarIsImmutable</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorSourceDoesNotAllowCalendarAddDelete</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorRecurringReminderRequiresDueDate</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorStructuredLocationsNotSupported</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorReminderLocationsNotSupported</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorAlarmProximityNotSupported</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorCalendarDoesNotAllowEvents</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorCalendarDoesNotAllowReminders</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorSourceDoesNotAllowReminders</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorSourceDoesNotAllowEvents</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorPriorityIsInvalid</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorInvalidEntityType</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorProcedureAlarmsNotMutable</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorEventStoreNotAuthorized</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorOSNotSupported</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">EKErrorLast</a>,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="EKErrorEventNotMutable"></a><code>EKErrorEventNotMutable</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorNoCalendar"></a><code>EKErrorNoCalendar</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorNoStartDate"></a><code>EKErrorNoStartDate</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorNoEndDate"></a><code>EKErrorNoEndDate</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorDatesInverted"></a><code>EKErrorDatesInverted</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorInternalFailure"></a><code>EKErrorInternalFailure</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorCalendarReadOnly"></a><code>EKErrorCalendarReadOnly</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorDurationGreaterThanRecurrence"></a><code>EKErrorDurationGreaterThanRecurrence</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorAlarmGreaterThanRecurrence"></a><code>EKErrorAlarmGreaterThanRecurrence</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorStartDateTooFarInFuture"></a><code>EKErrorStartDateTooFarInFuture</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorStartDateCollidesWithOtherOccurrence"></a><code>EKErrorStartDateCollidesWithOtherOccurrence</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorObjectBelongsToDifferentStore"></a><code>EKErrorObjectBelongsToDifferentStore</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorInvitesCannotBeMoved"></a><code>EKErrorInvitesCannotBeMoved</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorInvalidSpan"></a><code>EKErrorInvalidSpan</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorCalendarHasNoSource"></a><code>EKErrorCalendarHasNoSource</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorCalendarSourceCannotBeModified"></a><code>EKErrorCalendarSourceCannotBeModified</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorCalendarIsImmutable"></a><code>EKErrorCalendarIsImmutable</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorSourceDoesNotAllowCalendarAddDelete"></a><code>EKErrorSourceDoesNotAllowCalendarAddDelete</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorRecurringReminderRequiresDueDate"></a><code>EKErrorRecurringReminderRequiresDueDate</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorStructuredLocationsNotSupported"></a><code>EKErrorStructuredLocationsNotSupported</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorReminderLocationsNotSupported"></a><code>EKErrorReminderLocationsNotSupported</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorAlarmProximityNotSupported"></a><code>EKErrorAlarmProximityNotSupported</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorCalendarDoesNotAllowEvents"></a><code>EKErrorCalendarDoesNotAllowEvents</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorCalendarDoesNotAllowReminders"></a><code>EKErrorCalendarDoesNotAllowReminders</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorSourceDoesNotAllowReminders"></a><code>EKErrorSourceDoesNotAllowReminders</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorSourceDoesNotAllowEvents"></a><code>EKErrorSourceDoesNotAllowEvents</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorPriorityIsInvalid"></a><code>EKErrorPriorityIsInvalid</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorInvalidEntityType"></a><code>EKErrorInvalidEntityType</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorProcedureAlarmsNotMutable"></a><code>EKErrorProcedureAlarmsNotMutable</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorEventStoreNotAuthorized"></a><code>EKErrorEventStoreNotAuthorized</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorOSNotSupported"></a><code>EKErrorOSNotSupported</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EKErrorLast"></a><code>EKErrorLast</code></dt>
+<dd>
+
+
+<p>Error codes for NSError values stemming from the Calendar Framework.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EKError.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">EKError.h</code></p>
+                    </div>
+                    
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

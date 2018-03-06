@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IMServicePlugInChatRoomSupport Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IMServicePlugIn Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/declineChatRoomInvitation:">- declineChatRoomInvitation:</option>
+		
+		<option value="//api/name/inviteHandles:toChatRoom:withMessage:">- inviteHandles:toChatRoom:withMessage:</option>
+		
+		<option value="//api/name/joinChatRoom:">- joinChatRoom:</option>
+		
+		<option value="//api/name/leaveChatRoom:">- leaveChatRoom:</option>
+		
+		<option value="//api/name/sendMessage:toChatRoom:">- sendMessage:toChatRoom:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IMServicePlugInChatRoomSupport Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>IMServicePlugInChatRoomSupport.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@protocol   IMServicePlugInChatRoomSupport
+</code></pre><p>Implementing this protocol on your service plug-in&rsquo;s principal class indicates that your
+                service supports chat-room-based messaging.</p>
+
+<pre><code>            If implementing this protocol, you must also include "IMServiceCapabilityChatRoomSupport"
+            in the "IMServiceCapabilities" key in the Info.plist of your service plug-in.
+
+            IMServicePlugInChatRoomSupport and IMServiceApplicationChatRoomSupport are
+            paired protocols.  If your service plug-in's principal class implements the
+            IMServicePlugInChatRoomSupport protocol, the IMServiceApplication object handed to your
+            IMServicePlugIn will implement the IMServiceApplicationChatRoomSupport protocol.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/joinChatRoom:" title="joinChatRoom:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/joinChatRoom:">&ndash;&nbsp;joinChatRoom:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     joinChatRoom:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (oneway void)joinChatRoom:(NSString *)<em>roomName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>roomName</code></th>
+						<td><p>The name of the room which the user wishes to join.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     joinChatRoom:
+</code></pre><p>Messages calls this method on the <a href="../Protocols/IMServicePlugIn.html">IMServicePlugIn</a> instance when the user attempts
+                to join a chat room.</p>
+
+<pre><code>            To indicate success, -plugInDidJoinChatRoom: should be called by the service plug-in on the
+            service application, followed by -handles:didJoinChatRoom: to indicate the current
+            chat room member handles.
+
+            To indicate failure, -plugInDidLeaveChatRoom:error: should be called by the service plug-in
+            with a non-nil error.
+
+            This method may also be called by Messages when the user clicks "Accept" to a chat
+            room invitation.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMServicePlugInChatRoomSupport.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/leaveChatRoom:" title="leaveChatRoom:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/leaveChatRoom:">&ndash;&nbsp;leaveChatRoom:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     leaveChatRoom:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (oneway void)leaveChatRoom:(NSString *)<em>roomName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>roomName</code></th>
+						<td><p>The name of the room which the user wishes to leave.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     leaveChatRoom:
+</code></pre><p>Messages calls this method on the <a href="../Protocols/IMServicePlugIn.html">IMServicePlugIn</a> instance when the user closes
+                the chat room window, or when the service disconnects.</p>
+
+<pre><code>            The service plug-in should attempt to cleanly leave the chat room, and then
+            call -plugInDidLeaveChatRoom:error: on the service application once the room is left.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMServicePlugInChatRoomSupport.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inviteHandles:toChatRoom:withMessage:" title="inviteHandles:toChatRoom:withMessage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inviteHandles:toChatRoom:withMessage:">&ndash;&nbsp;inviteHandles:toChatRoom:withMessage:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     inviteHandles:toChatRoom:withMessage:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (oneway void)inviteHandles:(NSArray *)<em>handles</em> toChatRoom:(NSString *)<em>roomName</em> withMessage:(IMServicePlugInMessage *)<em>message</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handles</code></th>
+						<td><p>The handles to invite.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>roomName</code></th>
+						<td><p>The name of the room which the user wishes to leave</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>The invitation message</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     inviteHandles:toChatRoom:withMessage:
+</code></pre><p>Messages calls this method on the <a href="../Protocols/IMServicePlugIn.html">IMServicePlugIn</a> instance when the user
+                invites handles to a specific chatRoom</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMServicePlugInChatRoomSupport.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendMessage:toChatRoom:" title="sendMessage:toChatRoom:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendMessage:toChatRoom:">&ndash;&nbsp;sendMessage:toChatRoom:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     sendMessage:toChatRoom:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (oneway void)sendMessage:(IMServicePlugInMessage *)<em>message</em> toChatRoom:(NSString *)<em>roomName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>The message to send.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>roomName</code></th>
+						<td><p>The recipient chat room.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sendMessage:toChatRoom:
+</code></pre><p>Messages calls this method on the <a href="../Protocols/IMServicePlugIn.html">IMServicePlugIn</a> instance when the user sends
+                a message to a chat room.</p>
+
+<pre><code>            The service plug-in should use -plugInDidSendMessage:toChatRoom:error: to report 
+            delivery of the message.
+
+            Some instant messaging services do not report message delivery status of
+            messages sent to chat rooms.  Instead, the message is received in a similar
+            fashion to other incoming chat room messages.  In this case, the service
+            plug-in may choose to reflect successful message delievery status via
+            a call to -plugInDidReceiveMessage:forChatRoom:fromHandle:, with the handle
+            parameter set to the handle name.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMServicePlugInChatRoomSupport.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/declineChatRoomInvitation:" title="declineChatRoomInvitation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/declineChatRoomInvitation:">&ndash;&nbsp;declineChatRoomInvitation:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     declineChatRoomInvitation:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (oneway void)declineChatRoomInvitation:(NSString *)<em>roomName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>roomName</code></th>
+						<td><p>The name of the room which the user has declined.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     declineChatRoomInvitation:
+</code></pre><p>Messages calls this method on the <a href="../Protocols/IMServicePlugIn.html">IMServicePlugIn</a> instance when the user clicks
+                the &ldquo;Decline&rdquo; button of an incoming chat room invitation.</p>
+
+<pre><code>            This method is always called in response to Messages receiving
+            -plugInDidReceiveInvitation:forChatRoom:fromHandle: from the service plug-in.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMServicePlugInChatRoomSupport.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

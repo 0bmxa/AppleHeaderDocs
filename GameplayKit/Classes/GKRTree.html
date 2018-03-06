@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>GKRTree Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 GameplayKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/queryReserve">queryReserve</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/treeWithMaxNumberOfChildren:">+ treeWithMaxNumberOfChildren:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addElement:boundingRectMin:boundingRectMax:splitStrategy:">- addElement:boundingRectMin:boundingRectMax:splitStrategy:</option>
+		
+		<option value="//api/name/elementsInBoundingRectMin:rectMax:">- elementsInBoundingRectMin:rectMax:</option>
+		
+		<option value="//api/name/initWithMaxNumberOfChildren:">- initWithMaxNumberOfChildren:</option>
+		
+		<option value="//api/name/removeElement:boundingRectMin:boundingRectMax:">- removeElement:boundingRectMin:boundingRectMax:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">GKRTree Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>*<br />:<br />ElementType<br />NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>GKRTree.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>An R-tree is a data structure that partitions axis aligned bounding rectangles into groups spatially.
+When a group goes to large, it is split according to its split strategy into two new groups.
+Fast queries can be made on these partition bounding rectangles.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/queryReserve" title="queryReserve"></a>
+	<h3 class="method-title"><code><a href="#//api/name/queryReserve">&nbsp;&nbsp;queryReserve</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Amount of array items to reserve before a query.
+This improves query performance at the cost of memory</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property NSUInteger queryReserve</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Amount of array items to reserve before a query.
+This improves query performance at the cost of memory</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRTree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/treeWithMaxNumberOfChildren:" title="treeWithMaxNumberOfChildren:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/treeWithMaxNumberOfChildren:">+&nbsp;treeWithMaxNumberOfChildren:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an RTree with a given maximum number of children per node.  Nodes that grow beyond this number of children will be split.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)treeWithMaxNumberOfChildren:(NSUInteger)<em>maxNumberOfChildren</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maxNumberOfChildren</code></th>
+						<td><p>the maximum number of children per node before splitting</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates an RTree with a given maximum number of children per node.  Nodes that grow beyond this number of children will be split.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRTree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithMaxNumberOfChildren:" title="initWithMaxNumberOfChildren:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithMaxNumberOfChildren:">&ndash;&nbsp;initWithMaxNumberOfChildren:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithMaxNumberOfChildren:(NSUInteger)<em>maxNumberOfChildren</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addElement:boundingRectMin:boundingRectMax:splitStrategy:" title="addElement:boundingRectMin:boundingRectMax:splitStrategy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addElement:boundingRectMin:boundingRectMax:splitStrategy:">&ndash;&nbsp;addElement:boundingRectMin:boundingRectMax:splitStrategy:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an element with the specified bounding rect to this RTree.  The supplied splitting strategy is used if the node this element would be added to needs to be split.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addElement:(ElementType)<em>element</em> boundingRectMin:(vector_float2)<em>boundingRectMin</em> boundingRectMax:(vector_float2)<em>boundingRectMax</em> splitStrategy:(GKRTreeSplitStrategy)<em>splitStrategy</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>element</code></th>
+						<td><p>the element to be added</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>boundingRectMin</code></th>
+						<td><p>the min point (lower left) on the bounding rect of the element to be added</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>boundingRectMax</code></th>
+						<td><p>the min point (upper right) on the bounding rect of the element to be added</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>splitStrategy</code></th>
+						<td><p>the splitting strategy to be used if the node this element would be added to needs to be split</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds an element with the specified bounding rect to this RTree.  The supplied splitting strategy is used if the node this element would be added to needs to be split.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRTree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeElement:boundingRectMin:boundingRectMax:" title="removeElement:boundingRectMin:boundingRectMax:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeElement:boundingRectMin:boundingRectMax:">&ndash;&nbsp;removeElement:boundingRectMin:boundingRectMax:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes an element with the specified bounding rect from this RTree.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeElement:(ElementType)<em>element</em> boundingRectMin:(vector_float2)<em>boundingRectMin</em> boundingRectMax:(vector_float2)<em>boundingRectMax</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>element</code></th>
+						<td><p>the element to be removed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>boundingRectMin</code></th>
+						<td><p>the min point (lower left) on the bounding rect of the element to be removed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>boundingRectMax</code></th>
+						<td><p>the min point (upper right) on the bounding rect of the element to be removed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes an element with the specified bounding rect from this RTree.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRTree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementsInBoundingRectMin:rectMax:" title="elementsInBoundingRectMin:rectMax:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementsInBoundingRectMin:rectMax:">&ndash;&nbsp;elementsInBoundingRectMin:rectMax:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Queries all the elements that are in this RTree within the given bounding rect.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;ElementType&gt; *)elementsInBoundingRectMin:(vector_float2)<em>rectMin</em> rectMax:(vector_float2)<em>rectMax</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rectMax</code></th>
+						<td><p>the max point (upper right) of the rect to query</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>min</code></th>
+						<td><p>the min point (lower left) of the rect to query</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an <a href="../Classes/NSArray.html">NSArray</a> of all of the elements that fall within the query rect</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Queries all the elements that are in this RTree within the given bounding rect.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKRTree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

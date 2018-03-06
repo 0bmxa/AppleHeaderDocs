@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVContentKeyResponse Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/contentKeyResponseWithClearKeyData:initializationVector:">+ contentKeyResponseWithClearKeyData:initializationVector:</option>
+		
+		<option value="//api/name/contentKeyResponseWithFairPlayStreamingKeyResponseData:">+ contentKeyResponseWithFairPlayStreamingKeyResponseData:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVContentKeyResponse Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVContentKeySession.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class         AVContentKeyResponse</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/contentKeyResponseWithFairPlayStreamingKeyResponseData:" title="contentKeyResponseWithFairPlayStreamingKeyResponseData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeyResponseWithFairPlayStreamingKeyResponseData:">+&nbsp;contentKeyResponseWithFairPlayStreamingKeyResponseData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create an AVContentKeyResponse from the server response to a key request made when using FairPlayStreaming (FPS) as the method of key delivery.
+@param         keyResponseData
+                The response from the FairPlayStreaming key server</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)contentKeyResponseWithFairPlayStreamingKeyResponseData:(NSData *)<em>keyResponseData</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new AVContentKeyResponse holding data from a FairPlayStreaming key server that is used to decrypt the content</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method        contentKeyResponseWithFairPlayStreamingKeyResponseData:</p><p>The object created by this method is typically used with an <a href="../Classes/AVContentKeyRequest.html">AVContentKeyRequest</a> created by an <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> using keySystem AVContentKeySystemFairPlayStreaming. It is passed to <a href="../Classes/AVContentKeyRequest.html">AVContentKeyRequest</a> -processContentKeyResponse: in order to supply the decryptor with key data</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentKeyResponseWithClearKeyData:initializationVector:" title="contentKeyResponseWithClearKeyData:initializationVector:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentKeyResponseWithClearKeyData:initializationVector:">+&nbsp;contentKeyResponseWithClearKeyData:initializationVector:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create an AVContentKeyResponse from the key and IV when using AVContentKeySystemClearKey as the key system</p>
+
+<p>@param          keyData
+                The key used for decrypting content.
+@param          initializationVector
+                The initialization vector used for decrypting content, or nil if initialization vector is available in the media to be decrypted</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)contentKeyResponseWithClearKeyData:(NSData *)<em>keyData</em> initializationVector:(nullable NSData *)<em>initializationVector</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new AVContentKeyResponse holding Clear Key data.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     contentKeyResponseWithClearKeyData:initializationVector:</p><p>The object created by this method is typically used with an <a href="../Classes/AVContentKeyRequest.html">AVContentKeyRequest</a> created by an <a href="../Classes/AVContentKeySession.html">AVContentKeySession</a> using keySystem AVContentKeySystemClearKey. It is passed to <a href="../Classes/AVContentKeyRequest.html">AVContentKeyRequest</a> -processContentKeyResponse: in order to supply the decryptor with key data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVContentKeySession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

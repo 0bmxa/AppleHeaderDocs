@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DRMSF Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 DiscRecording Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/msf">+ msf</option>
+		
+		<option value="//api/name/msfWithFrames:">+ msfWithFrames:</option>
+		
+		<option value="//api/name/msfWithString:">+ msfWithString:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/description">- description</option>
+		
+		<option value="//api/name/descriptionWithFormat:">- descriptionWithFormat:</option>
+		
+		<option value="//api/name/frames">- frames</option>
+		
+		<option value="//api/name/initWithFrames:">- initWithFrames:</option>
+		
+		<option value="//api/name/initWithString:">- initWithString:</option>
+		
+		<option value="//api/name/isEqualToMSF:">- isEqualToMSF:</option>
+		
+		<option value="//api/name/minutes">- minutes</option>
+		
+		<option value="//api/name/msfByAdding:">- msfByAdding:</option>
+		
+		<option value="//api/name/msfBySubtracting:">- msfBySubtracting:</option>
+		
+		<option value="//api/name/seconds">- seconds</option>
+		
+		<option value="//api/name/sectors">- sectors</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DRMSF Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSNumber</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DRMSF.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      DRMSF
+</code></pre><p>On CDs, minutes/seconds/<a href="#//api/name/frames">frames</a> are used to identify positioning on a disc (which is
+                most useful on an audio disc), but applies to any position on a disc no matter what type of
+                data is present.</p>
+
+<pre><code>            A frame is equivalent to a sector or block in normal disk parlance. 75 frames make up one
+            second, so a 2 second pause (typical pregap size) is 150 frames. 
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/msf" title="msf"></a>
+	<h3 class="method-title"><code><a href="#//api/name/msf">+&nbsp;msf</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an msf object with no length/time.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRMSF *)msf</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRMSF object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     msf
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/msfWithFrames:" title="msfWithFrames:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/msfWithFrames:">+&nbsp;msfWithFrames:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an <a href="#//api/name/msf">msf</a> object whose length is <a href="#//api/name/frames">frames</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRMSF *)msfWithFrames:(UInt32)<em>frames</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRMSF object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     msfWithFrames
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/msfWithString:" title="msfWithString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/msfWithString:">+&nbsp;msfWithString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an <a href="#//api/name/msf">msf</a> object initialized to the value represented by string</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRMSF *)msfWithString:(NSString *)<em>string</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRMSF object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     msfWithString
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithFrames:" title="initWithFrames:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrames:">&ndash;&nbsp;initWithFrames:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an <a href="#//api/name/msf">msf</a> object whose length is <a href="#//api/name/frames">frames</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithFrames:(UInt32)<em>frames</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A DRMSF object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithFrames
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithString:" title="initWithString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithString:">&ndash;&nbsp;initWithString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an <a href="#//api/name/msf">msf</a> object initialized to the value represented by string</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithString:(NSString *)<em>string</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A DRMSF object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithString
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/minutes" title="minutes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minutes">&ndash;&nbsp;minutes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the number of minutes represented by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (UInt32)minutes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     minutes
+</code></pre><p>If the receiver represents
+                a non integral number of minutes, only the whole minute value is returned. For example
+                an DRMSF value of 5:30:72 will return 5 from a message to @link //apple_ref/occ/instm/DRMSF/minutes minutes @/link.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/seconds" title="seconds"></a>
+	<h3 class="method-title"><code><a href="#//api/name/seconds">&ndash;&nbsp;seconds</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the number of seconds represented by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (UInt32)seconds</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     seconds
+</code></pre><p>If the receiver represents
+                a non integral number of seconds, only the whole second value is returned. For example
+                an DRMSF value of 5:30:72 will return 30 from a message to @link //apple_ref/occ/instm/DRMSF/seconds seconds @/link.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/frames" title="frames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/frames">&ndash;&nbsp;frames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the number of frames represented by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (UInt32)frames</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     frames
+</code></pre><p>This method differs from @link //apple_ref/occ/instm/DFMSF/<a href="#//api/name/sectors">sectors</a> <a href="#//api/name/sectors">sectors</a> @/link in that it
+                returns to the caller the number of frames remaining in the current second. For example
+                an DRMSF value of 5:30:72 will return 72 from a message to @link //apple_ref/occ/instm/DRMSF/frames frames @/link.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sectors" title="sectors"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sectors">&ndash;&nbsp;sectors</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the total number of frames/sectors represented by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (UInt32)sectors</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sectors
+</code></pre><p>This method differs from @link //apple_ref/occ/instm/DRMSF/<a href="#//api/name/frames">frames</a> <a href="#//api/name/frames">frames</a> @/link in that it
+                returns to the caller the total number of frames/sectors represented by the object.
+                For example an DRMSF value of 5:30:72 will return 24822 from a message to @link //apple_ref/occ/instm/DRMSF/sectors sectors @/link.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/msfByAdding:" title="msfByAdding:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/msfByAdding:">&ndash;&nbsp;msfByAdding:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an <a href="#//api/name/msf">msf</a> to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (DRMSF *)msfByAdding:(DRMSF *)<em>msf</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>msf</code></th>
+						<td><p>The <a href="#//api/name/msf">msf</a> to add to the receiver</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new DRMSF object totalling the sum of the reciever and <a href="#//api/name/msf">msf</a></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     msfByAdding
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/msfBySubtracting:" title="msfBySubtracting:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/msfBySubtracting:">&ndash;&nbsp;msfBySubtracting:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Subtracts an <a href="#//api/name/msf">msf</a> to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (DRMSF *)msfBySubtracting:(DRMSF *)<em>msf</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>msf</code></th>
+						<td><p>The <a href="#//api/name/msf">msf</a> to subtract from the receiver</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new DRMSF object totalling the difference of the reciever and <a href="#//api/name/msf">msf</a></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     msfBySubtracting
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/description" title="description"></a>
+	<h3 class="method-title"><code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a textual representation of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>NSString containing a textual representation of the object with the standard formatting.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     description
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/descriptionWithFormat:" title="descriptionWithFormat:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/descriptionWithFormat:">&ndash;&nbsp;descriptionWithFormat:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a textual representation of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)descriptionWithFormat:(NSString *)<em>format</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>format</code></th>
+						<td><p>The format of the <a href="#//api/name/description">description</a> string.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>NSString containing a textual representation of the object utilizing the specified format.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     descriptionWithFormat
+</code></pre><p>The format string is very similar to
+                a printf-style format string with %-escaped formatting characters.</p>
+
+<pre><code>            &lt;ul&gt;
+            &lt;li&gt;%%  A "%" character&lt;/li&gt;
+            &lt;li&gt;%m  Minutes as a decimal number&lt;/li&gt;
+            &lt;li&gt;%s  Seconds as a decimal number&lt;/li&gt;
+            &lt;li&gt;%f  Frames as a decimal number&lt;/li&gt;
+            &lt;/ul&gt;
+
+            In addition to these formatting characters an optional length specifier can come between then
+            % and the formatting character. This length specifier will force the field in question to 
+            be at least that wide. For example a format specifier of "%02m:%02s" will cause a 
+            DRMSF object representing 3 minutes 9 seconds to be formatted as "03:09". 
+
+            A formatter is aware of and respects rounding. If a bit of the msf is not zero, but the format
+            does not display that value, the next higher value will be increased by one to reflect that.
+            Extending our example above, an DRMSF with a value of 3 minutes, 9 seconds, 15 frames using a 
+            format specfier of "%02m:%02s", will be formatted as "03:10" since the 15 frames rounds up the
+            seconds to the next value
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isEqualToMSF:" title="isEqualToMSF:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isEqualToMSF:">&ndash;&nbsp;isEqualToMSF:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Compares on e<a href="#//api/name/msf">msf</a> to another.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToMSF:(DRMSF *)<em>otherDRMSF</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>otherDRMSF</code></th>
+						<td><p>The <a href="#//api/name/msf">msf</a> to compare to the receiver</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><i>YES</i> if the two object are equal, <i>NO</i> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     isEqualToMSF
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRMSF.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

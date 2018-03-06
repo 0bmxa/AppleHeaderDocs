@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureAudioDataOutput Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_7">_7</option>
+		
+		<option value="//api/name/sampleBufferCallbackQueue">sampleBufferCallbackQueue</option>
+		
+		<option value="//api/name/sampleBufferDelegate">sampleBufferDelegate</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/new">+ new</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/recommendedAudioSettingsForAssetWriterWithOutputFileType:">- recommendedAudioSettingsForAssetWriterWithOutputFileType:</option>
+		
+		<option value="//api/name/setSampleBufferDelegate:queue:">- setSampleBufferDelegate:queue:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureAudioDataOutput Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureAudioDataOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureAudioDataOutput
+@abstract
+    AVCaptureAudioDataOutput is a concrete subclass of <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> that can be used to process uncompressed or compressed samples from the audio being captured.</p>
+
+<p>@discussion
+    Instances of AVCaptureAudioDataOutput produce audio sample buffers suitable for processing using other media APIs. Applications can access the sample buffers with the captureOutput:didOutputSampleBuffer:fromConnection: delegate method.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/new" title="new"></a>
+	<h3 class="method-title"><code><a href="#//api/name/new">+&nbsp;new</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)new</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSampleBufferDelegate:queue:" title="setSampleBufferDelegate:queue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSampleBufferDelegate:queue:">&ndash;&nbsp;setSampleBufferDelegate:queue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method setSampleBufferDelegate:queue:
+@abstract
+    Sets the receiver&rsquo;s delegate that will accept captured buffers and dispatch queue on which the delegate will be called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSampleBufferDelegate:(nullable id&lt;AVCaptureAudioDataOutputSampleBufferDelegate&gt;)<em>sampleBufferDelegate</em> queue:(nullable dispatch_queue_t)<em>sampleBufferCallbackQueue</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setSampleBufferDelegate:queue:
+@abstract
+    Sets the receiver&rsquo;s delegate that will accept captured buffers and dispatch queue on which the delegate will be called.</p>
+
+<p>@param <a href="#//api/name/sampleBufferDelegate">sampleBufferDelegate</a>
+    An object conforming to the <a href="../Protocols/AVCaptureAudioDataOutputSampleBufferDelegate.html">AVCaptureAudioDataOutputSampleBufferDelegate</a> protocol that will receive sample buffers after they are captured.
+@param <a href="#//api/name/sampleBufferCallbackQueue">sampleBufferCallbackQueue</a>
+    A dispatch queue on which all sample buffer delegate methods will be called.</p>
+
+<p>@discussion
+    When a <a href="#//api/name/new">new</a> audio sample buffer is captured it will be vended to the sample buffer delegate using the captureOutput:didOutputSampleBuffer:fromConnection: delegate method. All delegate methods will be called on the specified dispatch queue. If the queue is blocked when <a href="#//api/name/new">new</a> samples are captured, those samples will be automatically dropped when they become sufficiently late. This allows clients to process existing samples on the same queue without having to manage the potential memory usage increases that would otherwise occur when that processing is unable to keep up with the rate of incoming samples.</p>
+
+<pre><code>Clients that need to minimize the chances of samples being dropped should specify a queue on which a sufficiently small amount of processing is being done outside of receiving sample buffers. However, if such clients migrate extra processing to another queue, they are responsible for ensuring that memory usage does not grow without bound from samples that have not been processed.
+
+A serial dispatch queue must be used to guarantee that audio samples will be delivered in order. The sampleBufferCallbackQueue parameter may not be NULL, except when setting sampleBufferDelegate to nil.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureAudioDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sampleBufferDelegate" title="sampleBufferDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleBufferDelegate">&nbsp;&nbsp;sampleBufferDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property sampleBufferDelegate
+@abstract
+    The receiver&rsquo;s delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) id&lt;AVCaptureAudioDataOutputSampleBufferDelegate&gt; sampleBufferDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sampleBufferDelegate
+@abstract
+    The receiver&rsquo;s delegate.</p>
+
+<p>@discussion
+    The value of this property is an object conforming to the <a href="../Protocols/AVCaptureAudioDataOutputSampleBufferDelegate.html">AVCaptureAudioDataOutputSampleBufferDelegate</a> protocol that will receive sample buffers after they are captured. The delegate is set using the <a href="#//api/name/setSampleBufferDelegate:queue:">setSampleBufferDelegate:queue:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureAudioDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sampleBufferCallbackQueue" title="sampleBufferCallbackQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleBufferCallbackQueue">&nbsp;&nbsp;sampleBufferCallbackQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property sampleBufferCallbackQueue
+@abstract
+    The dispatch queue on which all sample buffer delegate methods will be called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) dispatch_queue_t sampleBufferCallbackQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sampleBufferCallbackQueue
+@abstract
+    The dispatch queue on which all sample buffer delegate methods will be called.</p>
+
+<p>@discussion
+    The value of this property is a dispatch_queue_t. The queue is set using the <a href="#//api/name/setSampleBufferDelegate:queue:">setSampleBufferDelegate:queue:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureAudioDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_7" title="_7"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_7">&nbsp;&nbsp;_7</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property audioSettings
+@abstract
+    Specifies the settings used to decode or re-encode audio before it is output by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, null_resettable) NSDictionary&lt;NSString*id&gt; *NS_AVAILABLE_MAC ( 10 _7</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property audioSettings
+@abstract
+    Specifies the settings used to decode or re-encode audio before it is output by the receiver.</p>
+
+<p>@discussion
+    The value of this property is an NSDictionary containing values for audio settings keys defined in AVAudioSettings.h. When audioSettings is set to nil, the AVCaptureAudioDataOutput vends samples in their device native format.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureAudioDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recommendedAudioSettingsForAssetWriterWithOutputFileType:" title="recommendedAudioSettingsForAssetWriterWithOutputFileType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recommendedAudioSettingsForAssetWriterWithOutputFileType:">&ndash;&nbsp;recommendedAudioSettingsForAssetWriterWithOutputFileType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method recommendedAudioSettingsForAssetWriterWithOutputFileType:
+@abstract
+    Specifies the recommended settings for use with an <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDictionary *)recommendedAudioSettingsForAssetWriterWithOutputFileType:(AVFileType)<em>outputFileType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method recommendedAudioSettingsForAssetWriterWithOutputFileType:
+@abstract
+    Specifies the recommended settings for use with an <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a>.</p>
+
+<p>@param outputFileType
+    Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file format UTIs).
+@result
+    A fully populated dictionary of keys and values that are compatible with <a href="../Classes/AVAssetWriter.html">AVAssetWriter</a>.</p>
+
+<p>@discussion
+    The value of this property is an NSDictionary containing values for compression settings keys defined in AVAudioSettings.h. This dictionary is suitable for use as the &ldquo;outputSettings&rdquo; parameter when creating an <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a>, such as,</p>
+
+<pre><code>   [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeAudio outputSettings:outputSettings sourceFormatHint:hint];
+
+The dictionary returned contains all necessary keys and values needed by AVAssetWriter (see AVAssetWriterInput.h, -initWithMediaType:outputSettings: for a more in depth discussion). For QuickTime movie and ISO files, the recommended audio settings will always produce output comparable to that of AVCaptureMovieFileOutput.
+
+Note that the dictionary of settings is dependent on the current configuration of the receiver's AVCaptureSession and its inputs. The settings dictionary may change if the session's configuration changes. As such, you should configure your session first, then query the recommended audio settings.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureAudioDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

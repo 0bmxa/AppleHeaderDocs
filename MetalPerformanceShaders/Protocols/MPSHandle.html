@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSHandle Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/label">- label</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSHandle Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject<br />NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSNNGraphNodes.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol   MPSHandle</p><p>Most of the time, there is only one image and one or fewer states needed as
+input to a graph, so the order of the images and states passed to
+<a href="../Classes/MPSNNGraph.html#//api/name/encodeToCommandBuffer:sourceImages:">[MPSNNGraph encodeToCommandBuffer:sourceImages:]</a> or
+<a href="../Classes/MPSNNGraph.html#//api/name/encodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:">[MPSNNGraph encodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:]</a>
+is clear. There is only one order. However, sometimes graphs have more than one
+input image or state. What order should they appear in the NSArray passed to
+these methods?</p>
+
+<p>Each <a href="../Classes/MPSNNImageNode.html">MPSNNImageNode</a> or <a href="../Classes/MPSNNStateNode.html">MPSNNStateNode</a> can be tagged with a MPSHandle. <a href="../Classes/MPSNNGraph.html">MPSNNGraph</a>
+keeps track of these. You can request that the <a href="../Classes/MPSNNGraph.html">MPSNNGraph</a> return them to you in
+an array in the same order as needed to encode the <a href="../Classes/MPSNNGraph.html">MPSNNGraph</a>, using
+<a href="../Classes/MPSNNGraph.html">MPSNNGraph</a>.sourceImageHandles and <a href="../Classes/MPSNNGraph.html">MPSNNGraph</a>.sourceStateHandles.</p>
+
+<p>Example:
+@code
+@interface MyHandle : NSObject <MPSHandle>
+// Add a method for my use to get the image needed based on the handle to it.
+// This isn&rsquo;t part of the MPSHandle protocol, but we need it for MyEncodeGraph
+// below. Since it is my code calling my object, we can add whatever we want like this.
+-(<a href="../Classes/MPSImage.html">MPSImage</a>*__nonnull) image;    // return the <a href="../Classes/MPSImage.html">MPSImage</a> corresponding to the handle</p>
+
+<p>// required by MPSHandle protocol
+-(NSString * __nullable) <a href="#//api/name/label">label</a>;</p>
+
+<p>// MPSHandle implies NSSecureCoding too
++(BOOL) supportsSecureCoding;
+- (void)encodeWithCoder:(NSCoder * <strong>nonnull )aCoder;
+- (nullable instancetype)initWithCoder:(NSCoder * </strong>nonnull )aDecoder; // NS_DESIGNATED_INITIALIZER
+@end</p>
+
+<p>// Encode a graph to cmdBuf using handles for images
+// Here we assume that the MPSNNImageNodes that are graph inputs (not produced
+// by the graph) are tagged with a unique instance of MyHandle that can be used
+// to get the appropriate image for that node.
+static void MyEncodeGraph( <a href="../Classes/MPSNNGraph.html">MPSNNGraph</a> * graph, id <MTLCommandBuffer> cmdBuf )
+{
+@autoreleasepool{
+// prepare an array of source images, using the handles
+NSArray&lt;MyHandle<em>> * handles = graph.sourceImageHandles;
+unsigned long count = handles.count;
+NSMutableArray<a href="../Classes/MPSImage.html">MPSImage</a></em>> * __nonnull images = [NSMutableArray arrayWithCapacity: count];
+for( unsigned long i = 0; i &lt; count; i++ )
+images[i] = handles[i].image;</p>
+
+<p>// encode the graph using the array
+[ graph encodeToCommandBuffer: cmdBuf
+sourceImages: images ];
+}
+}
+@endcode</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/label" title="label"></a>
+	<h3 class="method-title"><code><a href="#//api/name/label">&ndash;&nbsp;label</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A label to be attached to associated MTLResources for this node</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *__nullable)label</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A human readable string for debugging purposes</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNNGraphNodes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

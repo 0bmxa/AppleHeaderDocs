@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureVideoDataOutput Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_7">_7</option>
+		
+		<option value="//api/name/alwaysDiscardsLateVideoFrames">alwaysDiscardsLateVideoFrames</option>
+		
+		<option value="//api/name/sampleBufferCallbackQueue">sampleBufferCallbackQueue</option>
+		
+		<option value="//api/name/sampleBufferDelegate">sampleBufferDelegate</option>
+		
+		<option value="//api/name/videoSettings">videoSettings</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/new">+ new</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/availableVideoCodecTypesForAssetWriterWithOutputFileType:">- availableVideoCodecTypesForAssetWriterWithOutputFileType:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/recommendedVideoSettingsForAssetWriterWithOutputFileType:">- recommendedVideoSettingsForAssetWriterWithOutputFileType:</option>
+		
+		<option value="//api/name/recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:">- recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:</option>
+		
+		<option value="//api/name/setSampleBufferDelegate:queue:">- setSampleBufferDelegate:queue:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureVideoDataOutput Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureVideoDataOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureVideoDataOutput
+@abstract
+    AVCaptureVideoDataOutput is a concrete subclass of <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> that can be used to process uncompressed or compressed frames from the video being captured.</p>
+
+<p>@discussion
+    Instances of AVCaptureVideoDataOutput produce video frames suitable for processing using other media APIs. Applications can access the frames with the captureOutput:didOutputSampleBuffer:fromConnection: delegate method.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/new" title="new"></a>
+	<h3 class="method-title"><code><a href="#//api/name/new">+&nbsp;new</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)new</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSampleBufferDelegate:queue:" title="setSampleBufferDelegate:queue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSampleBufferDelegate:queue:">&ndash;&nbsp;setSampleBufferDelegate:queue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method setSampleBufferDelegate:queue:
+@abstract
+    Sets the receiver&rsquo;s delegate that will accept captured buffers and dispatch queue on which the delegate will be called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSampleBufferDelegate:(nullable id&lt;AVCaptureVideoDataOutputSampleBufferDelegate&gt;)<em>sampleBufferDelegate</em> queue:(nullable dispatch_queue_t)<em>sampleBufferCallbackQueue</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setSampleBufferDelegate:queue:
+@abstract
+    Sets the receiver&rsquo;s delegate that will accept captured buffers and dispatch queue on which the delegate will be called.</p>
+
+<p>@param <a href="#//api/name/sampleBufferDelegate">sampleBufferDelegate</a>
+    An object conforming to the <a href="../Protocols/AVCaptureVideoDataOutputSampleBufferDelegate.html">AVCaptureVideoDataOutputSampleBufferDelegate</a> protocol that will receive sample buffers after they are captured.
+@param <a href="#//api/name/sampleBufferCallbackQueue">sampleBufferCallbackQueue</a>
+    A dispatch queue on which all sample buffer delegate methods will be called.</p>
+
+<p>@discussion
+    When a <a href="#//api/name/new">new</a> video sample buffer is captured it will be vended to the sample buffer delegate using the captureOutput:didOutputSampleBuffer:fromConnection: delegate method. All delegate methods will be called on the specified dispatch queue. If the queue is blocked when <a href="#//api/name/new">new</a> frames are captured, those frames will be automatically dropped at a time determined by the value of the <a href="#//api/name/alwaysDiscardsLateVideoFrames">alwaysDiscardsLateVideoFrames</a> property. This allows clients to process existing frames on the same queue without having to manage the potential memory usage increases that would otherwise occur when that processing is unable to keep up with the rate of incoming frames. If their frame processing is consistently unable to keep up with the rate of incoming frames, clients should consider using the minFrameDuration property, which will generally yield better performance characteristics and more consistent frame rates than frame dropping alone.</p>
+
+<pre><code>Clients that need to minimize the chances of frames being dropped should specify a queue on which a sufficiently small amount of processing is being done outside of receiving sample buffers. However, if such clients migrate extra processing to another queue, they are responsible for ensuring that memory usage does not grow without bound from frames that have not been processed.
+
+A serial dispatch queue must be used to guarantee that video frames will be delivered in order. The sampleBufferCallbackQueue parameter may not be NULL, except when setting the sampleBufferDelegate to nil.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sampleBufferDelegate" title="sampleBufferDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleBufferDelegate">&nbsp;&nbsp;sampleBufferDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property sampleBufferDelegate
+@abstract
+    The receiver&rsquo;s delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) id&lt;AVCaptureVideoDataOutputSampleBufferDelegate&gt; sampleBufferDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sampleBufferDelegate
+@abstract
+    The receiver&rsquo;s delegate.</p>
+
+<p>@discussion
+    The value of this property is an object conforming to the <a href="../Protocols/AVCaptureVideoDataOutputSampleBufferDelegate.html">AVCaptureVideoDataOutputSampleBufferDelegate</a> protocol that will receive sample buffers after they are captured. The delegate is set using the <a href="#//api/name/setSampleBufferDelegate:queue:">setSampleBufferDelegate:queue:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sampleBufferCallbackQueue" title="sampleBufferCallbackQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleBufferCallbackQueue">&nbsp;&nbsp;sampleBufferCallbackQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property sampleBufferCallbackQueue
+@abstract
+    The dispatch queue on which all sample buffer delegate methods will be called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) dispatch_queue_t sampleBufferCallbackQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sampleBufferCallbackQueue
+@abstract
+    The dispatch queue on which all sample buffer delegate methods will be called.</p>
+
+<p>@discussion
+    The value of this property is a dispatch_queue_t. The queue is set using the <a href="#//api/name/setSampleBufferDelegate:queue:">setSampleBufferDelegate:queue:</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoSettings" title="videoSettings"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoSettings">&nbsp;&nbsp;videoSettings</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property videoSettings
+@abstract
+    Specifies the settings used to decode or re-encode video before it is output by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, null_resettable) NSDictionary&lt;NSString*id&gt; *videoSettings</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property videoSettings
+@abstract
+    Specifies the settings used to decode or re-encode video before it is output by the receiver.</p>
+
+<p>@discussion
+    See AVVideoSettings.h for more information on how to construct a video settings dictionary. To receive samples in their device native format, set this property to an empty dictionary (i.e. [NSDictionary dictionary]). To receive samples in a default uncompressed format, set this property to nil. Note that after this property is set to nil, subsequent querying of this property will yield a non-nil dictionary reflecting the settings used by the AVCaptureSession&rsquo;s current sessionPreset.</p>
+
+<pre><code>On iOS, the only supported key is kCVPixelBufferPixelFormatTypeKey. Supported pixel formats are kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, kCVPixelFormatType_420YpCbCr8BiPlanarFullRange and kCVPixelFormatType_32BGRA.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recommendedVideoSettingsForAssetWriterWithOutputFileType:" title="recommendedVideoSettingsForAssetWriterWithOutputFileType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recommendedVideoSettingsForAssetWriterWithOutputFileType:">&ndash;&nbsp;recommendedVideoSettingsForAssetWriterWithOutputFileType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method recommendedVideoSettingsForAssetWriterWithOutputFileType:
+@abstract
+    Specifies the recommended settings for use with an <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDictionary&lt;NSString*,id&gt; *)recommendedVideoSettingsForAssetWriterWithOutputFileType:(AVFileType)<em>outputFileType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method recommendedVideoSettingsForAssetWriterWithOutputFileType:
+@abstract
+    Specifies the recommended settings for use with an <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a>.</p>
+
+<p>@param outputFileType
+    Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file format UTIs).
+@result
+    A fully populated dictionary of keys and values that are compatible with <a href="../Classes/AVAssetWriter.html">AVAssetWriter</a>.</p>
+
+<p>@discussion
+    The value of this property is an NSDictionary containing values for compression settings keys defined in AVVideoSettings.h. This dictionary is suitable for use as the &ldquo;outputSettings&rdquo; parameter when creating an <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a>, such as,</p>
+
+<pre><code>   [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeVideo outputSettings:outputSettings sourceFormatHint:hint];
+
+The dictionary returned contains all necessary keys and values needed by AVAssetWriter (see AVAssetWriterInput.h, -initWithMediaType:outputSettings: for a more in depth discussion). For QuickTime movie and ISO file types, the recommended video settings will produce output comparable to that of AVCaptureMovieFileOutput.
+
+Note that the dictionary of settings is dependent on the current configuration of the receiver's AVCaptureSession and its inputs. The settings dictionary may change if the session's configuration changes. As such, you should configure your session first, then query the recommended video settings. As of iOS 8.3, movies produced with these settings successfully import into the iOS camera roll and sync to and from like devices via iTunes.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/availableVideoCodecTypesForAssetWriterWithOutputFileType:" title="availableVideoCodecTypesForAssetWriterWithOutputFileType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availableVideoCodecTypesForAssetWriterWithOutputFileType:">&ndash;&nbsp;availableVideoCodecTypesForAssetWriterWithOutputFileType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method availableVideoCodecTypesForAssetWriterWithOutputFileType:
+@abstract
+    Specifies the available video codecs for use with <a href="../Classes/AVAssetWriter.html">AVAssetWriter</a> and a given file type.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVVideoCodecType&gt; *)availableVideoCodecTypesForAssetWriterWithOutputFileType:(AVFileType)<em>outputFileType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method availableVideoCodecTypesForAssetWriterWithOutputFileType:
+@abstract
+    Specifies the available video codecs for use with AVAssetWriter and a given file type.</p>
+
+<p>@param outputFileType
+    Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file format UTIs).
+@result
+    An array of video codecs; see AVVideoSettings.h for a full list.</p>
+
+<p>@discussion
+    This method allows you to query the available video codecs that may be used when specifying an AVVideoCodecKey in -recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:. When specifying an outputFileType of AVFileTypeQuickTimeMovie, video codecs are ordered identically to [AVCaptureMovieFileOutput availableVideoCodecTypes].</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:" title="recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:">&ndash;&nbsp;recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:
+@abstract
+    Specifies the recommended settings for a particular video codec type, to be used with an <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDictionary *)recommendedVideoSettingsForVideoCodecType:(AVVideoCodecType)<em>videoCodecType</em> assetWriterOutputFileType:(AVFileType)<em>outputFileType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:
+@abstract
+    Specifies the recommended settings for a particular video codec type, to be used with an <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a>.</p>
+
+<p>@param videoCodecType
+    Specifies the desired AVVideoCodecKey to be used for compression (see AVVideoSettings.h).
+@param outputFileType
+    Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file format UTIs).
+@result
+    A fully populated dictionary of keys and values that are compatible with <a href="../Classes/AVAssetWriter.html">AVAssetWriter</a>.</p>
+
+<p>@discussion
+    The value of this property is an NSDictionary containing values for compression settings keys defined in AVVideoSettings.h. This dictionary is suitable for use as the &ldquo;outputSettings&rdquo; parameter when creating an <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a>, such as,</p>
+
+<pre><code>   [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeVideo outputSettings:outputSettings sourceFormatHint:hint];
+
+The dictionary returned contains all necessary keys and values needed by AVAssetWriter (see AVAssetWriterInput.h, -initWithMediaType:outputSettings: for a more in depth discussion). For QuickTime movie and ISO file types, the recommended video settings will produce output comparable to that of AVCaptureMovieFileOutput.
+
+The videoCodecType string provided must be present in the availableVideoCodecTypesForAssetWriterWithOutputFileType: array, or an NSInvalidArgumentException is thrown. 
+
+Note that the dictionary of settings is dependent on the current configuration of the receiver's AVCaptureSession and its inputs. The settings dictionary may change if the session's configuration changes. As such, you should configure your session first, then query the recommended video settings. As of iOS 8.3, movies produced with these settings successfully import into the iOS camera roll and sync to and from like devices via iTunes.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_7" title="_7"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_7">&nbsp;&nbsp;_7</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property availableVideoCVPixelFormatTypes
+@abstract
+    Indicates the supported video pixel formats that can be specified in <a href="#//api/name/videoSettings">videoSettings</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSNumber*&gt; *NS_AVAILABLE ( 10 _7</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property availableVideoCVPixelFormatTypes
+@abstract
+    Indicates the supported video pixel formats that can be specified in <a href="#//api/name/videoSettings">videoSettings</a>.</p>
+
+<p>@discussion
+    The value of this property is an NSArray of NSNumbers that can be used as values for the kCVPixelBufferPixelFormatTypeKey in the receiver&rsquo;s <a href="#//api/name/videoSettings">videoSettings</a> property. The first format in the returned list is the most efficient output format.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property minFrameDuration
+@abstract
+    Specifies the minimum time interval between which the receiver should output consecutive video frames.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CMTime minFrameDuration NS_DEPRECATED_IOS ( 4 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property minFrameDuration
+@abstract
+    Specifies the minimum time interval between which the receiver should output consecutive video frames.</p>
+
+<p>@discussion
+    The value of this property is a CMTime specifying the minimum duration of each video frame output by the receiver, placing a lower bound on the amount of time that should separate consecutive frames. This is equivalent to the inverse of the maximum frame rate. A value of kCMTimeZero or kCMTimeInvalid indicates an unlimited maximum frame rate. The default value is kCMTimeInvalid. As of iOS 5.0, minFrameDuration is deprecated. Use AVCaptureConnection&rsquo;s videoMinFrameDuration property instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/alwaysDiscardsLateVideoFrames" title="alwaysDiscardsLateVideoFrames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/alwaysDiscardsLateVideoFrames">&nbsp;&nbsp;alwaysDiscardsLateVideoFrames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property alwaysDiscardsLateVideoFrames
+@abstract
+    Specifies whether the receiver should always discard any video frame that is not processed before the next frame is captured.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL alwaysDiscardsLateVideoFrames</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property alwaysDiscardsLateVideoFrames
+@abstract
+    Specifies whether the receiver should always discard any video frame that is not processed before the next frame is captured.</p>
+
+<p>@discussion
+    When the value of this property is YES, the receiver will immediately discard frames that are captured while the dispatch queue handling existing frames is blocked in the captureOutput:didOutputSampleBuffer:fromConnection: delegate method. When the value of this property is NO, delegates will be allowed more time to process old frames before <a href="#//api/name/new">new</a> frames are discarded, but application memory usage may increase significantly as a result. The default value is YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureVideoDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

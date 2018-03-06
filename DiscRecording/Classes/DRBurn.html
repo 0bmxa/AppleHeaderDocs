@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DRBurn Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 DiscRecording Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/burnForDevice:">+ burnForDevice:</option>
+		
+		<option value="//api/name/layoutForImageFile:">+ layoutForImageFile:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/abort">- abort</option>
+		
+		<option value="//api/name/appendable">- appendable</option>
+		
+		<option value="//api/name/completionAction">- completionAction</option>
+		
+		<option value="//api/name/device">- device</option>
+		
+		<option value="//api/name/initWithDevice:">- initWithDevice:</option>
+		
+		<option value="//api/name/properties">- properties</option>
+		
+		<option value="//api/name/requestedBurnSpeed">- requestedBurnSpeed</option>
+		
+		<option value="//api/name/setAppendable:">- setAppendable:</option>
+		
+		<option value="//api/name/setCompletionAction:">- setCompletionAction:</option>
+		
+		<option value="//api/name/setProperties:">- setProperties:</option>
+		
+		<option value="//api/name/setRequestedBurnSpeed:">- setRequestedBurnSpeed:</option>
+		
+		<option value="//api/name/setVerifyDisc:">- setVerifyDisc:</option>
+		
+		<option value="//api/name/status">- status</option>
+		
+		<option value="//api/name/verifyDisc">- verifyDisc</option>
+		
+		<option value="//api/name/writeLayout:">- writeLayout:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DRBurn Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DRBurn.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class          DRBurn
+</code></pre><p>Each time you want to burn to a disc, an instance of this class needs to be created.</p>
+
+<pre><code>                When an instance is created, you pass in an instance of @link //apple_ref/occ/cl/DRDevice DRDevice @/link to let the DRBurn object know 
+                what device to use. This object is retained for the life of the DRBurn instance. Before burning, 
+                you can set several options that control the behavior of the burn and the handling 
+                of the disc once the burn completes.
+
+                A DRBurn object will send out notifications through the @link //apple_ref/occ/cl/DRNotificationCenter DRNotificationCenter @/link mechanism to 
+                broadcast the burn state to any interested observers. However, if for some reason you don't want
+                to use notifications, you can poll the burn object at any time for the current status using
+                @link //apple_ref/occ/instm/DRBurn/status status @/link. This is not recommended in any 
+                application using a run loop, because it involves polling.
+
+                For examples of how to use this class see the on-disk sample code projects at /Developer/Examples/DiscRecording/ObjectiveC/. 
+
+
+@category       DRBurn (ImageContentCreation)
+</code></pre><p>This category on DRBurn creates a custom layout object which is set
+                    up to burn an image file to disc. It implements only one method,
+                    @link <a href="#//api/name/layoutForImageFile:">layoutForImageFile:</a> <a href="#//api/name/layoutForImageFile:">layoutForImageFile:</a> @/link which creates and
+                    returns a fully configured layout object to the caller.</p>
+
+<pre><code>@category       DRBurn (PropertyConvenienceMethods)
+</code></pre><p>This category on DRBurn defines methods that make setting and retrieving
+                    the various DRBurn <a href="#//api/name/properties">properties</a> easier.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/burnForDevice:" title="burnForDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/burnForDevice:">+&nbsp;burnForDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an autoreleased burn object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRBurn *)burnForDevice:(DRDevice *)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>Device to use for the burn</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRBurn object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         burnForDevice:
+</code></pre><p>Once a burn is created with this method, the object is ready to write data to the disc.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:" title="initWithDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:">&ndash;&nbsp;initWithDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes the burn object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithDevice:(DRDevice *)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>Device to use for the burn</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A DRBurn object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithDevice:
+</code></pre><p>Once a burn is initialized with this method, the object is ready to write data to the disc.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeLayout:" title="writeLayout:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeLayout:">&ndash;&nbsp;writeLayout:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Begin the process of burning a disc layout.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeLayout:(id)<em>layout</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>layout</code></th>
+						<td><p>The data to be burned to disc.</p>
+
+<pre><code>                There are three configurations of the object passed in:
+
+                &lt;ol&gt;
+                &lt;li&gt;For a multi-session burn, layout must be a valid NSArray containing 
+                     one or more NSArrays, each of which contains one or more valid @link //apple_ref/occ/cl/DRTrack DRTrack @/link objects.&lt;/li&gt;
+                &lt;li&gt;For a single-session multi-track burn, layout must be a valid NSArray 
+                     containing one or more valid @link //apple_ref/occ/cl/DRTrack DRTrack @/link objects.&lt;/li&gt;
+                &lt;li&gt;For a single-session single-track burn, layout must be a valid @link //apple_ref/occ/cl/DRTrack DRTrack @/link object.&lt;/li&gt;
+                &lt;/ol&gt;
+                If none of these configurations are met or the leaf values contained in
+                layout are not valid @link //apple_ref/occ/cl/DRTrack DRTrack @/link objects, an exception is thrown.
+</code></pre></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         writeLayout:
+</code></pre><p>This method only begins the burning process. Once the burn
+                    has been started, control returns to the caller and it is up to the caller to
+                    monitor the progress of the burn (by listening for @link //apple_ref/occ/data/DRBurnStatusChangedNotification DRBurnStatusChangedNotification @/link
+                    or polling @link //apple_ref/occ/instm/DRBurn/<a href="#//api/name/status">status</a> <a href="#//api/name/status">status</a> @/link) to know when the burn completes (either successfully
+                    or with an error).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/status" title="status"></a>
+	<h3 class="method-title"><code><a href="#//api/name/status">&ndash;&nbsp;status</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary describing the status of the burn.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)status</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSDictionary reporting the status of the burn.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         status
+</code></pre><p>The same dictionary is returned through the @link //apple_ref/occ/data/DRBurnStatusChangedNotification DRBurnStatusChangedNotification @/link notification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/abort" title="abort"></a>
+	<h3 class="method-title"><code><a href="#//api/name/abort">&ndash;&nbsp;abort</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops the burn.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)abort</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         abort
+</code></pre><p>When this method returns the burn might not actually be fully stopped
+                    but it has been cancelled and only cleanup is going on. If a burn
+                    has not completed writing data to disc, you just made a coaster.</p>
+
+<pre><code>                Typically this method is only used as a result of the user hitting
+                a cancel/stop button somewhere in the user interface.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/properties" title="properties"></a>
+	<h3 class="method-title"><code><a href="#//api/name/properties">&ndash;&nbsp;properties</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the properties dictionary of the burn.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)properties</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSDictionary containing the properties of the burn.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         properties
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setProperties:" title="setProperties:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setProperties:">&ndash;&nbsp;setProperties:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the <a href="#//api/name/properties">properties</a> dictionary of the burn.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setProperties:(NSDictionary *)<em>properties</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>properties</code></th>
+						<td><p>NSDictionary of the <a href="#//api/name/properties">properties</a> to set.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         setProperties:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/device" title="device"></a>
+	<h3 class="method-title"><code><a href="#//api/name/device">&ndash;&nbsp;device</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the device being used for the burn.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (DRDevice *)device</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <a href="../Classes/DRDevice.html">DRDevice</a> the burn will use.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         device
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="ImageContentCreation Methods" name="task_ImageContentCreation Methods"></a>
+						<h2 class="task-title">ImageContentCreation Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/layoutForImageFile:" title="layoutForImageFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/layoutForImageFile:">+&nbsp;layoutForImageFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a layout capable of burning an image to disc.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)layoutForImageFile:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>The path to the image file. This file must be one that can
+                            be read by DiscRecording. The supported image types include:
+                            .dmg, .iso, .cue, and .toc. For .cue and .toc files the
+                            corresponding data files (.bin, .img, etc) must also be present
+                            and correctly referenced in the .cue/.toc file.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased layout object</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         layoutForImageFile:
+</code></pre><p>The layout created by this method may be any type of object. No assumptions
+                    should be made as to what sort of object may be returned based on the
+                    input image type.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn_ContentSupport.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="PropertyConvenienceMethods Methods" name="task_PropertyConvenienceMethods Methods"></a>
+						<h2 class="task-title">PropertyConvenienceMethods Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/requestedBurnSpeed" title="requestedBurnSpeed"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestedBurnSpeed">&ndash;&nbsp;requestedBurnSpeed</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the speed at which this burn will attempt to write data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (float)requestedBurnSpeed</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A float indicating the speed the burn should run at in kilobytes per second.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         requestedBurnSpeed
+</code></pre><p>The actual speed also depends on the capabilities of the bus the <a href="#//api/name/device">device</a> is on,
+                    the maximum speed of the <a href="#//api/name/device">device</a> itself, and the media used.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setRequestedBurnSpeed:" title="setRequestedBurnSpeed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setRequestedBurnSpeed:">&ndash;&nbsp;setRequestedBurnSpeed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the speed at which the burn will be attempted to be performed at</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setRequestedBurnSpeed:(float)<em>speed</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>speed</code></th>
+						<td><p>The speed that the burn should run at in kilobytes per second.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         setRequestedBurnSpeed:
+</code></pre><p>The actual speed also depends on the capabilities of the bus the <a href="#//api/name/device">device</a> is on,
+                    the maximum speed of the <a href="#//api/name/device">device</a> itself, and the media used.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/appendable" title="appendable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/appendable">&ndash;&nbsp;appendable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates if the burn is appendable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)appendable</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A BOOL indicating if the burn is appendable.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         appendable
+</code></pre><p>When a burn completes, it can mark the disc so that no more data can be
+                    written to it. This creates a closed or non-appendable disc (which is the
+                    most compatible with audio CD players). If this method returns <i>NO</i>, then
+                    the disc will be marked as closed and no data can be appended to it. A
+                    return value of <i>YES</i> indicates further burns can be appended to
+                    the disc.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAppendable:" title="setAppendable:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAppendable:">&ndash;&nbsp;setAppendable:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the burn to be <a href="#//api/name/appendable">appendable</a> or non<a href="#//api/name/appendable">appendable</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setAppendable:(BOOL)<em>appendable</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appendable</code></th>
+						<td><p>A BOOL indicating if the burn is <a href="#//api/name/appendable">appendable</a>. Passing in <i>YES</i>
+                    indicates further burns can be appended to the disc, while passing in <i>NO</i>,
+                    marks the disc as closed and no data can be appended to it.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         setAppendable:
+</code></pre><p>When a burn completes, it can mark the disc so that no more data can be
+                    written to it. This creates a closed or non<a href="#//api/name/appendable">appendable</a> disc (which is the
+                    most compatible with audio CD players).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/verifyDisc" title="verifyDisc"></a>
+	<h3 class="method-title"><code><a href="#//api/name/verifyDisc">&ndash;&nbsp;verifyDisc</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates if the resulting disc will be verified.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)verifyDisc</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A BOOL indicating if the disc will be verified.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         verifyDisc
+</code></pre><p>After data is written to disc, the data can be verified. The verification
+                    process will read the data on the disc back into memory and compare it to the
+                    data originally used to write to disc. The type of verification is determined
+                    by a track property on a track-by-track basis. See the @link //apple_ref/occ/cl/<a href="../Classes/DRTrack.html">DRTrack</a> <a href="../Classes/DRTrack.html">DRTrack</a> @/link
+                    documentation for more information on verification types.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setVerifyDisc:" title="setVerifyDisc:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setVerifyDisc:">&ndash;&nbsp;setVerifyDisc:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the burn to verify or not verify the disc.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setVerifyDisc:(BOOL)<em>verify</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>verify</code></th>
+						<td><p>A BOOL indicating if the disc is to be verified. Passing in <i>YES</i>
+                            (the default) indicates that the data written to disc will be verified
+                            against the source data once the burn complete.
+                            Passing in <i>NO</i> indicates that no verification will take place.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         setVerifyDisc:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/completionAction" title="completionAction"></a>
+	<h3 class="method-title"><code><a href="#//api/name/completionAction">&ndash;&nbsp;completionAction</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the action to be performed at the end of the burn.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)completionAction</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSString</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         completionAction
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCompletionAction:" title="setCompletionAction:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCompletionAction:">&ndash;&nbsp;setCompletionAction:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the action to be performed at the end of the burn.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCompletionAction:(NSString *)<em>action</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>action</code></th>
+						<td><p>An NSString for the action to perform.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         setCompletionAction:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRBurn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

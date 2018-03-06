@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>GKGraphNode Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 GameplayKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/connectedNodes">connectedNodes</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addConnectionsToNodes:bidirectional:">- addConnectionsToNodes:bidirectional:</option>
+		
+		<option value="//api/name/costToNode:">- costToNode:</option>
+		
+		<option value="//api/name/estimatedCostToNode:">- estimatedCostToNode:</option>
+		
+		<option value="//api/name/findPathFromNode:">- findPathFromNode:</option>
+		
+		<option value="//api/name/findPathToNode:">- findPathToNode:</option>
+		
+		<option value="//api/name/removeConnectionsToNodes:bidirectional:">- removeConnectionsToNodes:bidirectional:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">GKGraphNode Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>GKGraphNode.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A node in a directed graph. Edges are directed and can have variable costs.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/connectedNodes" title="connectedNodes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectedNodes">&nbsp;&nbsp;connectedNodes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>List of other graph nodes that this node has an edge leading to.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;GKGraphNode*&gt; *connectedNodes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>List of other graph nodes that this node has an edge leading to.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGraphNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addConnectionsToNodes:bidirectional:" title="addConnectionsToNodes:bidirectional:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addConnectionsToNodes:bidirectional:">&ndash;&nbsp;addConnectionsToNodes:bidirectional:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add a connection to a group of other nodes indicating those nodes can be reached from this node.
+A new connection is not created if it already exists.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addConnectionsToNodes:(NSArray&lt;GKGraphNode*&gt; *)<em>nodes</em> bidirectional:(BOOL)<em>bidirectional</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bidirectional</code></th>
+						<td><p>should a connection also be added connecting the destination node back to this node?</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>array</code></th>
+						<td><p>of nodes that are end points for their respective connections</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add a connection to a group of other nodes indicating those nodes can be reached from this node.
+A new connection is not created if it already exists.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGraphNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeConnectionsToNodes:bidirectional:" title="removeConnectionsToNodes:bidirectional:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeConnectionsToNodes:bidirectional:">&ndash;&nbsp;removeConnectionsToNodes:bidirectional:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes connections to a group of other nodes indicating those nodes can no longer be reached from this node.
+Nothing happens if a particular connection does not exist.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeConnectionsToNodes:(NSArray&lt;GKGraphNode*&gt; *)<em>nodes</em> bidirectional:(BOOL)<em>bidirectional</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bidirectional</code></th>
+						<td><p>should the connection also be added the destination node back to this node also be removed if it exists?</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>the end point of the edge to be removed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes connections to a group of other nodes indicating those nodes can no longer be reached from this node.
+Nothing happens if a particular connection does not exist.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGraphNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/estimatedCostToNode:" title="estimatedCostToNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/estimatedCostToNode:">&ndash;&nbsp;estimatedCostToNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the estimated heuristic cost to reach the indicated node from this node</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (float)estimatedCostToNode:(GKGraphNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>the</code></th>
+						<td><p>end point of the edge who&rsquo;s cost is to be estimated</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the estimated heuristic cost to reach the indicated node from this node</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGraphNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/costToNode:" title="costToNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/costToNode:">&ndash;&nbsp;costToNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the actual cost to reach the indicated node from this node</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (float)costToNode:(GKGraphNode *)<em>node</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the actual cost to reach the indicated node from this node</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGraphNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findPathToNode:" title="findPathToNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findPathToNode:">&ndash;&nbsp;findPathToNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Attempts to find the optimal path between this node and the indicated goal node.
+If such a path exists, it is returned in start to end order.
+If it doesn&rsquo;t exist, the array returned will be empty.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;__kindofGKGraphNode*&gt; *)findPathToNode:(GKGraphNode *)<em>goalNode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>goalNode</code></th>
+						<td><p>the goal node of the pathfinding attempt</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Attempts to find the optimal path between this node and the indicated goal node.
+If such a path exists, it is returned in start to end order.
+If it doesn&rsquo;t exist, the array returned will be empty.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGraphNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findPathFromNode:" title="findPathFromNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findPathFromNode:">&ndash;&nbsp;findPathFromNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>As with <a href="#//api/name/findPathToNode:">findPathToNode:</a> except this node is the goal node and a startNode is specified</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;__kindofGKGraphNode*&gt; *)findPathFromNode:(GKGraphNode *)<em>startNode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startNode</code></th>
+						<td><p>the start node of the pathfinding attempt</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>As with <a href="#//api/name/findPathToNode:">findPathToNode:</a> except this node is the goal node and a startNode is specified</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKGraphNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

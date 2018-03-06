@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MDLTexture Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 ModelIO Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/channelCount">channelCount</option>
+		
+		<option value="//api/name/channelEncoding">channelEncoding</option>
+		
+		<option value="//api/name/dimensions">dimensions</option>
+		
+		<option value="//api/name/hasAlphaValues">hasAlphaValues</option>
+		
+		<option value="//api/name/isCube">isCube</option>
+		
+		<option value="//api/name/mipLevelCount">mipLevelCount</option>
+		
+		<option value="//api/name/rowStride">rowStride</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/irradianceTextureCubeWithTexture:name:dimensions:">+ irradianceTextureCubeWithTexture:name:dimensions:</option>
+		
+		<option value="//api/name/irradianceTextureCubeWithTexture:name:dimensions:roughness:">+ irradianceTextureCubeWithTexture:name:dimensions:roughness:</option>
+		
+		<option value="//api/name/textureCubeWithImagesNamed:">+ textureCubeWithImagesNamed:</option>
+		
+		<option value="//api/name/textureCubeWithImagesNamed:bundle:">+ textureCubeWithImagesNamed:bundle:</option>
+		
+		<option value="//api/name/textureNamed:">+ textureNamed:</option>
+		
+		<option value="//api/name/textureNamed:bundle:">+ textureNamed:bundle:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/imageFromTexture">- imageFromTexture</option>
+		
+		<option value="//api/name/imageFromTextureAtLevel:">- imageFromTextureAtLevel:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithData:topLeftOrigin:name:dimensions:rowStride:channelCount:channelEncoding:isCube:">- initWithData:topLeftOrigin:name:dimensions:rowStride:channelCount:channelEncoding:isCube:</option>
+		
+		<option value="//api/name/texelDataWithBottomLeftOrigin">- texelDataWithBottomLeftOrigin</option>
+		
+		<option value="//api/name/texelDataWithBottomLeftOriginAtMipLevel:create:">- texelDataWithBottomLeftOriginAtMipLevel:create:</option>
+		
+		<option value="//api/name/texelDataWithTopLeftOrigin">- texelDataWithTopLeftOrigin</option>
+		
+		<option value="//api/name/texelDataWithTopLeftOriginAtMipLevel:create:">- texelDataWithTopLeftOriginAtMipLevel:create:</option>
+		
+		<option value="//api/name/writeToURL:">- writeToURL:</option>
+		
+		<option value="//api/name/writeToURL:level:">- writeToURL:level:</option>
+		
+		<option value="//api/name/writeToURL:type:">- writeToURL:type:</option>
+		
+		<option value="//api/name/writeToURL:type:level:">- writeToURL:type:level:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MDLTexture Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/MDLNamed.html">MDLNamed</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MDLTexture.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>MDLTexture
+@summary a description of texels provided by a texture object.</p><p>A texture optionally generates or loads texels
+             through an access to the data property, or one of the other
+             properties, otherwise the texture object is a lightweight descriptor
+             only.</p>
+
+<p>@property data
+           Texel data that will exist when referenced; it may or may not exist
+           before
+@property <a href="#//api/name/dimensions">dimensions</a>
+           texel width and height of the texture
+@property <a href="#//api/name/rowStride">rowStride</a>
+           The number of bytes from the first texel in a row to the first texel
+           in the next row. A <a href="#//api/name/rowStride">rowStride</a> of zero indicates that interleaved x,y
+           addressing of texels is not possible. This might be the case if the
+           texture was compressed in some manner, for example.
+@property <a href="#//api/name/channelCount">channelCount</a>
+           The number of channels incoded in a single texel. For example, an RGB
+           texture has 3 channels. All channels must have the same encoding.
+@property <a href="#//api/name/channelEncoding">channelEncoding</a>
+           The encoding of a channel in a single texel.
+@property <a href="#//api/name/isCube">isCube</a>
+           The texture encodes a cube map. If YES, then the layout of the cube
+           map is deduced as a vertical strip if dimension.y is six times
+           dimension.x. Other layouts are possible in the future.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/textureNamed:" title="textureNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/textureNamed:">+&nbsp;textureNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a texture from a source in the main bundle named in a manner matching
+  name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)textureNamed:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a texture from a source in the main bundle named in a manner matching
+  name.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/textureNamed:bundle:" title="textureNamed:bundle:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/textureNamed:bundle:">+&nbsp;textureNamed:bundle:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)textureNamed:(NSString *)<em>name</em> bundle:(nullable NSBundle *)<em>bundleOrNil</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/textureCubeWithImagesNamed:" title="textureCubeWithImagesNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/textureCubeWithImagesNamed:">+&nbsp;textureCubeWithImagesNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>  Creates a cube texture map image using 6 faces of the same <a href="#//api/name/dimensions">dimensions</a>,
+  ordered +X,-X,+Y,-Y,+Z,-Z If the data is read back the image will be compacted
+  into a single vertical stack where <a href="#//api/name/dimensions">dimensions</a>.y = 6 * <a href="#//api/name/dimensions">dimensions</a>.x
+  <a href="#//api/name/isCube">isCube</a> will return YES</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)textureCubeWithImagesNamed:(NSArray&lt;NSString*&gt; *)<em>names</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>names</code></th>
+						<td><p>a collection of mosaiced images in a cross formation or column or row.
+  - If 6 individual images are given they are assumed to be in order and will be
+    loaded as is.
+  - if 3 images of double height or width are given they will be treated as
+    pairs of + and - in each axis, the order is must be x, then y, then z.
+  - if 2 images of triple height or width are given they will be treates as a
+    positive set and a negative set in the order +x, +y, +z, then -x, -y, -z.
+  - if a single image is given it will be used without conversion if in column
+    orientation and demosaiced in all other instances.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  Creates a cube texture map image using 6 faces of the same <a href="#//api/name/dimensions">dimensions</a>,
+  ordered +X,-X,+Y,-Y,+Z,-Z If the data is read back the image will be compacted
+  into a single vertical stack where <a href="#//api/name/dimensions">dimensions</a>.y = 6 * <a href="#//api/name/dimensions">dimensions</a>.x
+  <a href="#//api/name/isCube">isCube</a> will return YES</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/textureCubeWithImagesNamed:bundle:" title="textureCubeWithImagesNamed:bundle:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/textureCubeWithImagesNamed:bundle:">+&nbsp;textureCubeWithImagesNamed:bundle:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)textureCubeWithImagesNamed:(NSArray&lt;NSString*&gt; *)<em>names</em> bundle:(nullable NSBundle *)<em>bundleOrNil</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/irradianceTextureCubeWithTexture:name:dimensions:" title="irradianceTextureCubeWithTexture:name:dimensions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/irradianceTextureCubeWithTexture:name:dimensions:">+&nbsp;irradianceTextureCubeWithTexture:name:dimensions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)irradianceTextureCubeWithTexture:(MDLTexture *)<em>texture</em> name:(nullable NSString *)<em>name</em> dimensions:(vector_int2)<em>dimensions</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/irradianceTextureCubeWithTexture:name:dimensions:roughness:" title="irradianceTextureCubeWithTexture:name:dimensions:roughness:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/irradianceTextureCubeWithTexture:name:dimensions:roughness:">+&nbsp;irradianceTextureCubeWithTexture:name:dimensions:roughness:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)irradianceTextureCubeWithTexture:(MDLTexture *)<em>texture</em> name:(nullable NSString *)<em>name</em> dimensions:(vector_int2)<em>dimensions</em> roughness:(float)<em>roughness</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithData:topLeftOrigin:name:dimensions:rowStride:channelCount:channelEncoding:isCube:" title="initWithData:topLeftOrigin:name:dimensions:rowStride:channelCount:channelEncoding:isCube:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithData:topLeftOrigin:name:dimensions:rowStride:channelCount:channelEncoding:isCube:">&ndash;&nbsp;initWithData:topLeftOrigin:name:dimensions:rowStride:channelCount:channelEncoding:isCube:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithData:(nullable NSData *)<em>pixelData</em> topLeftOrigin:(BOOL)<em>topLeftOrigin</em> name:(nullable NSString *)<em>name</em> dimensions:(vector_int2)<em>dimensions</em> rowStride:(NSInteger)<em>rowStride</em> channelCount:(NSUInteger)<em>channelCount</em> channelEncoding:(MDLTextureChannelEncoding)<em>channelEncoding</em> isCube:(BOOL)<em>isCube</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeToURL:" title="writeToURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeToURL:">&ndash;&nbsp;writeToURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>write a texture to URL, deducing type from path extension</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writeToURL:(NSURL *)<em>URL</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>write a texture to URL, deducing type from path extension</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeToURL:level:" title="writeToURL:level:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeToURL:level:">&ndash;&nbsp;writeToURL:level:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>write a particular level of a mipped texture to URL, deducing type from path extension</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writeToURL:(NSURL *)<em>URL</em> level:(NSUInteger)<em>level</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>write a particular level of a mipped texture to URL, deducing type from path extension</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeToURL:type:" title="writeToURL:type:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeToURL:type:">&ndash;&nbsp;writeToURL:type:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>write a texture to URL, using a specific UT type</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writeToURL:(NSURL *)<em>nsurl</em> type:(CFStringRef)<em>type</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>write a texture to URL, using a specific UT type</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeToURL:type:level:" title="writeToURL:type:level:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeToURL:type:level:">&ndash;&nbsp;writeToURL:type:level:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>write a particular level of a mipped texture to URL, using a specific UT type</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)writeToURL:(NSURL *)<em>nsurl</em> type:(CFStringRef)<em>type</em> level:(NSUInteger)<em>level</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>write a particular level of a mipped texture to URL, using a specific UT type</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageFromTexture" title="imageFromTexture"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageFromTexture">&ndash;&nbsp;imageFromTexture</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable CGImageRef)imageFromTexture</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageFromTextureAtLevel:" title="imageFromTextureAtLevel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageFromTextureAtLevel:">&ndash;&nbsp;imageFromTextureAtLevel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable CGImageRef)imageFromTextureAtLevel:(NSUInteger)<em>level</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/texelDataWithTopLeftOrigin" title="texelDataWithTopLeftOrigin"></a>
+	<h3 class="method-title"><code><a href="#//api/name/texelDataWithTopLeftOrigin">&ndash;&nbsp;texelDataWithTopLeftOrigin</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)texelDataWithTopLeftOrigin</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/texelDataWithBottomLeftOrigin" title="texelDataWithBottomLeftOrigin"></a>
+	<h3 class="method-title"><code><a href="#//api/name/texelDataWithBottomLeftOrigin">&ndash;&nbsp;texelDataWithBottomLeftOrigin</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)texelDataWithBottomLeftOrigin</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/texelDataWithTopLeftOriginAtMipLevel:create:" title="texelDataWithTopLeftOriginAtMipLevel:create:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/texelDataWithTopLeftOriginAtMipLevel:create:">&ndash;&nbsp;texelDataWithTopLeftOriginAtMipLevel:create:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)texelDataWithTopLeftOriginAtMipLevel:(NSInteger)<em>level</em> create:(BOOL)<em>create</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/texelDataWithBottomLeftOriginAtMipLevel:create:" title="texelDataWithBottomLeftOriginAtMipLevel:create:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/texelDataWithBottomLeftOriginAtMipLevel:create:">&ndash;&nbsp;texelDataWithBottomLeftOriginAtMipLevel:create:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)texelDataWithBottomLeftOriginAtMipLevel:(NSInteger)<em>level</em> create:(BOOL)<em>create</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dimensions" title="dimensions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dimensions">&nbsp;&nbsp;dimensions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) vector_int2 dimensions</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rowStride" title="rowStride"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rowStride">&nbsp;&nbsp;rowStride</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger rowStride</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/channelCount" title="channelCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/channelCount">&nbsp;&nbsp;channelCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUInteger channelCount</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mipLevelCount" title="mipLevelCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mipLevelCount">&nbsp;&nbsp;mipLevelCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUInteger mipLevelCount</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/channelEncoding" title="channelEncoding"></a>
+	<h3 class="method-title"><code><a href="#//api/name/channelEncoding">&nbsp;&nbsp;channelEncoding</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MDLTextureChannelEncoding channelEncoding</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isCube" title="isCube"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isCube">&nbsp;&nbsp;isCube</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL isCube</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasAlphaValues" title="hasAlphaValues"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasAlphaValues">&nbsp;&nbsp;hasAlphaValues</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>hasAlphaValues
+@summary
+Can be overridden. If not overridden, hasAlpha will be NO if the texture does not
+have an alpha channel. It wil be YES if the texture has an alpha channel and
+there is at least one non-opaque texel in it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL hasAlphaValues</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>hasAlphaValues
+@summary
+Can be overridden. If not overridden, hasAlpha will be NO if the texture does not
+have an alpha channel. It wil be YES if the texture has an alpha channel and
+there is at least one non-opaque texel in it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IOBluetoothSDPServiceRecord Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IOBluetooth Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/attributes">attributes</option>
+		
+		<option value="//api/name/device">device</option>
+		
+		<option value="//api/name/sortedAttributes">sortedAttributes</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/publishedServiceRecordWithDictionary:">+ publishedServiceRecordWithDictionary:</option>
+		
+		<option value="//api/name/withSDPServiceRecordRef:">+ withSDPServiceRecordRef:</option>
+		
+		<option value="//api/name/withServiceDictionary:device:">+ withServiceDictionary:device:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/getAttributeDataElement:">- getAttributeDataElement:</option>
+		
+		<option value="//api/name/getAttributes">- getAttributes</option>
+		
+		<option value="//api/name/getDevice">- getDevice</option>
+		
+		<option value="//api/name/getL2CAPPSM:">- getL2CAPPSM:</option>
+		
+		<option value="//api/name/getRFCOMMChannelID:">- getRFCOMMChannelID:</option>
+		
+		<option value="//api/name/getSDPServiceRecordRef">- getSDPServiceRecordRef</option>
+		
+		<option value="//api/name/getServiceName">- getServiceName</option>
+		
+		<option value="//api/name/getServiceRecordHandle:">- getServiceRecordHandle:</option>
+		
+		<option value="//api/name/handsFreeSupportedFeatures">- handsFreeSupportedFeatures</option>
+		
+		<option value="//api/name/hasServiceFromArray:">- hasServiceFromArray:</option>
+		
+		<option value="//api/name/initWithServiceDictionary:device:">- initWithServiceDictionary:device:</option>
+		
+		<option value="//api/name/matchesSearchArray:">- matchesSearchArray:</option>
+		
+		<option value="//api/name/matchesUUID16:">- matchesUUID16:</option>
+		
+		<option value="//api/name/matchesUUIDArray:">- matchesUUIDArray:</option>
+		
+		<option value="//api/name/removeServiceRecord">- removeServiceRecord</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IOBluetoothSDPServiceRecord Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCoding<br />NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>IOBluetoothSDPServiceRecord.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class IOBluetoothSDPServiceRecord
+</code></pre><p>As a service record, an instance of this class has an NSDictionary of service <a href="#//api/name/attributes">attributes</a>.
+                It also has a link to the <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> that the service belongs to.  The service
+                dictionary is keyed off of the attribute ID of each attribute represented as an NSNumber.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/publishedServiceRecordWithDictionary:" title="publishedServiceRecordWithDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/publishedServiceRecordWithDictionary:">+&nbsp;publishedServiceRecordWithDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a service to the local SDP server.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)publishedServiceRecordWithDictionary:(NSDictionary *)<em>serviceDict</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>serviceDict</code></th>
+						<td><p>A dictionary containing the <a href="#//api/name/attributes">attributes</a> for the new service</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an IOBluetoothSDPServiceRecord * with the <a href="#//api/name/attributes">attributes</a> specified in the provided dictionary.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     publishedServiceRecordWithDictionary:</p><p>Each entry in the dictionary representing the service contains the individual <a href="#//api/name/attributes">attributes</a>.  Each
+attribute in the dict is keyed by a string that must begin with a hex number representing the
+attribute ID.  The key string may contain additional characters if desired as long as they
+follow a space after the ID hex string.  The attribute value must follow the dictionary format
+described by <a href="../Classes/IOBluetoothSDPDataElement.html">IOBluetoothSDPDataElement</a>.  This dictionary format allows a service dict to be
+created as a plist file and then loaded into the system rather than built up in code.  See the
+example code for an example of how can be done.</p>
+
+<p>If the service record handle, L2CAP PSM or RFCOMM channel ID specified in the dictionary are in
+use, an alternate one will be assigned.</p>
+
+<p>In addition to <a href="#//api/name/attributes">attributes</a> that represent the service itself, additional <a href="#//api/name/attributes">attributes</a> may be specified
+that control the local behavior of the service.  To specify these local <a href="#//api/name/attributes">attributes</a>, an additional
+property titled &ldquo;LocalAttributes&rdquo; may be added to the root of the service dict.  The value of this
+property must be a dictionary that contains the individual local <a href="#//api/name/attributes">attributes</a>.</p>
+
+<p>Currently, only two local <a href="#//api/name/attributes">attributes</a> are supported: &ldquo;Persistent&rdquo; and &ldquo;TargetApplication&rdquo;.</p>
+
+<p>The &ldquo;Persistent&rdquo; local attribute must be either a boolean or number representing whether the service
+should be persistent.  A persistent service will be saved off and restored any time the Bluetooth
+hardware is present.  It will persist through reboots and can only be removed by calling
+IOBluetoothRemoveServiceWithRecordHandle().  This attribute is optional.  By default, if no
+&ldquo;Persistent&rdquo; local property is present, the service will only exist temporarily.  It will
+be removed either when IOBluetoothRemoveServiceWithRecordHandle() is called or when the client
+application exits.</p>
+
+<p>The &ldquo;TargetApplication&rdquo; local attribute is used to specify an application to be launched when a
+remote <a href="#//api/name/device">device</a> attempts to connect to the service (by opening either an L2CAP or RFCOMM channel of
+the type specified in the service).  This value must be a string representing the absolute path to
+the target executable (not just the .app wrapper - i.e.
+/System/Library/CoreServices/OBEXAgent.app/Contents/MacOS/OBEXAgent).  This attribute is optional.
+If no &ldquo;TargetApplication&rdquo; local attribute is specified, no special action will take place when an
+incoming connection to the service is created.  It is up to the client to be monitoring for the
+connection and to do the right thing when one appears.</p>
+
+<p>The &ldquo;LocalAttributes&rdquo; property is optional.  If it is not specified, by default the created service
+is transient and will be removed when the client exits.</p>
+
+<p>Additional local <a href="#//api/name/attributes">attributes</a> to further control incoming services will be added in the future.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeServiceRecord" title="removeServiceRecord"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeServiceRecord">&ndash;&nbsp;removeServiceRecord</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the service from the local SDP server.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)removeServiceRecord</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if successful.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@function   removeServiceRecord
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withServiceDictionary:device:" title="withServiceDictionary:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withServiceDictionary:device:">+&nbsp;withServiceDictionary:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an IOBluetoothSDPServiceRecord * with the <a href="#//api/name/attributes">attributes</a> specified in the provided service dictionary. Provide
+                a pointer to an IOBlueotothDevice if you wish to associate the record to a specific <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withServiceDictionary:(NSDictionary *)<em>serviceDict</em> device:(IOBluetoothDevice *)<em>device</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an IOBluetoothSDPServiceRecord * with the <a href="#//api/name/attributes">attributes</a> specified in the provided dictionary.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     withServiceDictionary:device:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithServiceDictionary:device:" title="initWithServiceDictionary:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithServiceDictionary:device:">&ndash;&nbsp;initWithServiceDictionary:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an initialized IOBluetoothSDPServiceRecord * with the <a href="#//api/name/attributes">attributes</a> specified in the provided service dictionary. Provide
+                a pointer to an IOBlueotothDevice if you wish to associate the record to a specific <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithServiceDictionary:(NSDictionary *)<em>serviceDict</em> device:(IOBluetoothDevice *)<em>device</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an initialized IOBluetoothSDPServiceRecord * with the <a href="#//api/name/attributes">attributes</a> specified in the provided dictionary.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithServiceDictionary
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withSDPServiceRecordRef:" title="withSDPServiceRecordRef:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withSDPServiceRecordRef:">+&nbsp;withSDPServiceRecordRef:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method call to convert an IOBluetoothSDPServiceRecordRef into an IOBluetoothSDPServiceRecord *.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withSDPServiceRecordRef:(IOBluetoothSDPServiceRecordRef)<em>sdpServiceRecordRef</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sdpServiceRecordRef</code></th>
+						<td><p>IOBluetoothSDPServiceRecordRef for which an IOBluetoothSDPServiceRecord * is desired.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the IOBluetoothSDPServiceRecord * for the given IOBluetoothSDPServiceRecordRef.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     withSDPServiceRecordRef:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getSDPServiceRecordRef" title="getSDPServiceRecordRef"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getSDPServiceRecordRef">&ndash;&nbsp;getSDPServiceRecordRef</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an IOBluetoothSDPServiceRecordRef representation of the target IOBluetoothSDPServiceRecord object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothSDPServiceRecordRef)getSDPServiceRecordRef</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an IOBluetoothSDPServiceRecordRef representation of the target IOBluetoothSDPServiceRecord object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method getSDPServiceRecordRef
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/device" title="device"></a>
+	<h3 class="method-title"><code><a href="#//api/name/device">&nbsp;&nbsp;device</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> that the target service belongs to.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, retain) IOBluetoothDevice *device</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> that the target service belongs to.  If the service is one the local host
+                is vending, then nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     device
+</code></pre><p>If the service is a local service (i.e. one the current host is vending out), then nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getDevice" title="getDevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDevice">&ndash;&nbsp;getDevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothDevice *)getDevice</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributes" title="attributes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributes">&nbsp;&nbsp;attributes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an NSDictionary containing the attributes for the service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSDictionary *attributes</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an NSDictionary containing the attributes for the target service.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     attributes
+</code></pre><p>The attribute dictionary is keyed off of the attribute id represented as an NSNumber.  The values
+                in the NSDictionary are <a href="../Classes/IOBluetoothSDPDataElement.html">IOBluetoothSDPDataElement</a> objects representing the data element for the
+                given attribute.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getAttributes" title="getAttributes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getAttributes">&ndash;&nbsp;getAttributes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)getAttributes</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getAttributeDataElement:" title="getAttributeDataElement:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getAttributeDataElement:">&ndash;&nbsp;getAttributeDataElement:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the data element for the given attribute ID in the target service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothSDPDataElement *)getAttributeDataElement:(BluetoothSDPServiceAttributeID)<em>attributeID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attributeID</code></th>
+						<td><p>The attribute ID of the desired attribute.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the data element for the given attribute ID in the target service.  If the service does not
+                contain an attribute with the given ID, then nil is returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getAttributeDataElement:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getServiceName" title="getServiceName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getServiceName">&ndash;&nbsp;getServiceName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the name of the service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)getServiceName</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the name of the target service.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getServiceName
+</code></pre><p>This is currently implemented to simply return the attribute with an id of 0x0100.  In
+                the future, it will be extended to allow name localization based on the user&rsquo;s chosen
+                language or other languages.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getRFCOMMChannelID:" title="getRFCOMMChannelID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getRFCOMMChannelID:">&ndash;&nbsp;getRFCOMMChannelID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows the discovery of the RFCOMM channel ID assigned to the service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)getRFCOMMChannelID:(BluetoothRFCOMMChannelID *)<em>rfcommChannelID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rfcommChannelID</code></th>
+						<td><p>A pointer to the location that will get the found RFCOMM channel ID.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the channel ID is found.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getRFCOMMChannelID:
+</code></pre><p>This method will search through the ProtoclDescriptorList attribute to find an entry
+                with the RFCOMM UUID (UUID16: 0x0003).  If one is found, it gets the second element of
+                the data element sequence and sets the rfcommChannelID pointer to it.  The channel ID
+                only gets set when kIOReturnSuccess is returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getL2CAPPSM:" title="getL2CAPPSM:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getL2CAPPSM:">&ndash;&nbsp;getL2CAPPSM:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows the discovery of the L2CAP PSM assigned to the service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)getL2CAPPSM:(BluetoothL2CAPPSM *)<em>outPSM</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outPSM</code></th>
+						<td><p>A pointer to the location that will get the found L2CAP PSM.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the PSM is found.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getL2CAPPSM:
+</code></pre><p>This method will search through the ProtoclDescriptorList attribute to find an entry
+                with the L2CAP UUID (UUID16: 0x0100).  If one is found, it gets the second element of
+                the data element sequence and sets the outPSM pointer to it.  The PSM value
+                only gets set when kIOReturnSuccess is returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getServiceRecordHandle:" title="getServiceRecordHandle:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getServiceRecordHandle:">&ndash;&nbsp;getServiceRecordHandle:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows the discovery of the service record handle assigned to the service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)getServiceRecordHandle:(BluetoothSDPServiceRecordHandle *)<em>outServiceRecordHandle</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outServiceRecordHandle</code></th>
+						<td><p>A pointer to the location that will get the found service record handle.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns kIOReturnSuccess if the service record handle is found.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getServiceRecordHandle:
+</code></pre><p>This method will search through the <a href="#//api/name/attributes">attributes</a> to find the one representing the
+                service record handle.  If one is found the outServiceRecordHandle param is set
+                with the value.  The outServiceRecordHandle value only gets set when kIOReturnSuccess
+                is returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/matchesUUID16:" title="matchesUUID16:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/matchesUUID16:">&ndash;&nbsp;matchesUUID16:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns TRUE the UUID16 is found in the target service.</p>
+
+<pre><code>        NOTE: This method is only available in Mac OS X 10.7 or later.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)matchesUUID16:(BluetoothSDPUUID16)<em>uuid16</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid16</code></th>
+						<td><p>A BluetoothSDPUUID16 to search for in the target service.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns TRUE if the UUID16 is present in the service.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     matchesUUID16:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/matchesUUIDArray:" title="matchesUUIDArray:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/matchesUUIDArray:">&ndash;&nbsp;matchesUUIDArray:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns TRUE if ALL of the UUIDs in the given array is found in the target service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)matchesUUIDArray:(NSArray *)<em>uuidArray</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>array</code></th>
+						<td><p>An NSArray of <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a> objects to search for in the target service.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns TRUE if all of the given UUIDs are present in the service.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     matchesUUIDArray:
+</code></pre><p>The given array should contain <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a> objects.  It only returns TRUE if all of
+                the UUIDs are found.  This method is like <a href="#//api/name/hasServiceFromArray:">hasServiceFromArray:</a> except that it requires that
+                all UUIDs match instead of any of them matching.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/matchesSearchArray:" title="matchesSearchArray:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/matchesSearchArray:">&ndash;&nbsp;matchesSearchArray:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns TRUE any of the UUID arrays in the search array match the target service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)matchesSearchArray:(NSArray *)<em>searchArray</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>array</code></th>
+						<td><p>An NSArray of NSArrays of <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a> objects.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns TRUE if any of the UUID arrays match.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     matchesSearchArray:
+</code></pre><p>The given array should contain NSArray objects.  Each sub-NSArray should contain
+                <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a> objects.  In turn, each sub-NSArray gets passed to <a href="#//api/name/matchesUUIDArray:">matchesUUIDArray:</a>
+                If any of those returns TRUE, then the search stops and TRUE is returned.
+                Essentially the master NSArray contains the OR operations and each sub-array contains
+                the AND operations.</p>
+
+<pre><code>            NOTE: This method is only available in Mac OS X 10.2.4 (Bluetooth v1.1) or later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasServiceFromArray:" title="hasServiceFromArray:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasServiceFromArray:">&ndash;&nbsp;hasServiceFromArray:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns TRUE if any one of the UUIDs in the given array is found in the target service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasServiceFromArray:(NSArray *)<em>array</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>array</code></th>
+						<td><p>An NSArray of <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a> objects to search for in the target service.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns TRUE if any of the given UUIDs are present in the service.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     hasServiceFromArray:
+</code></pre><p>The given array should contain <a href="../Classes/IOBluetoothSDPUUID.html">IOBluetoothSDPUUID</a> objects.  It is currently implemented
+                such that it returns TRUE if any of the UUIDs are found.  However in the future, it is likely
+                that this will change to more closely match the functionality in the SDP spec so that it only
+                returns TRUE if all of the given UUIDs are present.  That way, both AND and OR comparisons
+                can be implemented.  Please make a note of this potential change.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sortedAttributes" title="sortedAttributes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sortedAttributes">&nbsp;&nbsp;sortedAttributes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a sorted array of SDP <a href="#//api/name/attributes">attributes</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSArray *sortedAttributes</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns a sorted array of SDP <a href="#//api/name/attributes">attributes</a></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     sortedAttributes:</p><p>This method will walk all the elements of the service record and return an array of
+                <a href="../Classes/IOBluetoothSDPServiceAttribute.html">IOBluetoothSDPServiceAttribute</a> objects sorted by attributeID</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothSDPServiceRecord.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="HandsFreeSDPServiceRecordAdditions Methods" name="task_HandsFreeSDPServiceRecordAdditions Methods"></a>
+						<h2 class="task-title">HandsFreeSDPServiceRecordAdditions Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/handsFreeSupportedFeatures" title="handsFreeSupportedFeatures"></a>
+	<h3 class="method-title"><code><a href="#//api/name/handsFreeSupportedFeatures">&ndash;&nbsp;handsFreeSupportedFeatures</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the hands free supported features</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (uint16_t)handsFreeSupportedFeatures</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The supported features bitmap.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     handsFreeSupportedFeatures</p><p>Returns the hands free supported features bitmap stored in the SDP record. See “<a href="../Constants/IOBluetoothHandsFreeDeviceFeatures.html">IOBluetoothHandsFreeDeviceFeatures</a> and <a href="../Constants/IOBluetoothHandsFreeAudioGatewayFeatures.html">IOBluetoothHandsFreeAudioGatewayFeatures</a>.”</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothHandsFree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

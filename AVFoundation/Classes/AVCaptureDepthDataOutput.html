@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureDepthDataOutput Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/alwaysDiscardsLateDepthData">alwaysDiscardsLateDepthData</option>
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/delegateCallbackQueue">delegateCallbackQueue</option>
+		
+		<option value="//api/name/filteringEnabled">filteringEnabled</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/new">+ new</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/setDelegate:callbackQueue:">- setDelegate:callbackQueue:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureDepthDataOutput Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureDepthDataOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureDepthDataOutput
+@abstract
+    AVCaptureDepthDataOutput is a concrete subclass of AVCaptureOutput that can be used to process depth data in a streaming fashion.</p>
+
+<p>@discussion
+    Instances of AVCaptureDepthDataOutput capture AVDepthData objects expressing disparity/depth. Applications can access the frames with the captureOutput:didOutputDepthData:fromConnection: delegate method.</p>
+
+<pre><code>AVCaptureDepthDataOutput always provides depth data in the format expressed by its source's [AVCaptureDevice activeDepthDataFormat] property. If you wish to receive depth data in another format, you may choose from the [AVCaptureDevice activeFormat]'s [AVCaptureDeviceFormat supportedDepthDataFormats], and set it using [AVCaptureDevice setActiveDepthDataFormat:].
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/new" title="new"></a>
+	<h3 class="method-title"><code><a href="#//api/name/new">+&nbsp;new</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)new</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDelegate:callbackQueue:" title="setDelegate:callbackQueue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDelegate:callbackQueue:">&ndash;&nbsp;setDelegate:callbackQueue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method setDelegate:queue:
+@abstract
+    Sets the receiver&rsquo;s <a href="#//api/name/delegate">delegate</a> that receives captured depth data and the dispatch queue on which the <a href="#//api/name/delegate">delegate</a> is called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setDelegate:(id&lt;AVCaptureDepthDataOutputDelegate&gt;)<em>delegate</em> callbackQueue:(dispatch_queue_t)<em>callbackQueue</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setDelegate:queue:
+@abstract
+    Sets the receiver&rsquo;s <a href="#//api/name/delegate">delegate</a> that receives captured depth data and the dispatch queue on which the <a href="#//api/name/delegate">delegate</a> is called.</p>
+
+<p>@param <a href="#//api/name/delegate">delegate</a>
+    An object conforming to the <a href="../Protocols/AVCaptureDepthDataOutputDelegate.html">AVCaptureDepthDataOutputDelegate</a> protocol that receives depth data in a streaming fashion.
+@param callbackQueue
+    A dispatch queue on which all <a href="#//api/name/delegate">delegate</a> methods are called.</p>
+
+<p>@discussion
+    The depth data output vends captured depth data to its <a href="#//api/name/delegate">delegate</a> using the methods specified in the AVCaptureDepthOutputDelegate protocol. All <a href="#//api/name/delegate">delegate</a> methods are called on the specified dispatch queue. If the callback queue is blocked when <a href="#//api/name/new">new</a> depth data is captured, that depth data is automatically dropped at a time determined by the value of the <a href="#//api/name/alwaysDiscardsLateDepthData">alwaysDiscardsLateDepthData</a> property. This allows clients to process existing depth data on the same queue without having to manage the potential memory usage increases that would otherwise occur when that processing is unable to keep up with the rate of incoming depth data.</p>
+
+<pre><code>Clients who need to minimize the chances of depth data being dropped should provide a dedicated queue and not share it with other data outputs. Processing of depth data may be deferred to another queue, but beware that the depth data pixel buffer maps may come from a finite buffer pool, which may be starved if your deferred processing fails to keep up.
+
+A serial dispatch queue must be used to guarantee that depth data will be delivered in order. The callbackQueue parameter may not be NULL, except when setting the delegate to nil.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDepthDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property delegate
+@abstract
+    The receiver&rsquo;s delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) id&lt;AVCaptureDepthDataOutputDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property delegate
+@abstract
+    The receiver&rsquo;s delegate.</p>
+
+<p>@discussion
+    The value of this property is an object conforming to the <a href="../Protocols/AVCaptureDepthDataOutputDelegate.html">AVCaptureDepthDataOutputDelegate</a> protocol that receives depth data as it is captured. The delegate is set using the setDelegate:queue: method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDepthDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegateCallbackQueue" title="delegateCallbackQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegateCallbackQueue">&nbsp;&nbsp;delegateCallbackQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property delegateCallbackQueue
+@abstract
+    The dispatch queue on which all <a href="#//api/name/delegate">delegate</a> methods are called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) dispatch_queue_t delegateCallbackQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property delegateCallbackQueue
+@abstract
+    The dispatch queue on which all <a href="#//api/name/delegate">delegate</a> methods are called.</p>
+
+<p>@discussion
+    The value of this property is a dispatch_queue_t. The queue is set using the setDelegate:queue: method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDepthDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/alwaysDiscardsLateDepthData" title="alwaysDiscardsLateDepthData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/alwaysDiscardsLateDepthData">&nbsp;&nbsp;alwaysDiscardsLateDepthData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property alwaysDiscardsLateDepthData
+@abstract
+    Specifies whether the receiver should always discard any depth data that is not processed before the next depth data is captured.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL alwaysDiscardsLateDepthData</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property alwaysDiscardsLateDepthData
+@abstract
+    Specifies whether the receiver should always discard any depth data that is not processed before the next depth data is captured.</p>
+
+<p>@discussion
+    When the value of this property is YES, the receiver will immediately discard depth data that are captured while the depthDataCallbackQueue is blocked. When the value of this property is NO, delegates will be allowed more time to process old depth data before <a href="#//api/name/new">new</a> depth data are discarded, but application memory usage may increase as a result. The default value is YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDepthDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/filteringEnabled" title="filteringEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/filteringEnabled">&nbsp;&nbsp;filteringEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property filteringEnabled
+@abstract
+    Specifies whether the depth data output should filter depth data to smooth out noise and fill invalid values.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isFilteringEnabled) BOOL filteringEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property filteringEnabled
+@abstract
+    Specifies whether the depth data output should filter depth data to smooth out noise and fill invalid values.</p>
+
+<p>@discussion
+    When the value of this property is YES, the receiver temporally filters the stream of <a href="../Classes/AVDepthData.html">AVDepthData</a> objects to reduce noise, as well as fill invalid values. Invalid values (NaN) may be present in <a href="../Classes/AVDepthData.html">AVDepthData</a> pixel buffer maps due to factors such as low light or lens occlusion. When filtering is enabled, the depth data output interpolates missing depth data values. Filtering should be disabled if you desire the raw depth data values. The default value is YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureDepthDataOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

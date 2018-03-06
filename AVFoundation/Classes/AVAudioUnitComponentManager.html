@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAudioUnitComponentManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/standardLocalizedTagNames">standardLocalizedTagNames</option>
+		
+		<option value="//api/name/tagNames">tagNames</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/sharedAudioUnitComponentManager">+ sharedAudioUnitComponentManager</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/componentsMatchingDescription:">- componentsMatchingDescription:</option>
+		
+		<option value="//api/name/componentsMatchingPredicate:">- componentsMatchingPredicate:</option>
+		
+		<option value="//api/name/componentsPassingTest:">- componentsPassingTest:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAudioUnitComponentManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAudioUnitComponent.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVAudioUnitComponentManager
+@discussion
+        AVAudioUnitComponentManager is a singleton object that provides an easy way to find
+        audio components that are registered with the system. It provides methods to search and
+        query various information about the audio components without opening them.</p>
+
+<pre><code>    Currently audio components that are audio units can only be searched.
+
+    The class also supports predefined system tags and arbitrary user tags. Each audio unit can be
+    tagged as part of its definition. Refer to AudioComponent.h for more details. AudioUnit Hosts
+    such as Logic or GarageBand can present groupings of audio units based on the tags.
+
+    Searching for audio units can be done in various ways
+        - using a NSPredicate that contains search strings for tags or descriptions
+        - using a block to match on custom criteria
+        - using an AudioComponentDescription
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/tagNames" title="tagNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tagNames">&nbsp;&nbsp;tagNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@discussion
+        returns all tags associated with the current user as well as all system tags defined by
+        the audio unit(s).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *tagNames</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@discussion
+        returns all tags associated with the current user as well as all system tags defined by
+        the audio unit(s).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioUnitComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/standardLocalizedTagNames" title="standardLocalizedTagNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/standardLocalizedTagNames">&nbsp;&nbsp;standardLocalizedTagNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@discussion
+        returns the localized standard system tags defined by the audio unit(s).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *standardLocalizedTagNames</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@discussion
+        returns the localized standard system tags defined by the audio unit(s).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioUnitComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sharedAudioUnitComponentManager" title="sharedAudioUnitComponentManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedAudioUnitComponentManager">+&nbsp;sharedAudioUnitComponentManager</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)sharedAudioUnitComponentManager</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/componentsMatchingPredicate:" title="componentsMatchingPredicate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/componentsMatchingPredicate:">&ndash;&nbsp;componentsMatchingPredicate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>returns an array of <a href="../Classes/AVAudioUnitComponent.html">AVAudioUnitComponent</a> objects that match the search predicate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVAudioUnitComponent*&gt; *)componentsMatchingPredicate:(NSPredicate *)<em>predicate</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method componentsMatchingPredicate:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioUnitComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/componentsPassingTest:" title="componentsPassingTest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/componentsPassingTest:">&ndash;&nbsp;componentsPassingTest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>returns an array of <a href="../Classes/AVAudioUnitComponent.html">AVAudioUnitComponent</a> objects that pass the user provided block method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVAudioUnitComponent*&gt; *)componentsPassingTest:(BOOL ( ^ ) ( AVAudioUnitComponent *comp , BOOL *stop ))<em>testHandler</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method componentsPassingTest:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioUnitComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/componentsMatchingDescription:" title="componentsMatchingDescription:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/componentsMatchingDescription:">&ndash;&nbsp;componentsMatchingDescription:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>returns an array of <a href="../Classes/AVAudioUnitComponent.html">AVAudioUnitComponent</a> objects that match the description.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVAudioUnitComponent*&gt; *)componentsMatchingDescription:(AudioComponentDescription)<em>desc</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method componentsMatchingDescription:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioUnitComponent.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

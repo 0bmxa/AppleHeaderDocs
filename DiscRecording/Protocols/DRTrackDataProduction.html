@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DRTrackDataProduction Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 DiscRecording Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/cleanupTrackAfterBurn:">- cleanupTrackAfterBurn:</option>
+		
+		<option value="//api/name/cleanupTrackAfterVerification:">- cleanupTrackAfterVerification:</option>
+		
+		<option value="//api/name/estimateLengthOfTrack:">- estimateLengthOfTrack:</option>
+		
+		<option value="//api/name/prepareTrack:forBurn:toMedia:">- prepareTrack:forBurn:toMedia:</option>
+		
+		<option value="//api/name/prepareTrackForVerification:">- prepareTrackForVerification:</option>
+		
+		<option value="//api/name/produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:">- produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:</option>
+		
+		<option value="//api/name/producePreGapForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:">- producePreGapForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:</option>
+		
+		<option value="//api/name/verifyDataForTrack:inBuffer:length:atAddress:blockSize:ioFlags:">- verifyDataForTrack:inBuffer:length:atAddress:blockSize:ioFlags:</option>
+		
+		<option value="//api/name/verifyPreGapForTrack:inBuffer:length:atAddress:blockSize:ioFlags:">- verifyPreGapForTrack:inBuffer:length:atAddress:blockSize:ioFlags:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DRTrackDataProduction Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>DRTrack.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@protocol   DRTrackDataProduction
+</code></pre><p>The DRTrackDataProduction informal protocol defines those methods that a track data producer
+    instance can implement. A track data producer is the object that is
+    resposible for providing the track data to the burn engine on request.</p>
+
+<pre><code>In concept a track data producer similar to an NSTable data source in Cocoa. 
+Each producer method receives a pointer to the track it should produce data for. 
+There is one method that &lt;b&gt;must&lt;/b&gt; be implemented -
+@link //apple_ref/occ/intfm/DRTrackDataProduction/produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags: produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags: @/link.
+
+The methods of this protocol will be called in roughly this order:
+
+&lt;ol type="1"&gt;
+&lt;li&gt;@link //apple_ref/occ/intfm/DRTrackDataProduction/prepareTrackForBurn: prepareTrackForBurn: @/link&lt;/li&gt;
+&lt;li&gt;@link //apple_ref/occ/intfm/DRTrackDataProduction/producePreGapForTrack:intoBuffer:length:atAddress:blockSize:ioFlags: producePreGapForTrack:intoBuffer:length:atAddress:blockSize:ioFlags: @/link&lt;/li&gt;
+&lt;li&gt;@link //apple_ref/occ/intfm/DRTrackDataProduction/produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags: produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags: @/link&lt;/li&gt;
+&lt;li&gt;@link //apple_ref/occ/intfm/DRTrackDataProduction/prepareTrackForVerification: prepareTrackForVerification: @/link&lt;/li&gt;
+&lt;li&gt;@link //apple_ref/occ/intfm/DRTrackDataProduction/verifyDataForTrack:inBuffer:length:atAddress:blockSize:ioFlags: verifyDataForTrack:inBuffer:length:atAddress:blockSize:ioFlags: @/link&lt;/li&gt;
+&lt;li&gt;@link //apple_ref/occ/intfm/DRTrackDataProduction/cleanupTrackAfterVerification: cleanupTrackAfterVerification: @/link&lt;/li&gt;
+&lt;li&gt;@link //apple_ref/occ/intfm/DRTrackDataProduction/cleanupTrackAfterBurn: cleanupTrackAfterBurn: @/link&lt;/li&gt;
+&lt;/ol&gt;
+
+If verification of the disc is not requested, or a track omits or defines 
+@link DRVerificationTypeKey DRVerificationTypeKey @/link to be @link DRVerificationTypeNone DRVerificationTypeNone @/link, then 
+@link //apple_ref/occ/intfm/DRTrackDataProduction/prepareTrackForVerification: prepareTrackForVerification: @/link, 
+@link //apple_ref/occ/intfm/DRTrackDataProduction/verifyDataForTrack:inBuffer:length:atAddress:blockSize:ioFlags: verifyDataForTrack:inBuffer:length:atAddress:blockSize:ioFlags: @/link and
+@link //apple_ref/occ/intfm/DRTrackDataProduction/cleanupTrackAfterVerification: cleanupTrackAfterVerification: @/link
+will not be called.
+
+During a burn, @link //apple_ref/occ/intfm/DRTrackDataProduction/produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags: produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags: @/link is called
+very frequently in a real-time thread. Because of this, it is of utmost importance that
+this method very effficient and does not perform any long task, since by doing so, the
+burn may fail because data is not available to write to the disc.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/estimateLengthOfTrack:" title="estimateLengthOfTrack:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/estimateLengthOfTrack:">&ndash;&nbsp;estimateLengthOfTrack:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Estimates the size of the track to be burned.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (uint64_t)estimateLengthOfTrack:(DRTrack *)<em>track</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>track</code></th>
+						<td><p>The track object for which to estimate the size</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The number of blocks of data that the track will occupy. The estimate should be
+                    reasonably accurate, and no smaller than the actual size that will be needed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         estimateLengthOfTrack:
+</code></pre><p>This message is sent outside of a burn cycle in response to a -estimateLength message
+                    sent to the track.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRTrack.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareTrack:forBurn:toMedia:" title="prepareTrack:forBurn:toMedia:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareTrack:forBurn:toMedia:">&ndash;&nbsp;prepareTrack:forBurn:toMedia:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Prepares the track for burning.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)prepareTrack:(DRTrack *)<em>track</em> forBurn:(DRBurn *)<em>burn</em> toMedia:(NSDictionary *)<em>mediaInfo</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>track</code></th>
+						<td><p>The track object being burned</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>burn</code></th>
+						<td><p>The burn object controlling the burn</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mediaInfo</code></th>
+						<td><p>The media being burned to. This is the same dictionary as returned by @link //apple_ref/occ/instm/DRDevice/status <a href="../Classes/DRDevice.html#//api/name/status">[DRDevice status]</a> @/link.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><i>YES</i> to indicate that the burn should proceed and <i>NO</i> to indicate a failure occurred.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         prepareTrack:forBurn:toMedia:
+</code></pre><p>Called before any burning starts. Do any sort of setup that needs to be performed
+                    (such as opening files). This method can calculate and update the exact track length
+                    that will be burned.</p>
+
+<pre><code>                Since this method is called before the laser is turned on, this method can perform 
+                time consuming tasks. 
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRTrack.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cleanupTrackAfterBurn:" title="cleanupTrackAfterBurn:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cleanupTrackAfterBurn:">&ndash;&nbsp;cleanupTrackAfterBurn:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cleans up the track after the burn completes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cleanupTrackAfterBurn:(DRTrack *)<em>track</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>track</code></th>
+						<td><p>The track object being burned</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><i>YES</i> to indicate that the burn should proceed and <i>NO</i> to indicate a failure occurred.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         cleanupTrackAfterBurn:
+</code></pre><p>Called after burning is complete. Typically you&rsquo;ll clean up what was setup in <b>prepareTrackForBurn</b>.
+                    Since this method is called after the laser is turned off and the burn is finished,
+                    this method can perform time consuming tasks.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRTrack.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/producePreGapForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:" title="producePreGapForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/producePreGapForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:">&ndash;&nbsp;producePreGapForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Produces the pregap data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (uint32_t)producePreGapForTrack:(DRTrack *)<em>track</em> intoBuffer:(char *)<em>buffer</em> length:(uint32_t)<em>bufferLength</em> atAddress:(uint64_t)<em>address</em> blockSize:(uint32_t)<em>blockSize</em> ioFlags:(uint32_t *)<em>flags</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>track</code></th>
+						<td><p>The track object being burned</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>buffer</code></th>
+						<td><p>The buffer to place data into</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bufferLength</code></th>
+						<td><p>The length of buffer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>address</code></th>
+						<td><p>The on-disc address of where data will be written</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>blockSize</code></th>
+						<td><p>the size of each block on the disc. It&rsquo;s best to return a multiple of this size.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flags</code></th>
+						<td><p>flags</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The number of bytes produced.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         producePreGapForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:
+</code></pre><p>This method is called to obtain data for the track&rsquo;s pregap. If the @link DRPreGapLengthKey DRPreGapLengthKey @/link
+                    key is present in the track properties, the track producer will be asked for the pregap
+                    data first. If the producer implements this selector, then it&rsquo;s the responsibility
+                    of the producer to provide data for the pregap, otherwise that length of
+                    silence will be produced by DiscRecording.</p>
+
+<pre><code>                The buffer passed in will be a multiple of blockSize (bufferLength == blockSize * N, where N &gt; 1) 
+                and should be filled as full as possible with data. address is the sector address on the disc from
+                the start of the track that is the buffer will be written to.
+
+                Since while burning, keeping the drive's buffer full is 
+                of utmost importance, you should not perform lengthy operations or block for data in this method.
+                This method should return the number of bytes actually in the buffer or 0 to indicate that there
+                was an error producing the data.. 
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRTrack.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:" title="produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:">&ndash;&nbsp;produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Produces the track data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (uint32_t)produceDataForTrack:(DRTrack *)<em>track</em> intoBuffer:(char *)<em>buffer</em> length:(uint32_t)<em>bufferLength</em> atAddress:(uint64_t)<em>address</em> blockSize:(uint32_t)<em>blockSize</em> ioFlags:(uint32_t *)<em>flags</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>track</code></th>
+						<td><p>The track object being burned</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>buffer</code></th>
+						<td><p>The buffer to place data into</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bufferLength</code></th>
+						<td><p>The length of buffer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>address</code></th>
+						<td><p>The on-disc address of where data will be written</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>blockSize</code></th>
+						<td><p>the size of each block on the disc. It&rsquo;s best to return a multiple of this size.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flags</code></th>
+						<td><p>flags</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The number of bytes produced.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         produceDataForTrack:intoBuffer:length:atAddress:blockSize:ioFlags:
+</code></pre><p>This method is called many times over the course of a burn to obtain data for the track.
+                    The buffer passed in will be a multiple of blockSize (bufferLength == blockSize * N, where N > 1)
+                    and should be filled as full as possible with data. address is the sector address on the disc from
+                    the start of the track that is the buffer will be written to.</p>
+
+<pre><code>                Since while burning, keeping the drive's buffer full is 
+                of utmost importance, you should not perform lengthy operations or block for data in this method.
+                This method should return the number of bytes actually in the buffer or 0 to indicate that there
+                was an error producing the data.. 
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRTrack.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareTrackForVerification:" title="prepareTrackForVerification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareTrackForVerification:">&ndash;&nbsp;prepareTrackForVerification:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Prepare the track to be verified.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)prepareTrackForVerification:(DRTrack *)<em>track</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>track</code></th>
+						<td><p>The track object being burned</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><i>YES</i> to indicate that the verification should proceed and <i>NO</i> to indicate a failure occurred.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         prepareTrackForVerification:
+</code></pre><p>This method is called after the burn complets writing data to disc and before verification
+                    phase starts. Now would be a good time to prepare to produce data again by rewinding to the start
+                    of files, etc.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRTrack.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/verifyPreGapForTrack:inBuffer:length:atAddress:blockSize:ioFlags:" title="verifyPreGapForTrack:inBuffer:length:atAddress:blockSize:ioFlags:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/verifyPreGapForTrack:inBuffer:length:atAddress:blockSize:ioFlags:">&ndash;&nbsp;verifyPreGapForTrack:inBuffer:length:atAddress:blockSize:ioFlags:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks the integrity track pregap after a burn.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)verifyPreGapForTrack:(DRTrack *)<em>track</em> inBuffer:(const char *)<em>buffer</em> length:(uint32_t)<em>bufferLength</em> atAddress:(uint64_t)<em>address</em> blockSize:(uint32_t)<em>blockSize</em> ioFlags:(uint32_t *)<em>flags</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>track</code></th>
+						<td><p>The track object being burned</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>buffer</code></th>
+						<td><p>The data read in from the track to compare with</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bufferLength</code></th>
+						<td><p>The length of buffer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>address</code></th>
+						<td><p>The on-disc address of where data will was read from.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>blockSize</code></th>
+						<td><p>the size of each block on the disc. It&rsquo;s best to return a multiple of this size.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flags</code></th>
+						<td><p>flags</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><i>YES</i> to indicate that the data compared successfully and <i>NO</i> to indicate a failure occurred.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         verifyPreGapForTrack:inBuffer:length:atAddress:blockSize:ioFlags:
+</code></pre><p>If the class implementing this method asks for a verification type of @link DRVerificationTypeReceiveData DRVerificationTypeReceiveData @/link,
+                    then a series of calls to this method will start. It&rsquo;s up to the class to reproduce the pregap
+                    again and compare it to the data passed in buffer. The buffer passed in will be a multiple of blockSize
+                    (bufferLength == blockSize * N, where N > 1). address is the sector address on the disc from
+                    the start of the track that is the buffer was written to.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRTrack.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/verifyDataForTrack:inBuffer:length:atAddress:blockSize:ioFlags:" title="verifyDataForTrack:inBuffer:length:atAddress:blockSize:ioFlags:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/verifyDataForTrack:inBuffer:length:atAddress:blockSize:ioFlags:">&ndash;&nbsp;verifyDataForTrack:inBuffer:length:atAddress:blockSize:ioFlags:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cleans up the track after the burn completes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)verifyDataForTrack:(DRTrack *)<em>track</em> inBuffer:(const char *)<em>buffer</em> length:(uint32_t)<em>bufferLength</em> atAddress:(uint64_t)<em>address</em> blockSize:(uint32_t)<em>blockSize</em> ioFlags:(uint32_t *)<em>flags</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>track</code></th>
+						<td><p>The track object being burned</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>buffer</code></th>
+						<td><p>The data read in from the track to compare with</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bufferLength</code></th>
+						<td><p>The length of buffer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>address</code></th>
+						<td><p>The on-disc address of where data will was read from.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>blockSize</code></th>
+						<td><p>the size of each block on the disc. It&rsquo;s best to return a multiple of this size.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flags</code></th>
+						<td><p>flags</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><i>YES</i> to indicate that the data compared successfully and <i>NO</i> to indicate a failure occurred.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         verifyDataForTrack:inBuffer:length:atAddress:blockSize:ioFlags:
+</code></pre><p>If the class implementing this method asks for a verification type of @link DRVerificationTypeReceiveData DRVerificationTypeReceiveData @/link,
+                    then a series of calls to this method will start. It&rsquo;s up to the class to reproduce the data
+                    again and compare it to the data passed in buffer. The buffer passed in will be a multiple of blockSize
+                    (bufferLength == blockSize * N, where N > 1). address is the sector address on the disc from
+                    the start of the track that is the buffer was written to.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRTrack.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cleanupTrackAfterVerification:" title="cleanupTrackAfterVerification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cleanupTrackAfterVerification:">&ndash;&nbsp;cleanupTrackAfterVerification:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cleans up the track after the verification completes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)cleanupTrackAfterVerification:(DRTrack *)<em>track</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>track</code></th>
+						<td><p>The track object being burned</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Return <i>YES</i> to indicate success, <i>NO</i> to indicate failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         cleanupTrackAfterVerification:
+</code></pre><p>Once the verification phase is complete, this method is called. The class implementing
+                    the method has a chance to do anything up to and including failing the verification.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRTrack.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

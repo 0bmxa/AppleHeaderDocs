@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>WebFrameLoadDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 WebKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/webView:didCancelClientRedirectForFrame:">- webView:didCancelClientRedirectForFrame:</option>
+		
+		<option value="//api/name/webView:didChangeLocationWithinPageForFrame:">- webView:didChangeLocationWithinPageForFrame:</option>
+		
+		<option value="//api/name/webView:didClearWindowObject:forFrame:">- webView:didClearWindowObject:forFrame:</option>
+		
+		<option value="//api/name/webView:didCommitLoadForFrame:">- webView:didCommitLoadForFrame:</option>
+		
+		<option value="//api/name/webView:didCreateJavaScriptContext:forFrame:">- webView:didCreateJavaScriptContext:forFrame:</option>
+		
+		<option value="//api/name/webView:didFailLoadWithError:forFrame:">- webView:didFailLoadWithError:forFrame:</option>
+		
+		<option value="//api/name/webView:didFailProvisionalLoadWithError:forFrame:">- webView:didFailProvisionalLoadWithError:forFrame:</option>
+		
+		<option value="//api/name/webView:didFinishLoadForFrame:">- webView:didFinishLoadForFrame:</option>
+		
+		<option value="//api/name/webView:didReceiveIcon:forFrame:">- webView:didReceiveIcon:forFrame:</option>
+		
+		<option value="//api/name/webView:didReceiveServerRedirectForProvisionalLoadForFrame:">- webView:didReceiveServerRedirectForProvisionalLoadForFrame:</option>
+		
+		<option value="//api/name/webView:didReceiveTitle:forFrame:">- webView:didReceiveTitle:forFrame:</option>
+		
+		<option value="//api/name/webView:didStartProvisionalLoadForFrame:">- webView:didStartProvisionalLoadForFrame:</option>
+		
+		<option value="//api/name/webView:willCloseFrame:">- webView:willCloseFrame:</option>
+		
+		<option value="//api/name/webView:willPerformClientRedirectToURL:delay:fireDate:forFrame:">- webView:willPerformClientRedirectToURL:delay:fireDate:forFrame:</option>
+		
+		<option value="//api/name/webView:windowScriptObjectAvailable:">- webView:windowScriptObjectAvailable:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">WebFrameLoadDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>WebFrameLoadDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@category WebFrameLoadDelegate
+</code></pre><p>A WebView&rsquo;s WebFrameLoadDelegate tracks the loading progress of its frames.
+    When a data source of a frame starts to load, the data source is considered &ldquo;provisional&rdquo;.
+    Once at least one byte is received, the data source is considered &ldquo;committed&rdquo;. This is done
+    so the contents of the frame will not be lost if the new data source fails to successfully load.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/webView:didStartProvisionalLoadForFrame:" title="webView:didStartProvisionalLoadForFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didStartProvisionalLoadForFrame:">&ndash;&nbsp;webView:didStartProvisionalLoadForFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that the provisional load of a frame has started</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> didStartProvisionalLoadForFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for which the provisional load has started</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didStartProvisionalLoadForFrame:
+</code></pre><p>This method is called after the provisional data source of a frame
+    has started to load.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didReceiveServerRedirectForProvisionalLoadForFrame:" title="webView:didReceiveServerRedirectForProvisionalLoadForFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didReceiveServerRedirectForProvisionalLoadForFrame:">&ndash;&nbsp;webView:didReceiveServerRedirectForProvisionalLoadForFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that a server redirect occurred during the provisional load</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> didReceiveServerRedirectForProvisionalLoadForFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for which the redirect occurred</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didReceiveServerRedirectForProvisionalLoadForFrame:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didFailProvisionalLoadWithError:forFrame:" title="webView:didFailProvisionalLoadWithError:forFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didFailProvisionalLoadWithError:forFrame:">&ndash;&nbsp;webView:didFailProvisionalLoadWithError:forFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that the provisional load has failed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> didFailProvisionalLoadWithError:(NSError *)<em>error</em> forFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error that occurred</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for which the error occurred</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didFailProvisionalLoadWithError:forFrame:
+</code></pre><p>This method is called after the provisional data source has failed to load.
+    The frame will continue to display the contents of the committed data source if there is one.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didCommitLoadForFrame:" title="webView:didCommitLoadForFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didCommitLoadForFrame:">&ndash;&nbsp;webView:didCommitLoadForFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that the load has changed from provisional to committed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> didCommitLoadForFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for which the load has committed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didCommitLoadForFrame:
+</code></pre><p>This method is called after the provisional data source has become the
+    committed data source.</p>
+
+<pre><code>In some cases, a single load may be committed more than once. This happens
+in the case of multipart/x-mixed-replace, also known as "server push". In this case,
+a single location change leads to multiple documents that are loaded in sequence. When
+this happens, a new commit will be sent for each document.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didReceiveTitle:forFrame:" title="webView:didReceiveTitle:forFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didReceiveTitle:forFrame:">&ndash;&nbsp;webView:didReceiveTitle:forFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that the page title for a frame has been received</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> didReceiveTitle:(NSString *)<em>title</em> forFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>title</code></th>
+						<td><p>The new page title</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for which the title has been received</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didReceiveTitle:forFrame:
+</code></pre><p>The title may update during loading; clients should be prepared for this.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didReceiveIcon:forFrame:" title="webView:didReceiveIcon:forFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didReceiveIcon:forFrame:">&ndash;&nbsp;webView:didReceiveIcon:forFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that a page icon image for a frame has been received</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> didReceiveIcon:(NSImage *)<em>image</em> forFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The icon image. Also known as a &ldquo;favicon&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for which a page icon has been received</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didReceiveIcon:forFrame:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didFinishLoadForFrame:" title="webView:didFinishLoadForFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didFinishLoadForFrame:">&ndash;&nbsp;webView:didFinishLoadForFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that the committed load of a frame has completed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> didFinishLoadForFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame that finished loading</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didFinishLoadForFrame:
+</code></pre><p>This method is called after the committed data source of a frame has successfully loaded
+    and will only be called when all subresources such as images and stylesheets are done loading.
+    Plug-In content and JavaScript-requested loads may occur after this method is called.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didFailLoadWithError:forFrame:" title="webView:didFailLoadWithError:forFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didFailLoadWithError:forFrame:">&ndash;&nbsp;webView:didFailLoadWithError:forFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that the committed load of a frame has failed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> didFailLoadWithError:(NSError *)<em>error</em> forFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error that occurred</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame that failed to load</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didFailLoadWithError:forFrame:
+</code></pre><p>This method is called after a data source has committed but failed to completely load.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didChangeLocationWithinPageForFrame:" title="webView:didChangeLocationWithinPageForFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didChangeLocationWithinPageForFrame:">&ndash;&nbsp;webView:didChangeLocationWithinPageForFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that the scroll position in a frame has changed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> didChangeLocationWithinPageForFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame that scrolled</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didChangeLocationWithinPageForFrame:
+</code></pre><p>This method is called when anchors within a page have been clicked.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:willPerformClientRedirectToURL:delay:fireDate:forFrame:" title="webView:willPerformClientRedirectToURL:delay:fireDate:forFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:willPerformClientRedirectToURL:delay:fireDate:forFrame:">&ndash;&nbsp;webView:willPerformClientRedirectToURL:delay:fireDate:forFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that a frame will perform a client-side redirect</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> willPerformClientRedirectToURL:(NSURL *)<em>URL</em> delay:(NSTimeInterval)<em>seconds</em> fireDate:(NSDate *)<em>date</em> forFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>URL</code></th>
+						<td><p>The URL to be redirected to</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>seconds</code></th>
+						<td><p>Seconds in which the redirect will happen</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>date</code></th>
+						<td><p>The fire date</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame on which the redirect will occur</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:willPerformClientRedirectToURL:delay:fireDate:forFrame:
+</code></pre><p>This method can be used to continue progress feedback while a client-side
+    redirect is pending.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didCancelClientRedirectForFrame:" title="webView:didCancelClientRedirectForFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didCancelClientRedirectForFrame:">&ndash;&nbsp;webView:didCancelClientRedirectForFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that a pending client-side redirect has been cancelled</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> didCancelClientRedirectForFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for which the pending redirect was cancelled</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didCancelClientRedirectForFrame:
+</code></pre><p>A client-side redirect can be cancelled if a frame changes location before the timeout.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:willCloseFrame:" title="webView:willCloseFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:willCloseFrame:">&ndash;&nbsp;webView:willCloseFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that a frame will be closed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> willCloseFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame that will be closed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:willCloseFrame:
+</code></pre><p>This method is called right before WebKit is done with the frame
+    and the objects that it contains.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didClearWindowObject:forFrame:" title="webView:didClearWindowObject:forFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didClearWindowObject:forFrame:">&ndash;&nbsp;webView:didClearWindowObject:forFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that the JavaScript window object in a frame has
+    been cleared in preparation for a new load. This is the preferred place to set custom
+    properties on the window object using the <a href="../Classes/WebScriptObject.html">WebScriptObject</a> and JavaScriptCore APIs.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>webView</em> didClearWindowObject:(WebScriptObject *)<em>windowObject</em> forFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The webView sending the message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowObject</code></th>
+						<td><p>The <a href="../Classes/WebScriptObject.html">WebScriptObject</a> representing the frame&rsquo;s JavaScript window object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The <a href="../Classes/WebFrame.html">WebFrame</a> to which windowObject belongs.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didClearWindowObject:forFrame:
+</code></pre><p>If a delegate implements both webView:didClearWindowObject:forFrame:
+    and <a href="#//api/name/webView:windowScriptObjectAvailable:">webView:windowScriptObjectAvailable:</a>, only webView:didClearWindowObject:forFrame:
+    will be invoked. This enables a delegate to implement both methods for backwards
+    compatibility with older versions of WebKit.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:windowScriptObjectAvailable:" title="webView:windowScriptObjectAvailable:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:windowScriptObjectAvailable:">&ndash;&nbsp;webView:windowScriptObjectAvailable:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that the scripting object for a page is available.  This is called
+    before the page is loaded.  It may be useful to allow delegates to bind native objects to the window.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>webView</em> windowScriptObjectAvailable:(WebScriptObject *)<em>windowScriptObject</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The webView sending the message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowScriptObject</code></th>
+						<td><p>The <a href="../Classes/WebScriptObject.html">WebScriptObject</a> for the window in the scripting environment.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:windowScriptObjectAvailable:
+</code></pre><p>This method is deprecated. Consider using <a href="#//api/name/webView:didClearWindowObject:forFrame:">webView:didClearWindowObject:forFrame:</a>
+    instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:didCreateJavaScriptContext:forFrame:" title="webView:didCreateJavaScriptContext:forFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:didCreateJavaScriptContext:forFrame:">&ndash;&nbsp;webView:didCreateJavaScriptContext:forFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Notifies the delegate that a new JavaScript context has been created created.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>webView</em> didCreateJavaScriptContext:(JSContext *)<em>context</em> forFrame:(WebFrame *)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The JSContext representing the frame&rsquo;s JavaScript window object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The <a href="../Classes/WebFrame.html">WebFrame</a> to which the context belongs.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:didCreateJavaScriptContext:contextForFrame:
+</code></pre><p>If a delegate implements webView:didCreateJavaScriptContext:forFrame: along with either
+    <a href="#//api/name/webView:didClearWindowObject:forFrame:">webView:didClearWindowObject:forFrame:</a> or <a href="#//api/name/webView:windowScriptObjectAvailable:">webView:windowScriptObjectAvailable:</a>, only
+    webView:didCreateJavaScriptContext:forFrame will be invoked. This enables a delegate to implement
+    multiple versions to maintain backwards compatibility with older versions of WebKit.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebFrameLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

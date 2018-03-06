@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSManagedObject Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreData Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/deleted">deleted</option>
+		
+		<option value="//api/name/entity">entity</option>
+		
+		<option value="//api/name/fault">fault</option>
+		
+		<option value="//api/name/inserted">inserted</option>
+		
+		<option value="//api/name/managedObjectContext">managedObjectContext</option>
+		
+		<option value="//api/name/objectID">objectID</option>
+		
+		<option value="//api/name/updated">updated</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/entity">+ entity</option>
+		
+		<option value="//api/name/fetchRequest">+ fetchRequest</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/awakeFromFetch">- awakeFromFetch</option>
+		
+		<option value="//api/name/awakeFromInsert">- awakeFromInsert</option>
+		
+		<option value="//api/name/awakeFromSnapshotEvents:">- awakeFromSnapshotEvents:</option>
+		
+		<option value="//api/name/changedValues">- changedValues</option>
+		
+		<option value="//api/name/changedValuesForCurrentEvent">- changedValuesForCurrentEvent</option>
+		
+		<option value="//api/name/committedValuesForKeys:">- committedValuesForKeys:</option>
+		
+		<option value="//api/name/didAccessValueForKey:">- didAccessValueForKey:</option>
+		
+		<option value="//api/name/didChangeValueForKey:">- didChangeValueForKey:</option>
+		
+		<option value="//api/name/didChangeValueForKey:withSetMutation:usingObjects:">- didChangeValueForKey:withSetMutation:usingObjects:</option>
+		
+		<option value="//api/name/didSave">- didSave</option>
+		
+		<option value="//api/name/didTurnIntoFault">- didTurnIntoFault</option>
+		
+		<option value="//api/name/hasFaultForRelationshipNamed:">- hasFaultForRelationshipNamed:</option>
+		
+		<option value="//api/name/initWithContext:">- initWithContext:</option>
+		
+		<option value="//api/name/initWithEntity:insertIntoManagedObjectContext:">- initWithEntity:insertIntoManagedObjectContext:</option>
+		
+		<option value="//api/name/objectIDsForRelationshipNamed:">- objectIDsForRelationshipNamed:</option>
+		
+		<option value="//api/name/observationInfo">- observationInfo</option>
+		
+		<option value="//api/name/prepareForDeletion">- prepareForDeletion</option>
+		
+		<option value="//api/name/primitiveValueForKey:">- primitiveValueForKey:</option>
+		
+		<option value="//api/name/setObservationInfo:">- setObservationInfo:</option>
+		
+		<option value="//api/name/setPrimitiveValue:forKey:">- setPrimitiveValue:forKey:</option>
+		
+		<option value="//api/name/setValue:forKey:">- setValue:forKey:</option>
+		
+		<option value="//api/name/validateForDelete:">- validateForDelete:</option>
+		
+		<option value="//api/name/validateForInsert:">- validateForInsert:</option>
+		
+		<option value="//api/name/validateForUpdate:">- validateForUpdate:</option>
+		
+		<option value="//api/name/validateValue:forKey:error:">- validateValue:forKey:error:</option>
+		
+		<option value="//api/name/valueForKey:">- valueForKey:</option>
+		
+		<option value="//api/name/willAccessValueForKey:">- willAccessValueForKey:</option>
+		
+		<option value="//api/name/willChangeValueForKey:">- willChangeValueForKey:</option>
+		
+		<option value="//api/name/willChangeValueForKey:withSetMutation:usingObjects:">- willChangeValueForKey:withSetMutation:usingObjects:</option>
+		
+		<option value="//api/name/willSave">- willSave</option>
+		
+		<option value="//api/name/willTurnIntoFault">- willTurnIntoFault</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSManagedObject Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSManagedObject.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (class, readonly) BOOL contextShouldIgnoreUnmodeledPropertyChanges API_AVAILABLE ( macosx ( 10.6 , ios ( 3.0 )</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/entity" title="entity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/entity">+&nbsp;entity</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSEntityDescription *)entity</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fetchRequest" title="fetchRequest"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchRequest">+&nbsp;fetchRequest</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSFetchRequest *)fetchRequest</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithEntity:insertIntoManagedObjectContext:" title="initWithEntity:insertIntoManagedObjectContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithEntity:insertIntoManagedObjectContext:">&ndash;&nbsp;initWithEntity:insertIntoManagedObjectContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (__kindof NSManagedObject *)initWithEntity:(NSEntityDescription *)<em>entity</em> insertIntoManagedObjectContext:(nullable NSManagedObjectContext *)<em>context</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithContext:" title="initWithContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithContext:">&ndash;&nbsp;initWithContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithContext:(NSManagedObjectContext *)<em>moc</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/managedObjectContext" title="managedObjectContext"></a>
+	<h3 class="method-title"><code><a href="#//api/name/managedObjectContext">&nbsp;&nbsp;managedObjectContext</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly, assign) NSManagedObjectContext *managedObjectContext</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/entity" title="entity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/entity">&nbsp;&nbsp;entity</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSEntityDescription *entity</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectID" title="objectID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectID">&nbsp;&nbsp;objectID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSManagedObjectID *objectID</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inserted" title="inserted"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inserted">&nbsp;&nbsp;inserted</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isInserted, readonly) BOOL inserted</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updated" title="updated"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updated">&nbsp;&nbsp;updated</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isUpdated, readonly) BOOL updated</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleted" title="deleted"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleted">&nbsp;&nbsp;deleted</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isDeleted, readonly) BOOL deleted</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fault" title="fault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fault">&nbsp;&nbsp;fault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isFault, readonly) BOOL fault</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasFaultForRelationshipNamed:" title="hasFaultForRelationshipNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasFaultForRelationshipNamed:">&ndash;&nbsp;hasFaultForRelationshipNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasFaultForRelationshipNamed:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectIDsForRelationshipNamed:" title="objectIDsForRelationshipNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectIDsForRelationshipNamed:">&ndash;&nbsp;objectIDsForRelationshipNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;NSManagedObjectID*&gt; *)objectIDsForRelationshipNamed:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willAccessValueForKey:" title="willAccessValueForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willAccessValueForKey:">&ndash;&nbsp;willAccessValueForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)willAccessValueForKey:(nullable NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didAccessValueForKey:" title="didAccessValueForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didAccessValueForKey:">&ndash;&nbsp;didAccessValueForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)didAccessValueForKey:(nullable NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willChangeValueForKey:" title="willChangeValueForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willChangeValueForKey:">&ndash;&nbsp;willChangeValueForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)willChangeValueForKey:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didChangeValueForKey:" title="didChangeValueForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didChangeValueForKey:">&ndash;&nbsp;didChangeValueForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)didChangeValueForKey:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willChangeValueForKey:withSetMutation:usingObjects:" title="willChangeValueForKey:withSetMutation:usingObjects:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willChangeValueForKey:withSetMutation:usingObjects:">&ndash;&nbsp;willChangeValueForKey:withSetMutation:usingObjects:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)willChangeValueForKey:(NSString *)<em>inKey</em> withSetMutation:(NSKeyValueSetMutationKind)<em>inMutationKind</em> usingObjects:(NSSet *)<em>inObjects</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didChangeValueForKey:withSetMutation:usingObjects:" title="didChangeValueForKey:withSetMutation:usingObjects:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didChangeValueForKey:withSetMutation:usingObjects:">&ndash;&nbsp;didChangeValueForKey:withSetMutation:usingObjects:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)didChangeValueForKey:(NSString *)<em>inKey</em> withSetMutation:(NSKeyValueSetMutationKind)<em>inMutationKind</em> usingObjects:(NSSet *)<em>inObjects</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/awakeFromFetch" title="awakeFromFetch"></a>
+	<h3 class="method-title"><code><a href="#//api/name/awakeFromFetch">&ndash;&nbsp;awakeFromFetch</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)awakeFromFetch</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/awakeFromInsert" title="awakeFromInsert"></a>
+	<h3 class="method-title"><code><a href="#//api/name/awakeFromInsert">&ndash;&nbsp;awakeFromInsert</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)awakeFromInsert</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/awakeFromSnapshotEvents:" title="awakeFromSnapshotEvents:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/awakeFromSnapshotEvents:">&ndash;&nbsp;awakeFromSnapshotEvents:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)awakeFromSnapshotEvents:(NSSnapshotEventType)<em>flags</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareForDeletion" title="prepareForDeletion"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareForDeletion">&ndash;&nbsp;prepareForDeletion</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)prepareForDeletion</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willSave" title="willSave"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willSave">&ndash;&nbsp;willSave</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)willSave</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didSave" title="didSave"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didSave">&ndash;&nbsp;didSave</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)didSave</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willTurnIntoFault" title="willTurnIntoFault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willTurnIntoFault">&ndash;&nbsp;willTurnIntoFault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)willTurnIntoFault</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didTurnIntoFault" title="didTurnIntoFault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didTurnIntoFault">&ndash;&nbsp;didTurnIntoFault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)didTurnIntoFault</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueForKey:" title="valueForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueForKey:">&ndash;&nbsp;valueForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)valueForKey:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setValue:forKey:" title="setValue:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setValue:forKey:">&ndash;&nbsp;setValue:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setValue:(nullable id)<em>value</em> forKey:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/primitiveValueForKey:" title="primitiveValueForKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/primitiveValueForKey:">&ndash;&nbsp;primitiveValueForKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)primitiveValueForKey:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setPrimitiveValue:forKey:" title="setPrimitiveValue:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setPrimitiveValue:forKey:">&ndash;&nbsp;setPrimitiveValue:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setPrimitiveValue:(nullable id)<em>value</em> forKey:(NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/committedValuesForKeys:" title="committedValuesForKeys:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/committedValuesForKeys:">&ndash;&nbsp;committedValuesForKeys:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary&lt;NSString*,id&gt; *)committedValuesForKeys:(nullable NSArray&lt;NSString*&gt; *)<em>keys</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/changedValues" title="changedValues"></a>
+	<h3 class="method-title"><code><a href="#//api/name/changedValues">&ndash;&nbsp;changedValues</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary&lt;NSString*,id&gt; *)changedValues</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/changedValuesForCurrentEvent" title="changedValuesForCurrentEvent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/changedValuesForCurrentEvent">&ndash;&nbsp;changedValuesForCurrentEvent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary&lt;NSString*,id&gt; *)changedValuesForCurrentEvent</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/validateValue:forKey:error:" title="validateValue:forKey:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validateValue:forKey:error:">&ndash;&nbsp;validateValue:forKey:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)validateValue:(id _Nullable *_Nonnull)<em>value</em> forKey:(NSString *)<em>key</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/validateForDelete:" title="validateForDelete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validateForDelete:">&ndash;&nbsp;validateForDelete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)validateForDelete:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/validateForInsert:" title="validateForInsert:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validateForInsert:">&ndash;&nbsp;validateForInsert:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)validateForInsert:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/validateForUpdate:" title="validateForUpdate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validateForUpdate:">&ndash;&nbsp;validateForUpdate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)validateForUpdate:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setObservationInfo:" title="setObservationInfo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setObservationInfo:">&ndash;&nbsp;setObservationInfo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setObservationInfo:(nullable void *)<em>inObservationInfo</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/observationInfo" title="observationInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/observationInfo">&ndash;&nbsp;observationInfo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable void *)observationInfo</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

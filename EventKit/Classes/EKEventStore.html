@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>EKEventStore Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 EventKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/NA">NA</option>
+		
+		<option value="//api/name/_8">_8</option>
+		
+		<option value="//api/name/defaultCalendarForNewEvents">defaultCalendarForNewEvents</option>
+		
+		<option value="//api/name/eventStoreIdentifier">eventStoreIdentifier</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/authorizationStatusForEntityType:">+ authorizationStatusForEntityType:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/calendarItemWithIdentifier:">- calendarItemWithIdentifier:</option>
+		
+		<option value="//api/name/calendarItemsWithExternalIdentifier:">- calendarItemsWithExternalIdentifier:</option>
+		
+		<option value="//api/name/calendarWithIdentifier:">- calendarWithIdentifier:</option>
+		
+		<option value="//api/name/calendarsForEntityType:">- calendarsForEntityType:</option>
+		
+		<option value="//api/name/cancelFetchRequest:">- cancelFetchRequest:</option>
+		
+		<option value="//api/name/commit:">- commit:</option>
+		
+		<option value="//api/name/defaultCalendarForNewReminders">- defaultCalendarForNewReminders</option>
+		
+		<option value="//api/name/enumerateEventsMatchingPredicate:usingBlock:">- enumerateEventsMatchingPredicate:usingBlock:</option>
+		
+		<option value="//api/name/eventWithIdentifier:">- eventWithIdentifier:</option>
+		
+		<option value="//api/name/eventsMatchingPredicate:">- eventsMatchingPredicate:</option>
+		
+		<option value="//api/name/fetchRemindersMatchingPredicate:completion:">- fetchRemindersMatchingPredicate:completion:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithAccessToEntityTypes:">- initWithAccessToEntityTypes:</option>
+		
+		<option value="//api/name/initWithSources:">- initWithSources:</option>
+		
+		<option value="//api/name/predicateForCompletedRemindersWithCompletionDateStarting:ending:calendars:">- predicateForCompletedRemindersWithCompletionDateStarting:ending:calendars:</option>
+		
+		<option value="//api/name/predicateForEventsWithStartDate:endDate:calendars:">- predicateForEventsWithStartDate:endDate:calendars:</option>
+		
+		<option value="//api/name/predicateForIncompleteRemindersWithDueDateStarting:ending:calendars:">- predicateForIncompleteRemindersWithDueDateStarting:ending:calendars:</option>
+		
+		<option value="//api/name/predicateForRemindersInCalendars:">- predicateForRemindersInCalendars:</option>
+		
+		<option value="//api/name/refreshSourcesIfNecessary">- refreshSourcesIfNecessary</option>
+		
+		<option value="//api/name/removeCalendar:commit:error:">- removeCalendar:commit:error:</option>
+		
+		<option value="//api/name/removeEvent:span:commit:error:">- removeEvent:span:commit:error:</option>
+		
+		<option value="//api/name/removeEvent:span:error:">- removeEvent:span:error:</option>
+		
+		<option value="//api/name/removeReminder:commit:error:">- removeReminder:commit:error:</option>
+		
+		<option value="//api/name/requestAccessToEntityType:completion:">- requestAccessToEntityType:completion:</option>
+		
+		<option value="//api/name/reset">- reset</option>
+		
+		<option value="//api/name/saveCalendar:commit:error:">- saveCalendar:commit:error:</option>
+		
+		<option value="//api/name/saveEvent:span:commit:error:">- saveEvent:span:commit:error:</option>
+		
+		<option value="//api/name/saveEvent:span:error:">- saveEvent:span:error:</option>
+		
+		<option value="//api/name/saveReminder:commit:error:">- saveReminder:commit:error:</option>
+		
+		<option value="//api/name/sourceWithIdentifier:">- sourceWithIdentifier:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">EKEventStore Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>EKEventStore.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class       EKEventStore
+</code></pre><p>The EKEventStore class is the main point of contact for accessing Calendar data. You must
+                 create a EKEventStore object in order to retrieve/add/delete events or reminders from the Calendar database.</p>
+
+<pre><code>             Events, Reminders, and Calendar objects retrieved from an event store cannot be used with any other event
+             store. It is generally best to hold onto a long-lived instance of an event store, most
+             likely as a singleton instance in your application.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/authorizationStatusForEntityType:" title="authorizationStatusForEntityType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/authorizationStatusForEntityType:">+&nbsp;authorizationStatusForEntityType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     authorizationStatusForEntityType:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (EKAuthorizationStatus)authorizationStatusForEntityType:(EKEntityType)<em>entityType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     authorizationStatusForEntityType:
+</code></pre><p>Returns the authorization status for the given entity type</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithAccessToEntityTypes:" title="initWithAccessToEntityTypes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAccessToEntityTypes:">&ndash;&nbsp;initWithAccessToEntityTypes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     initWithAccessToEntityTypes:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithAccessToEntityTypes:(EKEntityMask)<em>entityTypes</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityTypes</code></th>
+						<td><p>A bit mask of entity types to which you want access</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithAccessToEntityTypes:
+</code></pre><p>Users are able to grant or deny access to event and reminder data on a per-app basis. To request access to
+                event and/or reminder data, instantiate an EKEventStore using this method. This call will not block the
+                program while the user is being asked to grant or deny access. Until access has been granted for an entity
+                type, this event store will not contain any calendars for that entity type, and any attempt to save entities
+                of that entity type will fail. If access is later granted or declined, the event store will broadcast an
+                EKEventStoreChangedNotification. You can check the current access status for an entity type
+                using <a href="#//api/name/authorizationStatusForEntityType:">authorizationStatusForEntityType:</a>. The user will only be prompted the first time access is requested; any
+                subsequent instantiations of EKEventStore will use the existing permissions.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>    @method     init
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)init</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>    @method     init
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSources:" title="initWithSources:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSources:">&ndash;&nbsp;initWithSources:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new event store that only includes items and calendars for a subset of sources.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithSources:(NSArray&lt;EKSource*&gt; *)<em>sources</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sources</code></th>
+						<td><p>The sources you want this event store to recognize. This may include delegate sources.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithSources:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestAccessToEntityType:completion:" title="requestAccessToEntityType:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestAccessToEntityType:completion:">&ndash;&nbsp;requestAccessToEntityType:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     requestAccessToEntityType:completion:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)requestAccessToEntityType:(EKEntityType)<em>entityType</em> completion:(EKEventStoreRequestAccessCompletionHandler)<em>completion</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     requestAccessToEntityType:completion:
+</code></pre><p>Users are able to grant or deny access to event and reminder data on a per-app basis. To request access to
+                event and/or reminder data, call -requestAccessToEntityType:completion:. This will not block the app while
+                the user is being asked to grant or deny access.</p>
+
+<pre><code>            Until access has been granted for an entity type, the event store will not contain any calendars for that
+            entity type, and any attempt to save will fail. The user will only be prompted the first time access is
+            requested; any subsequent instantiations of EKEventStore will use the existing permissions. When the user
+            taps to grant or deny access, the completion handler will be called on an arbitrary queue.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/eventStoreIdentifier" title="eventStoreIdentifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/eventStoreIdentifier">&nbsp;&nbsp;eventStoreIdentifier</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a unique identifier string representing this calendar store.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *eventStoreIdentifier</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property   eventStoreIdentifier
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/NA" title="NA"></a>
+	<h3 class="method-title"><code><a href="#//api/name/NA">&nbsp;&nbsp;NA</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an unordered array of sources for all available delegates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;EKSource*&gt; *NS_AVAILABLE ( 10 _11 , NA</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property   delegateSources
+</code></pre><p>By default, delegates are not included in an event store&rsquo;s sources. To work with delegates,
+                you can create a new event store and pass in the sources, including sources returned from this
+                method, that you&rsquo;re interested in.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/initWithSources:">- initWithSources:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_8" title="_8"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_8">&nbsp;&nbsp;_8</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an unordered array of sources.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;EKSource*&gt; *NS_AVAILABLE ( 10 _8</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property   sources
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sourceWithIdentifier:" title="sourceWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceWithIdentifier:">&ndash;&nbsp;sourceWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a source with a specified identifier.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable EKSource *)sourceWithIdentifier:(NSString *)<em>identifier</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sourceWithIdentifier:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calendarsForEntityType:" title="calendarsForEntityType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calendarsForEntityType:">&ndash;&nbsp;calendarsForEntityType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns calendars that support a given entity type (reminders, events)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;EKCalendar*&gt; *)calendarsForEntityType:(EKEntityType)<em>entityType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     calendarsForEntityType
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/defaultCalendarForNewEvents" title="defaultCalendarForNewEvents"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultCalendarForNewEvents">&nbsp;&nbsp;defaultCalendarForNewEvents</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the calendar that events should be added to by default.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) EKCalendar *defaultCalendarForNewEvents</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property   defaultCalendarForNewEvents
+</code></pre><p>This may be nil if there is no default calendar for new events.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/defaultCalendarForNewReminders" title="defaultCalendarForNewReminders"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultCalendarForNewReminders">&ndash;&nbsp;defaultCalendarForNewReminders</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the calendar that reminders should be added to by default.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable EKCalendar *)defaultCalendarForNewReminders</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     defaultCalendarForNewReminders
+</code></pre><p>This may be nil if there is no default calendar for new reminders.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calendarWithIdentifier:" title="calendarWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calendarWithIdentifier:">&ndash;&nbsp;calendarWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a calendar with a specified identifier.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable EKCalendar *)calendarWithIdentifier:(NSString *)<em>identifier</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     calendarWithIdentifier:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/saveCalendar:commit:error:" title="saveCalendar:commit:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveCalendar:commit:error:">&ndash;&nbsp;saveCalendar:commit:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Saves changes to a calendar, or adds a new calendar to the database.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)saveCalendar:(EKCalendar *)<em>calendar</em> commit:(BOOL)<em>commit</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>calendar</code></th>
+						<td><p>The calendar to save.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commit</code></th>
+						<td><p>Pass YES to cause the database to save. You can pass NO to save multiple
+                            calendars and then call <a href="#//api/name/commit:">commit:</a> to save them all at once.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, this will contain a valid NSError object on exit.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     saveCalendar:commit:error:
+</code></pre><p>This method attempts to save the given calendar to the calendar database. It
+                returns YES if successful and NO otherwise. Passing a calendar fetched from
+                another EKEventStore instance into this function will raise an exception.
+                On WatchOS, saving changes is not supported.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeCalendar:commit:error:" title="removeCalendar:commit:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeCalendar:commit:error:">&ndash;&nbsp;removeCalendar:commit:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a calendar from the database.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeCalendar:(EKCalendar *)<em>calendar</em> commit:(BOOL)<em>commit</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>calendar</code></th>
+						<td><p>The calendar to delete.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commit</code></th>
+						<td><p>Pass YES to cause the database to save. You can pass NO to batch multiple
+                            changes and then call <a href="#//api/name/commit:">commit:</a> to save them all at once.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, this will contain a valid NSError object on exit.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeCalendar:commit:error:
+</code></pre><p>This method attempts to delete the given calendar from the calendar database. It
+                returns YES if successful and NO otherwise. Passing a calendar fetched from
+                another EKEventStore instance into this function will raise an exception.</p>
+
+<pre><code>            If the calendar supports multiple entity types (allowedEntityTypes), but the user has 
+            not granted you access to all those entity types, then we will delete all of the entity types 
+            for which you have access and remove that entity type from the allowedEntityTypes.
+            For example: If a calendar supports both events and reminders, but you only have access to reminders,
+            we will delete all the reminders and make the calendar only support events.
+
+            If you have access to all of its allowedEntityTypes, then it will delete the calendar and
+            all of the events and reminders in the calendar.
+
+            On WatchOS, modifying the database is not supported.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calendarItemWithIdentifier:" title="calendarItemWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calendarItemWithIdentifier:">&ndash;&nbsp;calendarItemWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns either a reminder or the first occurrence of an event.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable EKCalendarItem *)calendarItemWithIdentifier:(NSString *)<em>identifier</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     calendarItemWithIdentifier:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calendarItemsWithExternalIdentifier:" title="calendarItemsWithExternalIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calendarItemsWithExternalIdentifier:">&ndash;&nbsp;calendarItemsWithExternalIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns either matching reminders or the first occurrences of any events matching
+                the given external identifier.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;EKCalendarItem*&gt; *)calendarItemsWithExternalIdentifier:(NSString *)<em>externalIdentifier</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>externalIdentifier</code></th>
+						<td><p>The value obtained from EKCalendarItem&rsquo;s
+                calendarItemExternalIdentifier property</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An unsorted array of <a href="../Classes/EKCalendarItem.html">EKCalendarItem</a> instances</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     calendarItemsWithExternalIdentifier:
+</code></pre><p>This method returns a set of EKEvents or EKReminders with the given external identifier.
+                Due to reasons discussed in [EKCalendarItem calendarItemExternalIdentifier], there may be
+                more than one matching calendar item.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/saveEvent:span:error:" title="saveEvent:span:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveEvent:span:error:">&ndash;&nbsp;saveEvent:span:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Saves changes to an event permanently.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)saveEvent:(EKEvent *)<em>event</em> span:(EKSpan)<em>span</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p>The event to save.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>span</code></th>
+						<td><p>The span to use (this event, or this and future events).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, this will contain a valid NSError object on exit.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     saveEvent:span:error:
+</code></pre><p>This method attempts to save the event to the calendar database. It returns YES if
+                successful and NO otherwise. It&rsquo;s possible for this method to return NO, and error
+                will be set to nil. This occurs if the event wasn&rsquo;t dirty and didn&rsquo;t need saving. This
+                means the correct way to detect failure is a result of NO and a non-nil error parameter.
+                Passing an event fetched from another EKEventStore instance into this function will
+                raise an exception.</p>
+
+<pre><code>            After an event is successfully saved, it is also put into sync with the database, meaning
+            that all fields you did not change will be updated to the latest values. If you save the
+            event, but it was deleted by a different store/process, you will effectively recreate the
+            event as a new event.
+
+            On WatchOS, saving changes is not supported.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeEvent:span:error:" title="removeEvent:span:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeEvent:span:error:">&ndash;&nbsp;removeEvent:span:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes an event from the calendar store.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeEvent:(EKEvent *)<em>event</em> span:(EKSpan)<em>span</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p>The event to save.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>span</code></th>
+						<td><p>The span to use (this event, or this and future events).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, this will contain a valid NSError object on exit.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeEvent:span:error:
+</code></pre><p>This method attempts to remove the event from the calendar database. It returns YES if
+                successful and NO otherwise. It&rsquo;s possible for this method to return NO, and error
+                will be set to nil. This occurs if the event wasn&rsquo;t ever added and didn&rsquo;t need removing. This
+                means the correct way to detect failure is a result of NO and a non-nil error parameter.
+                Passing an event from another CalendarStore into this function will raise an exception. After
+                an event is removed, it is no longer tied to this calendar store, and all data in the event
+                is cleared except for the eventIdentifier.</p>
+
+<pre><code>            On WatchOS, modifying the database is not supported.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/saveEvent:span:commit:error:" title="saveEvent:span:commit:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveEvent:span:commit:error:">&ndash;&nbsp;saveEvent:span:commit:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)saveEvent:(EKEvent *)<em>event</em> span:(EKSpan)<em>span</em> commit:(BOOL)<em>commit</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeEvent:span:commit:error:" title="removeEvent:span:commit:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeEvent:span:commit:error:">&ndash;&nbsp;removeEvent:span:commit:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeEvent:(EKEvent *)<em>event</em> span:(EKSpan)<em>span</em> commit:(BOOL)<em>commit</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/eventWithIdentifier:" title="eventWithIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/eventWithIdentifier:">&ndash;&nbsp;eventWithIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the first occurrence of an event matching the given event identifier.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable EKEvent *)eventWithIdentifier:(NSString *)<em>identifier</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>The eventIdentifier to search for.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <a href="../Classes/EKEvent.html">EKEvent</a> object, or nil if not found.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     eventWithIdentifier:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/eventsMatchingPredicate:" title="eventsMatchingPredicate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/eventsMatchingPredicate:">&ndash;&nbsp;eventsMatchingPredicate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Searches for events that match the given predicate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;EKEvent*&gt; *)eventsMatchingPredicate:(NSPredicate *)<em>predicate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>predicate</code></th>
+						<td><p>The predicate to invoke. If this predicate was not created with the predicate
+                            creation functions in this class, an exception is raised.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An array of <a href="../Classes/EKEvent.html">EKEvent</a> objects, or nil. There is no guaranteed order to the events.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     eventsMatchingPredicate:
+</code></pre><p>This call executes a search for the events indicated by the predicate passed to it.
+                It only includes events which have been committed (e.g. those saved using
+                saveEvent:commit:NO are not included until <a href="#//api/name/commit:">commit:</a> is called.)</p>
+
+<pre><code>            It is synchronous. If you want async behavior, you should either use dispatch_async or
+            NSOperation to run the query someplace other than the main thread, and then funnel the
+            array back to the main thread.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enumerateEventsMatchingPredicate:usingBlock:" title="enumerateEventsMatchingPredicate:usingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enumerateEventsMatchingPredicate:usingBlock:">&ndash;&nbsp;enumerateEventsMatchingPredicate:usingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Searches for events that match the given predicate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)enumerateEventsMatchingPredicate:(NSPredicate *)<em>predicate</em> usingBlock:(EKEventSearchCallback)<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>predicate</code></th>
+						<td><p>The predicate to invoke. If this predicate was not created with the predicate
+                            creation functions in this class, an exception is raised.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>The block to call for each event. Your block should return YES in the stop
+                            parameter to stop iterating.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     enumerateEventsMatchingPredicate:usingBlock:
+</code></pre><p>This call executes a search for the events indicated by the predicate passed to it, calling
+                the block specified in the callback parameter for each event. It only includes events which
+                have been committed (e.g. those saved using saveEvent:commit:NO are not included until <a href="#//api/name/commit:">commit:</a> is called.)</p>
+
+<pre><code>            This method is synchronous. If you want async behavior, you should either use dispatch_async or
+            NSOperation to run the query someplace other than the main thread.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/predicateForEventsWithStartDate:endDate:calendars:" title="predicateForEventsWithStartDate:endDate:calendars:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/predicateForEventsWithStartDate:endDate:calendars:">&ndash;&nbsp;predicateForEventsWithStartDate:endDate:calendars:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a predicate for use with eventsMatchingPredicate or <a href="#//api/name/enumerateEventsMatchingPredicate:usingBlock:">enumerateEventsMatchingPredicate:usingBlock:</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSPredicate *)predicateForEventsWithStartDate:(NSDate *)<em>startDate</em> endDate:(NSDate *)<em>endDate</em> calendars:(nullable NSArray&lt;EKCalendar*&gt; *)<em>calendars</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startDate</code></th>
+						<td><p>The start date.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>endDate</code></th>
+						<td><p>The end date.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>calendars</code></th>
+						<td><p>The calendars to search for events in, or nil to search all calendars.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     predicateForEventsWithStartDate:endDate:calendars:
+</code></pre><p>Creates a simple query predicate to search for events within a certain date range. At present,
+                this will return events in the default time zone ([NSTimeZone defaultTimeZone]).</p>
+
+<pre><code>            For performance reasons, this method will only return events within a four year timespan.
+            If the date range between the startDate and endDate is greater than four years, then it will be shortened 
+            to the first four years.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/saveReminder:commit:error:" title="saveReminder:commit:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveReminder:commit:error:">&ndash;&nbsp;saveReminder:commit:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Saves changes to a reminder.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)saveReminder:(EKReminder *)<em>reminder</em> commit:(BOOL)<em>commit</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>reminder</code></th>
+						<td><p>The reminder to save.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commit</code></th>
+						<td><p>Whether to save to the database or not. Pass NO to batch changes together and
+                            commit with <a href="#//api/name/commit:">[EKEventStore commit:]</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, this will contain a valid NSError object on exit.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     saveReminder:commit:error:
+</code></pre><p>This method attempts to save the reminder to the event store database. It returns YES if
+                successful and NO otherwise. Passing a reminder fetched from another EKEventStore instance
+                into this function will raise an exception.</p>
+
+<pre><code>            After a reminder is successfully saved, its fields are updated to the latest values in
+            the database.
+
+            On WatchOS, saving changes is not supported.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeReminder:commit:error:" title="removeReminder:commit:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeReminder:commit:error:">&ndash;&nbsp;removeReminder:commit:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a reminder from the event store.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeReminder:(EKReminder *)<em>reminder</em> commit:(BOOL)<em>commit</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>reminder</code></th>
+						<td><p>The reminder to save.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commit</code></th>
+						<td><p>Whether to save to the database or not. Pass NO to batch changes together and
+                            commit with <a href="#//api/name/commit:">[EKEventStore commit:]</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, this will contain a valid NSError object on exit.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeReminder:commit:error:
+</code></pre><p>This method attempts to remove the reminder from the event store database. It returns YES if
+                successful and NO otherwise. Passing a reminder from another EKEventStore into this function
+                will raise an exception. After a reminder is removed, it is no longer tied to this event store.</p>
+
+<pre><code>            On WatchOS, modifying the database is not supported.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fetchRemindersMatchingPredicate:completion:" title="fetchRemindersMatchingPredicate:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchRemindersMatchingPredicate:completion:">&ndash;&nbsp;fetchRemindersMatchingPredicate:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetches reminders asynchronously.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)fetchRemindersMatchingPredicate:(NSPredicate *)<em>predicate</em> completion:(void ( ^ ) ( NSArray&lt;EKReminder*&gt; *__nullable reminders ))<em>completion</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     fetchRemindersMatchingPredicate:completion:
+</code></pre><p>This method fetches reminders asynchronously and returns a value which can be
+                used in <a href="#//api/name/cancelFetchRequest:">cancelFetchRequest:</a> to cancel the request later if desired. The completion
+                block is called with an array of reminders that match the given predicate (or potentially nil).
+                This only includes reminders which have been committed (e.g. those saved using
+                saveReminder:commit:NO are not included until <a href="#//api/name/commit:">commit:</a> is called.)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelFetchRequest:" title="cancelFetchRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelFetchRequest:">&ndash;&nbsp;cancelFetchRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     cancelFetchRequest:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cancelFetchRequest:(id)<em>fetchIdentifier</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     cancelFetchRequest:
+</code></pre><p>Given a value returned from fetchRemindersMatchingPredicate, this method can be used to
+                cancel the request. Once called, the completion block specified in fetchReminders&hellip; will
+                not be called.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/predicateForRemindersInCalendars:" title="predicateForRemindersInCalendars:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/predicateForRemindersInCalendars:">&ndash;&nbsp;predicateForRemindersInCalendars:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch all reminders in a set of calendars.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSPredicate *)predicateForRemindersInCalendars:(nullable NSArray&lt;EKCalendar*&gt; *)<em>calendars</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     predicateForRemindersInCalendars:
+</code></pre><p>You can pass nil for calendars to fetch from all available calendars.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/predicateForIncompleteRemindersWithDueDateStarting:ending:calendars:" title="predicateForIncompleteRemindersWithDueDateStarting:ending:calendars:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/predicateForIncompleteRemindersWithDueDateStarting:ending:calendars:">&ndash;&nbsp;predicateForIncompleteRemindersWithDueDateStarting:ending:calendars:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch incomplete reminders in a set of calendars.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSPredicate *)predicateForIncompleteRemindersWithDueDateStarting:(nullable NSDate *)<em>startDate</em> ending:(nullable NSDate *)<em>endDate</em> calendars:(nullable NSArray&lt;EKCalendar*&gt; *)<em>calendars</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     predicateForIncompleteRemindersWithDueDateStarting:ending:calendars:
+</code></pre><p>You can use this method to search for incomplete reminders due in a range.
+                You can pass nil for start date to find all reminders due before endDate.
+                You can pass nil for both start and end date to get all incomplete reminders
+                in the specified calendars.
+                You can pass nil for calendars to fetch from all available calendars.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/predicateForCompletedRemindersWithCompletionDateStarting:ending:calendars:" title="predicateForCompletedRemindersWithCompletionDateStarting:ending:calendars:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/predicateForCompletedRemindersWithCompletionDateStarting:ending:calendars:">&ndash;&nbsp;predicateForCompletedRemindersWithCompletionDateStarting:ending:calendars:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch completed reminders in a set of calendars.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSPredicate *)predicateForCompletedRemindersWithCompletionDateStarting:(nullable NSDate *)<em>startDate</em> ending:(nullable NSDate *)<em>endDate</em> calendars:(nullable NSArray&lt;EKCalendar*&gt; *)<em>calendars</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     predicateForCompletedRemindersWithCompletionDateStarting:ending:calendars:
+</code></pre><p>You can use this method to search for reminders completed between a range of dates.
+                You can pass nil for start date to find all reminders completed before endDate.
+                You can pass nil for both start and end date to get all completed reminders
+                in the specified calendars.
+                You can pass nil for calendars to fetch from all available calendars.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commit:" title="commit:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commit:">&ndash;&nbsp;commit:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Commits pending changes to the database.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)commit:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     commit:
+</code></pre><p>If you use saveCalendar/saveEvent/removeCalendar/removeEvent, etc. and you pass NO to their
+                parameter, you are batching changes for a later commit. This method does that commit. This
+                allows you to save the database only once for many additions or changes.  If you pass
+                YES to methods' commit parameter, then you don&rsquo;t need to call this method.</p>
+
+<pre><code>            This method will return YES as long as nothing went awry, even if nothing was actually
+            committed. If it returns NO, error should contain the reason it became unhappy.
+
+            On WatchOS, modifying the database is not supported.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reset" title="reset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reset">&ndash;&nbsp;reset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Resets the event store.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)reset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     reset
+</code></pre><p>You can use this method to forget ALL changes made to the event store (all additions, all
+                fetched objects, etc.). It essentially is as if you released the store and then created a
+                new one. It brings it back to its initial state. All objects ever created/fetched, etc.
+                using this store are no longer connected to it and are considered invalid.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/refreshSourcesIfNecessary" title="refreshSourcesIfNecessary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refreshSourcesIfNecessary">&ndash;&nbsp;refreshSourcesIfNecessary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cause a sync to potentially occur taking into account the necessity of it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)refreshSourcesIfNecessary</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     refreshSourcesIfNecessary
+</code></pre><p>You can call this method to pull new data from remote sources.<br/>
+                This only updates the event store&rsquo;s data.  If you want to update your objects after
+                refreshing the sources, you should call refresh on each of them afterwards.
+                On iOS, this sync only occurs if deemed necessary.<br/>
+                On OS X, this will occur regardless of necessity, but may change in a future release to match the iOS behavior.
+                On WatchOS, initiating sync is not available. Sync will occur automatically with the paired iOS device.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">EKEventStore.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

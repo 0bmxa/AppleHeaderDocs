@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSExpression Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/arguments">arguments</option>
+		
+		<option value="//api/name/constantValue">constantValue</option>
+		
+		<option value="//api/name/expressionBlock">expressionBlock</option>
+		
+		<option value="//api/name/expressionType">expressionType</option>
+		
+		<option value="//api/name/function">function</option>
+		
+		<option value="//api/name/keyPath">keyPath</option>
+		
+		<option value="//api/name/operand">operand</option>
+		
+		<option value="//api/name/variable">variable</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/expressionForAggregate:">+ expressionForAggregate:</option>
+		
+		<option value="//api/name/expressionForAnyKey">+ expressionForAnyKey</option>
+		
+		<option value="//api/name/expressionForBlock:arguments:">+ expressionForBlock:arguments:</option>
+		
+		<option value="//api/name/expressionForConditional:trueExpression:falseExpression:">+ expressionForConditional:trueExpression:falseExpression:</option>
+		
+		<option value="//api/name/expressionForConstantValue:">+ expressionForConstantValue:</option>
+		
+		<option value="//api/name/expressionForEvaluatedObject">+ expressionForEvaluatedObject</option>
+		
+		<option value="//api/name/expressionForFunction:arguments:">+ expressionForFunction:arguments:</option>
+		
+		<option value="//api/name/expressionForFunction:selectorName:arguments:">+ expressionForFunction:selectorName:arguments:</option>
+		
+		<option value="//api/name/expressionForIntersectSet:with:">+ expressionForIntersectSet:with:</option>
+		
+		<option value="//api/name/expressionForKeyPath:">+ expressionForKeyPath:</option>
+		
+		<option value="//api/name/expressionForMinusSet:with:">+ expressionForMinusSet:with:</option>
+		
+		<option value="//api/name/expressionForSubquery:usingIteratorVariable:predicate:">+ expressionForSubquery:usingIteratorVariable:predicate:</option>
+		
+		<option value="//api/name/expressionForUnionSet:with:">+ expressionForUnionSet:with:</option>
+		
+		<option value="//api/name/expressionForVariable:">+ expressionForVariable:</option>
+		
+		<option value="//api/name/expressionWithFormat:">+ expressionWithFormat:</option>
+		
+		<option value="//api/name/expressionWithFormat:argumentArray:">+ expressionWithFormat:argumentArray:</option>
+		
+		<option value="//api/name/expressionWithFormat:arguments:">+ expressionWithFormat:arguments:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/allowEvaluation">- allowEvaluation</option>
+		
+		<option value="//api/name/expressionValueWithObject:context:">- expressionValueWithObject:context:</option>
+		
+		<option value="//api/name/initWithCoder:">- initWithCoder:</option>
+		
+		<option value="//api/name/initWithExpressionType:">- initWithExpressionType:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSExpression Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/NSCopying.html">NSCopying</a><br /><a href="../Protocols/NSSecureCoding.html">NSSecureCoding</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSExpression.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/expressionWithFormat:argumentArray:" title="expressionWithFormat:argumentArray:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionWithFormat:argumentArray:">+&nbsp;expressionWithFormat:argumentArray:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionWithFormat:(NSString *)<em>expressionFormat</em> argumentArray:(NSArray *)<em>arguments</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionWithFormat:" title="expressionWithFormat:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionWithFormat:">+&nbsp;expressionWithFormat:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionWithFormat:(NSString *)<em>expressionFormat</em>, <em>...</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionWithFormat:arguments:" title="expressionWithFormat:arguments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionWithFormat:arguments:">+&nbsp;expressionWithFormat:arguments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionWithFormat:(NSString *)<em>expressionFormat</em> arguments:(va_list)<em>argList</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForConstantValue:" title="expressionForConstantValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForConstantValue:">+&nbsp;expressionForConstantValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForConstantValue:(nullable id)<em>obj</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForEvaluatedObject" title="expressionForEvaluatedObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForEvaluatedObject">+&nbsp;expressionForEvaluatedObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForEvaluatedObject</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForVariable:" title="expressionForVariable:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForVariable:">+&nbsp;expressionForVariable:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForVariable:(NSString *)<em>string</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForKeyPath:" title="expressionForKeyPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForKeyPath:">+&nbsp;expressionForKeyPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForKeyPath:(NSString *)<em>keyPath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForFunction:arguments:" title="expressionForFunction:arguments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForFunction:arguments:">+&nbsp;expressionForFunction:arguments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForFunction:(NSString *)<em>name</em> arguments:(NSArray *)<em>parameters</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForAggregate:" title="expressionForAggregate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForAggregate:">+&nbsp;expressionForAggregate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForAggregate:(NSArray&lt;NSExpression*&gt; *)<em>subexpressions</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForUnionSet:with:" title="expressionForUnionSet:with:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForUnionSet:with:">+&nbsp;expressionForUnionSet:with:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForUnionSet:(NSExpression *)<em>left</em> with:(NSExpression *)<em>right</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForIntersectSet:with:" title="expressionForIntersectSet:with:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForIntersectSet:with:">+&nbsp;expressionForIntersectSet:with:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForIntersectSet:(NSExpression *)<em>left</em> with:(NSExpression *)<em>right</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForMinusSet:with:" title="expressionForMinusSet:with:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForMinusSet:with:">+&nbsp;expressionForMinusSet:with:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForMinusSet:(NSExpression *)<em>left</em> with:(NSExpression *)<em>right</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForSubquery:usingIteratorVariable:predicate:" title="expressionForSubquery:usingIteratorVariable:predicate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForSubquery:usingIteratorVariable:predicate:">+&nbsp;expressionForSubquery:usingIteratorVariable:predicate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForSubquery:(NSExpression *)<em>expression</em> usingIteratorVariable:(NSString *)<em>variable</em> predicate:(NSPredicate *)<em>predicate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForFunction:selectorName:arguments:" title="expressionForFunction:selectorName:arguments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForFunction:selectorName:arguments:">+&nbsp;expressionForFunction:selectorName:arguments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForFunction:(NSExpression *)<em>target</em> selectorName:(NSString *)<em>name</em> arguments:(nullable NSArray *)<em>parameters</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForAnyKey" title="expressionForAnyKey"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForAnyKey">+&nbsp;expressionForAnyKey</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForAnyKey</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForBlock:arguments:" title="expressionForBlock:arguments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForBlock:arguments:">+&nbsp;expressionForBlock:arguments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForBlock:(id ( ^ ) ( id _Nullable evaluatedObject , NSArray&lt;NSExpression*&gt; *expressions , NSMutableDictionary *_Nullable context ))<em>block</em> arguments:(nullable NSArray&lt;NSExpression*&gt; *)<em>arguments</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionForConditional:trueExpression:falseExpression:" title="expressionForConditional:trueExpression:falseExpression:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionForConditional:trueExpression:falseExpression:">+&nbsp;expressionForConditional:trueExpression:falseExpression:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSExpression *)expressionForConditional:(NSPredicate *)<em>predicate</em> trueExpression:(NSExpression *)<em>trueExpression</em> falseExpression:(NSExpression *)<em>falseExpression</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithExpressionType:" title="initWithExpressionType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithExpressionType:">&ndash;&nbsp;initWithExpressionType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithExpressionType:(NSExpressionType)<em>type</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:" title="initWithCoder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:">&ndash;&nbsp;initWithCoder:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *)<em>coder</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionType" title="expressionType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionType">&nbsp;&nbsp;expressionType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSExpressionType expressionType</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/constantValue" title="constantValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/constantValue">&nbsp;&nbsp;constantValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, retain) id constantValue</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/keyPath" title="keyPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/keyPath">&nbsp;&nbsp;keyPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSString *keyPath</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/function" title="function"></a>
+	<h3 class="method-title"><code><a href="#//api/name/function">&nbsp;&nbsp;function</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSString *function</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/variable" title="variable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/variable">&nbsp;&nbsp;variable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSString *variable</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/operand" title="operand"></a>
+	<h3 class="method-title"><code><a href="#//api/name/operand">&nbsp;&nbsp;operand</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSExpression *operand</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/arguments" title="arguments"></a>
+	<h3 class="method-title"><code><a href="#//api/name/arguments">&nbsp;&nbsp;arguments</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly, copy) NSArray&lt;NSExpression*&gt; *arguments</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, retain) id collection API_AVAILABLE ( macos ( 10.5 , ios ( 3.0 , watchos ( 2.0 , tvos ( 9.0 )</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionBlock" title="expressionBlock"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionBlock">&nbsp;&nbsp;expressionBlock</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) id ( ^ ) ( id _Nullable , NSArray&lt;NSExpression*&gt; *, NSMutableDictionary *_Nullable ) ( macos ( 10.6 ) , ios ( 4.0 ) , watchos ( 2.0 ) , tvos ( 9.0 ) ) expressionBlock</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expressionValueWithObject:context:" title="expressionValueWithObject:context:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expressionValueWithObject:context:">&ndash;&nbsp;expressionValueWithObject:context:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)expressionValueWithObject:(nullable id)<em>object</em> context:(nullable NSMutableDictionary *)<em>context</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allowEvaluation" title="allowEvaluation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allowEvaluation">&ndash;&nbsp;allowEvaluation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)allowEvaluation</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

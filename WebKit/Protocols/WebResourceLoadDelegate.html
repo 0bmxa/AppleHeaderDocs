@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>WebResourceLoadDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 WebKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/webView:identifierForInitialRequest:fromDataSource:">- webView:identifierForInitialRequest:fromDataSource:</option>
+		
+		<option value="//api/name/webView:plugInFailedWithError:dataSource:">- webView:plugInFailedWithError:dataSource:</option>
+		
+		<option value="//api/name/webView:resource:didCancelAuthenticationChallenge:fromDataSource:">- webView:resource:didCancelAuthenticationChallenge:fromDataSource:</option>
+		
+		<option value="//api/name/webView:resource:didFailLoadingWithError:fromDataSource:">- webView:resource:didFailLoadingWithError:fromDataSource:</option>
+		
+		<option value="//api/name/webView:resource:didFinishLoadingFromDataSource:">- webView:resource:didFinishLoadingFromDataSource:</option>
+		
+		<option value="//api/name/webView:resource:didReceiveAuthenticationChallenge:fromDataSource:">- webView:resource:didReceiveAuthenticationChallenge:fromDataSource:</option>
+		
+		<option value="//api/name/webView:resource:didReceiveContentLength:fromDataSource:">- webView:resource:didReceiveContentLength:fromDataSource:</option>
+		
+		<option value="//api/name/webView:resource:didReceiveResponse:fromDataSource:">- webView:resource:didReceiveResponse:fromDataSource:</option>
+		
+		<option value="//api/name/webView:resource:willSendRequest:redirectResponse:fromDataSource:">- webView:resource:willSendRequest:redirectResponse:fromDataSource:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">WebResourceLoadDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>WebResourceLoadDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@category  WebResourceLoadDelegate
+</code></pre><p>Implementors of this protocol will receive messages indicating
+    that a resource is about to be loaded, data has been received for a resource,
+    an error has been received for a resource, and completion of a resource load.
+    Implementors are also given the opportunity to mutate requests before they are sent.
+    The various progress methods of this protocol all receive an identifier as the
+    parameter.  This identifier can be used to track messages associated with a single
+    resource.  For example, a single resource may generate multiple
+    resource:willSendRequest:redirectResponse:fromDataSource: messages as it&rsquo;s URL is redirected.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/webView:identifierForInitialRequest:fromDataSource:" title="webView:identifierForInitialRequest:fromDataSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:identifierForInitialRequest:fromDataSource:">&ndash;&nbsp;webView:identifierForInitialRequest:fromDataSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webView:identifierForInitialRequest:fromDataSource:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)webView:(WebView *)<em>sender</em> identifierForInitialRequest:(NSURLRequest *)<em>request</em> fromDataSource:(WebDataSource *)<em>dataSource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>The request about to be sent.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataSource</code></th>
+						<td><p>The datasource that initiated the load.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An identifier that will be passed back to the implementor for each callback.
+    The identifier will be retained.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:identifierForInitialRequest:fromDataSource:
+</code></pre><p>An implementor of WebResourceLoadDelegate should provide an identifier
+    that can be used to track the load of a single resource.  This identifier will be
+    passed as the first argument for all of the other WebResourceLoadDelegate methods.  The
+    identifier is useful to track changes to a resources request, which will be
+    provided by one or more calls to resource:willSendRequest:redirectResponse:fromDataSource:.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebResourceLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:resource:willSendRequest:redirectResponse:fromDataSource:" title="webView:resource:willSendRequest:redirectResponse:fromDataSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:resource:willSendRequest:redirectResponse:fromDataSource:">&ndash;&nbsp;webView:resource:willSendRequest:redirectResponse:fromDataSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webView:resource:willSendRequest:redirectResponse:fromDataSource:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSURLRequest *)webView:(WebView *)<em>sender</em> resource:(id)<em>identifier</em> willSendRequest:(NSURLRequest *)<em>request</em> redirectResponse:(NSURLResponse *)<em>redirectResponse</em> fromDataSource:(WebDataSource *)<em>dataSource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>An identifier that can be used to track the progress of a resource load across
+    multiple call backs.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>The request about to be sent.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>redirectResponse</code></th>
+						<td><p>If the request is being made in response to a redirect we received,
+    the response that conveyed that redirect.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataSource</code></th>
+						<td><p>The dataSource that initiated the load.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the request, which may be mutated by the implementor, although typically
+    will be request.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:resource:willSendRequest:redirectResponse:fromDataSource:
+</code></pre><p>This message is sent before a load is initiated.  The request may be modified
+    as necessary by the receiver.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebResourceLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:resource:didReceiveAuthenticationChallenge:fromDataSource:" title="webView:resource:didReceiveAuthenticationChallenge:fromDataSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:resource:didReceiveAuthenticationChallenge:fromDataSource:">&ndash;&nbsp;webView:resource:didReceiveAuthenticationChallenge:fromDataSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start authentication for the resource, providing a challenge</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> resource:(id)<em>identifier</em> didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)<em>challenge</em> fromDataSource:(WebDataSource *)<em>dataSource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>challenge</code></th>
+						<td><p>The NSURLAuthenticationChallenge to start authentication for</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:resource:didReceiveAuthenticationChallenge:fromDataSource:
+</code></pre><p>Call useCredential::, continueWithoutCredential or
+    cancel on the challenge when done.</p><p>If you do not implement this delegate method, WebKit will handle authentication
+    automatically by prompting with a sheet on the window that the <a href="../Classes/WebView.html">WebView</a> is associated with.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebResourceLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:resource:didCancelAuthenticationChallenge:fromDataSource:" title="webView:resource:didCancelAuthenticationChallenge:fromDataSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:resource:didCancelAuthenticationChallenge:fromDataSource:">&ndash;&nbsp;webView:resource:didCancelAuthenticationChallenge:fromDataSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cancel authentication for a given request</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> resource:(id)<em>identifier</em> didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)<em>challenge</em> fromDataSource:(WebDataSource *)<em>dataSource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>challenge</code></th>
+						<td><p>The NSURLAuthenticationChallenge for which to cancel authentication</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:resource:didCancelAuthenticationChallenge:fromDataSource:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebResourceLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:resource:didReceiveResponse:fromDataSource:" title="webView:resource:didReceiveResponse:fromDataSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:resource:didReceiveResponse:fromDataSource:">&ndash;&nbsp;webView:resource:didReceiveResponse:fromDataSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This message is sent after a response has been received for this load.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> resource:(id)<em>identifier</em> didReceiveResponse:(NSURLResponse *)<em>response</em> fromDataSource:(WebDataSource *)<em>dataSource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>An identifier that can be used to track the progress of a resource load across
+    multiple call backs.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>response</code></th>
+						<td><p>The response for the request.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataSource</code></th>
+						<td><p>The dataSource that initiated the load.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:resource:didReceiveResponse:fromDataSource:
+</code></pre><p>In some rare cases, multiple responses may be received for a single load.
+    This occurs with multipart/x-mixed-replace, or &ldquo;server push&rdquo;. In this case, the client
+    should assume that each new response resets progress so far for the resource back to 0,
+    and should check the new response for the expected content length.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebResourceLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:resource:didReceiveContentLength:fromDataSource:" title="webView:resource:didReceiveContentLength:fromDataSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:resource:didReceiveContentLength:fromDataSource:">&ndash;&nbsp;webView:resource:didReceiveContentLength:fromDataSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webView:resource:didReceiveContentLength:fromDataSource:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> resource:(id)<em>identifier</em> didReceiveContentLength:(NSInteger)<em>length</em> fromDataSource:(WebDataSource *)<em>dataSource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>An identifier that can be used to track the progress of a resource load across
+    multiple call backs.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>length</code></th>
+						<td><p>The amount of new data received.  This is not the total amount, just the new amount received.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataSource</code></th>
+						<td><p>The dataSource that initiated the load.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:resource:didReceiveContentLength:fromDataSource:
+</code></pre><p>Multiple of these messages may be sent as data arrives.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebResourceLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:resource:didFinishLoadingFromDataSource:" title="webView:resource:didFinishLoadingFromDataSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:resource:didFinishLoadingFromDataSource:">&ndash;&nbsp;webView:resource:didFinishLoadingFromDataSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webView:resource:didFinishLoadingFromDataSource:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> resource:(id)<em>identifier</em> didFinishLoadingFromDataSource:(WebDataSource *)<em>dataSource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>An identifier that can be used to track the progress of a resource load across
+    multiple call backs.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataSource</code></th>
+						<td><p>The dataSource that initiated the load.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:resource:didFinishLoadingFromDataSource:
+</code></pre><p>This message is sent after a load has successfully completed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebResourceLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:resource:didFailLoadingWithError:fromDataSource:" title="webView:resource:didFailLoadingWithError:fromDataSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:resource:didFailLoadingWithError:fromDataSource:">&ndash;&nbsp;webView:resource:didFailLoadingWithError:fromDataSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webView:resource:didFailLoadingWithError:fromDataSource:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> resource:(id)<em>identifier</em> didFailLoadingWithError:(NSError *)<em>error</em> fromDataSource:(WebDataSource *)<em>dataSource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>An identifier that can be used to track the progress of a resource load across
+    multiple call backs.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error associated with this load.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataSource</code></th>
+						<td><p>The dataSource that initiated the load.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:resource:didFailLoadingWithError:fromDataSource:
+</code></pre><p>This message is sent after a load has failed to load due to an error.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebResourceLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView:plugInFailedWithError:dataSource:" title="webView:plugInFailedWithError:dataSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView:plugInFailedWithError:dataSource:">&ndash;&nbsp;webView:plugInFailedWithError:dataSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method webView:plugInFailedWithError:dataSource:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)webView:(WebView *)<em>sender</em> plugInFailedWithError:(NSError *)<em>error</em> dataSource:(WebDataSource *)<em>dataSource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The <a href="../Classes/WebView.html">WebView</a> sending the message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The plug-in error. In the userInfo dictionary of the error, the object for the
+    NSErrorFailingURLKey key is a URL string of the SRC attribute, the object for the WebKitErrorPlugInNameKey
+    key is a string of the plug-in&rsquo;s name, the object for the WebKitErrorPlugInPageURLStringKey key is a URL string
+    of the PLUGINSPAGE attribute and the object for the WebKitErrorMIMETypeKey key is a string of the TYPE attribute.
+    Some, none or all of the mentioned attributes can be present in the userInfo. The error returns nil for userInfo
+    when none are present.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataSource</code></th>
+						<td><p>The dataSource that contains the plug-in.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method webView:plugInFailedWithError:dataSource:
+</code></pre><p>Called when a plug-in is not found, fails to load or is not available for some reason.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebResourceLoadDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

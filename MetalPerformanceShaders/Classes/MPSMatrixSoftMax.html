@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSMatrixSoftMax Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/sourceColumns">sourceColumns</option>
+		
+		<option value="//api/name/sourceRows">sourceRows</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/copyWithZone:device:">- copyWithZone:device:</option>
+		
+		<option value="//api/name/encodeToCommandBuffer:inputMatrix:resultMatrix:MPS_SWIFT_NAME:">- encodeToCommandBuffer:inputMatrix:resultMatrix:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:">- initWithDevice:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSMatrixSoftMax Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSMatrixUnaryKernel.html">MPSMatrixUnaryKernel</a> : <a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSMatrixSoftMax.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSMatrixSoftMax</p>
+
+<p>@dependency This depends on Metal.framework.</p><p>A MPSMatrixSoftMax object computes:</p>
+
+<p>B_ij = Exp { A_ij } / ( Sum_k Exp { A_ik } )</p>
+
+<p>A and B are matrices which are represented by <a href="../Classes/MPSMatrix.html">MPSMatrix</a>
+objects. This filter computes the same result for MPSMatrices as
+<a href="../Classes/MPSCNNSoftMax.html">MPSCNNSoftMax</a> filter does for MPSImages by interpreting the columns
+of the matrix as feature channels, that is the sum runs over column indices.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sourceRows" title="sourceRows"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceRows">&nbsp;&nbsp;sourceRows</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property   sourceRows</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) NSUInteger sourceRows</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   sourceRows</p><p>The number of rows to consider from the source in the operation.
+This property is modifiable and defaults to NSUIntegerMax and the number is
+adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
+fit into the source matrix available starting from sourceMatrixOrigin.x,
+indicating that by default the whole source matrix is used.
+If a different size is desired then this should be modified prior to
+encoding the kernel. It is the user&rsquo;s responsibility to ensure that the
+resultMatrix parameter in encodeToCommandBuffer is large enough
+to accommodate the results of this operation, otherwise the results of
+the encode call are undefined.
+NOTE: sourceMatrixOrigin and resultMatrixOrigin from <a href="../Classes/MPSMatrixUnaryKernel.html">MPSMatrixUnaryKernel</a>
+can be used to control the starting points in the source and destination
+at kernel encode time (see encodeToCommandBuffer).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSoftMax.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sourceColumns" title="sourceColumns"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceColumns">&nbsp;&nbsp;sourceColumns</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property   sourceColumns</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) NSUInteger sourceColumns</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   sourceColumns</p><p>The number of columns to consider from the source in the operation.
+This property is modifiable and defaults to NSUIntegerMax and the number is
+adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
+fit into the source matrix available starting from sourceMatrixOrigin.y,
+indicating that by default the whole source matrix is used.
+If a different size is desired then this should be modified prior to
+encoding the kernel. It is the user&rsquo;s responsibility to ensure that the
+resultMatrix parameter in encodeToCommandBuffer is large enough
+to accommodate the results of this operation, otherwise the results of
+the encode call are undefined.
+NOTE: sourceMatrixOrigin and resultMatrixOrigin from <a href="../Classes/MPSMatrixUnaryKernel.html">MPSMatrixUnaryKernel</a>
+can be used to control the starting points in the source and destination
+at kernel encode time (see encodeToCommandBuffer).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSoftMax.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:" title="initWithDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:">&ndash;&nbsp;initWithDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize an MPSMatrixSoftMax object on a device for a given size.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device on which the kernel will execute.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSMatrixSoftMax object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSoftMax.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:inputMatrix:resultMatrix:MPS_SWIFT_NAME:" title="encodeToCommandBuffer:inputMatrix:resultMatrix:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:inputMatrix:resultMatrix:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeToCommandBuffer:inputMatrix:resultMatrix:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode a MPSMatrixSoftMax object to a command buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> inputMatrix:(MPSMatrix const *__nonnull)<em>inputMatrix</em> resultMatrix:(MPSMatrix *__nonnull)<em>resultMatrix</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded kernel.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inputMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> object which specifies the input matrix.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resultMatrix</code></th>
+						<td><p>A valid <a href="../Classes/MPSMatrix.html">MPSMatrix</a> object which specifies the matrix which will
+be overwritten by the result.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Certain constraints apply to the sizes of the matrices depending on the sizes requested at
+initialization time as well as the origins at the time this routine is called:</p>
+
+<p>The result matrix must be large enough to hold a two dimensional array of &lsquo;sourceRows&rsquo; rows and
+&lsquo;sourceColumns&rsquo; columns beginning at resultMatrixOrigin.</p>
+
+<p>Each matrix within the range specified by batchStart and batchSize, which also specifies
+a valid set of matrices within inputMatrix and resultMatrix, will
+be processed.</p>
+
+<p>The datatypes of the matrices inputMatrix and resultMatrix must match and be either
+MPSDataTypeFloat32 or MPSDataTypeFloat16.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSoftMax.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized MPSMatrixSoftMax</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the MPSMatrixSoftMax</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new MPSMatrixSoftMax object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>See @ref MPSKernel#initWithCoder.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSoftMax.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyWithZone:device:" title="copyWithZone:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyWithZone:device:">&ndash;&nbsp;copyWithZone:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Make a copy of this kernel for a new device - @see <a href="../Classes/MPSKernel.html">MPSKernel</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)copyWithZone:(nullable NSZone *)<em>zone</em> device:(nullable id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>zone</code></th>
+						<td><p>The NSZone in which to allocate the object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device for the new <a href="../Classes/MPSKernel.html">MPSKernel</a>. If nil, then use
+self.device.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a pointer to a copy of this <a href="../Classes/MPSKernel.html">MPSKernel</a>. This will fail, returning
+nil if the device is not supported. Devices must be
+MTLFeatureSet_iOS_GPUFamily2_v1 or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSoftMax.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

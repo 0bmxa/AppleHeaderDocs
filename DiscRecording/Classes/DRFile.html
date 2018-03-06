@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DRFile Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 DiscRecording Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/fileWithPath:">+ fileWithPath:</option>
+		
+		<option value="//api/name/finderAliasPointingTo:inFilesystem:">+ finderAliasPointingTo:inFilesystem:</option>
+		
+		<option value="//api/name/hardLinkPointingTo:inFilesystem:">+ hardLinkPointingTo:inFilesystem:</option>
+		
+		<option value="//api/name/symLinkPointingTo:inFilesystem:">+ symLinkPointingTo:inFilesystem:</option>
+		
+		<option value="//api/name/virtualFileWithName:data:">+ virtualFileWithName:data:</option>
+		
+		<option value="//api/name/virtualFileWithName:dataProducer:">+ virtualFileWithName:dataProducer:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithLinkType:pointingTo:inFilesystem:">- initWithLinkType:pointingTo:inFilesystem:</option>
+		
+		<option value="//api/name/initWithName:data:">- initWithName:data:</option>
+		
+		<option value="//api/name/initWithName:dataProducer:">- initWithName:dataProducer:</option>
+		
+		<option value="//api/name/initWithPath:">- initWithPath:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DRFile Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/DRFSObject.html">DRFSObject</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DRFile.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      DRFile
+</code></pre><p>A file can be either a pointer to an exiting file (residing on a hard drive for example)
+                or can be created at burn time from data passed into the file object as requested. DRFiles can only exist inside of virtual
+                @link //apple_ref/occ/cl/<a href="../Classes/DRFolder.html">DRFolder</a> <a href="../Classes/DRFolder.html">DRFolder</a> @/link objects.</p>
+
+<pre><code>@category       DRFile (VirtualFiles)
+</code></pre><p>This category on DRFile defines methods that allow the file to
+                    be specified using data passed in at creation time.</p>
+
+<pre><code>@category       DRFile (VirtualLinks)
+</code></pre><p>This category on DRFile defines methods that allow various
+                    link/alias files to be created on the resulting disc which may not
+                    exist in the source.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/fileWithPath:" title="fileWithPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileWithPath:">+&nbsp;fileWithPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a real file object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRFile *)fileWithPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>The path to an existing file.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRFile object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         fileWithPath:
+</code></pre><p>This type of DRFile reads in data from an
+                    existing file located at path and burns that data to disc.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithPath:" title="initWithPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPath:">&ndash;&nbsp;initWithPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a real file object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>The path to an existing file.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An DRFile object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithPath:
+</code></pre><p>This type of DRFile reads in data from an
+                    existing file located at path and burns that data to disc.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="VirtualFiles Methods" name="task_VirtualFiles Methods"></a>
+						<h2 class="task-title">VirtualFiles Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/virtualFileWithName:data:" title="virtualFileWithName:data:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/virtualFileWithName:data:">+&nbsp;virtualFileWithName:data:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a virtual file object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRFile *)virtualFileWithName:(NSString *)<em>name</em> data:(NSData *)<em>data</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name of the file on disc.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>The data that will become the contents of the file on the disc.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRFile object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         virtualFileWithName:data:
+</code></pre><p>This type of DRFile burns the data passed in to disc, creating a
+                    file with the passed in name.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/virtualFileWithName:dataProducer:" title="virtualFileWithName:dataProducer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/virtualFileWithName:dataProducer:">+&nbsp;virtualFileWithName:dataProducer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a virtual file object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRFile *)virtualFileWithName:(NSString *)<em>name</em> dataProducer:(id)<em>producer</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name of the file on disc.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>The data that will become the contents of the file on the disc.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRFile object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         virtualFileWithName:dataProducer:
+</code></pre><p>This type of DRFile burns the data produced to the output disc, creating a
+                    file with the passed in name.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:data:" title="initWithName:data:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:data:">&ndash;&nbsp;initWithName:data:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a virtual file object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>name</em> data:(NSData *)<em>data</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name of the file on output disc.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>The data that will become the contents of the file on the output disc.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A DRFile object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithName:data:
+</code></pre><p>This type of DRFile burns the data passed in to the output disc, creating a
+                    file with the passed in name.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:dataProducer:" title="initWithName:dataProducer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:dataProducer:">&ndash;&nbsp;initWithName:dataProducer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a virtual file object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>name</em> dataProducer:(id)<em>producer</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name of the file on output disc.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>producer</code></th>
+						<td><p>The object supplying the file data to the burn.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A DRFile object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithName:dataProducer:
+</code></pre><p>This type of DRFile burns the data produced to the output disc, creating a
+                    file with the passed in name.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="VirtualLinks Methods" name="task_VirtualLinks Methods"></a>
+						<h2 class="task-title">VirtualLinks Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/hardLinkPointingTo:inFilesystem:" title="hardLinkPointingTo:inFilesystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hardLinkPointingTo:inFilesystem:">+&nbsp;hardLinkPointingTo:inFilesystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a hard link to another file on the output disc.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRFile *)hardLinkPointingTo:(DRFile *)<em>original</em> inFilesystem:(NSString *)<em>filesystem</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>original</code></th>
+						<td><p>The file to point he hard link to</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem this link will exist on.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRFile object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         hardLinkPointingTo:inFilesystem:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/symLinkPointingTo:inFilesystem:" title="symLinkPointingTo:inFilesystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/symLinkPointingTo:inFilesystem:">+&nbsp;symLinkPointingTo:inFilesystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a symbolic link to another file on the output disc.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRFile *)symLinkPointingTo:(DRFSObject *)<em>original</em> inFilesystem:(NSString *)<em>filesystem</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>original</code></th>
+						<td><p>The file to point he hard link to</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem this link will exist on.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRFile object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         symLinkPointingTo:inFilesystem:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/finderAliasPointingTo:inFilesystem:" title="finderAliasPointingTo:inFilesystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/finderAliasPointingTo:inFilesystem:">+&nbsp;finderAliasPointingTo:inFilesystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a Finder alias to another file on the output disc.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRFile *)finderAliasPointingTo:(DRFSObject *)<em>original</em> inFilesystem:(NSString *)<em>filesystem</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>original</code></th>
+						<td><p>The file to point he hard link to</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem this link will exist on.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRFile object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         finderAliasPointingTo:inFilesystem:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithLinkType:pointingTo:inFilesystem:" title="initWithLinkType:pointingTo:inFilesystem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithLinkType:pointingTo:inFilesystem:">&ndash;&nbsp;initWithLinkType:pointingTo:inFilesystem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a file object to point to another file on the output disc.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithLinkType:(NSString *)<em>linkType</em> pointingTo:(DRFSObject *)<em>original</em> inFilesystem:(NSString *)<em>filesystem</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>linkType</code></th>
+						<td><p>The type of link that will be created.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>original</code></th>
+						<td><p>The file to point he hard link to</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filesystem</code></th>
+						<td><p>The filesystem this link will exist on.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A DRFile object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithLinkType:pointingTo:inFilesystem:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DRSetupPanel Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 DiscRecordingUI Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/beginSetupSheetForWindow:modalDelegate:didEndSelector:contextInfo:">- beginSetupSheetForWindow:modalDelegate:didEndSelector:contextInfo:</option>
+		
+		<option value="//api/name/cancel:">- cancel:</option>
+		
+		<option value="//api/name/close:">- close:</option>
+		
+		<option value="//api/name/deviceSelectionChanged:">- deviceSelectionChanged:</option>
+		
+		<option value="//api/name/eject:">- eject:</option>
+		
+		<option value="//api/name/initWithNibName:">- initWithNibName:</option>
+		
+		<option value="//api/name/mediaStateChanged:">- mediaStateChanged:</option>
+		
+		<option value="//api/name/ok:">- ok:</option>
+		
+		<option value="//api/name/open:">- open:</option>
+		
+		<option value="//api/name/runSetupPanel">- runSetupPanel</option>
+		
+		<option value="//api/name/setupForDisplay">- setupForDisplay</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DRSetupPanel Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSPanel</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DRSetupPanel.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      DRSetupPanel
+</code></pre><p>This class is the base class for setup panels in the DiscRecordingUI
+                framework. It provides a base framework for handling device
+                selection, media ejection and confirming or cancelling the panel.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithNibName:" title="initWithNibName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithNibName:">&ndash;&nbsp;initWithNibName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes the receiver to use the panel from the nibName nib file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithNibName:(NSString *)<em>nibName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>nibName</code></th>
+						<td><p>Nib filename.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The receiver.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithNibName:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRSetupPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/runSetupPanel" title="runSetupPanel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/runSetupPanel">&ndash;&nbsp;runSetupPanel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Displays the receiver and begins its event loop.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)runSetupPanel</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns @link //apple_ref/c/econst/NSOKButton NSOKButton @/link (if the user clicks the default button) or
+                @link //apple_ref/c/econst/NSCancelButton NSCancelButton @/link (if the user clicks the Cancel button).</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     runSetupPanel
+</code></pre><p>Invokes NSApplication&rsquo;s @link //apple_ref/occ/instm/NSApplication/runModalForWindow: runModalForWindow: @/link method with self as the argument.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRSetupPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beginSetupSheetForWindow:modalDelegate:didEndSelector:contextInfo:" title="beginSetupSheetForWindow:modalDelegate:didEndSelector:contextInfo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beginSetupSheetForWindow:modalDelegate:didEndSelector:contextInfo:">&ndash;&nbsp;beginSetupSheetForWindow:modalDelegate:didEndSelector:contextInfo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Presents a setup panel as a sheet.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beginSetupSheetForWindow:(NSWindow *)<em>owner</em> modalDelegate:(id)<em>modalDelegate</em> didEndSelector:(SEL)<em>didEndSelector</em> contextInfo:(void *)<em>contextInfo</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>owner</code></th>
+						<td><p>The window the sheet will be attached to. If owner is not nil, the setup
+                                    panel slides down as a sheet running as a document modal
+                                    window. If owner is nil, this is an error.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>modalDelegate</code></th>
+						<td><p>The modal delegate. The object that implements the didEndSelector.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>didEndSelector</code></th>
+						<td><p>Selector to invoke when the sheet ends. This selector is optional.
+                                    If implemented by the modal delegate, this method is invoked after
+                                    the modal session has ended, but before dismissing the same panel.
+                                    didEndSelector may dismiss the save panel itself; otherwise it will
+                                    be dismissed on return from the method. didEndSelector should have
+                                    the following signature:
+                                    <pre>@textblock
+                                        - (void)setupPanelDidEnd:(DRSetupPanel<em>)panel returnCode:(int)returnCode contextInfo:(void</em>)contextInfo;                                  <br/>
+                                    @/textblock</pre></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>contextInfo</code></th>
+						<td><p>Context information to be passed when the selector named by didEndSelector
+                                    is invoked.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     beginSetupSheetForWindow:modalDelegate:didEndSelector:contextInfo:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRSetupPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ok:" title="ok:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ok:">&ndash;&nbsp;ok:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the user clicks the panel&rsquo;s default button.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)ok:(id)<em>sender</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The object that invoked this method.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     ok:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRSetupPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancel:" title="cancel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancel:">&ndash;&nbsp;cancel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the user clicks the panel&rsquo;s cancel button.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)cancel:(id)<em>sender</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The object that invoked this method.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     cancel:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRSetupPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/eject:" title="eject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/eject:">&ndash;&nbsp;eject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the user clicks the panel&rsquo;s eject button.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)eject:(id)<em>sender</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The object that invoked this method.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     eject:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRSetupPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/open:" title="open:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/open:">&ndash;&nbsp;open:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the user clicks the panel&rsquo;s open button.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)open:(id)<em>sender</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The object that invoked this method.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     open:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRSetupPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/close:" title="close:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/close:">&ndash;&nbsp;close:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the user clicks the panel&rsquo;s close button.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)close:(id)<em>sender</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>The object that invoked this method.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     close:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRSetupPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceSelectionChanged:" title="deviceSelectionChanged:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceSelectionChanged:">&ndash;&nbsp;deviceSelectionChanged:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the user changes the device selected in the device popup.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceSelectionChanged:(DRDevice *)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The newly selected device, or nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     deviceSelectionChanged:
+</code></pre><p>If the device currently selected is disconnected from the machine, the device
+                popup will remove the device from itself and select a new device. This will act
+                as if the user changed the device selected. Because of this, device may be nil
+                if no eligible devices are currently connected to the machine.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRSetupPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mediaStateChanged:" title="mediaStateChanged:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaStateChanged:">&ndash;&nbsp;mediaStateChanged:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked when the media state of the currently selected device changes.
+                This can include media being ejected, inserted, being used by another
+                application, etc.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)mediaStateChanged:(NSDictionary *)<em>status</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>status</code></th>
+						<td><p>The new device status dictionary.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><i>YES</i> if the inserted media is valid for use, <i>NO</i> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     mediaStateChanged:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRSetupPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setupForDisplay" title="setupForDisplay"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setupForDisplay">&ndash;&nbsp;setupForDisplay</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called immediately before panel is displayed on
+                the screen. Any setup to be done in preparation for display should be
+                done here.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setupForDisplay</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setupForDisplay
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRSetupPanel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

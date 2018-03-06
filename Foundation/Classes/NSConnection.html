@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSConnection Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/independentConversationQueueing">independentConversationQueueing</option>
+		
+		<option value="//api/name/localObjects">localObjects</option>
+		
+		<option value="//api/name/multipleThreadsEnabled">multipleThreadsEnabled</option>
+		
+		<option value="//api/name/receivePort">receivePort</option>
+		
+		<option value="//api/name/remoteObjects">remoteObjects</option>
+		
+		<option value="//api/name/replyTimeout">replyTimeout</option>
+		
+		<option value="//api/name/requestModes">requestModes</option>
+		
+		<option value="//api/name/requestTimeout">requestTimeout</option>
+		
+		<option value="//api/name/rootObject">rootObject</option>
+		
+		<option value="//api/name/rootProxy">rootProxy</option>
+		
+		<option value="//api/name/sendPort">sendPort</option>
+		
+		<option value="//api/name/statistics">statistics</option>
+		
+		<option value="//api/name/valid">valid</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/allConnections">+ allConnections</option>
+		
+		<option value="//api/name/connectionWithReceivePort:sendPort:">+ connectionWithReceivePort:sendPort:</option>
+		
+		<option value="//api/name/connectionWithRegisteredName:host:">+ connectionWithRegisteredName:host:</option>
+		
+		<option value="//api/name/connectionWithRegisteredName:host:usingNameServer:">+ connectionWithRegisteredName:host:usingNameServer:</option>
+		
+		<option value="//api/name/currentConversation">+ currentConversation</option>
+		
+		<option value="//api/name/defaultConnection">+ defaultConnection</option>
+		
+		<option value="//api/name/rootProxyForConnectionWithRegisteredName:host:">+ rootProxyForConnectionWithRegisteredName:host:</option>
+		
+		<option value="//api/name/rootProxyForConnectionWithRegisteredName:host:usingNameServer:">+ rootProxyForConnectionWithRegisteredName:host:usingNameServer:</option>
+		
+		<option value="//api/name/serviceConnectionWithName:rootObject:">+ serviceConnectionWithName:rootObject:</option>
+		
+		<option value="//api/name/serviceConnectionWithName:rootObject:usingNameServer:">+ serviceConnectionWithName:rootObject:usingNameServer:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addRequestMode:">- addRequestMode:</option>
+		
+		<option value="//api/name/addRunLoop:">- addRunLoop:</option>
+		
+		<option value="//api/name/dispatchWithComponents:">- dispatchWithComponents:</option>
+		
+		<option value="//api/name/enableMultipleThreads">- enableMultipleThreads</option>
+		
+		<option value="//api/name/initWithReceivePort:sendPort:">- initWithReceivePort:sendPort:</option>
+		
+		<option value="//api/name/invalidate">- invalidate</option>
+		
+		<option value="//api/name/registerName:">- registerName:</option>
+		
+		<option value="//api/name/registerName:withNameServer:">- registerName:withNameServer:</option>
+		
+		<option value="//api/name/removeRequestMode:">- removeRequestMode:</option>
+		
+		<option value="//api/name/removeRunLoop:">- removeRunLoop:</option>
+		
+		<option value="//api/name/runInNewThread">- runInNewThread</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSConnection Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSConnection.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/statistics" title="statistics"></a>
+	<h3 class="method-title"><code><a href="#//api/name/statistics">&nbsp;&nbsp;statistics</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSDictionary&lt;NSString*NSNumber*&gt; *statistics</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allConnections" title="allConnections"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allConnections">+&nbsp;allConnections</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;NSConnection*&gt; *)allConnections</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/defaultConnection" title="defaultConnection"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultConnection">+&nbsp;defaultConnection</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSConnection *)defaultConnection</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectionWithRegisteredName:host:" title="connectionWithRegisteredName:host:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectionWithRegisteredName:host:">+&nbsp;connectionWithRegisteredName:host:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)connectionWithRegisteredName:(NSString *)<em>name</em> host:(nullable NSString *)<em>hostName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectionWithRegisteredName:host:usingNameServer:" title="connectionWithRegisteredName:host:usingNameServer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectionWithRegisteredName:host:usingNameServer:">+&nbsp;connectionWithRegisteredName:host:usingNameServer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)connectionWithRegisteredName:(NSString *)<em>name</em> host:(nullable NSString *)<em>hostName</em> usingNameServer:(NSPortNameServer *)<em>server</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rootProxyForConnectionWithRegisteredName:host:" title="rootProxyForConnectionWithRegisteredName:host:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rootProxyForConnectionWithRegisteredName:host:">+&nbsp;rootProxyForConnectionWithRegisteredName:host:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDistantObject *)rootProxyForConnectionWithRegisteredName:(NSString *)<em>name</em> host:(nullable NSString *)<em>hostName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rootProxyForConnectionWithRegisteredName:host:usingNameServer:" title="rootProxyForConnectionWithRegisteredName:host:usingNameServer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rootProxyForConnectionWithRegisteredName:host:usingNameServer:">+&nbsp;rootProxyForConnectionWithRegisteredName:host:usingNameServer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDistantObject *)rootProxyForConnectionWithRegisteredName:(NSString *)<em>name</em> host:(nullable NSString *)<em>hostName</em> usingNameServer:(NSPortNameServer *)<em>server</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/serviceConnectionWithName:rootObject:usingNameServer:" title="serviceConnectionWithName:rootObject:usingNameServer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serviceConnectionWithName:rootObject:usingNameServer:">+&nbsp;serviceConnectionWithName:rootObject:usingNameServer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)serviceConnectionWithName:(NSString *)<em>name</em> rootObject:(id)<em>root</em> usingNameServer:(NSPortNameServer *)<em>server</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/serviceConnectionWithName:rootObject:" title="serviceConnectionWithName:rootObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serviceConnectionWithName:rootObject:">+&nbsp;serviceConnectionWithName:rootObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)serviceConnectionWithName:(NSString *)<em>name</em> rootObject:(id)<em>root</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestTimeout" title="requestTimeout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestTimeout">&nbsp;&nbsp;requestTimeout</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property NSTimeInterval requestTimeout</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/replyTimeout" title="replyTimeout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/replyTimeout">&nbsp;&nbsp;replyTimeout</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property NSTimeInterval replyTimeout</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rootObject" title="rootObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rootObject">&nbsp;&nbsp;rootObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, retain) id rootObject</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, assign) id&lt;NSConnectionDelegate&gt; delegate</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/independentConversationQueueing" title="independentConversationQueueing"></a>
+	<h3 class="method-title"><code><a href="#//api/name/independentConversationQueueing">&nbsp;&nbsp;independentConversationQueueing</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property BOOL independentConversationQueueing</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valid" title="valid"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valid">&nbsp;&nbsp;valid</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isValid) BOOL valid</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rootProxy" title="rootProxy"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rootProxy">&nbsp;&nbsp;rootProxy</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, retain) NSDistantObject *rootProxy</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/invalidate" title="invalidate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/invalidate">&ndash;&nbsp;invalidate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)invalidate</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addRequestMode:" title="addRequestMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addRequestMode:">&ndash;&nbsp;addRequestMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addRequestMode:(NSString *)<em>rmode</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeRequestMode:" title="removeRequestMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeRequestMode:">&ndash;&nbsp;removeRequestMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeRequestMode:(NSString *)<em>rmode</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestModes" title="requestModes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestModes">&nbsp;&nbsp;requestModes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSArray&lt;NSString*&gt; *requestModes</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerName:" title="registerName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerName:">&ndash;&nbsp;registerName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)registerName:(nullable NSString *)<em>name</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerName:withNameServer:" title="registerName:withNameServer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerName:withNameServer:">&ndash;&nbsp;registerName:withNameServer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)registerName:(nullable NSString *)<em>name</em> withNameServer:(NSPortNameServer *)<em>server</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectionWithReceivePort:sendPort:" title="connectionWithReceivePort:sendPort:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectionWithReceivePort:sendPort:">+&nbsp;connectionWithReceivePort:sendPort:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)connectionWithReceivePort:(nullable NSPort *)<em>receivePort</em> sendPort:(nullable NSPort *)<em>sendPort</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentConversation" title="currentConversation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentConversation">+&nbsp;currentConversation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable id)currentConversation</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithReceivePort:sendPort:" title="initWithReceivePort:sendPort:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithReceivePort:sendPort:">&ndash;&nbsp;initWithReceivePort:sendPort:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithReceivePort:(nullable NSPort *)<em>receivePort</em> sendPort:(nullable NSPort *)<em>sendPort</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendPort" title="sendPort"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendPort">&nbsp;&nbsp;sendPort</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, retain) NSPort *sendPort</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/receivePort" title="receivePort"></a>
+	<h3 class="method-title"><code><a href="#//api/name/receivePort">&nbsp;&nbsp;receivePort</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, retain) NSPort *receivePort</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enableMultipleThreads" title="enableMultipleThreads"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enableMultipleThreads">&ndash;&nbsp;enableMultipleThreads</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)enableMultipleThreads</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/multipleThreadsEnabled" title="multipleThreadsEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/multipleThreadsEnabled">&nbsp;&nbsp;multipleThreadsEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL multipleThreadsEnabled</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addRunLoop:" title="addRunLoop:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addRunLoop:">&ndash;&nbsp;addRunLoop:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addRunLoop:(NSRunLoop *)<em>runloop</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeRunLoop:" title="removeRunLoop:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeRunLoop:">&ndash;&nbsp;removeRunLoop:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeRunLoop:(NSRunLoop *)<em>runloop</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/runInNewThread" title="runInNewThread"></a>
+	<h3 class="method-title"><code><a href="#//api/name/runInNewThread">&ndash;&nbsp;runInNewThread</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)runInNewThread</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/remoteObjects" title="remoteObjects"></a>
+	<h3 class="method-title"><code><a href="#//api/name/remoteObjects">&nbsp;&nbsp;remoteObjects</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSArray *remoteObjects</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localObjects" title="localObjects"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localObjects">&nbsp;&nbsp;localObjects</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSArray *localObjects</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dispatchWithComponents:" title="dispatchWithComponents:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dispatchWithComponents:">&ndash;&nbsp;dispatchWithComponents:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)dispatchWithComponents:(NSArray *)<em>components</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

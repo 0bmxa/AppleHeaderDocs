@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>GKNoise Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 GameplayKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/gradientColors">gradientColors</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/noiseWithComponentNoises:selectionNoise:">+ noiseWithComponentNoises:selectionNoise:</option>
+		
+		<option value="//api/name/noiseWithComponentNoises:selectionNoise:componentBoundaries:boundaryBlendDistances:">+ noiseWithComponentNoises:selectionNoise:componentBoundaries:boundaryBlendDistances:</option>
+		
+		<option value="//api/name/noiseWithNoiseSource:">+ noiseWithNoiseSource:</option>
+		
+		<option value="//api/name/noiseWithNoiseSource:gradientColors:">+ noiseWithNoiseSource:gradientColors:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addWithNoise:">- addWithNoise:</option>
+		
+		<option value="//api/name/applyAbsoluteValue">- applyAbsoluteValue</option>
+		
+		<option value="//api/name/applyTurbulenceWithFrequency:power:roughness:seed:">- applyTurbulenceWithFrequency:power:roughness:seed:</option>
+		
+		<option value="//api/name/clampWithLowerBound:upperBound:">- clampWithLowerBound:upperBound:</option>
+		
+		<option value="//api/name/displaceXWithNoise:yWithNoise:zWithNoise:">- displaceXWithNoise:yWithNoise:zWithNoise:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithNoiseSource:">- initWithNoiseSource:</option>
+		
+		<option value="//api/name/initWithNoiseSource:gradientColors:">- initWithNoiseSource:gradientColors:</option>
+		
+		<option value="//api/name/invert">- invert</option>
+		
+		<option value="//api/name/maximumWithNoise:">- maximumWithNoise:</option>
+		
+		<option value="//api/name/minimumWithNoise:">- minimumWithNoise:</option>
+		
+		<option value="//api/name/moveBy:">- moveBy:</option>
+		
+		<option value="//api/name/multiplyWithNoise:">- multiplyWithNoise:</option>
+		
+		<option value="//api/name/raiseToPower:">- raiseToPower:</option>
+		
+		<option value="//api/name/raiseToPowerWithNoise:">- raiseToPowerWithNoise:</option>
+		
+		<option value="//api/name/remapValuesToCurveWithControlPoints:">- remapValuesToCurveWithControlPoints:</option>
+		
+		<option value="//api/name/remapValuesToTerracesWithPeaks:terracesInverted:">- remapValuesToTerracesWithPeaks:terracesInverted:</option>
+		
+		<option value="//api/name/rotateBy:">- rotateBy:</option>
+		
+		<option value="//api/name/scaleBy:">- scaleBy:</option>
+		
+		<option value="//api/name/valueAtPosition:">- valueAtPosition:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">GKNoise Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>GKNoise.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>GKNoise is the object used to manipulate and combine noise in continuous 3D space.  It takes a <a href="../Classes/GKNoiseSource.html">GKNoiseSource</a> as input.
+To extract and use a portion of the noise within the 3D space use the <a href="../Classes/GKNoiseMap.html">GKNoiseMap</a> class.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/gradientColors" title="gradientColors"></a>
+	<h3 class="method-title"><code><a href="#//api/name/gradientColors">&nbsp;&nbsp;gradientColors</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Color gradient of this noise, represented as &lsquo;value : color&rsquo; pairs.  Utilized when this noise is rendered to a texture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSDictionary&lt;NSNumber*SKColor*&gt; *gradientColors</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Color gradient of this noise, represented as &lsquo;value : color&rsquo; pairs.  Utilized when this noise is rendered to a texture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a constant noise of 0.0 at all positions.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a constant noise of 0.0 at all positions.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/noiseWithNoiseSource:" title="noiseWithNoiseSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/noiseWithNoiseSource:">+&nbsp;noiseWithNoiseSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a noise with the specified noise source.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)noiseWithNoiseSource:(GKNoiseSource *)<em>noiseSource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noiseSource</code></th>
+						<td><p>The noise source to use to initially populate the 3D noise space.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a noise with the specified noise source.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/noiseWithNoiseSource:gradientColors:" title="noiseWithNoiseSource:gradientColors:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/noiseWithNoiseSource:gradientColors:">+&nbsp;noiseWithNoiseSource:gradientColors:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a noise with the specified noise source and parameters.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)noiseWithNoiseSource:(GKNoiseSource *)<em>noiseSource</em> gradientColors:(NSDictionary&lt;NSNumber*,SKColor*&gt; *)<em>gradientColors</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noiseSource</code></th>
+						<td><p>The noise source to use to initially populate the 3D noise space.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>gradientColors</code></th>
+						<td><p>The color gradient to use for this noise in &lsquo;value : color&rsquo; pairs.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a noise with the specified noise source and parameters.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithNoiseSource:" title="initWithNoiseSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithNoiseSource:">&ndash;&nbsp;initWithNoiseSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a noise with the specified noise source.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithNoiseSource:(GKNoiseSource *)<em>noiseSource</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noiseSource</code></th>
+						<td><p>The noise source to use to initially populate the 3D noise space.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a noise with the specified noise source.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithNoiseSource:gradientColors:" title="initWithNoiseSource:gradientColors:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithNoiseSource:gradientColors:">&ndash;&nbsp;initWithNoiseSource:gradientColors:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a noise with the specified noise source and parameters.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithNoiseSource:(GKNoiseSource *)<em>noiseSource</em> gradientColors:(NSDictionary&lt;NSNumber*,SKColor*&gt; *)<em>gradientColors</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noiseSource</code></th>
+						<td><p>The noise source to use to initially populate the 3D noise space.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>gradientColors</code></th>
+						<td><p>The color gradient to use for this noise in &lsquo;value : color&rsquo; pairs.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a noise with the specified noise source and parameters.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/noiseWithComponentNoises:selectionNoise:" title="noiseWithComponentNoises:selectionNoise:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/noiseWithComponentNoises:selectionNoise:">+&nbsp;noiseWithComponentNoises:selectionNoise:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a composite noise from one or more component noises.  Useful for combining and layering noises together.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)noiseWithComponentNoises:(NSArray&lt;GKNoise*&gt; *)<em>noises</em> selectionNoise:(GKNoise *)<em>selectionNoise</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noises</code></th>
+						<td><p>The component noises to combine.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>selectionNoise</code></th>
+						<td><p>The noise that governs which component noise is chosen for each position of the resulting noise.
+The range of values is equally-subdivided for each component noise.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a composite noise from one or more component noises.  Useful for combining and layering noises together.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/noiseWithComponentNoises:selectionNoise:componentBoundaries:boundaryBlendDistances:" title="noiseWithComponentNoises:selectionNoise:componentBoundaries:boundaryBlendDistances:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/noiseWithComponentNoises:selectionNoise:componentBoundaries:boundaryBlendDistances:">+&nbsp;noiseWithComponentNoises:selectionNoise:componentBoundaries:boundaryBlendDistances:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a composite noise from one or more component noises.  Useful for combining and layering noises together.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)noiseWithComponentNoises:(NSArray&lt;GKNoise*&gt; *)<em>noises</em> selectionNoise:(GKNoise *)<em>selectionNoise</em> componentBoundaries:(NSArray&lt;NSNumber*&gt; *)<em>componentBoundaries</em> boundaryBlendDistances:(NSArray&lt;NSNumber*&gt; *)<em>blendDistances</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noises</code></th>
+						<td><p>The component noises to combine.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>selectionNoise</code></th>
+						<td><p>The noise that governs which component noise is chosen for each position of the resulting noise.
+The range of values is equally-subdivided for each component noise.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>componentBoundaries</code></th>
+						<td><p>The noise value boundaries of the selection noise to use for the component noises.  Specify
+one less boundary than the number of component noises.  This is a parallel array to blendDistances.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>blendDistances</code></th>
+						<td><p>The size of smoothing that is applied to boundaries where two component noises meet.  Specify
+one less blend distance than the number of component noises.  This is a parallel array to componentBoundaries.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a composite noise from one or more component noises.  Useful for combining and layering noises together.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueAtPosition:" title="valueAtPosition:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueAtPosition:">&ndash;&nbsp;valueAtPosition:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The noise value at the specified sample index of the 2D plane.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (float)valueAtPosition:(vector_float2)<em>position</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>position</code></th>
+						<td><p>Sample index of the extracted 2D plane at which to query the value</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The noise map value at the specified position.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The noise value at the specified sample index of the 2D plane.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/applyAbsoluteValue" title="applyAbsoluteValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/applyAbsoluteValue">&ndash;&nbsp;applyAbsoluteValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Takes the absoltue value of all noise positions.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)applyAbsoluteValue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Takes the absoltue value of all noise positions.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clampWithLowerBound:upperBound:" title="clampWithLowerBound:upperBound:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clampWithLowerBound:upperBound:">&ndash;&nbsp;clampWithLowerBound:upperBound:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Clamps all noise values to the specified bounds.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)clampWithLowerBound:(double)<em>lowerBound</em> upperBound:(double)<em>upperBound</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lowerBound</code></th>
+						<td><p>The noise value lower bound.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>upperBound</code></th>
+						<td><p>The noise value upper bound.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Clamps all noise values to the specified bounds.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/raiseToPower:" title="raiseToPower:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/raiseToPower:">&ndash;&nbsp;raiseToPower:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Raises all noise values to the specified power.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)raiseToPower:(double)<em>power</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>power</code></th>
+						<td><p>The power to which to raise all noise values.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Raises all noise values to the specified power.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/invert" title="invert"></a>
+	<h3 class="method-title"><code><a href="#//api/name/invert">&ndash;&nbsp;invert</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Inverts all noise values, from positive to negative and vice versa.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)invert</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Inverts all noise values, from positive to negative and vice versa.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/applyTurbulenceWithFrequency:power:roughness:seed:" title="applyTurbulenceWithFrequency:power:roughness:seed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/applyTurbulenceWithFrequency:power:roughness:seed:">&ndash;&nbsp;applyTurbulenceWithFrequency:power:roughness:seed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Applies a turbulent displacement to all noise values.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)applyTurbulenceWithFrequency:(double)<em>frequency</em> power:(double)<em>power</em> roughness:(int)<em>roughness</em> seed:(int32_t)<em>seed</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Applies a turbulent displacement to all noise values.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/remapValuesToCurveWithControlPoints:" title="remapValuesToCurveWithControlPoints:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/remapValuesToCurveWithControlPoints:">&ndash;&nbsp;remapValuesToCurveWithControlPoints:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remaps all noise values to a smooth curve that passes through the specified control points.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)remapValuesToCurveWithControlPoints:(NSDictionary&lt;NSNumber*,NSNumber*&gt; *)<em>controlPoints</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controlPoints</code></th>
+						<td><p>Pairs of &lsquo;input : output&rsquo; values to use as control points for the smooth remapping curve.
+Duplicate input values are not permitted.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Remaps all noise values to a smooth curve that passes through the specified control points.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/remapValuesToTerracesWithPeaks:terracesInverted:" title="remapValuesToTerracesWithPeaks:terracesInverted:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/remapValuesToTerracesWithPeaks:terracesInverted:">&ndash;&nbsp;remapValuesToTerracesWithPeaks:terracesInverted:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remaps all noise values to one or more terraces with peaks.  Useful for creating valleys and trenches.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)remapValuesToTerracesWithPeaks:(NSArray&lt;NSNumber*&gt; *)<em>peakInputValues</em> terracesInverted:(BOOL)<em>inverted</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peakInputValues</code></th>
+						<td><p>Inputs positions of terrace peaks.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inverted</code></th>
+						<td><p>Governs the curve direction from peak to peak.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Remaps all noise values to one or more terraces with peaks.  Useful for creating valleys and trenches.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/moveBy:" title="moveBy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/moveBy:">&ndash;&nbsp;moveBy:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Translates all noise values by the specified amount.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)moveBy:(vector_double3)<em>delta</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delta</code></th>
+						<td><p>The amount by which to move all noise values.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Translates all noise values by the specified amount.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scaleBy:" title="scaleBy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scaleBy:">&ndash;&nbsp;scaleBy:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Scales all noise values by the specified amount.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scaleBy:(vector_double3)<em>factor</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>factor</code></th>
+						<td><p>The factor by which to scale all noise values.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Scales all noise values by the specified amount.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rotateBy:" title="rotateBy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rotateBy:">&ndash;&nbsp;rotateBy:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Rotates all noise values by the specified amount.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)rotateBy:(vector_double3)<em>radians</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>radians</code></th>
+						<td><p>The number of radians in x-, y- and z-axes by which to rotate all noise values.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Rotates all noise values by the specified amount.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addWithNoise:" title="addWithNoise:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addWithNoise:">&ndash;&nbsp;addWithNoise:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds all noise values by the noise values at the same position in specified noise.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addWithNoise:(GKNoise *)<em>noise</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noise</code></th>
+						<td><p>The noise from which to add values to this noise.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds all noise values by the noise values at the same position in specified noise.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/multiplyWithNoise:" title="multiplyWithNoise:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/multiplyWithNoise:">&ndash;&nbsp;multiplyWithNoise:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Multiplies all noise values by the noise values at the same position in specified noise.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)multiplyWithNoise:(GKNoise *)<em>noise</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noise</code></th>
+						<td><p>The noise from which to multiply values to this noise.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Multiplies all noise values by the noise values at the same position in specified noise.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/minimumWithNoise:" title="minimumWithNoise:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minimumWithNoise:">&ndash;&nbsp;minimumWithNoise:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Takes the minimum value between this noise and the specified noise at each position.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)minimumWithNoise:(GKNoise *)<em>noise</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noise</code></th>
+						<td><p>The noise to compare against this noise at each position in determining which to take the minimum value from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Takes the minimum value between this noise and the specified noise at each position.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maximumWithNoise:" title="maximumWithNoise:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maximumWithNoise:">&ndash;&nbsp;maximumWithNoise:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Takes the maximum value between this noise and the specified noise at each position.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)maximumWithNoise:(GKNoise *)<em>noise</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noise</code></th>
+						<td><p>The noise to compare against this noise at each position in determining which to take the maximum value from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Takes the maximum value between this noise and the specified noise at each position.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/raiseToPowerWithNoise:" title="raiseToPowerWithNoise:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/raiseToPowerWithNoise:">&ndash;&nbsp;raiseToPowerWithNoise:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Raises all noise values to the power of the value at the same position of the specified noise.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)raiseToPowerWithNoise:(GKNoise *)<em>noise</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noise</code></th>
+						<td><p>The noise from which to raise this noise&rsquo;s values by.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Raises all noise values to the power of the value at the same position of the specified noise.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/displaceXWithNoise:yWithNoise:zWithNoise:" title="displaceXWithNoise:yWithNoise:zWithNoise:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/displaceXWithNoise:yWithNoise:zWithNoise:">&ndash;&nbsp;displaceXWithNoise:yWithNoise:zWithNoise:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Displaces all noise values by the values at the same positions of the specified noises.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)displaceXWithNoise:(GKNoise *)<em>xDisplacementNoise</em> yWithNoise:(GKNoise *)<em>yDisplacementNoise</em> zWithNoise:(GKNoise *)<em>zDisplacementNoise</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>xDisplacementNoise</code></th>
+						<td><p>The noise from which to displace along the x-axis this noise&rsquo;s values at the same positions.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>yDisplacementNoise</code></th>
+						<td><p>The noise from which to displace along the y-axis this noise&rsquo;s values at the same positions.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>zDisplacementNoise</code></th>
+						<td><p>The noise from which to displace along the z-axis this noise&rsquo;s values at the same positions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Displaces all noise values by the values at the same positions of the specified noises.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKNoise.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

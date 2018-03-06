@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>InstallerPane Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 InstallerPlugins Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/contentView">contentView</option>
+		
+		<option value="//api/name/firstKeyView">firstKeyView</option>
+		
+		<option value="//api/name/gotoNextPane">gotoNextPane</option>
+		
+		<option value="//api/name/gotoPreviousPane">gotoPreviousPane</option>
+		
+		<option value="//api/name/initialKeyView">initialKeyView</option>
+		
+		<option value="//api/name/lastKeyView">lastKeyView</option>
+		
+		<option value="//api/name/nextEnabled">nextEnabled</option>
+		
+		<option value="//api/name/nextPane">nextPane</option>
+		
+		<option value="//api/name/previousEnabled">previousEnabled</option>
+		
+		<option value="//api/name/section">section</option>
+		
+		<option value="//api/name/title">title</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/contentView">- contentView</option>
+		
+		<option value="//api/name/didEnterPane:">- didEnterPane:</option>
+		
+		<option value="//api/name/didExitPane:">- didExitPane:</option>
+		
+		<option value="//api/name/firstKeyView">- firstKeyView</option>
+		
+		<option value="//api/name/initWithSection:">- initWithSection:</option>
+		
+		<option value="//api/name/initialKeyView">- initialKeyView</option>
+		
+		<option value="//api/name/lastKeyView">- lastKeyView</option>
+		
+		<option value="//api/name/nextPane">- nextPane</option>
+		
+		<option value="//api/name/shouldExitPane:">- shouldExitPane:</option>
+		
+		<option value="//api/name/willEnterPane:">- willEnterPane:</option>
+		
+		<option value="//api/name/willExitPane:">- willExitPane:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">InstallerPane Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>InstallerPane.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      InstallerPane
+</code></pre><p>InstallerPane represents one display element of an <a href="../Classes/InstallerSection.html">InstallerSection</a> within the Installer&rsquo;s UI.
+                When a InstallerPane is entered the subviews from <a href="#//api/name/contentView">contentView</a> are placed on the screen
+                and made active.  If defined, the <a href="#//api/name/initialKeyView">initialKeyView</a> is set as key and the keyView chain
+                is setup using the <a href="#//api/name/firstKeyView">firstKeyView</a> and <a href="#//api/name/lastKeyView">lastKeyView</a> outlets.</p>
+
+<pre><code>            Since the InstallerPane's parent InstallerSection is not defined until the pane is first diplayed,
+            the parentSection outlet can be connected within the nib in which the InstallerPane is loaded
+            in order to have access to the parent section at an earlier time.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/contentView" title="contentView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentView">&nbsp;&nbsp;contentView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     contentView
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) IBOutlet NSView *contentView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     contentView
+</code></pre><p>Returns the contentView outlet.  ContentView is used to determine what is to
+                be displayed on screen when this pane is active.  The contentView must be the
+                same view when the pane is exited, as when the pane is first entered.</p>
+
+<pre><code>            Subclasses can override this method to return dynamic views which are not loaded
+            from a nib.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initialKeyView" title="initialKeyView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initialKeyView">&nbsp;&nbsp;initialKeyView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     initialKeyView
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) IBOutlet NSView *initialKeyView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initialKeyView
+</code></pre><p>Returns the view that should have the keyboard focus when the pane is entered.
+                This method returns the initialKeyView outlet.  This outlet should be connected
+                in the nib containing the pane.</p>
+
+<pre><code>            A subclass can override this method to return a dynamically defined initialKeyView.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/firstKeyView" title="firstKeyView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/firstKeyView">&nbsp;&nbsp;firstKeyView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     firstKeyView
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) IBOutlet NSView *firstKeyView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     firstKeyView
+</code></pre><p>Returns the view that should first have keyboard focus when the content view of the pane
+                first becomes key.  This method returns the firstKeyView outlet.  This outlet should be connected
+                in the nib containing the pane.</p>
+
+<pre><code>            A subclass can override this method to return a dynamically defined firstKeyView.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastKeyView" title="lastKeyView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastKeyView">&nbsp;&nbsp;lastKeyView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     lastKeyView
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) IBOutlet NSView *lastKeyView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     lastKeyView
+</code></pre><p>Returns the lastKeyView which has focus before the <a href="#//api/name/contentView">contentView</a> of the pane is no longer
+                the key view.</p>
+
+<pre><code>            A subclass can override this method to return a dynamically defined lastKeyView.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextPane" title="nextPane"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextPane">&nbsp;&nbsp;nextPane</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     nextPane
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) IBOutlet InstallerPane *nextPane</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     nextPane
+</code></pre><p>Returns the next InstallerPane to follow this one.  Set the nextPane outlet in a nib to define
+                a default nextPane.</p>
+
+<pre><code>            A subclass may want to override nextPane if the pane determines it's nextPane dynamically.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSection:" title="initWithSection:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSection:">&ndash;&nbsp;initWithSection:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     initWithSection
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithSection:(id)<em>parent</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithSection
+</code></pre><p>Init method for InstallerPane.  This method takes it&rsquo;s parent <a href="#//api/name/section">section</a> as an argument.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/title" title="title"></a>
+	<h3 class="method-title"><code><a href="#//api/name/title">&nbsp;&nbsp;title</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     title
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly, strong) NSString *title</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     title
+</code></pre><p>Title text for the pane while being displayed.  The title is retrieved and displayed
+                every time a pane is entered.  The title must be vaild after the willEnter method is called.</p>
+
+<pre><code>            You must override this method if you would like a title for a custom pane.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/section" title="section"></a>
+	<h3 class="method-title"><code><a href="#//api/name/section">&nbsp;&nbsp;section</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     section
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly, strong) InstallerSection *section</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     section
+</code></pre><p>The parent section for this pane.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentView" title="contentView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentView">&ndash;&nbsp;contentView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     contentView
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSView *)contentView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     contentView
+</code></pre><p>Returns the contentView outlet.  ContentView is used to determine what is to
+                be displayed on screen when this pane is active.  The contentView must be the
+                same view when the pane is exited, as when the pane is first entered.</p>
+
+<pre><code>            Subclasses can override this method to return dynamic views which are not loaded
+            from a nib.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initialKeyView" title="initialKeyView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initialKeyView">&ndash;&nbsp;initialKeyView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     initialKeyView
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSView *)initialKeyView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initialKeyView
+</code></pre><p>Returns the view that should have the keyboard focus when the pane is entered.
+                This method returns the initialKeyView outlet.  This outlet should be connected
+                in the nib containing the pane.</p>
+
+<pre><code>            A subclass can override this method to return a dynamically defined initialKeyView.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/firstKeyView" title="firstKeyView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/firstKeyView">&ndash;&nbsp;firstKeyView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     firstKeyView
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSView *)firstKeyView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     firstKeyView
+</code></pre><p>Returns the view that should first have keyboard focus when the content view of the pane
+                first becomes key.  This method returns the firstKeyView outlet.  This outlet should be connected
+                in the nib containing the pane.</p>
+
+<pre><code>            A subclass can override this method to return a dynamically defined firstKeyView.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastKeyView" title="lastKeyView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastKeyView">&ndash;&nbsp;lastKeyView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     lastKeyView
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSView *)lastKeyView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     lastKeyView
+</code></pre><p>Returns the lastKeyView which has focus before the <a href="#//api/name/contentView">contentView</a> of the pane is no longer
+                the key view.</p>
+
+<pre><code>            A subclass can override this method to return a dynamically defined lastKeyView.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextPane" title="nextPane"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextPane">&ndash;&nbsp;nextPane</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     nextPane
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (InstallerPane *)nextPane</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     nextPane
+</code></pre><p>Returns the next InstallerPane to follow this one.  Set the nextPane outlet in a nib to define
+                a default nextPane.</p>
+
+<pre><code>            A subclass may want to override nextPane if the pane determines it's nextPane dynamically.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willEnterPane:" title="willEnterPane:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willEnterPane:">&ndash;&nbsp;willEnterPane:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     willEnterPane:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)willEnterPane:(InstallerSectionDirection)<em>dir</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dir</code></th>
+						<td><p>The direction in which the pane will be entered from</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     willEnterPane:
+</code></pre><p>Called immediatly before the InstallerPane is displayed on the screen.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didEnterPane:" title="didEnterPane:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didEnterPane:">&ndash;&nbsp;didEnterPane:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     didEnterPane:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didEnterPane:(InstallerSectionDirection)<em>dir</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dir</code></th>
+						<td><p>The direction in which the pane was entered</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     didEnterPane:
+</code></pre><p>Called immediatly after the InstallerPane is displayed on the screen.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldExitPane:" title="shouldExitPane:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldExitPane:">&ndash;&nbsp;shouldExitPane:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     shouldExitPane:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldExitPane:(InstallerSectionDirection)<em>dir</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dir</code></th>
+						<td><p>The direction in which the pane was entered</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Yes or No defining if the pane should really exit</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     shouldExitPane:
+</code></pre><p>Called to determine if a pane should exit and allow another pane to be display on screen.</p>
+
+<pre><code>            A subclass should override this method if it needs to prevent the InstallerPane from exiting.
+
+            Once the InstallerPane decides it is time to exit, it can call gotoNextPane or gotoPreviousPane
+            to exit without calling shouldExitPane again.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willExitPane:" title="willExitPane:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willExitPane:">&ndash;&nbsp;willExitPane:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     willExitPane:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)willExitPane:(InstallerSectionDirection)<em>dir</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dir</code></th>
+						<td><p>The direction in which the pane will exit to</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     willExitPane:
+</code></pre><p>Called immediatly before the InstallerPane will exit and be removed from the screen.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didExitPane:" title="didExitPane:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didExitPane:">&ndash;&nbsp;didExitPane:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     willExitPane:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didExitPane:(InstallerSectionDirection)<em>dir</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dir</code></th>
+						<td><p>The direction in which the pane exited</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     willExitPane:
+</code></pre><p>Called immediatly after the InstallerPane has exited and has been removed from the screen.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nextEnabled" title="nextEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nextEnabled">&nbsp;&nbsp;nextEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     nextEnabled
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY) BOOL nextEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     nextEnabled
+</code></pre><p>Specifies whether going to the next pane is enabled in the UI.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/previousEnabled" title="previousEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/previousEnabled">&nbsp;&nbsp;previousEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     previousEnabled
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY) BOOL previousEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     previousEnabled
+</code></pre><p>Specifies whether going to the previous pane is enabled in the UI.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/gotoNextPane" title="gotoNextPane"></a>
+	<h3 class="method-title"><code><a href="#//api/name/gotoNextPane">&nbsp;&nbsp;gotoNextPane</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     gotoNextPane
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly) BOOL gotoNextPane</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>gotoNextPane will return NO if there is no <a href="#//api/name/nextPane">nextPane</a> (in any sections) or there is an error loading the <a href="#//api/name/nextPane">nextPane</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     gotoNextPane
+</code></pre><p>Causes the current pane to exit and the following pane available to be loaded.  gotoNextPane causes this pane&rsquo;s
+                shouldExit: method to be skipped.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/gotoPreviousPane" title="gotoPreviousPane"></a>
+	<h3 class="method-title"><code><a href="#//api/name/gotoPreviousPane">&nbsp;&nbsp;gotoPreviousPane</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method     gotoPreviousPane
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly) BOOL gotoPreviousPane</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>gotoPreviousPane will return NO if there is no previous (in any sections) or there is an error loading the previousPane.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     gotoPreviousPane
+</code></pre><p>Causes the current pane to exit and the previous pane in the Installer&rsquo;s Pane Stack to be displayed.<br/>
+                <a href="#//api/name/gotoNextPane">gotoNextPane</a> causes this pane&rsquo;s shouldExit: method to be skipped.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">InstallerPane.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

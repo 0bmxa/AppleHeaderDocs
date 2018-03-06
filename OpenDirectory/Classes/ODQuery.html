@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ODQuery Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 OpenDirectory Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_6">_6</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/queryWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:">+ queryWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:">- initWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:</option>
+		
+		<option value="//api/name/removeFromRunLoop:forMode:">- removeFromRunLoop:forMode:</option>
+		
+		<option value="//api/name/resultsAllowingPartial:error:">- resultsAllowingPartial:error:</option>
+		
+		<option value="//api/name/scheduleInRunLoop:forMode:">- scheduleInRunLoop:forMode:</option>
+		
+		<option value="//api/name/synchronize">- synchronize</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ODQuery Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ODQuery.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class       ODQuery
+</code></pre><p>OpenDirectory queries may be used to search for different types of records, e.g. users, groups.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/queryWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:" title="queryWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/queryWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:">+&nbsp;queryWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an autoreleased query with the node using the parameters provided</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (ODQuery *)queryWithNode:(ODNode *)<em>inNode</em> forRecordTypes:(id)<em>inRecordTypeOrList</em> attribute:(ODAttributeType)<em>inAttribute</em> matchType:(ODMatchType)<em>inMatchType</em> queryValues:(id)<em>inQueryValueOrList</em> returnAttributes:(id)<em>inReturnAttributeOrList</em> maximumResults:(NSInteger)<em>inMaximumResults</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     queryWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:
+</code></pre><p>Creates an autoreleased query with the node using the supplied query parameters.  Some parameters
+                can either be NSString or NSData or an NSArray of either NSString or NSData.  Passing nil for
+                returnAttributes is equivalent to passing kODAttributeTypeStandardOnly.  outError is optional parameter,
+                nil can be passed if error details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODQuery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:" title="initWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:">&ndash;&nbsp;initWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a query with the node using the parameters provided</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithNode:(ODNode *)<em>inNode</em> forRecordTypes:(id)<em>inRecordTypeOrList</em> attribute:(ODAttributeType)<em>inAttribute</em> matchType:(ODMatchType)<em>inMatchType</em> queryValues:(id)<em>inQueryValueOrList</em> returnAttributes:(id)<em>inReturnAttributeOrList</em> maximumResults:(NSInteger)<em>inMaximumResults</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithNode:forRecordTypes:attribute:matchType:queryValues:returnAttributes:maximumResults:error:
+</code></pre><p>Creates a query with the node using the supplied query parameters.  Some parameters
+                can either be NSString or NSData or an NSArray of either NSString or NSData.  Passing nil for
+                returnAttributes is equivalent to passing kODAttributeTypeStandardOnly. outError is optional parameter,
+                nil can be passed if error details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODQuery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resultsAllowingPartial:error:" title="resultsAllowingPartial:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resultsAllowingPartial:error:">&ndash;&nbsp;resultsAllowingPartial:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns results from a provided ODQuery synchronously</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)resultsAllowingPartial:(BOOL)<em>inAllowPartialResults</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     resultsAllowingPartial:error:
+</code></pre><p>Returns results from a provided ODQuery synchronously.  Passing NO to inAllowPartialResults
+                will block the call until all results are returned or an error occurs.  YES can be passed at any time
+                even if previous calls were made with NO.  outError is optional parameter, nil can be passed if error
+                details are not needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODQuery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_6" title="_6"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_6">&nbsp;&nbsp;_6</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The currently set delegate</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite, assign) id&lt;ODQueryDelegate&gt; delegate NS_AVAILABLE ( 10 _6</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property   delegate
+</code></pre><p>The query delegate which will receive asynchronous query results.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODQuery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scheduleInRunLoop:forMode:" title="scheduleInRunLoop:forMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scheduleInRunLoop:forMode:">&ndash;&nbsp;scheduleInRunLoop:forMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds the query object to the specified NSRunLoop to receive asynchronous results</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scheduleInRunLoop:(NSRunLoop *)<em>inRunLoop</em> forMode:(NSString *)<em>inMode</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     scheduleInRunLoop:forMode:
+</code></pre><p>Adds the query object to the specified NSRunLoop to receive asynchronous results.  A delegate must be set
+                in advance otherwise results may be lost due to the lack of a receiver.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODQuery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeFromRunLoop:forMode:" title="removeFromRunLoop:forMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeFromRunLoop:forMode:">&ndash;&nbsp;removeFromRunLoop:forMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the query object from the specified NSRunLoop</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeFromRunLoop:(NSRunLoop *)<em>inRunLoop</em> forMode:(NSString *)<em>inMode</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeFromRunLoop:forMode:
+</code></pre><p>Removes the query object from the specified NSRunLoop.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODQuery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/synchronize" title="synchronize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/synchronize">&ndash;&nbsp;synchronize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Will dispose of any results and restart the query.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)synchronize</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     synchronize
+</code></pre><p>Will dispose of any results and restart the query for subsequent resultsAllowingPartial: calls.  If the query
+                is currently scheduled on a RunLoop, then the delegate will be called with inResults == nil and
+                [inError code] == kODErrorQuerySynchronize and [inError domain] == ODFrameworkErrorDomain, signifying that
+                all existing results should be thrown away in preparation for new results.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ODQuery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

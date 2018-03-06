@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MDLVoxelArray Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 ModelIO Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/boundingBox">boundingBox</option>
+		
+		<option value="//api/name/count">count</option>
+		
+		<option value="//api/name/isValidSignedShellField">isValidSignedShellField</option>
+		
+		<option value="//api/name/shellFieldExteriorThickness">shellFieldExteriorThickness</option>
+		
+		<option value="//api/name/shellFieldInteriorThickness">shellFieldInteriorThickness</option>
+		
+		<option value="//api/name/voxelIndexExtent">voxelIndexExtent</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/coarseMesh">- coarseMesh</option>
+		
+		<option value="//api/name/coarseMeshUsingAllocator:">- coarseMeshUsingAllocator:</option>
+		
+		<option value="//api/name/convertToSignedShellField">- convertToSignedShellField</option>
+		
+		<option value="//api/name/differenceWithVoxels:">- differenceWithVoxels:</option>
+		
+		<option value="//api/name/indexOfSpatialLocation:">- indexOfSpatialLocation:</option>
+		
+		<option value="//api/name/initWithAsset:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:">- initWithAsset:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:</option>
+		
+		<option value="//api/name/initWithAsset:divisions:interiorShells:exteriorShells:patchRadius:">- initWithAsset:divisions:interiorShells:exteriorShells:patchRadius:</option>
+		
+		<option value="//api/name/initWithAsset:divisions:patchRadius:">- initWithAsset:divisions:patchRadius:</option>
+		
+		<option value="//api/name/initWithData:boundingBox:voxelExtent:">- initWithData:boundingBox:voxelExtent:</option>
+		
+		<option value="//api/name/intersectWithVoxels:">- intersectWithVoxels:</option>
+		
+		<option value="//api/name/meshUsingAllocator:">- meshUsingAllocator:</option>
+		
+		<option value="//api/name/setVoxelAtIndex:">- setVoxelAtIndex:</option>
+		
+		<option value="//api/name/setVoxelsForMesh:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:">- setVoxelsForMesh:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:</option>
+		
+		<option value="//api/name/setVoxelsForMesh:divisions:interiorShells:exteriorShells:patchRadius:">- setVoxelsForMesh:divisions:interiorShells:exteriorShells:patchRadius:</option>
+		
+		<option value="//api/name/setVoxelsForMesh:divisions:patchRadius:">- setVoxelsForMesh:divisions:patchRadius:</option>
+		
+		<option value="//api/name/spatialLocationOfIndex:">- spatialLocationOfIndex:</option>
+		
+		<option value="//api/name/unionWithVoxels:">- unionWithVoxels:</option>
+		
+		<option value="//api/name/voxelBoundingBoxAtIndex:">- voxelBoundingBoxAtIndex:</option>
+		
+		<option value="//api/name/voxelExistsAtIndex:allowAnyX:allowAnyY:allowAnyZ:allowAnyShell:">- voxelExistsAtIndex:allowAnyX:allowAnyY:allowAnyZ:allowAnyShell:</option>
+		
+		<option value="//api/name/voxelIndices">- voxelIndices</option>
+		
+		<option value="//api/name/voxelsWithinExtent:">- voxelsWithinExtent:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MDLVoxelArray Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MDLObject.html">MDLObject</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MDLVoxelArray.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class MDLVoxelArray
+@summary Voxel data represented on a three dimensional grid. Voxel data can
+          include voxels considered to be on the surface of an object, and a
+          series of shells on the outside and inside of the surface.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithAsset:divisions:patchRadius:" title="initWithAsset:divisions:patchRadius:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAsset:divisions:patchRadius:">&ndash;&nbsp;initWithAsset:divisions:patchRadius:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a voxel grid from an <a href="../Classes/MDLAsset.html">MDLAsset</a>. Attempts to create a closed volume
+model by applying &ldquo;patches&rdquo; of radius patchRadius to any holes found in the
+orginal mesh. Choose a patch radius that will be large enough to fill in the largest
+hole in the model.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithAsset:(MDLAsset *)<em>asset</em> divisions:(int)<em>divisions</em> patchRadius:(float)<em>patchRadius</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialize a voxel grid from an <a href="../Classes/MDLAsset.html">MDLAsset</a>. Attempts to create a closed volume
+model by applying &ldquo;patches&rdquo; of radius patchRadius to any holes found in the
+orginal mesh. Choose a patch radius that will be large enough to fill in the largest
+hole in the model.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithData:boundingBox:voxelExtent:" title="initWithData:boundingBox:voxelExtent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithData:boundingBox:voxelExtent:">&ndash;&nbsp;initWithData:boundingBox:voxelExtent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a voxel grid from an NSData containing an array of MDLVoxelIndex values.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithData:(NSData *)<em>voxelData</em> boundingBox:(MDLAxisAlignedBoundingBox)<em>boundingBox</em> voxelExtent:(float)<em>voxelExtent</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>boundingBox</code></th>
+						<td><p>The bounds defining the extent of the volume model in Cartesian space</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>voxelExtent</code></th>
+						<td><p>The extent of a single voxel</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialize a voxel grid from an NSData containing an array of MDLVoxelIndex values.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithAsset:divisions:interiorShells:exteriorShells:patchRadius:" title="initWithAsset:divisions:interiorShells:exteriorShells:patchRadius:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAsset:divisions:interiorShells:exteriorShells:patchRadius:">&ndash;&nbsp;initWithAsset:divisions:interiorShells:exteriorShells:patchRadius:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a voxel grid from an <a href="../Classes/MDLAsset.html">MDLAsset</a> and dilate the resulting voxels by
+a number of interior and exterior shells.
+Routine will attempt to create a closed volume model by applying patches of
+a given radius to any holes it may find in the asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithAsset:(MDLAsset *)<em>asset</em> divisions:(int)<em>divisions</em> interiorShells:(int)<em>interiorShells</em> exteriorShells:(int)<em>exteriorShells</em> patchRadius:(float)<em>patchRadius</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>divisions</code></th>
+						<td><p>The number of divisions to divide the vertical extent of the
+model by.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>interiorShells</code></th>
+						<td><p>The number of shells to compute inside the surface shell</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>exteriorShells</code></th>
+						<td><p>The number of shells to compute outside the surface shell</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>patchRadius</code></th>
+						<td><p>The radius of the largest model mending patch in world space units</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialize a voxel grid from an <a href="../Classes/MDLAsset.html">MDLAsset</a> and dilate the resulting voxels by
+a number of interior and exterior shells.
+Routine will attempt to create a closed volume model by applying patches of
+a given radius to any holes it may find in the asset.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithAsset:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:" title="initWithAsset:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAsset:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:">&ndash;&nbsp;initWithAsset:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a voxel grid from an <a href="../Classes/MDLAsset.html">MDLAsset</a> and dilate the resulting voxels by
+a spatial distance in the interior and exterior directions.
+Routine will attempt to create a closed volume model by applying &ldquo;patches&rdquo; of
+a given radius to any holes it may find in the asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithAsset:(MDLAsset *)<em>asset</em> divisions:(int)<em>divisions</em> interiorNBWidth:(float)<em>interiorNBWidth</em> exteriorNBWidth:(float)<em>exteriorNBWidth</em> patchRadius:(float)<em>patchRadius</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>divisions</code></th>
+						<td><p>The number of divisions to divide the vertical extent of the
+model by.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>interiorNBWidth</code></th>
+						<td><p>The interior narrow band width in world space units</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>exteriorNBWidth</code></th>
+						<td><p>The exterior narrow band width in world space units</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>patchRadius</code></th>
+						<td><p>The radius of the largest model mending patch in world space units</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialize a voxel grid from an <a href="../Classes/MDLAsset.html">MDLAsset</a> and dilate the resulting voxels by
+a spatial distance in the interior and exterior directions.
+Routine will attempt to create a closed volume model by applying &ldquo;patches&rdquo; of
+a given radius to any holes it may find in the asset.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/count" title="count"></a>
+	<h3 class="method-title"><code><a href="#//api/name/count">&nbsp;&nbsp;count</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of voxels in the grid</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUInteger count</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The number of voxels in the grid</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/voxelIndexExtent" title="voxelIndexExtent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/voxelIndexExtent">&nbsp;&nbsp;voxelIndexExtent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The extent of the voxel grid in index space</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MDLVoxelIndexExtent voxelIndexExtent</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The extent of the voxel grid in index space</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/voxelExistsAtIndex:allowAnyX:allowAnyY:allowAnyZ:allowAnyShell:" title="voxelExistsAtIndex:allowAnyX:allowAnyY:allowAnyZ:allowAnyShell:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/voxelExistsAtIndex:allowAnyX:allowAnyY:allowAnyZ:allowAnyShell:">&ndash;&nbsp;voxelExistsAtIndex:allowAnyX:allowAnyY:allowAnyZ:allowAnyShell:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determine if a sample exists at the specified index</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)voxelExistsAtIndex:(MDLVoxelIndex)<em>index</em> allowAnyX:(BOOL)<em>allowAnyX</em> allowAnyY:(BOOL)<em>allowAnyY</em> allowAnyZ:(BOOL)<em>allowAnyZ</em> allowAnyShell:(BOOL)<em>allowAnyShell</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Determine if a sample exists at the specified index</p><p>the allowAny parameters can be used to wildcard any dimensions. This
+is useful to perform queries such as determining if any voxel
+exists on the XY plane at a certain Z, or if any voxel exists at
+any X, Y, Z, or a particular shell, and so on.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/voxelsWithinExtent:" title="voxelsWithinExtent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/voxelsWithinExtent:">&ndash;&nbsp;voxelsWithinExtent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an NSData containing the indices of all voxels found in the extent</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)voxelsWithinExtent:(MDLVoxelIndexExtent)<em>extent</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns an NSData containing the indices of all voxels found in the extent</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/voxelIndices" title="voxelIndices"></a>
+	<h3 class="method-title"><code><a href="#//api/name/voxelIndices">&ndash;&nbsp;voxelIndices</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an NSData containing the indices of all voxels in the voxel grid</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)voxelIndices</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns an NSData containing the indices of all voxels in the voxel grid</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setVoxelAtIndex:" title="setVoxelAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setVoxelAtIndex:">&ndash;&nbsp;setVoxelAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set a sample at the specified index</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setVoxelAtIndex:(MDLVoxelIndex)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set a sample at the specified index</p><p>the extent, bounds, and shell properties may be modified</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setVoxelsForMesh:divisions:patchRadius:" title="setVoxelsForMesh:divisions:patchRadius:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setVoxelsForMesh:divisions:patchRadius:">&ndash;&nbsp;setVoxelsForMesh:divisions:patchRadius:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set voxels corresponding to a mesh.
+Routine will attempt to create a closed volume model by applying &ldquo;patches&rdquo; of
+a given radius to any holes it may find in the mesh.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setVoxelsForMesh:(nonnull MDLMesh *)<em>mesh</em> divisions:(int)<em>divisions</em> patchRadius:(float)<em>patchRadius</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set voxels corresponding to a mesh.
+Routine will attempt to create a closed volume model by applying &ldquo;patches&rdquo; of
+a given radius to any holes it may find in the mesh.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setVoxelsForMesh:divisions:interiorShells:exteriorShells:patchRadius:" title="setVoxelsForMesh:divisions:interiorShells:exteriorShells:patchRadius:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setVoxelsForMesh:divisions:interiorShells:exteriorShells:patchRadius:">&ndash;&nbsp;setVoxelsForMesh:divisions:interiorShells:exteriorShells:patchRadius:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set voxels corresponding to a mesh
+Routine will attempt to create a closed volume model by applying &ldquo;patches&rdquo; of
+a given radius to any holes it may find in the mesh.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setVoxelsForMesh:(nonnull MDLMesh *)<em>mesh</em> divisions:(int)<em>divisions</em> interiorShells:(int)<em>interiorShells</em> exteriorShells:(int)<em>exteriorShells</em> patchRadius:(float)<em>patchRadius</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>divisions</code></th>
+						<td><p>The number of divisions to divide the vertical extent of the
+model by.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>interiorShells</code></th>
+						<td><p>The number of shells to compute inside the surface shell</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>exteriorShells</code></th>
+						<td><p>The number of shells to compute outside the surface shell</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>patchRadius</code></th>
+						<td><p>The radius of the largest model mending patch in world space units</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set voxels corresponding to a mesh
+Routine will attempt to create a closed volume model by applying &ldquo;patches&rdquo; of
+a given radius to any holes it may find in the mesh.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setVoxelsForMesh:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:" title="setVoxelsForMesh:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setVoxelsForMesh:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:">&ndash;&nbsp;setVoxelsForMesh:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set voxels corresponding to a mesh
+Routine will attempt to create a closed volume model by applying &ldquo;patches&rdquo; of
+a given radius to any holes it may find in the mesh.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setVoxelsForMesh:(nonnull MDLMesh *)<em>mesh</em> divisions:(int)<em>divisions</em> interiorNBWidth:(float)<em>interiorNBWidth</em> exteriorNBWidth:(float)<em>exteriorNBWidth</em> patchRadius:(float)<em>patchRadius</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>divisions</code></th>
+						<td><p>The number of divisions to divide the vertical extent of the
+model by.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>interiorNBWidth</code></th>
+						<td><p>The interior narrow band width in world space units</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>exteriorNBWidth</code></th>
+						<td><p>The exterior narrow band width in world space units</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>patchRadius</code></th>
+						<td><p>The radius of the largest model mending patch in world space units</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set voxels corresponding to a mesh
+Routine will attempt to create a closed volume model by applying &ldquo;patches&rdquo; of
+a given radius to any holes it may find in the mesh.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unionWithVoxels:" title="unionWithVoxels:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unionWithVoxels:">&ndash;&nbsp;unionWithVoxels:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Union modifies the voxel grid to be the merger with the supplied voxel grid.
+It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+Note that the shell level data will be cleared.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unionWithVoxels:(MDLVoxelArray *)<em>voxels</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Union modifies the voxel grid to be the merger with the supplied voxel grid.
+It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+Note that the shell level data will be cleared.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/intersectWithVoxels:" title="intersectWithVoxels:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/intersectWithVoxels:">&ndash;&nbsp;intersectWithVoxels:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Intersection modifies the voxel grid so that only voxels that are also in the supplied voxel grid are retained.
+It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+Note that the shell level data will be cleared.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)intersectWithVoxels:(MDLVoxelArray *)<em>voxels</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Intersection modifies the voxel grid so that only voxels that are also in the supplied voxel grid are retained.
+It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+Note that the shell level data will be cleared.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/differenceWithVoxels:" title="differenceWithVoxels:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/differenceWithVoxels:">&ndash;&nbsp;differenceWithVoxels:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Difference modifies the voxel grid so that voxels also in the supplied voxel grid are removed.
+It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+Note that the shell level data will be cleared.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)differenceWithVoxels:(MDLVoxelArray *)<em>voxels</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Difference modifies the voxel grid so that voxels also in the supplied voxel grid are removed.
+It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+Note that the shell level data will be cleared.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/boundingBox" title="boundingBox"></a>
+	<h3 class="method-title"><code><a href="#//api/name/boundingBox">&nbsp;&nbsp;boundingBox</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The extent of the voxel grid in Cartesian space</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MDLAxisAlignedBoundingBox boundingBox</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The extent of the voxel grid in Cartesian space</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/indexOfSpatialLocation:" title="indexOfSpatialLocation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/indexOfSpatialLocation:">&ndash;&nbsp;indexOfSpatialLocation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the voxel index corresponding to a point in space</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MDLVoxelIndex)indexOfSpatialLocation:(vector_float3)<em>location</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Return the voxel index corresponding to a point in space</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/spatialLocationOfIndex:" title="spatialLocationOfIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/spatialLocationOfIndex:">&ndash;&nbsp;spatialLocationOfIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the spatial location of the center of the indexed voxel</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (vector_float3)spatialLocationOfIndex:(MDLVoxelIndex)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Return the spatial location of the center of the indexed voxel</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/voxelBoundingBoxAtIndex:" title="voxelBoundingBoxAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/voxelBoundingBoxAtIndex:">&ndash;&nbsp;voxelBoundingBoxAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The bounding box of an indexed voxel</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MDLAxisAlignedBoundingBox)voxelBoundingBoxAtIndex:(MDLVoxelIndex)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The bounding box of an indexed voxel</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertToSignedShellField" title="convertToSignedShellField"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertToSignedShellField">&ndash;&nbsp;convertToSignedShellField</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Converts volume grid into a signed shell field by surrounding the surface voxels, which have shell
+level values of zero, by an inner layer of voxels with shell level values of negative one and an
+outer layer of voxels with shell level values of positive one.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)convertToSignedShellField</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Converts volume grid into a signed shell field by surrounding the surface voxels, which have shell
+level values of zero, by an inner layer of voxels with shell level values of negative one and an
+outer layer of voxels with shell level values of positive one.</p>
+
+<p>The volume model must be closed in order to generate a signed shell field.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isValidSignedShellField" title="isValidSignedShellField"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isValidSignedShellField">&nbsp;&nbsp;isValidSignedShellField</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns whether or not the volume grid is in a valid signed shell field form.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isValidSignedShellField</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns whether or not the volume grid is in a valid signed shell field form.</p>
+
+<p>This property will be set to YES after calling generateSignedShellField. All other
+methods that modify the voxel grid will cause this property to be set to NO. Setting
+<a href="#//api/name/shellFieldInteriorThickness">shellFieldInteriorThickness</a> and <a href="#//api/name/shellFieldExteriorThickness">shellFieldExteriorThickness</a> will not affect the value
+of this property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shellFieldInteriorThickness" title="shellFieldInteriorThickness"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shellFieldInteriorThickness">&nbsp;&nbsp;shellFieldInteriorThickness</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If voxel grid is in a valid signed shell field form, sets the interior thickness to the desired width,
+as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
+value of this property is zero.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) float shellFieldInteriorThickness</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If voxel grid is in a valid signed shell field form, sets the interior thickness to the desired width,
+as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
+value of this property is zero.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shellFieldExteriorThickness" title="shellFieldExteriorThickness"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shellFieldExteriorThickness">&nbsp;&nbsp;shellFieldExteriorThickness</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If voxel grid is in a valid signed shell field form, sets the exterior thickness to the desired width,
+as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
+value of this property is zero.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) float shellFieldExteriorThickness</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If voxel grid is in a valid signed shell field form, sets the exterior thickness to the desired width,
+as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
+value of this property is zero.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/coarseMesh" title="coarseMesh"></a>
+	<h3 class="method-title"><code><a href="#//api/name/coarseMesh">&ndash;&nbsp;coarseMesh</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a coarse mesh from the voxel grid</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable MDLMesh *)coarseMesh</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a coarse mesh from the voxel grid</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/coarseMeshUsingAllocator:" title="coarseMeshUsingAllocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/coarseMeshUsingAllocator:">&ndash;&nbsp;coarseMeshUsingAllocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable MDLMesh *)coarseMeshUsingAllocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/meshUsingAllocator:" title="meshUsingAllocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/meshUsingAllocator:">&ndash;&nbsp;meshUsingAllocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a smooth mesh from the voxel grid</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable MDLMesh *)meshUsingAllocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a smooth mesh from the voxel grid</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLVoxelArray.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

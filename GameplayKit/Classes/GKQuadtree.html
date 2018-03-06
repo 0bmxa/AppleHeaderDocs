@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>GKQuadtree Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 GameplayKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/quadtreeWithBoundingQuad:minimumCellSize:">+ quadtreeWithBoundingQuad:minimumCellSize:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addElement:withPoint:">- addElement:withPoint:</option>
+		
+		<option value="//api/name/addElement:withQuad:">- addElement:withQuad:</option>
+		
+		<option value="//api/name/elementsAtPoint:">- elementsAtPoint:</option>
+		
+		<option value="//api/name/elementsInQuad:">- elementsInQuad:</option>
+		
+		<option value="//api/name/initWithBoundingQuad:minimumCellSize:">- initWithBoundingQuad:minimumCellSize:</option>
+		
+		<option value="//api/name/removeElement:">- removeElement:</option>
+		
+		<option value="//api/name/removeElement:withNode:">- removeElement:withNode:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">GKQuadtree Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>*<br />:<br />ElementType<br />NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>GKQuadtree.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A tree data structure where each level has 4 children that subdivide a given space into the four quadrants.
+Stores arbitrary NSObject data via points and quads.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/quadtreeWithBoundingQuad:minimumCellSize:" title="quadtreeWithBoundingQuad:minimumCellSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/quadtreeWithBoundingQuad:minimumCellSize:">+&nbsp;quadtreeWithBoundingQuad:minimumCellSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a quadtree with a bounding quad and minimum allowed cell size</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)quadtreeWithBoundingQuad:(GKQuad)<em>quad</em> minimumCellSize:(float)<em>minCellSize</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>quad</code></th>
+						<td><p>the quad that specifies of the bounds of this quadtree. Elements must only be within these bounds.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>minimumCellSize</code></th>
+						<td><p>the minimum allowed cell size.  The quadtree will not create quadrants that have a width or height smaller than this size.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a quadtree with a bounding quad and minimum allowed cell size</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKQuadtree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithBoundingQuad:minimumCellSize:" title="initWithBoundingQuad:minimumCellSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithBoundingQuad:minimumCellSize:">&ndash;&nbsp;initWithBoundingQuad:minimumCellSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithBoundingQuad:(GKQuad)<em>quad</em> minimumCellSize:(float)<em>minCellSize</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addElement:withPoint:" title="addElement:withPoint:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addElement:withPoint:">&ndash;&nbsp;addElement:withPoint:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an NSObject to this quadtree with a given point.
+This data will always reside in the leaf node its point is in.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (GKQuadtreeNode *)addElement:(ElementType)<em>element</em> withPoint:(vector_float2)<em>point</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>element</code></th>
+						<td><p>the element to store</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>point</code></th>
+						<td><p>the point associated with the element you want to store</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the quadtree node the element was added to</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds an NSObject to this quadtree with a given point.
+This data will always reside in the leaf node its point is in.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKQuadtree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addElement:withQuad:" title="addElement:withQuad:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addElement:withQuad:">&ndash;&nbsp;addElement:withQuad:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an NSObject to this quadtree with a given quad.
+This data will reside in the lowest node that its quad fits in completely.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (GKQuadtreeNode *)addElement:(ElementType)<em>element</em> withQuad:(GKQuad)<em>quad</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>quad</code></th>
+						<td><p>the quad associated with the element you want to store</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>the data to store</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the quad tree node the element was added to</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds an NSObject to this quadtree with a given quad.
+This data will reside in the lowest node that its quad fits in completely.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKQuadtree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementsAtPoint:" title="elementsAtPoint:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementsAtPoint:">&ndash;&nbsp;elementsAtPoint:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns all of the elements in the quadtree node this point would be placed in</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;ElementType&gt; *)elementsAtPoint:(vector_float2)<em>point</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>point</code></th>
+						<td><p>the point to query</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an <a href="../Classes/NSArray.html">NSArray</a> of all the data found at the quad tree node this point would be placed in</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns all of the elements in the quadtree node this point would be placed in</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKQuadtree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementsInQuad:" title="elementsInQuad:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementsInQuad:">&ndash;&nbsp;elementsInQuad:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns all of the elements that resides in quad tree nodes which intersect the given quad</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;ElementType&gt; *)elementsInQuad:(GKQuad)<em>quad</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>quadOrigin</code></th>
+						<td><p>the quad you want to test</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an <a href="../Classes/NSArray.html">NSArray</a> of all the elements in all of the nodes that intersect the given quad</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns all of the elements that resides in quad tree nodes which intersect the given quad</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKQuadtree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeElement:" title="removeElement:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeElement:">&ndash;&nbsp;removeElement:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the given NSObject from this quad tree.
+Note that this is an exhaustive search and is slow.
+Cache the relevant GKQuadTreeNode and use removeElement:WithNode: for better performance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeElement:(ElementType)<em>element</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>element</code></th>
+						<td><p>the data to be removed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>returns YES if the data was removed, NO otherwise</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes the given NSObject from this quad tree.
+Note that this is an exhaustive search and is slow.
+Cache the relevant GKQuadTreeNode and use removeElement:WithNode: for better performance.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKQuadtree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeElement:withNode:" title="removeElement:withNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeElement:withNode:">&ndash;&nbsp;removeElement:withNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the given NSObject from the given quadtree node
+Note that this is not an exhaustive search and is faster than removeData:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeElement:(ElementType)<em>data</em> withNode:(GKQuadtreeNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>the node in which this data resides</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>element</code></th>
+						<td><p>the element to be removed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>returns YES if the data was removed, NO otherwise</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes the given NSObject from the given quadtree node
+Note that this is not an exhaustive search and is faster than removeData:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">GKQuadtree.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

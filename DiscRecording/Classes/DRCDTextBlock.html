@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DRCDTextBlock Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 DiscRecording Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/arrayOfCDTextBlocksFromPacks:">+ arrayOfCDTextBlocksFromPacks:</option>
+		
+		<option value="//api/name/cdTextBlockWithLanguage:encoding:">+ cdTextBlockWithLanguage:encoding:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encoding">- encoding</option>
+		
+		<option value="//api/name/flatten">- flatten</option>
+		
+		<option value="//api/name/initWithLanguage:encoding:">- initWithLanguage:encoding:</option>
+		
+		<option value="//api/name/language">- language</option>
+		
+		<option value="//api/name/objectForKey:ofTrack:">- objectForKey:ofTrack:</option>
+		
+		<option value="//api/name/properties">- properties</option>
+		
+		<option value="//api/name/setObject:forKey:ofTrack:">- setObject:forKey:ofTrack:</option>
+		
+		<option value="//api/name/setProperties:">- setProperties:</option>
+		
+		<option value="//api/name/setTrackDictionaries:">- setTrackDictionaries:</option>
+		
+		<option value="//api/name/trackDictionaries">- trackDictionaries</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DRCDTextBlock Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DRCDText.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      DRCDTextBlock
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/arrayOfCDTextBlocksFromPacks:" title="arrayOfCDTextBlocksFromPacks:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/arrayOfCDTextBlocksFromPacks:">+&nbsp;arrayOfCDTextBlocksFromPacks:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parses raw CD-Text data from a disc into DRCDTextBlock objects.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray *)arrayOfCDTextBlocksFromPacks:(NSData *)<em>packs</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>packs</code></th>
+						<td><p>NSData containing raw CD-Text PACKs.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased array of DRCDTextBlock objects describing the information
+                in the raw PACKs, or nil if the data could not be parsed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     arrayOfCDTextBlocksFromPacks:
+</code></pre><p>This method can be used to parse any data blob containing CD-Text PACKs,
+                such as the result of [DRDevice readCDText], or the data returned by the
+                IOKit ioctl DKIOCCDREADTOC with format=5.</p>
+
+<pre><code>            The NSData should be sized to fit the exact number of PACKs.  Each PACK
+            occupies 18 bytes, and the 4-byte header from a READ TOC command may
+            optionally be included.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cdTextBlockWithLanguage:encoding:" title="cdTextBlockWithLanguage:encoding:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cdTextBlockWithLanguage:encoding:">+&nbsp;cdTextBlockWithLanguage:encoding:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a CD-Text block.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRCDTextBlock *)cdTextBlockWithLanguage:(NSString *)<em>lang</em> encoding:(NSStringEncoding)<em>enc</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lang</code></th>
+						<td><p>ISO 639 <a href="#//api/name/language">language</a> code describing the <a href="#//api/name/language">language</a> in which the strings
+                            are provided.  CD-Text allows the concept of an unknown <a href="#//api/name/language">language</a>,
+                            which can be represented here by an empty string.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enc</code></th>
+						<td><p>Character <a href="#//api/name/encoding">encoding</a> into which the strings should be converted.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRCDTextBlock object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     cdTextBlockWithLanguage:encoding:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithLanguage:encoding:" title="initWithLanguage:encoding:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithLanguage:encoding:">&ndash;&nbsp;initWithLanguage:encoding:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an empty CD-Text block.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithLanguage:(NSString *)<em>lang</em> encoding:(NSStringEncoding)<em>enc</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lang</code></th>
+						<td><p>ISO 639 <a href="#//api/name/language">language</a> code describing the <a href="#//api/name/language">language</a> which this block will hold.
+                            CD-Text allows the concept of an unknown <a href="#//api/name/language">language</a>, which can be represented
+                            here by an empty string.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enc</code></th>
+						<td><p>Character <a href="#//api/name/encoding">encoding</a> into which the strings in this block will be converted.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A DRCDTextBlock object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithLanguage:encoding:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/properties" title="properties"></a>
+	<h3 class="method-title"><code><a href="#//api/name/properties">&ndash;&nbsp;properties</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the properties dictionary of the CD-Text block.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)properties</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSDictionary containing the properties of the block.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         properties
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setProperties:" title="setProperties:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setProperties:">&ndash;&nbsp;setProperties:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the <a href="#//api/name/properties">properties</a> dictionary of the CD-Text block.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setProperties:(NSDictionary *)<em>properties</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>properties</code></th>
+						<td><p>NSDictionary of the <a href="#//api/name/properties">properties</a> to set.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         setProperties:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackDictionaries" title="trackDictionaries"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackDictionaries">&ndash;&nbsp;trackDictionaries</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a copy of the array of track dictionaries for the block.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)trackDictionaries</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased NSArray of CFDictionaries of CFStrings, containing the CD-Text information.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     trackDictionaries
+</code></pre><p>Each item in the array is a dictionary, which in turn holds key-value encoded
+                information about the track/disc.  Array index 0 holds information about the
+                disc, index 1 holds information about track 1, index 2 holds information about
+                track 2, etc.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setTrackDictionaries:" title="setTrackDictionaries:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setTrackDictionaries:">&ndash;&nbsp;setTrackDictionaries:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the array of track dictionaries for the block.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setTrackDictionaries:(NSArray *)<em>tracks</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tracks</code></th>
+						<td><p>An NSArray of NSDictionaries of NSStrings, containing the CD-Text information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setTrackDictionaries:
+</code></pre><p>Each item in the array is a dictionary, which in turn holds key-value encoded
+                information about the track/disc.  Array index 0 holds information about the
+                disc, index 1 holds information about track 1, index 2 holds information about
+                track 2, etc.</p>
+
+<pre><code>            Any incoming strings are automatically modified to conform to the character
+            set specified in the language block. Calling trackDictionaries immediately
+            after -setTrackDictionaries: will provide the modified values.  These
+            may not be the same as the ones you passed in, but instead correspond to
+            what will actually be used.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectForKey:ofTrack:" title="objectForKey:ofTrack:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectForKey:ofTrack:">&ndash;&nbsp;objectForKey:ofTrack:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a single value from the block.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)objectForKey:(NSString *)<em>key</em> ofTrack:(NSUInteger)<em>trackIndex</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>Key to get the value of.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>trackIndex</code></th>
+						<td><p>One-based index of the track to query, or 0 to query the disc.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Autoreleased NSObject for the key, or nil if not present.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     objectForKey:ofTrack:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setObject:forKey:ofTrack:" title="setObject:forKey:ofTrack:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setObject:forKey:ofTrack:">&ndash;&nbsp;setObject:forKey:ofTrack:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Changes a single string in the block.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setObject:(id)<em>value</em> forKey:(NSString *)<em>key</em> ofTrack:(NSUInteger)<em>trackIndex</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>Value - an NSString, NSData, or NSNumber as appropriate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>Key to assign.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>trackIndex</code></th>
+						<td><p>One-based index of the track to modify, or 0 to modify the disc.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setObject:forKey:ofTrack:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flatten" title="flatten"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flatten">&ndash;&nbsp;flatten</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Flattens the CD-Text block to determine whether any information will be truncated.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)flatten</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The number of bytes that will be truncated from the CD-Text block.  If this
+                method returns 0, no truncation will occur.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     flatten
+</code></pre><p>When burning your CD-Text information to a CD, DiscRecording will automatically
+                truncate some of the information you&rsquo;ve specified if it does not fit.</p>
+
+<pre><code>            The size limit for CD-Text is approximately 3K of strings per block.  This limit
+            is only approximate because some of this space is taken up as overhead, and
+            duplicate strings can sometimes be combined.  The only way to tell for sure
+            how big your CD-Text block is going to be is to ask DiscRecording to try
+            flattening it.  You can use this function to determine whether truncation
+            will be needed.
+
+            Some clients will want to accept DiscRecording's truncation since it preserves
+            the most important information and provides the simplest user experience.  If
+            you do not wish to use DiscRecording's automatic truncation, it is your
+            responsibility to make sure that you specify a CD-Text block that will fit.
+
+            Following is a simple algorithm to avoid having your CD-Text data truncated:
+            &lt;ol&gt;
+            &lt;li&gt;Call [myCDTextBlock flatten].
+            &lt;li&gt;If the result is 0, no truncation is necessary. Stop.
+            &lt;li&gt;Otherwise, truncation will occur -- edit or remove some data.
+            &lt;li&gt;Repeat.
+            &lt;/ol&gt;
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="PropertyConvenienceMethods Methods" name="task_PropertyConvenienceMethods Methods"></a>
+						<h2 class="task-title">PropertyConvenienceMethods Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/language" title="language"></a>
+	<h3 class="method-title"><code><a href="#//api/name/language">&ndash;&nbsp;language</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the ISO 639 language code describing the language associated with the
+                CD-Text block.  CD-Text allows the concept of an unknown language, which is
+                represented here by an empty string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)language</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A DRCDTextLanguage.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     language
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encoding" title="encoding"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encoding">&ndash;&nbsp;encoding</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the string encoding associated with the CD-Text block.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSStringEncoding)encoding</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A NSStringEncoding.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     encoding
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRCDText.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

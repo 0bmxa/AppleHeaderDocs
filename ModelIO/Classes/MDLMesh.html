@@ -1,0 +1,2777 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MDLMesh Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 ModelIO Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/allocator">allocator</option>
+		
+		<option value="//api/name/boundingBox">boundingBox</option>
+		
+		<option value="//api/name/submeshes">submeshes</option>
+		
+		<option value="//api/name/vertexBuffers">vertexBuffers</option>
+		
+		<option value="//api/name/vertexCount">vertexCount</option>
+		
+		<option value="//api/name/vertexDescriptor">vertexDescriptor</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/newBoxWithDimensions:segments:geometryType:inwardNormals:allocator:">+ newBoxWithDimensions:segments:geometryType:inwardNormals:allocator:</option>
+		
+		<option value="//api/name/newCapsuleWithHeight:radii:radialSegments:verticalSegments:hemisphereSegments:geometryType:inwardNormals:allocator:">+ newCapsuleWithHeight:radii:radialSegments:verticalSegments:hemisphereSegments:geometryType:inwardNormals:allocator:</option>
+		
+		<option value="//api/name/newCylinderWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:">+ newCylinderWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:</option>
+		
+		<option value="//api/name/newEllipsoidWithRadii:radialSegments:verticalSegments:geometryType:inwardNormals:hemisphere:allocator:">+ newEllipsoidWithRadii:radialSegments:verticalSegments:geometryType:inwardNormals:hemisphere:allocator:</option>
+		
+		<option value="//api/name/newEllipticalConeWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:">+ newEllipticalConeWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:</option>
+		
+		<option value="//api/name/newIcosahedronWithRadius:inwardNormals:allocator:">+ newIcosahedronWithRadius:inwardNormals:allocator:</option>
+		
+		<option value="//api/name/newIcosahedronWithRadius:inwardNormals:geometryType:allocator:">+ newIcosahedronWithRadius:inwardNormals:geometryType:allocator:</option>
+		
+		<option value="//api/name/newPlaneWithDimensions:segments:geometryType:allocator:">+ newPlaneWithDimensions:segments:geometryType:allocator:</option>
+		
+		<option value="//api/name/newSubdividedMesh:submeshIndex:subdivisionLevels:">+ newSubdividedMesh:submeshIndex:subdivisionLevels:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addAttributeWithName:format:">- addAttributeWithName:format:</option>
+		
+		<option value="//api/name/addAttributeWithName:format:type:data:stride:">- addAttributeWithName:format:type:data:stride:</option>
+		
+		<option value="//api/name/addAttributeWithName:format:type:data:stride:time:">- addAttributeWithName:format:type:data:stride:time:</option>
+		
+		<option value="//api/name/addNormalsWithAttributeNamed:creaseThreshold:">- addNormalsWithAttributeNamed:creaseThreshold:</option>
+		
+		<option value="//api/name/addOrthTanBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:">- addOrthTanBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:</option>
+		
+		<option value="//api/name/addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:">- addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:</option>
+		
+		<option value="//api/name/addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:">- addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:</option>
+		
+		<option value="//api/name/addUnwrappedTextureCoordinatesForAttributeNamed:">- addUnwrappedTextureCoordinatesForAttributeNamed:</option>
+		
+		<option value="//api/name/flipTextureCoordinatesInAttributeNamed:">- flipTextureCoordinatesInAttributeNamed:</option>
+		
+		<option value="//api/name/generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">- generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</option>
+		
+		<option value="//api/name/generateAmbientOcclusionTextureWithSize:raysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">- generateAmbientOcclusionTextureWithSize:raysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</option>
+		
+		<option value="//api/name/generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:">- generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:</option>
+		
+		<option value="//api/name/generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:">- generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:</option>
+		
+		<option value="//api/name/generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">- generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</option>
+		
+		<option value="//api/name/generateLightMapTextureWithTextureSize:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">- generateLightMapTextureWithTextureSize:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</option>
+		
+		<option value="//api/name/generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:">- generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:</option>
+		
+		<option value="//api/name/initBoxWithExtent:segments:inwardNormals:geometryType:allocator:">- initBoxWithExtent:segments:inwardNormals:geometryType:allocator:</option>
+		
+		<option value="//api/name/initCapsuleWithExtent:cylinderSegments:hemisphereSegments:inwardNormals:geometryType:allocator:">- initCapsuleWithExtent:cylinderSegments:hemisphereSegments:inwardNormals:geometryType:allocator:</option>
+		
+		<option value="//api/name/initConeWithExtent:segments:inwardNormals:cap:geometryType:allocator:">- initConeWithExtent:segments:inwardNormals:cap:geometryType:allocator:</option>
+		
+		<option value="//api/name/initCylinderWithExtent:segments:inwardNormals:topCap:bottomCap:geometryType:allocator:">- initCylinderWithExtent:segments:inwardNormals:topCap:bottomCap:geometryType:allocator:</option>
+		
+		<option value="//api/name/initHemisphereWithExtent:segments:inwardNormals:cap:geometryType:allocator:">- initHemisphereWithExtent:segments:inwardNormals:cap:geometryType:allocator:</option>
+		
+		<option value="//api/name/initIcosahedronWithExtent:inwardNormals:geometryType:allocator:">- initIcosahedronWithExtent:inwardNormals:geometryType:allocator:</option>
+		
+		<option value="//api/name/initMeshBySubdividingMesh:submeshIndex:subdivisionLevels:allocator:">- initMeshBySubdividingMesh:submeshIndex:subdivisionLevels:allocator:</option>
+		
+		<option value="//api/name/initPlaneWithExtent:segments:geometryType:allocator:">- initPlaneWithExtent:segments:geometryType:allocator:</option>
+		
+		<option value="//api/name/initSphereWithExtent:segments:inwardNormals:geometryType:allocator:">- initSphereWithExtent:segments:inwardNormals:geometryType:allocator:</option>
+		
+		<option value="//api/name/initWithBufferAllocator:">- initWithBufferAllocator:</option>
+		
+		<option value="//api/name/initWithVertexBuffer:vertexCount:descriptor:submeshes:">- initWithVertexBuffer:vertexCount:descriptor:submeshes:</option>
+		
+		<option value="//api/name/initWithVertexBuffers:vertexCount:descriptor:submeshes:">- initWithVertexBuffers:vertexCount:descriptor:submeshes:</option>
+		
+		<option value="//api/name/makeVerticesUnique">- makeVerticesUnique</option>
+		
+		<option value="//api/name/makeVerticesUniqueAndReturnError:">- makeVerticesUniqueAndReturnError:</option>
+		
+		<option value="//api/name/removeAttributeNamed:">- removeAttributeNamed:</option>
+		
+		<option value="//api/name/replaceAttributeNamed:withData:">- replaceAttributeNamed:withData:</option>
+		
+		<option value="//api/name/updateAttributeNamed:withData:">- updateAttributeNamed:withData:</option>
+		
+		<option value="//api/name/vertexAttributeDataForAttributeNamed:">- vertexAttributeDataForAttributeNamed:</option>
+		
+		<option value="//api/name/vertexAttributeDataForAttributeNamed:asFormat:">- vertexAttributeDataForAttributeNamed:asFormat:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MDLMesh Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MDLObject.html">MDLObject</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MDLMesh.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class MDLMesh</p><p>Includes a collection of submeshs which have indexbuffer and
+             material information</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithBufferAllocator:" title="initWithBufferAllocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithBufferAllocator:">&ndash;&nbsp;initWithBufferAllocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a mesh with an <a href="#//api/name/allocator">allocator</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithBufferAllocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>bufferAllocator</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An empty mesh</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithAllocator:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithVertexBuffer:vertexCount:descriptor:submeshes:" title="initWithVertexBuffer:vertexCount:descriptor:submeshes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithVertexBuffer:vertexCount:descriptor:submeshes:">&ndash;&nbsp;initWithVertexBuffer:vertexCount:descriptor:submeshes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize object with a vertex buffer and a collection of <a href="#//api/name/submeshes">submeshes</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithVertexBuffer:(id&lt;MDLMeshBuffer&gt;)<em>vertexBuffer</em> vertexCount:(NSUInteger)<em>vertexCount</em> descriptor:(MDLVertexDescriptor *)<em>descriptor</em> submeshes:(NSArray&lt;MDLSubmesh*&gt; *)<em>submeshes</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vertexBuffer</code></th>
+						<td><p><a href="../Protocols/MDLMeshBuffer.html">MDLMeshBuffer</a> object containing all vertex data for the mesh</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vertexCount</code></th>
+						<td><p>Number of vertices in the vertexBuffer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>descriptor</code></th>
+						<td><p>VertexDescriptor specifying how to interpret vertex data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>submeshes</code></th>
+						<td><p>Array of <a href="#//api/name/submeshes">submeshes</a> with index buffers referencing vertex data
+        and/or materials to be applied to mesh</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Initialized mesh or nil if descriptor&rsquo;s layout array does not describe
+         a single buffer</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithVertexBuffer:vertexCount:descriptor:submeshes:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithVertexBuffers:vertexCount:descriptor:submeshes:" title="initWithVertexBuffers:vertexCount:descriptor:submeshes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithVertexBuffers:vertexCount:descriptor:submeshes:">&ndash;&nbsp;initWithVertexBuffers:vertexCount:descriptor:submeshes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize object with an array of vertex buffers (Structure of
+           Arrays) and a collection of <a href="#//api/name/submeshes">submeshes</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithVertexBuffers:(NSArray&lt;id&lt;MDLMeshBuffer&gt; &gt; *)<em>vertexBuffers</em> vertexCount:(NSUInteger)<em>vertexCount</em> descriptor:(MDLVertexDescriptor *)<em>descriptor</em> submeshes:(NSArray&lt;MDLSubmesh*&gt; *)<em>submeshes</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vertexCount</code></th>
+						<td><p>Number of vertices in <a href="#//api/name/vertexBuffers">vertexBuffers</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>descriptor</code></th>
+						<td><p>VertexDescriptor specifying how to interpret vertex data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>submeshes</code></th>
+						<td><p>Array of <a href="#//api/name/submeshes">submeshes</a> with index buffers referencing vertex data
+        and/or materials to be applied to mesh</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Initialized mesh or nil if descriptor&rsquo;s layout array is incompatible
+         with <a href="#//api/name/vertexBuffers">vertexBuffers</a> array</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method <a href="#//api/name/initWithVertexBuffer:vertexCount:descriptor:submeshes:">initWithVertexBuffer:vertexCount:descriptor:submeshes:</a></p><p>Allows initialization with the layout of the <a href="#//api/name/vertexBuffers">vertexBuffers</a> in a
+        structure-of-arrays form, in other words, non-interleaved vertex attributes</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vertexAttributeDataForAttributeNamed:" title="vertexAttributeDataForAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vertexAttributeDataForAttributeNamed:">&ndash;&nbsp;vertexAttributeDataForAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>convenience selector to get quick access to vertex attribute data</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable MDLVertexAttributeData *)vertexAttributeDataForAttributeNamed:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method vertexAttributeDataForAttributeNamed:</p><p>the vertex buffer will remain mapped until the <a href="../Classes/MDLVertexAttributeData.html">MDLVertexAttributeData</a>
+             is freed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vertexAttributeDataForAttributeNamed:asFormat:" title="vertexAttributeDataForAttributeNamed:asFormat:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vertexAttributeDataForAttributeNamed:asFormat:">&ndash;&nbsp;vertexAttributeDataForAttributeNamed:asFormat:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>convenience selector to get quick access to vertex attribute data
+           reformatted to the requested format if necessary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable MDLVertexAttributeData *)vertexAttributeDataForAttributeNamed:(NSString *)<em>name</em> asFormat:(MDLVertexFormat)<em>format</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method vertexAttributeDataForAttributeNamed:asFormat</p><p>If the desired format has less elements than the source attribute
+             elements, excess elements will be discarded. If the desired format
+             has more elements than the source attribute, then the destination
+             elements will be set to zero.
+             The vertex buffer will remain mapped until the <a href="../Classes/MDLVertexAttributeData.html">MDLVertexAttributeData</a>
+             is freed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/boundingBox" title="boundingBox"></a>
+	<h3 class="method-title"><code><a href="#//api/name/boundingBox">&nbsp;&nbsp;boundingBox</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Bounding box encompasing the mesh</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MDLAxisAlignedBoundingBox boundingBox</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property boundingBox</p><p>Calculated by iterating through MDLVertexAttributePosition to find
+             min and max bounds. If no attribute is named MDLVertexAttributePosition
+             this will be a invalid bounds where maxBounds is less than minBounds.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vertexDescriptor" title="vertexDescriptor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vertexDescriptor">&nbsp;&nbsp;vertexDescriptor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Immutable vertex descriptor for interpreting data in <a href="#//api/name/vertexBuffers">vertexBuffers</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite, copy) MDLVertexDescriptor *vertexDescriptor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property vertexDescriptor</p><p>Setting this applies the new layout in &lsquo;vertexBuffers&rsquo; thus is a
+             heavyweight operation as structured copies of almost all vertex
+             buffer data could be made.  Additionally, if the new vertexDescriptor
+             does not have an attribute in the original vertexDescriptor, that
+             attribute will be deleted.  If the original vertexDescriptor does
+             not have an attribute in the new vertexDescriptor, the data for the
+             added attribute set as the added attribute&rsquo;s initializationValue
+             property.</p>
+
+<pre><code>         The allocator associated with each original meshbuffer is used to
+         reallocate the corresponding resultant meshbuffer.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vertexCount" title="vertexCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vertexCount">&nbsp;&nbsp;vertexCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Number of vertices in the <a href="#//api/name/vertexBuffers">vertexBuffers</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) NSUInteger vertexCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property vertexCount</p><p>The size of vertex data in each buffer can be computed by multiplying
+             this value with the stride of the buffer in the vertexDescriptor&rsquo;s
+             layout</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vertexBuffers" title="vertexBuffers"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vertexBuffers">&nbsp;&nbsp;vertexBuffers</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Array of buffers containing vertex data</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite, retain) NSArray&lt;id&lt;MDLMeshBuffer&gt; &gt; *vertexBuffers</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property vertexBuffers</p><p>The vertex buffers in this array are indexed by the vertex descriptor.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/submeshes" title="submeshes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/submeshes">&nbsp;&nbsp;submeshes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Array of submeshes containing an indexbuffer referencing the vertex
+           data and material to be applied when the mesh is rendered</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSMutableArray&lt;MDLSubmesh*&gt; *submeshes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property submeshes</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allocator" title="allocator"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allocator">&nbsp;&nbsp;allocator</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>allocator used to allocate contained mesh buffers</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, retain) id&lt;MDLMeshBufferAllocator&gt; allocator</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property allocator</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Modifiers Methods" name="task_Modifiers Methods"></a>
+						<h2 class="task-title">Modifiers Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/addAttributeWithName:format:" title="addAttributeWithName:format:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addAttributeWithName:format:">&ndash;&nbsp;addAttributeWithName:format:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience method to add an attribute</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addAttributeWithName:(NSString *)<em>name</em> format:(MDLVertexFormat)<em>format</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addAttributeWithName:format</p><p>The mesh&rsquo;s <a href="#//api/name/allocator">allocator</a> will be used to create storage for the new
+             attribute.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addAttributeWithName:format:type:data:stride:" title="addAttributeWithName:format:type:data:stride:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addAttributeWithName:format:type:data:stride:">&ndash;&nbsp;addAttributeWithName:format:type:data:stride:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new vertex attribute including an associated buffer with
+           a copy of the supplied data, and update the vertex descriptor accordingly</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addAttributeWithName:(NSString *)<em>name</em> format:(MDLVertexFormat)<em>format</em> type:(NSString *)<em>type</em> data:(NSData *)<em>data</em> stride:(NSInteger)<em>stride</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name the attribute can be found by</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>format</code></th>
+						<td><p>Format of the data, such as MDLVertexFormatFloat3</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>The usage of the attribute, such as MDLVertexAttributePosition</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>Object containing the data to be used in the new vertex buffer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stride</code></th>
+						<td><p>The increment in bytes from the start of one data entry to
+        the next.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addAttributeWithName:format:type:data:stride</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addAttributeWithName:format:type:data:stride:time:" title="addAttributeWithName:format:type:data:stride:time:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addAttributeWithName:format:type:data:stride:time:">&ndash;&nbsp;addAttributeWithName:format:type:data:stride:time:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new vertex attribute including an associated buffer with
+           a copy of the supplied data, and update the vertex descriptor accordingly</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addAttributeWithName:(NSString *)<em>name</em> format:(MDLVertexFormat)<em>format</em> type:(NSString *)<em>type</em> data:(NSData *)<em>data</em> stride:(NSInteger)<em>stride</em> time:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name the attribute can be found by</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>format</code></th>
+						<td><p>Format of the data, such as MDLVertexFormatFloat3</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>The usage of the attribute, such as MDLVertexAttributePosition</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>Object containing the data to be used in the new vertex buffer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stride</code></th>
+						<td><p>The increment in bytes from the start of one data entry to
+        the next.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>time</code></th>
+						<td><p>The time the attribute is to be invoked at.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addAttributeWithName:format:type:data:stride:time</p><p>Adding an attribute, such as position data, at multiple times will
+             result in attributes being created for each of those times.
+             Attributes corresponding to multiple times can be retrieved from
+             the vertex descriptor.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addNormalsWithAttributeNamed:creaseThreshold:" title="addNormalsWithAttributeNamed:creaseThreshold:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addNormalsWithAttributeNamed:creaseThreshold:">&ndash;&nbsp;addNormalsWithAttributeNamed:creaseThreshold:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Calculate and add vertex normal data</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addNormalsWithAttributeNamed:(nullable NSString *)<em>attributeName</em> creaseThreshold:(float)<em>creaseThreshold</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attributeName</code></th>
+						<td><p>Name is the attribute name of vertex normal attribute.  If nil, vertex normals
+        will be added with the MDLVertexAttributeNormal name string</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>creaseThreshold</code></th>
+						<td><p>Threshold of the dot product between the 2 triangles after which
+                        their face normal will be smoothed out. Therefore, a threshold of 0 will
+                        smooth everything and a threshold of 1 won&rsquo;t smooth anything.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addNormalsWithAttributeNamed:creaseThreshold:</p><p>Uses the attribute named MDLVertexAttributePosition to calculate
+             vertex normals. If the mesh does not have an attribute with
+             &lsquo;attributeName&rsquo;, it will be added, otherwise the attribute name will
+             be overwritten with vertex normal data. &lsquo;vertexDescriptor&rsquo; will be
+             updated to reflect the new attribute.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:" title="addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:">&ndash;&nbsp;addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a shader basis where the tangent and bitangent span the uv -> object space transform</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addTangentBasisForTextureCoordinateAttributeNamed:(NSString *)<em>textureCoordinateAttributeName</em> tangentAttributeNamed:(NSString *)<em>tangentAttributeName</em> bitangentAttributeNamed:(nullable NSString *)<em>bitangentAttributeName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>textureCoordinateAttributeName</code></th>
+						<td><p>Name of texture coordinates to use in calculations</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tangentAttributeName</code></th>
+						<td><p>Name of vertex tangent attribute.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bitangentAttributeName</code></th>
+						<td><p>Name of vertex bitangent attribute.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed</p><p>Uses the attribute named MDLVertexAttributePosition and
+             textureCoordinateAttributeName to calculate tangent and bitangent
+             attributes. The mesh&rsquo;s <a href="#//api/name/vertexDescriptor">vertexDescriptor</a> will be updated to reflect
+             the new attributes if necessary. The basis may not be orthogonal; to gaurantee an orthogonal
+              tangent basis please use addOrthTanBasisForTextureCoordinateAttibuteNamed selector.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:" title="addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:">&ndash;&nbsp;addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create tangents which are orthogonal to the normal</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addTangentBasisForTextureCoordinateAttributeNamed:(NSString *)<em>textureCoordinateAttributeName</em> normalAttributeNamed:(NSString *)<em>normalAttributeName</em> tangentAttributeNamed:(NSString *)<em>tangentAttributeName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>textureCoordinateAttributeName</code></th>
+						<td><p>texture coordinates to use in calculations</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>normalAttributeName</code></th>
+						<td><p>normals to use in calculations</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tangentAttributeName</code></th>
+						<td><p>Name of a four component vertex tangent attribute.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed</p><p>Uses the attribute named MDLVertexAttributePosition and
+             textureCoordinateAttributeName and the specified normals to calculate
+             tangent information. The mesh&rsquo;s <a href="#//api/name/vertexDescriptor">vertexDescriptor</a> will be updated to
+             reflect the new attribute if necessary.
+             Note that this method does NOT produce a T.w component which is used in B = (N x T) * T.w
+             Please use addOrthTanBasisForTextureCoordinateAttributeNamed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addOrthTanBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:" title="addOrthTanBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addOrthTanBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:">&ndash;&nbsp;addOrthTanBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addOrthTanBasisForTextureCoordinateAttributeNamed:(NSString *)<em>textureCoordinateAttributeName</em> normalAttributeNamed:(NSString *)<em>normalAttributeName</em> tangentAttributeNamed:(NSString *)<em>tangentAttributeName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addUnwrappedTextureCoordinatesForAttributeNamed:" title="addUnwrappedTextureCoordinatesForAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addUnwrappedTextureCoordinatesForAttributeNamed:">&ndash;&nbsp;addUnwrappedTextureCoordinatesForAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates texture coordinates by unwrapping the mesh</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addUnwrappedTextureCoordinatesForAttributeNamed:(NSString *)<em>textureCoordinateAttributeName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>textureCoordinateAttributeName</code></th>
+						<td><p>texture coordinates to modify or create</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method addTextureCoordinatesForAttributeNamed:textureCoordinateAttributeName</p><p>Uses the attribute named MDLVertexAttributePosition and if available,
+             the attribute named MDLVertexAttributeNormal to calculate texture coordinates</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flipTextureCoordinatesInAttributeNamed:" title="flipTextureCoordinatesInAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flipTextureCoordinatesInAttributeNamed:">&ndash;&nbsp;flipTextureCoordinatesInAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Flips texture coordinates by performing the operation (u,v) = (u, 1-v)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)flipTextureCoordinatesInAttributeNamed:(NSString *)<em>textureCoordinateAttributeName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>textureCoordinateAttributeName</code></th>
+						<td><p>texture coordinates to modify</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method flipTextureCoordinatesInAttributeNamed:</p><p>Many application generate model files with texture coordinate mapping
+             assuming a bottom left bitmap origin. It can be more convenient to
+             have texture coordinates corresponding to an upper left bitmap origin.
+             This selector will perform the flip operation if the requested texture
+             coordinate attribute exists on the mesh. An exception will be raised if
+             the attribute cannot be found</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/makeVerticesUnique" title="makeVerticesUnique"></a>
+	<h3 class="method-title"><code><a href="#//api/name/makeVerticesUnique">&ndash;&nbsp;makeVerticesUnique</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Deindexes the vertex array</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)makeVerticesUnique</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method makeVerticesUnique:</p><p>If any vertices are shared on multiple faces, duplicate those
+             vertices so faces do not share vertices. The vertex buffer and index
+             buffers on <a href="#//api/name/submeshes">submeshes</a> may grow to accomadate any vertices added.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/makeVerticesUniqueAndReturnError:" title="makeVerticesUniqueAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/makeVerticesUniqueAndReturnError:">&ndash;&nbsp;makeVerticesUniqueAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Deindexes the vertex array</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)makeVerticesUniqueAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method makeVerticesUniqueAndReturnError:</p><p>If any vertices are shared on multiple faces, duplicate those
+vertices so faces do not share vertices. The vertex buffer and index
+buffers on <a href="#//api/name/submeshes">submeshes</a> may grow to accomadate any vertices added.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/replaceAttributeNamed:withData:" title="replaceAttributeNamed:withData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/replaceAttributeNamed:withData:">&ndash;&nbsp;replaceAttributeNamed:withData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>replace existing attribute data with new attribute data retaining
+the format of the replacement data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)replaceAttributeNamed:(NSString *)<em>name</em> withData:(nonnull MDLVertexAttributeData *)<em>newData</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method replaceAttributeNamed:withData</p><p>If the specified attribute does not already exist, it will be
+created.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateAttributeNamed:withData:" title="updateAttributeNamed:withData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateAttributeNamed:withData:">&ndash;&nbsp;updateAttributeNamed:withData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>update existing attribute data with new attribute data retaining
+the format of the existing data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateAttributeNamed:(NSString *)<em>name</em> withData:(nonnull MDLVertexAttributeData *)<em>newData</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method updateAttributeNamed:withData</p><p>If the specified attribute does not already exist, it will be
+created with the same format as the newData.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAttributeNamed:" title="removeAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAttributeNamed:">&ndash;&nbsp;removeAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>remove an attribute</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAttributeNamed:(NSString *)<em>name</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method removeAttributeNamed:</p><p>if the named attribute does not exist, nothing happens.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Generators Methods" name="task_Generators Methods"></a>
+						<h2 class="task-title">Generators Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initBoxWithExtent:segments:inwardNormals:geometryType:allocator:" title="initBoxWithExtent:segments:inwardNormals:geometryType:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initBoxWithExtent:segments:inwardNormals:geometryType:allocator:">&ndash;&nbsp;initBoxWithExtent:segments:inwardNormals:geometryType:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Factory method for generating a mesh with a cube shape</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initBoxWithExtent:(vector_float3)<em>extent</em> segments:(vector_uint3)<em>segments</em> inwardNormals:(BOOL)<em>inwardNormals</em> geometryType:(MDLGeometryType)<em>geometryType</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>extent</code></th>
+						<td><p>size of the box in each dimension</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>segments</code></th>
+						<td><p>Number of slices in each dimension</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inwardNormals</code></th>
+						<td><p>Generated Normal point inward</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>geometryType</code></th>
+						<td><p>Can be MDLGeometryTypeLines, MDLGeometryTypeQuads, or MDLGeometryTypeTriangles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>allocator</code></th>
+						<td><p>A mesh buffer <a href="#//api/name/allocator">allocator</a> used to allocate memory to back buffers
+        for the returned mesh.  If nil, a default <a href="#//api/name/allocator">allocator</a> will be used</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>MDLMesh box with desired attributes</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initBoxMeshWithExtent:segments:inwardNormals:geometryType:allocator:</p><p>Assembled with triangle or quad primitives.  Specifying inward
+             normals is useful for generating a skybox. The center of the box
+             is at(0, 0, 0).
+             Will raise an exception if an unsupported geometry type is passed in.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initSphereWithExtent:segments:inwardNormals:geometryType:allocator:" title="initSphereWithExtent:segments:inwardNormals:geometryType:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initSphereWithExtent:segments:inwardNormals:geometryType:allocator:">&ndash;&nbsp;initSphereWithExtent:segments:inwardNormals:geometryType:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Factory method for generating a mesh with an ellipsoid shape</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initSphereWithExtent:(vector_float3)<em>extent</em> segments:(vector_uint2)<em>segments</em> inwardNormals:(BOOL)<em>inwardNormals</em> geometryType:(MDLGeometryType)<em>geometryType</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inwardNormals</code></th>
+						<td><p>If true, generated normals will face inwards. Useful for
+        generating a skydome.
+        actual nubmer of vertical slices will be half of &lsquo;vertical&rsquo; segments</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>geometryType</code></th>
+						<td><p>Must be MDLGeometryTypeTriangles or MDLGeometryTypeLines</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>allocator</code></th>
+						<td><p>A mesh buffer <a href="#//api/name/allocator">allocator</a> used to allocate memory to back buffers
+        for the returned mesh.  If nil, a default <a href="#//api/name/allocator">allocator</a> will be used</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>MDLMesh epllipsoid with desired attributes</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initSphereWithExtent:segments:inwardNormals:geometryType:<a href="#//api/name/allocator">allocator</a></p><p>Specifying inward normals and hemisphere is useful for generating a skydome.
+             Specifying equal X, Y, and Z radii will generate a sphere.
+             Specifying a y radius of 0.0 will generate a disc.
+             Will raise an exception if radialSegments is &lt; 3, verticalSegments is &lt; 2,
+             or an unsupported geometry type is passed in.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initHemisphereWithExtent:segments:inwardNormals:cap:geometryType:allocator:" title="initHemisphereWithExtent:segments:inwardNormals:cap:geometryType:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initHemisphereWithExtent:segments:inwardNormals:cap:geometryType:allocator:">&ndash;&nbsp;initHemisphereWithExtent:segments:inwardNormals:cap:geometryType:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initHemisphereWithExtent:(vector_float3)<em>extent</em> segments:(vector_uint2)<em>segments</em> inwardNormals:(BOOL)<em>inwardNormals</em> cap:(BOOL)<em>cap</em> geometryType:(MDLGeometryType)<em>geometryType</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initCylinderWithExtent:segments:inwardNormals:topCap:bottomCap:geometryType:allocator:" title="initCylinderWithExtent:segments:inwardNormals:topCap:bottomCap:geometryType:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initCylinderWithExtent:segments:inwardNormals:topCap:bottomCap:geometryType:allocator:">&ndash;&nbsp;initCylinderWithExtent:segments:inwardNormals:topCap:bottomCap:geometryType:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Factory method for generating a mesh with a cylindrical shape</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initCylinderWithExtent:(vector_float3)<em>extent</em> segments:(vector_uint2)<em>segments</em> inwardNormals:(BOOL)<em>inwardNormals</em> topCap:(BOOL)<em>topCap</em> bottomCap:(BOOL)<em>bottomCap</em> geometryType:(MDLGeometryType)<em>geometryType</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inwardNormals</code></th>
+						<td><p>Normals point toward center of cylinder</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>geometryType</code></th>
+						<td><p>Must be MDLGeometryTypeTriangles or MDLGeometryTypeLines</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>allocator</code></th>
+						<td><p>A mesh buffer <a href="#//api/name/allocator">allocator</a> used to allocate memory to back buffers
+        for the returned mesh.  If nil, a default <a href="#//api/name/allocator">allocator</a> will be used</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>MDLMesh cylinder with desired attributes</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initCylinderWithExtent:segments:inwardNormals:topCap:bottomCap:geometryType:<a href="#//api/name/allocator">allocator</a></p><p>Center of cylinder at (0, 0, 0) with a top at +Y and bottom at -Y.
+             Specifying equal X and Z radia will generate a true cylinder.
+             Specifying a height of 0.0 and verticalSegments of 0 will generate
+             a disc.
+             Will raise an exception if radialSegments is &lt; 3 or if an unsupported
+             geometry type is passed in.
+             Generated texture coordinates are laid out as follows:
+                                                     /   \   &lt;- T texcoord = 0.0
+                 Texture for top of cylinder   &mdash;> [     ]
+                                                     _<strong>/
+                                                    [     ]  &lt;- T texcoord = 0.3333
+                                                    [     ]
+                 Texture for sides of cylinder &mdash;> [     ]
+                                                    [</strong><strong>_]  &lt;- T texcoord = 0.6666
+                                                     /   \
+                 Texture for base of cylinder  &mdash;> [     ]
+                                                     _</strong>/   &lt;- T texcoord = 1.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initCapsuleWithExtent:cylinderSegments:hemisphereSegments:inwardNormals:geometryType:allocator:" title="initCapsuleWithExtent:cylinderSegments:hemisphereSegments:inwardNormals:geometryType:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initCapsuleWithExtent:cylinderSegments:hemisphereSegments:inwardNormals:geometryType:allocator:">&ndash;&nbsp;initCapsuleWithExtent:cylinderSegments:hemisphereSegments:inwardNormals:geometryType:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Factory method for generating a mesh with a capsule shape; a cylinder
+           with hemispheres for caps.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initCapsuleWithExtent:(vector_float3)<em>extent</em> cylinderSegments:(vector_uint2)<em>segments</em> hemisphereSegments:(int)<em>hemisphereSegments</em> inwardNormals:(BOOL)<em>inwardNormals</em> geometryType:(MDLGeometryType)<em>geometryType</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>extent</code></th>
+						<td><p>Dimension of bounding box for capsule.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>hemisphereSegments</code></th>
+						<td><p>Number of slices through hemisphere caps along Y axis</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inwardNormals</code></th>
+						<td><p>Normals point toward center of cylinder</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>geometryType</code></th>
+						<td><p>Must be MDLGeometryTypeTriangles or MDLGeometryTypeLines</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>allocator</code></th>
+						<td><p>A mesh buffer <a href="#//api/name/allocator">allocator</a> used to allocate memory to back buffers
+        for the returned mesh.  If nil, a default <a href="#//api/name/allocator">allocator</a> will be used</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>MDLMesh capsule with desired attributes</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initCapsuleWithExtent:cylinderSegments:hemisphereSegments:inwardNormals:geometryType:<a href="#//api/name/allocator">allocator</a></p><p>Center of capsule at (0, 0, 0) with a top at +Y and bottom at -Y.
+             The height of hemisphere cap is specified by the minimum of X and Z
+             Specifying equal X and Z radii will generate a true capsule.
+             Specifying a height that is less than the twice of min of the X and Z
+             radii or verticalSegments of 0 will generate a sphere. The full height
+             of the capsule will also incorporate the hemisphere caps.
+             Will raise an exception if radialSegments is &lt; 3 or if hemisphereSegments &lt; 1
+             or if an unsupported geometry type is specified.
+             Generated texture coordinates for top and bottom caps are wrapped
+             in a similar manner as for asphere, laid out as follows:
+                                     /   \   &lt;- T texcoord = 0.0
+Texture for top of cylinder   &mdash;> [&mdash;&ndash;]
+                                    [     ]  &lt;- T texcoord = extent.x/extent.y
+                                    [     ]
+Texture for sides of cylinder &mdash;> [     ]
+                                    [<strong>___]  &lt;- T texcoord = 1.0 - extent.x/extent.y
+Texture for base of cylinder  &mdash;> [     ]
+                                     _</strong>/   &lt;- T texcoord = 1.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initConeWithExtent:segments:inwardNormals:cap:geometryType:allocator:" title="initConeWithExtent:segments:inwardNormals:cap:geometryType:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initConeWithExtent:segments:inwardNormals:cap:geometryType:allocator:">&ndash;&nbsp;initConeWithExtent:segments:inwardNormals:cap:geometryType:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Factory method for generating a mesh with an ellipticalCone shape.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initConeWithExtent:(vector_float3)<em>extent</em> segments:(vector_uint2)<em>segments</em> inwardNormals:(BOOL)<em>inwardNormals</em> cap:(BOOL)<em>cap</em> geometryType:(MDLGeometryType)<em>geometryType</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inwardNormals</code></th>
+						<td><p>Normals point toward center of ellipticalCone</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>geometryType</code></th>
+						<td><p>Must be MDLGeometryTypeTriangles or MDLGeometryTypeLines</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>allocator</code></th>
+						<td><p>A mesh buffer <a href="#//api/name/allocator">allocator</a> used to allocate memory to back buffers
+        for the returned mesh.  If nil, a default <a href="#//api/name/allocator">allocator</a> will be used</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>MDLMesh cone with desired attributes</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initConeWithExtent:segments:inwardNormals:cap:geometryType:<a href="#//api/name/allocator">allocator</a></p><p>Point of cone at (0, 0, 0) while base of cone is -Y.
+             Will raise an exception if radialSegments is &lt; 3, or verticalSegments is &lt; 1,
+             or if an unsupported geometry type is passed in.
+             Generated texture coordinates are laid out as follows:
+                                                [     ]  &lt;- T texcoord = 0.0
+                                                [     ]
+                 Texture for sides of cone &mdash;> [     ]
+                                                [     ]
+                                                [<strong>___]  &lt;- T texcoord = 0.6666
+                                                 /   \
+                 Texture for base of cone  &mdash;> [     ]
+                                                 _</strong>/   &lt;- T texcoord = 1.0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initPlaneWithExtent:segments:geometryType:allocator:" title="initPlaneWithExtent:segments:geometryType:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initPlaneWithExtent:segments:geometryType:allocator:">&ndash;&nbsp;initPlaneWithExtent:segments:geometryType:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Factory method for generating a mesh with an planar shape</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initPlaneWithExtent:(vector_float3)<em>extent</em> segments:(vector_uint2)<em>segments</em> geometryType:(MDLGeometryType)<em>geometryType</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>extent</code></th>
+						<td><p>extent of the plane</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>segments</code></th>
+						<td><p>Number of segements in the X and Y dimensions</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>geometryType</code></th>
+						<td><p>Can be MDLGeometryTypeLines, MDLGeometryTypeQuads, or MDLGeometryTypeTriangles</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>allocator</code></th>
+						<td><p>A mesh buffer <a href="#//api/name/allocator">allocator</a> used to allocate memory to back buffers
+        for the returned mesh.  If nil, a default <a href="#//api/name/allocator">allocator</a> will be used</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>MDLMesh plane with desired attributes</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initPlaneWithExtent:segments:geometryType:<a href="#//api/name/allocator">allocator</a></p><p>Creates a plane spanning the greatest dimensions of extent.
+             Will raise an exception if an unsupported geometry type is passed in.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initIcosahedronWithExtent:inwardNormals:geometryType:allocator:" title="initIcosahedronWithExtent:inwardNormals:geometryType:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initIcosahedronWithExtent:inwardNormals:geometryType:allocator:">&ndash;&nbsp;initIcosahedronWithExtent:inwardNormals:geometryType:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Factory method for generating a mesh icosahedron</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initIcosahedronWithExtent:(vector_float3)<em>extent</em> inwardNormals:(BOOL)<em>inwardNormals</em> geometryType:(MDLGeometryType)<em>geometryType</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inwardNormals</code></th>
+						<td><p>Generated normals will face towards the center of the mesh</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>allocator</code></th>
+						<td><p>A mesh buffer <a href="#//api/name/allocator">allocator</a> used to allocate memory to back buffers
+        for the returned mesh.  If nil, a default <a href="#//api/name/allocator">allocator</a> will be used</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>MDLMesh icosahedron with desired attributes</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initIcosahedronWithExtent:inwardNormals:geometryType:<a href="#//api/name/allocator">allocator</a></p><p>Creates an icosahedron with center at (0, 0, 0).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initMeshBySubdividingMesh:submeshIndex:subdivisionLevels:allocator:" title="initMeshBySubdividingMesh:submeshIndex:subdivisionLevels:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initMeshBySubdividingMesh:submeshIndex:subdivisionLevels:allocator:">&ndash;&nbsp;initMeshBySubdividingMesh:submeshIndex:subdivisionLevels:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Factory method that generates a subdivided mesh from a source mesh</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initMeshBySubdividingMesh:(MDLMesh *)<em>mesh</em> submeshIndex:(int)<em>submeshIndex</em> subdivisionLevels:(unsigned int)<em>subdivisionLevels</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mesh</code></th>
+						<td><p>Mesh from which to generate a subdivided mesh</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>submeshIndex</code></th>
+						<td><p>Index of submesh in Mesh&rsquo;s submesh array from which to
+        generate a subdivided mesh</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subdivisionLevels</code></th>
+						<td><p>The number of levels to subdivide mesh</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns a mesh subdivided to index level, unless subdivision is
+         impossible.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initMeshBySubdividingMesh:submeshIndex:subdivisionLevels:<a href="#//api/name/allocator">allocator</a></p><p>Subdivision levels over four are likely to generate more triangles
+             than can be reasonably displayed. Index and vertex data will use
+             the same <a href="#//api/name/allocator">allocator</a> used for the source mesh. Loading an asset
+             using the topology preservation flag set to YES will result in the
+             best subdivision results.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newBoxWithDimensions:segments:geometryType:inwardNormals:allocator:" title="newBoxWithDimensions:segments:geometryType:inwardNormals:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newBoxWithDimensions:segments:geometryType:inwardNormals:allocator:">+&nbsp;newBoxWithDimensions:segments:geometryType:inwardNormals:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)newBoxWithDimensions:(vector_float3)<em>dimensions</em> segments:(vector_uint3)<em>segments</em> geometryType:(MDLGeometryType)<em>geometryType</em> inwardNormals:(BOOL)<em>inwardNormals</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newEllipsoidWithRadii:radialSegments:verticalSegments:geometryType:inwardNormals:hemisphere:allocator:" title="newEllipsoidWithRadii:radialSegments:verticalSegments:geometryType:inwardNormals:hemisphere:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newEllipsoidWithRadii:radialSegments:verticalSegments:geometryType:inwardNormals:hemisphere:allocator:">+&nbsp;newEllipsoidWithRadii:radialSegments:verticalSegments:geometryType:inwardNormals:hemisphere:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)newEllipsoidWithRadii:(vector_float3)<em>radii</em> radialSegments:(NSUInteger)<em>radialSegments</em> verticalSegments:(NSUInteger)<em>verticalSegments</em> geometryType:(MDLGeometryType)<em>geometryType</em> inwardNormals:(BOOL)<em>inwardNormals</em> hemisphere:(BOOL)<em>hemisphere</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newCylinderWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:" title="newCylinderWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newCylinderWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:">+&nbsp;newCylinderWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)newCylinderWithHeight:(float)<em>height</em> radii:(vector_float2)<em>radii</em> radialSegments:(NSUInteger)<em>radialSegments</em> verticalSegments:(NSUInteger)<em>verticalSegments</em> geometryType:(MDLGeometryType)<em>geometryType</em> inwardNormals:(BOOL)<em>inwardNormals</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newCapsuleWithHeight:radii:radialSegments:verticalSegments:hemisphereSegments:geometryType:inwardNormals:allocator:" title="newCapsuleWithHeight:radii:radialSegments:verticalSegments:hemisphereSegments:geometryType:inwardNormals:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newCapsuleWithHeight:radii:radialSegments:verticalSegments:hemisphereSegments:geometryType:inwardNormals:allocator:">+&nbsp;newCapsuleWithHeight:radii:radialSegments:verticalSegments:hemisphereSegments:geometryType:inwardNormals:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)newCapsuleWithHeight:(float)<em>height</em> radii:(vector_float2)<em>radii</em> radialSegments:(NSUInteger)<em>radialSegments</em> verticalSegments:(NSUInteger)<em>verticalSegments</em> hemisphereSegments:(NSUInteger)<em>hemisphereSegments</em> geometryType:(MDLGeometryType)<em>geometryType</em> inwardNormals:(BOOL)<em>inwardNormals</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newEllipticalConeWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:" title="newEllipticalConeWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newEllipticalConeWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:">+&nbsp;newEllipticalConeWithHeight:radii:radialSegments:verticalSegments:geometryType:inwardNormals:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)newEllipticalConeWithHeight:(float)<em>height</em> radii:(vector_float2)<em>radii</em> radialSegments:(NSUInteger)<em>radialSegments</em> verticalSegments:(NSUInteger)<em>verticalSegments</em> geometryType:(MDLGeometryType)<em>geometryType</em> inwardNormals:(BOOL)<em>inwardNormals</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newPlaneWithDimensions:segments:geometryType:allocator:" title="newPlaneWithDimensions:segments:geometryType:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newPlaneWithDimensions:segments:geometryType:allocator:">+&nbsp;newPlaneWithDimensions:segments:geometryType:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)newPlaneWithDimensions:(vector_float2)<em>dimensions</em> segments:(vector_uint2)<em>segments</em> geometryType:(MDLGeometryType)<em>geometryType</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newIcosahedronWithRadius:inwardNormals:geometryType:allocator:" title="newIcosahedronWithRadius:inwardNormals:geometryType:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newIcosahedronWithRadius:inwardNormals:geometryType:allocator:">+&nbsp;newIcosahedronWithRadius:inwardNormals:geometryType:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)newIcosahedronWithRadius:(float)<em>radius</em> inwardNormals:(BOOL)<em>inwardNormals</em> geometryType:(MDLGeometryType)<em>geometryType</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newIcosahedronWithRadius:inwardNormals:allocator:" title="newIcosahedronWithRadius:inwardNormals:allocator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newIcosahedronWithRadius:inwardNormals:allocator:">+&nbsp;newIcosahedronWithRadius:inwardNormals:allocator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)newIcosahedronWithRadius:(float)<em>radius</em> inwardNormals:(BOOL)<em>inwardNormals</em> allocator:(nullable id&lt;MDLMeshBufferAllocator&gt;)<em>allocator</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newSubdividedMesh:submeshIndex:subdivisionLevels:" title="newSubdividedMesh:submeshIndex:subdivisionLevels:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newSubdividedMesh:submeshIndex:subdivisionLevels:">+&nbsp;newSubdividedMesh:submeshIndex:subdivisionLevels:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)newSubdividedMesh:(MDLMesh *)<em>mesh</em> submeshIndex:(NSUInteger)<em>submeshIndex</em> subdivisionLevels:(NSUInteger)<em>subdivisionLevels</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="MDLLightBaking Methods" name="task_MDLLightBaking Methods"></a>
+						<h2 class="task-title">MDLLightBaking Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/generateAmbientOcclusionTextureWithSize:raysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:" title="generateAmbientOcclusionTextureWithSize:raysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/generateAmbientOcclusionTextureWithSize:raysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">&ndash;&nbsp;generateAmbientOcclusionTextureWithSize:raysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an Ambient Occlusion texture, returns true upon success, false
+           upon failure</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)generateAmbientOcclusionTextureWithSize:(vector_int2)<em>textureSize</em> raysPerSample:(NSInteger)<em>raysPerSample</em> attenuationFactor:(float)<em>attenuationFactor</em> objectsToConsider:(NSArray&lt;MDLObject*&gt; *)<em>objectsToConsider</em> vertexAttributeNamed:(NSString *)<em>vertexAttributeName</em> materialPropertyNamed:(NSString *)<em>materialPropertyName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>textureSize</code></th>
+						<td><p>Texture Size in which to bake the ambient occlusion</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>raysPerSample</code></th>
+						<td><p>Number of rays to be sent out of every texture texel against
+        the object for potential occlusion.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attenuationFactor</code></th>
+						<td><p>Float between 0 to 1 that defines how to attenuate the
+        AO value. 0 doesn&rsquo;t change it, and at 1, all AO values are white except
+        if they are originally completely black. Quadratic attenuation in between.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>objectsToConsider</code></th>
+						<td><p>NSArray of MDLMeshes containing the objects to raytrace against</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vertexAttributeName</code></th>
+						<td><p>NSString of the <a href="../Classes/MDLVertexAttribute.html">MDLVertexAttribute</a> where the vertex
+        texture UVs will be stored. Creates it if it doesn&rsquo;t exist, otherwise
+        overwrites current values.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>materialPropertyName</code></th>
+						<td><p>NSString of the <a href="../Classes/MDLMaterialProperty.html">MDLMaterialProperty</a> that will store
+        the texture in the Mesh.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Success or failure of the baking process.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method generateAmbientOcclusionTextureWithSize:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:" title="generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">&ndash;&nbsp;generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an Ambient Occlusion texture, returns true upon success, false
+           upon failure</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)generateAmbientOcclusionTextureWithQuality:(float)<em>bakeQuality</em> attenuationFactor:(float)<em>attenuationFactor</em> objectsToConsider:(NSArray&lt;MDLObject*&gt; *)<em>objectsToConsider</em> vertexAttributeNamed:(NSString *)<em>vertexAttributeName</em> materialPropertyNamed:(NSString *)<em>materialPropertyName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bakeQuality</code></th>
+						<td><p>Float between 0 and 1 that defines quality of the bake process.
+        0 is of lower quality but bakes faster and uses less memory, where 1 is
+        of higher quality.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attenuationFactor</code></th>
+						<td><p>Float between 0 to 1 that defines how to attenuate the
+        AO value. 0 doesn&rsquo;t change it, and at 1, all AO values are white except
+        if they are originally completely black. Quadratic attenuation in between.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>objectsToConsider</code></th>
+						<td><p>NSArray of MDLMeshes containing the objects to raytrace
+        against</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vertexAttributeName</code></th>
+						<td><p>NSString of the <a href="../Classes/MDLVertexAttribute.html">MDLVertexAttribute</a> where the vertex
+        texture UVs will be stored. Creates it if it doesn&rsquo;t exist, otherwise
+        overwrites current values.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>materialPropertyName</code></th>
+						<td><p>NSString of the <a href="../Classes/MDLMaterialProperty.html">MDLMaterialProperty</a> that will store
+        the texture in the Mesh.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Success or failure of the baking process.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method generateAmbientOcclusionTextureWithQuality:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MDLMesh.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:" title="generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:">&ndash;&nbsp;generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)generateAmbientOcclusionVertexColorsWithRaysPerSample:(NSInteger)<em>raysPerSample</em> attenuationFactor:(float)<em>attenuationFactor</em> objectsToConsider:(NSArray&lt;MDLObject*&gt; *)<em>objectsToConsider</em> vertexAttributeNamed:(NSString *)<em>vertexAttributeName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:" title="generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:">&ndash;&nbsp;generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)generateAmbientOcclusionVertexColorsWithQuality:(float)<em>bakeQuality</em> attenuationFactor:(float)<em>attenuationFactor</em> objectsToConsider:(NSArray&lt;MDLObject*&gt; *)<em>objectsToConsider</em> vertexAttributeNamed:(NSString *)<em>vertexAttributeName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/generateLightMapTextureWithTextureSize:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:" title="generateLightMapTextureWithTextureSize:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/generateLightMapTextureWithTextureSize:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">&ndash;&nbsp;generateLightMapTextureWithTextureSize:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)generateLightMapTextureWithTextureSize:(vector_int2)<em>textureSize</em> lightsToConsider:(NSArray&lt;MDLLight*&gt; *)<em>lightsToConsider</em> objectsToConsider:(NSArray&lt;MDLObject*&gt; *)<em>objectsToConsider</em> vertexAttributeNamed:(NSString *)<em>vertexAttributeName</em> materialPropertyNamed:(NSString *)<em>materialPropertyName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:" title="generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">&ndash;&nbsp;generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)generateLightMapTextureWithQuality:(float)<em>bakeQuality</em> lightsToConsider:(NSArray&lt;MDLLight*&gt; *)<em>lightsToConsider</em> objectsToConsider:(NSArray&lt;MDLObject*&gt; *)<em>objectsToConsider</em> vertexAttributeNamed:(NSString *)<em>vertexAttributeName</em> materialPropertyNamed:(NSString *)<em>materialPropertyName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:" title="generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:">&ndash;&nbsp;generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)generateLightMapVertexColorsWithLightsToConsider:(NSArray&lt;MDLLight*&gt; *)<em>lightsToConsider</em> objectsToConsider:(NSArray&lt;MDLObject*&gt; *)<em>objectsToConsider</em> vertexAttributeNamed:(NSString *)<em>vertexAttributeName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

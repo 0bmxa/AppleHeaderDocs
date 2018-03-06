@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureAutoExposureBracketedStillImageSettings Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/exposureTargetBias">exposureTargetBias</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/autoExposureSettingsWithExposureTargetBias:">+ autoExposureSettingsWithExposureTargetBias:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureAutoExposureBracketedStillImageSettings Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureStillImageOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureAutoExposureBracketedStillImageSettings
+@abstract
+    AVCaptureAutoExposureBracketedStillImageSettings is a concrete subclass of AVCaptureBracketedStillImageSettings to be used when bracketing exposure target bias.</p>
+
+<p>@discussion
+    An AVCaptureAutoExposureBracketedStillImageSettings instance defines the exposure target bias setting that should be applied to one image in a bracket. An array of settings objects is passed to <a href="../Classes/AVCaptureStillImageOutput.html#//api/name/captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:">[AVCaptureStillImageOutput captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:]</a>. Min and max exposure target bias are queryable properties of the <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a> supplying data to an <a href="../Classes/AVCaptureStillImageOutput.html">AVCaptureStillImageOutput</a> instance. If you wish to leave <a href="#//api/name/exposureTargetBias">exposureTargetBias</a> unchanged for this bracketed still image, you may pass the special value AVCaptureExposureTargetBiasCurrent (see <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a>.h).</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/autoExposureSettingsWithExposureTargetBias:" title="autoExposureSettingsWithExposureTargetBias:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/autoExposureSettingsWithExposureTargetBias:">+&nbsp;autoExposureSettingsWithExposureTargetBias:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method autoExposureSettingsWithExposureTargetBias
+@abstract
+     Creates an AVCaptureAutoExposureBracketedStillImageSettings using the specified exposure target bias.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)autoExposureSettingsWithExposureTargetBias:(float)<em>exposureTargetBias</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method autoExposureSettingsWithExposureTargetBias
+@abstract
+     Creates an AVCaptureAutoExposureBracketedStillImageSettings using the specified exposure target bias.</p>
+
+<p>@param <a href="#//api/name/exposureTargetBias">exposureTargetBias</a>
+     The exposure target bias. Pass AVCaptureExposureTargetBiasCurrent to leave the <a href="#//api/name/exposureTargetBias">exposureTargetBias</a> unchanged for this image.
+@result
+     An initialized AVCaptureAutoExposureBracketedStillImageSettings instance.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureStillImageOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/exposureTargetBias" title="exposureTargetBias"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exposureTargetBias">&nbsp;&nbsp;exposureTargetBias</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property exposureTargetBias
+@abstract
+     The exposure bias for the auto exposure bracketed settings</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) float exposureTargetBias</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property exposureTargetBias
+@abstract
+     The exposure bias for the auto exposure bracketed settings</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureStillImageOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

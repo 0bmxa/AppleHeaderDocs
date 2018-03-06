@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CBPeripheralManagerDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreBluetooth Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/peripheralManager:central:didSubscribeToCharacteristic:">- peripheralManager:central:didSubscribeToCharacteristic:</option>
+		
+		<option value="//api/name/peripheralManager:central:didUnsubscribeFromCharacteristic:">- peripheralManager:central:didUnsubscribeFromCharacteristic:</option>
+		
+		<option value="//api/name/peripheralManager:didAddService:error:">- peripheralManager:didAddService:error:</option>
+		
+		<option value="//api/name/peripheralManager:didOpenL2CAPChannel:error:">- peripheralManager:didOpenL2CAPChannel:error:</option>
+		
+		<option value="//api/name/peripheralManager:didPublishL2CAPChannel:error:">- peripheralManager:didPublishL2CAPChannel:error:</option>
+		
+		<option value="//api/name/peripheralManager:didReceiveReadRequest:">- peripheralManager:didReceiveReadRequest:</option>
+		
+		<option value="//api/name/peripheralManager:didReceiveWriteRequests:">- peripheralManager:didReceiveWriteRequests:</option>
+		
+		<option value="//api/name/peripheralManager:didUnpublishL2CAPChannel:error:">- peripheralManager:didUnpublishL2CAPChannel:error:</option>
+		
+		<option value="//api/name/peripheralManager:willRestoreState:">- peripheralManager:willRestoreState:</option>
+		
+		<option value="//api/name/peripheralManagerDidStartAdvertising:error:">- peripheralManagerDidStartAdvertising:error:</option>
+		
+		<option value="//api/name/peripheralManagerDidUpdateState:">- peripheralManagerDidUpdateState:</option>
+		
+		<option value="//api/name/peripheralManagerIsReadyToUpdateSubscribers:">- peripheralManagerIsReadyToUpdateSubscribers:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CBPeripheralManagerDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CBPeripheralManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol CBPeripheralManagerDelegate</p><p>The delegate of a @link <a href="../Classes/CBPeripheralManager.html">CBPeripheralManager</a> @/link object must adopt the <code>CBPeripheralManagerDelegate</code> protocol. The
+single required method indicates the availability of the peripheral manager, while the optional methods provide information about
+centrals, which can connect and access the local database.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/peripheralManagerDidUpdateState:" title="peripheralManagerDidUpdateState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManagerDidUpdateState:">&ndash;&nbsp;peripheralManagerDidUpdateState:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManagerDidUpdateState:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)<em>peripheral</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager whose state has changed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManagerDidUpdateState:</p><p>Invoked whenever the peripheral manager&rsquo;s state has been updated. Commands should only be issued when the state is
+<code>CBPeripheralManagerStatePoweredOn</code>. A state below <code>CBPeripheralManagerStatePoweredOn</code>
+implies that advertisement has paused and any connected centrals have been disconnected. If the state moves below
+<code>CBPeripheralManagerStatePoweredOff</code>, advertisement is stopped and must be explicitly restarted, and the
+local database is cleared and all services must be re-added.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheralManager:willRestoreState:" title="peripheralManager:willRestoreState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManager:willRestoreState:">&ndash;&nbsp;peripheralManager:willRestoreState:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManager:willRestoreState:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManager:(CBPeripheralManager *)<em>peripheral</em> willRestoreState:(NSDictionary&lt;NSString*,id&gt; *)<em>dict</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager providing this information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dict</code></th>
+						<td><p>A dictionary containing information about <i>peripheral</i> that was preserved by the system at the time the app was terminated.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManager:willRestoreState:</p><p>For apps that opt-in to state preservation and restoration, this is the first method invoked when your app is relaunched into
+                        the background to complete some Bluetooth-related task. Use this method to synchronize your app&rsquo;s state with the state of the
+                        Bluetooth system.</p>
+
+<p>@seealso            CBPeripheralManagerRestoredStateServicesKey;
+@seealso            CBPeripheralManagerRestoredStateAdvertisementDataKey;</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheralManagerDidStartAdvertising:error:" title="peripheralManagerDidStartAdvertising:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManagerDidStartAdvertising:error:">&ndash;&nbsp;peripheralManagerDidStartAdvertising:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManagerDidStartAdvertising:error:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)<em>peripheral</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager providing this information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurred, the cause of the failure.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManagerDidStartAdvertising:error:</p><p>This method returns the result of a @link startAdvertising: @/link call. If advertisement could
+not be started, the cause will be detailed in the <i>error</i> parameter.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheralManager:didAddService:error:" title="peripheralManager:didAddService:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManager:didAddService:error:">&ndash;&nbsp;peripheralManager:didAddService:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManager:didAddService:error:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManager:(CBPeripheralManager *)<em>peripheral</em> didAddService:(CBService *)<em>service</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager providing this information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>service</code></th>
+						<td><p>The service that was added to the local database.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurred, the cause of the failure.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManager:didAddService:error:</p><p>This method returns the result of an @link addService: @/link call. If the service could
+not be published to the local database, the cause will be detailed in the <i>error</i> parameter.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheralManager:central:didSubscribeToCharacteristic:" title="peripheralManager:central:didSubscribeToCharacteristic:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManager:central:didSubscribeToCharacteristic:">&ndash;&nbsp;peripheralManager:central:didSubscribeToCharacteristic:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManager:central:didSubscribeToCharacteristic:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManager:(CBPeripheralManager *)<em>peripheral</em> central:(CBCentral *)<em>central</em> didSubscribeToCharacteristic:(CBCharacteristic *)<em>characteristic</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager providing this update.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>central</code></th>
+						<td><p>The central that issued the command.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>characteristic</code></th>
+						<td><p>The characteristic on which notifications or indications were enabled.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManager:central:didSubscribeToCharacteristic:</p><p>This method is invoked when a central configures <i>characteristic</i> to notify or indicate.
+It should be used as a cue to start sending updates as the characteristic value changes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheralManager:central:didUnsubscribeFromCharacteristic:" title="peripheralManager:central:didUnsubscribeFromCharacteristic:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManager:central:didUnsubscribeFromCharacteristic:">&ndash;&nbsp;peripheralManager:central:didUnsubscribeFromCharacteristic:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManager:central:didUnsubscribeFromCharacteristic:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManager:(CBPeripheralManager *)<em>peripheral</em> central:(CBCentral *)<em>central</em> didUnsubscribeFromCharacteristic:(CBCharacteristic *)<em>characteristic</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager providing this update.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>central</code></th>
+						<td><p>The central that issued the command.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>characteristic</code></th>
+						<td><p>The characteristic on which notifications or indications were disabled.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManager:central:didUnsubscribeFromCharacteristic:</p><p>This method is invoked when a central removes notifications/indications from <i>characteristic</i>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheralManager:didReceiveReadRequest:" title="peripheralManager:didReceiveReadRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManager:didReceiveReadRequest:">&ndash;&nbsp;peripheralManager:didReceiveReadRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManager:didReceiveReadRequest:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManager:(CBPeripheralManager *)<em>peripheral</em> didReceiveReadRequest:(CBATTRequest *)<em>request</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager requesting this information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>request</code></th>
+						<td><p>A <code>CBATTRequest</code> object.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManager:didReceiveReadRequest:</p><p>This method is invoked when <i>peripheral</i> receives an ATT request for a characteristic with a dynamic value.
+For every invocation of this method, @link respondToRequest:withResult: @/link must be called.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/CBATTRequest.html">CBATTRequest</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheralManager:didReceiveWriteRequests:" title="peripheralManager:didReceiveWriteRequests:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManager:didReceiveWriteRequests:">&ndash;&nbsp;peripheralManager:didReceiveWriteRequests:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManager:didReceiveWriteRequests:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManager:(CBPeripheralManager *)<em>peripheral</em> didReceiveWriteRequests:(NSArray&lt;CBATTRequest*&gt; *)<em>requests</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager requesting this information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>A list of one or more <code>CBATTRequest</code> objects.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManager:didReceiveWriteRequests:</p><p>This method is invoked when <i>peripheral</i> receives an ATT request or command for one or more characteristics with a dynamic value.
+For every invocation of this method, @link respondToRequest:withResult: @/link should be called exactly once. If <i>requests</i> contains
+multiple requests, they must be treated as an atomic unit. If the execution of one of the requests would cause a failure, the request
+and error reason should be provided to <code>respondToRequest:withResult:</code> and none of the requests should be executed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/CBATTRequest.html">CBATTRequest</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheralManagerIsReadyToUpdateSubscribers:" title="peripheralManagerIsReadyToUpdateSubscribers:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManagerIsReadyToUpdateSubscribers:">&ndash;&nbsp;peripheralManagerIsReadyToUpdateSubscribers:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManagerIsReadyToUpdateSubscribers:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManagerIsReadyToUpdateSubscribers:(CBPeripheralManager *)<em>peripheral</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager providing this update.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManagerIsReadyToUpdateSubscribers:</p><p>This method is invoked after a failed call to @link updateValue:forCharacteristic:onSubscribedCentrals: @/link, when <i>peripheral</i> is again
+ready to send characteristic value updates.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheralManager:didPublishL2CAPChannel:error:" title="peripheralManager:didPublishL2CAPChannel:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManager:didPublishL2CAPChannel:error:">&ndash;&nbsp;peripheralManager:didPublishL2CAPChannel:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManager:didPublishL2CAPChannel:error:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManager:(CBPeripheralManager *)<em>peripheral</em> didPublishL2CAPChannel:(CBL2CAPPSM)<em>PSM</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager requesting this information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>PSM</code></th>
+						<td><p>The PSM of the channel that was published.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurred, the cause of the failure.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManager:didPublishL2CAPChannel:error:</p><p>This method is the response to a  @link publishL2CAPChannel: @/link call.  The PSM will contain the PSM that was assigned for the published
+                        channel</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheralManager:didUnpublishL2CAPChannel:error:" title="peripheralManager:didUnpublishL2CAPChannel:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManager:didUnpublishL2CAPChannel:error:">&ndash;&nbsp;peripheralManager:didUnpublishL2CAPChannel:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManager:didUnublishL2CAPChannel:error:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManager:(CBPeripheralManager *)<em>peripheral</em> didUnpublishL2CAPChannel:(CBL2CAPPSM)<em>PSM</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager requesting this information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>PSM</code></th>
+						<td><p>The PSM of the channel that was published.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurred, the cause of the failure.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManager:didUnublishL2CAPChannel:error:</p><p>This method is the response to a  @link unpublishL2CAPChannel: @/link call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheralManager:didOpenL2CAPChannel:error:" title="peripheralManager:didOpenL2CAPChannel:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheralManager:didOpenL2CAPChannel:error:">&ndash;&nbsp;peripheralManager:didOpenL2CAPChannel:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method peripheralManager:didOpenL2CAPChannel:error:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)peripheralManager:(CBPeripheralManager *)<em>peripheral</em> didOpenL2CAPChannel:(nullable CBL2CAPChannel *)<em>channel</em> error:(nullable NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>peripheral</code></th>
+						<td><p>The peripheral manager requesting this information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requests</code></th>
+						<td><p>A list of one or more <code>CBATTRequest</code> objects.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method peripheralManager:didOpenL2CAPChannel:error:</p><p>This method is invoked when <i>peripheral</i> receives an ATT request or command for one or more characteristics with a dynamic value.
+For every invocation of this method, @link respondToRequest:withResult: @/link should be called exactly once. If <i>requests</i> contains
+multiple requests, they must be treated as an atomic unit. If the execution of one of the requests would cause a failure, the request
+and error reason should be provided to <code>respondToRequest:withResult:</code> and none of the requests should be executed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/CBATTRequest.html">CBATTRequest</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CBPeripheralManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

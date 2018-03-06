@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSXMLNodeOptions Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSXMLNodeOptions Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>NSXMLNodeOptions.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">NSXMLNodeOptions</h3>
+                    
+					
+					<div class="section section-overview">
+                        <pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+
+@constant NSXMLNodeOptionsNone Use the default options
+@constant NSXMLNodePreserveAll Turn all preservation options on
+@constant NSXMLNodePreserveNamespaceOrder Preserve the order of namespaces
+@constant NSXMLNodePreserveAttributeOrder Preserve the order of attributes
+@constant NSXMLNodePreserveEntities Entities should not be resolved on output
+@constant NSXMLNodePreservePrefixes Prefixes should not be chosen based on closest URI definition
+@constant NSXMLNodePreserveCDATA CDATA should be preserved
+@constant NSXMLNodePreserveEmptyElements Remember whether an empty element was in expanded or contracted form
+@constant NSXMLNodePreserveQuotes Remember whether an attribute used single or double quotes
+@constant NSXMLNodePreserveWhitespace Preserve non-content whitespace
+@constant NSXMLNodePromoteSignificantWhitespace When significant whitespace is encountered in the document, create Text nodes representing it rather than removing it. Has no effect if NSXMLNodePreserveWhitespace is also specified
+@constant NSXMLNodePreserveDTD Preserve the DTD until it is modified
+
+@constant NSXMLDocumentTidyHTML Try to change HTML into valid XHTML
+@constant NSXMLDocumentTidyXML Try to change malformed XML into valid XML
+
+@constant NSXMLDocumentValidate Valid this document against its DTD
+
+@constant NSXMLNodeLoadExternalEntitiesAlways Load all external entities instead of just non-network ones
+@constant NSXMLNodeLoadExternalEntitiesSameOriginOnly Load non-network external entities and external entities from urls with the same domain, host, and port as the document
+@constant NSXMLNodeLoadExternalEntitiesNever Load no external entities, even those that don't require network access
+
+@constant NSXMLNodePrettyPrint Output this node with extra space for readability
+@constant NSXMLDocumentIncludeContentTypeDeclaration Include a content type declaration for HTML or XHTML
+</code></pre>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_OPTIONS(NSUInteger, NSXMLNodeOptions ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodeOptionsNone</a> = 0,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodeIsCDATA</a> = 1 &lt; &lt; 0,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodeExpandEmptyElement</a> = 1 &lt; &lt; 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodeCompactEmptyElement</a> = 1 &lt; &lt; 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodeUseSingleQuotes</a> = 1 &lt; &lt; 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodeUseDoubleQuotes</a> = 1 &lt; &lt; 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodeNeverEscapeContents</a> = 1 &lt; &lt; 5,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLDocumentTidyHTML</a> = 1 &lt; &lt; 9,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLDocumentTidyXML</a> = 1 &lt; &lt; 10,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLDocumentValidate</a> = 1 &lt; &lt; 13,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodeLoadExternalEntitiesAlways</a> = 1 &lt; &lt; 14,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodeLoadExternalEntitiesSameOriginOnly</a> = 1 &lt; &lt; 15,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodeLoadExternalEntitiesNever</a> = 1 &lt; &lt; 19,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLDocumentXInclude</a> = 1 &lt; &lt; 16,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePrettyPrint</a> = 1 &lt; &lt; 17,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLDocumentIncludeContentTypeDeclaration</a> = 1 &lt; &lt; 18,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePreserveNamespaceOrder</a> = 1 &lt; &lt; 20,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePreserveAttributeOrder</a> = 1 &lt; &lt; 21,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePreserveEntities</a> = 1 &lt; &lt; 22,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePreservePrefixes</a> = 1 &lt; &lt; 23,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePreserveCDATA</a> = 1 &lt; &lt; 24,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePreserveWhitespace</a> = 1 &lt; &lt; 25,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePreserveDTD</a> = 1 &lt; &lt; 26,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePreserveCharacterReferences</a> = 1 &lt; &lt; 27,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePromoteSignificantWhitespace</a> = 1 &lt; &lt; 28,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePreserveEmptyElements</a> = ( NSXMLNodeExpandEmptyElement | NSXMLNodeCompactEmptyElement ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePreserveQuotes</a> = ( NSXMLNodeUseSingleQuotes | NSXMLNodeUseDoubleQuotes ),<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSXMLNodePreserveAll</a> = ( NSXMLNodePreserveNamespaceOrder | NSXMLNodePreserveAttributeOrder | NSXMLNodePreserveEntities | NSXMLNodePreservePrefixes | NSXMLNodePreserveCDATA | NSXMLNodePreserveEmptyElements | NSXMLNodePreserveQuotes | NSXMLNodePreserveWhitespace | NSXMLNodePreserveDTD | NSXMLNodePreserveCharacterReferences | 0 xFFF00000 ),<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="NSXMLNodeOptionsNone"></a><code>NSXMLNodeOptionsNone</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodeIsCDATA"></a><code>NSXMLNodeIsCDATA</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodeExpandEmptyElement"></a><code>NSXMLNodeExpandEmptyElement</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodeCompactEmptyElement"></a><code>NSXMLNodeCompactEmptyElement</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodeUseSingleQuotes"></a><code>NSXMLNodeUseSingleQuotes</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodeUseDoubleQuotes"></a><code>NSXMLNodeUseDoubleQuotes</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodeNeverEscapeContents"></a><code>NSXMLNodeNeverEscapeContents</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLDocumentTidyHTML"></a><code>NSXMLDocumentTidyHTML</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLDocumentTidyXML"></a><code>NSXMLDocumentTidyXML</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLDocumentValidate"></a><code>NSXMLDocumentValidate</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodeLoadExternalEntitiesAlways"></a><code>NSXMLNodeLoadExternalEntitiesAlways</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodeLoadExternalEntitiesSameOriginOnly"></a><code>NSXMLNodeLoadExternalEntitiesSameOriginOnly</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodeLoadExternalEntitiesNever"></a><code>NSXMLNodeLoadExternalEntitiesNever</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLDocumentXInclude"></a><code>NSXMLDocumentXInclude</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePrettyPrint"></a><code>NSXMLNodePrettyPrint</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLDocumentIncludeContentTypeDeclaration"></a><code>NSXMLDocumentIncludeContentTypeDeclaration</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePreserveNamespaceOrder"></a><code>NSXMLNodePreserveNamespaceOrder</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePreserveAttributeOrder"></a><code>NSXMLNodePreserveAttributeOrder</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePreserveEntities"></a><code>NSXMLNodePreserveEntities</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePreservePrefixes"></a><code>NSXMLNodePreservePrefixes</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePreserveCDATA"></a><code>NSXMLNodePreserveCDATA</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePreserveWhitespace"></a><code>NSXMLNodePreserveWhitespace</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePreserveDTD"></a><code>NSXMLNodePreserveDTD</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePreserveCharacterReferences"></a><code>NSXMLNodePreserveCharacterReferences</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePromoteSignificantWhitespace"></a><code>NSXMLNodePromoteSignificantWhitespace</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePreserveEmptyElements"></a><code>NSXMLNodePreserveEmptyElements</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePreserveQuotes"></a><code>NSXMLNodePreserveQuotes</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSXMLNodePreserveAll"></a><code>NSXMLNodePreserveAll</code></dt>
+<dd>
+
+
+<pre><code>@enum Init, input, and output options
+@constant NSXMLNodeIsCDATA This text node is CDATA
+@constant NSXMLNodeExpandEmptyElement This element should be expanded when empty, ie &amp;lt;a&gt;&amp;lt;/a&gt;. This is the default.
+@constant NSXMLNodeCompactEmptyElement This element should contract when empty, ie &amp;lt;a/&gt;
+@constant NSXMLNodeUseSingleQuotes Use single quotes on this attribute or namespace
+@constant NSXMLNodeUseDoubleQuotes Use double quotes on this attribute or namespace. This is the default.
+@constant NSXMLNodeNeverEscapeContents When generating a string representation of an XML document, don't escape the reserved characters '&lt;' and '&amp;' in Text nodes
+</code></pre>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSXMLNodeOptions.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">NSXMLNodeOptions.h</code></p>
+                    </div>
+                    
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

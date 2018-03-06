@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCaptureStillImageOutput Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_8">_8</option>
+		
+		<option value="//api/name/availableImageDataCVPixelFormatTypes">availableImageDataCVPixelFormatTypes</option>
+		
+		<option value="//api/name/availableImageDataCodecTypes">availableImageDataCodecTypes</option>
+		
+		<option value="//api/name/outputSettings">outputSettings</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/jpegStillImageNSDataRepresentation:">+ jpegStillImageNSDataRepresentation:</option>
+		
+		<option value="//api/name/new">+ new</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/captureStillImageAsynchronouslyFromConnection:completionHandler:">- captureStillImageAsynchronouslyFromConnection:completionHandler:</option>
+		
+		<option value="//api/name/captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:">- captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:">- prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCaptureStillImageOutput Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCaptureStillImageOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCaptureStillImageOutput
+@abstract
+    AVCaptureStillImageOutput is a concrete subclass of <a href="../Classes/AVCaptureOutput.html">AVCaptureOutput</a> that can be used to capture high-quality still images with accompanying metadata.</p>
+
+<p>@discussion
+    Instances of AVCaptureStillImageOutput can be used to capture, on demand, high quality snapshots from a realtime capture source. Clients can request a still image for the current time using the <a href="#//api/name/captureStillImageAsynchronouslyFromConnection:completionHandler:">captureStillImageAsynchronouslyFromConnection:completionHandler:</a> method. Clients can also configure still image outputs to produce still images in specific image formats.</p>
+
+<p>@category AVCaptureStillImageOutput (AVCaptureStillImageOutputBracketedCapture)
+@abstract
+    A category of methods for bracketed still image capture.</p>
+
+<p>@discussion
+    A &ldquo;still image bracket&rdquo; is a batch of images taken as quickly as possible in succession, optionally with different settings from picture to picture.</p>
+
+<pre><code>In a bracketed capture, AVCaptureDevice flashMode property is ignored (flash is forced off), as is AVCaptureStillImageOutput's automaticallyEnablesStillImageStabilizationWhenAvailable property (stabilization is forced off).
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/new" title="new"></a>
+	<h3 class="method-title"><code><a href="#//api/name/new">+&nbsp;new</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)new</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputSettings" title="outputSettings"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputSettings">&nbsp;&nbsp;outputSettings</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property outputSettings
+@abstract
+    Specifies the options the receiver uses to encode still images before they are delivered.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSDictionary&lt;NSString*id&gt; *outputSettings</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property outputSettings
+@abstract
+    Specifies the options the receiver uses to encode still images before they are delivered.</p>
+
+<p>@discussion
+    See AVVideoSettings.h for more information on how to construct an output settings dictionary.</p>
+
+<pre><code>On iOS, the only currently supported keys are AVVideoCodecKey and kCVPixelBufferPixelFormatTypeKey. Use availableImageDataCVPixelFormatTypes and availableImageDataCodecTypes to determine what codec keys and pixel formats are supported. AVVideoQualityKey is supported on iOS 6.0 and later and may only be used when AVVideoCodecKey is set to AVVideoCodecTypeJPEG.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureStillImageOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/availableImageDataCVPixelFormatTypes" title="availableImageDataCVPixelFormatTypes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availableImageDataCVPixelFormatTypes">&nbsp;&nbsp;availableImageDataCVPixelFormatTypes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property availableImageDataCVPixelFormatTypes
+@abstract
+    Indicates the supported image pixel formats that can be specified in <a href="#//api/name/outputSettings">outputSettings</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSNumber*&gt; *availableImageDataCVPixelFormatTypes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property availableImageDataCVPixelFormatTypes
+@abstract
+    Indicates the supported image pixel formats that can be specified in <a href="#//api/name/outputSettings">outputSettings</a>.</p>
+
+<p>@discussion
+    The value of this property is an NSArray of NSNumbers that can be used as values for the kCVPixelBufferPixelFormatTypeKey in the receiver&rsquo;s <a href="#//api/name/outputSettings">outputSettings</a> property. The first format in the returned list is the most efficient output format.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureStillImageOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/availableImageDataCodecTypes" title="availableImageDataCodecTypes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availableImageDataCodecTypes">&nbsp;&nbsp;availableImageDataCodecTypes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property availableImageDataCodecTypes
+@abstract
+    Indicates the supported image codec formats that can be specified in <a href="#//api/name/outputSettings">outputSettings</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVVideoCodecType&gt; *availableImageDataCodecTypes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property availableImageDataCodecTypes
+@abstract
+    Indicates the supported image codec formats that can be specified in <a href="#//api/name/outputSettings">outputSettings</a>.</p>
+
+<p>@discussion
+    The value of this property is an NSArray of AVVideoCodecTypes that can be used as values for the AVVideoCodecKey in the receiver&rsquo;s <a href="#//api/name/outputSettings">outputSettings</a> property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureStillImageOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property stillImageStabilizationSupported
+@abstract
+    Indicates whether the receiver supports still image stabilization.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isStillImageStabilizationSupported) BOOL stillImageStabilizationSupported NS_AVAILABLE_IOS ( 7 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property stillImageStabilizationSupported
+@abstract
+    Indicates whether the receiver supports still image stabilization.</p>
+
+<p>@discussion
+    The receiver&rsquo;s automaticallyEnablesStillImageStabilizationWhenAvailable property can only be set if this property returns YES. Its value may change as the session&rsquo;s -sessionPreset or input device&rsquo;s -activeFormat changes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureStillImageOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_8" title="_8"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_8">&nbsp;&nbsp;_8</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property capturingStillImage
+@abstract
+    A boolean value that becomes true when a still image is being captured.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isCapturingStillImage) BOOL capturingStillImage NS_AVAILABLE ( 10 _8</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property capturingStillImage
+@abstract
+    A boolean value that becomes true when a still image is being captured.</p>
+
+<p>@discussion
+    The value of this property is a BOOL that becomes true when a still image is being captured, and false when no still image capture is underway. This property is key-value observable.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureStillImageOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureStillImageAsynchronouslyFromConnection:completionHandler:" title="captureStillImageAsynchronouslyFromConnection:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureStillImageAsynchronouslyFromConnection:completionHandler:">&ndash;&nbsp;captureStillImageAsynchronouslyFromConnection:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureStillImageAsynchronouslyFromConnection:completionHandler:
+@abstract
+    Initiates an asynchronous still image capture, returning the result to a completion handler.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureStillImageAsynchronouslyFromConnection:(AVCaptureConnection *)<em>connection</em> completionHandler:(void ( ^ ) ( CMSampleBufferRef _Nullable imageDataSampleBuffer , NSError *_Nullable error ))<em>handler</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureStillImageAsynchronouslyFromConnection:completionHandler:
+@abstract
+    Initiates an asynchronous still image capture, returning the result to a completion handler.</p>
+
+<p>@param connection
+    The <a href="../Classes/AVCaptureConnection.html">AVCaptureConnection</a> object from which to capture the still image.
+@param handler
+    A block that will be called when the still image capture is complete. The block will be passed a CMSampleBuffer object containing the image data or an NSError object if an image could not be captured.</p>
+
+<p>@discussion
+    This method will return immediately after it is invoked, later calling the provided completion handler block when image data is ready. If the request could not be completed, the error parameter will contain an NSError object describing the failure.</p>
+
+<pre><code>Attachments to the image data sample buffer may contain metadata appropriate to the image data format. For instance, a sample buffer containing JPEG data may carry a kCGImagePropertyExifDictionary as an attachment. See &lt;ImageIO/CGImageProperties.h&gt; for a list of keys and value types.
+
+Clients should not assume that the completion handler will be called on a specific thread.
+
+Calls to captureStillImageAsynchronouslyFromConnection:completionHandler: are not synchronized with AVCaptureDevice manual control completion handlers. Setting a device manual control, waiting for its completion, then calling captureStillImageAsynchronouslyFromConnection:completionHandler: DOES NOT ensure that the still image returned reflects your manual control change. It may be from an earlier time. You can compare your manual control completion handler sync time to the returned still image's presentation time. You can retrieve the sample buffer's pts using CMSampleBufferGetPresentationTimestamp(). If the still image has an earlier timestamp, your manual control command does not apply to it.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureStillImageOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/jpegStillImageNSDataRepresentation:" title="jpegStillImageNSDataRepresentation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/jpegStillImageNSDataRepresentation:">+&nbsp;jpegStillImageNSDataRepresentation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method jpegStillImageNSDataRepresentation:
+@abstract
+    Converts the still image data and metadata attachments in a JPEG sample buffer to an NSData representation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSData *)jpegStillImageNSDataRepresentation:(CMSampleBufferRef)<em>jpegSampleBuffer</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method jpegStillImageNSDataRepresentation:
+@abstract
+    Converts the still image data and metadata attachments in a JPEG sample buffer to an NSData representation.</p>
+
+<p>@param jpegSampleBuffer
+    The sample buffer carrying JPEG image data, optionally with Exif metadata sample buffer attachments. This method throws an NSInvalidArgumentException if jpegSampleBuffer is NULL or not in the JPEG format.</p>
+
+<p>@discussion
+    This method returns an NSData representation of a JPEG still image sample buffer, merging the image data and Exif metadata sample buffer attachments without recompressing the image. The returned NSData is suitable for writing to disk.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureStillImageOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVCaptureStillImageOutputBracketedCapture Methods" name="task_AVCaptureStillImageOutputBracketedCapture Methods"></a>
+						<h2 class="task-title">AVCaptureStillImageOutputBracketedCapture Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:" title="prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:">&ndash;&nbsp;prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:
+@abstract
+    Allows the receiver to prepare resources in advance of capturing a still image bracket.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)prepareToCaptureStillImageBracketFromConnection:(AVCaptureConnection *)<em>connection</em> withSettingsArray:(NSArray&lt;__kindofAVCaptureBracketedStillImageSettings*&gt; *)<em>settings</em> completionHandler:(void ( ^ ) ( BOOL prepared , NSError *_Nullable error ))<em>handler</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:
+@abstract
+    Allows the receiver to prepare resources in advance of capturing a still image bracket.</p>
+
+<p>@param connection
+    The connection through which the still image bracket should be captured.
+@param settings
+    An array of AVCaptureBracketedStillImageSettings objects. All must be of the same kind of AVCaptureBracketedStillImageSettings subclass, or an NSInvalidArgumentException is thrown.
+@param handler
+    A user provided block that will be called asynchronously once resources have successfully been allocated for the specified bracketed capture operation. If sufficient resources could not be allocated, the &ldquo;prepared&rdquo; parameter contains NO, and &ldquo;error&rdquo; parameter contains a non-nil error value. If [settings count] exceeds -maxBracketedCaptureStillImageCount, then AVErrorMaximumStillImageCaptureRequestsExceeded is returned. You should not assume that the completion handler will be called on a specific thread.</p>
+
+<p>@discussion
+    -maxBracketedCaptureStillImageCount tells you the maximum number of images that may be taken in a single bracket given the current AVCaptureDevice/AVCaptureSession/AVCaptureStillImageOutput configuration. But before taking a still image bracket, additional resources may need to be allocated. By calling -prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler: first, you are able to deterministically know when the receiver is ready to capture the bracket with the specified settings array.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureStillImageOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:" title="captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:">&ndash;&nbsp;captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:
+@abstract
+    Captures a still image bracket.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)captureStillImageBracketAsynchronouslyFromConnection:(AVCaptureConnection *)<em>connection</em> withSettingsArray:(NSArray&lt;__kindofAVCaptureBracketedStillImageSettings*&gt; *)<em>settings</em> completionHandler:(void ( ^ ) ( CMSampleBufferRef _Nullable sampleBuffer , AVCaptureBracketedStillImageSettings *_Nullable stillImageSettings , NSError *_Nullable error ))<em>handler</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:
+@abstract
+    Captures a still image bracket.</p>
+
+<p>@param connection
+    The connection through which the still image bracket should be captured.
+@param settings
+    An array of AVCaptureBracketedStillImageSettings objects. All must be of the same kind of AVCaptureBracketedStillImageSettings subclass, or an NSInvalidArgumentException is thrown.
+@param handler
+    A user provided block that will be called asynchronously as each still image in the bracket is captured. If the capture request is successful, the &ldquo;sampleBuffer&rdquo; parameter contains a valid CMSampleBuffer, the &ldquo;stillImageSettings&rdquo; parameter contains the settings object corresponding to this still image, and a nil &ldquo;error&rdquo; parameter. If the bracketed capture fails, sample buffer is NULL and error is non-nil. If [settings count] exceeds -maxBracketedCaptureStillImageCount, then AVErrorMaximumStillImageCaptureRequestsExceeded is returned. You should not assume that the completion handler will be called on a specific thread.</p>
+
+<p>@discussion
+    If you have not called <a href="#//api/name/prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:">prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:</a> for this still image bracket request, the bracket may not be taken immediately, as the receiver may internally need to prepare resources.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCaptureStillImageOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

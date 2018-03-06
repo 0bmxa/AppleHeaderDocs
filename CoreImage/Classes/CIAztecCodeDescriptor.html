@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>CIAztecCodeDescriptor Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 CoreImage Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/dataCodewordCount">dataCodewordCount</option>
+		
+		<option value="//api/name/errorCorrectedPayload">errorCorrectedPayload</option>
+		
+		<option value="//api/name/isCompact">isCompact</option>
+		
+		<option value="//api/name/layerCount">layerCount</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/descriptorWithPayload:isCompact:layerCount:dataCodewordCount:">+ descriptorWithPayload:isCompact:layerCount:dataCodewordCount:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithPayload:isCompact:layerCount:dataCodewordCount:">- initWithPayload:isCompact:layerCount:dataCodewordCount:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">CIAztecCodeDescriptor Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/CIBarcodeDescriptor.html">CIBarcodeDescriptor</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CIBarcodeDescriptor.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class CIAztecCodeDescriptor
+@abstract
+    CIAztecCodeDescriptor is a concrete subclass of <a href="../Classes/CIBarcodeDescriptor.html">CIBarcodeDescriptor</a> that defines an abstract representation of an Aztec Code symbol.</p>
+
+<p>@discussion
+    CIAztecCodeDescriptor may not be instantiated directly.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/errorCorrectedPayload" title="errorCorrectedPayload"></a>
+	<h3 class="method-title"><code><a href="#//api/name/errorCorrectedPayload">&nbsp;&nbsp;errorCorrectedPayload</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property errorCorrectedPayload
+@abstract
+The error-corrected codewords that comprise the Aztec code symbol.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSData *errorCorrectedPayload</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property errorCorrectedPayload
+@abstract
+The error-corrected codewords that comprise the Aztec code symbol.</p>
+
+<p>@discussion
+Aztec Codes are formally specified in ISO/IEC 24778:2008(E).</p>
+
+<p>The error corrected payload consists of the 6-, 8-, 10-, or 12-bit message codewords produced at the end of the step described in section 7.3.1.2 &ldquo;Formation of data codewords&rdquo;, which exists immediately prior to adding error correction. These codewords have dummy bits inserted to ensure that an entire codeword isn&rsquo;t all 0&rsquo;s or all 1&rsquo;s. Clients will need to remove these extra bits as part of interpreting the payload.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isCompact" title="isCompact"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isCompact">&nbsp;&nbsp;isCompact</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property isCompact
+@abstract
+    A BOOL indicating whether the symbol is compact.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL isCompact</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property isCompact
+@abstract
+    A BOOL indicating whether the symbol is compact.</p>
+
+<p>@discussion
+    Compact Aztec symbols use one-fewer ring in the central finder pattern than full-range Aztec symbols of the same number of data layers.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/layerCount" title="layerCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/layerCount">&nbsp;&nbsp;layerCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property layerCount
+@abstract
+    The number of data layers in the Aztec code symbol.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger layerCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property layerCount
+@abstract
+    The number of data layers in the Aztec code symbol.</p>
+
+<p>@discussion
+    Combined with the <a href="#//api/name/isCompact">isCompact</a> property, the number of data layers determines the number of modules in the Aztec Code symbol. Valid values range from 1 to 32. Compact symbols can have up to 4 data layers.</p>
+
+<pre><code>The number of data layers also determines the number of bits in each data codeword of the message carried by the Aztec Code symbol.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dataCodewordCount" title="dataCodewordCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dataCodewordCount">&nbsp;&nbsp;dataCodewordCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property dataCodewordCount
+@abstract
+    The number of non-error-correction codewords carried by the Aztec code symbol.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger dataCodewordCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property dataCodewordCount
+@abstract
+    The number of non-error-correction codewords carried by the Aztec code symbol.</p>
+
+<p>@discussion
+    Used to determine the level of error correction in conjunction with the number of data layers. Valid values are 1&hellip;2048. Compact symbols can have up to 64 message codewords.</p>
+
+<pre><code>Note that this value can exceed the number of message codewords allowed by the number of data layers in this symbol. In this case, the actual number of message codewords is 1024 fewer than this value and the message payload is to be interpreted in an application-defined manner.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CIBarcodeDescriptor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithPayload:isCompact:layerCount:dataCodewordCount:" title="initWithPayload:isCompact:layerCount:dataCodewordCount:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPayload:isCompact:layerCount:dataCodewordCount:">&ndash;&nbsp;initWithPayload:isCompact:layerCount:dataCodewordCount:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithPayload:(NSData *)<em>errorCorrectedPayload</em> isCompact:(BOOL)<em>isCompact</em> layerCount:(NSInteger)<em>layerCount</em> dataCodewordCount:(NSInteger)<em>dataCodewordCount</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/descriptorWithPayload:isCompact:layerCount:dataCodewordCount:" title="descriptorWithPayload:isCompact:layerCount:dataCodewordCount:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/descriptorWithPayload:isCompact:layerCount:dataCodewordCount:">+&nbsp;descriptorWithPayload:isCompact:layerCount:dataCodewordCount:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)descriptorWithPayload:(NSData *)<em>errorCorrectedPayload</em> isCompact:(BOOL)<em>isCompact</em> layerCount:(NSInteger)<em>layerCount</em> dataCodewordCount:(NSInteger)<em>dataCodewordCount</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

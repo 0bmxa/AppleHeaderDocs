@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSImageHistogramSpecification Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/histogramInfo">histogramInfo</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:">- encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:</option>
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:histogramInfo:">- initWithDevice:histogramInfo:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSImageHistogramSpecification Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSUnaryImageKernel.html">MPSUnaryImageKernel</a> : <a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSImageHistogram.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSImageHistogramSpecification</p><p>The MPSImageHistogramSpecification performs a histogram specification operation on an image.
+It is a generalized version of histogram equalization operation.  The histogram specificaiton filter
+converts the image so that its histogram matches the desired histogram.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/histogramInfo" title="histogramInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/histogramInfo">&nbsp;&nbsp;histogramInfo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return a structure describing the histogram content</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) MPSImageHistogramInfo histogramInfo</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   histogramInfo</p><p>Returns a MPSImageHistogramInfo structure describing the format of the
+histogram.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:histogramInfo:" title="initWithDevice:histogramInfo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:histogramInfo:">&ndash;&nbsp;initWithDevice:histogramInfo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specifies information about the histogram for the channels of an image.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> histogramInfo:(const MPSImageHistogramInfo *__nonnull)<em>histogramInfo</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device the filter will run on</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>histogramInfo</code></th>
+						<td><p>Pointer to the MPSHistogramInfo struct</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSImageHistogramSpecification object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The MPSImageHistogramSpecification applies a transfor to convert the histogram
+to a specified histogram. The process is divided into three steps:</p>
+
+<p>-# Call -initWithDevice:histogramInfo:   This creates a MPSImageHistogramSpecification
+object.  It is done when the method returns.</p>
+
+<p>-# Call -encodeTransform:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:
+desiredHistogramOffset: This creates a privately held image transform which will convert the
+the distribution of the source histogram to the desired histogram. This process runs on a
+MTLCommandBuffer when it is committed to a MTLCommandQueue. It must complete before the next
+step can be run. It may be performed on the same MTLCommandBuffer.  The sourceTexture argument
+is used by encodeTransform to determine the number of channels and therefore which histogram data
+in sourceHistogram buffer to use. The sourceHistogram and desiredHistogram must have been computed
+either on the CPU or using the <a href="../Classes/MPSImageHistogram.html">MPSImageHistogram</a> kernel</p>
+
+<p>-# Call -encodeToCommandBuffer:sourceTexture:destinationTexture: to read data from
+sourceTexture, apply the transform to it and write to destination texture.
+This step is also done on the GPU on a MTLCommandQueue.</p>
+
+<p>You can reuse the same specification transform on other images to perform the
+same transform on those images. (Since their starting distribution is probably
+different, they will probably not arrive at the same distribution as the desired
+histogram.) This filter usually will not be able to work in place.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the <a href="../Classes/MPSKernel.html">MPSKernel</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new <a href="../Classes/MPSKernel.html">MPSKernel</a> object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>While the standard NSSecureCoding/NSCoding method
+-initWithCoder: should work, since the file can&rsquo;t
+know which device your data is allocated on, we
+have to guess and may guess incorrectly.  To avoid
+that problem, use initWithCoder:device instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:" title="encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:">&ndash;&nbsp;encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode the transform function to a command buffer using a MTLComputeCommandEncoder.
+The transform function computes the specification lookup table.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeTransformToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceTexture:(nonnull id&lt;MTLTexture&gt;)<em>source</em> sourceHistogram:(nonnull id&lt;MTLBuffer&gt;)<em>sourceHistogram</em> sourceHistogramOffset:(NSUInteger)<em>sourceHistogramOffset</em> desiredHistogram:(nonnull id&lt;MTLBuffer&gt;)<em>desiredHistogram</em> desiredHistogramOffset:(NSUInteger)<em>desiredHistogramOffset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>source</code></th>
+						<td><p>A valid MTLTexture containing the source image for the filter.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceHistogram</code></th>
+						<td><p>A valid MTLBuffer containing the histogram results for the source image.  This filter
+will use these histogram results to generate the cumulative histogram for equalizing
+the image.  The histogram results / channel are stored together.  The number of channels
+for which histogram results are stored is determined by the number of channels in the image.
+If <a href="#//api/name/histogramInfo">histogramInfo</a>.histogramForAlpha is false and the source image is RGBA then only histogram
+results for RGB channels are stored.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceHistogramOffset</code></th>
+						<td><p>A byte offset into the sourceHistogram MTLBuffer where the histogram starts. Must conform to
+alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset
+parameter.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>desiredHistogram</code></th>
+						<td><p>A valid MTLBuffer containing the desired histogram results for the source image.
+The histogram results / channel are stored together.  The number of channels
+for which histogram results are stored is determined by the number of channels in the image.
+If <a href="#//api/name/histogramInfo">histogramInfo</a>.histogramForAlpha is false and the source image is RGBA then only histogram
+results for RGB channels are stored.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>desiredHistogramOffset</code></th>
+						<td><p>A byte offset into the desiredHistogram MTLBuffer where the histogram starts. Must conform to
+alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset
+parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The transform function will not begin to execute until after the command
+buffer has been enqueued and committed. This step will need to be repeated
+with the new <a href="../Classes/MPSKernel.html">MPSKernel</a> if -copyWithZone:device or -copyWithZone: is called.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSImageHistogram.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

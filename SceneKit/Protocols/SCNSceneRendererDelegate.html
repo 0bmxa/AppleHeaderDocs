@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SCNSceneRendererDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SceneKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/renderer:didApplyAnimationsAtTime:">- renderer:didApplyAnimationsAtTime:</option>
+		
+		<option value="//api/name/renderer:didApplyConstraintsAtTime:">- renderer:didApplyConstraintsAtTime:</option>
+		
+		<option value="//api/name/renderer:didRenderScene:atTime:">- renderer:didRenderScene:atTime:</option>
+		
+		<option value="//api/name/renderer:didSimulatePhysicsAtTime:">- renderer:didSimulatePhysicsAtTime:</option>
+		
+		<option value="//api/name/renderer:updateAtTime:">- renderer:updateAtTime:</option>
+		
+		<option value="//api/name/renderer:willRenderScene:atTime:">- renderer:willRenderScene:atTime:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SCNSceneRendererDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SCNSceneRenderer.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol SCNSceneRendererDelegate</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/renderer:updateAtTime:" title="renderer:updateAtTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderer:updateAtTime:">&ndash;&nbsp;renderer:updateAtTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Implement this to perform per-frame game logic. Called exactly once per frame before any animation and actions are evaluated and any physics are simulated.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)renderer:(id&lt;SCNSceneRenderer&gt;)<em>renderer</em> updateAtTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>renderer</code></th>
+						<td><p>The renderer that will render the scene.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>time</code></th>
+						<td><p>The time at which to update the scene.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method renderer:updateAtTime:</p><p>All modifications done within this method don&rsquo;t go through the transaction model, they are directly applied on the presentation tree.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNSceneRenderer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renderer:didApplyAnimationsAtTime:" title="renderer:didApplyAnimationsAtTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderer:didApplyAnimationsAtTime:">&ndash;&nbsp;renderer:didApplyAnimationsAtTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked on the delegate once the scene renderer did apply the animations.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)renderer:(id&lt;SCNSceneRenderer&gt;)<em>renderer</em> didApplyAnimationsAtTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>renderer</code></th>
+						<td><p>The renderer that did render the scene.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>time</code></th>
+						<td><p>The time at which the animations were applied.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method renderer:didApplyAnimationsAtTime:</p><p>All modifications done within this method don&rsquo;t go through the transaction model, they are directly applied on the presentation tree.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNSceneRenderer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renderer:didSimulatePhysicsAtTime:" title="renderer:didSimulatePhysicsAtTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderer:didSimulatePhysicsAtTime:">&ndash;&nbsp;renderer:didSimulatePhysicsAtTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked on the delegate once the scene renderer did simulate the physics.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)renderer:(id&lt;SCNSceneRenderer&gt;)<em>renderer</em> didSimulatePhysicsAtTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>renderer</code></th>
+						<td><p>The renderer that did render the scene.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>time</code></th>
+						<td><p>The time at which the physics were simulated.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method renderer:didSimulatePhysicsAtTime:</p><p>All modifications done within this method don&rsquo;t go through the transaction model, they are directly applied on the presentation tree.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNSceneRenderer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renderer:didApplyConstraintsAtTime:" title="renderer:didApplyConstraintsAtTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderer:didApplyConstraintsAtTime:">&ndash;&nbsp;renderer:didApplyConstraintsAtTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked on the delegate once the scene renderer did apply the constraints.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)renderer:(id&lt;SCNSceneRenderer&gt;)<em>renderer</em> didApplyConstraintsAtTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>renderer</code></th>
+						<td><p>The renderer that did render the scene.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>time</code></th>
+						<td><p>The time at which the constraints were simulated.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method renderer:didApplyConstraintsAtTime:</p><p>All modifications done within this method don&rsquo;t go through the transaction model, they are directly applied on the presentation tree.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNSceneRenderer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renderer:willRenderScene:atTime:" title="renderer:willRenderScene:atTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderer:willRenderScene:atTime:">&ndash;&nbsp;renderer:willRenderScene:atTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked on the delegate before the scene renderer renders the scene. At this point the openGL context and the destination framebuffer are bound.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)renderer:(id&lt;SCNSceneRenderer&gt;)<em>renderer</em> willRenderScene:(SCNScene *)<em>scene</em> atTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>renderer</code></th>
+						<td><p>The renderer that will render the scene.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scene</code></th>
+						<td><p>The scene to be rendered.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>time</code></th>
+						<td><p>The time at which the scene is to be rendered.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method renderer:willRenderScene:atTime:</p><p>Starting in 10.10 all modifications done within this method don&rsquo;t go through the transaction model, they are directly applied on the presentation tree.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNSceneRenderer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renderer:didRenderScene:atTime:" title="renderer:didRenderScene:atTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderer:didRenderScene:atTime:">&ndash;&nbsp;renderer:didRenderScene:atTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoked on the delegate once the scene renderer did render the scene.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)renderer:(id&lt;SCNSceneRenderer&gt;)<em>renderer</em> didRenderScene:(SCNScene *)<em>scene</em> atTime:(NSTimeInterval)<em>time</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>renderer</code></th>
+						<td><p>The renderer that did render the scene.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scene</code></th>
+						<td><p>The rendered scene.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>time</code></th>
+						<td><p>The time at which the scene was rendered.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method renderer:didRenderScene:atTime:</p><p>Starting in 10.10 all modifications done within this method don&rsquo;t go through the transaction model, they are directly applied on the presentation tree.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNSceneRenderer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

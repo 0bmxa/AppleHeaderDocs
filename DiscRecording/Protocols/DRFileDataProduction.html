@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DRFileDataProduction Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 DiscRecording Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/calculateSizeOfFile:fork:estimating:">- calculateSizeOfFile:fork:estimating:</option>
+		
+		<option value="//api/name/cleanupFileAfterBurn:">- cleanupFileAfterBurn:</option>
+		
+		<option value="//api/name/prepareFileForBurn:">- prepareFileForBurn:</option>
+		
+		<option value="//api/name/prepareFileForVerification:">- prepareFileForVerification:</option>
+		
+		<option value="//api/name/produceFile:fork:intoBuffer:length:atAddress:blockSize:">- produceFile:fork:intoBuffer:length:atAddress:blockSize:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DRFileDataProduction Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>DRFile.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@protocol   DRFileDataProduction
+</code></pre><p>This protocol defines those methods that a file data producer
+                instance must implement. A file data producer is the object that
+                resposible for providing the file data to the burn engine on request</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/calculateSizeOfFile:fork:estimating:" title="calculateSizeOfFile:fork:estimating:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calculateSizeOfFile:fork:estimating:">&ndash;&nbsp;calculateSizeOfFile:fork:estimating:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Calculates the size of the specified fork of a file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (uint64_t)calculateSizeOfFile:(DRFile *)<em>file</em> fork:(DRFileFork)<em>fork</em> estimating:(BOOL)<em>estimate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>file</code></th>
+						<td><p>The file object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fork</code></th>
+						<td><p>The fork of the file whose size is to be calculated.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>estimate</code></th>
+						<td><p>If the file size should be estimated or exact.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The length of the file&rsquo;s fork.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         calculateSizeOfFile:fork:estimating:
+</code></pre><p>This method may be sent at any time after the file object has been instantiated.
+                    Requests that the recevier calculate the byte size of a file&rsquo;s fork (for instance, data fork or resource fork).</p>
+
+<pre><code>                If estimate is &lt;i&gt;YES&lt;/i&gt;, you are being asked for an estimate of the final 
+                fork size, perhaps to provide an estimate of the track size, and do not 
+                have to be exact.  Estimates should err on the high side; it's better to 
+                overestimate than underestimate. An estimate call may be made at any time.
+
+                If estimate is &lt;i&gt;NO&lt;/i&gt;, you are being asked for
+                the actual fork size, to be used in the burn.  This call is only
+                made in the burn phase.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareFileForBurn:" title="prepareFileForBurn:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareFileForBurn:">&ndash;&nbsp;prepareFileForBurn:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Prepare the file object for burning.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)prepareFileForBurn:(DRFile *)<em>file</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>file</code></th>
+						<td><p>The file object.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><i>YES</i> if the burn should proceed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         prepareFileForBurn:
+</code></pre><p>Sent to the recevier before the burn begins. This would be an appropriate
+                    method to open files, or do any other prep work needed.  The disc&rsquo;s entire
+                    hierarchy is completely in place and can be queried if needed.</p>
+
+<pre><code>                After this call, the burn's content is locked down, and you should be
+                able to respond to the @link //apple_ref/occ/intfm/DRFileDataProduction/calculateSizeOfFile:fork:estimating: calculateSizeOfFile:fork:estimating: @/link messages with exact values.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/produceFile:fork:intoBuffer:length:atAddress:blockSize:" title="produceFile:fork:intoBuffer:length:atAddress:blockSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/produceFile:fork:intoBuffer:length:atAddress:blockSize:">&ndash;&nbsp;produceFile:fork:intoBuffer:length:atAddress:blockSize:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Produces the specified fork contents for burning.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (uint32_t)produceFile:(DRFile *)<em>file</em> fork:(DRFileFork)<em>fork</em> intoBuffer:(char *)<em>buffer</em> length:(uint32_t)<em>bufferLength</em> atAddress:(uint64_t)<em>address</em> blockSize:(uint32_t)<em>blockSize</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>file</code></th>
+						<td><p>The file object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fork</code></th>
+						<td><p>The fork of the file to produce.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>buffer</code></th>
+						<td><p>The buffer to produce data into.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bufferLength</code></th>
+						<td><p>The length of the buffer to produce data into</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>address</code></th>
+						<td><p>The byte address in the file that the burn engine is requesting</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>blockSize</code></th>
+						<td><p>The size of the track blocks</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The number of bytes produced.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         produceFile:fork:intoBuffer:length:atAddress:blockSize:
+</code></pre><p>Sent during the burn (after the @link //apple_ref/occ/intfm/DRFileDataProduction/prepareFileForBurn prepareFileForBurn @/link message) requesting that the receiver
+                    produce the specified fork contents.</p>
+
+<pre><code>                The recevier should fill up the buffer passed in as full as possible 
+                and then return control to the caller. While burning keeping the drive's buffer full is 
+                of utmost importance, so you should not perform lengthy operations or block for data in this method.
+                This method should return the number of bytes actually in the buffer or 0 to indicate that there
+                was an error producing the data.
+
+                You may be asked to produce twice, once during the actual burn and once during 
+                verification depending on the verification type of the track.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareFileForVerification:" title="prepareFileForVerification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareFileForVerification:">&ndash;&nbsp;prepareFileForVerification:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Prepare the file object for verification.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)prepareFileForVerification:(DRFile *)<em>file</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>file</code></th>
+						<td><p>The file object.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><i>YES</i> to indicate that the verification should proceed and <i>NO</i> to indicate a failure occurred.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         prepareFileForVerification:
+</code></pre><p>Sent during the burn (after production and before the @link //apple_ref/occ/intfm/DRFileDataProduction/<a href="#//api/name/cleanupFileAfterBurn:">cleanupFileAfterBurn:</a> <a href="#//api/name/cleanupFileAfterBurn:">cleanupFileAfterBurn:</a> @/link message) to
+                    indicate that verification is about to begin. Now would be a good
+                    time to rewind to the start of the file, reset state machines, or do whatever else
+                    is needed to prepare to produce again.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cleanupFileAfterBurn:" title="cleanupFileAfterBurn:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cleanupFileAfterBurn:">&ndash;&nbsp;cleanupFileAfterBurn:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cleanup the file object once the burn is complete.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cleanupFileAfterBurn:(DRFile *)<em>file</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>file</code></th>
+						<td><p>The file object.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         cleanupFileAfterBurn:
+</code></pre><p>Sent to the receiver after the burn completes. This would be an appropriate
+                    place to close files, or do any other teardown work needed.  This message will
+                    always be sent regardless of whether the burn succeeded or failed</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFile.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

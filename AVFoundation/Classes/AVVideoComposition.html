@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVVideoComposition Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_9">_9</option>
+		
+		<option value="//api/name/animationTool">animationTool</option>
+		
+		<option value="//api/name/frameDuration">frameDuration</option>
+		
+		<option value="//api/name/instructions">instructions</option>
+		
+		<option value="//api/name/renderScale">renderScale</option>
+		
+		<option value="//api/name/renderSize">renderSize</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/videoCompositionWithAsset:applyingCIFiltersWithHandler:">+ videoCompositionWithAsset:applyingCIFiltersWithHandler:</option>
+		
+		<option value="//api/name/videoCompositionWithPropertiesOfAsset:">+ videoCompositionWithPropertiesOfAsset:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/isValidForAsset:timeRange:validationDelegate:">- isValidForAsset:timeRange:validationDelegate:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVVideoComposition Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying<br />NSMutableCopying</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVVideoComposition.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      AVVideoComposition
+</code></pre><p>A video composition describes, for any time in the aggregate time range of its <a href="#//api/name/instructions">instructions</a>, the number and IDs of video tracks that are to be used in order to produce a composed video frame corresponding to that time. When AVFoundation&rsquo;s built-in video compositor is used, the <a href="#//api/name/instructions">instructions</a> an AVVideoComposition contain can specify a spatial transformation, an opacity value, and a cropping rectangle for each video source, and these can vary over time via simple linear ramping functions.</p>
+
+<pre><code>    A client can implement their own custom video compositor by implementing the AVVideoCompositing protocol; a custom video compositor is provided with pixel buffers for each of its video sources during playback and other operations and can perform arbitrary graphical operations on them in order to produce visual output.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/videoCompositionWithPropertiesOfAsset:" title="videoCompositionWithPropertiesOfAsset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoCompositionWithPropertiesOfAsset:">+&nbsp;videoCompositionWithPropertiesOfAsset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (AVVideoComposition *)videoCompositionWithPropertiesOfAsset:(AVAsset *)<em>asset</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_9" title="_9"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_9">&nbsp;&nbsp;_9</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) Class&lt;AVVideoCompositing&gt; customVideoCompositorClass NS_AVAILABLE ( 10 _9</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/frameDuration" title="frameDuration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/frameDuration">&nbsp;&nbsp;frameDuration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMTime frameDuration</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMPersistentTrackID sourceTrackIDForFrameTiming NS_AVAILABLE ( 10 _13 , 11 _0</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renderSize" title="renderSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderSize">&nbsp;&nbsp;renderSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGSize renderSize</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renderScale" title="renderScale"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderScale">&nbsp;&nbsp;renderScale</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float renderScale</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/instructions" title="instructions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/instructions">&nbsp;&nbsp;instructions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSArray&lt;id&lt;AVVideoCompositionInstruction&gt; &gt; *instructions</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/animationTool" title="animationTool"></a>
+	<h3 class="method-title"><code><a href="#//api/name/animationTool">&nbsp;&nbsp;animationTool</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, retain, nullable) AVVideoCompositionCoreAnimationTool *animationTool</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVVideoCompositionFiltering Methods" name="task_AVVideoCompositionFiltering Methods"></a>
+						<h2 class="task-title">AVVideoCompositionFiltering Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/videoCompositionWithAsset:applyingCIFiltersWithHandler:" title="videoCompositionWithAsset:applyingCIFiltersWithHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoCompositionWithAsset:applyingCIFiltersWithHandler:">+&nbsp;videoCompositionWithAsset:applyingCIFiltersWithHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (AVVideoComposition *)videoCompositionWithAsset:(AVAsset *)<em>asset</em> applyingCIFiltersWithHandler:(void ( ^ ) ( AVAsynchronousCIImageFilteringRequest *request ))<em>applier</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVVideoCompositionValidation Methods" name="task_AVVideoCompositionValidation Methods"></a>
+						<h2 class="task-title">AVVideoCompositionValidation Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/isValidForAsset:timeRange:validationDelegate:" title="isValidForAsset:timeRange:validationDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isValidForAsset:timeRange:validationDelegate:">&ndash;&nbsp;isValidForAsset:timeRange:validationDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method     isValidForAsset:timeRange:validationDelegate:
+@abstract
+   Indicates whether the timeRanges of the receiver&rsquo;s <a href="#//api/name/instructions">instructions</a> conform to the requirements described for them immediately above (in connection with the <a href="#//api/name/instructions">instructions</a> property) and also whether all of the layer <a href="#//api/name/instructions">instructions</a> have a value for trackID that corresponds either to a track of the specified asset or to the receiver&rsquo;s <a href="#//api/name/animationTool">animationTool</a>.
+@param          asset
+    Pass a reference to an <a href="../Classes/AVAsset.html">AVAsset</a> if you wish to validate the timeRanges of the <a href="#//api/name/instructions">instructions</a> against the duration of the asset and the trackIDs of the layer <a href="#//api/name/instructions">instructions</a> against the asset&rsquo;s tracks. Pass nil to skip that validation. Clients should ensure that the keys @&ldquo;tracks&rdquo; and @&ldquo;duration&rdquo; are already loaded on the <a href="../Classes/AVAsset.html">AVAsset</a> before validation is attempted.
+@param          timeRange
+   A CMTimeRange.  Only those instuctions with timeRanges that overlap with the specified timeRange will be validated. To validate all <a href="#//api/name/instructions">instructions</a> that may be used for playback or other processing, regardless of timeRange, pass CMTimeRangeMake(kCMTimeZero, kCMTimePositiveInfinity).
+@param          validationDelegate
+   Indicates an object implementing the <a href="../Protocols/AVVideoCompositionValidationHandling.html">AVVideoCompositionValidationHandling</a> protocol to receive information about troublesome portions of a video composition during processing of -isValidForAsset:. May be nil.
+@discussion
+   In the course of validation, the receiver will invoke its validationDelegate with reference to any trouble spots in the video composition.
+   An exception will be raised if the delegate modifies the receiver&rsquo;s array of <a href="#//api/name/instructions">instructions</a> or the array of layerInstructions of any <a href="../Classes/AVVideoCompositionInstruction.html">AVVideoCompositionInstruction</a> contained therein during validation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isValidForAsset:(nullable AVAsset *)<em>asset</em> timeRange:(CMTimeRange)<em>timeRange</em> validationDelegate:(nullable id&lt;AVVideoCompositionValidationHandling&gt;)<em>validationDelegate</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method     isValidForAsset:timeRange:validationDelegate:
+@abstract
+   Indicates whether the timeRanges of the receiver&rsquo;s <a href="#//api/name/instructions">instructions</a> conform to the requirements described for them immediately above (in connection with the <a href="#//api/name/instructions">instructions</a> property) and also whether all of the layer <a href="#//api/name/instructions">instructions</a> have a value for trackID that corresponds either to a track of the specified asset or to the receiver&rsquo;s <a href="#//api/name/animationTool">animationTool</a>.
+@param          asset
+    Pass a reference to an <a href="../Classes/AVAsset.html">AVAsset</a> if you wish to validate the timeRanges of the <a href="#//api/name/instructions">instructions</a> against the duration of the asset and the trackIDs of the layer <a href="#//api/name/instructions">instructions</a> against the asset&rsquo;s tracks. Pass nil to skip that validation. Clients should ensure that the keys @&ldquo;tracks&rdquo; and @&ldquo;duration&rdquo; are already loaded on the <a href="../Classes/AVAsset.html">AVAsset</a> before validation is attempted.
+@param          timeRange
+   A CMTimeRange.  Only those instuctions with timeRanges that overlap with the specified timeRange will be validated. To validate all <a href="#//api/name/instructions">instructions</a> that may be used for playback or other processing, regardless of timeRange, pass CMTimeRangeMake(kCMTimeZero, kCMTimePositiveInfinity).
+@param          validationDelegate
+   Indicates an object implementing the <a href="../Protocols/AVVideoCompositionValidationHandling.html">AVVideoCompositionValidationHandling</a> protocol to receive information about troublesome portions of a video composition during processing of -isValidForAsset:. May be nil.
+@discussion
+   In the course of validation, the receiver will invoke its validationDelegate with reference to any trouble spots in the video composition.
+   An exception will be raised if the delegate modifies the receiver&rsquo;s array of <a href="#//api/name/instructions">instructions</a> or the array of layerInstructions of any <a href="../Classes/AVVideoCompositionInstruction.html">AVVideoCompositionInstruction</a> contained therein during validation.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVVideoComposition.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

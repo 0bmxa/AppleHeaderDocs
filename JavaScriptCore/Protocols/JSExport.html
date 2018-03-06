@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>JSExport Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 JavaScriptCore Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	
+
+	
+	
+
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">JSExport Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>JSExport.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol</p><p>When an Objective-C object is exported to JavaScript, a JavaScript
+wrapper object is created.</p>
+
+<p>In JavaScript, inheritance works via a chain of prototype objects.
+For each Objective-C class in each <a href="../Classes/JSContext.html">JSContext</a>, an object appropriate for use
+as a prototype will be provided. For the class NSObject the prototype
+will be the Object prototype. For all other Objective-C
+classes a prototype will be created. The prototype for a given
+Objective-C class will have its internal [Prototype] property set to point to
+the prototype created for the Objective-C class&rsquo;s superclass. As such the
+prototype chain for a JavaScript wrapper object will reflect the wrapped
+Objective-C type&rsquo;s inheritance hierarchy.</p>
+
+<p>JavaScriptCore also produces a constructor for each Objective-C class. The
+constructor has a property named &lsquo;prototype&rsquo; that references the prototype,
+and the prototype has a property named &lsquo;constructor&rsquo; that references the
+constructor.</p>
+
+<p>By default JavaScriptCore does not export any methods or properties from an
+Objective-C class to JavaScript; however methods and properties may be exported
+explicitly using JSExport. For each protocol that a class conforms to, if the
+protocol incorporates the protocol JSExport, JavaScriptCore exports the methods
+and properties in that protocol to JavaScript</p>
+
+<p>For each exported instance method JavaScriptCore will assign a corresponding
+JavaScript function to the prototype. For each exported Objective-C property
+JavaScriptCore will assign a corresponding JavaScript accessor to the prototype.
+For each exported class method JavaScriptCore will assign a corresponding
+JavaScript function to the constructor. For example:</p>
+
+<pre>
+@textblock
+    @protocol MyClassJavaScriptMethods <JSExport>
+    - (void)foo;
+    @end
+
+    @interface MyClass : NSObject <MyClassJavaScriptMethods>
+    - (void)foo;
+    - (void)bar;
+    @end
+@/textblock
+</pre>
+
+
+<p>Data properties that are created on the prototype or constructor objects have
+the attributes: <code>writable:true</code>, <code>enumerable:false</code>, <code>configurable:true</code>.
+Accessor properties have the attributes: <code>enumerable:false</code> and <code>configurable:true</code>.</p>
+
+<p>If an instance of <code>MyClass</code> is converted to a JavaScript value, the resulting
+wrapper object will (via its prototype) export the method <code>foo</code> to JavaScript,
+since the class conforms to the <code>MyClassJavaScriptMethods</code> protocol, and this
+protocol incorporates <code>JSExport</code>. <code>bar</code> will not be exported.</p>
+
+<p>JSExport supports properties, arguments, and return values of the following types:</p>
+
+<p>Primitive numbers: signed values up to 32-bits convert using JSValue&rsquo;s
+valueWithInt32/toInt32. Unsigned values up to 32-bits convert using JSValue&rsquo;s
+valueWithUInt32/toUInt32. All other numeric values convert using JSValue&rsquo;s
+valueWithDouble/toDouble.</p>
+
+<p>BOOL: values convert using JSValue&rsquo;s valueWithBool/toBool.</p>
+
+<p>id: values convert using JSValue&rsquo;s valueWithObject/toObject.</p>
+
+<p>Objective-C instance pointers: Pointers convert using JSValue&rsquo;s
+valueWithObjectOfClass/toObject.</p>
+
+<p>C structs: C structs for CGPoint, NSRange, CGRect, and CGSize convert using
+JSValue&rsquo;s appropriate methods. Other C structs are not supported.</p>
+
+<p>Blocks: Blocks convert using JSValue&rsquo;s valueWithObject/toObject.</p>
+
+<p>All objects that conform to JSExport convert to JavaScript wrapper objects,
+even if they subclass classes that would otherwise behave differently. For
+example, if a subclass of NSString conforms to JSExport, it converts to
+JavaScript as a wrapper object rather than a JavaScript string.</p>
+					</div>
+					
+					
+
+					
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

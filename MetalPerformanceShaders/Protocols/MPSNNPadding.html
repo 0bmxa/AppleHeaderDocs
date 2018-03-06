@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSNNPadding Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor:">- destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor:</option>
+		
+		<option value="//api/name/label">- label</option>
+		
+		<option value="//api/name/paddingMethod">- paddingMethod</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSNNPadding Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject<br />NSSecureCoding</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSNeuralNetworkTypes.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol   MPSNNPadding</p><p>Different (non-Apple) CNN frameworks have different policies for how to size the result
+of a CNN filter and what padding to add around the edges.  Some filters such
+as pooling and convolution read from neighboring feature channel (pixel) values.
+Four predefined MPSPaddingMethods are available: MPSNNPaddingMethodValidOnly,
+MPSNNPaddingMethodFull, MPSNNPaddingMethodSameTL, MPSNNPaddingMethodSameBR. You
+may also implement your own padding definition with a block that conforms
+to this prototype.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/paddingMethod" title="paddingMethod"></a>
+	<h3 class="method-title"><code><a href="#//api/name/paddingMethod">&ndash;&nbsp;paddingMethod</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the preferred padding method for the node</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSNNPaddingMethod)paddingMethod</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNeuralNetworkTypes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/label" title="label"></a>
+	<h3 class="method-title"><code><a href="#//api/name/label">&ndash;&nbsp;label</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A human readable string that describes the padding policy. Useful for verbose debugging support.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *__nonnull)label</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A human readable string that describes the padding policy. Useful for verbose debugging support.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNeuralNetworkTypes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor:" title="destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor:">&ndash;&nbsp;destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determine padding and sizing of result images</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSImageDescriptor *__nonnull)destinationImageDescriptorForSourceImages:(NSArray&lt;MPSImage*&gt; *__nonnull)<em>sourceImages</em> sourceStates:(NSArray&lt;MPSState*&gt; *__nullable)<em>sourceStates</em> forKernel:(MPSKernel *__nonnull)<em>kernel</em> suggestedDescriptor:(MPSImageDescriptor *__nonnull)<em>inDescriptor</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceImages</code></th>
+						<td><p>The list of source images to be used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceStates</code></th>
+						<td><p>The list of source states to be used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>kernel</code></th>
+						<td><p>The <a href="../Classes/MPSKernel.html">MPSKernel</a> the padding method will be applied to. Set the kernel.offset</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inDescriptor</code></th>
+						<td><p>MPS will prepare a starting guess based on the padding policy (exclusive of
+MPSNNPaddingMethodCustom) set for the object. You should adjust the offset
+and image size accordingly. It is on an autoreleasepool.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <a href="../Classes/MPSImageDescriptor.html">MPSImageDescriptor</a> to use to make a <a href="../Classes/MPSImage.html">MPSImage</a> to capture the results from the filter.
+The <a href="../Classes/MPSImageDescriptor.html">MPSImageDescriptor</a> is assumed to be on an autoreleasepool. Your method must also set the
+kernel.offset property.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A <a href="../Constants/MPSNNPaddingMethod.html">MPSNNPaddingMethod</a> must both return a valid <a href="../Classes/MPSImageDescriptor.html">MPSImageDescriptor</a>
+and set the <a href="../Classes/MPSKernel.html">MPSKernel</a>.offset to the correct value.  This is a
+required feature if the MPSNNPaddingMethodCustom bit is set in
+the <a href="#//api/name/paddingMethod">paddingMethod</a>.</p>
+
+<p>Some code that may prove helpful:</p>
+
+<p>@code
+const int centeringPolicy = 0;  // When kernelSize is even: 0 pad bottom right. 1 pad top left.    Centers the kernel for even sized kernels.</p>
+
+<p>typedef enum Style{
+StyleValidOnly = -1,
+StyleSame = 0,
+StyleFull = 1
+}Style;</p>
+
+<p>// Typical destination size in one dimension for forward filters (most filters)
+static int DestSize( int sourceSize, int stride, int filterWindowSize, Style style ){
+sourceSize += style * (filterWindowSize - 1);       // adjust how many pixels we are allowed to read
+return (sourceSize + stride - 1) / stride;          // sourceSize / stride, round up
+}</p>
+
+<p>// Typical destination size in one dimension for reverse filters (e.g. unpooling, convolution transpose)
+static int DestSizeReverse( int sourceSize, int stride, int filterWindowSize, Style style ){
+return (sourceSize-1) * stride +        // center tap for the last N-1 results. Take stride into account
+1 +                             // center tap for the first result
+style * (filterWindowSize-1);   // add or subtract (or ignore) the filter extent
+}</p>
+
+<p>// Find the MPSOffset in one dimension
+static int Offset( int sourceSize, int stride, int filterWindowSize, Style style ){
+// The correction needed to adjust from position of left edge to center per MPSOffset definition
+int correction = filterWindowSize / 2;</p>
+
+<p>// exit if all we want is to start consuming pixels at the left edge of the image.
+if( 0 )
+return correction;</p>
+
+<p>// Center the area consumed in the source image:
+// Calculate the size of the destination image
+int destSize = DestSize( sourceSize, stride, filterWindowSize, style ); // use DestSizeReverse here instead as appropriate</p>
+
+<p>// calculate extent of pixels we need to read in source to populate the destination
+int readSize = (destSize-1) * stride + filterWindowSize;</p>
+
+<p>// calculate number of missing pixels in source
+int extraSize = readSize - sourceSize;</p>
+
+<p>// number of missing pixels on left side
+int leftExtraPixels = (extraSize + centeringPolicy) / 2;</p>
+
+<p>// account for the fact that the offset is based on the center pixel, not the left edge
+return correction - leftExtraPixels;
+}
+@endcode</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNeuralNetworkTypes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

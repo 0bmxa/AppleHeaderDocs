@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVPlayerLooper Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/error">error</option>
+		
+		<option value="//api/name/loopCount">loopCount</option>
+		
+		<option value="//api/name/loopingPlayerItems">loopingPlayerItems</option>
+		
+		<option value="//api/name/status">status</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/playerLooperWithPlayer:templateItem:">+ playerLooperWithPlayer:templateItem:</option>
+		
+		<option value="//api/name/playerLooperWithPlayer:templateItem:timeRange:">+ playerLooperWithPlayer:templateItem:timeRange:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/disableLooping">- disableLooping</option>
+		
+		<option value="//api/name/initWithPlayer:templateItem:timeRange:">- initWithPlayer:templateItem:timeRange:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVPlayerLooper Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVPlayerLooper.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/playerLooperWithPlayer:templateItem:timeRange:" title="playerLooperWithPlayer:templateItem:timeRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playerLooperWithPlayer:templateItem:timeRange:">+&nbsp;playerLooperWithPlayer:templateItem:timeRange:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method playerLooperWithPlayer:templateItem:timeRange:
+@abstract
+    Returns an instance of AVPlayerLooper to loop specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> within the specified time range with specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a>.
+@param player
+    Must not be nil
+@param itemToLoop
+    Must not be nil
+@param loopRange
+    Playback time range in [0, itemToLoop&rsquo;s duration]. kCMTimeRangeInvalid means [0, itemToLoop&rsquo;s duration].
+@result
+    An instance of AVPlayerLooper.
+@discussion
+    The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> will be used as a template to generate at least 3 <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> replicas and the replicas will be inserted into specified AVQueuePlayer&rsquo;s play queue to accomplish the looping playback. The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> should have its asset&rsquo;s duration property loaded beforehand so looping setup work would not be blocked until the duration value is known. Otherwise, AVPlayerLooper&rsquo;s <a href="#//api/name/status">status</a> property is  AVPlayerLooperStatusUnknown until the duration property is loaded. The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> will not be used in the actual looping playback. Furthermore, <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> replicas will be generated at initialization time so any changes made to the specified AVPlayerItem&rsquo;s property afterwards will not be reflected in the replicas used for looping playback. Specified CMTimeRange will limit each item loop iteration to playing within the specified time range. To play from beginning and the whole duration of the item, specify kCMTimeRangeInvalid for the range parameter. Time range will be accomplished by seeking to range start time and setting AVPlayerItem&rsquo;s forwardPlaybackEndTime property on the looping item replicas. Client should not modify AVQueuePlayer&rsquo;s play queue while AVPlayerLooper is performing the looping. AVPlayerLooper will insert the replica items before any existing items in the specified AVQueuePlayer&rsquo;s play queue and change the actionAtItemEnd to AVPlayerActionAtItemEndAdvance if required. AVQueuePlayer&rsquo;s play queue and actionAtItemEnd will be restored when <a href="#//api/name/disableLooping">disableLooping</a> method is called and then current looping item replicas completes playback or when AVPlayerLooper is destroyed. While AVPlayerLooper is being initialized, the specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a> will be paused (rate of 0.0) if necessary and the original player rate will be restored after initialization completes. The client shall set the specified AVQueuePlayer&rsquo;s rate to 0 beforehand if additional set-up work needs to be performed after AVPlayerLooper initialization and before starting looping playback. An NSInvalidArgumentException will be raised if the player and template item are not specified or the template item has a 0 duration. An NSInvalidArgumentException will be raised if a valid time range has a duration of 0 or is not contained within time 0 and duration of the templateItem.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)playerLooperWithPlayer:(AVQueuePlayer *)<em>player</em> templateItem:(AVPlayerItem *)<em>itemToLoop</em> timeRange:(CMTimeRange)<em>loopRange</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method playerLooperWithPlayer:templateItem:timeRange:
+@abstract
+    Returns an instance of AVPlayerLooper to loop specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> within the specified time range with specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a>.
+@param player
+    Must not be nil
+@param itemToLoop
+    Must not be nil
+@param loopRange
+    Playback time range in [0, itemToLoop&rsquo;s duration]. kCMTimeRangeInvalid means [0, itemToLoop&rsquo;s duration].
+@result
+    An instance of AVPlayerLooper.
+@discussion
+    The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> will be used as a template to generate at least 3 <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> replicas and the replicas will be inserted into specified AVQueuePlayer&rsquo;s play queue to accomplish the looping playback. The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> should have its asset&rsquo;s duration property loaded beforehand so looping setup work would not be blocked until the duration value is known. Otherwise, AVPlayerLooper&rsquo;s <a href="#//api/name/status">status</a> property is  AVPlayerLooperStatusUnknown until the duration property is loaded. The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> will not be used in the actual looping playback. Furthermore, <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> replicas will be generated at initialization time so any changes made to the specified AVPlayerItem&rsquo;s property afterwards will not be reflected in the replicas used for looping playback. Specified CMTimeRange will limit each item loop iteration to playing within the specified time range. To play from beginning and the whole duration of the item, specify kCMTimeRangeInvalid for the range parameter. Time range will be accomplished by seeking to range start time and setting AVPlayerItem&rsquo;s forwardPlaybackEndTime property on the looping item replicas. Client should not modify AVQueuePlayer&rsquo;s play queue while AVPlayerLooper is performing the looping. AVPlayerLooper will insert the replica items before any existing items in the specified AVQueuePlayer&rsquo;s play queue and change the actionAtItemEnd to AVPlayerActionAtItemEndAdvance if required. AVQueuePlayer&rsquo;s play queue and actionAtItemEnd will be restored when <a href="#//api/name/disableLooping">disableLooping</a> method is called and then current looping item replicas completes playback or when AVPlayerLooper is destroyed. While AVPlayerLooper is being initialized, the specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a> will be paused (rate of 0.0) if necessary and the original player rate will be restored after initialization completes. The client shall set the specified AVQueuePlayer&rsquo;s rate to 0 beforehand if additional set-up work needs to be performed after AVPlayerLooper initialization and before starting looping playback. An NSInvalidArgumentException will be raised if the player and template item are not specified or the template item has a 0 duration. An NSInvalidArgumentException will be raised if a valid time range has a duration of 0 or is not contained within time 0 and duration of the templateItem.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerLooper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playerLooperWithPlayer:templateItem:" title="playerLooperWithPlayer:templateItem:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playerLooperWithPlayer:templateItem:">+&nbsp;playerLooperWithPlayer:templateItem:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method playerLooperWithPlayer:templateItem:
+@abstract
+    Returns an instance of AVPlayerLooper to loop specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> with specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a>.
+@param player
+    Must not be nil
+@param itemToLoop
+    Must not be nil
+@result
+    An instance of AVPlayerLooper.
+@discussion
+    Equivalent to <a href="#//api/name/playerLooperWithPlayer:templateItem:timeRange:">playerLooperWithPlayer:templateItem:timeRange:</a> and passing in kCMTimeRangeInvalid for timeRange parameter.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)playerLooperWithPlayer:(AVQueuePlayer *)<em>player</em> templateItem:(AVPlayerItem *)<em>itemToLoop</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method playerLooperWithPlayer:templateItem:
+@abstract
+    Returns an instance of AVPlayerLooper to loop specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> with specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a>.
+@param player
+    Must not be nil
+@param itemToLoop
+    Must not be nil
+@result
+    An instance of AVPlayerLooper.
+@discussion
+    Equivalent to <a href="#//api/name/playerLooperWithPlayer:templateItem:timeRange:">playerLooperWithPlayer:templateItem:timeRange:</a> and passing in kCMTimeRangeInvalid for timeRange parameter.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerLooper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithPlayer:templateItem:timeRange:" title="initWithPlayer:templateItem:timeRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPlayer:templateItem:timeRange:">&ndash;&nbsp;initWithPlayer:templateItem:timeRange:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithPlayer:templateItem:timeRange:
+@abstract
+    Initializes an instance of AVPlayerLooper to loop specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> within the specified time range with specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a>.
+@param player
+    Must not be nil
+@param itemToLoop
+    Must not be nil
+@param loopRange
+    Playback time range in [0, itemToLoop&rsquo;s duration]. kCMTimeRangeInvalid means [0, itemToLoop&rsquo;s duration].
+@result
+    An initialized AVPlayerLooper.
+@discussion
+    The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> will be used as a template to generate at least 3 <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> replicas and the replicas will be inserted into specified AVQueuePlayer&rsquo;s play queue to accomplish the looping playback. The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> should have its asset&rsquo;s duration property loaded beforehand so looping setup work would not be blocked until the duration value is known. Otherwise, AVPlayerLooper&rsquo;s <a href="#//api/name/status">status</a> property is  AVPlayerLooperStatusUnknown until the duration property is loaded. The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> will not be used in the actual looping playback. Furthermore, <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> replicas will be generated at initialization time so any changes made to the specified AVPlayerItem&rsquo;s property afterwards will not be reflected in the replicas used for looping playback. Specified CMTimeRange will limit each item loop iteration to playing within the specified time range. To play from beginning and the whole duration of the item, specify kCMTimeRangeInvalid for the range parameter. Time range will be accomplished by seeking to range start time and setting AVPlayerItem&rsquo;s forwardPlaybackEndTime property on the looping item replicas. Client should not modify AVQueuePlayer&rsquo;s play queue while AVPlayerLooper is performing the looping. AVPlayerLooper will insert the replica items before any existing items in the specified AVQueuePlayer&rsquo;s play queue and change the actionAtItemEnd to AVPlayerActionAtItemEndAdvance if required. AVQueuePlayer&rsquo;s play queue and actionAtItemEnd will be restored when <a href="#//api/name/disableLooping">disableLooping</a> method is called and then current looping item replicas completes playback or when AVPlayerLooper is destroyed. While AVPlayerLooper is being initialized, the specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a> will be paused (rate of 0.0) if necessary and the original player rate will be restored after initialization completes. The client shall set the specified AVQueuePlayer&rsquo;s rate to 0 beforehand if additional set-up work needs to be performed after AVPlayerLooper initialization and before starting looping playback. An NSInvalidArgumentException will be raised if the player and template item are not specified or the template item has a 0 duration. An NSInvalidArgumentException will be raised if a valid time range has a duration of 0 or is not contained within time 0 and duration of the templateItem.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithPlayer:(AVQueuePlayer *)<em>player</em> templateItem:(AVPlayerItem *)<em>itemToLoop</em> timeRange:(CMTimeRange)<em>loopRange</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithPlayer:templateItem:timeRange:
+@abstract
+    Initializes an instance of AVPlayerLooper to loop specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> within the specified time range with specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a>.
+@param player
+    Must not be nil
+@param itemToLoop
+    Must not be nil
+@param loopRange
+    Playback time range in [0, itemToLoop&rsquo;s duration]. kCMTimeRangeInvalid means [0, itemToLoop&rsquo;s duration].
+@result
+    An initialized AVPlayerLooper.
+@discussion
+    The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> will be used as a template to generate at least 3 <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> replicas and the replicas will be inserted into specified AVQueuePlayer&rsquo;s play queue to accomplish the looping playback. The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> should have its asset&rsquo;s duration property loaded beforehand so looping setup work would not be blocked until the duration value is known. Otherwise, AVPlayerLooper&rsquo;s <a href="#//api/name/status">status</a> property is  AVPlayerLooperStatusUnknown until the duration property is loaded. The specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> will not be used in the actual looping playback. Furthermore, <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> replicas will be generated at initialization time so any changes made to the specified AVPlayerItem&rsquo;s property afterwards will not be reflected in the replicas used for looping playback. Specified CMTimeRange will limit each item loop iteration to playing within the specified time range. To play from beginning and the whole duration of the item, specify kCMTimeRangeInvalid for the range parameter. Time range will be accomplished by seeking to range start time and setting AVPlayerItem&rsquo;s forwardPlaybackEndTime property on the looping item replicas. Client should not modify AVQueuePlayer&rsquo;s play queue while AVPlayerLooper is performing the looping. AVPlayerLooper will insert the replica items before any existing items in the specified AVQueuePlayer&rsquo;s play queue and change the actionAtItemEnd to AVPlayerActionAtItemEndAdvance if required. AVQueuePlayer&rsquo;s play queue and actionAtItemEnd will be restored when <a href="#//api/name/disableLooping">disableLooping</a> method is called and then current looping item replicas completes playback or when AVPlayerLooper is destroyed. While AVPlayerLooper is being initialized, the specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a> will be paused (rate of 0.0) if necessary and the original player rate will be restored after initialization completes. The client shall set the specified AVQueuePlayer&rsquo;s rate to 0 beforehand if additional set-up work needs to be performed after AVPlayerLooper initialization and before starting looping playback. An NSInvalidArgumentException will be raised if the player and template item are not specified or the template item has a 0 duration. An NSInvalidArgumentException will be raised if a valid time range has a duration of 0 or is not contained within time 0 and duration of the templateItem.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerLooper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/status" title="status"></a>
+	<h3 class="method-title"><code><a href="#//api/name/status">&nbsp;&nbsp;status</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property status
+@abstract
+    The ability of the receiver to be used for looping playback.
+@discussion
+    The value of this property is an <a href="../Constants/AVPlayerLooperStatus.html">AVPlayerLooperStatus</a> that indicates whether the receiver is ready for looping playback. When the value of this property is AVPlayerStatusFailed, the receiver can no longer be used for playback and a new instance needs to be created in its place. When this happens, clients can check the value of the <a href="#//api/name/error">error</a> property to determine the nature of the failure. This property is key value observable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) AVPlayerLooperStatus status</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property status
+@abstract
+    The ability of the receiver to be used for looping playback.
+@discussion
+    The value of this property is an <a href="../Constants/AVPlayerLooperStatus.html">AVPlayerLooperStatus</a> that indicates whether the receiver is ready for looping playback. When the value of this property is AVPlayerStatusFailed, the receiver can no longer be used for playback and a new instance needs to be created in its place. When this happens, clients can check the value of the <a href="#//api/name/error">error</a> property to determine the nature of the failure. This property is key value observable.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerLooper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/error" title="error"></a>
+	<h3 class="method-title"><code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property error
+@abstract
+    If the receiver&rsquo;s <a href="#//api/name/status">status</a> is AVPlayerLooperStatusFailed, this describes the error that caused the failure.
+@discussion
+    The value of this property is a NSError that describes what caused the receiver to not be able to perform looping playback. If the receiver&rsquo;s <a href="#//api/name/status">status</a> is not AVPlayerLooperStatusFailed, the value of this property is nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable) NSError *error</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property error
+@abstract
+    If the receiver&rsquo;s <a href="#//api/name/status">status</a> is AVPlayerLooperStatusFailed, this describes the error that caused the failure.
+@discussion
+    The value of this property is a NSError that describes what caused the receiver to not be able to perform looping playback. If the receiver&rsquo;s <a href="#//api/name/status">status</a> is not AVPlayerLooperStatusFailed, the value of this property is nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerLooper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disableLooping" title="disableLooping"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disableLooping">&ndash;&nbsp;disableLooping</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method disableLooping
+@abstract
+    Disables the item looping
+@discussion
+    AVPlayerLooper will stop performing player queue operations for looping and let the current looping item replica play to the end. The player&rsquo;s original actionAtItemEnd property will be restored afterwards. After this method is called, the value of the receiver&rsquo;s <a href="#//api/name/status">status</a> property will be AVPlayerLooperStatusCancelled.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)disableLooping</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method disableLooping
+@abstract
+    Disables the item looping
+@discussion
+    AVPlayerLooper will stop performing player queue operations for looping and let the current looping item replica play to the end. The player&rsquo;s original actionAtItemEnd property will be restored afterwards. After this method is called, the value of the receiver&rsquo;s <a href="#//api/name/status">status</a> property will be AVPlayerLooperStatusCancelled.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerLooper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loopCount" title="loopCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loopCount">&nbsp;&nbsp;loopCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property loopCount
+@abstract
+    Number of times the specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> has been played
+@discussion
+    Starts at 0 and increments when the player starts playback of the <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> again. This property is key value observable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger loopCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property loopCount
+@abstract
+    Number of times the specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> has been played
+@discussion
+    Starts at 0 and increments when the player starts playback of the <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> again. This property is key value observable.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerLooper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loopingPlayerItems" title="loopingPlayerItems"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loopingPlayerItems">&nbsp;&nbsp;loopingPlayerItems</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property loopingPlayerItems
+@abstract
+    Returns an array containing replicas of specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> used to accomplish the looping
+@discussion
+    AVPlayerLooper creates replicas of the template <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> using -copyWithZone: and inserts the replicas in the specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a> to accomplish the looping. The <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> replicas are for informational purposes and to allow the client to apply properties that are not transferred from the template <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> to the replicas. The client can determine the number of replicas created and can listen for notifications and property changes from the replicas if desired. AVPlayerItemOutputs and AVPlayerItemMediaDataCollectors are not transferred to the replicas so the client should add them to each replica if desired. The client shall not modify the properties on the replicas that would disrupt looping playback. Examples of such properties are playhead time/date, selected media option, and forward playback end time. This property is key value observable.
+@result
+    Array containing replicas of specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;AVPlayerItem*&gt; *loopingPlayerItems</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property loopingPlayerItems
+@abstract
+    Returns an array containing replicas of specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> used to accomplish the looping
+@discussion
+    AVPlayerLooper creates replicas of the template <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> using -copyWithZone: and inserts the replicas in the specified <a href="../Classes/AVQueuePlayer.html">AVQueuePlayer</a> to accomplish the looping. The <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> replicas are for informational purposes and to allow the client to apply properties that are not transferred from the template <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a> to the replicas. The client can determine the number of replicas created and can listen for notifications and property changes from the replicas if desired. AVPlayerItemOutputs and AVPlayerItemMediaDataCollectors are not transferred to the replicas so the client should add them to each replica if desired. The client shall not modify the properties on the replicas that would disrupt looping playback. Examples of such properties are playhead time/date, selected media option, and forward playback end time. This property is key value observable.
+@result
+    Array containing replicas of specified <a href="../Classes/AVPlayerItem.html">AVPlayerItem</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVPlayerLooper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

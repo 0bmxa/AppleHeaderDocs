@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DRFolder Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 DiscRecording Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/folderWithPath:">+ folderWithPath:</option>
+		
+		<option value="//api/name/virtualFolderWithName:">+ virtualFolderWithName:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addChild:">- addChild:</option>
+		
+		<option value="//api/name/children">- children</option>
+		
+		<option value="//api/name/count">- count</option>
+		
+		<option value="//api/name/initWithName:">- initWithName:</option>
+		
+		<option value="//api/name/initWithPath:">- initWithPath:</option>
+		
+		<option value="//api/name/makeVirtual">- makeVirtual</option>
+		
+		<option value="//api/name/removeChild:">- removeChild:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DRFolder Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/DRFSObject.html">DRFSObject</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DRFolder.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      DRFolder
+</code></pre><p>DRFolders can be either a &ldquo;real&rdquo; folder pointing to an existing folder
+                (residing on a hard drive for example) or can be a &ldquo;virtual&rdquo; folder which exists
+                only on the resulting burned disc.
+                A DRFolder pointing to an existing folder cannot have it&rsquo;s
+                contents changed - only those files/folders which are <a href="#//api/name/children">children</a> of the actual folder on disk will
+                be included on the resulting disc. Virtual folders are entirely created
+                programatically and any virtual folder structure can exist and be burned
+                to disc. It is possible to convert a real folder to a virtual folder
+                using the @link //apple_ref/occ/intm/DRFolder/<a href="#//api/name/makeVirtual">makeVirtual</a> <a href="#//api/name/makeVirtual">makeVirtual</a> @/link method.</p>
+
+<pre><code>@category       DRFolder (VirtualFolders)
+</code></pre><p>This category on DRFolder defines methods that allow creation
+                    and manipulation of folders on the output disc that do not exist
+                    on the source media.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/folderWithPath:" title="folderWithPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/folderWithPath:">+&nbsp;folderWithPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a real folder object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRFolder *)folderWithPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>The path to an existing file.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRFolder object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         folderWithPath:
+</code></pre><p>Creates and initializes a DRFolder object that will use the folder contents of
+                    the folder located at path as a source.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFolder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithPath:" title="initWithPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPath:">&ndash;&nbsp;initWithPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a real file object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>The path to an existing folder.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A DRFolder object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithPath:
+</code></pre><p>Initializes a DRFolder object that will use the folder contents of
+                    the folder located at path as a source.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFolder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="VirtualFolders Methods" name="task_VirtualFolders Methods"></a>
+						<h2 class="task-title">VirtualFolders Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/virtualFolderWithName:" title="virtualFolderWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/virtualFolderWithName:">+&nbsp;virtualFolderWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a virtual folder object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (DRFolder *)virtualFolderWithName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name of the folder on the output disc.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased DRFolder object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         virtualFolderWithName:
+</code></pre><p>Creates and initializes a DRFolder object that will be populated with
+                    specified @link //apple_ref/occ/cl/<a href="../Classes/DRFile.html">DRFile</a> <a href="../Classes/DRFile.html">DRFile</a> @/link and DRFolder objects at runtime.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFolder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:" title="initWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:">&ndash;&nbsp;initWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a virtual file object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name of the folder on the output disc.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A DRFolder object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         initWithName:
+</code></pre><p>Initializes a DRFolder object that will be populated with
+                    specified @link //apple_ref/occ/cl/<a href="../Classes/DRFile.html">DRFile</a> <a href="../Classes/DRFile.html">DRFile</a> @/link and DRFolder objects at runtime.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFolder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/makeVirtual" title="makeVirtual"></a>
+	<h3 class="method-title"><code><a href="#//api/name/makeVirtual">&ndash;&nbsp;makeVirtual</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Changes the real DRFolder object into a virtual DRFolder object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)makeVirtual</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         makeVirtual
+</code></pre><p>The virtual folder created in this way is a snapshot of the on-disk
+                    folder at the moment of the call.  The newly created virtual folder
+                    will contain <b>real</b> folder and file objects corresponding to the
+                    on-disk <a href="#//api/name/children">children</a> of the original on-disk folder.</p>
+
+<pre><code>                If the on-disk folder is modified (eg, if the folder attributes change, 
+                or if children are added to or removed from the on-disk tree):
+                &lt;i&gt;during&lt;/i&gt; this call, the virtual folder &lt;b&gt;may or may not&lt;/b&gt; reflect the changes.
+                If modified &lt;i&gt;after&lt;/i&gt; this call, the virtual folder &lt;b&gt;will&lt;/b&gt; not reflect
+                the changes.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFolder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addChild:" title="addChild:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addChild:">&ndash;&nbsp;addChild:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an object reference (either a file or folder) as a child of
+                    a virtual folder object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addChild:(DRFSObject *)<em>child</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>child</code></th>
+						<td><p>The child to add to the folder</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         addChild:
+</code></pre><p>This method only applies to virtual folders.  Real folders
+                    are considered leaf nodes and cannot have <a href="#//api/name/children">children</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFolder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeChild:" title="removeChild:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeChild:">&ndash;&nbsp;removeChild:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes an object reference (either a file or folder) as a child of
+                    a virtual folder object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeChild:(DRFSObject *)<em>child</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>child</code></th>
+						<td><p>The child to remove from the folder</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         removeChild:
+</code></pre><p>This method only applies to virtual folders.  Real folders
+                    are considered leaf nodes and cannot have <a href="#//api/name/children">children</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFolder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/count" title="count"></a>
+	<h3 class="method-title"><code><a href="#//api/name/count">&ndash;&nbsp;count</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the number of <a href="#//api/name/children">children</a> of a virtual folder.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)count</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A count of the number of <a href="#//api/name/children">children</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         count
+</code></pre><p>This method returns a
+                    shallow count of only those <a href="#//api/name/children">children</a> that are immediately contained
+                    within the virtual folder.</p>
+
+<pre><code>                This method only applies to virtual folders.  Real folders
+                are considered leaf nodes and should not be messaged with this call.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFolder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/children" title="children"></a>
+	<h3 class="method-title"><code><a href="#//api/name/children">&ndash;&nbsp;children</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array containing the children of a virtual folder.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)children</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray of @link //apple_ref/occ/cl/<a href="../Classes/DRFile.html">DRFile</a> <a href="../Classes/DRFile.html">DRFile</a> @/link and DRFolder objects.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         children
+</code></pre><p>The order of children in the array is arbitrary &ndash; since the various filesystems being
+                    generated may have different sorting requirements, there is no one true
+                    way to sort the children.  The ordering will change only when children
+                    are added or removed.  You should sort the children according to the needs
+                    of your display, and in a consistent manner.</p>
+
+<pre><code>                This function only applies to virtual folders.  Real folders
+                are considered leaf nodes and should not be passed into this call.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DRFolder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

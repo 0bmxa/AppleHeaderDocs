@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IOBluetoothOBEXSession Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IOBluetooth Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/withDevice:channelID:">+ withDevice:channelID:</option>
+		
+		<option value="//api/name/withIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:">+ withIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:</option>
+		
+		<option value="//api/name/withSDPServiceRecord:">+ withSDPServiceRecord:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/closeTransportConnection">- closeTransportConnection</option>
+		
+		<option value="//api/name/getDevice">- getDevice</option>
+		
+		<option value="//api/name/getRFCOMMChannel">- getRFCOMMChannel</option>
+		
+		<option value="//api/name/hasOpenTransportConnection">- hasOpenTransportConnection</option>
+		
+		<option value="//api/name/initWithDevice:channelID:">- initWithDevice:channelID:</option>
+		
+		<option value="//api/name/initWithIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:">- initWithIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:</option>
+		
+		<option value="//api/name/initWithSDPServiceRecord:">- initWithSDPServiceRecord:</option>
+		
+		<option value="//api/name/isSessionTargetAMac">- isSessionTargetAMac</option>
+		
+		<option value="//api/name/openTransportConnection:selectorTarget:refCon:">- openTransportConnection:selectorTarget:refCon:</option>
+		
+		<option value="//api/name/restartTransmission">- restartTransmission</option>
+		
+		<option value="//api/name/sendBufferTroughChannel">- sendBufferTroughChannel</option>
+		
+		<option value="//api/name/sendDataToTransport:dataLength:">- sendDataToTransport:dataLength:</option>
+		
+		<option value="//api/name/setOBEXSessionOpenConnectionCallback:refCon:">- setOBEXSessionOpenConnectionCallback:refCon:</option>
+		
+		<option value="//api/name/setOpenTransportConnectionAsyncSelector:target:refCon:">- setOpenTransportConnectionAsyncSelector:target:refCon:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IOBluetoothOBEXSession Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/OBEXSession.html">OBEXSession</a> : NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/IOBluetoothRFCOMMChannelDelegate.html">IOBluetoothRFCOMMChannelDelegate</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>IOBluetoothOBEXSession.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      IOBluetoothOBEXSession
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/withSDPServiceRecord:" title="withSDPServiceRecord:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withSDPServiceRecord:">+&nbsp;withSDPServiceRecord:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a Bluetooth-based OBEX Session using an SDP service record, typically obtained from a device/service
+                browser window controller.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withSDPServiceRecord:(IOBluetoothSDPServiceRecord *)<em>inSDPServiceRecord</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inSDPServiceRecord</code></th>
+						<td><p>A valid SDP service record describing the service (and RFCOMM channel) you want to
+                                        connect to with Bluetooth/OBEX.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An OBEX session representing the device/rfcomm channel found in the service record. nil if we failed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     withSDPServiceRecord
+</code></pre><p>Note that this does NOT mean the transport connection was open. It will be opened when OBEXConnect is
+                invoked on the session object.</p>
+
+<pre><code>            *IMPORTANT NOTE*    In Bluetooth framework version 1.0.0, the session returned will NOT be autoreleased as it
+                                should be according to objc convention. This has been changed starting in Bluetooth version
+                                1.0.1 and later, so it WILL be autoreleased upon return, so you will need to retain
+                                it if you want to reference it later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withDevice:channelID:" title="withDevice:channelID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withDevice:channelID:">+&nbsp;withDevice:channelID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a Bluetooth-based OBEX Session using a Bluetooth device and a Bluetooth RFCOMM channel ID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withDevice:(IOBluetoothDevice *)<em>inDevice</em> channelID:(BluetoothRFCOMMChannelID)<em>inRFCOMMChannelID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inDevice</code></th>
+						<td><p>A valid Bluetooth device describing which device you want to connect to
+                                        with Bluetooth/OBEX.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inRFCOMMChannelID</code></th>
+						<td><p>An RFCOMM Channel ID numbe that is available on the remote device. This channel will
+                                        be used when the transport connection is attempted.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An OBEX session representing the device/rfcomm channel found in the service record. nil if we failed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method withDevice
+</code></pre><p>Note that this does NOT mean the transport connection was open. It will be opened when OBEXConnect is
+                invoked on the session object.</p>
+
+<pre><code>            *IMPORTANT NOTE*    In Bluetooth framework version 1.0.0, the session returned will NOT be autoreleased as it
+                                should be according to objc convention. This has been changed starting in Bluetooth version
+                                1.0.1 and later, so it WILL be autoreleased upon return, so you will need to retain
+                                it if you want to reference it later.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:" title="withIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:">+&nbsp;withIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a Bluetooth-based OBEX Session using an incoming RFCOMM channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)withIncomingRFCOMMChannel:(IOBluetoothRFCOMMChannel *)<em>inChannel</em> eventSelector:(SEL)<em>inEventSelector</em> selectorTarget:(id)<em>inEventSelectorTarget</em> refCon:(void *)<em>inUserRefCon</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inChannel</code></th>
+						<td><p>The channel to use to create a connection to a device.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inEventSelector</code></th>
+						<td><p>The selector that gets called when an event occurs on the OBEX Session.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inEventSelectorTarget</code></th>
+						<td><p>The object that is used to call the above selector.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inUserRefCon</code></th>
+						<td><p>The reference constant. Pass whatever you wish - it will be returned to you in the selector.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     withIncomingRFCOMMChannel
+</code></pre><p><em>IMPORTANT NOTE</em>    In Bluetooth framework version 1.0.0, the session returned will NOT be autoreleased as it
+                                    should be according to objc convention. This has been changed starting in Bluetooth version
+                                    1.0.1 and later, so it WILL be autoreleased upon return, so you will need to retain
+                                    it if you want to reference it later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSDPServiceRecord:" title="initWithSDPServiceRecord:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSDPServiceRecord:">&ndash;&nbsp;initWithSDPServiceRecord:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a Bluetooth-based OBEX Session using an SDP service record.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithSDPServiceRecord:(IOBluetoothSDPServiceRecord *)<em>inSDPServiceRecord</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inSDPServiceRecord</code></th>
+						<td></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithSDPServiceRecord
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:channelID:" title="initWithDevice:channelID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:channelID:">&ndash;&nbsp;initWithDevice:channelID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a Bluetooth-based OBEX Session using a Bluetooth device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDevice:(IOBluetoothDevice *)<em>inDevice</em> channelID:(BluetoothRFCOMMChannelID)<em>inChannelID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inDevice</code></th>
+						<td><p>The bluetooth device on which to open the <a href="../Classes/OBEXSession.html">OBEXSession</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inChannelID</code></th>
+						<td><p>The RFCOMM channel ID to use when opening the connection.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithDevice
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:" title="initWithIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:">&ndash;&nbsp;initWithIncomingRFCOMMChannel:eventSelector:selectorTarget:refCon:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a Bluetooth-based OBEX Session using an incoming RFCOMM channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithIncomingRFCOMMChannel:(IOBluetoothRFCOMMChannel *)<em>inChannel</em> eventSelector:(SEL)<em>inEventSelector</em> selectorTarget:(id)<em>inEventSelectorTarget</em> refCon:(void *)<em>inUserRefCon</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inEventSelector</code></th>
+						<td><p>The selector to be called when an event is received.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inEventSelectorTarget</code></th>
+						<td><p>The target object that get the selector message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>refCon</code></th>
+						<td><p>caller reference constant, pass whatever you want, it will be returned to you in the selector.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inChannelID</code></th>
+						<td><p>RFCOMM channel ID of the desired channel to be used.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithIncomingRFCOMMChannel
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getRFCOMMChannel" title="getRFCOMMChannel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getRFCOMMChannel">&ndash;&nbsp;getRFCOMMChannel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the Bluetooth RFCOMM channel being used by the session object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothRFCOMMChannel *)getRFCOMMChannel</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A <a href="../Classes/IOBluetoothRFCOMMChannel.html">IOBluetoothRFCOMMChannel</a> object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getRFCOMMChannel
+</code></pre><p>This could potentially be nil even though you have a valid OBEX session, because the RFCOMM channel is
+                only valid when the session is connected.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getDevice" title="getDevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDevice">&ndash;&nbsp;getDevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the Bluetooth Device being used by the session object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOBluetoothDevice *)getDevice</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     getDevice
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendBufferTroughChannel" title="sendBufferTroughChannel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendBufferTroughChannel">&ndash;&nbsp;sendBufferTroughChannel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends the next block of data trough the rfcomm channel.
+    @result</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (IOReturn)sendBufferTroughChannel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sendBufferTroughChannel
+</code></pre><p>Since a send in the rfcomm channel is broken in multiple write calls (this actually is true only if the size is grater
+    than the rfcomm MTU). Each write call is performed by sendBufferTroughChannel. This should never need to be overwritten.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/restartTransmission" title="restartTransmission"></a>
+	<h3 class="method-title"><code><a href="#//api/name/restartTransmission">&ndash;&nbsp;restartTransmission</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the transmission was stopeed due to the lack of buffers this call restarts it.
+    @result</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)restartTransmission</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     restartTransmission
+</code></pre><p>If the transmission was stopeed due to the lack of buffers this call restarts it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isSessionTargetAMac" title="isSessionTargetAMac"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isSessionTargetAMac">&ndash;&nbsp;isSessionTargetAMac</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tells whether the target device is a Mac by checking its service record.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isSessionTargetAMac</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>TRUE only if device service record has Mac entry, FALSE for all else.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     isSessionTargetAMac
+</code></pre><p>Tells whether the target device is a Mac by checking its service record.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/openTransportConnection:selectorTarget:refCon:" title="openTransportConnection:selectorTarget:refCon:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/openTransportConnection:selectorTarget:refCon:">&ndash;&nbsp;openTransportConnection:selectorTarget:refCon:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An <a href="../Classes/OBEXSession.html">OBEXSession</a> override. When this is called by the session baseclass, we will attempt to open the
+                transport connection. In our case, this would be an RFCOMM channel to another Bluetooth device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)openTransportConnection:(SEL)<em>inSelector</em> selectorTarget:(id)<em>inTarget</em> refCon:(void *)<em>inUserRefCon</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Success or failure code.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     openTransportConnection
+</code></pre><p>Your selector should have the following signature:</p>
+
+<pre><code>                -(void)transportConnectionSelector:(id)refcon       status:(OBEXError)status;
+
+            Thus you could use it with openTransportConnection like this:
+
+                OBEXError   error = [anOBEXSession openTransportConnection:@selector( transportConnectionSelector:status: )
+                                                    selectorTarget:self
+                                                    refCon:anOBEXSession];  // or whatever you want to pass as a refCon...
+
+            Be sure to check the status code! Assume the connection was not opened unless status is kOBEXSuccess.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasOpenTransportConnection" title="hasOpenTransportConnection"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasOpenTransportConnection">&ndash;&nbsp;hasOpenTransportConnection</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An <a href="../Classes/OBEXSession.html">OBEXSession</a> override. When this is called by the session baseclass, we will return whether or not we
+                have a transport connection established to another OBEX server/client. In our case we will tell whether
+                or not the RFCOMM channel to a remote device is still open.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasOpenTransportConnection</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>True or false, whether there is already an open transport connection for this OBEX session.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     hasOpenTransportConnection
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/closeTransportConnection" title="closeTransportConnection"></a>
+	<h3 class="method-title"><code><a href="#//api/name/closeTransportConnection">&ndash;&nbsp;closeTransportConnection</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An <a href="../Classes/OBEXSession.html">OBEXSession</a> override. When this is called by the session baseclass, we will close the transport
+                connection if it is opened. In our case, it will be the RFCOMM channel that needs closing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)closeTransportConnection</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Success or failure code, describing whether the call succeeded in closing the transport connection successfully.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     closeTransportConnection
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendDataToTransport:dataLength:" title="sendDataToTransport:dataLength:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendDataToTransport:dataLength:">&ndash;&nbsp;sendDataToTransport:dataLength:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An <a href="../Classes/OBEXSession.html">OBEXSession</a> override. When this is called by the session baseclass, we will send the data we are given
+                over our transport connection. If none is open, we could try to open it, or just return an error. In our
+                case, it will be sent over the RFCOMM channel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (OBEXError)sendDataToTransport:(void *)<em>inDataToSend</em> dataLength:(size_t)<em>inDataLength</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Success or failure code, describing whether the call succeeded in writing the data to the transport.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sendDataToTransport
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setOpenTransportConnectionAsyncSelector:target:refCon:" title="setOpenTransportConnectionAsyncSelector:target:refCon:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setOpenTransportConnectionAsyncSelector:target:refCon:">&ndash;&nbsp;setOpenTransportConnectionAsyncSelector:target:refCon:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows you to set the selector to be used when a transport connection is opened, or fails to open.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setOpenTransportConnectionAsyncSelector:(SEL)<em>inSelector</em> target:(id)<em>inSelectorTarget</em> refCon:(id)<em>inUserRefCon</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inUserRefCon</code></th>
+						<td><p>User&rsquo;s refCon that will get passed to them when their selector is invoked.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inEventSelector</code></th>
+						<td><p>Selector to call on the target.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inEventSelectorTarget</code></th>
+						<td><p>Target to be called with the selector.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setOpenTransportConnectionAsyncSelector
+</code></pre><p>You do not need to call this on the session typically, unless you have subclassed the <a href="../Classes/OBEXSession.html">OBEXSession</a> to
+                implement a new transport and that transport supports async opening of connections. If it does not support
+                async open, then using this is pointless.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setOBEXSessionOpenConnectionCallback:refCon:" title="setOBEXSessionOpenConnectionCallback:refCon:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setOBEXSessionOpenConnectionCallback:refCon:">&ndash;&nbsp;setOBEXSessionOpenConnectionCallback:refCon:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>For C API support. Allows you to set the callback to be invoked when the OBEX connection is actually opened.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setOBEXSessionOpenConnectionCallback:(IOBluetoothOBEXSessionOpenConnectionCallback)<em>inCallback</em> refCon:(void *)<em>inUserRefCon</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inCallback</code></th>
+						<td><p>function to call on the target.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inUserRefCon</code></th>
+						<td><p>user&rsquo;s reference constant, will be returned on the callback.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setOBEXSessionOpenConnectionCallback
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothOBEXSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

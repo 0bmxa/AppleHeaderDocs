@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSGRUDescriptor Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/flipOutputGates">flipOutputGates</option>
+		
+		<option value="//api/name/gatePnormValue">gatePnormValue</option>
+		
+		<option value="//api/name/inputGateInputWeights">inputGateInputWeights</option>
+		
+		<option value="//api/name/inputGateRecurrentWeights">inputGateRecurrentWeights</option>
+		
+		<option value="//api/name/outputGateInputGateWeights">outputGateInputGateWeights</option>
+		
+		<option value="//api/name/outputGateInputWeights">outputGateInputWeights</option>
+		
+		<option value="//api/name/outputGateRecurrentWeights">outputGateRecurrentWeights</option>
+		
+		<option value="//api/name/recurrentGateInputWeights">recurrentGateInputWeights</option>
+		
+		<option value="//api/name/recurrentGateRecurrentWeights">recurrentGateRecurrentWeights</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/createGRUDescriptorWithInputFeatureChannels:outputFeatureChannels:">+ createGRUDescriptorWithInputFeatureChannels:outputFeatureChannels:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSGRUDescriptor Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSRNNDescriptor.html">MPSRNNDescriptor</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSRNNLayer.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSGRUDescriptor
+@dependency This depends on Metal.framework</p><p>The MPSGRUDescriptor specifies a GRU (Gated Recurrent Unit) block/layer descriptor.
+The RNN layer initialized with a MPSGRUDescriptor transforms the input data (image or matrix),
+and previous output with a set of filters, each producing one feature map in
+the output data according to the Gated unit formulae detailed below.
+The user may provide the GRU unit a single input or a sequence of inputs. The layer also supports
+p-norm gating (Detailed in: <a href="https://arxiv.org/abs/1608.03639">https://arxiv.org/abs/1608.03639</a> ).</p>
+
+<p>Description of operation:</p>
+
+<p>Let x_j be the input data (at time index t of sequence,
+j index containing quadruplet: batch index, x,y and feature index (x=y=0 for matrices)).
+Let h0_j be the recurrent input (previous output) data from previous time step (at time index t-1 of sequence).
+Let h_i be the proposed new output.
+Let h1_i be the output data produced at this time step.</p>
+
+<p>Let Wz_ij, Uz_ij, be the input gate weights for input and recurrent input data respectively
+Let bi_i be the bias for the input gate</p>
+
+<p>Let Wr_ij, Ur_ij be the recurrent gate weights for input and recurrent input data respectively
+Let br_i be the bias for the recurrent gate</p>
+
+<p>Let Wh_ij, Uh_ij, Vh_ij, be the output gate weights for input, recurrent gate and input gate respectively
+Let bh_i be the bias for the output gate</p>
+
+<p>Let gz(x), gr(x), gh(x) be the neuron activation function for the input, recurrent and output gates
+Let p > 0 be a scalar variable (typicall p >= 1.0) that defines the p-norm gating norm value.</p>
+
+<p>Then the output of the Gated Recurrent Unit layer is computed as follows:</p>
+
+<p>z_i = gz(  Wz_ij * x_j  +  Uz_ij * h0_j  +  bz_i  )
+r_i = gr(  Wr_ij * x_j  +  Ur_ij * h0_j  +  br_i  )
+c_i =      Uh_ij * (r_j h0_j)  +  Vh_ij * (z_j h0_j)
+h_i = gh(  Wh_ij * x_j  + c_i + bh_i  )</p>
+
+<p>h1_i = ( 1 - z_i ^ p)<sup>1/p</sup> h0_i + z_i h_i</p>
+
+<p>The &lsquo;*&rsquo; stands for convolution (see @ref <a href="../Classes/MPSRNNImageInferenceLayer.html">MPSRNNImageInferenceLayer</a>) or matrix-vector/matrix multiplication</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/inputGateInputWeights" title="inputGateInputWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputGateInputWeights">&nbsp;&nbsp;inputGateInputWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Wz_ij&rsquo;, bias &lsquo;bz_i&rsquo; and neuron &lsquo;gz&rsquo; from the GRU formula.
+If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; inputGateInputWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   inputGateInputWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputGateRecurrentWeights" title="inputGateRecurrentWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputGateRecurrentWeights">&nbsp;&nbsp;inputGateRecurrentWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Uz_ij&rsquo; from the GRU formula.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; inputGateRecurrentWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   inputGateRecurrentWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recurrentGateInputWeights" title="recurrentGateInputWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recurrentGateInputWeights">&nbsp;&nbsp;recurrentGateInputWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Wr_ij&rsquo;, bias &lsquo;br_i&rsquo; and neuron &lsquo;gr&rsquo; from the GRU formula.
+If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; recurrentGateInputWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   recurrentGateInputWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recurrentGateRecurrentWeights" title="recurrentGateRecurrentWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recurrentGateRecurrentWeights">&nbsp;&nbsp;recurrentGateRecurrentWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Ur_ij&rsquo; from the GRU formula.
+If nil then assumed zero weights.Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; recurrentGateRecurrentWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   recurrentGateRecurrentWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputGateInputWeights" title="outputGateInputWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputGateInputWeights">&nbsp;&nbsp;outputGateInputWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Wh_ij&rsquo;, bias &lsquo;bh_i&rsquo; and neuron &lsquo;gh&rsquo; from the GRU formula.
+If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; outputGateInputWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   outputGateInputWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputGateRecurrentWeights" title="outputGateRecurrentWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputGateRecurrentWeights">&nbsp;&nbsp;outputGateRecurrentWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Uh_ij&rsquo; from the GRU formula.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; outputGateRecurrentWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   outputGateRecurrentWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputGateInputGateWeights" title="outputGateInputGateWeights"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputGateInputGateWeights">&nbsp;&nbsp;outputGateInputGateWeights</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Contains weights &lsquo;Vh_ij&rsquo; - can be used to implement the &ldquo;Minimally Gated Unit&rdquo;.
+If nil then assumed zero weights. Defaults to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, retain, nonatomic, nullable) id&lt;MPSCNNConvolutionDataSource&gt; outputGateInputGateWeights</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   outputGateInputGateWeights</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/gatePnormValue" title="gatePnormValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/gatePnormValue">&nbsp;&nbsp;gatePnormValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The p-norm gating norm value as specified by the GRU formulae. Defaults to 1.0f.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) float gatePnormValue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   gatePnormValue</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flipOutputGates" title="flipOutputGates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flipOutputGates">&nbsp;&nbsp;flipOutputGates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If YES then the GRU-block output formula is changed to:
+h1_i = ( 1 - z_i ^ p)<sup>1/p</sup> h_i + z_i h0_i.
+Defaults to NO.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) BOOL flipOutputGates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   flipOutputGates</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createGRUDescriptorWithInputFeatureChannels:outputFeatureChannels:" title="createGRUDescriptorWithInputFeatureChannels:outputFeatureChannels:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createGRUDescriptorWithInputFeatureChannels:outputFeatureChannels:">+&nbsp;createGRUDescriptorWithInputFeatureChannels:outputFeatureChannels:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a GRU descriptor.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)createGRUDescriptorWithInputFeatureChannels:(NSUInteger)<em>inputFeatureChannels</em> outputFeatureChannels:(NSUInteger)<em>outputFeatureChannels</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inputFeatureChannels</code></th>
+						<td><p>The number of feature channels in the input image/matrix. Must be >= 1.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outputFeatureChannels</code></th>
+						<td><p>The number of feature channels in the output image/matrix. Must be >= 1.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSGRUDescriptor object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

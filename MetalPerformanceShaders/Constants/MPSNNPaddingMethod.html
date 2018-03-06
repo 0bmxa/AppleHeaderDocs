@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSNNPaddingMethod Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSNNPaddingMethod Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>MPSNeuralNetworkTypes.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">MPSNNPaddingMethod</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>@enum       MPSNNPaddingMethod</p><p>The <a href="../Classes/MPSNNGraph.html">MPSNNGraph</a> must make automatic decisions about how big to make the result
+of each filter node. This is typically determined by a combination of input
+image size, size of the filter window (e.g. convolution weights), filter stride,
+and a description of how much extra space beyond the edges of the image to allow
+the filter read. By knowing the properties of the filter, we can then infer
+the size of the result image.  Most of this information is known to the <a href="../Classes/MPSNNGraph.html">MPSNNGraph</a>
+as part of its normal operation. However, the amount of padding to add and where
+to add it is a matter of choice left to you, the developer. Different neural network
+frameworks such as TensorFlow and Caffe make different choices here.  Depending on where
+your network was trained, you will need to adjust the policies used by MPS during inference.
+In the event that the padding method is not simply described by this enumeration, you may
+provide you own custom policy definition by overriding the -destinationImageDescriptorForSourceImages:
+sourceStates:forKernel:suggestedDescriptor: method in a custom <a href="../Protocols/MPSNNPadding.html">MPSNNPadding</a> child
+class.</p>
+
+<p>Common values that influence the size of the result image by adjusting the amount of
+padding added to the source images:
+- MPSNNPaddingMethodSizeValidOnly  Result values are only produced for the area that
+is guaranteed to have all of its input values
+defined (i.e. not off the edge).  This produces
+the smallest result image.
+- MPSNNPaddingMethodSizeSame       The result image is the same size as the input
+image. If the stride is not 1, then the result
+is scaled accordingly.
+- MPSNNPaddingMethodSizeFull       Result values are produced for any position for which
+at least one input value is defined (i.e. not off
+the edge)
+- MPSNNPaddingMethodCustom     The sizing and centering policy is given by the
+[<a href="../Protocols/MPSNNPadding.html">MPSNNPadding</a> destinationImageDescriptorForSourceImages:
+sourceStates:forKernel:suggestedDescriptor:]</p>
+
+<p>Except possibly when MPSNNPaddingMethodCustom is used, the area within the source
+image that is read will be centered on the source image. Even so, at times the area can
+not be perfectly centered because the source image has odd size and the region read
+has even size, or vice versa. In such cases, you may use the following values to
+select where to put the extra padding:</p>
+
+<ul>
+<li>MPSNNPaddingMethodAddRemainderToTopLeft     Leftover padding is added to the top or left
+side of image as appropriate.</li>
+<li>MPSNNPaddingMethodAddRemainderToBottomRight Leftover padding is added to the bottom or right
+side of image as appropriate.</li>
+</ul>
+
+
+<p>Here again, different external frameworks may use different policies.</p>
+
+<p>In some cases, Caffe intoduces the notion of a region beyond the padding which is invalid.
+This can happen when the padding is set to a width narrower than what is needed for a destination
+size. In such cases, MPSNNPaddingMethodExcludeEdges is used to adjust normalization factors
+for filter weights (particularly in pooling) such that invalid regions beyond the padding are
+not counted towards the filter area.  Currently, only pooling supports this feature. Other filters
+ignore it.</p>
+
+<p>The MPSNNPaddingMethodSize and a MPSNNPaddingMethodAddRemainder policy always appear together
+in the MPSNNPaddingMethod. There is no provision for a MPSNNPaddingMethodSize without a remainder
+policy or vice versa. It is in practice used as a bit field.</p>
+
+<p>Most MPSNN filters are considered forward filters. Some (e.g. convolution transpose and unpooling)
+are considered reverse filters. For the reverse filters, the image stride is measured in destination
+values rather than source values and has the effect of enlarging the image rather than reducing it.
+When a reverse filter is used to &ldquo;undo&rdquo; the effects of a forward filter, the MPSNNPaddingMethodSize should
+be the opposite of the forward MPSNNPaddingMethod.  For example, if the forward filter used
+MPSNNPaddingMethodSizeValidOnly | MPSNNPaddingMethodAddRemainderToTopLeft, the reverse filter should use
+MPSNNPaddingMethodSizeFull | MPSNNPaddingMethodAddRemainderToTopLeft. Some consideration of the geometry
+of inputs and outputs will reveal why this is so. It is usually not important to adjust the centering
+method because the size of the reverse result generally doesn&rsquo;t suffer from centering asymmetries. That is:
+the size would usually be given by:
+<code>
+static int DestSizeReverse( int sourceSize, int stride, int filterWindowSize, Style style ) {
+return (sourceSize-1) * stride + 1 + style  * (filterWindowSize-1);  // style = {-1,0,1} for valid-only, same, full
+}
+</code>
+so the result size is exactly the one needed for the source size and there are no centering problems.
+In some cases where the reverse pass is intended to completely reverse a forward pass, the <a href="../Classes/MPSState.html">MPSState</a>
+object produced by the forward pass should be used to determine the size of the reverse pass result
+image.</p>
+
+<p>Tensorflow does not appear to provide a full padding method, but instead appears to use its valid-only
+padding mode for reverse filters to in effect achieve what is called MPSNNPaddingMethodSizeFull here.</p>
+
+<p>MPSGetPaddingPolicy() is provided as a convenience to make shorter work of MPSNNPaddingMethods and policies.</p>
+
+<h1>Walkthrough of operation of padding policy:</h1>
+
+<p>Most MPSCNNKernels have two types of -encode calls. There is one for which you must pass in
+a preallocated <a href="../Classes/MPSImage.html">MPSImage</a> to receive the results.  This is for manual configuration. It assumes you know
+what you are doing, and asks you to correctly set a diversity of properties to correctly position image
+inputs and size results. It does not use the padding policy. You must size the result correctly, set the
+clipRect, offset and other properties as needed yourself.
+Layered on top of that is usually another flavor of -encode call that returns a destination image
+instead from the left hand side of the function. It is designed to automatically configure itself based
+on the <a href="../Classes/MPSCNNKernel.html">MPSCNNKernel</a>.paddingPolicy. When this more automated -encode&hellip; method is called, it invokes a
+method in the <a href="../Classes/MPSKernel.html">MPSKernel</a> that looks at the MPSNNPaddingMethod bitfield of the policy. Based on the
+information therein and the size of the input images and other filter properties, it determines the size
+of the output, sets the offset property, and returns an appropriate <a href="../Classes/MPSImageDescriptor.html">MPSImageDescriptor</a> for the destination
+image.
+If you set the MPSNNPaddingMethodCustom bit in the MPSNNPaddingMethod, then the <a href="../Protocols/MPSNNPadding.html">MPSNNPadding</a>
+-destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor: method
+is called. The <a href="../Classes/MPSImageDescriptor.html">MPSImageDescriptor</a> prepared earlier is passed in as the last parameter. You can
+use this descriptor or modify as needed.  In addition, you can adjust any properties of the <a href="../Classes/MPSKernel.html">MPSKernel</a>
+with which it will be used. If, for example, the descriptor is not the right MPSFeatureChannelFormat, you
+can change it, or make your own <a href="../Classes/MPSImageDescriptor.html">MPSImageDescriptor</a> based on the one handed to you. This is your opportunity
+to customize the configuration of the <a href="../Classes/MPSKernel.html">MPSKernel</a>. In some cases (e.g. <a href="../Classes/MPSNNDefaultPadding.html">MPSNNDefaultPadding</a>.paddingForTensorflowAveragePooling
+you might change other properties such as the filter edging mode, or adjust the offset that was already
+set for you. When the kernel is fully configured, return the <a href="../Classes/MPSImageDescriptor.html">MPSImageDescriptor</a>.
+The <a href="../Classes/MPSImageDescriptor.html">MPSImageDescriptor</a> is then passed to the <a href="../Classes/MPSCNNKernel.html">MPSCNNKernel</a>.destinationImageAllocator to allocate
+the image. You might provide such an allocator if you want to use your own custom MTLHeap rather
+than the MPS internal heap. The allocator can be set either directly in the <a href="../Classes/MPSCNNKernel.html">MPSCNNKernel</a> or through the
+<a href="../Classes/MPSNNImageNode.html">MPSNNImageNode</a>.allocator property.
+It is intended that most of the time, default values for padding method and destination image allocator
+should be good enough. Only minimal additional configuration should be required, apart from occasional
+adjustments to set the MPSNNPaddingMethod when something other than default padding for the object is
+needed.  If you find yourself encumbered by frequent adjustments of this kind, you might find it
+to your advantage to subclass MPSNNFilterNodes or MPSCNNKernels to adjust the default padding policy and
+allocator at initialization time.</p>
+
+<p>tensorFlowSame = MPSNNPaddingMethodAddRemainderToBottomRight | MPSNNPaddingMethodAlignCentered | MPSNNPaddingMethodSizeSame</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_OPTIONS(NSUInteger, MPSNNPaddingMethod ) {<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">MPSNeuralNetworkTypes.h</code></p>
+                    </div>
+                    
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

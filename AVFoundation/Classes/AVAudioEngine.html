@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAudioEngine Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/mainMixerNode">mainMixerNode</option>
+		
+		<option value="//api/name/musicSequence">musicSequence</option>
+		
+		<option value="//api/name/outputNode">outputNode</option>
+		
+		<option value="//api/name/running">running</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/attachNode:">- attachNode:</option>
+		
+		<option value="//api/name/connect:to:format:">- connect:to:format:</option>
+		
+		<option value="//api/name/connect:to:fromBus:toBus:format:">- connect:to:fromBus:toBus:format:</option>
+		
+		<option value="//api/name/connect:toConnectionPoints:fromBus:format:">- connect:toConnectionPoints:fromBus:format:</option>
+		
+		<option value="//api/name/detachNode:">- detachNode:</option>
+		
+		<option value="//api/name/disableManualRenderingMode">- disableManualRenderingMode</option>
+		
+		<option value="//api/name/disconnectNodeInput:">- disconnectNodeInput:</option>
+		
+		<option value="//api/name/disconnectNodeInput:bus:">- disconnectNodeInput:bus:</option>
+		
+		<option value="//api/name/disconnectNodeOutput:">- disconnectNodeOutput:</option>
+		
+		<option value="//api/name/disconnectNodeOutput:bus:">- disconnectNodeOutput:bus:</option>
+		
+		<option value="//api/name/enableManualRenderingMode:format:maximumFrameCount:error:">- enableManualRenderingMode:format:maximumFrameCount:error:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/inputConnectionPointForNode:inputBus:">- inputConnectionPointForNode:inputBus:</option>
+		
+		<option value="//api/name/outputConnectionPointsForNode:outputBus:">- outputConnectionPointsForNode:outputBus:</option>
+		
+		<option value="//api/name/pause">- pause</option>
+		
+		<option value="//api/name/prepare">- prepare</option>
+		
+		<option value="//api/name/renderOffline:toBuffer:error:">- renderOffline:toBuffer:error:</option>
+		
+		<option value="//api/name/reset">- reset</option>
+		
+		<option value="//api/name/startAndReturnError:">- startAndReturnError:</option>
+		
+		<option value="//api/name/stop">- stop</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAudioEngine Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAudioEngine.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class AVAudioEngine
+@discussion
+    An AVAudioEngine contains a group of connected AVAudioNodes ("nodes"), each of which performs
+    an audio signal generation, processing, or input/output task.
+
+    Nodes are created separately and attached to the engine.
+
+    The engine supports dynamic connection, disconnection and removal of nodes while running,
+    with only minor limitations:
+    - all dynamic reconnections must occur upstream of a mixer
+    - while removals of effects will normally result in the automatic connection of the adjacent
+        nodes, removal of a node which has differing input vs. output channel counts, or which
+        is a mixer, is likely to result in a broken graph.
+
+    By default, the engine is connected to an audio device and automatically renders in realtime. 
+    It can also be configured to operate in manual rendering mode, i.e. not connected to an
+    audio device and rendering in response to requests from the client, normally at or
+    faster than realtime rate.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method init
+    @abstract
+        Initialize a new engine.
+    @discussion
+        On creation, the engine is by default connected to an audio device and automatically renders
+        in realtime. It can be configured to operate in manual rendering mode through
+        <a href="#//api/name/enableManualRenderingMode:format:maximumFrameCount:error:"><code>enableManualRenderingMode:format:maximumFrameCount:error:</code></a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method init
+    @abstract
+        Initialize a new engine.
+    @discussion
+        On creation, the engine is by default connected to an audio device and automatically renders
+        in realtime. It can be configured to operate in manual rendering mode through
+        <a href="#//api/name/enableManualRenderingMode:format:maximumFrameCount:error:"><code>enableManualRenderingMode:format:maximumFrameCount:error:</code></a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attachNode:" title="attachNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attachNode:">&ndash;&nbsp;attachNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method attachNode:
+@abstract
+    Take ownership of a new node.
+@param node
+    The node to be attached to the engine.
+@discussion
+    To support the instantiation of arbitrary AVAudioNode subclasses, instances are created
+    externally to the engine, but are not usable until they are attached to the engine via
+    this method. Thus the idiom, without ARC, is:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)attachNode:(AVAudioNode *)<em>node</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method attachNode:
+@abstract
+    Take ownership of a new node.
+@param node
+    The node to be attached to the engine.
+@discussion
+    To support the instantiation of arbitrary AVAudioNode subclasses, instances are created
+    externally to the engine, but are not usable until they are attached to the engine via
+    this method. Thus the idiom, without ARC, is:
+</code></pre>
+
+<pre>
+// when building engine:
+[AVAudioNode](../Classes/AVAudioNode.html) *_player;  // member of controller class (for example)
+_player = [[AVAudioPlayerNode alloc] init];
+[engine attachNode: _player];
+// when destroying engine (without ARC)
+[_player release];
+</pre>
+
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/detachNode:" title="detachNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/detachNode:">&ndash;&nbsp;detachNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method detachNode:
+@abstract
+    Detach a node previously attached to the engine.
+@discussion
+    If necessary, the engine will safely disconnect the node before detaching it.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)detachNode:(AVAudioNode *)<em>node</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method detachNode:
+@abstract
+    Detach a node previously attached to the engine.
+@discussion
+    If necessary, the engine will safely disconnect the node before detaching it.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connect:to:fromBus:toBus:format:" title="connect:to:fromBus:toBus:format:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connect:to:fromBus:toBus:format:">&ndash;&nbsp;connect:to:fromBus:toBus:format:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method connect:to:fromBus:toBus:format:
+    @abstract
+        Establish a connection between two nodes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)connect:(AVAudioNode *)<em>node1</em> to:(AVAudioNode *)<em>node2</em> fromBus:(AVAudioNodeBus)<em>bus1</em> toBus:(AVAudioNodeBus)<em>bus2</em> format:(AVAudioFormat *__nullable)<em>format</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node1</code></th>
+						<td><p>The source node</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node2</code></th>
+						<td><p>The destination node</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bus1</code></th>
+						<td><p>The output bus on the source node</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bus2</code></th>
+						<td><p>The input bus on the destination node</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>format</code></th>
+						<td><p>If non-nil, the format of the source node&rsquo;s output bus is set to this
+        format. In all cases, the format of the destination node&rsquo;s input bus is set to
+        match that of the source node&rsquo;s output bus.
+    @discussion
+        Nodes have input and output buses (AVAudioNodeBus). Use this method to establish
+        one-to-one connections betweeen nodes. Connections made using this method are always
+        one-to-one, never one-to-many or many-to-one.</p>
+
+<pre><code>    Note that any pre-existing connection(s) involving the source's output bus or the
+    destination's input bus will be broken.
+</code></pre></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method connect:to:fromBus:toBus:format:
+    @abstract
+        Establish a connection between two nodes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connect:to:format:" title="connect:to:format:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connect:to:format:">&ndash;&nbsp;connect:to:format:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method connect:to:format:
+@abstract
+    Establish a connection between two nodes
+@discussion
+    This calls connect:to:fromBus:toBus:format: using bus 0 on the source node,
+    and bus 0 on the destination node, except in the case of a destination which is a mixer,
+    in which case the destination is the mixer's nextAvailableInputBus.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)connect:(AVAudioNode *)<em>node1</em> to:(AVAudioNode *)<em>node2</em> format:(AVAudioFormat *__nullable)<em>format</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method connect:to:format:
+@abstract
+    Establish a connection between two nodes
+@discussion
+    This calls connect:to:fromBus:toBus:format: using bus 0 on the source node,
+    and bus 0 on the destination node, except in the case of a destination which is a mixer,
+    in which case the destination is the mixer's nextAvailableInputBus.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connect:toConnectionPoints:fromBus:format:" title="connect:toConnectionPoints:fromBus:format:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connect:toConnectionPoints:fromBus:format:">&ndash;&nbsp;connect:toConnectionPoints:fromBus:format:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method connect:toConnectionPoints:fromBus:format:
+    @abstract
+        Establish connections between a source node and multiple destination nodes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)connect:(AVAudioNode *)<em>sourceNode</em> toConnectionPoints:(NSArray&lt;AVAudioConnectionPoint*&gt; *)<em>destNodes</em> fromBus:(AVAudioNodeBus)<em>sourceBus</em> format:(AVAudioFormat *__nullable)<em>format</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceNode</code></th>
+						<td><p>The source node</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destNodes</code></th>
+						<td><p>An array of <a href="../Classes/AVAudioConnectionPoint.html">AVAudioConnectionPoint</a> objects specifying destination
+        nodes and busses</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceBus</code></th>
+						<td><p>The output bus on source node</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>format</code></th>
+						<td><p>If non-nil, the format of the source node&rsquo;s output bus is set to this
+        format. In all cases, the format of the destination nodes' input bus is set to
+        match that of the source node&rsquo;s output bus
+    @discussion
+        Use this method to establish connections from a source node to multiple destination nodes.
+        Connections made using this method are either one-to-one (when a single destination
+        connection is specified) or one-to-many (when multiple connections are specified), but
+        never many-to-one.</p>
+
+<pre><code>    To incrementally add a new connection to a source node, use this method with an array
+    of AVAudioConnectionPoint objects comprising of pre-existing connections (obtained from
+    `outputConnectionPointsForNode:outputBus:`) and the new connection.
+
+    Note that any pre-existing connection involving the destination's input bus will be 
+    broken. And, any pre-existing connection on source node which is not a part of the
+    specified destination connection array will also be broken.
+
+    Also note that when the output of a node is split into multiple paths, all the paths
+    must render at the same rate until they reach a common mixer.
+    In other words, starting from the split node until the common mixer node where all split 
+    paths terminate, you cannot have:
+        - any AVAudioUnitTimeEffect
+        - any sample rate conversion
+</code></pre></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method connect:toConnectionPoints:fromBus:format:
+    @abstract
+        Establish connections between a source node and multiple destination nodes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disconnectNodeInput:bus:" title="disconnectNodeInput:bus:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disconnectNodeInput:bus:">&ndash;&nbsp;disconnectNodeInput:bus:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method disconnectNodeInput:bus:
+    @abstract
+        Remove a connection between two nodes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)disconnectNodeInput:(AVAudioNode *)<em>node</em> bus:(AVAudioNodeBus)<em>bus</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The node whose input is to be disconnected</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bus</code></th>
+						<td><p>The destination&rsquo;s input bus to disconnect</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method disconnectNodeInput:bus:
+    @abstract
+        Remove a connection between two nodes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disconnectNodeInput:" title="disconnectNodeInput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disconnectNodeInput:">&ndash;&nbsp;disconnectNodeInput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method disconnectNodeInput:
+@abstract
+    Remove a connection between two nodes.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)disconnectNodeInput:(AVAudioNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The node whose inputs are to be disconnected
+    @discussion
+        Connections are broken on each of the node&rsquo;s input busses.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method disconnectNodeInput:
+@abstract
+    Remove a connection between two nodes.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disconnectNodeOutput:bus:" title="disconnectNodeOutput:bus:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disconnectNodeOutput:bus:">&ndash;&nbsp;disconnectNodeOutput:bus:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method disconnectNodeOutput:bus:
+    @abstract
+        Remove a connection between two nodes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)disconnectNodeOutput:(AVAudioNode *)<em>node</em> bus:(AVAudioNodeBus)<em>bus</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The node whose output is to be disconnected</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bus</code></th>
+						<td><p>The source&rsquo;s output bus to disconnect</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method disconnectNodeOutput:bus:
+    @abstract
+        Remove a connection between two nodes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disconnectNodeOutput:" title="disconnectNodeOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disconnectNodeOutput:">&ndash;&nbsp;disconnectNodeOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method disconnectNodeOutput:
+@abstract
+    Remove a connection between two nodes.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)disconnectNodeOutput:(AVAudioNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The node whose outputs are to be disconnected
+    @discussion
+        Connections are broken on each of the node&rsquo;s output busses.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method disconnectNodeOutput:
+@abstract
+    Remove a connection between two nodes.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepare" title="prepare"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepare">&ndash;&nbsp;prepare</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method prepare
+@abstract
+    Prepare the engine for starting.
+@discussion
+    This method preallocates many of the resources the engine requires in order to start.
+    It can be used to be able to start more responsively.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)prepare</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method prepare
+@abstract
+    Prepare the engine for starting.
+@discussion
+    This method preallocates many of the resources the engine requires in order to start.
+    It can be used to be able to start more responsively.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startAndReturnError:" title="startAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startAndReturnError:">&ndash;&nbsp;startAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method startAndReturnError:
+    @abstract
+        Start the engine.
+    @return
+        YES for success
+    @discussion
+        Calls <a href="#//api/name/prepare">prepare</a> if it has not already been called since <a href="#//api/name/stop">stop</a>.</p>
+
+<pre><code>    When the engine is rendering to/from an audio device, starts the audio hardware via the
+    AVAudioInputNode and/or AVAudioOutputNode instances in the engine. Audio begins to flow 
+    through the engine.
+    Reasons for potential failure to start in this mode include:
+    1. There is problem in the structure of the graph. Input can't be routed to output or to a
+        recording tap through converter type nodes.
+    2. An AVAudioSession error.
+    3. The driver failed to start the hardware.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startAndReturnError:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method startAndReturnError:
+    @abstract
+        Start the engine.
+    @return
+        YES for success
+    @discussion
+        Calls <a href="#//api/name/prepare">prepare</a> if it has not already been called since <a href="#//api/name/stop">stop</a>.</p>
+
+<pre><code>    When the engine is rendering to/from an audio device, starts the audio hardware via the
+    AVAudioInputNode and/or AVAudioOutputNode instances in the engine. Audio begins to flow 
+    through the engine.
+    Reasons for potential failure to start in this mode include:
+    1. There is problem in the structure of the graph. Input can't be routed to output or to a
+        recording tap through converter type nodes.
+    2. An AVAudioSession error.
+    3. The driver failed to start the hardware.
+
+    In manual rendering mode, prepares the engine to render when requested by the client.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pause" title="pause"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pause">&ndash;&nbsp;pause</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method pause
+@abstract
+    Pause the engine.
+@discussion
+    When the engine is rendering to/from an audio device, stops the audio hardware and the flow
+    of audio through the engine. When operating in this mode, it is recommended that the engine
+    be paused or stopped (as applicable) when not in use, to minimize power consumption.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pause</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method pause
+@abstract
+    Pause the engine.
+@discussion
+    When the engine is rendering to/from an audio device, stops the audio hardware and the flow
+    of audio through the engine. When operating in this mode, it is recommended that the engine
+    be paused or stopped (as applicable) when not in use, to minimize power consumption.
+
+    Pausing the engine does not deallocate the resources allocated by prepare. Resume the
+    engine by invoking start again.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reset" title="reset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reset">&ndash;&nbsp;reset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>reset
+        Reset all of the nodes in the engine.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)reset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method reset
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stop" title="stop"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stop">&ndash;&nbsp;stop</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method stop
+    @abstract
+        When the engine is rendering to/from an audio device, stops the audio hardware and the
+        engine. When operating in this mode, it is recommended that the engine be paused or stopped
+         (as applicable) when not in use, to minimize power consumption.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stop</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method stop
+    @abstract
+        When the engine is rendering to/from an audio device, stops the audio hardware and the
+        engine. When operating in this mode, it is recommended that the engine be paused or stopped
+         (as applicable) when not in use, to minimize power consumption.</p>
+
+<pre><code>    Stopping the engine releases the resources allocated by prepare.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inputConnectionPointForNode:inputBus:" title="inputConnectionPointForNode:inputBus:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputConnectionPointForNode:inputBus:">&ndash;&nbsp;inputConnectionPointForNode:inputBus:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get connection information on a node&rsquo;s input bus.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (AVAudioConnectionPoint *__nullable)inputConnectionPointForNode:(AVAudioNode *)<em>node</em> inputBus:(AVAudioNodeBus)<em>bus</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The node whose input connection is being queried.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bus</code></th>
+						<td><p>The node&rsquo;s input bus on which the connection is being queried.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <a href="../Classes/AVAudioConnectionPoint.html">AVAudioConnectionPoint</a> object with connection information on the node&rsquo;s
+        specified input bus.
+    @discussion
+        Connections are always one-to-one or one-to-many, never many-to-one.</p>
+
+<pre><code>    Returns nil if there is no connection on the node's specified input bus.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method inputConnectionPointForNode:inputBus:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputConnectionPointsForNode:outputBus:" title="outputConnectionPointsForNode:outputBus:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputConnectionPointsForNode:outputBus:">&ndash;&nbsp;outputConnectionPointsForNode:outputBus:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method outputConnectionPointsForNode:outputBus:
+    @abstract
+        Get connection information on a node&rsquo;s output bus.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;AVAudioConnectionPoint*&gt; *)outputConnectionPointsForNode:(AVAudioNode *)<em>node</em> outputBus:(AVAudioNodeBus)<em>bus</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>The node whose output connections are being queried.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bus</code></th>
+						<td><p>The node&rsquo;s output bus on which connections are being queried.
+    @return
+        An array of <a href="../Classes/AVAudioConnectionPoint.html">AVAudioConnectionPoint</a> objects with connection information on the node&rsquo;s
+        specified output bus.
+    @discussion
+        Connections are always one-to-one or one-to-many, never many-to-one.</p>
+
+<pre><code>    Returns an empty array if there are no connections on the node's specified output bus.
+</code></pre></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method outputConnectionPointsForNode:outputBus:
+    @abstract
+        Get connection information on a node&rsquo;s output bus.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/musicSequence" title="musicSequence"></a>
+	<h3 class="method-title"><code><a href="#//api/name/musicSequence">&nbsp;&nbsp;musicSequence</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property musicSequence
+    @abstract
+        The MusicSequence previously attached to the engine (if any).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable) MusicSequence musicSequence</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property musicSequence
+    @abstract
+        The MusicSequence previously attached to the engine (if any).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputNode" title="outputNode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputNode">&nbsp;&nbsp;outputNode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property outputNode
+    @abstract
+        The engine&rsquo;s singleton output node.
+    @discussion
+        Audio output is performed via an output node. The engine creates a singleton on demand when
+        this property is first accessed. Connect another node to the input of the output node, or
+        obtain a mixer that is connected there by default, using the &ldquo;mainMixerNode&rdquo; property.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) AVAudioOutputNode *outputNode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property outputNode
+    @abstract
+        The engine&rsquo;s singleton output node.
+    @discussion
+        Audio output is performed via an output node. The engine creates a singleton on demand when
+        this property is first accessed. Connect another node to the input of the output node, or
+        obtain a mixer that is connected there by default, using the &ldquo;mainMixerNode&rdquo; property.</p>
+
+<pre><code>    When the engine is rendering to/from an audio device, the AVAudioSesssion category and/or
+    availability of hardware determine whether an app can perform output. Check the output
+    format of output node (i.e. hardware format) for non-zero sample rate and channel count to
+    see if output is enabled. 
+    Trying to perform output through the output node when it is not enabled or available will 
+    cause the engine to throw an error (when possible) or an exception.
+
+    In manual rendering mode, the output format of the output node will determine the
+    render format of the engine. It can be changed through
+    `enableManualRenderingMode:format:maximumFrameCount:error:`.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property inputNode
+    @abstract
+        The engine&rsquo;s singleton input node.
+    @discussion
+        Audio input is performed via an input node. The engine creates a singleton on demand when
+        this property is first accessed. To receive input, connect another node from the output of
+        the input node, or create a recording tap on it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) AVAudioInputNode *API_AVAILABLE ( macos ( 10.10 , ios ( 8.0 , watchos ( 4.0 , tvos ( 11.0 )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property inputNode
+    @abstract
+        The engine&rsquo;s singleton input node.
+    @discussion
+        Audio input is performed via an input node. The engine creates a singleton on demand when
+        this property is first accessed. To receive input, connect another node from the output of
+        the input node, or create a recording tap on it.</p>
+
+<pre><code>    When the engine is rendering to/from an audio device, the AVAudioSesssion category and/or
+    availability of hardware determine whether an app can perform input (e.g. input hardware is
+    not available on tvos). Check for the input node's input format (i.e. hardware format) for
+    non-zero sample rate and channel count to see if input is enabled.
+    Trying to perform input through the input node when it is not enabled or available will 
+    cause the engine to throw an error (when possible) or an exception.
+
+    In manual rendering mode, the input node can be used to synchronously supply data to
+    the engine while it is rendering (see 
+    `AVAudioInputNode`(setManualRenderingInputPCMFormat:inputBlock:).
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mainMixerNode" title="mainMixerNode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mainMixerNode">&nbsp;&nbsp;mainMixerNode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property mainMixerNode
+    @abstract
+        The engine&rsquo;s optional singleton main mixer node.
+    @discussion
+        The engine will construct a singleton main mixer and connect it to the <a href="#//api/name/outputNode">outputNode</a> on demand,
+        when this property is first accessed. You can then connect additional nodes to the mixer.</p>
+
+<pre><code>    By default, the mixer's output format (sample rate and channel count) will track the format 
+    of the output node. You may however make the connection explicitly with a different format.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) AVAudioMixerNode *mainMixerNode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property mainMixerNode
+    @abstract
+        The engine&rsquo;s optional singleton main mixer node.
+    @discussion
+        The engine will construct a singleton main mixer and connect it to the <a href="#//api/name/outputNode">outputNode</a> on demand,
+        when this property is first accessed. You can then connect additional nodes to the mixer.</p>
+
+<pre><code>    By default, the mixer's output format (sample rate and channel count) will track the format 
+    of the output node. You may however make the connection explicitly with a different format.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/running" title="running"></a>
+	<h3 class="method-title"><code><a href="#//api/name/running">&nbsp;&nbsp;running</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property running
+    @abstract
+        The engine&rsquo;s running state.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic, getter=isRunning) BOOL running</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property running
+    @abstract
+        The engine&rsquo;s running state.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enableManualRenderingMode:format:maximumFrameCount:error:" title="enableManualRenderingMode:format:maximumFrameCount:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enableManualRenderingMode:format:maximumFrameCount:error:">&ndash;&nbsp;enableManualRenderingMode:format:maximumFrameCount:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method enableManualRenderingMode:format:maximumFrameCount:error:
+@abstract
+    Set the engine to operate in manual rendering mode with the specified render format and
+    maximum frame count.
+@param format
+    The format of the output PCM audio data from the engine
+@param maximumFrameCount
+    The maximum number of PCM sample frames the engine will be asked to produce in any single
+    render call
+@param outError
+    On exit, if the engine cannot switch to the manual rendering mode, a description of the
+    error (see `AVAudioEngineManualRenderingError` for the possible errors)
+@return
+    YES for success
+@discussion
+    Use this method to configure the engine to render in response to requests from the client.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)enableManualRenderingMode:(AVAudioEngineManualRenderingMode)<em>mode</em> format:(AVAudioFormat *)<em>pcmFormat</em> maximumFrameCount:(AVAudioFrameCount)<em>maximumFrameCount</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method enableManualRenderingMode:format:maximumFrameCount:error:
+@abstract
+    Set the engine to operate in manual rendering mode with the specified render format and
+    maximum frame count.
+@param format
+    The format of the output PCM audio data from the engine
+@param maximumFrameCount
+    The maximum number of PCM sample frames the engine will be asked to produce in any single
+    render call
+@param outError
+    On exit, if the engine cannot switch to the manual rendering mode, a description of the
+    error (see `AVAudioEngineManualRenderingError` for the possible errors)
+@return
+    YES for success
+@discussion
+    Use this method to configure the engine to render in response to requests from the client.
+
+    The engine must be in a stopped state before calling this method.
+    The render format must be a PCM format and match the format of the buffer to which
+    the engine is asked to render (see `renderOffline:toBuffer:error:`).
+
+    The input data in manual rendering mode can be supplied through the source nodes, e.g.
+    `AVAudioPlayerNode`, `AVAudioInputNode` etc.
+
+    When switching to manual rendering mode, the engine:
+    1. Switches the input and output nodes to manual rendering mode. Their input and output
+       formats may change.
+    2. Removes any taps previously installed on the input and output nodes.
+    3. Maintains all the engine connections as is.
+
+    Reasons for potential failure when switching to manual rendering mode include:
+    - Engine is not in a stopped state.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disableManualRenderingMode" title="disableManualRenderingMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disableManualRenderingMode">&ndash;&nbsp;disableManualRenderingMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method disableManualRenderingMode
+@abstract
+    Set the engine to render to/from an audio device.
+@discussion
+    When disabling the manual rendering mode, the engine:
+    1. Stops and resets itself (see `stop` and `reset`).
+    2. Switches the output/input nodes to render to/from an audio device. Their input and
+       output formats may change.
+    3. Removes any taps previously installed on the input and output nodes.
+    4. Maintains all the engine connections as is.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)disableManualRenderingMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method disableManualRenderingMode
+@abstract
+    Set the engine to render to/from an audio device.
+@discussion
+    When disabling the manual rendering mode, the engine:
+    1. Stops and resets itself (see `stop` and `reset`).
+    2. Switches the output/input nodes to render to/from an audio device. Their input and
+       output formats may change.
+    3. Removes any taps previously installed on the input and output nodes.
+    4. Maintains all the engine connections as is.
+
+    Calling this method when the engine is already rendering to/from an audio device has no 
+    effect.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renderOffline:toBuffer:error:" title="renderOffline:toBuffer:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderOffline:toBuffer:error:">&ndash;&nbsp;renderOffline:toBuffer:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method renderOffline:toBuffer:error:
+@abstract
+    Render call to the engine operating in the offline manual rendering mode
+@param numberOfFrames
+    The number of PCM sample frames to be rendered
+@param buffer
+    The PCM buffer to which the engine must render the audio
+@param outError
+    On exit, if an error occurs during rendering, a description of the error (see
+    `AVAudioEngineManualRenderingError` for the possible errors)
+@return
+    One of the status codes from `AVAudioEngineManualRenderingStatus`. Irrespective of the
+    returned status code, on exit, the output buffer's frameLength will indicate the number of
+    PCM samples rendered by the engine
+@discussion
+    The engine must be in the offline manual rendering mode 
+    (`AVAudioEngineManualRenderingModeOffline`) and started before calling this method.
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (AVAudioEngineManualRenderingStatus)renderOffline:(AVAudioFrameCount)<em>numberOfFrames</em> toBuffer:(AVAudioPCMBuffer *)<em>buffer</em> error:(NSError **)<em>outError</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method renderOffline:toBuffer:error:
+@abstract
+    Render call to the engine operating in the offline manual rendering mode
+@param numberOfFrames
+    The number of PCM sample frames to be rendered
+@param buffer
+    The PCM buffer to which the engine must render the audio
+@param outError
+    On exit, if an error occurs during rendering, a description of the error (see
+    `AVAudioEngineManualRenderingError` for the possible errors)
+@return
+    One of the status codes from `AVAudioEngineManualRenderingStatus`. Irrespective of the
+    returned status code, on exit, the output buffer's frameLength will indicate the number of
+    PCM samples rendered by the engine
+@discussion
+    The engine must be in the offline manual rendering mode 
+    (`AVAudioEngineManualRenderingModeOffline`) and started before calling this method.
+
+    The format of the buffer must match the render format set through 
+    `enableManualRenderingMode:format:maximumFrameCount:error:`. The buffer capacity must be
+    greater than or equal to the number of samples asked to render.
+    On exit, the buffer's frameLength will indicate the number of PCM samples rendered by the 
+    engine.
+
+    The engine's timeline in manual rendering mode starts at a sample time of zero, and is in
+    terms of the render format's sample rate. Resetting the engine (see `reset`) will reset the
+    timeline back to zero.
+
+    When rendering in `AVAudioEngineManualRenderingModeRealtime`, this ObjC render method
+    must not be used, an error is returned otherwise. Use the block based render call
+    (`manualRenderingBlock`) in that mode instead.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAudioEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

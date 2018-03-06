@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSURLConnection Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Foundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/canHandleRequest:">+ canHandleRequest:</option>
+		
+		<option value="//api/name/connectionWithRequest:delegate:">+ connectionWithRequest:delegate:</option>
+		
+		<option value="//api/name/sendAsynchronousRequest:queue:completionHandler:">+ sendAsynchronousRequest:queue:completionHandler:</option>
+		
+		<option value="//api/name/sendSynchronousRequest:returningResponse:error:">+ sendSynchronousRequest:returningResponse:error:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/cancel">- cancel</option>
+		
+		<option value="//api/name/initWithRequest:delegate:">- initWithRequest:delegate:</option>
+		
+		<option value="//api/name/initWithRequest:delegate:startImmediately:">- initWithRequest:delegate:startImmediately:</option>
+		
+		<option value="//api/name/scheduleInRunLoop:forMode:">- scheduleInRunLoop:forMode:</option>
+		
+		<option value="//api/name/setDelegateQueue:">- setDelegateQueue:</option>
+		
+		<option value="//api/name/start">- start</option>
+		
+		<option value="//api/name/unscheduleFromRunLoop:forMode:">- unscheduleFromRunLoop:forMode:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSURLConnection Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NSURLConnection.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class NSURLConnection
+</code></pre><p>The interface for NSURLConnection is very sparse, providing
+        only the controls to <a href="#//api/name/start">start</a> and <a href="#//api/name/cancel">cancel</a> asynchronous loads of a
+        URL request.<p></p>
+
+<pre><code>    An NSURLConnection may be used for loading of resource data
+    directly to memory, in which case an
+    NSURLConnectionDataDelegate should be supplied, or for
+    downloading of resource data directly to a file, in which case
+    an NSURLConnectionDownloadDelegate is used.  The delegate is
+    retained by the NSURLConnection until a terminal condition is
+    encountered.  These two delegates are logically subclasses of
+    the base protocol, NSURLConnectionDelegate.&lt;p&gt;
+
+    A terminal condition produced by the loader will result in a
+    connection:didFailWithError: in the case of an error, or
+    connectiondidFinishLoading: or connectionDidFinishDownloading:
+    delegate message.&lt;p&gt;
+
+    The cancel message hints to the loader that a resource load
+    should be abandoned but does not guarantee that more delegate
+    messages will not be delivered.  If cancel does cause the
+    load to be abandoned, the delegate will be released without
+    further messages.  In general, a caller should be prepared for
+    cancel to have no effect, and internally ignore any delegate
+    callbacks until the delegate is released.
+
+    Scheduling of an NSURLConnection specifies the context in
+    which delegate callbacks will be made, but the actual IO may
+    occur on a separate thread and should be considered an
+    implementation detail.&lt;p&gt;
+
+    When created, an NSURLConnection performs a deep-copy of the
+    NSURLRequest.  This copy is available through the
+    -originalRequest method.  As the connection performs the load,
+    this request may change as a result of protocol
+    canonicalization or due to following redirects.
+    -currentRequest can be used to retrieve this value.&lt;p&gt;
+
+    An NSURLConnections created with the
+    connectionWithRequest:delegate: or initWithRequest:delegate:
+    methods are scheduled on the current runloop immediately, and
+    it is not necessary to send the start message to begin the
+    resource load.&lt;p&gt;
+
+    NSURLConnections created with
+    initWithRequest:delegate:startImmediately: are not
+    automatically scheduled.  Use -scheduleWithRunLoop:forMode: or
+    setDelegateQueue: to specify the context for delegate
+    callbacks, and start to begin the load.  If you do not
+    explicitly schedule the connection before start, it will be
+    scheduled on the current runloop and mode automatically.&lt;p&gt;
+
+    The NSURLConnectionSynchronousLoading category adds
+    +sendSynchronousRequest:returningResponse:error, which blocks
+    the current thread until the resource data is available or an
+    error occurs.  It should be noted that using this method on an
+    applications main run loop may result in an unacceptably long
+    delay in a user interface and its use is strongly
+    discourage.&lt;p&gt;
+
+    The NSURLConnectionQueuedLoading category implements
+    +sendAsynchronousRequest:queue:completionHandler, providing
+    similar simplicity but provides a mechanism where the current
+    runloop is not blocked.&lt;p&gt;
+
+    Both of the immediate loading categories do not provide for
+    customization of resource load, and do not allow the caller to
+    respond to, e.g., authentication challenges.&lt;p&gt;
+
+
+@category    NSURLConnection(NSURLConnectionSynchronousLoading)
+
+@abstract
+             The NSURLConnectionSynchronousLoading category on
+             NSURLConnection provides the interface to perform
+             synchronous loading of URL requests.
+
+
+@category NSURLConnection(NSURLConnectionQueuedLoading)
+
+The NSURLConnectionQueuedLoading category on NSURLConnection
+provides the interface to perform asynchronous loading of URL
+requests where the results of the request are delivered to a
+block via an NSOperationQueue.
+
+Note that there is no guarantee of load ordering implied by this
+method.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithRequest:delegate:startImmediately:" title="initWithRequest:delegate:startImmediately:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithRequest:delegate:startImmediately:">&ndash;&nbsp;initWithRequest:delegate:startImmediately:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithRequest:(NSURLRequest *)<em>request</em> delegate:(nullable id)<em>delegate</em> startImmediately:(BOOL)<em>startImmediately</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithRequest:delegate:" title="initWithRequest:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithRequest:delegate:">&ndash;&nbsp;initWithRequest:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithRequest:(NSURLRequest *)<em>request</em> delegate:(nullable id)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/connectionWithRequest:delegate:" title="connectionWithRequest:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/connectionWithRequest:delegate:">+&nbsp;connectionWithRequest:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSURLConnection *)connectionWithRequest:(NSURLRequest *)<em>request</em> delegate:(nullable id)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) NSURLRequest *API_AVAILABLE ( macos ( 10.8 , ios ( 5.0 , watchos ( 2.0 , tvos ( 9.0 )</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/start" title="start"></a>
+	<h3 class="method-title"><code><a href="#//api/name/start">&ndash;&nbsp;start</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)start</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancel" title="cancel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancel">&ndash;&nbsp;cancel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)cancel</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scheduleInRunLoop:forMode:" title="scheduleInRunLoop:forMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scheduleInRunLoop:forMode:">&ndash;&nbsp;scheduleInRunLoop:forMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)scheduleInRunLoop:(NSRunLoop *)<em>aRunLoop</em> forMode:(NSRunLoopMode)<em>mode</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unscheduleFromRunLoop:forMode:" title="unscheduleFromRunLoop:forMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unscheduleFromRunLoop:forMode:">&ndash;&nbsp;unscheduleFromRunLoop:forMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)unscheduleFromRunLoop:(NSRunLoop *)<em>aRunLoop</em> forMode:(NSRunLoopMode)<em>mode</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDelegateQueue:" title="setDelegateQueue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDelegateQueue:">&ndash;&nbsp;setDelegateQueue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setDelegateQueue:(nullable NSOperationQueue *)<em>queue</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/canHandleRequest:" title="canHandleRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canHandleRequest:">+&nbsp;canHandleRequest:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method         canHandleRequest:
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)canHandleRequest:(NSURLRequest *)<em>request</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if it is likely that the given request can be used to
+                    initialize a connection and the associated I/O can be
+                    started, NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         canHandleRequest:
+
+@abstract
+                Performs a "preflight" operation that performs
+                some speculative checks to see if a connection can
+                be initialized, and the associated I/O that is
+                started in the initializer methods can begin.
+
+@discussion
+                The result of this method is valid only as long as
+                no protocols are registered or unregistered, and
+                as long as the request is not mutated (if the
+                request is mutable). Hence, clients should be
+                prepared to handle failures even if they have
+                performed request preflighting by calling this
+                method.
+
+@param 
+    request     The request to preflight.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="NSURLConnectionSynchronousLoading Methods" name="task_NSURLConnectionSynchronousLoading Methods"></a>
+						<h2 class="task-title">NSURLConnectionSynchronousLoading Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sendSynchronousRequest:returningResponse:error:" title="sendSynchronousRequest:returningResponse:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendSynchronousRequest:returningResponse:error:">+&nbsp;sendSynchronousRequest:returningResponse:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Performs a synchronous load of the given request,
+                 returning an <a href="../Classes/NSURLResponse.html">NSURLResponse</a> in the given out
+                 parameter.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSData *)sendSynchronousRequest:(NSURLRequest *)<em>request</em> returningResponse:(NSURLResponse *_Nullable *_Nullable)<em>response</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The content of the URL resulting from performing the load,
+                 or nil if the load failed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method      sendSynchronousRequest:returningResponse:error:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="NSURLConnectionQueuedLoading Methods" name="task_NSURLConnectionQueuedLoading Methods"></a>
+						<h2 class="task-title">NSURLConnectionQueuedLoading Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sendAsynchronousRequest:queue:completionHandler:" title="sendAsynchronousRequest:queue:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendAsynchronousRequest:queue:completionHandler:">+&nbsp;sendAsynchronousRequest:queue:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Performs an asynchronous load of the given
+                  request. When the request has completed or failed,
+                  the block will be executed from the context of the
+                  specified <a href="../Classes/NSOperationQueue.html">NSOperationQueue</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)sendAsynchronousRequest:(NSURLRequest *)<em>request</em> queue:(NSOperationQueue *)<em>queue</em> completionHandler:(void ( ^ ) ( NSURLResponse *_Nullable response , NSData *_Nullable data , NSError *_Nullable connectionError ))<em>handler</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method       sendAsynchronousRequest:queue:completionHandler:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSURLConnection.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

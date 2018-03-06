@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSNNDefaultPadding Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/paddingForTensorflowAveragePooling">+ paddingForTensorflowAveragePooling</option>
+		
+		<option value="//api/name/paddingWithMethod:">+ paddingWithMethod:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/label">- label</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSNNDefaultPadding Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/MPSNNPadding.html">MPSNNPadding</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSNeuralNetworkTypes.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>You are, of course, welcome to write your own class that conforms to
+The <a href="../Protocols/MPSNNPadding.html">MPSNNPadding</a> protocol and use that instead.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/paddingWithMethod:" title="paddingWithMethod:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/paddingWithMethod:">+&nbsp;paddingWithMethod:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch a well known object that implements a non-custom padding method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype __nonnull)paddingWithMethod:(MPSNNPaddingMethod)<em>method</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>method</code></th>
+						<td><p>A <a href="../Constants/MPSNNPaddingMethod.html">MPSNNPaddingMethod</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An object that implements <a href="../Protocols/MPSNNPadding.html">MPSNNPadding</a> for use with MPSNNGraphNodes.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For custom padding methods, you will need to implement an object that conforms
+to the full <a href="../Protocols/MPSNNPadding.html">MPSNNPadding</a> protocol, including NSSecureCoding.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNeuralNetworkTypes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/paddingForTensorflowAveragePooling" title="paddingForTensorflowAveragePooling"></a>
+	<h3 class="method-title"><code><a href="#//api/name/paddingForTensorflowAveragePooling">+&nbsp;paddingForTensorflowAveragePooling</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A padding policy that attempts to reproduce TensorFlow behavior for average pooling</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype __nonnull)paddingForTensorflowAveragePooling</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Most TensorFlow padding is covered by the standard <a href="../Constants/MPSNNPaddingMethod.html">MPSNNPaddingMethod</a> encodings.
+You can use +paddingWithMethod to get quick access to <a href="../Protocols/MPSNNPadding.html">MPSNNPadding</a> objects, when
+default filter behavior isn&rsquo;t enough. (It often is.)  However, the edging for
+max pooling in TensorFlow is a bit unusual.</p>
+
+<p>This padding method attempts to reproduce TensorFlow padding for average pooling.
+In addition to setting MPSNNPaddingMethodSizeSame | MPSNNPaddingMethodAlignCentered |
+MPSNNPaddingMethodAddRemainderToTopLeft, it also configures the filter to run with
+MPSImageEdgeModeClamp, which (as a special case for average pooling only), normalizes the
+sum of contributing samples to the area of valid contributing pixels only.</p>
+
+<p>@code
+// Sample implementation for the tensorflowPoolingPaddingPolicy returned
+-(<a href="../Constants/MPSNNPaddingMethod.html">MPSNNPaddingMethod</a>) paddingMethod{ return MPSNNPaddingMethodCustom | MPSNNPaddingMethodSizeSame; }</p>
+
+<p>-(<a href="../Classes/MPSImageDescriptor.html">MPSImageDescriptor</a> * <strong>nonnull) destinationImageDescriptorForSourceImages: (NSArray <a href="../Classes/MPSImage.html">MPSImage</a> <em>> </em></strong>nonnull) sourceImages
+sourceStates: (NSArray <a href="../Classes/MPSState.html">MPSState</a> *> * <strong>nullable) sourceStates
+forKernel: (<a href="../Classes/MPSKernel.html">MPSKernel</a> * </strong>nonnull) kernel
+suggestedDescriptor: (<a href="../Classes/MPSImageDescriptor.html">MPSImageDescriptor</a> * __nonnull) inDescriptor
+{</p>
+
+<p>((<a href="../Classes/MPSCNNKernel.html">MPSCNNKernel</a> *)kernel).edgeMode = MPSImageEdgeModeClamp;</p>
+
+<p>return inDescriptor;
+}
+@endcode</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNeuralNetworkTypes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/label" title="label"></a>
+	<h3 class="method-title"><code><a href="#//api/name/label">&ndash;&nbsp;label</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Human readable description of what the padding policy does</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *__nonnull)label</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSNeuralNetworkTypes.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

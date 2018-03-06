@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SKSpriteNode Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SpriteKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/anchorPoint">anchorPoint</option>
+		
+		<option value="//api/name/blendMode">blendMode</option>
+		
+		<option value="//api/name/centerRect">centerRect</option>
+		
+		<option value="//api/name/color">color</option>
+		
+		<option value="//api/name/colorBlendFactor">colorBlendFactor</option>
+		
+		<option value="//api/name/size">size</option>
+		
+		<option value="//api/name/texture">texture</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/spriteNodeWithColor:size:">+ spriteNodeWithColor:size:</option>
+		
+		<option value="//api/name/spriteNodeWithImageNamed:">+ spriteNodeWithImageNamed:</option>
+		
+		<option value="//api/name/spriteNodeWithImageNamed:normalMapped:">+ spriteNodeWithImageNamed:normalMapped:</option>
+		
+		<option value="//api/name/spriteNodeWithTexture:">+ spriteNodeWithTexture:</option>
+		
+		<option value="//api/name/spriteNodeWithTexture:normalMap:">+ spriteNodeWithTexture:normalMap:</option>
+		
+		<option value="//api/name/spriteNodeWithTexture:size:">+ spriteNodeWithTexture:size:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithCoder:">- initWithCoder:</option>
+		
+		<option value="//api/name/initWithColor:size:">- initWithColor:size:</option>
+		
+		<option value="//api/name/initWithImageNamed:">- initWithImageNamed:</option>
+		
+		<option value="//api/name/initWithTexture:">- initWithTexture:</option>
+		
+		<option value="//api/name/initWithTexture:color:size:">- initWithTexture:color:size:</option>
+		
+		<option value="//api/name/scaleToSize:">- scaleToSize:</option>
+		
+		<option value="//api/name/setValue:forAttributeNamed:">- setValue:forAttributeNamed:</option>
+		
+		<option value="//api/name/valueForAttributeNamed:">- valueForAttributeNamed:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SKSpriteNode Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/SKNode.html">SKNode</a> : UIResponder</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/SKWarpable.html">SKWarpable</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SKSpriteNode.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A Sprite is a textured 2D node. It can be placed, rotated, scaled and animated like any other node except it draws a textured rectangle specified by the bounds and anchor point.</p>
+
+<p>Sprites are used to define quad primitives with color and/or textures applied to them.
+See <a href="[http://en.wikipedia.org/wiki/Sprite](http://en.wikipedia.org/wiki/Sprite)_(computer_graphics)">wiki</a> for a definition of a Sprite.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/spriteNodeWithTexture:size:" title="spriteNodeWithTexture:size:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/spriteNodeWithTexture:size:">+&nbsp;spriteNodeWithTexture:size:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a sprite with an <a href="../Classes/SKTexture.html">SKTexture</a> and the specified <a href="#//api/name/size">size</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)spriteNodeWithTexture:(nullable SKTexture *)<em>texture</em> size:(CGSize)<em>size</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>texture</code></th>
+						<td><p>the <a href="#//api/name/texture">texture</a> to reference for <a href="#//api/name/size">size</a> and content</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>size</code></th>
+						<td><p>the <a href="#//api/name/size">size</a> of the sprite in points</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a sprite with an <a href="../Classes/SKTexture.html">SKTexture</a> and the specified <a href="#//api/name/size">size</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/spriteNodeWithTexture:" title="spriteNodeWithTexture:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/spriteNodeWithTexture:">+&nbsp;spriteNodeWithTexture:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a sprite with an <a href="../Classes/SKTexture.html">SKTexture</a> and set its <a href="#//api/name/size">size</a> to the SKTexture&rsquo;s pixel width/height.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)spriteNodeWithTexture:(nullable SKTexture *)<em>texture</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>texture</code></th>
+						<td><p>the <a href="#//api/name/texture">texture</a> to reference for <a href="#//api/name/size">size</a> and content</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a sprite with an <a href="../Classes/SKTexture.html">SKTexture</a> and set its <a href="#//api/name/size">size</a> to the SKTexture&rsquo;s pixel width/height.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/spriteNodeWithTexture:normalMap:" title="spriteNodeWithTexture:normalMap:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/spriteNodeWithTexture:normalMap:">+&nbsp;spriteNodeWithTexture:normalMap:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)spriteNodeWithTexture:(nullable SKTexture *)<em>texture</em> normalMap:(nullable SKTexture *)<em>normalMap</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/spriteNodeWithImageNamed:" title="spriteNodeWithImageNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/spriteNodeWithImageNamed:">+&nbsp;spriteNodeWithImageNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a sprite with an image from your app bundle (An <a href="../Classes/SKTexture.html">SKTexture</a> is created for the image and set on the sprite. Its <a href="#//api/name/size">size</a> is set to the SKTexture&rsquo;s pixel width/height)
+The position of the sprite is (0, 0) and the <a href="#//api/name/texture">texture</a> anchored at (0.5, 0.5), so that it is offset by half the width and half the height.
+Thus the sprite has the <a href="#//api/name/texture">texture</a> centered about the position. If you wish to have the <a href="#//api/name/texture">texture</a> anchored at a different offset set the <a href="#//api/name/anchorPoint">anchorPoint</a> to another pair of values in the interval from 0.0 up to and including 1.0.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)spriteNodeWithImageNamed:(NSString *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>is the name of an image file stored in the app bundle.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a sprite with an image from your app bundle (An <a href="../Classes/SKTexture.html">SKTexture</a> is created for the image and set on the sprite. Its <a href="#//api/name/size">size</a> is set to the SKTexture&rsquo;s pixel width/height)
+The position of the sprite is (0, 0) and the <a href="#//api/name/texture">texture</a> anchored at (0.5, 0.5), so that it is offset by half the width and half the height.
+Thus the sprite has the <a href="#//api/name/texture">texture</a> centered about the position. If you wish to have the <a href="#//api/name/texture">texture</a> anchored at a different offset set the <a href="#//api/name/anchorPoint">anchorPoint</a> to another pair of values in the interval from 0.0 up to and including 1.0.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/spriteNodeWithImageNamed:normalMapped:" title="spriteNodeWithImageNamed:normalMapped:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/spriteNodeWithImageNamed:normalMapped:">+&nbsp;spriteNodeWithImageNamed:normalMapped:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)spriteNodeWithImageNamed:(NSString *)<em>name</em> normalMapped:(BOOL)<em>generateNormalMap</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/spriteNodeWithColor:size:" title="spriteNodeWithColor:size:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/spriteNodeWithColor:size:">+&nbsp;spriteNodeWithColor:size:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a sprite with a <a href="#//api/name/color">color</a> and the specified bounds.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)spriteNodeWithColor:(SKColor *)<em>color</em> size:(CGSize)<em>size</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>color</code></th>
+						<td><p>the <a href="#//api/name/color">color</a> to use for tinting the sprite.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>size</code></th>
+						<td><p>the <a href="#//api/name/size">size</a> of the sprite in points</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a sprite with a <a href="#//api/name/color">color</a> and the specified bounds.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTexture:color:size:" title="initWithTexture:color:size:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTexture:color:size:">&ndash;&nbsp;initWithTexture:color:size:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Designated Initializer
+Initialize a sprite with a <a href="#//api/name/color">color</a> and the specified bounds.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTexture:(nullable SKTexture *)<em>texture</em> color:(SKColor *)<em>color</em> size:(CGSize)<em>size</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>texture</code></th>
+						<td><p>the <a href="#//api/name/texture">texture</a> to use (can be nil for colored sprite)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>color</code></th>
+						<td><p>the <a href="#//api/name/color">color</a> to use for tinting the sprite.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>size</code></th>
+						<td><p>the <a href="#//api/name/size">size</a> of the sprite in points</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Designated Initializer
+Initialize a sprite with a <a href="#//api/name/color">color</a> and the specified bounds.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTexture:" title="initWithTexture:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTexture:">&ndash;&nbsp;initWithTexture:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a sprite with an <a href="../Classes/SKTexture.html">SKTexture</a> and set its <a href="#//api/name/size">size</a> to the SKTexture&rsquo;s width/height.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTexture:(nullable SKTexture *)<em>texture</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>texture</code></th>
+						<td><p>the <a href="#//api/name/texture">texture</a> to reference for <a href="#//api/name/size">size</a> and content</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialize a sprite with an <a href="../Classes/SKTexture.html">SKTexture</a> and set its <a href="#//api/name/size">size</a> to the SKTexture&rsquo;s width/height.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithImageNamed:" title="initWithImageNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithImageNamed:">&ndash;&nbsp;initWithImageNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a sprite with an image from your app bundle (An <a href="../Classes/SKTexture.html">SKTexture</a> is created for the image and set on the sprite. Its <a href="#//api/name/size">size</a> is set to the SKTexture&rsquo;s pixel width/height)
+The position of the sprite is (0, 0) and the <a href="#//api/name/texture">texture</a> anchored at (0.5, 0.5), so that it is offset by half the width and half the height.
+Thus the sprite has the <a href="#//api/name/texture">texture</a> centered about the position. If you wish to have the <a href="#//api/name/texture">texture</a> anchored at a different offset set the <a href="#//api/name/anchorPoint">anchorPoint</a> to another pair of values in the interval from 0.0 up to and including 1.0.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithImageNamed:(NSString *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>the name or path of the image to load.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialize a sprite with an image from your app bundle (An <a href="../Classes/SKTexture.html">SKTexture</a> is created for the image and set on the sprite. Its <a href="#//api/name/size">size</a> is set to the SKTexture&rsquo;s pixel width/height)
+The position of the sprite is (0, 0) and the <a href="#//api/name/texture">texture</a> anchored at (0.5, 0.5), so that it is offset by half the width and half the height.
+Thus the sprite has the <a href="#//api/name/texture">texture</a> centered about the position. If you wish to have the <a href="#//api/name/texture">texture</a> anchored at a different offset set the <a href="#//api/name/anchorPoint">anchorPoint</a> to another pair of values in the interval from 0.0 up to and including 1.0.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithColor:size:" title="initWithColor:size:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithColor:size:">&ndash;&nbsp;initWithColor:size:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a sprite with a <a href="#//api/name/color">color</a> and the specified bounds.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithColor:(SKColor *)<em>color</em> size:(CGSize)<em>size</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>color</code></th>
+						<td><p>the <a href="#//api/name/color">color</a> to use for tinting the sprite.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>size</code></th>
+						<td><p>the <a href="#//api/name/size">size</a> of the sprite in points</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialize a sprite with a <a href="#//api/name/color">color</a> and the specified bounds.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:" title="initWithCoder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:">&ndash;&nbsp;initWithCoder:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Support coding and decoding via NSKeyedArchiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *)<em>aDecoder</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Support coding and decoding via NSKeyedArchiver.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/texture" title="texture"></a>
+	<h3 class="method-title"><code><a href="#//api/name/texture">&nbsp;&nbsp;texture</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Texture to be drawn (is stretched to fill the sprite)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) SKTexture *texture</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Texture to be drawn (is stretched to fill the sprite)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Texture to use for generating normals that lights use to light this sprite.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain, nullable) SKTexture *NS_AVAILABLE ( 10 _10 , 8 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Texture to use for generating normals that lights use to light this sprite.</p>
+
+<p>This will only be used if the sprite is lit by at least one light.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/SKLightNode.html">SKLightNode</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/centerRect" title="centerRect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/centerRect">&nbsp;&nbsp;centerRect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Controls how the <a href="#//api/name/texture">texture</a> is stretched to fill the SKSpriteNode. Stretching is performed via a 9-part algorithm where the upper &amp; lower middle parts are scaled horizontally, the left and right middle parts are scaled vertically, the center is scaled in both directions, and the corners are preserved. The centerRect defines the center region in a (0.0 - 1.0) coordinate space. Defaults to {(0,0) (1,1)} (the entire <a href="#//api/name/texture">texture</a> is stretched).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGRect centerRect</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Controls how the <a href="#//api/name/texture">texture</a> is stretched to fill the SKSpriteNode. Stretching is performed via a 9-part algorithm where the upper &amp; lower middle parts are scaled horizontally, the left and right middle parts are scaled vertically, the center is scaled in both directions, and the corners are preserved. The centerRect defines the center region in a (0.0 - 1.0) coordinate space. Defaults to {(0,0) (1,1)} (the entire <a href="#//api/name/texture">texture</a> is stretched).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/colorBlendFactor" title="colorBlendFactor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/colorBlendFactor">&nbsp;&nbsp;colorBlendFactor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Controls the blending between the <a href="#//api/name/texture">texture</a> and the sprite&rsquo;s <a href="#//api/name/color">color</a>. The valid interval of values is from 0.0 up to and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0) if above.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGFloat colorBlendFactor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Controls the blending between the <a href="#//api/name/texture">texture</a> and the sprite&rsquo;s <a href="#//api/name/color">color</a>. The valid interval of values is from 0.0 up to and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0) if above.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/color" title="color"></a>
+	<h3 class="method-title"><code><a href="#//api/name/color">&nbsp;&nbsp;color</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Base color for the sprite (If no <a href="#//api/name/texture">texture</a> is present, the color still is drawn)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) SKColor *color</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Base color for the sprite (If no <a href="#//api/name/texture">texture</a> is present, the color still is drawn)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/blendMode" title="blendMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/blendMode">&nbsp;&nbsp;blendMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the blend mode to use when composing the sprite with the final framebuffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) SKBlendMode blendMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sets the blend mode to use when composing the sprite with the final framebuffer.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/SKNode.html">SKNode</a>.<a href="../Constants/SKBlendMode.html">SKBlendMode</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anchorPoint" title="anchorPoint"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anchorPoint">&nbsp;&nbsp;anchorPoint</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Used to choose the location in the sprite that maps to its &lsquo;position&rsquo; in the parent&rsquo;s coordinate space. The valid interval for each input is from 0.0 up to and including 1.0.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGPoint anchorPoint</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Used to choose the location in the sprite that maps to its &lsquo;position&rsquo; in the parent&rsquo;s coordinate space. The valid interval for each input is from 0.0 up to and including 1.0.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/size" title="size"></a>
+	<h3 class="method-title"><code><a href="#//api/name/size">&nbsp;&nbsp;size</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the size of the sprite (in parent&rsquo;s coordinate space)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGSize size</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set the size of the sprite (in parent&rsquo;s coordinate space)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scaleToSize:" title="scaleToSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scaleToSize:">&ndash;&nbsp;scaleToSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adjust the sprite&rsquo;s xScale &amp; yScale to achieve the desired <a href="#//api/name/size">size</a> (in parent&rsquo;s coordinate space)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scaleToSize:(CGSize)<em>size</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adjust the sprite&rsquo;s xScale &amp; yScale to achieve the desired <a href="#//api/name/size">size</a> (in parent&rsquo;s coordinate space)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SKSpriteNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueForAttributeNamed:" title="valueForAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueForAttributeNamed:">&ndash;&nbsp;valueForAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable SKAttributeValue *)valueForAttributeNamed:(nonnull NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setValue:forAttributeNamed:" title="setValue:forAttributeNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setValue:forAttributeNamed:">&ndash;&nbsp;setValue:forAttributeNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setValue:(SKAttributeValue *)<em>value</em> forAttributeNamed:(nonnull NSString *)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

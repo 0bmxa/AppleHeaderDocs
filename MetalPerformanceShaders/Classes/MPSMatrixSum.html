@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSMatrixSum Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/columns">columns</option>
+		
+		<option value="//api/name/count">count</option>
+		
+		<option value="//api/name/neuronParameterA">neuronParameterA</option>
+		
+		<option value="//api/name/neuronParameterB">neuronParameterB</option>
+		
+		<option value="//api/name/neuronParameterC">neuronParameterC</option>
+		
+		<option value="//api/name/rows">rows</option>
+		
+		<option value="//api/name/transpose">transpose</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/encodeToCommandBuffer:sourceMatrices:resultMatrix:scaleVector:offsetVector:biasVector:startIndex:">- encodeToCommandBuffer:sourceMatrices:resultMatrix:scaleVector:offsetVector:biasVector:startIndex:</option>
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:">- initWithDevice:</option>
+		
+		<option value="//api/name/initWithDevice:count:rows:columns:transpose:">- initWithDevice:count:rows:columns:transpose:</option>
+		
+		<option value="//api/name/neuronType">- neuronType</option>
+		
+		<option value="//api/name/setNeuronType:parameterA:parameterB:parameterC:">- setNeuronType:parameterA:parameterB:parameterC:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSMatrixSum Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSMatrixSum.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSMatrixSum
+@dependency This depends on Metal.framework</p><p>MPSMatrixSum performs a pointwise summation of N <a href="../Classes/MPSMatrix.html">MPSMatrix</a>
+objects and applies an optional bias term and neuron activation
+function.</p>
+
+<p><a href="../Classes/MPSMatrix.html">MPSMatrix</a> A = empty matrix;
+for (i = 0; i &lt; N; ++i)
+A += alpha[i]*B[i];</p>
+
+<p>if (bias)
+A += broadcast(bias);</p>
+
+<p>if (neuron)
+A = applyNeuron(A);</p>
+
+<p>Where B is the array of <a href="../Classes/MPSMatrix.html">MPSMatrix</a> objects, A is the destination
+<a href="../Classes/MPSMatrix.html">MPSMatrix</a>, alpha is an array of scalar values, bias is a vector
+which is broadcast and accumulated across each row of the intermediate
+result, and applyNeuron is a neuron activation function.</p>
+
+<p>Each matrix in the array may have an independent origin.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithDevice:" title="initWithDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:">&ndash;&nbsp;initWithDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Standard init with default properties per filter type</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The <a href="../Classes/MPSKernel.html#//api/name/device">device</a> that the filter will be used on. May not be NULL.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a pointer to the newly initialized object. This will fail, returning
+nil if the <a href="../Classes/MPSKernel.html#//api/name/device">device</a> is not supported. Devices must be
+MTLFeatureSet_iOS_GPUFamily2_v1 or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:count:rows:columns:transpose:" title="initWithDevice:count:rows:columns:transpose:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:count:rows:columns:transpose:">&ndash;&nbsp;initWithDevice:count:rows:columns:transpose:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize a MPSMatrixSum kernel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> count:(NSUInteger)<em>count</em> rows:(NSUInteger)<em>rows</em> columns:(NSUInteger)<em>columns</em> transpose:(BOOL)<em>transpose</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device on which to initialize the kernel.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>count</code></th>
+						<td><p>The number of matrices to be summed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rows</code></th>
+						<td><p>The number of <a href="#//api/name/rows">rows</a> to use in the input matrices.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>columns</code></th>
+						<td><p>The number of <a href="#//api/name/columns">columns</a> to use in the input matrices.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transpose</code></th>
+						<td><p>If YES the result of the summation is to be transposed
+prior to applying the bias and activation.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rows" title="rows"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rows">&nbsp;&nbsp;rows</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of rows to sum.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUInteger rows</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/columns" title="columns"></a>
+	<h3 class="method-title"><code><a href="#//api/name/columns">&nbsp;&nbsp;columns</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of columns to sum.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUInteger columns</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/count" title="count"></a>
+	<h3 class="method-title"><code><a href="#//api/name/count">&nbsp;&nbsp;count</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of matrices to sum.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUInteger count</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/transpose" title="transpose"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transpose">&nbsp;&nbsp;transpose</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The transposition used to initialize the kernel.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL transpose</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setNeuronType:parameterA:parameterB:parameterC:" title="setNeuronType:parameterA:parameterB:parameterC:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setNeuronType:parameterA:parameterB:parameterC:">&ndash;&nbsp;setNeuronType:parameterA:parameterB:parameterC:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specifies a neuron activation function to be used.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setNeuronType:(MPSCNNNeuronType)<em>neuronType</em> parameterA:(float)<em>parameterA</em> parameterB:(float)<em>parameterB</em> parameterC:(float)<em>parameterC</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>neuronType</code></th>
+						<td><p>Type of neuron activation function. For full list see <a href="../Constants/MPSCNNNeuronType.html">MPSCNNNeuronType</a>.h</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameterA</code></th>
+						<td><p>parameterA of neuron activation that is shared across all output values.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameterB</code></th>
+						<td><p>parameterB of neuron activation that is shared across all output values.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameterC</code></th>
+						<td><p>parameterC of neuron activation that is shared across all output values.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method can be used to add a neuron activation funtion of given type with
+associated scalar parameters A, B, and C that are shared across all output values.
+Note that this method can only be used to specify neurons which are specified by three (or fewer)
+parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
+this method for neuron activation functions like MPSCNNNeuronTypePReLU,
+which require per-channel parameter values. An MPSMatrixSum kernel is initialized
+with a default neuron function of MPSCNNNeuronTypeNone.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronType" title="neuronType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronType">&ndash;&nbsp;neuronType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (MPSCNNNeuronType)neuronType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronParameterA" title="neuronParameterA"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronParameterA">&nbsp;&nbsp;neuronParameterA</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Neuron parameter A.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float neuronParameterA</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronParameterB" title="neuronParameterB"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronParameterB">&nbsp;&nbsp;neuronParameterB</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Neuron parameter B.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float neuronParameterB</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/neuronParameterC" title="neuronParameterC"></a>
+	<h3 class="method-title"><code><a href="#//api/name/neuronParameterC">&nbsp;&nbsp;neuronParameterC</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Neuron parameter C.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float neuronParameterC</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeToCommandBuffer:sourceMatrices:resultMatrix:scaleVector:offsetVector:biasVector:startIndex:" title="encodeToCommandBuffer:sourceMatrices:resultMatrix:scaleVector:offsetVector:biasVector:startIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeToCommandBuffer:sourceMatrices:resultMatrix:scaleVector:offsetVector:biasVector:startIndex:">&ndash;&nbsp;encodeToCommandBuffer:sourceMatrices:resultMatrix:scaleVector:offsetVector:biasVector:startIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode the operations to the command buffer</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>buffer</em> sourceMatrices:(NSArray&lt;MPSMatrixconst*&gt; *__nonnull)<em>sourceMatrices</em> resultMatrix:(MPSMatrix *__nonnull)<em>resultMatrix</em> scaleVector:(MPSVector const *__nullable)<em>scaleVector</em> offsetVector:(MPSVector const *__nullable)<em>offsetVector</em> biasVector:(MPSVector const *__nullable)<em>biasVector</em> startIndex:(NSUInteger)<em>startIndex</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>buffer</code></th>
+						<td><p>The command buffer in which to encode the operation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceMatrices</code></th>
+						<td><p>A list of matrices from which the matrix data is read.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resultMatrix</code></th>
+						<td><p>The result matrix.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scaleVector</code></th>
+						<td><p>A <a href="../Classes/MPSVector.html">MPSVector</a> of type MPSDataTypeFloat32 containing the list of
+scale factors, specified in single precision.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>offsetVector</code></th>
+						<td><p>A <a href="../Classes/MPSVector.html">MPSVector</a> of type MPSDataTypeUInt32 containing the list of
+offsets, stored as a packed array of MPSMatrixOffset values.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>biasVector</code></th>
+						<td><p>A <a href="../Classes/MPSVector.html">MPSVector</a> containing the bias terms to add to the result
+prior to applying the neuron function, if any.  May be nil.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startIndex</code></th>
+						<td><p>The starting index into the scale and offset vectors.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized MPSMatrixSum kernel.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the MPSMatrixSum object.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new MPSMatrixSum object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>See @ref MPSKernel#initWithCoder.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSMatrixSum.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

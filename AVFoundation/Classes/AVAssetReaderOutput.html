@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAssetReaderOutput Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_8">_8</option>
+		
+		<option value="//api/name/mediaType">mediaType</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/copyNextSampleBuffer">- copyNextSampleBuffer</option>
+		
+		<option value="//api/name/markConfigurationAsFinal">- markConfigurationAsFinal</option>
+		
+		<option value="//api/name/resetForReadingTimeRanges:">- resetForReadingTimeRanges:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAssetReaderOutput Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAssetReaderOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVAssetReaderOutput
+@abstract
+    AVAssetReaderOutput is an abstract class that defines an interface for reading a single collection of samples of a common media type from an AVAssetReader.</p>
+
+<p>@discussion
+    Clients can read the media data of an asset by adding one or more concrete instances of AVAssetReaderOutput to an AVAssetReader using the <a href="../Classes/AVAssetReader.html#//api/name/addOutput:">[AVAssetReader addOutput:]</a> method.</p>
+
+<pre><code>IMPORTANT PERFORMANCE NOTE: Make sure to set the alwaysCopiesSampleData property to NO if you do not need to modify the sample data in-place, to avoid unnecessary and inefficient copying.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/mediaType" title="mediaType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaType">&nbsp;&nbsp;mediaType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property mediaType
+@abstract
+    The media type of the samples that can be read from the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *mediaType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property mediaType
+@abstract
+    The media type of the samples that can be read from the receiver.</p>
+
+<p>@discussion
+    The value of this property is one of the media type strings defined in AVMediaFormat.h.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_8" title="_8"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_8">&nbsp;&nbsp;_8</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property alwaysCopiesSampleData
+@abstract
+    Indicates whether or not the data in buffers gets copied before being vended to the client.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL alwaysCopiesSampleData NS_AVAILABLE ( 10 _8</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property alwaysCopiesSampleData
+@abstract
+    Indicates whether or not the data in buffers gets copied before being vended to the client.</p>
+
+<p>@discussion
+    When the value of this property is YES, the AVAssetReaderOutput will always vend a buffer with copied data to the client.  Data in such buffers can be freely modified by the client. When the value of this property is NO, the buffers vended to the client may not be copied.  Such buffers may still be referenced by other entities. The result of modifying a buffer whose data hasn&rsquo;t been copied is undefined.  Requesting buffers whose data hasn&rsquo;t been copied when possible can lead to performance improvements.</p>
+
+<pre><code>The default value is YES.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyNextSampleBuffer" title="copyNextSampleBuffer"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyNextSampleBuffer">&ndash;&nbsp;copyNextSampleBuffer</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method copyNextSampleBuffer
+@abstract
+    Copies the next sample buffer for the output synchronously.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable CMSampleBufferRef)copyNextSampleBuffer</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method copyNextSampleBuffer
+@abstract
+    Copies the next sample buffer for the output synchronously.</p>
+
+<p>@result
+    A CMSampleBuffer object referencing the output sample buffer.</p>
+
+<p>@discussion
+    The client is responsible for calling CFRelease on the returned CMSampleBuffer object when finished with it. This method will return NULL if there are no more sample buffers available for the receiver within the time range specified by its AVAssetReader&rsquo;s timeRange property, or if there is an error that prevents the <a href="../Classes/AVAssetReader.html">AVAssetReader</a> from reading more media data. When this method returns NULL, clients should check the value of the associated AVAssetReader&rsquo;s status property to determine why no more samples could be read.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVAssetReaderOutputRandomAccess Methods" name="task_AVAssetReaderOutputRandomAccess Methods"></a>
+						<h2 class="task-title">AVAssetReaderOutputRandomAccess Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property supportsRandomAccess
+@abstract
+    Indicates whether the asset reader output supports reconfiguration of the time ranges to read.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL supportsRandomAccess NS_AVAILABLE ( 10 _10 , 8 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property supportsRandomAccess
+@abstract
+    Indicates whether the asset reader output supports reconfiguration of the time ranges to read.</p>
+
+<p>@discussion
+    When the value of this property is YES, the time ranges read by the asset reader output can be reconfigured during reading using the <a href="#//api/name/resetForReadingTimeRanges:">resetForReadingTimeRanges:</a> method.  This also prevents the attached <a href="../Classes/AVAssetReader.html">AVAssetReader</a> from progressing to AVAssetReaderStatusCompleted until <a href="#//api/name/markConfigurationAsFinal">markConfigurationAsFinal</a> has been invoked.</p>
+
+<pre><code>The default value is NO, which means that the asset reader output may not be reconfigured once reading has begin.  When the value of this property is NO, AVAssetReader may be able to read media data more efficiently, particularly when multiple asset reader outputs are attached.
+
+This property may not be set after -startReading has been called on the attached asset reader.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetForReadingTimeRanges:" title="resetForReadingTimeRanges:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetForReadingTimeRanges:">&ndash;&nbsp;resetForReadingTimeRanges:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method resetForReadingTimeRanges:
+@abstract
+    Starts reading over with a new set of time ranges.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resetForReadingTimeRanges:(NSArray&lt;NSValue*&gt; *)<em>timeRanges</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method resetForReadingTimeRanges:
+@abstract
+    Starts reading over with a new set of time ranges.</p>
+
+<p>@param timeRanges
+    An NSArray of NSValue objects, each representing a single CMTimeRange structure</p>
+
+<p>@discussion
+    This method may only be used if supportsRandomAccess has been set to YES and may not be called after <a href="#//api/name/markConfigurationAsFinal">markConfigurationAsFinal</a> has been invoked.</p>
+
+<pre><code>This method is often used in conjunction with AVAssetWriter multi-pass (see AVAssetWriterInput category AVAssetWriterInputMultiPass).  In this usage, the caller will invoke copyNextSampleBuffer until that method returns NULL and then ask the AVAssetWriterInput for a set of time ranges from which it thinks media data should be re-encoded.  These time ranges are then given to this method to set up the asset reader output for the next pass.
+
+The time ranges set here override the time range set on AVAssetReader.timeRange.  Just as with that property, for each time range in the array the intersection of that time range and CMTimeRangeMake(kCMTimeZero, asset.duration) will take effect.  If the start times of each time range in the array are not strictly increasing or if two or more time ranges in the array overlap, an NSInvalidArgumentException will be raised.  It is an error to include a time range with a non-numeric start time or duration (see CMTIME_IS_NUMERIC), unless the duration is kCMTimePositiveInfinity.
+
+If this method is invoked after the status of the attached AVAssetReader has become AVAssetReaderStatusFailed or AVAssetReaderStatusCancelled, no change in status will occur and the result of the next call to copyNextSampleBuffer will be NULL.
+
+If this method is invoked before all media data has been read (i.e. copyNextSampleBuffer has not yet returned NULL), an exception will be thrown.  This method may not be called before -startReading has been invoked on the attached asset reader.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/markConfigurationAsFinal" title="markConfigurationAsFinal"></a>
+	<h3 class="method-title"><code><a href="#//api/name/markConfigurationAsFinal">&ndash;&nbsp;markConfigurationAsFinal</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method markConfigurationAsFinal
+@abstract
+    Informs the receiver that no more reconfiguration of time ranges is necessary and allows the attached <a href="../Classes/AVAssetReader.html">AVAssetReader</a> to advance to AVAssetReaderStatusCompleted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)markConfigurationAsFinal</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method markConfigurationAsFinal
+@abstract
+    Informs the receiver that no more reconfiguration of time ranges is necessary and allows the attached <a href="../Classes/AVAssetReader.html">AVAssetReader</a> to advance to AVAssetReaderStatusCompleted.</p>
+
+<p>@discussion
+    When the value of supportsRandomAccess is YES, the attached asset reader will not advance to AVAssetReaderStatusCompleted until this method is called.</p>
+
+<pre><code>When the destination of media data vended by the receiver is an AVAssetWriterInput configured for multi-pass encoding, a convenient time to invoke this method is after the asset writer input indicates that no more passes will be performed.
+
+Once this method has been called, further invocations of resetForReadingTimeRanges: are disallowed.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetReaderOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

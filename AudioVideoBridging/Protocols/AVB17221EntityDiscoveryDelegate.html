@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVB17221EntityDiscoveryDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AudioVideoBridging Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/didAddLocalEntity:on17221EntityDiscovery:">- didAddLocalEntity:on17221EntityDiscovery:</option>
+		
+		<option value="//api/name/didAddRemoteEntity:on17221EntityDiscovery:">- didAddRemoteEntity:on17221EntityDiscovery:</option>
+		
+		<option value="//api/name/didRediscoverLocalEntity:on17221EntityDiscovery:">- didRediscoverLocalEntity:on17221EntityDiscovery:</option>
+		
+		<option value="//api/name/didRediscoverRemoteEntity:on17221EntityDiscovery:">- didRediscoverRemoteEntity:on17221EntityDiscovery:</option>
+		
+		<option value="//api/name/didRemoveLocalEntity:on17221EntityDiscovery:">- didRemoveLocalEntity:on17221EntityDiscovery:</option>
+		
+		<option value="//api/name/didRemoveRemoteEntity:on17221EntityDiscovery:">- didRemoveRemoteEntity:on17221EntityDiscovery:</option>
+		
+		<option value="//api/name/didUpdateLocalEntity:changedProperties:on17221EntityDiscovery:">- didUpdateLocalEntity:changedProperties:on17221EntityDiscovery:</option>
+		
+		<option value="//api/name/didUpdateRemoteEntity:changedProperties:on17221EntityDiscovery:">- didUpdateRemoteEntity:changedProperties:on17221EntityDiscovery:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVB17221EntityDiscoveryDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>AVB17221EntityDiscoveryDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@protocol   AVB17221EntityDiscoveryDelegate
+</code></pre><p>AVB17221EntityDiscoveryDelegate is an objective-c protocol for classes acting as the discovery delegate of the <a href="../Classes/AVB17221EntityDiscovery.html">AVB17221EntityDiscovery</a> object.
+                There is a separate callback for each phase of entity discover and property updates. Callbacks are separated between entities discovered on the
+                network and those published locally on the Mac.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/didAddRemoteEntity:on17221EntityDiscovery:" title="didAddRemoteEntity:on17221EntityDiscovery:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didAddRemoteEntity:on17221EntityDiscovery:">&ndash;&nbsp;didAddRemoteEntity:on17221EntityDiscovery:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called whenever a new IOAVB17221RemoteEntity is published.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didAddRemoteEntity:(AVB17221Entity *)<em>newEntity</em> on17221EntityDiscovery:(AVB17221EntityDiscovery *)<em>entityDiscovery</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newEntity</code></th>
+						<td><p>The entity which has been discovered.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityDiscovery</code></th>
+						<td><p>The entity discovery service which discovered the entity.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     didAddRemoteEntity:on17221EntityDiscovery:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscoveryDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didRemoveRemoteEntity:on17221EntityDiscovery:" title="didRemoveRemoteEntity:on17221EntityDiscovery:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didRemoveRemoteEntity:on17221EntityDiscovery:">&ndash;&nbsp;didRemoveRemoteEntity:on17221EntityDiscovery:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called whenever an IOAVB17221RemoteEntity is removed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didRemoveRemoteEntity:(AVB17221Entity *)<em>oldEntity</em> on17221EntityDiscovery:(AVB17221EntityDiscovery *)<em>entityDiscovery</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>oldEntity</code></th>
+						<td><p>The entity which was removed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityDiscovery</code></th>
+						<td><p>The entity discovery service which discovered the entity.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     didRemoveRemoteEntity:on17221EntityDiscovery:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscoveryDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didRediscoverRemoteEntity:on17221EntityDiscovery:" title="didRediscoverRemoteEntity:on17221EntityDiscovery:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didRediscoverRemoteEntity:on17221EntityDiscovery:">&ndash;&nbsp;didRediscoverRemoteEntity:on17221EntityDiscovery:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called whenever the entity discovery service detects an IOAVB17221RemoteEntity has been published but it hasn&rsquo;t been removed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didRediscoverRemoteEntity:(AVB17221Entity *)<em>entity</em> on17221EntityDiscovery:(AVB17221EntityDiscovery *)<em>entityDiscovery</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entity</code></th>
+						<td><p>The entity which was rediscovered.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityDiscovery</code></th>
+						<td><p>The entity discovery service which discovered the entity.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     didRediscoverRemoteEntity:on17221EntityDiscovery:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscoveryDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didUpdateRemoteEntity:changedProperties:on17221EntityDiscovery:" title="didUpdateRemoteEntity:changedProperties:on17221EntityDiscovery:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didUpdateRemoteEntity:changedProperties:on17221EntityDiscovery:">&ndash;&nbsp;didUpdateRemoteEntity:changedProperties:on17221EntityDiscovery:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called whenever the properties of the entity are updated and the kernel notifies user space.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didUpdateRemoteEntity:(AVB17221Entity *)<em>entity</em> changedProperties:(AVB17221EntityPropertyChanged)<em>changedProperties</em> on17221EntityDiscovery:(AVB17221EntityDiscovery *)<em>entityDiscovery</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entity</code></th>
+						<td><p>The entity which had the properties updated.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>changedProperties</code></th>
+						<td><p>A bitfield indicating which fields had their values updated.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityDiscovery</code></th>
+						<td><p>The entity discovery service which discovered the entity.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     didUpdateRemoteEntity:changedProperties:on17221EntityDiscovery:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscoveryDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didAddLocalEntity:on17221EntityDiscovery:" title="didAddLocalEntity:on17221EntityDiscovery:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didAddLocalEntity:on17221EntityDiscovery:">&ndash;&nbsp;didAddLocalEntity:on17221EntityDiscovery:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called whenever a new IOAVB17221LocalEntity is published.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didAddLocalEntity:(AVB17221Entity *)<em>newEntity</em> on17221EntityDiscovery:(AVB17221EntityDiscovery *)<em>entityDiscovery</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newEntity</code></th>
+						<td><p>The entity which has been discovered.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityDiscovery</code></th>
+						<td><p>The entity discovery service which discovered the entity.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     didAddLocalEntity:on17221EntityDiscovery:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscoveryDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didRemoveLocalEntity:on17221EntityDiscovery:" title="didRemoveLocalEntity:on17221EntityDiscovery:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didRemoveLocalEntity:on17221EntityDiscovery:">&ndash;&nbsp;didRemoveLocalEntity:on17221EntityDiscovery:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called whenever an IOAVB17221LocalEntity is removed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didRemoveLocalEntity:(AVB17221Entity *)<em>oldEntity</em> on17221EntityDiscovery:(AVB17221EntityDiscovery *)<em>entityDiscovery</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>oldEntity</code></th>
+						<td><p>The entity which was removed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityDiscovery</code></th>
+						<td><p>The entity discovery service which discovered the entity.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     didRemoveLocalEntity:on17221EntityDiscovery:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscoveryDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didRediscoverLocalEntity:on17221EntityDiscovery:" title="didRediscoverLocalEntity:on17221EntityDiscovery:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didRediscoverLocalEntity:on17221EntityDiscovery:">&ndash;&nbsp;didRediscoverLocalEntity:on17221EntityDiscovery:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called whenever the entity discovery service detects an IOAVB17221LocalEntity has been published but it hasn&rsquo;t been removed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didRediscoverLocalEntity:(AVB17221Entity *)<em>entity</em> on17221EntityDiscovery:(AVB17221EntityDiscovery *)<em>entityDiscovery</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entity</code></th>
+						<td><p>The entity which was rediscovered.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityDiscovery</code></th>
+						<td><p>The entity discovery service which discovered the entity.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     didRediscoverLocalEntity:on17221EntityDiscovery:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscoveryDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didUpdateLocalEntity:changedProperties:on17221EntityDiscovery:" title="didUpdateLocalEntity:changedProperties:on17221EntityDiscovery:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didUpdateLocalEntity:changedProperties:on17221EntityDiscovery:">&ndash;&nbsp;didUpdateLocalEntity:changedProperties:on17221EntityDiscovery:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called whenever the properties of the entity are updated and the kernel notifies user space.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didUpdateLocalEntity:(AVB17221Entity *)<em>entity</em> changedProperties:(AVB17221EntityPropertyChanged)<em>changedProperties</em> on17221EntityDiscovery:(AVB17221EntityDiscovery *)<em>entityDiscovery</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entity</code></th>
+						<td><p>The entity which had the properties updated.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>changedProperties</code></th>
+						<td><p>A bitfield indicating which fields had their values updated.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityDiscovery</code></th>
+						<td><p>The entity discovery service which discovered the entity.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     didUpdateLocalEntity:changedProperties:on17221EntityDiscovery:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscoveryDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

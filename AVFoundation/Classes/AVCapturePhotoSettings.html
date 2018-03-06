@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCapturePhotoSettings Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_2">_2</option>
+		
+		<option value="//api/name/autoStillImageStabilizationEnabled">autoStillImageStabilizationEnabled</option>
+		
+		<option value="//api/name/availablePreviewPhotoPixelFormatTypes">availablePreviewPhotoPixelFormatTypes</option>
+		
+		<option value="//api/name/flashMode">flashMode</option>
+		
+		<option value="//api/name/format">format</option>
+		
+		<option value="//api/name/highResolutionPhotoEnabled">highResolutionPhotoEnabled</option>
+		
+		<option value="//api/name/livePhotoMovieFileURL">livePhotoMovieFileURL</option>
+		
+		<option value="//api/name/livePhotoMovieMetadata">livePhotoMovieMetadata</option>
+		
+		<option value="//api/name/previewPhotoFormat">previewPhotoFormat</option>
+		
+		<option value="//api/name/rawPhotoPixelFormatType">rawPhotoPixelFormatType</option>
+		
+		<option value="//api/name/uniqueID">uniqueID</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/photoSettings">+ photoSettings</option>
+		
+		<option value="//api/name/photoSettingsFromPhotoSettings:">+ photoSettingsFromPhotoSettings:</option>
+		
+		<option value="//api/name/photoSettingsWithFormat:">+ photoSettingsWithFormat:</option>
+		
+		<option value="//api/name/photoSettingsWithRawPixelFormatType:">+ photoSettingsWithRawPixelFormatType:</option>
+		
+		<option value="//api/name/photoSettingsWithRawPixelFormatType:processedFormat:">+ photoSettingsWithRawPixelFormatType:processedFormat:</option>
+		
+		<option value="//api/name/photoSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:">+ photoSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCapturePhotoSettings Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCapturePhotoOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCapturePhotoSettings
+@abstract
+    A mutable settings object encapsulating all the desired properties of a photo capture.</p>
+
+<p>@discussion
+    To take a picture, a client instantiates and configures an AVCapturePhotoSettings object, then calls AVCapturePhotoOutput&rsquo;s -capturePhotoWithSettings:delegate:, passing the settings and a delegate to be informed when events relating to the photo capture occur. Since AVCapturePhotoSettings has no reference to the <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a> instance with which it will be used, minimal validation occurs while you configure an AVCapturePhotoSettings instance. The bulk of the validation is executed when you call AVCapturePhotoOutput&rsquo;s -capturePhotoWithSettings:delegate:.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/photoSettings" title="photoSettings"></a>
+	<h3 class="method-title"><code><a href="#//api/name/photoSettings">+&nbsp;photoSettings</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method photoSettings
+@abstract
+    Creates a default instance of AVCapturePhotoSettings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)photoSettings</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method photoSettings
+@abstract
+    Creates a default instance of AVCapturePhotoSettings.</p>
+
+<p>@result
+    An instance of AVCapturePhotoSettings.</p>
+
+<p>@discussion
+    A default AVCapturePhotoSettings object has a <a href="#//api/name/format">format</a> of AVVideoCodecTypeJPEG, a fileType of AVFileTypeJPEG, and <a href="#//api/name/autoStillImageStabilizationEnabled">autoStillImageStabilizationEnabled</a> set to YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/photoSettingsWithFormat:" title="photoSettingsWithFormat:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/photoSettingsWithFormat:">+&nbsp;photoSettingsWithFormat:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method photoSettingsWithFormat:
+@abstract
+    Creates an instance of AVCapturePhotoSettings with a user-specified output <a href="#//api/name/format">format</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)photoSettingsWithFormat:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>format</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method photoSettingsWithFormat:
+@abstract
+    Creates an instance of AVCapturePhotoSettings with a user-specified output <a href="#//api/name/format">format</a>.</p>
+
+<p>@param <a href="#//api/name/format">format</a>
+    A dictionary of Core Video pixel buffer attributes or AVVideoSettings, analogous to AVCaptureStillImageOutput&rsquo;s outputSettings property.
+@result
+    An instance of AVCapturePhotoSettings.</p>
+
+<p>@discussion
+    If you wish an uncompressed <a href="#//api/name/format">format</a>, your dictionary must contain kCVPixelBufferPixelFormatTypeKey, and the <a href="#//api/name/format">format</a> specified must be present in AVCapturePhotoOutput&rsquo;s -availablePhotoPixelFormatTypes array. kCVPixelBufferPixelFormatTypeKey is the only supported key when expressing uncompressed output. If you wish a compressed <a href="#//api/name/format">format</a>, your dictionary must contain AVVideoCodecKey and the codec specified must be present in AVCapturePhotoOutput&rsquo;s -availablePhotoCodecTypes array. If you are specifying a compressed <a href="#//api/name/format">format</a>, the AVVideoCompressionPropertiesKey is also supported, with a payload dictionary containing a single AVVideoQualityKey. Passing a nil <a href="#//api/name/format">format</a> dictionary is analogous to calling <a href="#//api/name/photoSettings">photoSettings</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/photoSettingsWithRawPixelFormatType:" title="photoSettingsWithRawPixelFormatType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/photoSettingsWithRawPixelFormatType:">+&nbsp;photoSettingsWithRawPixelFormatType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method photoSettingsWithRawPixelFormatType:
+@abstract
+    Creates an instance of AVCapturePhotoSettings specifying RAW only output.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)photoSettingsWithRawPixelFormatType:(OSType)<em>rawPixelFormatType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method photoSettingsWithRawPixelFormatType:
+@abstract
+    Creates an instance of AVCapturePhotoSettings specifying RAW only output.</p>
+
+<p>@param rawPixelFormatType
+    A Bayer RAW pixel <a href="#//api/name/format">format</a> OSType (defined in CVPixelBuffer.h).
+@result
+    An instance of AVCapturePhotoSettings.</p>
+
+<p>@discussion
+    rawPixelFormatType must be one of the OSTypes contained in AVCapturePhotoOutput&rsquo;s -availableRawPhotoPixelFormatTypes array. See AVCapturePhotoOutput&rsquo;s -capturePhotoWithSettings:delegate: inline documentation for a discussion of restrictions on AVCapturePhotoSettings when requesting RAW capture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/photoSettingsWithRawPixelFormatType:processedFormat:" title="photoSettingsWithRawPixelFormatType:processedFormat:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/photoSettingsWithRawPixelFormatType:processedFormat:">+&nbsp;photoSettingsWithRawPixelFormatType:processedFormat:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method photoSettingsWithRawPixelFormatType:processedFormat:
+@abstract
+    Creates an instance of AVCapturePhotoSettings specifying RAW + a processed <a href="#//api/name/format">format</a> (such as JPEG).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)photoSettingsWithRawPixelFormatType:(OSType)<em>rawPixelFormatType</em> processedFormat:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>processedFormat</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method photoSettingsWithRawPixelFormatType:processedFormat:
+@abstract
+    Creates an instance of AVCapturePhotoSettings specifying RAW + a processed <a href="#//api/name/format">format</a> (such as JPEG).</p>
+
+<p>@param rawPixelFormatType
+    A Bayer RAW pixel <a href="#//api/name/format">format</a> OSType (defined in CVPixelBuffer.h).
+@param processedFormat
+    A dictionary of Core Video pixel buffer attributes or AVVideoSettings, analogous to AVCaptureStillImageOutput&rsquo;s outputSettings property.
+@result
+    An instance of AVCapturePhotoSettings.</p>
+
+<p>@discussion
+    rawPixelFormatType must be one of the OSTypes contained in AVCapturePhotoOutput&rsquo;s -availableRawPhotoPixelFormatTypes array. If you wish an uncompressed processedFormat, your dictionary must contain kCVPixelBufferPixelFormatTypeKey, and the processedFormat specified must be present in AVCapturePhotoOutput&rsquo;s -availablePhotoPixelFormatTypes array. kCVPixelBufferPixelFormatTypeKey is the only supported key when expressing uncompressed processedFormat. If you wish a compressed <a href="#//api/name/format">format</a>, your dictionary must contain AVVideoCodecKey and the codec specified must be present in AVCapturePhotoOutput&rsquo;s -availablePhotoCodecTypes array. If you are specifying a compressed <a href="#//api/name/format">format</a>, the AVVideoCompressionPropertiesKey is also supported, with a payload dictionary containing a single AVVideoQualityKey. Passing a nil processedFormat dictionary is analogous to calling <a href="#//api/name/photoSettingsWithRawPixelFormatType:">photoSettingsWithRawPixelFormatType:</a>. See AVCapturePhotoOutput&rsquo;s -capturePhotoWithSettings:delegate: inline documentation for a discussion of restrictions on AVCapturePhotoSettings when requesting RAW capture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/photoSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:" title="photoSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/photoSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:">+&nbsp;photoSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method photoSettingsWithRawPixelFormatType:processedFormat:fileType:
+@abstract
+    Creates an instance of AVCapturePhotoSettings specifying RAW + a processed <a href="#//api/name/format">format</a> (such as JPEG) and a file container to which it will be written.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)photoSettingsWithRawPixelFormatType:(OSType)<em>rawPixelFormatType</em> rawFileType:(nullable AVFileType)<em>rawFileType</em> processedFormat:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>processedFormat</em> processedFileType:(nullable AVFileType)<em>processedFileType</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method photoSettingsWithRawPixelFormatType:processedFormat:fileType:
+@abstract
+    Creates an instance of AVCapturePhotoSettings specifying RAW + a processed <a href="#//api/name/format">format</a> (such as JPEG) and a file container to which it will be written.</p>
+
+<p>@param rawPixelFormatType
+    A Bayer RAW pixel <a href="#//api/name/format">format</a> OSType (defined in CVPixelBuffer.h). Pass 0 if you do not desire a RAW photo callback.
+@param rawFileType
+    The file container for which the RAW image should be formatted to be written. Pass nil if you have no preferred file container. A default container will be chosen for you.
+@param processedFormat
+    A dictionary of Core Video pixel buffer attributes or AVVideoSettings, analogous to AVCaptureStillImageOutput&rsquo;s outputSettings property. Pass nil if you do not desire a processed photo callback.
+@param processedFileType
+    The file container for which the processed image should be formatted to be written. Pass nil if you have no preferred file container. A default container will be chosen for you.
+@result
+    An instance of AVCapturePhotoSettings.</p>
+
+<p>@discussion
+    rawPixelFormatType must be one of the OSTypes contained in AVCapturePhotoOutput&rsquo;s -availableRawPhotoPixelFormatTypes array. Set rawPixelFormatType to 0 if you do not desire a RAW photo callback. If you are specifying a rawFileType, it must be present in AVCapturePhotoOutput&rsquo;s -availableRawPhotoFileTypes array. If you wish an uncompressed processedFormat, your dictionary must contain kCVPixelBufferPixelFormatTypeKey, and the processedFormat specified must be present in AVCapturePhotoOutput&rsquo;s -availablePhotoPixelFormatTypes array. kCVPixelBufferPixelFormatTypeKey is the only supported key when expressing uncompressed processedFormat. If you wish a compressed <a href="#//api/name/format">format</a>, your dictionary must contain AVVideoCodecKey and the codec specified must be present in AVCapturePhotoOutput&rsquo;s -availablePhotoCodecTypes array. If you are specifying a compressed <a href="#//api/name/format">format</a>, the AVVideoCompressionPropertiesKey is also supported, with a payload dictionary containing a single AVVideoQualityKey. If you are specifying a processedFileType, it must be present in AVCapturePhotoOutput&rsquo;s -availablePhotoFileTypes array. Pass a nil processedFormat dictionary if you only desire a RAW photo capture. See AVCapturePhotoOutput&rsquo;s -capturePhotoWithSettings:delegate: inline documentation for a discussion of restrictions on AVCapturePhotoSettings when requesting RAW capture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/photoSettingsFromPhotoSettings:" title="photoSettingsFromPhotoSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/photoSettingsFromPhotoSettings:">+&nbsp;photoSettingsFromPhotoSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method photoSettingsFromPhotoSettings:
+@abstract
+    Creates an instance of AVCapturePhotoSettings with a new <a href="#//api/name/uniqueID">uniqueID</a> from an existing instance of AVCapturePhotoSettings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)photoSettingsFromPhotoSettings:(AVCapturePhotoSettings *)<em>photoSettings</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method photoSettingsFromPhotoSettings:
+@abstract
+    Creates an instance of AVCapturePhotoSettings with a new <a href="#//api/name/uniqueID">uniqueID</a> from an existing instance of AVCapturePhotoSettings.</p>
+
+<p>@param <a href="#//api/name/photoSettings">photoSettings</a>
+     An existing AVCapturePhotoSettings instance.
+@result
+    An new instance of AVCapturePhotoSettings with new <a href="#//api/name/uniqueID">uniqueID</a>.</p>
+
+<p>@discussion
+    Use this factory method to create a clone of an existing photo settings instance, but with a new <a href="#//api/name/uniqueID">uniqueID</a> that can safely be passed to <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a> -capturePhotoWithSettings:delegate:.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/uniqueID" title="uniqueID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uniqueID">&nbsp;&nbsp;uniqueID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property uniqueID
+@abstract
+    A 64-bit number that uniquely identifies this instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) int64_t uniqueID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property uniqueID
+@abstract
+    A 64-bit number that uniquely identifies this instance.</p>
+
+<p>@discussion
+    When you create an instance of AVCapturePhotoSettings, a uniqueID is generated automatically. This uniqueID is guaranteed to be unique for the life time of your process.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/format" title="format"></a>
+	<h3 class="method-title"><code><a href="#//api/name/format">&nbsp;&nbsp;format</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property format
+@abstract
+    A dictionary of Core Video pixel buffer attributes or AVVideoSettings, analogous to AVCaptureStillImageOutput&rsquo;s outputSettings property.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy, nullable) NSDictionary&lt;NSString*id&gt; *format</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property format
+@abstract
+    A dictionary of Core Video pixel buffer attributes or AVVideoSettings, analogous to AVCaptureStillImageOutput&rsquo;s outputSettings property.</p>
+
+<p>@discussion
+    The format dictionary you passed to one of the creation methods. May be nil if you&rsquo;ve specified RAW-only capture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property processedFileType
+@abstract
+    The file container for which the processed photo is formatted to be stored.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly) AVFileType processedFileType NS_AVAILABLE_IOS ( 11 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property processedFileType
+@abstract
+    The file container for which the processed photo is formatted to be stored.</p>
+
+<p>@discussion
+    The formatting of data within a photo buffer is often dependent on the file <a href="#//api/name/format">format</a> intended for storage. For instance, a JPEG encoded photo buffer intended for storage in a JPEG (JPEG File Interchange Format) file differs from JPEG to be stored in HEIF. The HEIF-containerized JPEG buffer is tiled for readback efficiency and partitioned into the box structure dictated by the HEIF file <a href="#//api/name/format">format</a>. Some codecs are only supported by <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a> if containerized. For instance, the AVVideoCodecTypeHEVC is only supported with AVFileTypeHEIF formatting. To discover which photo pixel <a href="#//api/name/format">format</a> types and video codecs are supported for a given file type, you may query AVCapturePhotoOutput&rsquo;s -supportedPhotoPixelFormatTypesForFileType:, or -supportedPhotoCodecTypesForFileType: respectively.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rawPhotoPixelFormatType" title="rawPhotoPixelFormatType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rawPhotoPixelFormatType">&nbsp;&nbsp;rawPhotoPixelFormatType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property rawPhotoPixelFormatType
+@abstract
+    A Bayer RAW pixel <a href="#//api/name/format">format</a> OSType (defined in CVPixelBuffer.h).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) OSType rawPhotoPixelFormatType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property rawPhotoPixelFormatType
+@abstract
+    A Bayer RAW pixel <a href="#//api/name/format">format</a> OSType (defined in CVPixelBuffer.h).</p>
+
+<p>@discussion
+    The rawPixelFormatType you specified in one of the creation methods. Returns 0 if you did not specify RAW capture. See AVCapturePhotoOutput&rsquo;s -capturePhotoWithSettings:delegate: inline documentation for a discussion of restrictions on AVCapturePhotoSettings when requesting RAW capture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flashMode" title="flashMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flashMode">&nbsp;&nbsp;flashMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property flashMode
+@abstract
+    Specifies whether the flash should be on, off, or chosen automatically by <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) AVCaptureFlashMode flashMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property flashMode
+@abstract
+    Specifies whether the flash should be on, off, or chosen automatically by <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>.</p>
+
+<p>@discussion
+    flashMode takes the place of the deprecated <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a> -flashMode API. Setting <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a>.flashMode has no effect on <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a>, which only pays attention to the flashMode specified in your AVCapturePhotoSettings. The default value is AVCaptureFlashModeOff. Flash modes are defined in <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a>.h. If you specify a flashMode of AVCaptureFlashModeOn, it wins over autoStillImageStabilizationEnabled=YES. When the device becomes very hot, the flash becomes temporarily unavailable until the device cools down (see AVCaptureDevice&rsquo;s -flashAvailable). While the flash is unavailable, AVCapturePhotoOutput&rsquo;s -supportedFlashModes property still reports AVCaptureFlashModeOn and AVCaptureFlashModeAuto as being available, thus allowing you to specify a flashMode of AVCaptureModeOn. You should always check the <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a> provided to you in the <a href="../Protocols/AVCapturePhotoCaptureDelegate.html">AVCapturePhotoCaptureDelegate</a> callbacks, as the resolved flashEnabled property will tell you definitively if the flash is being used.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/autoStillImageStabilizationEnabled" title="autoStillImageStabilizationEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/autoStillImageStabilizationEnabled">&nbsp;&nbsp;autoStillImageStabilizationEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property autoStillImageStabilizationEnabled
+@abstract
+    Specifies whether still image stabilization should be used automatically.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isAutoStillImageStabilizationEnabled) BOOL autoStillImageStabilizationEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property autoStillImageStabilizationEnabled
+@abstract
+    Specifies whether still image stabilization should be used automatically.</p>
+
+<p>@discussion
+    Default is YES unless you are capturing a RAW photo (RAW photos may not be processed by definition) or a bracket using <a href="../Classes/AVCapturePhotoBracketSettings.html">AVCapturePhotoBracketSettings</a>. When set to YES, still image stabilization is applied automatically in low light to counteract hand shake. If the device has optical image stabilization, autoStillImageStabilizationEnabled makes use of lens stabilization as well.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_2" title="_2"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_2">&nbsp;&nbsp;_2</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property autoDualCameraFusionEnabled
+@abstract
+    Specifies whether DualCamera image fusion should be used automatically.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isAutoDualCameraFusionEnabled) BOOL autoDualCameraFusionEnabled NS_AVAILABLE_IOS ( 10 _2</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property autoDualCameraFusionEnabled
+@abstract
+    Specifies whether DualCamera image fusion should be used automatically.</p>
+
+<p>@discussion
+    Default is YES unless you are capturing a RAW photo (RAW photos may not be processed by definition) or a bracket using AVCapturePhotoBracketSettings. When set to YES, and <a href="../Classes/AVCapturePhotoOutput.html#//api/name/_2">[AVCapturePhotoOutput isDualCameraFusionSupported]</a> is also YES, wide-angle and telephoto images may be fused to improve still image quality, depending on the current zoom factor, light levels, and focus position. You may determine whether DualCamera fusion is enabled for a particular capture request by inspecting the dualCameraFusionEnabled property of the <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a>. Note that when using the deprecated <a href="../Classes/AVCaptureStillImageOutput.html">AVCaptureStillImageOutput</a> interface with the DualCamera, auto DualCamera fusion is always enabled and may not be turned off.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/highResolutionPhotoEnabled" title="highResolutionPhotoEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/highResolutionPhotoEnabled">&nbsp;&nbsp;highResolutionPhotoEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property highResolutionPhotoEnabled
+@abstract
+    Specifies whether photos should be captured at the highest resolution supported by the source AVCaptureDevice&rsquo;s activeFormat.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isHighResolutionPhotoEnabled) BOOL highResolutionPhotoEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property highResolutionPhotoEnabled
+@abstract
+    Specifies whether photos should be captured at the highest resolution supported by the source AVCaptureDevice&rsquo;s activeFormat.</p>
+
+<p>@discussion
+    Default is NO. By default, <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a> emits images with the same dimensions as its source AVCaptureDevice&rsquo;s activeFormat.formatDescription. However, if you set this property to YES, the <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a> emits images at its source AVCaptureDevice&rsquo;s activeFormat.highResolutionStillImageDimensions. Note that if you enable video stabilization (see AVCaptureConnection&rsquo;s preferredVideoStabilizationMode) for any output, the high resolution photos emitted by <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a> may be smaller by 10 or more percent. You may inspect your <a href="../Classes/AVCaptureResolvedPhotoSettings.html">AVCaptureResolvedPhotoSettings</a> in the delegate callbacks to discover the exact dimensions of the capture photo(s).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/livePhotoMovieFileURL" title="livePhotoMovieFileURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/livePhotoMovieFileURL">&nbsp;&nbsp;livePhotoMovieFileURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property livePhotoMovieFileURL
+@abstract
+    Specifies that a Live Photo movie be captured to complement the still photo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSURL *livePhotoMovieFileURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property livePhotoMovieFileURL
+@abstract
+    Specifies that a Live Photo movie be captured to complement the still photo.</p>
+
+<p>@discussion
+    A Live Photo movie is a short movie (with audio, if you&rsquo;ve added an audio input to your session) containing the moments right before and after the still photo. A QuickTime movie file will be written to disk at the URL specified if it is a valid file URL accessible to your app&rsquo;s sandbox. You may only set this property if AVCapturePhotoOutput&rsquo;s livePhotoCaptureSupported property is YES. When you specify a Live Photo, your <a href="../Protocols/AVCapturePhotoCaptureDelegate.html">AVCapturePhotoCaptureDelegate</a> object must implement -captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/livePhotoMovieMetadata" title="livePhotoMovieMetadata"></a>
+	<h3 class="method-title"><code><a href="#//api/name/livePhotoMovieMetadata">&nbsp;&nbsp;livePhotoMovieMetadata</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property livePhotoMovieMetadata
+@abstract
+    Movie-level metadata to be written to the Live Photo movie.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, null_resettable) NSArray&lt;AVMetadataItem*&gt; *livePhotoMovieMetadata</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property livePhotoMovieMetadata
+@abstract
+    Movie-level metadata to be written to the Live Photo movie.</p>
+
+<p>@discussion
+    An array of AVMetadataItems to be inserted into the top level of the Live Photo movie. The receiver makes immutable copies of the AVMetadataItems in the array. Live Photo movies always contain a AVMetadataQuickTimeMetadataKeyContentIdentifier which allow them to be paired with a similar identifier in the MakerNote of the photo complement. AVCapturePhotoSettings generates a unique content identifier for you. If you provide a metadata array containing an <a href="../Classes/AVMetadataItem.html">AVMetadataItem</a> with keyspace = AVMetadataKeySpaceQuickTimeMetadata and key = AVMetadataQuickTimeMetadataKeyContentIdentifier, an NSInvalidArgumentException is thrown.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/availablePreviewPhotoPixelFormatTypes" title="availablePreviewPhotoPixelFormatTypes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/availablePreviewPhotoPixelFormatTypes">&nbsp;&nbsp;availablePreviewPhotoPixelFormatTypes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property availablePreviewPhotoPixelFormatTypes
+@abstract
+    An array of available kCVPixelBufferPixelFormatTypeKeys that may be used when specifying a <a href="#//api/name/previewPhotoFormat">previewPhotoFormat</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSNumber*&gt; *availablePreviewPhotoPixelFormatTypes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property availablePreviewPhotoPixelFormatTypes
+@abstract
+    An array of available kCVPixelBufferPixelFormatTypeKeys that may be used when specifying a <a href="#//api/name/previewPhotoFormat">previewPhotoFormat</a>.</p>
+
+<p>@discussion
+    The array is sorted such that the preview <a href="#//api/name/format">format</a> requiring the fewest conversions is presented first.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/previewPhotoFormat" title="previewPhotoFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/previewPhotoFormat">&nbsp;&nbsp;previewPhotoFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property previewPhotoFormat
+@abstract
+    A dictionary of Core Video pixel buffer attributes specifying the preview photo <a href="#//api/name/format">format</a> to be delivered along with the RAW or processed photo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSDictionary&lt;NSString*id&gt; *previewPhotoFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property previewPhotoFormat
+@abstract
+    A dictionary of Core Video pixel buffer attributes specifying the preview photo <a href="#//api/name/format">format</a> to be delivered along with the RAW or processed photo.</p>
+
+<p>@discussion
+    A dictionary of pixel buffer attributes specifying a smaller version of the RAW or processed photo for preview purposes. The kCVPixelBufferPixelFormatTypeKey is required and must be present in the receiver&rsquo;s <a href="#//api/name/availablePreviewPhotoPixelFormatTypes">availablePreviewPhotoPixelFormatTypes</a> array. Optional keys are { kCVPixelBufferWidthKey | kCVPixelBufferHeightKey }. If you wish to specify dimensions, you must add both width and height. Width and height are only honored up to the display dimensions. If you specify a width and height whose aspect ratio differs from the RAW or processed photo, the larger of the two dimensions is honored and aspect ratio of the RAW or processed photo is always preserved.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

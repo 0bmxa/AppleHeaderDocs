@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVCapturePhoto Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/NS_RETURNS_INNER_POINTER">NS_RETURNS_INNER_POINTER</option>
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/cameraCalibrationData">cameraCalibrationData</option>
+		
+		<option value="//api/name/depthData">depthData</option>
+		
+		<option value="//api/name/embeddedThumbnailPhotoFormat">embeddedThumbnailPhotoFormat</option>
+		
+		<option value="//api/name/metadata">metadata</option>
+		
+		<option value="//api/name/photoCount">photoCount</option>
+		
+		<option value="//api/name/rawPhoto">rawPhoto</option>
+		
+		<option value="//api/name/resolvedSettings">resolvedSettings</option>
+		
+		<option value="//api/name/sourceDeviceType">sourceDeviceType</option>
+		
+		<option value="//api/name/timestamp">timestamp</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/CGImageRepresentation">- CGImageRepresentation</option>
+		
+		<option value="//api/name/fileDataRepresentation">- fileDataRepresentation</option>
+		
+		<option value="//api/name/fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:">- fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:</option>
+		
+		<option value="//api/name/previewCGImageRepresentation">- previewCGImageRepresentation</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVCapturePhoto Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVCapturePhotoOutput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVCapturePhoto
+@abstract
+    An object representing a photo in memory, produced by the -captureOutput:didFinishingProcessingPhoto:error: in the <a href="../Protocols/AVCapturePhotoCaptureDelegate.html">AVCapturePhotoCaptureDelegate</a> protocol method.</p>
+
+<p>@discussion
+    Beginning in iOS 11, AVCapturePhotoOutput&rsquo;s <a href="../Protocols/AVCapturePhotoCaptureDelegate.html">AVCapturePhotoCaptureDelegate</a> supports a simplified callback for delivering image data, namely -captureOutput:didFinishingProcessingPhoto:error:. This callback presents each image result for your capture request as an AVCapturePhoto object, an immutable wrapper from which various properties of the photo capture may be queried, such as the photo&rsquo;s preview pixel buffer, <a href="#//api/name/metadata">metadata</a>, depth data, camera calibration data, and image bracket specific properties. AVCapturePhoto can wrap file-containerized photo results, such as HEVC encoded image data, containerized in the HEIC file format. CMSampleBufferRef, on the other hand, may only be used to express non file format containerized photo data. For this reason, the <a href="../Protocols/AVCapturePhotoCaptureDelegate.html">AVCapturePhotoCaptureDelegate</a> protocol methods that return CMSampleBuffers have been deprecated in favor of -captureOutput:didFinishingProcessingPhoto:error:. A AVCapturePhoto wraps a single image result. For instance, if you&rsquo;ve requested a bracketed capture of 3 images, your callback is called 3 times, each time delivering an AVCapturePhoto.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/timestamp" title="timestamp"></a>
+	<h3 class="method-title"><code><a href="#//api/name/timestamp">&nbsp;&nbsp;timestamp</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property timestamp
+@abstract
+    The time at which this image was captured, synchronized to the masterClock of the <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) CMTime timestamp</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property timestamp
+@abstract
+    The time at which this image was captured, synchronized to the masterClock of the <a href="../Classes/AVCaptureSession.html">AVCaptureSession</a></p>
+
+<p>@discussion
+    The timestamp property indicates the time the image was captured, and is analogous to CMSampleBufferGetPresentationTimeStamp(). If an error was provided in the -captureOutput:didFinishingProcessingPhoto:error: callback, timestamp returns kCMTimeInvalid.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rawPhoto" title="rawPhoto"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rawPhoto">&nbsp;&nbsp;rawPhoto</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property rawPhoto
+@abstract
+    This property returns YES if this photo is a RAW image.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isRawPhoto) BOOL rawPhoto</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property rawPhoto
+@abstract
+    This property returns YES if this photo is a RAW image.</p>
+
+<p>@discussion
+    Your AVCapturePhotoCaptureDelegate&rsquo;s -captureOutput:didFinishingProcessingPhoto:error: method may be called one or more times with image results, including RAW or non-RAW images. This property distinguishes RAW from non-RAW image results, for instance, if you&rsquo;ve requested a RAW + JPEG capture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/NS_RETURNS_INNER_POINTER" title="NS_RETURNS_INNER_POINTER"></a>
+	<h3 class="method-title"><code><a href="#//api/name/NS_RETURNS_INNER_POINTER">&nbsp;&nbsp;NS_RETURNS_INNER_POINTER</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property pixelBuffer
+@abstract
+    For uncompressed or RAW captures, this property offers access to the pixel data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly) CVPixelBufferRef pixelBuffer NS_RETURNS_INNER_POINTER</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property pixelBuffer
+@abstract
+    For uncompressed or RAW captures, this property offers access to the pixel data.</p>
+
+<p>@discussion
+    Uncompressed captures, such as &lsquo;420f&rsquo; or &lsquo;BGRA&rsquo;, or RAW captures, such as &lsquo;bgg4&rsquo;, present pixel data as a CVPixelBuffer. This property is analogous to CMSampleBufferGetImageBuffer(). The pixel buffer contains only the minimal attachments required for correct display. Compressed captures, such as &lsquo;jpeg&rsquo;, return nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/embeddedThumbnailPhotoFormat" title="embeddedThumbnailPhotoFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/embeddedThumbnailPhotoFormat">&nbsp;&nbsp;embeddedThumbnailPhotoFormat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property embeddedThumbnailPhotoFormat
+@abstract
+    The format of the embedded thumbnail contained in this AVCapturePhoto.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly) NSDictionary&lt;NSString*id&gt; *embeddedThumbnailPhotoFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property embeddedThumbnailPhotoFormat
+@abstract
+    The format of the embedded thumbnail contained in this AVCapturePhoto.</p>
+
+<p>@discussion
+    If you requested an embedded thumbnail image by calling [AVCapturePhotoSettings setEmbeddedThumbnailPhotoFormat:] with a non-nil value, this property offers access to the resolved embedded thumbnail AVVideoSettings dictionary. Nil is returned if you did not request an embedded thumbnail image.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/depthData" title="depthData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/depthData">&nbsp;&nbsp;depthData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property depthData
+@abstract
+    An <a href="../Classes/AVDepthData.html">AVDepthData</a> object wrapping a disparity/depth map associated with this photo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly) AVDepthData *depthData</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property depthData
+@abstract
+    An AVDepthData object wrapping a disparity/depth map associated with this photo.</p>
+
+<p>@discussion
+    If you requested depth data delivery by calling [AVCapturePhotoSettings setDepthDataDeliveryEnabled:YES], this property offers access to the resulting AVDepthData object. Nil is returned if you did not request depth data delivery. Note that the depth data is only embedded in the photo&rsquo;s internal file format container if you set [AVCapturePhotoSettings setEmbedsDepthDataInPhoto:YES].</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/metadata" title="metadata"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metadata">&nbsp;&nbsp;metadata</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property metadata
+@abstract
+    An ImageIO property style dictionary of metadata associated with this photo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSDictionary&lt;NSString*id&gt; *metadata</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property metadata
+@abstract
+    An ImageIO property style dictionary of metadata associated with this photo.</p>
+
+<p>@discussion
+    Valid metadata keys are found in &lt;ImageIO/CGImageProperties.h>, such as kCGImagePropertyOrientation, kCGImagePropertyExifDictionary, kCGImagePropertyMakerAppleDictionary, etc.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cameraCalibrationData" title="cameraCalibrationData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cameraCalibrationData">&nbsp;&nbsp;cameraCalibrationData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property cameraCalibrationData
+@abstract
+    An <a href="../Classes/AVCameraCalibrationData.html">AVCameraCalibrationData</a> object representing the calibration information for the camera providing the photo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly) AVCameraCalibrationData *cameraCalibrationData</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property cameraCalibrationData
+@abstract
+    An AVCameraCalibrationData object representing the calibration information for the camera providing the photo.</p>
+
+<p>@discussion
+    Camera calibration data is only present if you call [AVCapturePhotoSettings setCameraCalibrationDataDeliveryEnabled:YES]. When requesting dualCameraDualPhotoDeliveryEnabled plus cameraCalibrationDataDeliveryEnabled, camera calibration information is delivered with both photos. Telephoto camera calibration data is presented with the telephoto AVCapturePhoto, and wide-angle camera calibration data is presented with the wide AVCapturePhoto.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resolvedSettings" title="resolvedSettings"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resolvedSettings">&nbsp;&nbsp;resolvedSettings</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property resolvedSettings
+@abstract
+    The AVCaptureResolvedPhotoSettings associated with all photo results for a given <a href="../Classes/AVCapturePhotoOutput.html#//api/name/capturePhotoWithSettings:delegate:">[AVCapturePhotoOutput capturePhotoWithSettings:delegate:]</a> request.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) AVCaptureResolvedPhotoSettings *resolvedSettings</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property resolvedSettings
+@abstract
+    The AVCaptureResolvedPhotoSettings associated with all photo results for a given <a href="../Classes/AVCapturePhotoOutput.html#//api/name/capturePhotoWithSettings:delegate:">[AVCapturePhotoOutput capturePhotoWithSettings:delegate:]</a> request.</p>
+
+<p>@discussion
+    Even in the event of an error, the resolved settings are always non nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/photoCount" title="photoCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/photoCount">&nbsp;&nbsp;photoCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property photoCount
+@abstract
+    This photo&rsquo;s index (1-based) in the total expected photo count.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSInteger photoCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property photoCount
+@abstract
+    This photo&rsquo;s index (1-based) in the total expected photo count.</p>
+
+<p>@discussion
+    The <a href="#//api/name/resolvedSettings">resolvedSettings</a>.expectedPhotoCount property indicates the total number of images that will be returned for a given capture request. This property indicates this photo&rsquo;s index (1-based). When you receive a -captureOutput:didFinishProcessingPhoto:error: callback with a photo whose photoCount matches <a href="#//api/name/resolvedSettings">resolvedSettings</a>.expectedPhotoCount, you know you&rsquo;ve received the last one for the given capture request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sourceDeviceType" title="sourceDeviceType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceDeviceType">&nbsp;&nbsp;sourceDeviceType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property sourceDeviceType
+@abstract
+    The device type of the source camera providing the photo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly) AVCaptureDeviceType sourceDeviceType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sourceDeviceType
+@abstract
+    The device type of the source camera providing the photo.</p>
+
+<p>@discussion
+    When taking a dual photo capture from the DualCamera, you may query this property to find out the source of the photo: AVCaptureDeviceTypeBuiltInWideCamera, or AVCaptureDeviceTypeBuiltInTelephotoCamera. For all other types of capture, the source device type is equal to the [AVCaptureDevice deviceType] of the <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a> to which the <a href="../Classes/AVCapturePhotoOutput.html">AVCapturePhotoOutput</a> is connected. May return nil if the source of the photo is not an <a href="../Classes/AVCaptureDevice.html">AVCaptureDevice</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVCapturePhotoBracketedCapture Methods" name="task_AVCapturePhotoBracketedCapture Methods"></a>
+						<h2 class="task-title">AVCapturePhotoBracketedCapture Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property bracketSettings
+@abstract
+    The <a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a> associated with this photo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly) AVCaptureBracketedStillImageSettings *NS_AVAILABLE_IOS ( 11 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property bracketSettings
+@abstract
+    The <a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a> associated with this photo.</p>
+
+<p>@discussion
+    When specifying a bracketed capture using <a href="../Classes/AVCapturePhotoBracketSettings.html">AVCapturePhotoBracketSettings</a>, you specify an array of <a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a> &ndash; one per image in the bracket. This property indicates the <a href="../Classes/AVCaptureBracketedStillImageSettings.html">AVCaptureBracketedStillImageSettings</a> associated with this particular photo, or nil if this photo is not part of a bracketed capture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVCapturePhotoConversions Methods" name="task_AVCapturePhotoConversions Methods"></a>
+						<h2 class="task-title">AVCapturePhotoConversions Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/fileDataRepresentation" title="fileDataRepresentation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileDataRepresentation">&ndash;&nbsp;fileDataRepresentation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method fileDataRepresentation
+@abstract
+    Flattens the AVCapturePhoto to an NSData using the file container format (processedFileType or rawFileType) specified in the <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a> (e.g. JFIF, HEIF, DNG).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)fileDataRepresentation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method fileDataRepresentation
+@abstract
+    Flattens the AVCapturePhoto to an NSData using the file container format (processedFileType or rawFileType) specified in the <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a> (e.g. JFIF, HEIF, DNG).</p>
+
+<p>@result
+    An NSData containing bits in the file container&rsquo;s format, or nil if the flattening process fails.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:" title="fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:">&ndash;&nbsp;fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:
+@abstract
+    Flattens the AVCapturePhoto to an NSData using the file container format (processedFileType or rawFileType) specified in the <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a> (e.g. JFIF, HEIF, DNG), and allows you to replace <a href="#//api/name/metadata">metadata</a>, thumbnail, and depth data in the process.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSData *)fileDataRepresentationWithReplacementMetadata:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>replacementMetadata</em> replacementEmbeddedThumbnailPhotoFormat:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>replacementEmbeddedThumbnailPhotoFormat</em> replacementEmbeddedThumbnailPixelBuffer:(nullable CVPixelBufferRef)<em>replacementEmbeddedThumbnailPixelBuffer</em> replacementDepthData:(nullable AVDepthData *)<em>replacementDepthData</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:
+@abstract
+    Flattens the AVCapturePhoto to an NSData using the file container format (processedFileType or rawFileType) specified in the <a href="../Classes/AVCapturePhotoSettings.html">AVCapturePhotoSettings</a> (e.g. JFIF, HEIF, DNG), and allows you to replace <a href="#//api/name/metadata">metadata</a>, thumbnail, and depth data in the process.</p>
+
+<p>@param replacementMetadata
+    A dictionary of keys and values from &lt;ImageIO/CGImageProperties.h>. To preserve existing <a href="#//api/name/metadata">metadata</a> to the file, pass self.<a href="#//api/name/metadata">metadata</a>. To strip existing <a href="#//api/name/metadata">metadata</a>, pass nil. To replace <a href="#//api/name/metadata">metadata</a>, pass a replacement dictionary.
+@param replacementEmbeddedThumbnailPhotoFormat
+    A dictionary of keys and values from &lt;AVFoundation/AVVideoSettings.h>. If you pass a non-nil dictionary, AVVideoCodecKey is required, with AVVideoWidthKey and AVVideoHeightKey being optional. To preserve the existing embedded thumbnail photo to the file, pass self.<a href="#//api/name/embeddedThumbnailPhotoFormat">embeddedThumbnailPhotoFormat</a> and pass nil as your replacementEmbeddedThumbnailPixelBuffer parameter. To strip the existing embedded thumbnail, pass nil for both replacementEmbeddedThumbnailPhotoFormat and replacementEmbeddedThumbnailPixelBuffer. To replace the existing embedded thumbnail photo, pass both a non-nil replacementThumbnailPixelBuffer and replacementEmbeddedThumbnailPhotoFormat dictionary.
+@param replacementEmbeddedThumbnailPixelBuffer
+    A pixel buffer containing a source image to be encoded to the file as the replacement thumbnail image. To preserve the existing embedded thumbnail photo to the file, pass self.<a href="#//api/name/embeddedThumbnailPhotoFormat">embeddedThumbnailPhotoFormat</a> as your replacementEmbeddedThumbnailPhotoFormat parameter and nil as your replacementEmbeddedThumbnailPixelBuffer parameter. To strip the existing embedded thumbnail, pass nil for both replacementEmbeddedThumbnailPhotoFormat and replacementEmbeddedThumbnailPixelBuffer. To replace the existing embedded thumbnail photo, pass both a non-nil replacementThumbnailPixelBuffer and replacementEmbeddedThumbnailPhotoFormat dictionary.
+@param replacementDepthData
+    Replacement depth data to be written to the flattened file container. To preserve existing depth data to the file, pass self.<a href="#//api/name/depthData">depthData</a>. To strip it, pass nil. To replace it, pass a new <a href="../Classes/AVDepthData.html">AVDepthData</a> instance.
+@result
+    An NSData containing bits in the file container&rsquo;s format, or nil if the flattening process fails.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/CGImageRepresentation" title="CGImageRepresentation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/CGImageRepresentation">&ndash;&nbsp;CGImageRepresentation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method CGImageRepresentation
+@abstract
+    Utility method that converts the AVCapturePhoto&rsquo;s primary photo to a CGImage.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable CGImageRef)CGImageRepresentation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method CGImageRepresentation
+@abstract
+    Utility method that converts the AVCapturePhoto&rsquo;s primary photo to a CGImage.</p>
+
+<p>@result
+    A CGImageRef, or nil if the conversion process fails.</p>
+
+<p>@discussion
+    Each time you access this method, AVCapturePhoto generates a new CGImageRef. When backed by a compressed container (such as HEIC), the CGImageRepresentation is decoded lazily as needed. When backed by an uncompressed format such as BGRA, it is copied into a separate backing buffer whose lifetime is not tied to that of the AVCapturePhoto. For a 12 megapixel image, a BGRA CGImage represents ~48 megabytes per call. If you only intend to use the CGImage for on-screen rendering, use the previewCGImageRepresentation instead. Note that the physical rotation of the CGImageRef matches that of the main image. Exif orientation has not been applied. If you wish to apply rotation when working with UIImage, you can do so by querying the photo&rsquo;s metadata[kCGImagePropertyOrientation] value, and passing it as the orientation parameter to [UIImage imageWithCGImage:scale:orientation:]. RAW images always return a CGImageRepresentation of nil. If you wish to make a CGImageRef from a RAW image, use CIRAWFilter in the CoreImage framework.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/previewCGImageRepresentation" title="previewCGImageRepresentation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/previewCGImageRepresentation">&ndash;&nbsp;previewCGImageRepresentation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method <a href="#//api/name/CGImageRepresentation">CGImageRepresentation</a>
+@abstract
+    Utility method that converts the AVCapturePhoto&rsquo;s preview photo to a CGImage.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable CGImageRef)previewCGImageRepresentation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method CGImageRepresentation
+@abstract
+    Utility method that converts the AVCapturePhoto&rsquo;s preview photo to a CGImage.</p>
+
+<p>@result
+    A CGImageRef, or nil if the conversion process fails, or if you did not request a preview photo.</p>
+
+<p>@discussion
+    Each time you access this method, AVCapturePhoto generates a new CGImageRef. This CGImageRepresentation is a RGB rendering of the previewPixelBuffer property. If you did not request a preview photo by setting the <a href="../Classes/AVCapturePhotoSettings.html#//api/name/previewPhotoFormat">[AVCapturePhotoSettings previewPhotoFormat]</a> property, this method returns nil. Note that the physical rotation of the CGImageRef matches that of the main image. Exif orientation has not been applied. If you wish to apply rotation when working with UIImage, you can do so by querying the photo&rsquo;s metadata[kCGImagePropertyOrientation] value, and passing it as the orientation parameter to [UIImage imageWithCGImage:scale:orientation:].</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVCapturePhotoOutput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

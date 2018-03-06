@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IMKTextInput Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Carbon Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/attributedSubstringFromRange:">- attributedSubstringFromRange:</option>
+		
+		<option value="//api/name/attributesForCharacterIndex:lineHeightRectangle:">- attributesForCharacterIndex:lineHeightRectangle:</option>
+		
+		<option value="//api/name/bundleIdentifier">- bundleIdentifier</option>
+		
+		<option value="//api/name/characterIndexForPoint:tracking:inMarkedRange:">- characterIndexForPoint:tracking:inMarkedRange:</option>
+		
+		<option value="//api/name/firstRectForCharacterRange:actualRange:">- firstRectForCharacterRange:actualRange:</option>
+		
+		<option value="//api/name/insertText:replacementRange:">- insertText:replacementRange:</option>
+		
+		<option value="//api/name/length">- length</option>
+		
+		<option value="//api/name/markedRange">- markedRange</option>
+		
+		<option value="//api/name/overrideKeyboardWithKeyboardNamed:">- overrideKeyboardWithKeyboardNamed:</option>
+		
+		<option value="//api/name/selectInputMode:">- selectInputMode:</option>
+		
+		<option value="//api/name/selectedRange">- selectedRange</option>
+		
+		<option value="//api/name/setMarkedText:selectionRange:replacementRange:">- setMarkedText:selectionRange:replacementRange:</option>
+		
+		<option value="//api/name/stringFromRange:actualRange:">- stringFromRange:actualRange:</option>
+		
+		<option value="//api/name/supportsProperty:">- supportsProperty:</option>
+		
+		<option value="//api/name/supportsUnicode">- supportsUnicode</option>
+		
+		<option value="//api/name/uniqueClientIdentifierString">- uniqueClientIdentifierString</option>
+		
+		<option value="//api/name/validAttributesForMarkedText">- validAttributesForMarkedText</option>
+		
+		<option value="//api/name/windowLevel">- windowLevel</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IMKTextInput Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>IMKInputSession.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@protocol    IMKTextInput
+</code></pre><p>Input methods call one of the methods in this protocol to communicate with the client.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/insertText:replacementRange:" title="insertText:replacementRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insertText:replacementRange:">&ndash;&nbsp;insertText:replacementRange:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends text that has been fully converted to an input session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)insertText:(id)<em>string</em> replacementRange:(NSRange)<em>replacementRange</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>When an input method finishes a conversion it calls this method and passes the finished text as an NSString or NSAttributedString. The replacementRange parameter is there to allow input methods to insert text at a location other than the current selection.</p>
+
+<pre><code>           If used the replacementRange should be relative to the beginning of the client document.
+
+           If the string should be inserted at the current selection specify a replacementRange with a location and length of NSNotFound.
+
+            If the client does not support the TSMDocumentAccess protocol the replacementRange string will be ignored.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMarkedText:selectionRange:replacementRange:" title="setMarkedText:selectionRange:replacementRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMarkedText:selectionRange:replacementRange:">&ndash;&nbsp;setMarkedText:selectionRange:replacementRange:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Insert the text and mark it to indicate that it is part of an active input session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setMarkedText:(id)<em>string</em> selectionRange:(NSRange)<em>selectionRange</em> replacementRange:(NSRange)<em>replacementRange</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>The string parameter must be an NSString or an NSAttributedString. Passing an NSString will produce default marking ( On a 72 dpi screen that is a 2 pixel black underline for the entire string).  SelectionRange indicates the area of the string that should be selected and therefore if possible the area that should be displayed. SelectionRange is relative to the string parameter.</p>
+
+<pre><code>           For example, if the string contains the these characters: "INPUT" and the range is (5,0) the selection will be set right after the "T."
+
+           ReplacementRange specifies the location in the client document where the marked text should be placed.  If the marked text should be placed at the current cursor location replacementRange.location will equal NSNotFound.  If used (i.e. location is not NSNotFound) the replacementRange is relative to the client document (i.e. 0 is the beginning of the document) and NOT the string parameter.
+
+           Currently, the replacement range is sent to the client via the kEventParamTextInputSendReplaceRange Carbon Event parameter.  As noted in the comment for this parameter for this parameter to be used the client must support the TSMDocumentAccess protocol.  If a client does not support the TSMDocumentAccess protocol the replacementRange will be ignored.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectedRange" title="selectedRange"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectedRange">&ndash;&nbsp;selectedRange</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the current selection range.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSRange)selectedRange</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>If the client does not support the TSMDocumentAccess protocol the returned range will have a location value of NSNotFound and a <a href="#//api/name/length">length</a> of NSNotFound.</p>
+
+<pre><code>           If a valid range is returned it is relative to the client's document.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/markedRange" title="markedRange"></a>
+	<h3 class="method-title"><code><a href="#//api/name/markedRange">&ndash;&nbsp;markedRange</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the range in the document that is occupied by marked text, which in other terms is the current inline session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSRange)markedRange</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method    
+</code></pre><p>While an input method is converting text input and sending it to the client the client will maintain a range of text that is marked.  That is to say that there will be a range of text that is underlined in certain ways to indicate to the user that their keystrokes are in the process of being converted by an input method and the conversion has not yet been finalized.  The input method uses this method to request that range.  The returned range is relative to the clients document.</p>
+
+<pre><code>         If this range is not available the range location and length will be NSNotFound.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributedSubstringFromRange:" title="attributedSubstringFromRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributedSubstringFromRange:">&ndash;&nbsp;attributedSubstringFromRange:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called to request a string along with its attributes such as font and glyph info.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSAttributedString *)attributedSubstringFromRange:(NSRange)<em>range</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>Input methods call this method to obtain a range of text from the client document along with that text&rsquo;s font and glyphInfo.  The kind of attributes that can be included in the string are defined in CTStringAttributes.h.  The range should be document relative.</p>
+
+<pre><code>           If the client does not support TSMDocumentAccess the returned string will be created from data obtained by sending the client application a kEventTextInputGetSelectedText Carbon event.
+
+            The returned NSAttributedString is an autoreleased object.  Do not release this object unless you retain it first.
+
+            Note it is possible that the returned string will be longer or shorter than the specified range.  This can be caused when there surrogate unicodes in a document, and the range's location or length splits a surrogate pair.
+            You can test for this by comparing the string's length against the range you included as the range parameter.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/length" title="length"></a>
+	<h3 class="method-title"><code><a href="#//api/name/length">&ndash;&nbsp;length</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the length of the text document.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)length</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>If the client does not support the TSMDocumentAccess protocol the returned value will be NSNotFound.</p>
+
+<pre><code>           Please note that depending on how clients store text determing how long a text document is can  be a very expensive operation. Input methods should be aware of this problem and avoid frequently calling this method.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/characterIndexForPoint:tracking:inMarkedRange:" title="characterIndexForPoint:tracking:inMarkedRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/characterIndexForPoint:tracking:inMarkedRange:">&ndash;&nbsp;characterIndexForPoint:tracking:inMarkedRange:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Map a global point to a location in the text document.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)characterIndexForPoint:(NSPoint)<em>point</em> tracking:(IMKLocationToOffsetMappingMode)<em>mappingMode</em> inMarkedRange:(BOOL *)<em>inMarkedRange</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>Given a global point (typically from a mousedown) map that to a location in a text document.</p>
+
+<pre><code>           MappingMode is set to kIMKMouseTrackingMode if the input method is tracking the mouse. If the input method is tracking the mouse the application should pin highlighting to the active inline area.  If the input method simply wants to map a screen postion to an offset than mappingMode should be set to kIMKNearestBoundaryMode.
+
+           If the point is not inside the text body the returned value will be NSNotFound.  If the point is inside the text body and inside the marked range inMarkedRange will be set to YES.  If it is outside the markedRange it will be set to NO.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributesForCharacterIndex:lineHeightRectangle:" title="attributesForCharacterIndex:lineHeightRectangle:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributesForCharacterIndex:lineHeightRectangle:">&ndash;&nbsp;attributesForCharacterIndex:lineHeightRectangle:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a dictionary of text attributes for the text at a given character index. The attributes include the CTFontRef for the text at that index and the text orientation.  The text orientation is indicated by an NSNumber whose value is 0 if the text is vertically oriented and 1 if the text is horizontally oriented. The key for this value is IMKTextOrientationKey. Additionally, a rectangle that would frame a one-pixel wide rectangle with the height of the line is returned in the frame parameter.  Note that rectangle will be oriented the same way the line is oriented.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)attributesForCharacterIndex:(NSUInteger)<em>index</em> lineHeightRectangle:(NSRect *)<em>lineRect</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     - (NSDictionary*)attributesForCharacterIndex:(NSUInteger)index lineHeightRectangle:(NSRect*)lineRect;
+</code></pre><p>Input methods will call this method to place a candidate window on the screen. The index is relative to the inline session.  Note that if there is no inline session the value of index should be 0, which indicates that the information should be taken from the current selection.</p>
+
+<pre><code>            The returned NSDictionary is an autoreleased object.  Don't release it unless you have retained it.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/validAttributesForMarkedText" title="validAttributesForMarkedText"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validAttributesForMarkedText">&ndash;&nbsp;validAttributesForMarkedText</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of NSString names for the attributes supported by the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)validAttributesForMarkedText</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>Input methods should restrict the attributes used to create attributed strings to the attributes in this array.</p>
+
+<pre><code>            This is not a copy function.  The returned NSArray should not be released unless it is first retained.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/overrideKeyboardWithKeyboardNamed:" title="overrideKeyboardWithKeyboardNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overrideKeyboardWithKeyboardNamed:">&ndash;&nbsp;overrideKeyboardWithKeyboardNamed:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Override the current keyboard.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)overrideKeyboardWithKeyboardNamed:(NSString *)<em>keyboardUniqueName</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>Pass a keyboard unique name.  The client will try to locate a keyboard layout with that name in the input method&rsquo;s bundle.  If a layout is found it is passed to the client who then tells the text service manager to use that layout for keyboard events.  Input methods should call the method each time they are activated.</p>
+
+<pre><code>           If an input method wishes to use a system keyboard to override the current keyboard they are responsible for determining the keyboard's unique name.  Typically this name a DNS type name such as: com.apple.&lt;some name&gt;.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectInputMode:" title="selectInputMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectInputMode:">&ndash;&nbsp;selectInputMode:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Select a new  input mode.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)selectInputMode:(NSString *)<em>modeIdentifier</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>The mode identifier is an NSString with a DNS format.</p>
+
+<pre><code>           Typically the mode identifier is a DNS type name such as: com.&lt;company name&gt;.inputmethod.&lt;some name&gt;.  The identifier should match one of the keys in the  ComponentInputModeDict.  This method allows an input method to change its mode directly.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsUnicode" title="supportsUnicode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsUnicode">&ndash;&nbsp;supportsUnicode</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Test to see if the current input session supports Unicode text.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsUnicode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>Input methods that restrict the character codes sent to a client if that client does not support Unicode text should call this method to learn if a given input session supports Unicode text.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bundleIdentifier" title="bundleIdentifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bundleIdentifier">&ndash;&nbsp;bundleIdentifier</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the bundle identifier for the process that the input session is attached to.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)bundleIdentifier</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>Many input methods need to be able to identify the process that input sessions belong to.  This method provides that service.</p>
+
+<pre><code>            The returned NSString is an autoreleased object.  Call retain to own it.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/windowLevel" title="windowLevel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/windowLevel">&ndash;&nbsp;windowLevel</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the window level for client window.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGWindowLevel)windowLevel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>Call this to determine the client&rsquo;s window level.</p>
+
+<pre><code>Internally, IMKCandidates uses this method to determine the correct level for candidate display.  Therefore, input methods that use IMKCandidates have no reason to call this method.  
+
+However, many input method developers have built there own candidate display system, and this method is here for their use.  In order to display a candidate window at the correct level use this method to obtain the client window level, increment the returned level, and then apply that level to any candidate windows.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/supportsProperty:" title="supportsProperty:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/supportsProperty:">&ndash;&nbsp;supportsProperty:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if the current client input session supports a given TSM property.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)supportsProperty:(TSMDocumentPropertyTag)<em>property</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>This method is available to provide compatibilty for input methods that need to check TSMDocument properties.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/uniqueClientIdentifierString" title="uniqueClientIdentifierString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uniqueClientIdentifierString">&ndash;&nbsp;uniqueClientIdentifierString</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return a unique ID for the client.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)uniqueClientIdentifierString</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>This method is a wrapper around the NSProcessInfo method globallyUniqueString.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stringFromRange:actualRange:" title="stringFromRange:actualRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringFromRange:actualRange:">&ndash;&nbsp;stringFromRange:actualRange:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called to request a string along.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)stringFromRange:(NSRange)<em>range</em> actualRange:(NSRangePointer)<em>actualRange</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     
+</code></pre><p>Input methods call this method to obtain a range of text from the client document The range should be document relative.</p>
+
+<pre><code>           If the client does not support TSMDocumentAccess the returned string will be created from data obtained by sending the client application a kEventTextInputGetSelectedText Carbon event.
+           Note that clients that do not support TSMDocumentAccess are extremely rare.  Certainly the text system for Cocoa does support this functionality.
+
+            The returned NSString is an autoreleased object.  Do not release this object unless you retain it first.
+
+            Note it is possible that the returned string will be longer or shorter than the specified range.  This can be caused when there surrogate unicodes in a document, and the range's location or length splits a surrogate pair.
+            The parameter actualRange will contain the real range of the string in this case.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IMKInputSession.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/firstRectForCharacterRange:actualRange:" title="firstRectForCharacterRange:actualRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/firstRectForCharacterRange:actualRange:">&ndash;&nbsp;firstRectForCharacterRange:actualRange:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSRect)firstRectForCharacterRange:(NSRange)<em>aRange</em> actualRange:(NSRangePointer)<em>actualRange</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

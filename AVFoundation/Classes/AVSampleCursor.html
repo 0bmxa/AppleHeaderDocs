@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVSampleCursor Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/)">)</option>
+		
+		<option value="//api/name/currentChunkInfo">currentChunkInfo</option>
+		
+		<option value="//api/name/currentChunkStorageRange">currentChunkStorageRange</option>
+		
+		<option value="//api/name/currentChunkStorageURL">currentChunkStorageURL</option>
+		
+		<option value="//api/name/currentSampleDependencyInfo">currentSampleDependencyInfo</option>
+		
+		<option value="//api/name/currentSampleDuration">currentSampleDuration</option>
+		
+		<option value="//api/name/currentSampleIndexInChunk">currentSampleIndexInChunk</option>
+		
+		<option value="//api/name/currentSampleStorageRange">currentSampleStorageRange</option>
+		
+		<option value="//api/name/currentSampleSyncInfo">currentSampleSyncInfo</option>
+		
+		<option value="//api/name/decodeTimeStamp">decodeTimeStamp</option>
+		
+		<option value="//api/name/presentationTimeStamp">presentationTimeStamp</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/comparePositionInDecodeOrderWithPositionOfCursor:">- comparePositionInDecodeOrderWithPositionOfCursor:</option>
+		
+		<option value="//api/name/copyCurrentSampleFormatDescription">- copyCurrentSampleFormatDescription</option>
+		
+		<option value="//api/name/samplesWithEarlierDecodeTimeStampsMayHaveLaterPresentationTimeStampsThanCursor:">- samplesWithEarlierDecodeTimeStampsMayHaveLaterPresentationTimeStampsThanCursor:</option>
+		
+		<option value="//api/name/samplesWithLaterDecodeTimeStampsMayHaveEarlierPresentationTimeStampsThanCursor:">- samplesWithLaterDecodeTimeStampsMayHaveEarlierPresentationTimeStampsThanCursor:</option>
+		
+		<option value="//api/name/stepByDecodeTime:wasPinned:">- stepByDecodeTime:wasPinned:</option>
+		
+		<option value="//api/name/stepByPresentationTime:wasPinned:">- stepByPresentationTime:wasPinned:</option>
+		
+		<option value="//api/name/stepInDecodeOrderByCount:">- stepInDecodeOrderByCount:</option>
+		
+		<option value="//api/name/stepInPresentationOrderByCount:">- stepInPresentationOrderByCount:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVSampleCursor Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVSampleCursor.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      AVSampleCursor
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/stepInDecodeOrderByCount:" title="stepInDecodeOrderByCount:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stepInDecodeOrderByCount:">&ndash;&nbsp;stepInDecodeOrderByCount:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Moves the cursor a given number of samples in decode order.
+    @param          stepCount
+                    The number of samples to move across. If positive, step forward this many samples. If negative, step backward (-stepCount) samples.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int64_t)stepInDecodeOrderByCount:(int64_t)<em>stepCount</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The number of samples the cursor traversed. If the beginning or the end of the sample sequence was reached before the requested number of samples was traversed, the absolute value of the result will be less than the absolute value of stepCount.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         stepInDecodeOrderByCount:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stepInPresentationOrderByCount:" title="stepInPresentationOrderByCount:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stepInPresentationOrderByCount:">&ndash;&nbsp;stepInPresentationOrderByCount:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Moves the cursor a given number of samples in presentation order.
+    @param          stepCount
+                    The number of samples to move across. If positive, step forward this many samples. If negative, step backward (-stepCount) samples.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int64_t)stepInPresentationOrderByCount:(int64_t)<em>stepCount</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The number of samples the cursor traversed. If the beginning or the end of the sample sequence was reached before the requested number of samples was traversed, the absolute value of the result will be less than the absolute value of stepCount.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         stepInPresentationOrderByCount:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stepByDecodeTime:wasPinned:" title="stepByDecodeTime:wasPinned:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stepByDecodeTime:wasPinned:">&ndash;&nbsp;stepByDecodeTime:wasPinned:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Moves the cursor by a given deltaTime on the decode timeline.
+    @param          deltaDecodeTime
+                    The amount of time to move in the decode timeline.
+    @param          outWasPinned
+                    If the beginning or the end of the sample sequence was reached before the requested deltaDecodeTime was traversed, the BOOL value at the address specified by outWasPinned will be set to YES. May be NULL if this information isn&rsquo;t desired.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CMTime)stepByDecodeTime:(CMTime)<em>deltaDecodeTime</em> wasPinned:(nullable BOOL *)<em>outWasPinned</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The amount of time the cursor was moved along the decode timeline. Because sample cursors snap to sample boundaries when stepped, this value may not be equal to deltaDecodeTime even if the cursor was not pinned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         stepByDecodeTime:wasPinned:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stepByPresentationTime:wasPinned:" title="stepByPresentationTime:wasPinned:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stepByPresentationTime:wasPinned:">&ndash;&nbsp;stepByPresentationTime:wasPinned:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Moves the cursor by a given deltaTime on the presentation timeline.
+    @param          deltaPresentationTime
+                    The amount of time to move in the presentation timeline.
+    @param          outWasPinned
+                    If the beginning or the end of the sample sequence was reached before the requested deltaPresentationTime was traversed, the BOOL value at the address specified by outWasPinned will be set to YES. May be NULL if this information isn&rsquo;t desired.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CMTime)stepByPresentationTime:(CMTime)<em>deltaPresentationTime</em> wasPinned:(nullable BOOL *)<em>outWasPinned</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The amount of time the cursor was moved along the presentation timeline. Because sample cursors snap to sample boundaries when stepped, this value may not be equal to deltaPresentationTime even if the cursor was not pinned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         stepByPresentationTime:wasPinned:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVSampleCursorCurrentSampleInfo Methods" name="task_AVSampleCursorCurrentSampleInfo Methods"></a>
+						<h2 class="task-title">AVSampleCursorCurrentSampleInfo Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/currentSampleDuration" title="currentSampleDuration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentSampleDuration">&nbsp;&nbsp;currentSampleDuration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates the decode duration of the sample at the receiver&rsquo;s current position.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMTime currentSampleDuration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       currentSampleDuration
+</code></pre><p>If the receiver must be advanced past its current position in order to determine the decode duration of the current sample, the value of currentSampleDuration is equal to kCMTimeIndefinite. This can occur with streaming formats such as MPEG-2 transport streams.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyCurrentSampleFormatDescription" title="copyCurrentSampleFormatDescription"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyCurrentSampleFormatDescription">&ndash;&nbsp;copyCurrentSampleFormatDescription</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides the format description of the sample at the receiver&rsquo;s current position.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CMFormatDescriptionRef)copyCurrentSampleFormatDescription</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         copyCurrentSampleFormatDescription:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentSampleSyncInfo" title="currentSampleSyncInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentSampleSyncInfo">&nbsp;&nbsp;currentSampleSyncInfo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides information about the current sample for consideration when resynchronizing a decoder, as when scrubbing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVSampleCursorSyncInfo currentSampleSyncInfo</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       currentSampleSyncInfo
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentSampleDependencyInfo" title="currentSampleDependencyInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentSampleDependencyInfo">&nbsp;&nbsp;currentSampleDependencyInfo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides information about dependencies between a media sample and other media samples in the same sample sequence, if known.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVSampleCursorDependencyInfo currentSampleDependencyInfo</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       currentSampleDependencyInfo
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Count of samples prior to the current sample, in decode order, that the decoder requires in order to achieve fully coherent output at the current decode time, as after a seek. Zero will be returned if no samples are required for decoder refresh or if the track does not contain this information.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger samplesRequiredForDecoderRefresh NS_AVAILABLE_MAC ( 10 _11 )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       samplesRequiredForDecoderRefresh
+</code></pre><p>Some sample sequences that do not indicate sample dependencies may instead indicate that in order for a specific sample to be decoded with all available accuracy, samples prior to that sample in decode order must be decoded before the specific sample is decoded.</p>
+
+<pre><code>In order to position a sample cursor at the first sample that the decoder requires for a full refresh, you can use code like the following:
+
+
+        NSInteger samplesPriorToCurrentSampleToFeedToDecoder = [mySampleCursor samplesRequiredForDecoderRefresh];
+        AVSampleCursor *cursorForObtainingRefreshSamples = [mySampleCursor copy];
+        [cursorForObtainingRefreshSamples stepInDecodeOrderByCount: -samplesPriorToCurrentSampleToFeedToDecoder ];
+
+        // cursorForObtainingRefreshSamples is now positioned at the first sample that must be provided to the decoder
+        // in order to decode the sample at the position of mySampleCursor in full
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVSampleCursorTemporalPosition Methods" name="task_AVSampleCursorTemporalPosition Methods"></a>
+						<h2 class="task-title">AVSampleCursorTemporalPosition Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/presentationTimeStamp" title="presentationTimeStamp"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentationTimeStamp">&nbsp;&nbsp;presentationTimeStamp</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The presentation timestamp (PTS) of the sample at the current position of the cursor.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMTime presentationTimeStamp</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       presentationTimeStamp
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/decodeTimeStamp" title="decodeTimeStamp"></a>
+	<h3 class="method-title"><code><a href="#//api/name/decodeTimeStamp">&nbsp;&nbsp;decodeTimeStamp</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The decode timestamp (DTS) of the sample at the current position of the cursor.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMTime decodeTimeStamp</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       decodeTimeStamp
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/comparePositionInDecodeOrderWithPositionOfCursor:" title="comparePositionInDecodeOrderWithPositionOfCursor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/comparePositionInDecodeOrderWithPositionOfCursor:">&ndash;&nbsp;comparePositionInDecodeOrderWithPositionOfCursor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Compares the relative positions of two AVSampleCursors.
+    @param          cursor
+                    An instance of AVSampleCursor with which to compare positions.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSComparisonResult)comparePositionInDecodeOrderWithPositionOfCursor:(AVSampleCursor *)<em>cursor</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kCFCompareLessThan, kCFCompareEqualTo or kCFCompareGreaterThan, depending on whether the receiver points at a sample before, the same as, or after the sample pointed to by the specified AVSampleCursor.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         comparePositionInDecodeOrderWithPositionOfCursor:
+</code></pre><p>If the receiver and cursor reference different sequences of samples, as when they&rsquo;re created by different instances of <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a>, results are undefined.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/samplesWithEarlierDecodeTimeStampsMayHaveLaterPresentationTimeStampsThanCursor:" title="samplesWithEarlierDecodeTimeStampsMayHaveLaterPresentationTimeStampsThanCursor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/samplesWithEarlierDecodeTimeStampsMayHaveLaterPresentationTimeStampsThanCursor:">&ndash;&nbsp;samplesWithEarlierDecodeTimeStampsMayHaveLaterPresentationTimeStampsThanCursor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method tests a boundary in the reordering from decode order to presentation order, determining whether it&rsquo;s possible for any sample earlier in decode order than the sample at the position of the receiver can have a presentation timestamp later than that of the specified sample cursor.
+    @param          cursor
+                    An instance of AVSampleCursor with which to test the sample reordering boundary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)samplesWithEarlierDecodeTimeStampsMayHaveLaterPresentationTimeStampsThanCursor:(AVSampleCursor *)<em>cursor</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if it&rsquo;s possible for any sample earlier in decode order than the sample at the position of the receiver can have a presentation timestamp later than that of the specified sample cursor.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         samplesWithEarlierDecodeTimeStampsMayHaveLaterPresentationTimeStampsThanCursor:
+</code></pre><p>If the receiver and cursor reference different sequences of samples, as when they&rsquo;re created by different instances of <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a>, results are undefined.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/samplesWithLaterDecodeTimeStampsMayHaveEarlierPresentationTimeStampsThanCursor:" title="samplesWithLaterDecodeTimeStampsMayHaveEarlierPresentationTimeStampsThanCursor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/samplesWithLaterDecodeTimeStampsMayHaveEarlierPresentationTimeStampsThanCursor:">&ndash;&nbsp;samplesWithLaterDecodeTimeStampsMayHaveEarlierPresentationTimeStampsThanCursor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method tests a boundary in the reordering from decode order to presentation order, determining whether it&rsquo;s possible for any sample later in decode order than the sample at the position of the receiver can have a presentation timestamp earlier than that of the specified sample cursor.
+    @param          cursor
+                    An instance of AVSampleCursor with which to test the sample reordering boundary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)samplesWithLaterDecodeTimeStampsMayHaveEarlierPresentationTimeStampsThanCursor:(AVSampleCursor *)<em>cursor</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if it&rsquo;s possible for any sample later in decode order than the sample at the position of the receiver can have a presentation timestamp earlier than that of the specified sample cursor.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         samplesWithLaterDecodeTimeStampsMayHaveEarlierPresentationTimeStampsThanCursor:
+</code></pre><p>If the receiver and cursor reference different sequences of samples, as when they&rsquo;re created by different instances of <a href="../Classes/AVAssetTrack.html">AVAssetTrack</a>, results are undefined.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="AVSampleCursorSampleStorageInfo Methods" name="task_AVSampleCursorSampleStorageInfo Methods"></a>
+						<h2 class="task-title">AVSampleCursorSampleStorageInfo Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/currentChunkStorageURL" title="currentChunkStorageURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentChunkStorageURL">&nbsp;&nbsp;currentChunkStorageURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The URL of the storage container of the current sample, as well as other samples that are intended to be loaded in the same operation as a &ldquo;chunk&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSURL *currentChunkStorageURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       currentChunkStorageURL
+</code></pre><p>May be nil; if nil, the storage location of the chunk is the URL of the sample cursor&rsquo;s track&rsquo;s asset, if it has one.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentChunkStorageRange" title="currentChunkStorageRange"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentChunkStorageRange">&nbsp;&nbsp;currentChunkStorageRange</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The offset and length of samples in <a href="#//api/name/currentChunkStorageURL">currentChunkStorageURL</a> that are intended to be loaded together with the current sample as a &ldquo;chunk&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVSampleCursorStorageRange currentChunkStorageRange</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       currentChunkStorageRange
+</code></pre><p>If the current chunk isn&rsquo;t stored contiguously in its storage container, currentChunkStorageRange.offset will be -1. In such cases you can use <a href="../Classes/AVSampleBufferGenerator.html">AVSampleBufferGenerator</a> to obtain the sample data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentChunkInfo" title="currentChunkInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentChunkInfo">&nbsp;&nbsp;currentChunkInfo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides information about the &ldquo;chunk&rdquo; of samples to which the current sample belongs. If the media format that defines the sequence of samples does not signal &ldquo;chunking&rdquo; of samples in any way, each sample will be considered by the receiver as belonging to a chunk of one sample only.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVSampleCursorChunkInfo currentChunkInfo</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       currentChunkInfo
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentSampleIndexInChunk" title="currentSampleIndexInChunk"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentSampleIndexInChunk">&nbsp;&nbsp;currentSampleIndexInChunk</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The index of the current sample within the chunk to which it belongs.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int64_t currentSampleIndexInChunk</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       currentSampleIndexInChunk
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentSampleStorageRange" title="currentSampleStorageRange"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentSampleStorageRange">&nbsp;&nbsp;currentSampleStorageRange</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The offset and length of the current sample in <a href="#//api/name/currentChunkStorageURL">currentChunkStorageURL</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVSampleCursorStorageRange currentSampleStorageRange</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property       currentSampleStorageRange
+</code></pre><p>If the current sample isn&rsquo;t stored contiguously in its storage container, currentSampleStorageRange.offset will be -1. In such cases you can use <a href="../Classes/AVSampleBufferGenerator.html">AVSampleBufferGenerator</a> to obtain the sample data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVSampleCursor.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

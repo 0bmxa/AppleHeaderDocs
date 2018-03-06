@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ICDeviceBrowserDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 ImageCaptureCore Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/deviceBrowser:deviceDidChangeName:">- deviceBrowser:deviceDidChangeName:</option>
+		
+		<option value="//api/name/deviceBrowser:deviceDidChangeSharingState:">- deviceBrowser:deviceDidChangeSharingState:</option>
+		
+		<option value="//api/name/deviceBrowser:didAddDevice:moreComing:">- deviceBrowser:didAddDevice:moreComing:</option>
+		
+		<option value="//api/name/deviceBrowser:didRemoveDevice:moreGoing:">- deviceBrowser:didRemoveDevice:moreGoing:</option>
+		
+		<option value="//api/name/deviceBrowser:requestsSelectDevice:">- deviceBrowser:requestsSelectDevice:</option>
+		
+		<option value="//api/name/deviceBrowserDidEnumerateLocalDevices:">- deviceBrowserDidEnumerateLocalDevices:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ICDeviceBrowserDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ICDeviceBrowser.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>  @protocol ICDeviceBrowserDelegate <NSObject></p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/deviceBrowser:didAddDevice:moreComing:" title="deviceBrowser:didAddDevice:moreComing:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceBrowser:didAddDevice:moreComing:">&ndash;&nbsp;deviceBrowser:didAddDevice:moreComing:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This message is sent to the delegate to inform that a device has been added.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceBrowser:(ICDeviceBrowser *)<em>browser</em> didAddDevice:(ICDevice *)<em>device</em> moreComing:(BOOL)<em>moreComing</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method deviceBrowser:didAddDevice:moreComing:</p><p>If several devices are found during the initial search, then this message is sent once for each device with the value of &lsquo;moreComing&rsquo; set to YES in each message except the last one.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ICDeviceBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceBrowser:didRemoveDevice:moreGoing:" title="deviceBrowser:didRemoveDevice:moreGoing:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceBrowser:didRemoveDevice:moreGoing:">&ndash;&nbsp;deviceBrowser:didRemoveDevice:moreGoing:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This message is sent to the delegate to inform that a device has been removed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceBrowser:(ICDeviceBrowser *)<em>browser</em> didRemoveDevice:(ICDevice *)<em>device</em> moreGoing:(BOOL)<em>moreGoing</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method deviceBrowser:didRemoveDevice:moreGoing:</p><p>If several devices are removed at the same time, then this message is sent once for each device with the value of &lsquo;moreGoing&rsquo; set to YES in each message except the last one.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ICDeviceBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceBrowser:deviceDidChangeName:" title="deviceBrowser:deviceDidChangeName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceBrowser:deviceDidChangeName:">&ndash;&nbsp;deviceBrowser:deviceDidChangeName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This message is sent if the name of a device changes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceBrowser:(ICDeviceBrowser *)<em>browser</em> deviceDidChangeName:(ICDevice *)<em>device</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method deviceBrowser:deviceDidChangeName:</p><p>This happens if the device module overrides the default name of the device reported by the device&rsquo;s transport layer, or if the name of the filesystem volume mounted by the device is changed by the user.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ICDeviceBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceBrowser:deviceDidChangeSharingState:" title="deviceBrowser:deviceDidChangeSharingState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceBrowser:deviceDidChangeSharingState:">&ndash;&nbsp;deviceBrowser:deviceDidChangeSharingState:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This message is sent when the sharing state of a device has changes.
+  @discusson Any Image Capture client application can choose to share the device over the network using the sharing or webSharing facility in Image Capture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceBrowser:(ICDeviceBrowser *)<em>browser</em> deviceDidChangeSharingState:(ICDevice *)<em>device</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method deviceBrowser:deviceDidChangeSharingState:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ICDeviceBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceBrowser:requestsSelectDevice:" title="deviceBrowser:requestsSelectDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceBrowser:requestsSelectDevice:">&ndash;&nbsp;deviceBrowser:requestsSelectDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This message is sent when an event that occurred on the device may be of interest to the client application.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceBrowser:(ICDeviceBrowser *)<em>browser</em> requestsSelectDevice:(ICDevice *)<em>device</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method deviceBrowser:requestsSelectDevice:</p><p>In Mac OS X 10.6, this message is sent when a button is pressed on a device and the current application is the target for that button press. In the case of the button-press event, if a session is open on the device, this message will not be sent to the browser delegate, instead the message &lsquo;device:didReceiveButtonPress:&rsquo; is sent to the device delegate.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ICDeviceBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceBrowserDidEnumerateLocalDevices:" title="deviceBrowserDidEnumerateLocalDevices:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceBrowserDidEnumerateLocalDevices:">&ndash;&nbsp;deviceBrowserDidEnumerateLocalDevices:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This message is sent after the device browser completes sending &lsquo;deviceBrowser:didAddDevice:moreComing:&rsquo; message for all local devices.
+  @discusson Detecting locally connected devices (USB and FireWire devices) is faster than detecting devices connected using a network protocol. An Image Capture client application may use this message to update its user interface to let the user know that it has completed looking for locally connected devices and then start looking for network devices.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceBrowserDidEnumerateLocalDevices:(ICDeviceBrowser *)<em>browser</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>  @method deviceBrowserDidEnumerateLocalDevices:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ICDeviceBrowser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

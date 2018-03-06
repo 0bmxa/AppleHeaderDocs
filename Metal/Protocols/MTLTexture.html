@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MTLTexture Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Metal Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/arrayLength">arrayLength</option>
+		
+		<option value="//api/name/depth">depth</option>
+		
+		<option value="//api/name/framebufferOnly">framebufferOnly</option>
+		
+		<option value="//api/name/height">height</option>
+		
+		<option value="//api/name/mipmapLevelCount">mipmapLevelCount</option>
+		
+		<option value="//api/name/pixelFormat">pixelFormat</option>
+		
+		<option value="//api/name/sampleCount">sampleCount</option>
+		
+		<option value="//api/name/textureType">textureType</option>
+		
+		<option value="//api/name/usage">usage</option>
+		
+		<option value="//api/name/width">width</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:">- getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:</option>
+		
+		<option value="//api/name/getBytes:bytesPerRow:fromRegion:mipmapLevel:">- getBytes:bytesPerRow:fromRegion:mipmapLevel:</option>
+		
+		<option value="//api/name/newTextureViewWithPixelFormat:">- newTextureViewWithPixelFormat:</option>
+		
+		<option value="//api/name/newTextureViewWithPixelFormat:textureType:levels:slices:">- newTextureViewWithPixelFormat:textureType:levels:slices:</option>
+		
+		<option value="//api/name/replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:">- replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:</option>
+		
+		<option value="//api/name/replaceRegion:mipmapLevel:withBytes:bytesPerRow:">- replaceRegion:mipmapLevel:withBytes:bytesPerRow:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MTLTexture Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/MTLResource.html">MTLResource</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MTLTexture.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol MTLTexture</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The resource this texture was created from. It may be a texture or a buffer. If this texture is not reusing storage of another <a href="../Protocols/MTLResource.html">MTLResource</a>, then nil is returned.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, readonly) id&lt;MTLResource&gt; rootResource NS_DEPRECATED ( 10 _11 , 10 _12 , 8 _0</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property rootResource</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/textureType" title="textureType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/textureType">&nbsp;&nbsp;textureType</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The type of this texture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) MTLTextureType textureType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property type</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pixelFormat" title="pixelFormat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pixelFormat">&nbsp;&nbsp;pixelFormat</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Constants/MTLPixelFormat.html">MTLPixelFormat</a> that is used to interpret this texture&rsquo;s contents.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) MTLPixelFormat pixelFormat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property pixelFormat</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/width" title="width"></a>
+	<h3 class="method-title"><code><a href="#//api/name/width">&nbsp;&nbsp;width</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The width of the MTLTexture instance in pixels.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger width</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property width</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/height" title="height"></a>
+	<h3 class="method-title"><code><a href="#//api/name/height">&nbsp;&nbsp;height</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The height of the MTLTexture instance in pixels.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger height</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property height</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/depth" title="depth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/depth">&nbsp;&nbsp;depth</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The depth of this MTLTexture instance in pixels.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger depth</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property depth</p><p>If this MTLTexture is not a 3D texture, the depth is 1</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mipmapLevelCount" title="mipmapLevelCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mipmapLevelCount">&nbsp;&nbsp;mipmapLevelCount</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of mipmap levels in each slice of this MTLTexture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger mipmapLevelCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property mipmapLevelCount</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sampleCount" title="sampleCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleCount">&nbsp;&nbsp;sampleCount</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of samples in each pixel of this MTLTexture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger sampleCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property sampleCount</p><p>If this texture is any type other than 2DMultisample, samples is 1.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/arrayLength" title="arrayLength"></a>
+	<h3 class="method-title"><code><a href="#//api/name/arrayLength">&nbsp;&nbsp;arrayLength</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of array elements in this MTLTexture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger arrayLength</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property arrayLength</p><p>For non-Array texture types, arrayLength is 1.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/usage" title="usage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/usage">&nbsp;&nbsp;usage</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Description of texture usage.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) MTLTextureUsage usage</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property usage</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/framebufferOnly" title="framebufferOnly"></a>
+	<h3 class="method-title"><code><a href="#//api/name/framebufferOnly">&nbsp;&nbsp;framebufferOnly</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If YES, this texture can only be used with a MTLAttachmentDescriptor, and cannot be used as a texture argument for <a href="../Protocols/MTLRenderCommandEncoder.html">MTLRenderCommandEncoder</a>, <a href="../Protocols/MTLBlitCommandEncoder.html">MTLBlitCommandEncoder</a>, or <a href="../Protocols/MTLComputeCommandEncoder.html">MTLComputeCommandEncoder</a>. Furthermore, when this property&rsquo;s value is YES, readPixels/writePixels may not be used with this texture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, getter=isFramebufferOnly) BOOL framebufferOnly</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property framebufferOnly</p><p>Textures obtained from CAMetalDrawables may have this property set to YES, depending on the value of frameBufferOnly passed to their parent CAMetalLayer. Textures created directly by the application will not have any restrictions.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:" title="getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:">&ndash;&nbsp;getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Copies a block of pixels from a texture slice into the application&rsquo;s memory.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getBytes:(void *)<em>pixelBytes</em> bytesPerRow:(NSUInteger)<em>bytesPerRow</em> bytesPerImage:(NSUInteger)<em>bytesPerImage</em> fromRegion:(MTLRegion)<em>region</em> mipmapLevel:(NSUInteger)<em>level</em> slice:(NSUInteger)<em>slice</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:" title="replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:">&ndash;&nbsp;replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Copy a block of pixel data from the caller&rsquo;s pointer into a texture slice.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)replaceRegion:(MTLRegion)<em>region</em> mipmapLevel:(NSUInteger)<em>level</em> slice:(NSUInteger)<em>slice</em> withBytes:(const void *)<em>pixelBytes</em> bytesPerRow:(NSUInteger)<em>bytesPerRow</em> bytesPerImage:(NSUInteger)<em>bytesPerImage</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getBytes:bytesPerRow:fromRegion:mipmapLevel:" title="getBytes:bytesPerRow:fromRegion:mipmapLevel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getBytes:bytesPerRow:fromRegion:mipmapLevel:">&ndash;&nbsp;getBytes:bytesPerRow:fromRegion:mipmapLevel:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience for <a href="#//api/name/getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:">getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:</a> that doesn&rsquo;t require slice related arguments</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getBytes:(void *)<em>pixelBytes</em> bytesPerRow:(NSUInteger)<em>bytesPerRow</em> fromRegion:(MTLRegion)<em>region</em> mipmapLevel:(NSUInteger)<em>level</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method getBytes:bytesPerRow:fromRegion:mipmapLevel:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/replaceRegion:mipmapLevel:withBytes:bytesPerRow:" title="replaceRegion:mipmapLevel:withBytes:bytesPerRow:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/replaceRegion:mipmapLevel:withBytes:bytesPerRow:">&ndash;&nbsp;replaceRegion:mipmapLevel:withBytes:bytesPerRow:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience for <a href="#//api/name/replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:">replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:</a> that doesn&rsquo;t require slice related arguments</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)replaceRegion:(MTLRegion)<em>region</em> mipmapLevel:(NSUInteger)<em>level</em> withBytes:(const void *)<em>pixelBytes</em> bytesPerRow:(NSUInteger)<em>bytesPerRow</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method replaceRegion:mipmapLevel:withBytes:bytesPerRow:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newTextureViewWithPixelFormat:" title="newTextureViewWithPixelFormat:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newTextureViewWithPixelFormat:">&ndash;&nbsp;newTextureViewWithPixelFormat:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new texture which shares the same storage as the source texture, but with a different (but compatible) pixel format.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id&lt;MTLTexture&gt;)newTextureViewWithPixelFormat:(MTLPixelFormat)<em>pixelFormat</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method newTextureViewWithPixelFormat:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newTextureViewWithPixelFormat:textureType:levels:slices:" title="newTextureViewWithPixelFormat:textureType:levels:slices:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newTextureViewWithPixelFormat:textureType:levels:slices:">&ndash;&nbsp;newTextureViewWithPixelFormat:textureType:levels:slices:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new texture which shares the same storage as the source texture, but with a different (but compatible) pixel format, texture type, levels and slices.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id&lt;MTLTexture&gt;)newTextureViewWithPixelFormat:(MTLPixelFormat)<em>pixelFormat</em> textureType:(MTLTextureType)<em>textureType</em> levels:(NSRange)<em>levelRange</em> slices:(NSRange)<em>sliceRange</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method newTextureViewWithPixelFormat:textureType:levels:slices:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLTexture.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

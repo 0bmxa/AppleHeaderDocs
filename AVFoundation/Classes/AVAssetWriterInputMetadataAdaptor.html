@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVAssetWriterInputMetadataAdaptor Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AVFoundation Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/assetWriterInput">assetWriterInput</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/assetWriterInputMetadataAdaptorWithAssetWriterInput:">+ assetWriterInputMetadataAdaptorWithAssetWriterInput:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/appendTimedMetadataGroup:">- appendTimedMetadataGroup:</option>
+		
+		<option value="//api/name/initWithAssetWriterInput:">- initWithAssetWriterInput:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVAssetWriterInputMetadataAdaptor Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVAssetWriterInput.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class AVAssetWriterInputMetadataAdaptor
+@abstract
+    Defines an interface for writing metadata, packaged as instances of <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a>, to a single <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a> object.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/assetWriterInputMetadataAdaptorWithAssetWriterInput:" title="assetWriterInputMetadataAdaptorWithAssetWriterInput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetWriterInputMetadataAdaptorWithAssetWriterInput:">+&nbsp;assetWriterInputMetadataAdaptorWithAssetWriterInput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method assetWriterInputMetadataAdaptorWithAssetWriterInput:
+@abstract
+    Creates a new timed metadata group adaptor to receive instances of <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a> for writing to the output file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)assetWriterInputMetadataAdaptorWithAssetWriterInput:(AVAssetWriterInput *)<em>input</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method assetWriterInputMetadataAdaptorWithAssetWriterInput:
+@abstract
+    Creates a new timed metadata group adaptor to receive instances of <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a> for writing to the output file.</p>
+
+<p>@param input
+    An instance of <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a> to which the receiver should append groups of timed metadata.  Only asset writer inputs that accept media data of type AVMediaTypeMetadata can be used to initialize a timed metadata group adaptor.
+@result
+    An instance of AVAssetWriterInputMetadataAdaptor.</p>
+
+<p>@discussion
+    The instance of <a href="../Classes/AVAssetWriterInput.html">AVAssetWriterInput</a> passed in to this method must have been created with a format hint indicating all possible combinations of identifier (or, alternatively, key and keySpace), dataType, and extendedLanguageTag that will be appended to the metadata adaptor.  It is an error to append metadata items not represented in the input&rsquo;s format hint.</p>
+
+<pre><code>It is an error to initialize an instance of AVAssetWriterInputMetadataAdaptor with an asset writer input that is already attached to another instance of AVAssetWriterInputMetadataAdaptor.  It is also an error to initialize an instance of AVAssetWriterInputMetadataAdaptor with an asset writer input whose asset writer has progressed beyond AVAssetWriterStatusUnknown.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriterInput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithAssetWriterInput:" title="initWithAssetWriterInput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAssetWriterInput:">&ndash;&nbsp;initWithAssetWriterInput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method initWithAssetWriterInput:
+@abstract
+    Creates a new timed metadator group adaptor to receive instances of <a href="../Classes/AVTimedMetadataGroup.html">AVTimedMetadataGroup</a> for writing to the output file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithAssetWriterInput:(AVAssetWriterInput *)<em>input</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method initWithAssetWriterInput:
+@abstract
+    Creates a new timed metadator group adaptor to receive instances of AVTimedMetadataGroup for writing to the output file.</p>
+
+<p>@param input
+    An instance of AVAssetWriterInput to which the receiver should append groups of timed metadata. Only asset writer inputs that accept media data of type AVMediaTypeMetadata can be used to initialize a timed metadata group adaptor.
+@result
+    An instance of AVAssetWriterInputMetadataAdaptor.</p>
+
+<p>@discussion
+    The instance of AVAssetWriterInput passed in to this method must have been created with a format hint indicating all possible combinations of identifier (or, alternatively, key and keySpace), dataType, and extendedLanguageTag that will be appended to the metadata adaptor.  It is an error to append metadata items not represented in the input&rsquo;s format hint.  For help creating a suitable format hint, see <a href="../Classes/AVTimedMetadataGroup.html#//api/name/copyFormatDescription">[AVTimedMetadataGroup copyFormatDescription]</a>.</p>
+
+<pre><code>It is an error to initialize an instance of AVAssetWriterInputMetadataAdaptor with an asset writer input that is already attached to another instance of AVAssetWriterInputMetadataAdaptor.  It is also an error to initialize an instance of AVAssetWriterInputMetadataAdaptor with an asset writer input whose asset writer has progressed beyond AVAssetWriterStatusUnknown.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriterInput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetWriterInput" title="assetWriterInput"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetWriterInput">&nbsp;&nbsp;assetWriterInput</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@property assetWriterInput
+@abstract
+    The asset writer input to which the receiver should append timed metadata groups.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVAssetWriterInput *assetWriterInput</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property assetWriterInput
+@abstract
+    The asset writer input to which the receiver should append timed metadata groups.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriterInput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/appendTimedMetadataGroup:" title="appendTimedMetadataGroup:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/appendTimedMetadataGroup:">&ndash;&nbsp;appendTimedMetadataGroup:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method appendTimedMetadataGroup:
+@abstract
+    Appends a timed metadata group to the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)appendTimedMetadataGroup:(AVTimedMetadataGroup *)<em>timedMetadataGroup</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method appendTimedMetadataGroup:
+@abstract
+    Appends a timed metadata group to the receiver.</p>
+
+<p>@param timedMetadataGroup
+    The AVTimedMetadataGroup to be appended.
+@result
+    A BOOL value indicating success of appending the timed metadata group.  If a result of NO is returned, AVAssetWriter.error will contain more information about why apending the timed metadata group failed.</p>
+
+<p>@discussion
+    The receiver will retain the AVTimedMetadataGroup until it is done with it, and then release it.</p>
+
+<pre><code>The timing of the metadata items in the output asset will correspond to the timeRange of the AVTimedMetadataGroup, regardless of the values of the time and duration properties of the individual items.
+
+Before calling this method, you must ensure that the input that underlies the receiver is attached to an AVAssetWriter via a prior call to -addInput: and that -startWriting has been called on the asset writer.  It is an error to invoke this method before starting a session (via [AVAssetWriter startSessionAtSourceTime:]) or after ending a session (via [AVAssetWriter endSessionAtSourceTime:]).
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVAssetWriterInput.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

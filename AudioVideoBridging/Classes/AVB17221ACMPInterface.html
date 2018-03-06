@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVB17221ACMPInterface Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AudioVideoBridging Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/multicastDestinationAddress">multicastDestinationAddress</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/ACMPInterfaceWithInterface:">+ ACMPInterfaceWithInterface:</option>
+		
+		<option value="//api/name/ACMPInterfaceWithInterfaceNamed:">+ ACMPInterfaceWithInterfaceNamed:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/removeHandlerForEntityID:">- removeHandlerForEntityID:</option>
+		
+		<option value="//api/name/removeHandlerForGUID:">- removeHandlerForGUID:</option>
+		
+		<option value="//api/name/sendACMPCommandMessage:completionHandler:">- sendACMPCommandMessage:completionHandler:</option>
+		
+		<option value="//api/name/sendACMPResponseMessage:error:">- sendACMPResponseMessage:error:</option>
+		
+		<option value="//api/name/setHandler:forEntityID:">- setHandler:forEntityID:</option>
+		
+		<option value="//api/name/setHandler:forGUID:">- setHandler:forGUID:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVB17221ACMPInterface Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/AVB1722ControlInterface.html">AVB1722ControlInterface</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVB17221ACMPInterface.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      AVB17221ACMPInterface
+</code></pre><p>AVB17221ACMPInterface is a concrete subclass of <a href="../Classes/AVB1722ControlInterface.html">AVB1722ControlInterface</a> providing the access to the IEEE Std 1722.1™-2013 AVDECC Connection Management Protocol (ACMP) interface.
+                It provides callbacks per entity EntityID via a handler object implementing the <a href="../Protocols/AVB17221ACMPClient.html">AVB17221ACMPClient</a> protocol. AVB17221ACMPInterface objects
+                are typically not created directly but are created indirectly and accessed via the acmp property of the <a href="../Classes/AVBInterface.html">AVBInterface</a> object.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/multicastDestinationAddress" title="multicastDestinationAddress"></a>
+	<h3 class="method-title"><code><a href="#//api/name/multicastDestinationAddress">&nbsp;&nbsp;multicastDestinationAddress</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An <a href="../Classes/AVBMACAddress.html">AVBMACAddress</a> of the multicast destination MAC address being used for all ACMP messages on the interface.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, copy) AVBMACAddress *multicastDestinationAddress</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property   multicastDestinationAddress
+</code></pre><p>The MAC Address pointed to by the property is pre-initialized with the IEEE Std 1722.1™-2013 standard value, 91:e0:f0:01:00:00</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221ACMPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ACMPInterfaceWithInterface:" title="ACMPInterfaceWithInterface:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ACMPInterfaceWithInterface:">+&nbsp;ACMPInterfaceWithInterface:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an autoreleased instance of AVB17221ACMPInterface for the specified <a href="../Classes/AVBInterface.html">AVBInterface</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (AVB17221ACMPInterface *)ACMPInterfaceWithInterface:(AVBInterface *)<em>anInterface</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>anInterface</code></th>
+						<td><p>The interface on which to create the instance.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased instance of the control service class.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     AVB17221ACMPInterfaceWithInterface:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221ACMPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ACMPInterfaceWithInterfaceNamed:" title="ACMPInterfaceWithInterfaceNamed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ACMPInterfaceWithInterfaceNamed:">+&nbsp;ACMPInterfaceWithInterfaceNamed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an autoreleased instance of AVB17221ACMPInterfaceWithInterfaceNamed for the specified network interface with the specified BSD name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (AVB17221ACMPInterface *)ACMPInterfaceWithInterfaceNamed:(NSString *)<em>anInterfaceName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>anInterfaceName</code></th>
+						<td><p>The BSD name of the interface.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An autoreleased instance of the control service class.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     AVB17221ACMPInterfaceWithInterfaceNamed:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221ACMPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setHandler:forGUID:" title="setHandler:forGUID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setHandler:forGUID:">&ndash;&nbsp;setHandler:forGUID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add an object implementing the <a href="../Protocols/AVB17221ACMPClient.html">AVB17221ACMPClient</a> protocol as a handler for messages to or from a specified GUID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setHandler:(id&lt;AVB17221ACMPClient&gt;)<em>handler</em> forGUID:(uint64_t)<em>targetGUID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handler</code></th>
+						<td><p>The object which will handle all of the commands and responses.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetGUID</code></th>
+						<td><p>The GUID of the entity the messages are to or from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the handler was added, NO if there is already a handler or if the routing ID couldn&rsquo;t be added.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setHandler:forGUID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221ACMPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setHandler:forEntityID:" title="setHandler:forEntityID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setHandler:forEntityID:">&ndash;&nbsp;setHandler:forEntityID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add an object implementing the <a href="../Protocols/AVB17221ACMPClient.html">AVB17221ACMPClient</a> protocol as a handler for messages to or from a specified EntityID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setHandler:(id&lt;AVB17221ACMPClient&gt;)<em>handler</em> forEntityID:(uint64_t)<em>targetEntityID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handler</code></th>
+						<td><p>The object which will handle all of the commands and responses.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetEntityID</code></th>
+						<td><p>The EntityID of the entity the messages are to or from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the handler was added, NO if there is already a handler or if the routing ID couldn&rsquo;t be added.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     setHandler:forEntityID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221ACMPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeHandlerForGUID:" title="removeHandlerForGUID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeHandlerForGUID:">&ndash;&nbsp;removeHandlerForGUID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removed a handler  for messages to or from a specified GUID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeHandlerForGUID:(uint64_t)<em>targetGUID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetGUID</code></th>
+						<td><p>The GUID of the entity the messages are to or from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeHandlerForGUID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221ACMPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeHandlerForEntityID:" title="removeHandlerForEntityID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeHandlerForEntityID:">&ndash;&nbsp;removeHandlerForEntityID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removed a handler  for messages to or from a specified EntityID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeHandlerForEntityID:(uint64_t)<em>targetEntityID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetEntityID</code></th>
+						<td><p>The EntityID of the entity the messages are to or from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeHandlerForEntityID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221ACMPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendACMPResponseMessage:error:" title="sendACMPResponseMessage:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendACMPResponseMessage:error:">&ndash;&nbsp;sendACMPResponseMessage:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Send an ACMP response message.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)sendACMPResponseMessage:(AVB17221ACMPMessage *)<em>message</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>A pointer to an <a href="../Classes/AVB17221ACMPMessage.html">AVB17221ACMPMessage</a> struct containing the ACMP message to send.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kIOReturnSuccess if the message was successfully sent, otherwise an error indicating failure reason.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sendACMPResponseMessage:
+</code></pre><p>This method synchronizes access to sending ACMP messages, and can safely be called from multiple threads and while handling a received command.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221ACMPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendACMPCommandMessage:completionHandler:" title="sendACMPCommandMessage:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendACMPCommandMessage:completionHandler:">&ndash;&nbsp;sendACMPCommandMessage:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Send an ACMP command message.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)sendACMPCommandMessage:(AVB17221ACMPMessage *)<em>message</em> completionHandler:(AVB17221ACMPInterfaceCompletion)<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>A pointer to an <a href="../Classes/AVB17221ACMPMessage.html">AVB17221ACMPMessage</a> struct containing the ACMP message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>A block containing code to execute when the command has been sent or timed out.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>kIOReturnSuccess if the message was successfully sent, otherwise an error indicating failure reason.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     sendACMPCommandMessage:completionHandler:
+</code></pre><p>This method synchronizes access to sending ACMP messages, and can safely be called from multiple threads. The completionHandler
+                is synchronized with the reception of messages from the kernel object providing the command transport. This method handles the retry
+                and message timeout per the IEEE Std 1722.1™-2013 standard timeouts.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221ACMPInterface.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

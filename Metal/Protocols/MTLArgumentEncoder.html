@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MTLArgumentEncoder Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 Metal Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/alignment">alignment</option>
+		
+		<option value="//api/name/device">device</option>
+		
+		<option value="//api/name/encodedLength">encodedLength</option>
+		
+		<option value="//api/name/label">label</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/constantDataAtIndex:">- constantDataAtIndex:</option>
+		
+		<option value="//api/name/newArgumentEncoderForBufferAtIndex:">- newArgumentEncoderForBufferAtIndex:</option>
+		
+		<option value="//api/name/setArgumentBuffer:offset:">- setArgumentBuffer:offset:</option>
+		
+		<option value="//api/name/setArgumentBuffer:startOffset:arrayElement:">- setArgumentBuffer:startOffset:arrayElement:</option>
+		
+		<option value="//api/name/setBuffer:offset:atIndex:">- setBuffer:offset:atIndex:</option>
+		
+		<option value="//api/name/setBuffers:offsets:withRange:">- setBuffers:offsets:withRange:</option>
+		
+		<option value="//api/name/setSamplerState:atIndex:">- setSamplerState:atIndex:</option>
+		
+		<option value="//api/name/setSamplerStates:withRange:">- setSamplerStates:withRange:</option>
+		
+		<option value="//api/name/setTexture:atIndex:">- setTexture:atIndex:</option>
+		
+		<option value="//api/name/setTextures:withRange:">- setTextures:withRange:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MTLArgumentEncoder Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MTLArgumentEncoder.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@protocol MTLArgumentEncoder</p><p>MTLArgumentEncoder encodes buffer, texture, sampler, and constant data into a buffer.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/device" title="device"></a>
+	<h3 class="method-title"><code><a href="#//api/name/device">&nbsp;&nbsp;device</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The device this argument encoder was created against.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) id&lt;MTLDevice&gt; device</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property device</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/label" title="label"></a>
+	<h3 class="method-title"><code><a href="#//api/name/label">&nbsp;&nbsp;label</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A string to help identify this object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, copy, atomic) NSString *label</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property label</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodedLength" title="encodedLength"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodedLength">&nbsp;&nbsp;encodedLength</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of bytes required to store the encoded resource bindings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger encodedLength</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property encodedLength</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/alignment" title="alignment"></a>
+	<h3 class="method-title"><code><a href="#//api/name/alignment">&nbsp;&nbsp;alignment</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The alignment in bytes required to store the encoded resource bindings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSUInteger alignment</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property alignment</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setArgumentBuffer:offset:" title="setArgumentBuffer:offset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setArgumentBuffer:offset:">&ndash;&nbsp;setArgumentBuffer:offset:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the destination buffer and offset at which the arguments will be encoded.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setArgumentBuffer:(id&lt;MTLBuffer&gt;)<em>argumentBuffer</em> offset:(NSUInteger)<em>offset</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setArgumentBuffer:offset:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setArgumentBuffer:startOffset:arrayElement:" title="setArgumentBuffer:startOffset:arrayElement:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setArgumentBuffer:startOffset:arrayElement:">&ndash;&nbsp;setArgumentBuffer:startOffset:arrayElement:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>@method setArgumentBuffer:offset:arrayElement:</li>
+<li>@brief Sets the destination buffer, starting offset and specific array element arguments will be encoded into. arrayElement represents
+        the desired element of IAB array targetted by encoding</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setArgumentBuffer:(nullable id&lt;MTLBuffer&gt;)<em>argumentBuffer</em> startOffset:(NSUInteger)<em>startOffset</em> arrayElement:(NSUInteger)<em>arrayElement</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<ul>
+<li>@method setArgumentBuffer:offset:arrayElement:</li>
+<li>@brief Sets the destination buffer, starting offset and specific array element arguments will be encoded into. arrayElement represents
+        the desired element of IAB array targetted by encoding</li>
+</ul>
+
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setBuffer:offset:atIndex:" title="setBuffer:offset:atIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setBuffer:offset:atIndex:">&ndash;&nbsp;setBuffer:offset:atIndex:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set a buffer at the given bind point index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setBuffer:(nullable id&lt;MTLBuffer&gt;)<em>buffer</em> offset:(NSUInteger)<em>offset</em> atIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setBuffer:offset:atIndex:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setBuffers:offsets:withRange:" title="setBuffers:offsets:withRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setBuffers:offsets:withRange:">&ndash;&nbsp;setBuffers:offsets:withRange:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set an array of buffers at the given bind point index range.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setBuffers:(const id&lt;MTLBuffer&gt; __nullable [ __nonnull ])<em>buffers</em> offsets:(const NSUInteger [ __nonnull ])<em>offsets</em> withRange:(NSRange)<em>range</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setBuffers:offsets:withRange:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setTexture:atIndex:" title="setTexture:atIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setTexture:atIndex:">&ndash;&nbsp;setTexture:atIndex:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set a texture at the given bind point index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setTexture:(nullable id&lt;MTLTexture&gt;)<em>texture</em> atIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setTexture:atIndex:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setTextures:withRange:" title="setTextures:withRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setTextures:withRange:">&ndash;&nbsp;setTextures:withRange:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set an array of textures at the given bind point index range.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setTextures:(const id&lt;MTLTexture&gt; __nullable [ __nonnull ])<em>textures</em> withRange:(NSRange)<em>range</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setTextures:withRange:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSamplerState:atIndex:" title="setSamplerState:atIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSamplerState:atIndex:">&ndash;&nbsp;setSamplerState:atIndex:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set a sampler at the given bind point index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSamplerState:(nullable id&lt;MTLSamplerState&gt;)<em>sampler</em> atIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setSamplerState:atIndex:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSamplerStates:withRange:" title="setSamplerStates:withRange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSamplerStates:withRange:">&ndash;&nbsp;setSamplerStates:withRange:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set an array of samplers at the given bind point index range.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSamplerStates:(const id&lt;MTLSamplerState&gt; __nullable [ __nonnull ])<em>samplers</em> withRange:(NSRange)<em>range</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method setSamplerStates:withRange:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/constantDataAtIndex:" title="constantDataAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/constantDataAtIndex:">&ndash;&nbsp;constantDataAtIndex:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a pointer to the constant data at the given bind point index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void *)constantDataAtIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method constantDataAtIndex:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/newArgumentEncoderForBufferAtIndex:" title="newArgumentEncoderForBufferAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/newArgumentEncoderForBufferAtIndex:">&ndash;&nbsp;newArgumentEncoderForBufferAtIndex:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a pointer to a new MTLArgumentEncoder that can be used to encode the an argument buffer
+in the buffer associated with a given index.
+Returns nil if the resource at the given index is not an argument buffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id&lt;MTLArgumentEncoder&gt;)newArgumentEncoderForBufferAtIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method newArgumentEncoderForBufferAtIndex:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MTLArgumentEncoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

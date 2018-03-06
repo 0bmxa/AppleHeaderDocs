@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>IOBluetoothDeviceInquiryDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 IOBluetooth Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/deviceInquiryComplete:error:aborted:">- deviceInquiryComplete:error:aborted:</option>
+		
+		<option value="//api/name/deviceInquiryDeviceFound:device:">- deviceInquiryDeviceFound:device:</option>
+		
+		<option value="//api/name/deviceInquiryDeviceNameUpdated:device:devicesRemaining:">- deviceInquiryDeviceNameUpdated:device:devicesRemaining:</option>
+		
+		<option value="//api/name/deviceInquiryStarted:">- deviceInquiryStarted:</option>
+		
+		<option value="//api/name/deviceInquiryUpdatingDeviceNamesStarted:devicesRemaining:">- deviceInquiryUpdatingDeviceNamesStarted:devicesRemaining:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">IOBluetoothDeviceInquiryDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>IOBluetoothDeviceInquiry.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@category       IOBluetoothDeviceInquiryDelegate
+</code></pre><p>This category on NSObject describes the delegate methods for the <a href="../Classes/IOBluetoothDeviceInquiry.html">IOBluetoothDeviceInquiry</a> object. All
+                    methods are optional, but it is highly recommended you implement them all. Do NOT invoke remote name
+                    requests on found <a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> objects unless the inquiry object has been stopped. Doing so may
+                    deadlock your process.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/deviceInquiryStarted:" title="deviceInquiryStarted:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceInquiryStarted:">&ndash;&nbsp;deviceInquiryStarted:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method         deviceInquiryStarted
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceInquiryStarted:(IOBluetoothDeviceInquiry *)<em>sender</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>Inquiry object that sent this delegate message.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         deviceInquiryStarted
+</code></pre><p>This message will be delivered when the inquiry actually starts. Since the inquiry could be throttled, this
+                    message may not be received immediately after called -start.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceInquiryDeviceFound:device:" title="deviceInquiryDeviceFound:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceInquiryDeviceFound:device:">&ndash;&nbsp;deviceInquiryDeviceFound:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method         deviceInquiryDeviceFound
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceInquiryDeviceFound:(IOBluetoothDeviceInquiry *)<em>sender</em> device:(IOBluetoothDevice *)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>Inquiry object that sent this delegate message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p><a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> that was found.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         deviceInquiryDeviceFound
+</code></pre><p>A new device has been found. You do not need to retain the device - it will be held in the internal
+                    storage of the inquiry, and can be accessed later using -foundDevices.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceInquiryUpdatingDeviceNamesStarted:devicesRemaining:" title="deviceInquiryUpdatingDeviceNamesStarted:devicesRemaining:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceInquiryUpdatingDeviceNamesStarted:devicesRemaining:">&ndash;&nbsp;deviceInquiryUpdatingDeviceNamesStarted:devicesRemaining:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method         deviceInquiryUpdatingDeviceNamesStarted
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceInquiryUpdatingDeviceNamesStarted:(IOBluetoothDeviceInquiry *)<em>sender</em> devicesRemaining:(uint32_t)<em>devicesRemaining</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>Inquiry object that sent this delegate message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>devicesRemaining</code></th>
+						<td><p>Number of devices remaining to update.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         deviceInquiryUpdatingDeviceNamesStarted
+</code></pre><p>The inquiry has begun updating device names that were found during the search.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceInquiryDeviceNameUpdated:device:devicesRemaining:" title="deviceInquiryDeviceNameUpdated:device:devicesRemaining:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceInquiryDeviceNameUpdated:device:devicesRemaining:">&ndash;&nbsp;deviceInquiryDeviceNameUpdated:device:devicesRemaining:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method         deviceInquiryDeviceNameUpdated
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceInquiryDeviceNameUpdated:(IOBluetoothDeviceInquiry *)<em>sender</em> device:(IOBluetoothDevice *)<em>device</em> devicesRemaining:(uint32_t)<em>devicesRemaining</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>Inquiry object that sent this delegate message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p><a href="../Classes/IOBluetoothDevice.html">IOBluetoothDevice</a> that was updated.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>devicesRemaining</code></th>
+						<td><p>Number of devices remaining to update.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         deviceInquiryDeviceNameUpdated
+</code></pre><p>A device name has been retrieved. Also indicates how many devices are left to be updated.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceInquiryComplete:error:aborted:" title="deviceInquiryComplete:error:aborted:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceInquiryComplete:error:aborted:">&ndash;&nbsp;deviceInquiryComplete:error:aborted:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<pre><code>@method         deviceInquiryComplete
+</code></pre>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deviceInquiryComplete:(IOBluetoothDeviceInquiry *)<em>sender</em> error:(IOReturn)<em>error</em> aborted:(BOOL)<em>aborted</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>Inquiry object that sent this delegate message.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Error code. kIOReturnSuccess if the inquiry completed without incident.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aborted</code></th>
+						<td><p>TRUE if user called -stop on the inquiry.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method         deviceInquiryComplete
+</code></pre><p>When the inquiry is completely stopped, this delegate method will be invoked. It will supply an error
+                    code value, kIOReturnSuccess if the inquiry stopped without problem, otherwise a non-kIOReturnSuccess
+                    error code will be supplied.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">IOBluetoothDeviceInquiry.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

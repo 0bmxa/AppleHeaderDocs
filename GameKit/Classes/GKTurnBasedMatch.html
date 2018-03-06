@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>GKTurnBasedMatch Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 GameKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/_0">_0</option>
+		
+		<option value="//api/name/_8">_8</option>
+		
+		<option value="//api/name/creationDate">creationDate</option>
+		
+		<option value="//api/name/currentParticipant">currentParticipant</option>
+		
+		<option value="//api/name/matchData">matchData</option>
+		
+		<option value="//api/name/matchID">matchID</option>
+		
+		<option value="//api/name/message">message</option>
+		
+		<option value="//api/name/participants">participants</option>
+		
+		<option value="//api/name/status">status</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/findMatchForRequest:withCompletionHandler:">+ findMatchForRequest:withCompletionHandler:</option>
+		
+		<option value="//api/name/loadMatchWithID:withCompletionHandler:">+ loadMatchWithID:withCompletionHandler:</option>
+		
+		<option value="//api/name/loadMatchesWithCompletionHandler:">+ loadMatchesWithCompletionHandler:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/acceptInviteWithCompletionHandler:">- acceptInviteWithCompletionHandler:</option>
+		
+		<option value="//api/name/declineInviteWithCompletionHandler:">- declineInviteWithCompletionHandler:</option>
+		
+		<option value="//api/name/endMatchInTurnWithMatchData:completionHandler:">- endMatchInTurnWithMatchData:completionHandler:</option>
+		
+		<option value="//api/name/endMatchInTurnWithMatchData:scores:achievements:completionHandler:">- endMatchInTurnWithMatchData:scores:achievements:completionHandler:</option>
+		
+		<option value="//api/name/endTurnWithNextParticipant:matchData:completionHandler:">- endTurnWithNextParticipant:matchData:completionHandler:</option>
+		
+		<option value="//api/name/endTurnWithNextParticipants:turnTimeout:matchData:completionHandler:">- endTurnWithNextParticipants:turnTimeout:matchData:completionHandler:</option>
+		
+		<option value="//api/name/loadMatchDataWithCompletionHandler:">- loadMatchDataWithCompletionHandler:</option>
+		
+		<option value="//api/name/participantQuitInTurnWithOutcome:nextParticipant:matchData:completionHandler:">- participantQuitInTurnWithOutcome:nextParticipant:matchData:completionHandler:</option>
+		
+		<option value="//api/name/participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:">- participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:</option>
+		
+		<option value="//api/name/participantQuitOutOfTurnWithOutcome:withCompletionHandler:">- participantQuitOutOfTurnWithOutcome:withCompletionHandler:</option>
+		
+		<option value="//api/name/rematchWithCompletionHandler:">- rematchWithCompletionHandler:</option>
+		
+		<option value="//api/name/removeWithCompletionHandler:">- removeWithCompletionHandler:</option>
+		
+		<option value="//api/name/saveCurrentTurnWithMatchData:completionHandler:">- saveCurrentTurnWithMatchData:completionHandler:</option>
+		
+		<option value="//api/name/saveMergedMatchData:withResolvedExchanges:completionHandler:">- saveMergedMatchData:withResolvedExchanges:completionHandler:</option>
+		
+		<option value="//api/name/sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:">- sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:</option>
+		
+		<option value="//api/name/sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:">- sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:</option>
+		
+		<option value="//api/name/setLocalizableMessageWithKey:arguments:">- setLocalizableMessageWithKey:arguments:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">GKTurnBasedMatch Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>GKTurnBasedMatch.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/matchID" title="matchID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/matchID">&nbsp;&nbsp;matchID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable, retain, NS_NONATOMIC_IOSONLY) NSString *matchID</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/creationDate" title="creationDate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/creationDate">&nbsp;&nbsp;creationDate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable, retain, NS_NONATOMIC_IOSONLY) NSDate *creationDate</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/participants" title="participants"></a>
+	<h3 class="method-title"><code><a href="#//api/name/participants">&nbsp;&nbsp;participants</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable, retain, NS_NONATOMIC_IOSONLY) NSArray&lt;GKTurnBasedParticipant*&gt; *participants</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/status" title="status"></a>
+	<h3 class="method-title"><code><a href="#//api/name/status">&nbsp;&nbsp;status</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, NS_NONATOMIC_IOSONLY) GKTurnBasedMatchStatus status</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentParticipant" title="currentParticipant"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentParticipant">&nbsp;&nbsp;currentParticipant</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable, retain, NS_NONATOMIC_IOSONLY) GKTurnBasedParticipant *currentParticipant</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/matchData" title="matchData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/matchData">&nbsp;&nbsp;matchData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable, retain, NS_NONATOMIC_IOSONLY) NSData *matchData</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setLocalizableMessageWithKey:arguments:" title="setLocalizableMessageWithKey:arguments:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setLocalizableMessageWithKey:arguments:">&ndash;&nbsp;setLocalizableMessageWithKey:arguments:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setLocalizableMessageWithKey:(NSString *)<em>key</em> arguments:(nullable NSArray&lt;NSString*&gt; *)<em>arguments</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/message" title="message"></a>
+	<h3 class="method-title"><code><a href="#//api/name/message">&nbsp;&nbsp;message</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nullable, copy, NS_NONATOMIC_IOSONLY) NSString *message</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_8" title="_8"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_8">&nbsp;&nbsp;_8</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, NS_NONATOMIC_IOSONLY) NSUInteger matchDataMaximumSize NS_AVAILABLE ( 10 _8</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_0" title="_0"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_0">&nbsp;&nbsp;_0</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nullable, retain, NS_NONATOMIC_IOSONLY) NSArray&lt;GKTurnBasedExchange*&gt; *NS_AVAILABLE ( 10 _10 , 7 _0</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findMatchForRequest:withCompletionHandler:" title="findMatchForRequest:withCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findMatchForRequest:withCompletionHandler:">+&nbsp;findMatchForRequest:withCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (void)findMatchForRequest:(GKMatchRequest *)<em>request</em> withCompletionHandler:(void ( ^ ) ( GKTurnBasedMatch *__nullable match , NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadMatchesWithCompletionHandler:" title="loadMatchesWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadMatchesWithCompletionHandler:">+&nbsp;loadMatchesWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (void)loadMatchesWithCompletionHandler:(void ( ^ __nullable ) ( NSArray&lt;GKTurnBasedMatch*&gt; *__nullable matches , NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadMatchWithID:withCompletionHandler:" title="loadMatchWithID:withCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadMatchWithID:withCompletionHandler:">+&nbsp;loadMatchWithID:withCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (void)loadMatchWithID:(NSString *)<em>matchID</em> withCompletionHandler:(void ( ^ __nullable ) ( GKTurnBasedMatch *__nullable match , NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rematchWithCompletionHandler:" title="rematchWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rematchWithCompletionHandler:">&ndash;&nbsp;rematchWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)rematchWithCompletionHandler:(void ( ^ __nullable ) ( GKTurnBasedMatch *__nullable match , NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/acceptInviteWithCompletionHandler:" title="acceptInviteWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/acceptInviteWithCompletionHandler:">&ndash;&nbsp;acceptInviteWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)acceptInviteWithCompletionHandler:(void ( ^ __nullable ) ( GKTurnBasedMatch *__nullable match , NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/declineInviteWithCompletionHandler:" title="declineInviteWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/declineInviteWithCompletionHandler:">&ndash;&nbsp;declineInviteWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)declineInviteWithCompletionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeWithCompletionHandler:" title="removeWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeWithCompletionHandler:">&ndash;&nbsp;removeWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeWithCompletionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadMatchDataWithCompletionHandler:" title="loadMatchDataWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadMatchDataWithCompletionHandler:">&ndash;&nbsp;loadMatchDataWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)loadMatchDataWithCompletionHandler:(void ( ^ __nullable ) ( NSData *__nullable matchData , NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/endTurnWithNextParticipants:turnTimeout:matchData:completionHandler:" title="endTurnWithNextParticipants:turnTimeout:matchData:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/endTurnWithNextParticipants:turnTimeout:matchData:completionHandler:">&ndash;&nbsp;endTurnWithNextParticipants:turnTimeout:matchData:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)endTurnWithNextParticipants:(NSArray&lt;GKTurnBasedParticipant*&gt; *)<em>nextParticipants</em> turnTimeout:(NSTimeInterval)<em>timeout</em> matchData:(NSData *)<em>matchData</em> completionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:" title="participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:">&ndash;&nbsp;participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)participantQuitInTurnWithOutcome:(GKTurnBasedMatchOutcome)<em>matchOutcome</em> nextParticipants:(NSArray&lt;GKTurnBasedParticipant*&gt; *)<em>nextParticipants</em> turnTimeout:(NSTimeInterval)<em>timeout</em> matchData:(NSData *)<em>matchData</em> completionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/participantQuitOutOfTurnWithOutcome:withCompletionHandler:" title="participantQuitOutOfTurnWithOutcome:withCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/participantQuitOutOfTurnWithOutcome:withCompletionHandler:">&ndash;&nbsp;participantQuitOutOfTurnWithOutcome:withCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)participantQuitOutOfTurnWithOutcome:(GKTurnBasedMatchOutcome)<em>matchOutcome</em> withCompletionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/endMatchInTurnWithMatchData:completionHandler:" title="endMatchInTurnWithMatchData:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/endMatchInTurnWithMatchData:completionHandler:">&ndash;&nbsp;endMatchInTurnWithMatchData:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)endMatchInTurnWithMatchData:(NSData *)<em>matchData</em> completionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/endMatchInTurnWithMatchData:scores:achievements:completionHandler:" title="endMatchInTurnWithMatchData:scores:achievements:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/endMatchInTurnWithMatchData:scores:achievements:completionHandler:">&ndash;&nbsp;endMatchInTurnWithMatchData:scores:achievements:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)endMatchInTurnWithMatchData:(NSData *)<em>matchData</em> scores:(nullable NSArray&lt;GKScore*&gt; *)<em>scores</em> achievements:(nullable NSArray&lt;GKAchievement*&gt; *)<em>achievements</em> completionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/saveCurrentTurnWithMatchData:completionHandler:" title="saveCurrentTurnWithMatchData:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveCurrentTurnWithMatchData:completionHandler:">&ndash;&nbsp;saveCurrentTurnWithMatchData:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)saveCurrentTurnWithMatchData:(NSData *)<em>matchData</em> completionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/saveMergedMatchData:withResolvedExchanges:completionHandler:" title="saveMergedMatchData:withResolvedExchanges:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveMergedMatchData:withResolvedExchanges:completionHandler:">&ndash;&nbsp;saveMergedMatchData:withResolvedExchanges:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)saveMergedMatchData:(NSData *)<em>matchData</em> withResolvedExchanges:(NSArray&lt;GKTurnBasedExchange*&gt; *)<em>exchanges</em> completionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:" title="sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:">&ndash;&nbsp;sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)sendExchangeToParticipants:(NSArray&lt;GKTurnBasedParticipant*&gt; *)<em>participants</em> data:(NSData *)<em>data</em> localizableMessageKey:(NSString *)<em>key</em> arguments:(NSArray&lt;NSString*&gt; *)<em>arguments</em> timeout:(NSTimeInterval)<em>timeout</em> completionHandler:(void ( ^ __nullable ) ( GKTurnBasedExchange *__nullable exchange , NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:" title="sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:">&ndash;&nbsp;sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)sendReminderToParticipants:(NSArray&lt;GKTurnBasedParticipant*&gt; *)<em>participants</em> localizableMessageKey:(NSString *)<em>key</em> arguments:(NSArray&lt;NSString*&gt; *)<em>arguments</em> completionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/endTurnWithNextParticipant:matchData:completionHandler:" title="endTurnWithNextParticipant:matchData:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/endTurnWithNextParticipant:matchData:completionHandler:">&ndash;&nbsp;endTurnWithNextParticipant:matchData:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)endTurnWithNextParticipant:(GKTurnBasedParticipant *)<em>nextParticipant</em> matchData:(NSData *)<em>matchData</em> completionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/participantQuitInTurnWithOutcome:nextParticipant:matchData:completionHandler:" title="participantQuitInTurnWithOutcome:nextParticipant:matchData:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/participantQuitInTurnWithOutcome:nextParticipant:matchData:completionHandler:">&ndash;&nbsp;participantQuitInTurnWithOutcome:nextParticipant:matchData:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)participantQuitInTurnWithOutcome:(GKTurnBasedMatchOutcome)<em>matchOutcome</em> nextParticipant:(GKTurnBasedParticipant *)<em>nextParticipant</em> matchData:(NSData *)<em>matchData</em> completionHandler:(void ( ^ __nullable ) ( NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

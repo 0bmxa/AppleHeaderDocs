@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AVB17221EntityDiscovery Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 AudioVideoBridging Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/discoveryDelegate">discoveryDelegate</option>
+		
+		<option value="//api/name/interface">interface</option>
+		
+		<option value="//api/name/interfaceName">interfaceName</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addLocalEntity:error:">- addLocalEntity:error:</option>
+		
+		<option value="//api/name/changeEntityWithEntityID:toNewGPTPGrandmasterID:error:">- changeEntityWithEntityID:toNewGPTPGrandmasterID:error:</option>
+		
+		<option value="//api/name/changeEntityWithGUID:toNewASGrandmasterID:error:">- changeEntityWithGUID:toNewASGrandmasterID:error:</option>
+		
+		<option value="//api/name/discoverEntities">- discoverEntities</option>
+		
+		<option value="//api/name/discoverEntity:">- discoverEntity:</option>
+		
+		<option value="//api/name/initWithInterfaceName:">- initWithInterfaceName:</option>
+		
+		<option value="//api/name/primeIterators">- primeIterators</option>
+		
+		<option value="//api/name/removeLocalEntity:error:">- removeLocalEntity:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AVB17221EntityDiscovery Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AVB17221EntityDiscovery.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<pre><code>@class      AVB17221EntityDiscovery
+</code></pre><p>AVB17221EntityDiscovery provides access to the IEEE Std 1722.1™-2013 AVDECC Discovery Protocol (ADP) <a href="#//api/name/interface">interface</a>.
+                It provides a delegate with callbacks whenever an entity is added or removed,
+                either locally or remotely. AVB17221EntityDiscovery objects are typically not created
+                directly but are created indirectly and accessed via the entityDiscovery property of
+                the <a href="../Classes/AVBInterface.html">AVBInterface</a> object.</p>
+
+<pre><code>            The AVBInterface object does not register a delegate with the AVB17221EntityDiscovery object
+            which is allocated. Immediately after obtaining the entityDiscovery value for the first time,
+            the discoveryDelegate should be set and the primeIterators method should be called. Until 
+            primeIterators is called, no entities will be discovered.
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/interfaceName" title="interfaceName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/interfaceName">&nbsp;&nbsp;interfaceName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The BSD <a href="#//api/name/interface">interface</a> name for the <a href="#//api/name/interface">interface</a> that discovery is being performed on.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (copy) NSString *interfaceName</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property   interfaceName
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscovery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/interface" title="interface"></a>
+	<h3 class="method-title"><code><a href="#//api/name/interface">&nbsp;&nbsp;interface</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Classes/AVBInterface.html">AVBInterface</a> object which owns this object. This may be nil if it was not created by an instance of <a href="../Classes/AVBInterface.html">AVBInterface</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, assign, nullable) AVBInterface *interface</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property   interface
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscovery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/discoveryDelegate" title="discoveryDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/discoveryDelegate">&nbsp;&nbsp;discoveryDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The delegate, implementing the <a href="../Protocols/AVB17221EntityDiscoveryDelegate.html">AVB17221EntityDiscoveryDelegate</a> protocol, which will handle entities arriving, departing and changing properties.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nullable) id&lt;AVB17221EntityDiscoveryDelegate&gt; discoveryDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@property   discoveryDelegate
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscovery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithInterfaceName:" title="initWithInterfaceName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithInterfaceName:">&ndash;&nbsp;initWithInterfaceName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes the receiver with a particular <a href="#//api/name/interface">interface</a> name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithInterfaceName:(NSString *)<em>anInterfaceName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>anInterfaceName</code></th>
+						<td><p>The BSD <a href="#//api/name/interface">interface</a> name for the <a href="#//api/name/interface">interface</a> to perform discovery on.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The initialized receiver.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     initWithInterfaceName:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscovery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/primeIterators" title="primeIterators"></a>
+	<h3 class="method-title"><code><a href="#//api/name/primeIterators">&ndash;&nbsp;primeIterators</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Prepares the IOIterators for receiving entity arrival, departure and property change notifications.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)primeIterators</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     primeIterators
+</code></pre><p>This method primes the iterators by iterating over any already available entities. This may be called once, at any time after object creation,
+                but if the <a href="#//api/name/discoveryDelegate">discoveryDelegate</a> property has not been set, any already discovered entity notifications will be lost.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscovery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/discoverEntities" title="discoverEntities"></a>
+	<h3 class="method-title"><code><a href="#//api/name/discoverEntities">&ndash;&nbsp;discoverEntities</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Triggers the IEEE Std 1722.1™-2013 ADP service to perform an ENTITY_DISCOVER for all entities (an entity_id of 0).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)discoverEntities</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A boolean indicating if the call succedded.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     discoverEntities
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscovery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/discoverEntity:" title="discoverEntity:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/discoverEntity:">&ndash;&nbsp;discoverEntity:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Triggers the IEEE Std 1722.1™-2013 ADP service to perform an ENTITY_DISCOVER for a specified entity.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)discoverEntity:(uint64_t)<em>entityID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityID</code></th>
+						<td><p>The entity_id of the entity to look for.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A boolean indicating if the call succedded.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     discoverEntity:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscovery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addLocalEntity:error:" title="addLocalEntity:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addLocalEntity:error:">&ndash;&nbsp;addLocalEntity:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Publishes a entity as being available on the <a href="#//api/name/interface">interface</a>. The in kernel portion creates an IOAVB17221LocalEntity and maintains the ADP messaging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)addLocalEntity:(AVB17221Entity *)<em>anEntity</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>anEntity</code></th>
+						<td><p>The entity to be published.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If the request couldn&rsquo;t be completed, on return it contains an instance of NSError that describes the reason why.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A boolean indicating if the entity was added.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     addLocalEntity:error:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscovery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeLocalEntity:error:" title="removeLocalEntity:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeLocalEntity:error:">&ndash;&nbsp;removeLocalEntity:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a published local entity with the given GUID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeLocalEntity:(uint64_t)<em>guid</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>guid</code></th>
+						<td><p>The GUID of the local entity to remove.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If the request couldn&rsquo;t be completed, on return it contains an instance of NSError that describes the reason why.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A boolean indicating if the entity was removed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     removeLocalEntity:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscovery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/changeEntityWithGUID:toNewASGrandmasterID:error:" title="changeEntityWithGUID:toNewASGrandmasterID:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/changeEntityWithGUID:toNewASGrandmasterID:error:">&ndash;&nbsp;changeEntityWithGUID:toNewASGrandmasterID:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Change the as_grandmaster_id value of the entity when the grandmaster changes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)changeEntityWithGUID:(uint64_t)<em>entityGUID</em> toNewASGrandmasterID:(uint64_t)<em>asGrandmasterID</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityGUID</code></th>
+						<td><p>The GUID of the entity to change.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asGrandmasterID</code></th>
+						<td><p>The new IEEE Std 802.1AS grandmaster ID.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If the request couldn&rsquo;t be completed, on return it contains an instance of NSError that describes the reason why.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A boolean indicating if the entity was updated.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     changeEntityWithGUID:toNewASGrandmasterID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscovery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/changeEntityWithEntityID:toNewGPTPGrandmasterID:error:" title="changeEntityWithEntityID:toNewGPTPGrandmasterID:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/changeEntityWithEntityID:toNewGPTPGrandmasterID:error:">&ndash;&nbsp;changeEntityWithEntityID:toNewGPTPGrandmasterID:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Change the gptp_grandmaster_id value of the entity when the grandmaster changes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)changeEntityWithEntityID:(uint64_t)<em>entityID</em> toNewGPTPGrandmasterID:(uint64_t)<em>gPTPGrandmasterID</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>entityID</code></th>
+						<td><p>The entity_id of the entity to change.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>gPTPGrandmasterID</code></th>
+						<td><p>The new IEEE Std 802.1AS grandmaster ID.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If the request couldn&rsquo;t be completed, on return it contains an instance of NSError that describes the reason why.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A boolean indicating if the entity was updated.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>@method     changeEntityWithEntityID:toNewGPTPGrandmasterID:
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AVB17221EntityDiscovery.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

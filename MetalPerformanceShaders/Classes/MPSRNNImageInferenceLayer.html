@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MPSRNNImageInferenceLayer Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 MetalPerformanceShaders Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/bidirectionalCombineMode">bidirectionalCombineMode</option>
+		
+		<option value="//api/name/inputFeatureChannels">inputFeatureChannels</option>
+		
+		<option value="//api/name/numberOfLayers">numberOfLayers</option>
+		
+		<option value="//api/name/outputFeatureChannels">outputFeatureChannels</option>
+		
+		<option value="//api/name/recurrentOutputIsTemporary">recurrentOutputIsTemporary</option>
+		
+		<option value="//api/name/storeAllIntermediateStates">storeAllIntermediateStates</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/copyWithZone:device:">- copyWithZone:device:</option>
+		
+		<option value="//api/name/encodeBidirectionalSequenceToCommandBuffer:sourceSequence:destinationForwardImages:destinationBackwardImages:MPS_SWIFT_NAME:">- encodeBidirectionalSequenceToCommandBuffer:sourceSequence:destinationForwardImages:destinationBackwardImages:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/encodeSequenceToCommandBuffer:sourceImages:destinationImages:recurrentInputState:recurrentOutputStates:MPS_SWIFT_NAME:">- encodeSequenceToCommandBuffer:sourceImages:destinationImages:recurrentInputState:recurrentOutputStates:MPS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/initWithCoder:device:">- initWithCoder:device:</option>
+		
+		<option value="//api/name/initWithDevice:">- initWithDevice:</option>
+		
+		<option value="//api/name/initWithDevice:rnnDescriptor:">- initWithDevice:rnnDescriptor:</option>
+		
+		<option value="//api/name/initWithDevice:rnnDescriptors:">- initWithDevice:rnnDescriptors:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MPSRNNImageInferenceLayer Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/MPSCNNKernel.html">MPSCNNKernel</a> : <a href="../Classes/MPSKernel.html">MPSKernel</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MPSRNNLayer.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class      MPSRNNImageInferenceLayer
+@dependency This depends on Metal.framework</p><p>The MPSRNNImageInferenceLayer specifies a recurrent neural network layer for inference on MPSImages.
+Currently two types of recurrent layers are supported: ones that operate with convolutions on
+images: @ref MPSRNNImageInferenceLayer and one that operates on matrices: @ref <a href="../Classes/MPSRNNMatrixInferenceLayer.html">MPSRNNMatrixInferenceLayer</a>.
+The former can be often used to implement the latter by using 1x1-images, but due to
+image size restrictions and performance, it is advisable to use @ref <a href="../Classes/MPSRNNMatrixInferenceLayer.html">MPSRNNMatrixInferenceLayer</a> for
+linear recurrent layers.
+A MPSRNNImageInferenceLayer is initialized using a @ref MPSRNNLayerDescriptor, which further specifies the
+recurrent network layer, or an array of @ref MPSRNNLayerDescriptors, which specifies a stack
+of recurrent layers, that can operate in parallel a subset of the inputs in a sequence of inputs and
+recurrent outputs. Note that currently stacks with bidirectionally traversing encode functions do not support starting
+from a previous set of recurrent states, but this can be achieved quite easily by defining two separate
+unidirectional stacks of layers, and running the same input sequence on them separately (one forwards and one backwards)
+and ultimately combining the two result sequences as desired with auxiliary functions.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/inputFeatureChannels" title="inputFeatureChannels"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inputFeatureChannels">&nbsp;&nbsp;inputFeatureChannels</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of feature channels per pixel in the input image.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger inputFeatureChannels</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   inputFeatureChannels</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outputFeatureChannels" title="outputFeatureChannels"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outputFeatureChannels">&nbsp;&nbsp;outputFeatureChannels</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of feature channels per pixel in the output image.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger outputFeatureChannels</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   outputFeatureChannels</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/numberOfLayers" title="numberOfLayers"></a>
+	<h3 class="method-title"><code><a href="#//api/name/numberOfLayers">&nbsp;&nbsp;numberOfLayers</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Number of layers in the filter-stack. This will be one when using initWithDevice:rnnDescriptor to initialize
+this filter and the number of entries in the array &lsquo;rnnDescriptors&rsquo; when initializing this filter with
+initWithDevice:rnnDescriptors.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSUInteger numberOfLayers</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   numberOfLayers</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recurrentOutputIsTemporary" title="recurrentOutputIsTemporary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recurrentOutputIsTemporary">&nbsp;&nbsp;recurrentOutputIsTemporary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>How output states from @ref encodeSequenceToCommandBuffer are constructed.
+Defaults to NO. For reference @see <a href="../Classes/MPSState.html">MPSState</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) BOOL recurrentOutputIsTemporary</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   recurrentOutputIsTemporary</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/storeAllIntermediateStates" title="storeAllIntermediateStates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/storeAllIntermediateStates">&nbsp;&nbsp;storeAllIntermediateStates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If YES then calls to @ref encodeSequenceToCommandBuffer return every recurrent state
+in the array: recurrentOutputStates.
+Defaults to NO.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) BOOL storeAllIntermediateStates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   storeAllIntermediateStates</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bidirectionalCombineMode" title="bidirectionalCombineMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bidirectionalCombineMode">&nbsp;&nbsp;bidirectionalCombineMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Defines how to combine the output-results, when encoding bidirectional layers using
+@ref encodeBidirectionalSequenceToCommandBuffer.
+Defaults to @ref MPSRNNBidirectionalCombineModeNone.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, nonatomic) MPSRNNBidirectionalCombineMode bidirectionalCombineMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property   bidirectionalCombineMode</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:rnnDescriptor:" title="initWithDevice:rnnDescriptor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:rnnDescriptor:">&ndash;&nbsp;initWithDevice:rnnDescriptor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a convolutional RNN kernel</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> rnnDescriptor:(nonnull const MPSRNNDescriptor *)<em>rnnDescriptor</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which this MPSRNNImageLayer filter will be used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rnnDescriptor</code></th>
+						<td><p>The descriptor that defines the RNN layer</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSRNNImageInferenceLayer object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:rnnDescriptors:" title="initWithDevice:rnnDescriptors:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:rnnDescriptors:">&ndash;&nbsp;initWithDevice:rnnDescriptors:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a kernel that implements a stack of convolutional RNN layers</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em> rnnDescriptors:(NSArray&lt;constMPSRNNDescriptor*&gt; *__nonnull)<em>rnnDescriptors</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which this MPSRNNImageLayer filter will be used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rnnDescriptors</code></th>
+						<td><p>An array of RNN descriptors that defines a stack of RNN layers, starting at index zero.
+The number of layers in stack is the number of entries in the array.
+All entries in the array must be valid MPSRNNDescriptors.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A valid MPSRNNImageInferenceLayer object or nil, if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDevice:" title="initWithDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDevice:">&ndash;&nbsp;initWithDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithDevice:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSCNNKernel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeSequenceToCommandBuffer:sourceImages:destinationImages:recurrentInputState:recurrentOutputStates:MPS_SWIFT_NAME:" title="encodeSequenceToCommandBuffer:sourceImages:destinationImages:recurrentInputState:recurrentOutputStates:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeSequenceToCommandBuffer:sourceImages:destinationImages:recurrentInputState:recurrentOutputStates:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeSequenceToCommandBuffer:sourceImages:destinationImages:recurrentInputState:recurrentOutputStates:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode an MPSRNNImageInferenceLayer kernel (stack) for a sequence of inputs into a command buffer.
+Note that when encoding using this function the @see layerSequenceDirection is ignored and the layer stack operates as
+if all layers were forward feeding layers. In order to run bidirectional sequences
+use @ref encodeBidirectionalSequenceToCommandBuffer:sourceSequence: or alternatively run two layer stacks and combine
+results at the end using utility functions.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeSequenceToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceImages:(NSArray&lt;MPSImage*&gt; *__nonnull)<em>sourceImages</em> destinationImages:(NSArray&lt;MPSImage*&gt; *__nonnull)<em>destinationImages</em> recurrentInputState:(MPSRNNRecurrentImageState *__nullable)<em>recurrentInputState</em> recurrentOutputStates:(NSMutableArray&lt;MPSRNNRecurrentImageState*&gt; *__nullable)<em>recurrentOutputStates</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceImages</code></th>
+						<td><p>An array of valid <a href="../Classes/MPSImage.html">MPSImage</a> objects containing the sequence of source images.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationImages</code></th>
+						<td><p>An array valid MPSImages to be overwritten by result image sequence. destinationImages may not alias sourceImages.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>recurrentInputState</code></th>
+						<td><p>An optional state containing the output images and memory cells (for LSTMs)
+of the layer obtained from the previous input images in a sequence of inputs.
+Has to be the output of a previous call to this function or nil (assumed zero).
+Note: can be one of the states returned in @ref recurrentOutputStates.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>recurrentOutputStates</code></th>
+						<td><p>An optional array that will contain the recurrent output states. If nil then
+the recurrent output state is discarded.
+If @ref <a href="#//api/name/storeAllIntermediateStates">storeAllIntermediateStates</a> is YES, then all intermediate states of the sequence
+are returned in the array, the first one corresponding to the first input in the sequence,
+otherwise only the last recurrent output state is returned.
+If <a href="#//api/name/recurrentOutputIsTemporary">recurrentOutputIsTemporary</a> is YES and then all returned recurrent states
+will be temporary. @see <a href="../Classes/MPSState.html">MPSState</a>:isTemporary.
+Example: In order to get a new state one can do the following:
+<code>
+MPSRNNRecurrentImageState* recurrent0 = nil;
+[filter encodeToCommandBuffer: cmdBuf
+sourceImage: source0
+destinationImage: destination0
+recurrentInputState: nil
+recurrentOutputState: &amp;recurrent0];
+</code>
+Then use it for the next input in sequence:
+<code>
+[filter encodeToCommandBuffer: cmdBuf
+sourceImage: source1
+destinationImage: destination1
+recurrentInputState: recurrent0
+recurrentOutputState: &amp;recurrent0];
+</code>
+And discard recurrent output of the third input:
+@code
+[filter encodeToCommandBuffer: cmdBuf
+sourceImage: source2
+destinationImage: destination2
+recurrentInputState: recurrent0
+recurrentOutputState: nil];
+@endcode</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/encodeBidirectionalSequenceToCommandBuffer:sourceSequence:destinationForwardImages:destinationBackwardImages:MPS_SWIFT_NAME:" title="encodeBidirectionalSequenceToCommandBuffer:sourceSequence:destinationForwardImages:destinationBackwardImages:MPS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/encodeBidirectionalSequenceToCommandBuffer:sourceSequence:destinationForwardImages:destinationBackwardImages:MPS_SWIFT_NAME:">&ndash;&nbsp;encodeBidirectionalSequenceToCommandBuffer:sourceSequence:destinationForwardImages:destinationBackwardImages:MPS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Encode an MPSRNNImageInferenceLayer kernel stack for an input image sequences into a command buffer bidirectionally.
+The operation proceeds as follows: The first source image x0 is passed through all forward traversing layers in the stack,
+ie. those that were initialized with MPSRNNSequenceDirectionForward, recurrent input is assumed zero.
+This produces forward output yf0 and recurrent states hf00, hf01, hf02, &hellip; hf0n, one for each forward layer.
+Then x1 is passed to forward layers together with recurrent state hf00, hf01, &hellip;, hf0n, which produces yf1, and hf10,&hellip;
+This procedure is iterated until the last image in the input sequence x<em>(N-1), which produces forward output yf(N-1).
+The backwards layers iterate the same sequence backwards, starting from input x</em>(N-1) (recurrent state zero),
+that produces yb(N-1) and recurrent output hb(N-1)0, hf(N-1)1, &hellip; hb(N-1)m, one for each backwards traversing layer.
+Then the backwards layers handle input x_(N-2) using recurrent state hb(N-1)0, &hellip;, et cetera, until the
+first image of the sequence is computed, producing output yb0. The result of the operation is either pair of sequences
+({yf0, yf1, &hellip; , yf(N-1)},  {yb0, yb1, &hellip; , yb(N-1)}) or a combined sequence, {(yf0 + yb0), &hellip; , (yf(N-1) + yb(N-1)) },
+where &lsquo;+&rsquo; stands either for sum, or concatenation along feature channels, as specified by @ref <a href="#//api/name/bidirectionalCombineMode">bidirectionalCombineMode</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)encodeBidirectionalSequenceToCommandBuffer:(nonnull id&lt;MTLCommandBuffer&gt;)<em>commandBuffer</em> sourceSequence:(NSArray&lt;MPSImage*&gt; *__nonnull)<em>sourceSequence</em> destinationForwardImages:(NSArray&lt;MPSImage*&gt; *__nonnull)<em>destinationForwardImages</em> destinationBackwardImages:(NSArray&lt;MPSImage*&gt; *__nullable)<em>destinationBackwardImages</em> MPS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>commandBuffer</code></th>
+						<td><p>A valid MTLCommandBuffer to receive the encoded filter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sourceSequence</code></th>
+						<td><p>An array of valid <a href="../Classes/MPSImage.html">MPSImage</a> objects containing the source image sequence (x0, x1, &hellip; x_n-1).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationForwardImages</code></th>
+						<td><p>An array of valid MPSImages to be overwritten by result from forward input images. If <a href="#//api/name/bidirectionalCombineMode">bidirectionalCombineMode</a>
+is either MPSRNNBidirectionalCombineModeAdd or MPSRNNBidirectionalCombineModeConcatenate, then will
+contain the combined results. destinationForwardImage may not alias with any of the source images.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationBackwardImages</code></th>
+						<td><p>If <a href="#//api/name/bidirectionalCombineMode">bidirectionalCombineMode</a> is MPSRNNBidirectionalCombineModeNone, then must be a valid <a href="../Classes/MPSImage.html">MPSImage</a>
+that will be  overwritten by result from backward input image. Otherwise this parameter is ignored
+and can be nil. destinationBackwardImages may not alias to any of the source images.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:device:" title="initWithCoder:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:device:">&ndash;&nbsp;initWithCoder:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSSecureCoding compatability</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithCoder:(NSCoder *__nonnull)<em>aDecoder</em> device:(nonnull id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aDecoder</code></th>
+						<td><p>The NSCoder subclass with your serialized MPSRNNImageInferenceLayer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The MTLDevice on which to make the MPSRNNImageInferenceLayer</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new MPSRNNImageInferenceLayer object, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>See @ref MPSKernel#initWithCoder.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyWithZone:device:" title="copyWithZone:device:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyWithZone:device:">&ndash;&nbsp;copyWithZone:device:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Make a copy of this kernel for a new device - @see <a href="../Classes/MPSKernel.html">MPSKernel</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)copyWithZone:(nullable NSZone *)<em>zone</em> device:(nullable id&lt;MTLDevice&gt;)<em>device</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>zone</code></th>
+						<td><p>The NSZone in which to allocate the object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>device</code></th>
+						<td><p>The device for the new <a href="../Classes/MPSKernel.html">MPSKernel</a>. If nil, then use
+self.device.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a pointer to a copy of this <a href="../Classes/MPSKernel.html">MPSKernel</a>. This will fail, returning
+nil if the device is not supported. Devices must be
+MTLFeatureSet_iOS_GPUFamily2_v1 or later.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MPSRNNLayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

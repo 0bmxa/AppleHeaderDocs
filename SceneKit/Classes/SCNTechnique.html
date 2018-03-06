@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SCNTechnique Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MacOSX 10.13 SceneKit Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Apple Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/dictionaryRepresentation">dictionaryRepresentation</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/techniqueBySequencingTechniques:">+ techniqueBySequencingTechniques:</option>
+		
+		<option value="//api/name/techniqueWithDictionary:">+ techniqueWithDictionary:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/handleBindingOfSymbol:usingBlock:">- handleBindingOfSymbol:usingBlock:</option>
+		
+		<option value="//api/name/objectForKeyedSubscript:">- objectForKeyedSubscript:</option>
+		
+		<option value="//api/name/setObject:forKeyedSubscript:">- setObject:forKeyedSubscript:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SCNTechnique Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying<br />NSSecureCoding<br /><a href="../Protocols/SCNAnimatable.html">SCNAnimatable</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SCNTechnique.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class SCNTechnique</p><p>A technique is generally initialized from a Property List file. It can be set to any object that conforms to the <a href="../Protocols/SCNTechniqueSupport.html">SCNTechniqueSupport</a> protocol.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/techniqueWithDictionary:" title="techniqueWithDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/techniqueWithDictionary:">+&nbsp;techniqueWithDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and returns a technique instance initialized with the specified dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable SCNTechnique *)techniqueWithDictionary:(NSDictionary&lt;NSString*,id&gt; *)<em>dictionary</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dictionary</code></th>
+						<td><p>The dictionary representation of the technique.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method techniqueWithDictionary:</p><p>The format of the dictionary is described below. Quoted strings can be any name of your choice. Tags are defined below.
+The passes are executed sequentially as specified in the &ldquo;sequence&rdquo; section. The definition of each pass is within the &ldquo;passes&rdquo; section. A pass may have inputs/outputs that reference targets or symbols defined in the &ldquo;targets&rdquo; and &ldquo;symbols&rdquo; section. The entries of the &ldquo;symbols&rdquo; section can be set/get and animated with SCNTechnique&rsquo;s APIs below.</p>
+
+<p>{
+   sequence: [&ldquo;Pass1&rdquo;, &ldquo;Pass2&rdquo;, &hellip;],
+   passes: {
+     &ldquo;Pass1&rdquo;: {
+        outputs: <outputs>
+        inputs: <inputs>
+        draw: <draw command>
+        program: <program name>
+        metalVertexShader: <METAL vertex shader function name>
+        metalFragmentShader: <METAL fragment shader function name>
+        colorStates: <color states>               //optional
+        depthStates: <depth states>               //optional
+        stencilStates: <stencil states>           //optional
+        cullMode: <cull mode>                     //optional
+        blendStates: <blend states>               //optional
+        viewport: <custom viewport>               //optional
+        pointOfView: <node name>                  //optional
+        samples: <sample count>                   //optional
+        excludeCategoryMask: <category bitMask>   //optional
+        includeCategoryMask: <category bitMask>   //optional
+     },
+     &ldquo;Pass2&rdquo; : {
+         [&hellip;]
+     }
+   }
+   symbols: {
+     &ldquo;symbol A&rdquo;: {
+        <symbol description>
+     }
+     [&hellip;]
+   }
+   targets: {
+      &ldquo;target A&rdquo;: {
+         <target description>
+     }
+     [&hellip;]
+   }
+}</p>
+
+<p><outputs>:
+The possible (and optional) keys with their possible associated values are:
+color: a string referencing a color render target. See <render target reference>.
+depth: a string referencing a depth render target. See <render target reference>.
+stencil: a string referencing a stencil render target. See <render target reference>.</p>
+
+<p><inputs>:
+The inputs are listed in a dictionary. The keys are the uniform name as specified in the program of this pass.
+The values can be a single string referencing a symbol or a semantic or a target OR a dictionary with the following structure:</p>
+
+<p>{
+   target: <render target reference>,</p>
+
+<p>   //optional:
+   minificationFilter: linear, nearest
+   magnificationFilter: linear, nearest
+   mipFilter: linear, nearest, none
+   wrapS: clamp, repeat, clampToBorder, mirror
+   wrapT: clamp, repeat, clampToBorder, mirror
+   wrapP: clamp, repeat, clampToBorder, mirror
+   maxAnisotropy: a number
+}</p>
+
+<p>(See <a href="../Classes/SCNMaterialProperty.html">SCNMaterialProperty</a> for more documentation and default values of these optional parameters.)</p>
+
+<p><render target reference>
+A string referencing a target (i.e an entry in the top level &ldquo;targets&rdquo; dictionary) or one of the special strings below:
+COLOR  The render target that represents that main color fragments that will be displayed on the screen ultimately.
+DEPTH  The render target that represents that main depth fragments.</p>
+
+<p><draw command>
+can be one of the following strings:
+DRAW_SCENE:    render the entire scene
+DRAW_QUAD:     render a fullscreen quad
+DRAW_NODE:     render a node and its sub-tree. The node is specified by setting its name as the value for the key &ldquo;node&rdquo;.</p>
+
+<p><program name>
+Name of a program (a vertex shader + a fragment shader) located in the application bundle.
+The vertex shader must have the extension &ldquo;vsh&rdquo; and the fragment shader &ldquo;fsh&rdquo;.</p>
+
+<p><METAL vertex shader function name>
+Name of a METAL function to use as the vertex shader.</p>
+
+<p><METAL fragment shader function name>
+Name of a METAL function to use as the fragment shader.</p>
+
+<p><color states>
+A dictionary with the following optional keys:
+&ldquo;clear&rdquo; a boolean specifying whether the color target should be cleared or not
+&ldquo;clearColor&rdquo; a string specifying the clear color as 4 float (&ldquo;red green blue alpha&rdquo;), or the string &ldquo;sceneBackground&rdquo; to clear with the scene background color.</p>
+
+<p><depth states>
+A dictionary with the following optional keys:
+&ldquo;clear&rdquo; a boolean specifying whether the depth target should be cleared or not
+&ldquo;enableWrite&rdquo; a boolean specifying whether writing to depth should be enabled or not.
+&ldquo;enableRead&rdquo; a boolean specifying whether reading from depth should be enabled or not.
+&ldquo;func&rdquo; a string specifying depth function to use. See <comparison function> for the possible values.</p>
+
+<p><stencil states>
+A dictionary with the following optional keys:
+&ldquo;clear&rdquo; a boolean specifying whether the stencil target should be cleared or not
+&ldquo;enable&rdquo; a boolean specifying whether writing to stencil should be enabled or not.
+&ldquo;behavior&rdquo; a dictionary describing the stencil behavior of the front face, or of both faces if no backFaceBehavior is specified. See <stencil behavior> for the format of this dictionary.
+&ldquo;backFaceBehavior&rdquo; a dictionary describing the behavior of the back face. See <stencil behavior> for the format of this dictionary.</p>
+
+<p><stencil behavior>
+A dictionary with the following optional keys:
+&ldquo;depthFail&rdquo; a string specifying the operation to do if the depth test fails. See <stencil operation> for the possible values.
+&ldquo;fail&rdquo; a string specifying the operation to do if the stencil test fails. See <Stencil operation> for the possible values.
+&ldquo;pass&rdquo; a string specifying the operation to do if the stencil test passes. See <stencil operation> for the possible values.
+&ldquo;function&rdquo; a string specifying the stencil test. See <comparison function> for the possible values.
+&ldquo;readMask&rdquo; a uint8_t number specifying a mask that is ANDed with both the reference value and the stored stencil value when the test is done
+&ldquo;writeMask&rdquo; a uint8_t number specifies a bit mask to enable and disable writing of individual bits in the stencil planes
+&ldquo;referenceValue&rdquo; a uint8_t number specifies the reference value for the stencil test. The initial value is 0.</p>
+
+<p><stencil operation>
+A string specifying a stencil operation. It can be one of the following: keep, zero, replace, increment, decrement, invert, incrementWrap, decrementWrap</p>
+
+<p><comparison function>
+A string specifying a comparison function. It can be one of the following: never, always, equal, notEqual, less, lessEqual, greater, greaterEqual</p>
+
+<p><blend states>
+A dictionary with the following optional keys:
+&ldquo;enable&rdquo; a boolean number specifying if the blending should be enabled or not. defaults to true.
+&ldquo;colorSrc&rdquo; a string specifying a blend mode. See <blend mode>
+&ldquo;colorDst&rdquo; a string specifying a blend mode. See <blend mode>
+&ldquo;alphaSrc&rdquo; a string specifying a blend mode. See <blend mode>
+&ldquo;alphaDst&rdquo; a string specifying a blend mode. See <blend mode>
+&ldquo;colorOp&rdquo; a string specifying a blend operation. See <blend operation>
+&ldquo;alphaOp&rdquo; a string specifying a blend operation. See <blend operation>
+In no Blend states are specified, then the blending is turned off.</p>
+
+<p><blend mode>
+A string specifying a blend mode. It can be one of the following: zero, one, srcColor, oneMinusSrcColor, srcAlpha, oneMinusSrcAlpha, dstColor, oneMinusDstColor, dstAlpha, oneMinusDstAlpha, constantColor, oneMinusConstantColor, constantAlpha, oneMinusConstantAlpha, alphaSaturate.</p>
+
+<p><blend operation>
+A string specifying a blend operation. It can be one of the following: add, substract, reverseSubstract, min, max.</p>
+
+<p><cull mode>
+A string specifying a cull mode. It can be one of the following: front, none, back.</p>
+
+<p><custom viewport>
+A string specifying the viewport as 4 float.</p>
+
+<p><category bitMask>
+A integer value representing a node category mask (see SCNNode&rsquo;s categoryBitMask).
+if the key &ldquo;excludeCategoryMask&rdquo; is not specified then it defaults to 0.
+if the key &ldquo;includeCategoryMask&rdquo; is not specified then it defaults to all bits set.
+The DRAW_SCENE command will then render nodes that validate the following test (node.categoryBitMask &amp; includeCategoryMask) &amp;&amp; !(excludeCategoryMask &amp; node.categoryBitMask).</p>
+
+<p><node name>
+The name of a node, or &ldquo;self&rdquo; to reference the owner of the technique if any.</p>
+
+<p><sample count>
+The number of samples (multisampling) used to render the pass.</p>
+
+<p><symbol description>
+A dictionary with the following optional keys and their possible associated values:</p>
+
+<p>semantic: vertex, normal, color, texcoord, tangent, time, modelViewProjectionTransform, modelViewTransform, modelTransform, viewTransform, projectionTransform, normalTransform, modelViewProjectionInverseTransform, modelViewInverseTransform, modelInverseTransform, viewInverseTransform, projectionInverseTransform, normalInverseTransform</p>
+
+<p>type: float, vec2, vec3, vec4, mat4, int, ivec2, ivec3, ivec4, mat3, sampler2D, none. Every types can also be an array of the given type by adding [N] where N is the number of elements in the array.</p>
+
+<p>image: name of an image located in the application bundle. (only valid when type is sampler2D)</p>
+
+<p>if a semantic is set, no type is required.
+Note that with Metal shaders you should not provide any semantic. Instead simply declare a struct in you shader and add the members you need named as specified in SceneKit/scn_metal.</p>
+
+<p>For example for a per-node semantic:</p>
+
+<p>struct MyStruct
+{
+float4x4 modelTransform;
+float4x4 modelViewProjectionTransform;
+};
+then in your function add an argument that must be named “scn_node” to get the members automatically filed with node semantics (see the documentation in scn_metal).</p>
+
+<p><target description>
+A dictionary with the following optional keys and their possible associated values:</p>
+
+<p>type: a string specifying the type of the render target. It can be one of the following: color, depth, stencil
+format: a string specifying the format of the render target. It can be:
+- for color targets: rgba32f, r8, r16f, rg16 or rgba. If not specified defaults to the framebuffer&rsquo;s pixel format.
+- for depth targets: depth24, depth24stencil8
+- for stencil targets: depth24stencil8
+scaleFactor: a float value (encapsulated in a NSNumber) that controls the size of the render target. Defaults to 1, which means 1x the size of the main viewport.
+size: a string with the format %dx%d that controls the size of the render target.
+persistent: a boolean that tells if this target should persist from one frame to the next. It permits to create temporal effects suchs as motion blur. Defaults to NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNTechnique.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/techniqueBySequencingTechniques:" title="techniqueBySequencingTechniques:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/techniqueBySequencingTechniques:">+&nbsp;techniqueBySequencingTechniques:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and returns a technique by sequencing the passes from the specified techniques.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable SCNTechnique *)techniqueBySequencingTechniques:(NSArray&lt;SCNTechnique*&gt; *)<em>techniques</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>techniques</code></th>
+						<td><p>The techniques to sequence.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method techniqueBySequencingTechniques:</p><p>The passes from &ldquo;techniques&rdquo; are executed sequentially. The symbols and targets are merged. This allows to use the same uniform ad targets across multiple techniques.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNTechnique.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/handleBindingOfSymbol:usingBlock:" title="handleBindingOfSymbol:usingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/handleBindingOfSymbol:usingBlock:">&ndash;&nbsp;handleBindingOfSymbol:usingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the block to call at render time to bind the value for the specified symbol of the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)handleBindingOfSymbol:(NSString *)<em>symbol</em> usingBlock:(nullable SCNBindingBlock)<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>symbol</code></th>
+						<td><p>The name of the symbol to bind a value for.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>The block to call to bind the specified symbol.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method handleBindingOfSymbol:usingBlock:</p><p>The block will be called at every frame for every pass referencing the specified symbol.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNTechnique.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dictionaryRepresentation" title="dictionaryRepresentation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dictionaryRepresentation">&nbsp;&nbsp;dictionaryRepresentation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the dictionary representation of the technique.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSDictionary&lt;NSString*id&gt; *dictionaryRepresentation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@property dictionaryRepresentation</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SCNTechnique.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectForKeyedSubscript:" title="objectForKeyedSubscript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectForKeyedSubscript:">&ndash;&nbsp;objectForKeyedSubscript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)objectForKeyedSubscript:(id)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setObject:forKeyedSubscript:" title="setObject:forKeyedSubscript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setObject:forKeyedSubscript:">&ndash;&nbsp;setObject:forKeyedSubscript:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setObject:(nullable id)<em>obj</em> forKeyedSubscript:(id&lt;NSCopying&gt;)<em>key</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved. Updated: 2018-03-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
