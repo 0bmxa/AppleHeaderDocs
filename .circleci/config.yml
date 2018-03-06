@@ -14,6 +14,12 @@ jobs:
             - checkout
 
             - run:
+                name: 'Set some git user details'
+                command: |
+                    git config --global user.name 'CI'
+                    git config --global user.email 'ci@example.com'
+
+            - run:
                 name: 'Install appledoc (custom version)'
                 command: |
                     cd ~ && \
@@ -28,12 +34,13 @@ jobs:
                     pwd && \
                     ./generate-appledoc.sh
 
-
             - run:
                 name: 'Commit to GitHub pages'
                 command: |
                     git checkout gh-pages && \
-                    cp -R './docs/*' '.' && \
+                    git rm -r . && \
+                    git checkout HEAD -- .gitignore && \
+                    mv ./docs/* . && \
                     git add -A && \
                     git commit -m 'Automated commit by CI' && \
                     git push origin gh-pages

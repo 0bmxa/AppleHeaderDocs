@@ -1,28 +1,41 @@
-# AppleHeaderDocs
+# Apple Header Docs
 
-This project tries to automatically generate docs for all Apple frameworks in
-the current SDKs.
+This project tries to automatically generate documentation for all Apple
+frameworks, based on the current SDKs.
 
 Browse the results on [GitHub pages](https://0bmxa.github.io/AppleHeaderDocs/).
 
 
-## Why
+### Why?
 
-Sure, there is the amazing documentation at
-[developer.apple.com/documentation/](https://developer.apple.com/documentation/).
-But this one is actually missing documentation for quite a few (mostly less
-popular) frameworks, like
+Sure, there is the amazing
+[Apple Developer Documentation](https://developer.apple.com/documentation/). But
+it’s is actually missing documentation for quite a few (mostly less popular)
+frameworks, like
 [CoreAudio’s `AudioServerPlugin`](https://developer.apple.com/documentation/CoreAudio/)
-API. The documentation for these is, however, available in the frameworks’
-header files.
+API. The documentation for these is, however, available in most of the
+frameworks’ header files.
 
-This project tries to make this "hidden" documentation more visible.
+This project tries to make this "hidden" documentation more visible and easier
+to access.
 
 
-## How
+## How it works
 
-The first approach uses [`appledoc`](https://github.com/tomaz/appledoc),
-but fails to generate docs for a lot of frameworks.
+This first approach iterates over all `.framework` folders in
+`/path/to/MacOSX.sdk/System/Library/Frameworks/` and calls
+[`appledoc`](https://github.com/tomaz/appledoc) with the HTML option on each of
+them. The resulting files and an index file are then pushed to the `gh-pages`
+branch of this repo and through this visible on
+[GitHub pages](https://0bmxa.github.io/AppleHeaderDocs/).
+
+#### Caveats
+
+Sadly `appledoc` fails to generate docs for a lot of frameworks. Maybe it can be
+replaced by [`doxygen`](http://doxygen.org),
+[`jazzy`](https://github.com/realm/jazzy) or something else.
+
+Feel free to contribute by suggesting fixes or enhancements via issues or PRs!
 
 
 ## Legal stuff
@@ -35,6 +48,9 @@ legal agreement or such, (please don't sue me! and) please let me know!
 
 
 ## Known issues
-* A lot of Frameworks are empty, appledoc fails to generate docs here
-* Only generates docs for MacOS SDK frameworks for now
+* A lot of Frameworks are empty, because appledoc fails to generate docs
+* Only docs for MacOS SDK frameworks are generated
+* Docs from frameworks inside frameworks are merged with the parent framework
+  (or not generated at all?)
+* Each framework documentation has it's own (appledoc theme) JS/CSS files. Those could be consolidated somehow
 * …
