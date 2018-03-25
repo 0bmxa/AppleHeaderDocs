@@ -1,0 +1,41 @@
+sudo: false
+
+os: osx
+osx_image: xcode9.2
+
+branches:
+    except:
+        - gh-pages
+
+
+before_install:
+    - CI_PROJECT_PATH=$(pwd)
+
+# Install appledoc
+install:
+    - cd ~
+    - git clone https://github.com/tomaz/appledoc.git
+    - cd appledoc
+    - ./install-appledoc.sh
+    - cd "$CI_PROJECT_PATH"
+
+before_script:
+    # Set some git user details
+    - git config --global user.name 'CI'
+    - git config --global user.email 'ci@example.com'
+
+
+# Generate docs for macOS
+script:
+    - ./generate-appledoc.sh
+
+
+# Commit to GitHub pages
+after_success:
+    - git checkout gh-pages
+    - git rm -r .
+    - git checkout HEAD -- .gitignore
+    - mv ./docs/* .
+    - git add -A
+    - git commit -m 'Automated commit by CI'
+    - git push origin gh-pages
